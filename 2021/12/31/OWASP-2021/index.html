@@ -230,6 +230,28 @@
     </span>
 
   
+    <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>3 分鐘</span>
+    </span>
 </div>
 
         </div>
@@ -243,8 +265,10 @@
 <span id="more"></span>
 
 <h3 id="OWASP-Top-10-2021"><a href="#OWASP-Top-10-2021" class="headerlink" title="OWASP Top 10 2021"></a>OWASP Top 10 2021</h3><ol>
-<li>A01:2021-Broken Access Control 權限控制失效<br>存取控制是指經由身分驗證的用戶執行越級的操作限制，權限控制失效發生於如果限制未確實執行，可能造成未經授權的用戶敏感資訊進行修改與破壞。</li>
-<li>A02:2021-Cryptographic Failures 加密機制失效<br>加密機制失效指加密失敗導致資料外洩。</li>
+<li><p>A01:2021-Broken Access Control 權限控制失效<br>存取控制是指經由身分驗證的用戶執行越級的操作限制，權限控制失效發生於如果限制未確實執行，可能造成未經授權的用戶敏感資訊進行修改與破壞。</p>
+</li>
+<li><p>A02:2021-Cryptographic Failures 加密機制失效<br>加密機制失效指加密失敗導致資料外洩。</p>
+</li>
 </ol>
 <ul>
 <li><p>常見漏洞:</p>
@@ -264,31 +288,33 @@
 <li>A03:2021-Injection 注入式攻擊<br>注入式攻擊是指應用程式強制執行不可信任的惡意程式碼，危害整個應用程式。</li>
 </ol>
 <ul>
-<li>常見漏洞:  <ul>
-<li> Cross-site scripting (XSS) </li>
-<li> SQL injections</li>
-<li> CCS injections</li>
+<li><p>常見漏洞:  </p>
+<ul>
+<li>Cross-site scripting (XSS) </li>
+<li>SQL injections</li>
+<li>CCS injections</li>
 </ul>
 </li>
-<li>如何避免:<ul>
-<li> 使用安全的API設計</li>
-<li> 伺服器端輸入驗證 ( 列入白名單 )</li>
+<li><p>如何避免:</p>
+<ul>
+<li>使用安全的API設計</li>
+<li>伺服器端輸入驗證 ( 列入白名單 )</li>
 </ul>
 </li>
 </ul>
 <ol start="4">
-<li>A04:2021-Insecure Design 不安全設計<br>不安全設計是指軟體開發中缺乏安全控制和風險分析，從而沒有正確確定安全設計程度。 </li>
+<li>A04:2021-Insecure Design 不安全設計<br>不安全設計是指軟體開發中缺乏安全控制和風險分析，從而沒有正確確定安全設計程度。</li>
 </ol>
 <ul>
 <li>如何避免<ul>
-<li>與專家實施安全開發生命週期，以評估隱私安全需求  </li>
+<li>與專家實施安全開發生命週期，以評估隱私安全需求</li>
 </ul>
 </li>
 </ul>
 <ol start="5">
 <li><p>A05:2021-Security Misconfiguration 安全設定缺陷<br>安全設定顧名思義，安全設定不正確。</p>
 </li>
-<li><p>A06:2021-Vulnerable and Outdated Components 危險或過舊的元件<br>危險或過舊的元件是指使用具有漏洞的元件。   </p>
+<li><p>A06:2021-Vulnerable and Outdated Components 危險或過舊的元件<br>危險或過舊的元件是指使用具有漏洞的元件。</p>
 </li>
 </ol>
 <ul>
@@ -298,7 +324,7 @@
 </li>
 </ul>
 <ol start="7">
-<li>A07:2021-Identification and Authentication Failures 認證及驗證機制失效<br>Broken Authentication。 </li>
+<li>A07:2021-Identification and Authentication Failures 認證及驗證機制失效<br>Broken Authentication。</li>
 </ol>
 <ul>
 <li>常見情況<ul>
@@ -308,18 +334,17 @@
 </li>
 </ul>
 <ol start="8">
-<li>A08:2021-Software and Data Integrity Failures 軟體及資料完整性失效<br>軟體更新、重要資料與CI/CD 流程完整性尚未驗證之漏洞。</li>
-</ol>
-<ol start="9">
+<li><p>A08:2021-Software and Data Integrity Failures 軟體及資料完整性失效<br>軟體更新、重要資料與CI&#x2F;CD 流程完整性尚未驗證之漏洞。</p>
+</li>
 <li><p>A09:2021-Security Logging and Monitoring Failures 資安記錄及監控失效<br>日誌紀錄與監控不足。</p>
 </li>
 <li><p>A10:2021-Server-Side Request Forgery 伺服端請求偽造<br>當 Web 應用程序在獲取遠程資源時未驗證用戶提供的 URL 時，就會出現伺服器端請求偽造問題。<br>攻擊者即使受到防火牆、VPN 或訪問控制列表 (Access Control List;ACL) 的保護，也能夠強制應用程式向目的地發送設計請求。</p>
 </li>
 </ol>
 <h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ol>
-<li><p>OWASP Top 10 2021 介紹<br><a target="_blank" rel="noopener" href="https://owasp.org/Top10/zh_TW/">https://owasp.org/Top10/zh_TW/</a></p>
+<li><p>OWASP Top 10 2021 介紹<br>  <a target="_blank" rel="noopener" href="https://owasp.org/Top10/zh_TW/">https://owasp.org/Top10/zh_TW/</a></p>
 </li>
-<li><p>OWASP Top 10 2021 Released – What’s New!!<br><a target="_blank" rel="noopener" href="https://cybersecuritynews.com/owasp-top-10-2021/?fbclid=IwAR25EpDoGaRpQVV72x6w5IipeHEQ1rRqHBcOwBThiABoPi3L6tKbK8tVWfY">https://cybersecuritynews.com/owasp-top-10-2021/?fbclid=IwAR25EpDoGaRpQVV72x6w5IipeHEQ1rRqHBcOwBThiABoPi3L6tKbK8tVWfY</a></p>
+<li><p>OWASP Top 10 2021 Released – What’s New!!<br>  <a target="_blank" rel="noopener" href="https://cybersecuritynews.com/owasp-top-10-2021/?fbclid=IwAR25EpDoGaRpQVV72x6w5IipeHEQ1rRqHBcOwBThiABoPi3L6tKbK8tVWfY">https://cybersecuritynews.com/owasp-top-10-2021/?fbclid=IwAR25EpDoGaRpQVV72x6w5IipeHEQ1rRqHBcOwBThiABoPi3L6tKbK8tVWfY</a></p>
 </li>
 <li><p>OWASP Top 10 2021 十大網站安全風險排名更新<br> <a target="_blank" rel="noopener" href="http://www.heminfosec.com/eDM/2021-10-OWASPtop10-2021-WAPPLES-OSCAN.html">http://www.heminfosec.com/eDM/2021-10-OWASPtop10-2021-WAPPLES-OSCAN.html</a>    </p>
 </li>
@@ -377,6 +402,38 @@
   </span>
   <span class="author" itemprop="copyrightHolder">利醬</span>
 </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">8k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">14 分鐘</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="訪客總數">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="總瀏覽次數">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
 
@@ -394,6 +451,7 @@
 
 
   
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
