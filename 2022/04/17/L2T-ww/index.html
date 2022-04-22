@@ -20,27 +20,37 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="torchsummary  1234567device &#x3D; torch.device(&amp;#x27;cuda&amp;#x27; if torch.cuda.is_available() else &amp;#x27;cpu&amp;#x27;)model &#x3D; SuperPointNet_gauss2()model &#x3D; model.to(device)# check keras-like model summary usi">
+<meta name="description" content="前言協助友人快速執行程式，將程式開發流程記錄下來以供參考，訓練完成時間約10個小時。開發環境使用一張 Nvidia 2080Ti 顯示卡，程式並無大問題，簡單處理將logs資料夾刪除。初步流程約半個小時內可以快速上手。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="檢視神經網路模型參數總量">
-<meta property="og:url" content="https://leonicehot.github.io/2021/12/11/%E6%AA%A2%E8%A6%96%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E6%A8%A1%E5%9E%8B%E5%8F%83%E6%95%B8%E7%B8%BD%E9%87%8F/index.html">
+<meta property="og:title" content="L2T-ww - Learning What and Where to Transfer">
+<meta property="og:url" content="https://leonicehot.github.io/2022/04/17/L2T-ww/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="torchsummary  1234567device &#x3D; torch.device(&amp;#x27;cuda&amp;#x27; if torch.cuda.is_available() else &amp;#x27;cpu&amp;#x27;)model &#x3D; SuperPointNet_gauss2()model &#x3D; model.to(device)# check keras-like model summary usi">
+<meta property="og:description" content="前言協助友人快速執行程式，將程式開發流程記錄下來以供參考，訓練完成時間約10個小時。開發環境使用一張 Nvidia 2080Ti 顯示卡，程式並無大問題，簡單處理將logs資料夾刪除。初步流程約半個小時內可以快速上手。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2021-12-11T10:59:22.000Z">
-<meta property="article:modified_time" content="2021-12-12T13:17:41.603Z">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FOriginal%20data%20-%20CUB200.png?alt=media&token=2d607547-c45b-47a4-8281-422391cde43d">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Fcub200%20dataset.png?alt=media&token=b0536668-a66b-4428-8c7a-0488b62f9454">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FSplit%20data%20-%20CUB200.png?alt=media&token=752d4444-c834-496d-bd83-9339ffeb7fb7">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FOriginal%20data%20-%20Stanford%20Dogs.png?alt=media&token=54f61451-0002-4986-aeda-746d890eead5">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Fdog%20dataset.png?alt=media&token=68a729ca-b375-4a95-bcf6-976d21f1e169">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FSplit%20data%20-%20Stanford%20Dogs.png?alt=media&token=89cbe1cc-cbf3-43ad-8953-203e1e0ef571">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Ftrain%20cmd.png?alt=media&token=37e3ed7f-c395-45b0-8ee6-a035a19252b3">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Ftrain%20process.png?alt=media&token=16887b39-31a5-43e6-b41e-5fc0a9cb9378">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Fresult.png?alt=media&token=6b320fb8-ca74-4661-9dc0-c34cb1b839a6">
+<meta property="article:published_time" content="2022-04-17T05:32:54.000Z">
+<meta property="article:modified_time" content="2022-04-22T09:28:20.720Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FOriginal%20data%20-%20CUB200.png?alt=media&token=2d607547-c45b-47a4-8281-422391cde43d">
 
 
-<link rel="canonical" href="https://leonicehot.github.io/2021/12/11/%E6%AA%A2%E8%A6%96%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E6%A8%A1%E5%9E%8B%E5%8F%83%E6%95%B8%E7%B8%BD%E9%87%8F/">
+<link rel="canonical" href="https://leonicehot.github.io/2022/04/17/L2T-ww/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2021/12/11/%E6%AA%A2%E8%A6%96%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E6%A8%A1%E5%9E%8B%E5%8F%83%E6%95%B8%E7%B8%BD%E9%87%8F/","path":"2021/12/11/檢視神經網路模型參數總量/","title":"檢視神經網路模型參數總量"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2022/04/17/L2T-ww/","path":"2022/04/17/L2T-ww/","title":"L2T-ww - Learning What and Where to Transfer"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>檢視神經網路模型參數總量 | 利醬の休憩房</title>
+<title>L2T-ww - Learning What and Where to Transfer | 利醬の休憩房</title>
   
 
 
@@ -118,7 +128,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#torchsummary"><span class="nav-number">1.</span> <span class="nav-text">torchsummary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E5%8F%83%E6%95%B8"><span class="nav-number">2.</span> <span class="nav-text">模型參數</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">3.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E4%BE%86%E6%BA%90"><span class="nav-number">2.</span> <span class="nav-text">資料來源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%92%B0%E5%A2%83%E9%9C%80%E6%B1%82"><span class="nav-number">3.</span> <span class="nav-text">環境需求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E9%9B%86"><span class="nav-number">4.</span> <span class="nav-text">資料集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%93%E7%B7%B4%E6%A8%A1%E5%9E%8B"><span class="nav-number">5.</span> <span class="nav-text">訓練模型</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -192,7 +202,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2021/12/11/%E6%AA%A2%E8%A6%96%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E6%A8%A1%E5%9E%8B%E5%8F%83%E6%95%B8%E7%B8%BD%E9%87%8F/">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2022/04/17/L2T-ww/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -205,7 +215,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          檢視神經網路模型參數總量
+          L2T-ww - Learning What and Where to Transfer
         </h1>
 
         <div class="post-meta-container">
@@ -216,14 +226,14 @@
       </span>
       <span class="post-meta-item-text">發表於</span>
 
-      <time title="創建時間：2021-12-11 18:59:22" itemprop="dateCreated datePublished" datetime="2021-12-11T18:59:22+08:00">2021-12-11</time>
+      <time title="創建時間：2022-04-17 13:32:54" itemprop="dateCreated datePublished" datetime="2022-04-17T13:32:54+08:00">2022-04-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2021-12-12 21:17:41" itemprop="dateModified" datetime="2021-12-12T21:17:41+08:00">2021-12-12</time>
+      <time title="修改時間：2022-04-22 17:28:20" itemprop="dateModified" datetime="2022-04-22T17:28:20+08:00">2022-04-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -249,7 +259,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>166</span>
+      <span>576</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -267,14 +277,54 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="torchsummary"><a href="#torchsummary" class="headerlink" title="torchsummary"></a>torchsummary</h3>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">device = torch.device(&#x27;cuda&#x27; if torch.cuda.is_available() else &#x27;cpu&#x27;)</span><br><span class="line">model = SuperPointNet_gauss2()</span><br><span class="line">model = model.to(device)</span><br><span class="line"></span><br><span class="line"># check keras-like model summary using torchsummary</span><br><span class="line">from torchsummary import summary</span><br><span class="line">summary(model, input_size=(1, 240, 320))    </span><br></pre></td></tr></table></figure>
-
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>協助友人快速執行程式，將程式開發流程記錄下來以供參考，訓練完成時間約10個小時。<br>開發環境使用一張 Nvidia 2080Ti 顯示卡，程式並無大問題，簡單處理將logs資料夾刪除。<br>初步流程約半個小時內可以快速上手。</p>
 <span id="more"></span>
 
-<h3 id="模型參數"><a href="#模型參數" class="headerlink" title="模型參數"></a>模型參數</h3>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">   Layer (type)             Output Shape           Param #</span><br><span class="line">       Conv2d-1         [-1, 64, 240, 320]             640</span><br><span class="line">  BatchNorm2d-2         [-1, 64, 240, 320]             128</span><br><span class="line">         ReLU-3         [-1, 64, 240, 320]               0</span><br><span class="line">       Conv2d-4         [-1, 64, 240, 320]          36,928</span><br><span class="line">  BatchNorm2d-5         [-1, 64, 240, 320]             128</span><br><span class="line">         ReLU-6         [-1, 64, 240, 320]               0</span><br><span class="line">  double_conv-7         [-1, 64, 240, 320]               0</span><br><span class="line">       inconv-8         [-1, 64, 240, 320]               0</span><br><span class="line">    MaxPool2d-9         [-1, 64, 120, 160]               0</span><br><span class="line">      Conv2d-10         [-1, 64, 120, 160]          36,928</span><br><span class="line"> BatchNorm2d-11         [-1, 64, 120, 160]             128</span><br><span class="line">        ReLU-12         [-1, 64, 120, 160]               0</span><br><span class="line">      Conv2d-13         [-1, 64, 120, 160]          36,928</span><br><span class="line"> BatchNorm2d-14         [-1, 64, 120, 160]             128</span><br><span class="line">        ReLU-15         [-1, 64, 120, 160]               0</span><br><span class="line"> double_conv-16         [-1, 64, 120, 160]               0</span><br><span class="line">        down-17         [-1, 64, 120, 160]               0</span><br><span class="line">   MaxPool2d-18           [-1, 64, 60, 80]               0</span><br><span class="line">      Conv2d-19          [-1, 128, 60, 80]          73,856</span><br><span class="line"> BatchNorm2d-20          [-1, 128, 60, 80]             256</span><br><span class="line">        ReLU-21          [-1, 128, 60, 80]               0</span><br><span class="line">      Conv2d-22          [-1, 128, 60, 80]         147,584</span><br><span class="line"> BatchNorm2d-23          [-1, 128, 60, 80]             256</span><br><span class="line">        ReLU-24          [-1, 128, 60, 80]               0</span><br><span class="line"> double_conv-25          [-1, 128, 60, 80]               0</span><br><span class="line">        down-26          [-1, 128, 60, 80]               0</span><br><span class="line">   MaxPool2d-27          [-1, 128, 30, 40]               0</span><br><span class="line">      Conv2d-28          [-1, 128, 30, 40]         147,584</span><br><span class="line"> BatchNorm2d-29          [-1, 128, 30, 40]             256</span><br><span class="line">        ReLU-30          [-1, 128, 30, 40]               0</span><br><span class="line">      Conv2d-31          [-1, 128, 30, 40]         147,584</span><br><span class="line"> BatchNorm2d-32          [-1, 128, 30, 40]             256</span><br><span class="line">        ReLU-33          [-1, 128, 30, 40]               0</span><br><span class="line"> double_conv-34          [-1, 128, 30, 40]               0</span><br><span class="line">        down-35          [-1, 128, 30, 40]               0</span><br><span class="line">      Conv2d-36          [-1, 256, 30, 40]         295,168</span><br><span class="line"> BatchNorm2d-37          [-1, 256, 30, 40]             512</span><br><span class="line">        ReLU-38          [-1, 256, 30, 40]               0</span><br><span class="line">      Conv2d-39           [-1, 65, 30, 40]          16,705</span><br><span class="line"> BatchNorm2d-40           [-1, 65, 30, 40]             130</span><br><span class="line">      Conv2d-41          [-1, 256, 30, 40]         295,168</span><br><span class="line"> BatchNorm2d-42          [-1, 256, 30, 40]             512</span><br><span class="line">        ReLU-43          [-1, 256, 30, 40]               0</span><br><span class="line">      Conv2d-44          [-1, 256, 30, 40]          65,792</span><br><span class="line"> BatchNorm2d-45          [-1, 256, 30, 40]             512</span><br><span class="line">      Conv2d-46          [-1, 256, 30, 40]          65,792</span><br><span class="line">      Conv2d-47          [-1, 256, 30, 40]          65,792</span><br><span class="line">      Conv2d-48          [-1, 256, 30, 40]          65,792</span><br><span class="line">LinearAttentionX-49      [-1, 256, 30, 40]               0  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><ul>
-<li>Check the total number of parameters in a PyTorch model<br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/49201236/check-the-total-number-of-parameters-in-a-pytorch-model">https://stackoverflow.com/questions/49201236/check-the-total-number-of-parameters-in-a-pytorch-model</a></li>
+<h1 id="資料來源"><a href="#資料來源" class="headerlink" title="資料來源"></a>資料來源</h1><ul>
+<li><p>Source Code - L2T-ww<br><a target="_blank" rel="noopener" href="https://github.com/alinlab/L2T-ww">https://github.com/alinlab/L2T-ww</a></p>
+</li>
+<li><p>ICML 2019 Paper - Learning What and Where to Transfer<br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1905.05901.pdf">https://arxiv.org/pdf/1905.05901.pdf</a></p>
+</li>
+</ul>
+<h1 id="環境需求"><a href="#環境需求" class="headerlink" title="環境需求"></a>環境需求</h1><ul>
+<li>python&gt;&#x3D;3.6</li>
+<li>pytorch&gt;&#x3D;1.0</li>
+<li>torchvision</li>
+<li>cuda&gt;&#x3D;9.0</li>
+</ul>
+<h1 id="資料集"><a href="#資料集" class="headerlink" title="資料集"></a>資料集</h1><p>將下載後的檔案根據下圖所示建立該目錄</p>
+<ul>
+<li>The Caltech-UCSD Birds-200-2011 (CUB-200)<br><a target="_blank" rel="noopener" href="https://data.deepai.org/CUB200(2011).zip">https://data.deepai.org/CUB200(2011).zip</a></li>
+</ul>
+<ul>
+<li>Run cub200.py</li>
+</ul>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FOriginal%20data%20-%20CUB200.png?alt=media&token=2d607547-c45b-47a4-8281-422391cde43d" alt="Original data - CUB200"></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Fcub200%20dataset.png?alt=media&token=b0536668-a66b-4428-8c7a-0488b62f9454" alt="cub200 dataset"></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FSplit%20data%20-%20CUB200.png?alt=media&token=752d4444-c834-496d-bd83-9339ffeb7fb7" alt="Split data - CUB200"></p>
+<ul>
+<li>Stanford Dogs datasets<br><a target="_blank" rel="noopener" href="http://vision.stanford.edu/aditya86/ImageNetDogs/">http://vision.stanford.edu/aditya86/ImageNetDogs/</a><br>下載對應的目錄<ul>
+<li>Images</li>
+<li>List</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Run dog.py<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FOriginal%20data%20-%20Stanford%20Dogs.png?alt=media&token=54f61451-0002-4986-aeda-746d890eead5" alt="Original data - Stanford Dogs"></li>
+</ul>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Fdog%20dataset.png?alt=media&token=68a729ca-b375-4a95-bcf6-976d21f1e169" alt="dog dataset"></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FSplit%20data%20-%20Stanford%20Dogs.png?alt=media&token=89cbe1cc-cbf3-43ad-8953-203e1e0ef571" alt="Split data - Stanford Dogs"></p>
+<h1 id="訓練模型"><a href="#訓練模型" class="headerlink" title="訓練模型"></a>訓練模型</h1><p>開啟終端機，切換路徑至專案根目錄，輸入指令，開始訓練。</p>
+<ul>
+<li><p>切換至專案目錄<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Ftrain%20cmd.png?alt=media&token=37e3ed7f-c395-45b0-8ee6-a035a19252b3" alt="train cmd"></p>
+</li>
+<li><p>指令 (Windows)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">python train_l2t_ww.py --dataset dog --datasplit dog --dataroot ./data/dog --experiment ./logs/dog/</span><br><span class="line"></span><br><span class="line">python train_l2t_ww.py --dataset cub200 --datasplit cub200 --dataroot ./data/CUB_200_2011 --experiment ./logs/CUB_200_2011/</span><br><span class="line"></span><br><span class="line">python train_l2t_ww.py --dataset cifar100 --datasplit cifar100 --dataroot ./data/ --experiment logs/cifar100_0/ --source-path logs --source-model resnet32 --source-domain tinyimagenet-200 --target-model vgg9_bn --pairs 4-0,4-1,4-2,4-3,4-4,9-0,9-1,9-2,9-3,9-4,14-0,14-1,14-2,14-3,14-4 --batchSize 128</span><br><span class="line"></span><br><span class="line">python train_l2t_ww.py --dataset stl10 --datasplit stl10 --dataroot ./data/ --experiment logs/stl10_0/ --source-path logs --source-model resnet32 --source-domain tinyimagenet-200 --target-model vgg9_bn --pairs 4-0,4-1,4-2,4-3,4-4,9-0,9-1,9-2,9-3,9-4,14-0,14-1,14-2,14-3,14-4 --batchSize 128</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>訓練過程紀錄<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Ftrain%20process.png?alt=media&token=16887b39-31a5-43e6-b41e-5fc0a9cb9378" alt="train process"></p>
+</li>
+<li><p>訓練結果<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Fresult.png?alt=media&token=6b320fb8-ca74-4661-9dc0-c34cb1b839a6" alt="result"></p>
+</li>
 </ul>
 
     </div>
@@ -293,7 +343,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://leonicehot.github.io/2021/12/11/%E6%AA%A2%E8%A6%96%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E6%A8%A1%E5%9E%8B%E5%8F%83%E6%95%B8%E7%B8%BD%E9%87%8F/" title="檢視神經網路模型參數總量">https://leonicehot.github.io/2021/12/11/檢視神經網路模型參數總量/</a>
+      <a href="https://leonicehot.github.io/2022/04/17/L2T-ww/" title="L2T-ww - Learning What and Where to Transfer">https://leonicehot.github.io/2022/04/17/L2T-ww/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -306,11 +356,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2022/03/05/Hexo-%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD/" rel="prev" title="Hexo 常用功能集結">
+                  <i class="fa fa-chevron-left"></i> Hexo 常用功能集結
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/12/11/%E5%87%8D%E7%B5%90%E5%8F%83%E6%95%B8/" rel="next" title="凍結參數">
-                  凍結參數 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
