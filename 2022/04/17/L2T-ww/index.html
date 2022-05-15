@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Ftrain%20process.png?alt=media&token=16887b39-31a5-43e6-b41e-5fc0a9cb9378">
 <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Fresult.png?alt=media&token=6b320fb8-ca74-4661-9dc0-c34cb1b839a6">
 <meta property="article:published_time" content="2022-04-17T05:32:54.000Z">
-<meta property="article:modified_time" content="2022-04-22T09:28:20.720Z">
+<meta property="article:modified_time" content="2022-04-22T10:47:41.931Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FOriginal%20data%20-%20CUB200.png?alt=media&token=2d607547-c45b-47a4-8281-422391cde43d">
@@ -135,24 +135,24 @@
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">利醬</p>
-  <div class="site-description" itemprop="description"></div>
+  <div class="site-description" itemprop="description">Don't be afraid of change; growing up is also a form of change.</div>
 </div>
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -207,7 +207,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="利醬">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="Don't be afraid of change; growing up is also a form of change.">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -233,7 +233,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-04-22 17:28:20" itemprop="dateModified" datetime="2022-04-22T17:28:20+08:00">2022-04-22</time>
+      <time title="修改時間：2022-04-22 18:47:41" itemprop="dateModified" datetime="2022-04-22T18:47:41+08:00">2022-04-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -259,7 +259,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>576</span>
+      <span>623</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -292,7 +292,7 @@
 <li>torchvision</li>
 <li>cuda&gt;&#x3D;9.0</li>
 </ul>
-<h1 id="資料集"><a href="#資料集" class="headerlink" title="資料集"></a>資料集</h1><p>將下載後的檔案根據下圖所示建立該目錄</p>
+<h1 id="資料集"><a href="#資料集" class="headerlink" title="資料集"></a>資料集</h1><p>將下載後的檔案根據下圖所示建立該目錄，<br>只針對CUB-200 datasets與Stanford Dogs datasets，其餘未測試。</p>
 <ul>
 <li>The Caltech-UCSD Birds-200-2011 (CUB-200)<br><a target="_blank" rel="noopener" href="https://data.deepai.org/CUB200(2011).zip">https://data.deepai.org/CUB200(2011).zip</a></li>
 </ul>
@@ -318,7 +318,7 @@
 <ul>
 <li><p>切換至專案目錄<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Ftrain%20cmd.png?alt=media&token=37e3ed7f-c395-45b0-8ee6-a035a19252b3" alt="train cmd"></p>
 </li>
-<li><p>指令 (Windows)</p>
+<li><p>指令 (Windows) </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">python train_l2t_ww.py --dataset dog --datasplit dog --dataroot ./data/dog --experiment ./logs/dog/</span><br><span class="line"></span><br><span class="line">python train_l2t_ww.py --dataset cub200 --datasplit cub200 --dataroot ./data/CUB_200_2011 --experiment ./logs/CUB_200_2011/</span><br><span class="line"></span><br><span class="line">python train_l2t_ww.py --dataset cifar100 --datasplit cifar100 --dataroot ./data/ --experiment logs/cifar100_0/ --source-path logs --source-model resnet32 --source-domain tinyimagenet-200 --target-model vgg9_bn --pairs 4-0,4-1,4-2,4-3,4-4,9-0,9-1,9-2,9-3,9-4,14-0,14-1,14-2,14-3,14-4 --batchSize 128</span><br><span class="line"></span><br><span class="line">python train_l2t_ww.py --dataset stl10 --datasplit stl10 --dataroot ./data/ --experiment logs/stl10_0/ --source-path logs --source-model resnet32 --source-domain tinyimagenet-200 --target-model vgg9_bn --pairs 4-0,4-1,4-2,4-3,4-4,9-0,9-1,9-2,9-3,9-4,14-0,14-1,14-2,14-3,14-4 --batchSize 128</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>訓練過程紀錄<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Ftrain%20process.png?alt=media&token=16887b39-31a5-43e6-b41e-5fc0a9cb9378" alt="train process"></p>
@@ -361,6 +361,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2022/04/22/Firebase-%E7%94%A8%E9%80%94/" rel="next" title="Firebase 用途介紹">
+                  Firebase 用途介紹 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -392,13 +395,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">9k</span>
+    <span title="總字數">13k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">16 分鐘</span>
+    <span title="所需總閱讀時間">23 分鐘</span>
   </span>
 </div>
 <div class="busuanzi-count">
