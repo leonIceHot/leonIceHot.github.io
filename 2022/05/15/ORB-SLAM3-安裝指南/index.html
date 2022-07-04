@@ -27,10 +27,12 @@
 <meta property="og:site_name" content="利醬の休憩房">
 <meta property="og:description" content="前言ORB-SLAM3 添加了視覺慣性處理，除了可用於單眼相機、立體相機、深度相機，亦支援針孔相機模型與魚眼相機模型等。紀錄從beta版本更新至1.0的過程。">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/ORB-SLAM3%2Fopencv%204.4%20error.png?alt=media&token=3d479ace-2928-43f8-b6a0-bccb3a42a2da">
 <meta property="article:published_time" content="2022-05-15T03:00:37.000Z">
-<meta property="article:modified_time" content="2022-05-18T14:22:33.068Z">
+<meta property="article:modified_time" content="2022-07-04T15:39:22.230Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/ORB-SLAM3%2Fopencv%204.4%20error.png?alt=media&token=3d479ace-2928-43f8-b6a0-bccb3a42a2da">
 
 
 <link rel="canonical" href="https://leonicehot.github.io/2022/05/15/ORB-SLAM3-%E5%AE%89%E8%A3%9D%E6%8C%87%E5%8D%97/">
@@ -118,7 +120,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83"><span class="nav-number">2.</span> <span class="nav-text">開發環境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A0%90%E5%85%88%E5%AE%89%E8%A3%9D"><span class="nav-number">3.</span> <span class="nav-text">預先安裝</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DEigen3"><span class="nav-number">4.</span> <span class="nav-text">安裝Eigen3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DPangolin"><span class="nav-number">5.</span> <span class="nav-text">安裝Pangolin</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DOpenCV"><span class="nav-number">6.</span> <span class="nav-text">安裝OpenCV</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9Dg2o"><span class="nav-number">7.</span> <span class="nav-text">安裝g2o</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DDBoW2"><span class="nav-number">8.</span> <span class="nav-text">安裝DBoW2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-Sophus"><span class="nav-number">9.</span> <span class="nav-text">安裝 Sophus</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ORB-SLAM3-%E7%B7%A8%E8%AD%AF"><span class="nav-number">10.</span> <span class="nav-text">ORB-SLAM3 編譯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%B7%E8%A1%8C-%E5%BE%85%E9%A9%97%E8%AD%89"><span class="nav-number">11.</span> <span class="nav-text">執行 (待驗證)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Monocular"><span class="nav-number">11.1.</span> <span class="nav-text">Monocular</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stereo"><span class="nav-number">11.2.</span> <span class="nav-text">Stereo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RGB-D"><span class="nav-number">11.3.</span> <span class="nav-text">RGB-D</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83"><span class="nav-number">2.</span> <span class="nav-text">開發環境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A0%90%E5%85%88%E5%AE%89%E8%A3%9D"><span class="nav-number">3.</span> <span class="nav-text">預先安裝</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DEigen3"><span class="nav-number">4.</span> <span class="nav-text">安裝Eigen3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DPangolin"><span class="nav-number">5.</span> <span class="nav-text">安裝Pangolin</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DOpenCV"><span class="nav-number">6.</span> <span class="nav-text">安裝OpenCV</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9Dg2o"><span class="nav-number">7.</span> <span class="nav-text">安裝g2o</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DDBoW2"><span class="nav-number">8.</span> <span class="nav-text">安裝DBoW2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-Sophus"><span class="nav-number">9.</span> <span class="nav-text">安裝 Sophus</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ORB-SLAM3-%E7%B7%A8%E8%AD%AF"><span class="nav-number">10.</span> <span class="nav-text">ORB-SLAM3 編譯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%B7%E8%A1%8C-%E8%88%8A%E7%89%88"><span class="nav-number">11.</span> <span class="nav-text">執行 (舊版)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Monocular"><span class="nav-number">11.1.</span> <span class="nav-text">Monocular</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stereo"><span class="nav-number">11.2.</span> <span class="nav-text">Stereo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RGB-D"><span class="nav-number">11.3.</span> <span class="nav-text">RGB-D</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%B7%E8%A1%8C-%E6%96%B0%E7%89%88"><span class="nav-number">12.</span> <span class="nav-text">執行 (新版)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Monocular-1"><span class="nav-number">12.1.</span> <span class="nav-text">Monocular</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stereo-1"><span class="nav-number">12.2.</span> <span class="nav-text">Stereo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RGB-D-1"><span class="nav-number">12.3.</span> <span class="nav-text">RGB-D</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%BB%E5%8B%95%E8%BB%8C%E8%B7%A1"><span class="nav-number">13.</span> <span class="nav-text">移動軌跡</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -223,7 +225,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-05-18 22:22:33" itemprop="dateModified" datetime="2022-05-18T22:22:33+08:00">2022-05-18</time>
+      <time title="修改時間：2022-07-04 23:39:22" itemprop="dateModified" datetime="2022-07-04T23:39:22+08:00">2022-07-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -249,7 +251,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>1.9k</span>
+      <span>2.4k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -279,35 +281,38 @@
 <p>從github下載v0.6<br>git clone <a target="_blank" rel="noopener" href="https://github.com/stevenlovegrove/Pangolin/tree/v0.6">https://github.com/stevenlovegrove/Pangolin/tree/v0.6</a></p>
 <p>編譯安裝<br>cd Pangolin<br>mkdir build<br>cd build<br>cmake ..<br>make -j 20    # 數字代表執行緒<br>sudo make install</p>
 <h1 id="安裝OpenCV"><a href="#安裝OpenCV" class="headerlink" title="安裝OpenCV"></a>安裝OpenCV</h1><p>新版 - OpenCV 4.4<br><a target="_blank" rel="noopener" href="https://github.com/opencv/opencv/archive/4.4.0.zip">https://github.com/opencv/opencv/archive/4.4.0.zip</a></p>
+<p>修正OpenCV ver.4.4 Error<br>opencv&#x2F;modules&#x2F;gapi&#x2F;test&#x2F;gapi_async_test.cpp 添加兩行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;thread&gt;</span><br><span class="line">#include&lt;throno&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/ORB-SLAM3%2Fopencv%204.4%20error.png?alt=media&token=3d479ace-2928-43f8-b6a0-bccb3a42a2da" alt="opencv 4.4 error"></p>
 <p>舊版 - OpenCV 3.4<br><a target="_blank" rel="noopener" href="https://github.com/opencv/opencv/archive/3.4.zip">https://github.com/opencv/opencv/archive/3.4.zip</a></p>
-<p>必要選項<br>[compiler]<br>sudo apt-get install build-essential<br>[required]<br>$ sudo apt-get install libgtk2.0-dev libgtk-3-dev libavcodec-dev libavformat-dev libswscale-dev<br>[optional]<br>sudo apt install python-dev python-numpy python3-dev python3-numpy</p>
+<p>必要選項<br>[compiler]<br>sudo apt-get install build-essential<br>[required]<br>sudo apt-get install libgtk2.0-dev libgtk-3-dev libavcodec-dev libavformat-dev libswscale-dev<br>[optional]<br>sudo apt install python-dev python-numpy python3-dev python3-numpy</p>
 <p>編譯安裝 </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd opencv</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake -D CMAKE_BUILD_TYPE=Release -D OPENCV_GENERATE_PKGCONFIG=YES -D CMAKE_INSTALL_PREFIX=/usr/local ..</span><br><span class="line">make -j 8 # 數字代表執行緒</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
 
 <h1 id="安裝g2o"><a href="#安裝g2o" class="headerlink" title="安裝g2o"></a>安裝g2o</h1><p>[required]<br>sudo apt-get install libeigen3-dev libsuitesparse-dev qtdeclarative5-dev qt5-qmake libqglviewer-dev</p>
-<p>cd Thirdparty&#x2F;g2o<br>mkdir build<br>cd build<br>cmake .. -DCMAKE_BUILD_TYPE&#x3D;Release<br>make -j8</p>
+<p>cd Thirdparty&#x2F;g2o<br>mkdir build<br>cd build<br>cmake .. -DCMAKE_BUILD_TYPE&#x3D;Release<br>make -j 8</p>
 <h1 id="安裝DBoW2"><a href="#安裝DBoW2" class="headerlink" title="安裝DBoW2"></a>安裝DBoW2</h1><p>[required]<br>sudo apt-get install libboost-dev</p>
-<p>cd Thirdparty&#x2F;DBoW2<br>mkdir build<br>cd build<br>cmake .. -DCMAKE_BUILD_TYPE&#x3D;Release<br>make -j8 # runs 8 jobs in parallel</p>
-<h1 id="安裝-Sophus"><a href="#安裝-Sophus" class="headerlink" title="安裝 Sophus"></a>安裝 Sophus</h1><p>cd Thirdparty&#x2F;Sophus<br>mkdir build<br>cd build<br>cmake .. -DCMAKE_BUILD_TYPE&#x3D;Release<br>make -j8 # runs 8 jobs in parallel</p>
+<p>cd Thirdparty&#x2F;DBoW2<br>mkdir build<br>cd build<br>cmake .. -DCMAKE_BUILD_TYPE&#x3D;Release<br>make -j 8 # runs 8 jobs in parallel</p>
+<h1 id="安裝-Sophus"><a href="#安裝-Sophus" class="headerlink" title="安裝 Sophus"></a>安裝 Sophus</h1><p>cd Thirdparty&#x2F;Sophus<br>mkdir build<br>cd build<br>cmake .. -DCMAKE_BUILD_TYPE&#x3D;Release<br>make -j 8 # runs 8 jobs in parallel</p>
 <h1 id="ORB-SLAM3-編譯"><a href="#ORB-SLAM3-編譯" class="headerlink" title="ORB-SLAM3 編譯"></a>ORB-SLAM3 編譯</h1><p>cd ORB_SLAM3<br>chmod +x build.sh<br>.&#x2F;build.sh</p>
-<h1 id="執行-待驗證"><a href="#執行-待驗證" class="headerlink" title="執行 (待驗證)"></a>執行 (待驗證)</h1><h2 id="Monocular"><a href="#Monocular" class="headerlink" title="Monocular"></a>Monocular</h2><p>Monocular - EuRoC</p>
+<h1 id="執行-舊版"><a href="#執行-舊版" class="headerlink" title="執行 (舊版)"></a>執行 (舊版)</h1><h2 id="Monocular"><a href="#Monocular" class="headerlink" title="Monocular"></a>Monocular</h2><p>Monocular - EuRoC</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./Examples/Monocular/mono_euroc</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/Monocular/EuRoC.yaml</span><br><span class="line">./Dataset/EuRoC/MH01</span><br><span class="line">./Examples/Monocular/EuRoC_TimeStamps/MH01.txt dataset-MH01_mono</span><br></pre></td></tr></table></figure>
 <p>Monocular – TUM</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">./Examples/Monocular/mono_tum</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/Monocular/TUM2.yaml</span><br><span class="line">./Dataset/TUM/rgbd_dataset_freiburg2_desk</span><br></pre></td></tr></table></figure>
 
-<p>Monocullar - KITTI</p>
+<p>Monocullar - KITTI </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">./Examples/Monocular/mono_kitti</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/Monocular/KITTI00-02.yaml</span><br><span class="line">./Dataset/KITTI/dataset/sequences/00</span><br></pre></td></tr></table></figure>
 
 <p>Monocullar – Mono_tum_vi</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./Examples/Monocular/mono_tum_vi</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/Monocular/TUM_512.yaml</span><br><span class="line">./Dataset/TUMVI/dataset-room1_512_16/mav0/cam0/data</span><br><span class="line">./Examples/Monocular/TUM_TimeStamps/dataset-room1_512.txt dataset-room1_512_mono</span><br></pre></td></tr></table></figure>
 
-<p>Monocular + IMU -  Mono mono_inertial_euroc</p>
+<p>Monocular + IMU -  Mono mono_inertial_euroc </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./Examples/Monocular-Inertial/mono_inertial_euroc</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/Monocular-Inertial/EuRoC.yaml</span><br><span class="line">./Dataset/EuRoC/MH01</span><br><span class="line">./Examples/Monocular-Inertial/EuRoC_TimeStamps/MH01.txt  dataset-MH01_monoi</span><br></pre></td></tr></table></figure>
 
-<p>Monocular + IMU -  Mono mono_inertial_tum_vi &#x3D;&#x3D;&gt;Error</p>
+<p>Monocular + IMU -  Mono mono_inertial_tum_vi </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">./Examples/Monocular-Inertial/mono_inertial_tum_vi</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/Monocular-Inertial/TUM_512.yaml</span><br><span class="line">./Dataset/TUMVI/dataset-slides1_512_16/mav0/cam1/data</span><br><span class="line">./Examples/Monocular-Inertial/TUM_TimeStamps/dataset-slides1_512.txt </span><br><span class="line">./Examples/Monocular-Inertial/TUM_IMU/dataset-slides1_512.txt dataset-slides1_512_monoi</span><br></pre></td></tr></table></figure>
 
-<h2 id="Stereo"><a href="#Stereo" class="headerlink" title="Stereo"></a>Stereo</h2><p>Run stereo_euroc</p>
+<h2 id="Stereo"><a href="#Stereo" class="headerlink" title="Stereo"></a>Stereo</h2><p>Run stereo_euroc </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./Examples/Stereo/stereo_euroc</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/Stereo/EuRoC.yaml</span><br><span class="line">./Dataset/EuRoC/MH01</span><br><span class="line">./Examples/Stereo/EuRoC_TimeStamps/MH01.txt dataset-MH01_stereo</span><br></pre></td></tr></table></figure>
 
 <p>Run stereo_kitti</p>
@@ -322,8 +327,46 @@
 <p>Run stereo_inertial_tum_vi</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">./Examples/Stereo-Inertial/stereo_inertial_tum_vi</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/Stereo-Inertial/TUM_512.yaml</span><br><span class="line">./Dataset/TUMVI/dataset-slides1_512_16/mav0/cam0/data</span><br><span class="line">./Dataset/TUMVI/dataset-slides1_512_16/mav0/cam1/data</span><br><span class="line">./Examples/Stereo-Inertial/TUM_TimeStamps/dataset-slides1_512.txt </span><br><span class="line">./Examples/Stereo-Inertial/TUM_IMU/dataset-slides1_512.txt dataset-slides1_512_stereoi</span><br></pre></td></tr></table></figure>
 
-<h2 id="RGB-D"><a href="#RGB-D" class="headerlink" title="RGB-D"></a>RGB-D</h2><p>RGB-D TUM</p>
+<h2 id="RGB-D"><a href="#RGB-D" class="headerlink" title="RGB-D"></a>RGB-D</h2><p>RGB-D TUM </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./Examples/RGB-D/rgbd_tum</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/RGB-D/TUM1.yaml</span><br><span class="line">./Dataset/TUM/rgbd_dataset_freiburg2_desk</span><br><span class="line">./Examples/RGB-D/associations/fr2_desk.txt</span><br></pre></td></tr></table></figure>
+
+<h1 id="執行-新版"><a href="#執行-新版" class="headerlink" title="執行 (新版)"></a>執行 (新版)</h1><h2 id="Monocular-1"><a href="#Monocular-1" class="headerlink" title="Monocular"></a>Monocular</h2><p>Monocular - EuRoC</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./Examples/Monocular/mono_euroc</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/Monocular/EuRoC.yaml</span><br><span class="line">./Dataset/EuRoC/MH01</span><br><span class="line">./Examples/Monocular/EuRoC_TimeStamps/MH01.txt dataset-MH01_mono</span><br></pre></td></tr></table></figure>
+<p>Monocular – TUM (ok)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">./Examples/Monocular/mono_tum</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/Monocular/TUM2.yaml</span><br><span class="line">./Dataset/TUM/rgbd_dataset_freiburg2_desk</span><br></pre></td></tr></table></figure>
+
+<p>Monocullar - KITTI (ok)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">./Examples/Monocular/mono_kitti</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/Monocular/KITTI00-02.yaml</span><br><span class="line">./Dataset/KITTI/dataset/sequences/00</span><br></pre></td></tr></table></figure>
+
+<p>Monocullar – Mono_tum_vi</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./Examples/Monocular/mono_tum_vi</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/Monocular/TUM_512.yaml</span><br><span class="line">./Dataset/TUMVI/dataset-room1_512_16/mav0/cam0/data</span><br><span class="line">./Examples/Monocular/TUM_TimeStamps/dataset-room1_512.txt dataset-room1_512_mono</span><br></pre></td></tr></table></figure>
+
+<p>Monocular + IMU -  Mono mono_inertial_euroc (ok)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./Examples/Monocular-Inertial/mono_inertial_euroc</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/Monocular-Inertial/EuRoC.yaml</span><br><span class="line">./Dataset/EuRoC/MH01</span><br><span class="line">./Examples/Monocular-Inertial/EuRoC_TimeStamps/MH01.txt  dataset-MH01_monoi</span><br></pre></td></tr></table></figure>
+
+<p>Monocular + IMU -  Mono mono_inertial_tum_vi &#x3D;&#x3D;&gt;Error</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">./Examples/Monocular-Inertial/mono_inertial_tum_vi</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/Monocular-Inertial/TUM_512.yaml</span><br><span class="line">./Dataset/TUMVI/dataset-slides1_512_16/mav0/cam1/data</span><br><span class="line">./Examples/Monocular-Inertial/TUM_TimeStamps/dataset-slides1_512.txt </span><br><span class="line">./Examples/Monocular-Inertial/TUM_IMU/dataset-slides1_512.txt dataset-slides1_512_monoi</span><br></pre></td></tr></table></figure>
+
+<h2 id="Stereo-1"><a href="#Stereo-1" class="headerlink" title="Stereo"></a>Stereo</h2><p>Run stereo_euroc (ok)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./Examples/Stereo/stereo_euroc</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/Stereo/EuRoC.yaml</span><br><span class="line">./Dataset/EuRoC/MH01</span><br><span class="line">./Examples/Stereo/EuRoC_TimeStamps/MH01.txt dataset-MH01_stereo</span><br></pre></td></tr></table></figure>
+
+<p>Run stereo_kitti</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">./Examples/Stereo/stereo_kitti</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/Stereo/KITTI00-02.yaml</span><br><span class="line">./Dataset/KITTI/dataset/sequences/00     </span><br></pre></td></tr></table></figure>
+
+<p>Run stereo_tum_vi (ok)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">./Examples/Stereo/stereo_tum_vi</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/Stereo/TUM_512.yaml</span><br><span class="line">./Dataset/TUMVI/dataset-slides1_512_16/mav0/cam0/data</span><br><span class="line">./Dataset/TUMVI/dataset-slides1_512_16/mav0/cam1/data</span><br><span class="line">./Examples/Stereo/TUM_TimeStamps/dataset-slides1_512.txt </span><br></pre></td></tr></table></figure>
+
+<p>Run stereo_inertial_euroc</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./Examples/Stereo-Inertial/stereo_inertial_euroc</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/Stereo-Inertial/EuRoC.yaml</span><br><span class="line">./Dataset/EuRoC/MH01</span><br><span class="line">./Examples/Stereo-Inertial/EuRoC_TimeStamps/MH01.txt dataset-MH01_stereoi</span><br></pre></td></tr></table></figure>
+
+<p>Run stereo_inertial_tum_vi</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">./Examples/Stereo-Inertial/stereo_inertial_tum_vi</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/Stereo-Inertial/TUM_512.yaml</span><br><span class="line">./Dataset/TUMVI/dataset-slides1_512_16/mav0/cam0/data</span><br><span class="line">./Dataset/TUMVI/dataset-slides1_512_16/mav0/cam1/data</span><br><span class="line">./Examples/Stereo-Inertial/TUM_TimeStamps/dataset-slides1_512.txt </span><br><span class="line">./Examples/Stereo-Inertial/TUM_IMU/dataset-slides1_512.txt dataset-slides1_512_stereoi</span><br></pre></td></tr></table></figure>
+
+<h2 id="RGB-D-1"><a href="#RGB-D-1" class="headerlink" title="RGB-D"></a>RGB-D</h2><p>RGB-D TUM (ok)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./Examples/RGB-D/rgbd_tum</span><br><span class="line">./Vocabulary/ORBvoc.txt</span><br><span class="line">./Examples/RGB-D/TUM1.yaml</span><br><span class="line">./Dataset/TUM/rgbd_dataset_freiburg2_desk</span><br><span class="line">./Examples/RGB-D/associations/fr2_desk.txt</span><br></pre></td></tr></table></figure>
+
+<h1 id="移動軌跡"><a href="#移動軌跡" class="headerlink" title="移動軌跡"></a>移動軌跡</h1><p>儲存的軌跡是TUM格式，可以直接用evo显示。<br><a target="_blank" rel="noopener" href="https://github.com/MichaelGrupp/evo/wiki">https://github.com/MichaelGrupp/evo/wiki</a></p>
+
     </div>
 
     
@@ -392,13 +435,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">15k</span>
+    <span title="總字數">16k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">28 分鐘</span>
+    <span title="所需總閱讀時間">29 分鐘</span>
   </span>
 </div>
 <div class="busuanzi-count">
