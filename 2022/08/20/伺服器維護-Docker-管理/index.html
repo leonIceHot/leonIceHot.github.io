@@ -20,27 +20,31 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="參考資料 從開發者角度看 Web 3.0 ，元宇宙的重要基礎建設「所建即所得」https:&#x2F;&#x2F;www.techbang.com&#x2F;posts&#x2F;92487-web-30-is-built-as-you-get  What Is Web 3.0? The Future of the Internethttps:&#x2F;&#x2F;www.singlegrain.com&#x2F;web3&#x2F;web-3-0&#x2F;  Alabdulwah">
+<meta name="description" content="問題點有一天伺服器重新開機完，啟動Docker給使用者使用時，使用者連線進入docker container 環境中出現奇怪的現象，(1) nvidia-smi無法顯示(2) torch.cuda.is_available() 回傳False(3) Let’s use 0 GPUs.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Web 3.0: The Decentralized Web ">
-<meta property="og:url" content="https://leonicehot.github.io/2022/01/20/Web-3-0-The-Decentralized-Web/index.html">
+<meta property="og:title" content="伺服器維護 - Docker 管理">
+<meta property="og:url" content="https://leonicehot.github.io/2022/08/20/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker-%E7%AE%A1%E7%90%86/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="參考資料 從開發者角度看 Web 3.0 ，元宇宙的重要基礎建設「所建即所得」https:&#x2F;&#x2F;www.techbang.com&#x2F;posts&#x2F;92487-web-30-is-built-as-you-get  What Is Web 3.0? The Future of the Internethttps:&#x2F;&#x2F;www.singlegrain.com&#x2F;web3&#x2F;web-3-0&#x2F;  Alabdulwah">
+<meta property="og:description" content="問題點有一天伺服器重新開機完，啟動Docker給使用者使用時，使用者連線進入docker container 環境中出現奇怪的現象，(1) nvidia-smi無法顯示(2) torch.cuda.is_available() 回傳False(3) Let’s use 0 GPUs.">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-01-20T13:43:51.000Z">
-<meta property="article:modified_time" content="2022-04-22T09:44:12.624Z">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker%E7%AE%A1%E7%90%86%2Fconfig.png?alt=media&token=b216826c-507b-49e3-9720-1af1835a0926">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker%E7%AE%A1%E7%90%86%2Fgrub.png?alt=media&token=4af854b1-02cc-43dc-bbc3-4d0d53ac6a38">
+<meta property="article:published_time" content="2022-08-20T10:39:33.000Z">
+<meta property="article:modified_time" content="2022-08-20T11:08:34.755Z">
 <meta property="article:author" content="利醬">
+<meta property="article:tag" content="Docker">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker%E7%AE%A1%E7%90%86%2Fconfig.png?alt=media&token=b216826c-507b-49e3-9720-1af1835a0926">
 
 
-<link rel="canonical" href="https://leonicehot.github.io/2022/01/20/Web-3-0-The-Decentralized-Web/">
+<link rel="canonical" href="https://leonicehot.github.io/2022/08/20/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker-%E7%AE%A1%E7%90%86/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2022/01/20/Web-3-0-The-Decentralized-Web/","path":"2022/01/20/Web-3-0-The-Decentralized-Web/","title":"Web 3.0: The Decentralized Web "}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2022/08/20/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker-%E7%AE%A1%E7%90%86/","path":"2022/08/20/伺服器維護-Docker-管理/","title":"伺服器維護 - Docker 管理"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Web 3.0: The Decentralized Web  | 利醬の休憩房</title>
+<title>伺服器維護 - Docker 管理 | 利醬の休憩房</title>
   
 
 
@@ -118,7 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">1.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%95%8F%E9%A1%8C%E9%BB%9E"><span class="nav-number">1.</span> <span class="nav-text">問題點</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%AD%E5%82%99"><span class="nav-number">2.</span> <span class="nav-text">設備</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">解決方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">參考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -192,7 +196,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2022/01/20/Web-3-0-The-Decentralized-Web/">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2022/08/20/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker-%E7%AE%A1%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -205,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Web 3.0: The Decentralized Web 
+          伺服器維護 - Docker 管理
         </h1>
 
         <div class="post-meta-container">
@@ -215,15 +219,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2022-01-20 21:43:51" itemprop="dateCreated datePublished" datetime="2022-01-20T21:43:51+08:00">2022-01-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-04-22 17:44:12" itemprop="dateModified" datetime="2022-04-22T17:44:12+08:00">2022-04-22</time>
+      <time title="創建時間：2022-08-20 18:39:33 / 修改時間：19:08:34" itemprop="dateCreated datePublished" datetime="2022-08-20T18:39:33+08:00">2022-08-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -231,7 +229,7 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Web-Development/" itemprop="url" rel="index"><span itemprop="name">Web Development</span></a>
+          <a href="/categories/Server-Management/" itemprop="url" rel="index"><span itemprop="name">Server Management</span></a>
         </span>
     </span>
 
@@ -249,7 +247,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>469</span>
+      <span>415</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -267,16 +265,27 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ol>
-<li><p>從開發者角度看 Web 3.0 ，元宇宙的重要基礎建設「所建即所得」<br><a target="_blank" rel="noopener" href="https://www.techbang.com/posts/92487-web-30-is-built-as-you-get">https://www.techbang.com/posts/92487-web-30-is-built-as-you-get</a></p>
-</li>
-<li><p>What Is Web 3.0? The Future of the Internet<br><a target="_blank" rel="noopener" href="https://www.singlegrain.com/web3/web-3-0/">https://www.singlegrain.com/web3/web-3-0/</a></p>
-</li>
-<li><p>Alabdulwahhab, F. A. (2018, April). Web 3.0: the decentralized web blockchain networks and protocol innovation. In 2018 1st International Conference on Computer Applications &amp; Information Security (ICCAIS) (pp. 1-4). IEEE.</p>
-</li>
-<li><p>The Evolution of Web: A Comparative Analysis<br><a target="_blank" rel="noopener" href="https://twitter.com/jeanyvesgonin/status/1145218985744568320">https://twitter.com/jeanyvesgonin/status/1145218985744568320</a></p>
-</li>
+        <h1 id="問題點"><a href="#問題點" class="headerlink" title="問題點"></a>問題點</h1><p>有一天伺服器重新開機完，啟動Docker給使用者使用時，<br>使用者連線進入docker container 環境中出現奇怪的現象，<br>(1) nvidia-smi無法顯示<br>(2) torch.cuda.is_available() 回傳False<br>(3) Let’s use 0 GPUs.</p>
+<span id="more"></span>
+
+<h1 id="設備"><a href="#設備" class="headerlink" title="設備"></a>設備</h1><p>Dgx Station<br>OS: Ubuntu 18.03<br>CPU: Intel Xeon E5-2698 v4 2.2GHz (20 core)<br>GPUs: 4X Tesla V100 32GB<br>System Memory: DDR4 256GB<br>Network: Double 10GBase-T(RJ-45)<br>Monitor: 3X DisplayPort, 4k solutions</p>
+<h1 id="解決方法"><a href="#解決方法" class="headerlink" title="解決方法"></a>解決方法</h1><ol>
+<li>開啟管理者權限<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure></li>
+<li>修改參數<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/default</span><br><span class="line">gedit grub</span><br><span class="line">修改 GRUB_CMDLINE_LINUX_DEFAULT=&quot;... systemd.unified_cgroup_hierarchy=false&quot;   </span><br><span class="line"></span><br><span class="line">cd /etc/nvidia-container-runtime</span><br><span class="line">gedit config.toml</span><br><span class="line">修改 no-cgroups = false</span><br></pre></td></tr></table></figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker%E7%AE%A1%E7%90%86%2Fconfig.png?alt=media&token=b216826c-507b-49e3-9720-1af1835a0926" alt="config"></li>
 </ol>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker%E7%AE%A1%E7%90%86%2Fgrub.png?alt=media&token=4af854b1-02cc-43dc-bbc3-4d0d53ac6a38" alt="grub"></p>
+<ol start="3">
+<li><p>引導配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重新啟動電腦</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>確認參數是否添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/cmdline</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h1><p>【踩坑】docker 中使用 Nvidia GPU<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/mightbxg/article/details/119733088">https://blog.csdn.net/mightbxg/article/details/119733088</a></p>
 
     </div>
 
@@ -294,7 +303,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://leonicehot.github.io/2022/01/20/Web-3-0-The-Decentralized-Web/" title="Web 3.0: The Decentralized Web ">https://leonicehot.github.io/2022/01/20/Web-3-0-The-Decentralized-Web/</a>
+      <a href="https://leonicehot.github.io/2022/08/20/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker-%E7%AE%A1%E7%90%86/" title="伺服器維護 - Docker 管理">https://leonicehot.github.io/2022/08/20/伺服器維護-Docker-管理/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -302,19 +311,19 @@
   </ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/Docker/" rel="tag"># Docker</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/01/03/Hexo-%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0/" rel="prev" title="Hexo 版本更新">
-                  <i class="fa fa-chevron-left"></i> Hexo 版本更新
+                <a href="/2022/06/01/IP-Webcam/" rel="prev" title="IP Webcam">
+                  <i class="fa fa-chevron-left"></i> IP Webcam
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/01/29/Flutter-%E7%92%B0%E5%A2%83%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%9D/" rel="next" title="Flutter 環境快速安裝">
-                  Flutter 環境快速安裝 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
