@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="generator" content="Hexo 6.3.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -272,16 +272,54 @@
 <span id="more"></span>
 <h1 id="實驗環境"><a href="#實驗環境" class="headerlink" title="實驗環境"></a>實驗環境</h1><p>背景為白色，去除紋路，亮度為明亮的條件下的影像進行前處理，前處理將影像縮放大小約略寬度800、高度600，降低多種尺度下影像誤差。開發環境為Spyder，程式語言Python ver.3.8 64 bit ，安裝套件: OpenCV ver.4.5、imutils、NumPy。</p>
 <h1 id="實驗方法"><a href="#實驗方法" class="headerlink" title="實驗方法"></a>實驗方法</h1><ol>
-<li>輸入硬幣影像</li>
-<li>影像前處理</li>
-<li>彩色影像轉換灰階影像</li>
-<li>二值化處理</li>
-<li>高斯濾波</li>
-<li>腐蝕操作</li>
-<li>霍夫變換圓檢測</li>
-<li>儲存圈出的硬幣影像</li>
-<li>透過圓的直徑區隔硬幣</li>
-<li>計算硬幣總額</li>
+<li><pre><code>輸入硬幣影像
+</code></pre>
+<ol start="2">
+<li><pre><code>影像前處理
+</code></pre>
+<ol start="3">
+<li><pre><code>彩色影像轉換灰階影像
+</code></pre>
+<ol start="4">
+<li><pre><code>二值化處理
+</code></pre>
+<ol start="5">
+<li><pre><code>高斯濾波
+</code></pre>
+<ol start="6">
+<li><pre><code>腐蝕操作
+</code></pre>
+<ol start="7">
+<li><pre><code>霍夫變換圓檢測
+</code></pre>
+<ol start="8">
+<li><pre><code>儲存圈出的硬幣影像
+</code></pre>
+<ol start="9">
+<li><pre><code>透過圓的直徑區隔硬幣
+</code></pre>
+<ol start="10">
+<li><pre><code>計算硬幣總額
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
 </ol>
 <p>程式實作</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">import cv2</span><br><span class="line">import imutils</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">def main():     </span><br><span class="line">    image = cv2.imread(&quot;./test/coins003.jpg&quot;)   # 讀取影像  </span><br><span class="line">    src = imutils.resize(image,600,800)         # w:800 h:600</span><br><span class="line">    print(f&quot;Image Size : &#123;src.shape&#125;&quot;)          # 列印影像大小</span><br><span class="line">    </span><br><span class="line">    # 灰階影像</span><br><span class="line">    gray = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)</span><br><span class="line">    </span><br><span class="line">    # 二值化處理影像</span><br><span class="line">    ret, dst_binary = cv2.threshold(gray,170,255,cv2.THRESH_BINARY_INV)</span><br><span class="line">    </span><br><span class="line">    # 進行高斯濾波</span><br><span class="line">    blurred = cv2.GaussianBlur(dst_binary,(15,15),5)</span><br><span class="line"></span><br><span class="line">    # 腐蝕操作 </span><br><span class="line">    kernel = np.ones((3, 3),np.uint8)       # 建立3x3內核</span><br><span class="line">    dst_erode = cv2.erode(blurred, kernel)    </span><br><span class="line">    </span><br><span class="line">    # 霍夫變換圓檢測</span><br><span class="line">    circles = cv2.HoughCircles(dst_erode, </span><br><span class="line">                               cv2.HOUGH_GRADIENT, </span><br><span class="line">                               1, 10, </span><br><span class="line">                               param1=100, param2=40, </span><br><span class="line">                               minRadius=3, maxRadius=50)</span><br><span class="line">    </span><br><span class="line">    for circle in circles[0]:</span><br><span class="line">        # 圓的基本資訊</span><br><span class="line">        print(circle[2])</span><br><span class="line">        # 圓心坐標</span><br><span class="line">        x = int(circle[0])</span><br><span class="line">        y = int(circle[1])</span><br><span class="line">        # 半徑</span><br><span class="line">        r = int(circle[2])</span><br><span class="line">        # 在原圖用指定顏色標記出圓的邊界</span><br><span class="line">        cv2.circle(src, (x, y), r, (255, 0, 0), 3)</span><br><span class="line">        </span><br><span class="line">    cv2.imshow(&quot;Circled&quot;,src)              # 顯示影像</span><br><span class="line">    #cv2.imwrite(&quot;./test/image003.jpg&quot;,src) # 儲存影像</span><br><span class="line"></span><br><span class="line">    # 計數硬幣</span><br><span class="line">    area = []</span><br><span class="line">    Fifty= []</span><br><span class="line">    Ten  = []</span><br><span class="line">    Five = []</span><br><span class="line">    One  = []</span><br><span class="line">    </span><br><span class="line">    size = circles[0]   </span><br><span class="line">       </span><br><span class="line">    for i in range(len(size)):</span><br><span class="line">        area.append(size[i][-1])</span><br><span class="line">       </span><br><span class="line">    for i in range(len(area)):        </span><br><span class="line">        if(area[i] &gt;= 45 and area[i] &lt;= 50):    </span><br><span class="line">            Fifty.append(area[i]) </span><br><span class="line">        elif(area[i] &gt; 35 and area[i] &lt; 45):</span><br><span class="line">            Ten.append(area[i])             </span><br><span class="line">        elif(area[i] &gt; 31 and area[i] &lt; 35):</span><br><span class="line">            Five.append(area[i])</span><br><span class="line">        elif(area[i] &gt;= 25 and area[i] &lt;= 30):</span><br><span class="line">            One.append(area[i])</span><br><span class="line">            </span><br><span class="line">    print(&quot;-&quot; *20)</span><br><span class="line">    # print(&quot;area: &quot;,area)         </span><br><span class="line">    print(&quot;Total Coin : &quot;,len(area))              </span><br><span class="line">    print(&quot;One: &quot;,One)            </span><br><span class="line">    print(&quot;Five:&quot;,Five)            </span><br><span class="line">    print(&quot;Ten :&quot;,Ten)            </span><br><span class="line">    print(&quot;Fifty:&quot;,Fifty)            </span><br><span class="line">    </span><br><span class="line">    Total = 50 * len(Fifty) + 10 * len(Ten) + 5 * len(Five) + 1 * len(One)</span><br><span class="line">    print(&quot;Money: $ &quot;, Total)</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">if __name__ == &#x27;__main__&#x27;:   </span><br><span class="line">    main()</span><br><span class="line">    cv2.waitKey(0)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line">    </span><br></pre></td></tr></table></figure>

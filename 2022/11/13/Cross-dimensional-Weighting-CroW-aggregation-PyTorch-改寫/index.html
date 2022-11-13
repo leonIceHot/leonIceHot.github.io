@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="generator" content="Hexo 6.3.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -20,12 +20,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="前言為了改善閉環檢測的方法，參考FSCW的方法，發現比較Crow的方法，便依此作為範本，實作時發現此專案是早年使用Caffe模型寫的，此模型過於過時，因此改寫為PyTorch版本。">
+<meta name="description" content="前言為了改善閉環檢測的方法，參考FSCW的方法，發現比較Crow的方法，便依此作為範本，實作時發現此專案是早年使用Caffe模型寫的，此模型已經過時，因此改寫為PyTorch版本。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Cross-dimensional Weighting (CroW) aggregation PyTorch 改寫">
+<meta property="og:title" content="Cross-dimensional Weighting (CroW) aggregation 改寫成 PyTorch版本">
 <meta property="og:url" content="https://leonicehot.github.io/2022/11/13/Cross-dimensional-Weighting-CroW-aggregation-PyTorch-%E6%94%B9%E5%AF%AB/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="前言為了改善閉環檢測的方法，參考FSCW的方法，發現比較Crow的方法，便依此作為範本，實作時發現此專案是早年使用Caffe模型寫的，此模型過於過時，因此改寫為PyTorch版本。">
+<meta property="og:description" content="前言為了改善閉環檢測的方法，參考FSCW的方法，發現比較Crow的方法，便依此作為範本，實作時發現此專案是早年使用Caffe模型寫的，此模型已經過時，因此改寫為PyTorch版本。">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F1.VGG_ILSVRC_16_pool5.prototxt.png?alt=media&token=16df6b5e-0a06-46e8-aad7-9a63f35af959">
 <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F2.VGG16_bn.png?alt=media&token=1db369c1-ce0f-428c-a7f3-710a25be88cb">
@@ -60,7 +60,7 @@
 <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%204-1.png?alt=media&token=3bf62792-7ec7-4d8e-96d4-8b2699cc58fb">
 <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%204-2.png?alt=media&token=3b057398-5f2d-44f3-b94f-da45c5a94cf0">
 <meta property="article:published_time" content="2022-11-13T01:07:33.000Z">
-<meta property="article:modified_time" content="2022-11-13T02:07:44.577Z">
+<meta property="article:modified_time" content="2022-11-13T02:31:04.216Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F1.VGG_ILSVRC_16_pool5.prototxt.png?alt=media&token=16df6b5e-0a06-46e8-aad7-9a63f35af959">
@@ -70,10 +70,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2022/11/13/Cross-dimensional-Weighting-CroW-aggregation-PyTorch-%E6%94%B9%E5%AF%AB/","path":"2022/11/13/Cross-dimensional-Weighting-CroW-aggregation-PyTorch-改寫/","title":"Cross-dimensional Weighting (CroW) aggregation PyTorch 改寫"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2022/11/13/Cross-dimensional-Weighting-CroW-aggregation-PyTorch-%E6%94%B9%E5%AF%AB/","path":"2022/11/13/Cross-dimensional-Weighting-CroW-aggregation-PyTorch-改寫/","title":"Cross-dimensional Weighting (CroW) aggregation 改寫成 PyTorch版本"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Cross-dimensional Weighting (CroW) aggregation PyTorch 改寫 | 利醬の休憩房</title>
+<title>Cross-dimensional Weighting (CroW) aggregation 改寫成 PyTorch版本 | 利醬の休憩房</title>
   
 
 
@@ -238,7 +238,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Cross-dimensional Weighting (CroW) aggregation PyTorch 改寫
+          Cross-dimensional Weighting (CroW) aggregation 改寫成 PyTorch版本
         </h1>
 
         <div class="post-meta-container">
@@ -250,7 +250,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2022-11-13 09:07:33 / 修改時間：10:07:44" itemprop="dateCreated datePublished" datetime="2022-11-13T09:07:33+08:00">2022-11-13</time>
+      <time title="創建時間：2022-11-13 09:07:33 / 修改時間：10:31:04" itemprop="dateCreated datePublished" datetime="2022-11-13T09:07:33+08:00">2022-11-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -294,7 +294,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>為了改善閉環檢測的方法，參考FSCW的方法，發現比較Crow的方法，便依此作為範本，<br>實作時發現此專案是早年使用Caffe模型寫的，此模型過於過時，因此改寫為PyTorch版本。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>為了改善閉環檢測的方法，參考FSCW的方法，發現比較Crow的方法，便依此作為範本，<br>實作時發現此專案是早年使用Caffe模型寫的，此模型已經過時，因此改寫為PyTorch版本。</p>
 <span id="more"></span>
 
 <h1 id="預訓練模型-VGG16-model"><a href="#預訓練模型-VGG16-model" class="headerlink" title="預訓練模型 VGG16 model"></a>預訓練模型 VGG16 model</h1><h2 id="Caffe"><a href="#Caffe" class="headerlink" title="Caffe"></a>Caffe</h2><p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F1.VGG_ILSVRC_16_pool5.prototxt.png?alt=media&token=16df6b5e-0a06-46e8-aad7-9a63f35af959" alt="1.VGG_ILSVRC_16_pool5.prototxt"></p>
@@ -356,7 +356,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://leonicehot.github.io/2022/11/13/Cross-dimensional-Weighting-CroW-aggregation-PyTorch-%E6%94%B9%E5%AF%AB/" title="Cross-dimensional Weighting (CroW) aggregation PyTorch 改寫">https://leonicehot.github.io/2022/11/13/Cross-dimensional-Weighting-CroW-aggregation-PyTorch-改寫/</a>
+      <a href="https://leonicehot.github.io/2022/11/13/Cross-dimensional-Weighting-CroW-aggregation-PyTorch-%E6%94%B9%E5%AF%AB/" title="Cross-dimensional Weighting (CroW) aggregation 改寫成 PyTorch版本">https://leonicehot.github.io/2022/11/13/Cross-dimensional-Weighting-CroW-aggregation-PyTorch-改寫/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
