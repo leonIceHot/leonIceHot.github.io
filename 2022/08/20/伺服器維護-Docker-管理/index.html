@@ -20,17 +20,17 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="問題點有一天伺服器重新開機完，啟動Docker給使用者使用時，使用者連線進入docker container 環境中出現奇怪的現象，(1) nvidia-smi無法顯示(2) torch.cuda.is_available() 回傳False(3) Let’s use 0 GPUs.">
+<meta name="description" content="問題點有一天伺服器重新開機完，啟動Docker給使用者使用時，使用者連線進入docker container 環境中出現奇怪的現象， 問題狀況(1) nvidia-smi無法顯示 1Failed to initizlize NVML: Unknown Error (2) torch.cuda.is_available() 回傳False(3) Let’s use 0 GPUs.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="伺服器維護 - Docker 管理">
+<meta property="og:title" content="伺服器維護 - Docker 容器管理">
 <meta property="og:url" content="https://leonicehot.github.io/2022/08/20/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker-%E7%AE%A1%E7%90%86/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="問題點有一天伺服器重新開機完，啟動Docker給使用者使用時，使用者連線進入docker container 環境中出現奇怪的現象，(1) nvidia-smi無法顯示(2) torch.cuda.is_available() 回傳False(3) Let’s use 0 GPUs.">
+<meta property="og:description" content="問題點有一天伺服器重新開機完，啟動Docker給使用者使用時，使用者連線進入docker container 環境中出現奇怪的現象， 問題狀況(1) nvidia-smi無法顯示 1Failed to initizlize NVML: Unknown Error (2) torch.cuda.is_available() 回傳False(3) Let’s use 0 GPUs.">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker%E7%AE%A1%E7%90%86%2Fconfig.png?alt=media&token=b216826c-507b-49e3-9720-1af1835a0926">
 <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker%E7%AE%A1%E7%90%86%2Fgrub.png?alt=media&token=4af854b1-02cc-43dc-bbc3-4d0d53ac6a38">
 <meta property="article:published_time" content="2022-08-20T10:39:33.000Z">
-<meta property="article:modified_time" content="2022-08-20T11:08:34.755Z">
+<meta property="article:modified_time" content="2022-08-20T14:30:16.237Z">
 <meta property="article:author" content="利醬">
 <meta property="article:tag" content="Docker">
 <meta name="twitter:card" content="summary">
@@ -41,10 +41,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2022/08/20/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker-%E7%AE%A1%E7%90%86/","path":"2022/08/20/伺服器維護-Docker-管理/","title":"伺服器維護 - Docker 管理"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2022/08/20/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker-%E7%AE%A1%E7%90%86/","path":"2022/08/20/伺服器維護-Docker-管理/","title":"伺服器維護 - Docker 容器管理"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>伺服器維護 - Docker 管理 | 利醬の休憩房</title>
+<title>伺服器維護 - Docker 容器管理 | 利醬の休憩房</title>
   
 
 
@@ -122,7 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%95%8F%E9%A1%8C%E9%BB%9E"><span class="nav-number">1.</span> <span class="nav-text">問題點</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%AD%E5%82%99"><span class="nav-number">2.</span> <span class="nav-text">設備</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">解決方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">參考</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%95%8F%E9%A1%8C%E9%BB%9E"><span class="nav-number">1.</span> <span class="nav-text">問題點</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%8F%E9%A1%8C%E7%8B%80%E6%B3%81"><span class="nav-number">1.1.</span> <span class="nav-text">問題狀況</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%AD%E5%82%99"><span class="nav-number">2.</span> <span class="nav-text">設備</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">解決方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">參考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -135,18 +135,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -209,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          伺服器維護 - Docker 管理
+          伺服器維護 - Docker 容器管理
         </h1>
 
         <div class="post-meta-container">
@@ -221,7 +221,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2022-08-20 18:39:33 / 修改時間：19:08:34" itemprop="dateCreated datePublished" datetime="2022-08-20T18:39:33+08:00">2022-08-20</time>
+      <time title="創建時間：2022-08-20 18:39:33 / 修改時間：22:30:16" itemprop="dateCreated datePublished" datetime="2022-08-20T18:39:33+08:00">2022-08-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -247,7 +247,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>415</span>
+      <span>419</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -265,7 +265,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="問題點"><a href="#問題點" class="headerlink" title="問題點"></a>問題點</h1><p>有一天伺服器重新開機完，啟動Docker給使用者使用時，<br>使用者連線進入docker container 環境中出現奇怪的現象，<br>(1) nvidia-smi無法顯示<br>(2) torch.cuda.is_available() 回傳False<br>(3) Let’s use 0 GPUs.</p>
+        <h1 id="問題點"><a href="#問題點" class="headerlink" title="問題點"></a>問題點</h1><p>有一天伺服器重新開機完，啟動Docker給使用者使用時，<br>使用者連線進入docker container 環境中出現奇怪的現象，</p>
+<h2 id="問題狀況"><a href="#問題狀況" class="headerlink" title="問題狀況"></a>問題狀況</h2><p>(1) nvidia-smi無法顯示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Failed to initizlize NVML: Unknown Error</span><br></pre></td></tr></table></figure>
+<p>(2) torch.cuda.is_available() 回傳False<br>(3) Let’s use 0 GPUs.</p>
 <span id="more"></span>
 
 <h1 id="設備"><a href="#設備" class="headerlink" title="設備"></a>設備</h1><p>Dgx Station<br>OS: Ubuntu 18.03<br>CPU: Intel Xeon E5-2698 v4 2.2GHz (20 core)<br>GPUs: 4X Tesla V100 32GB<br>System Memory: DDR4 256GB<br>Network: Double 10GBase-T(RJ-45)<br>Monitor: 3X DisplayPort, 4k solutions</p>
@@ -303,7 +306,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://leonicehot.github.io/2022/08/20/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker-%E7%AE%A1%E7%90%86/" title="伺服器維護 - Docker 管理">https://leonicehot.github.io/2022/08/20/伺服器維護-Docker-管理/</a>
+      <a href="https://leonicehot.github.io/2022/08/20/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker-%E7%AE%A1%E7%90%86/" title="伺服器維護 - Docker 容器管理">https://leonicehot.github.io/2022/08/20/伺服器維護-Docker-管理/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -324,6 +327,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2022/09/27/CSPNet-%E8%A7%A3%E6%9E%90/" rel="next" title="CSPNet 解析">
+                  CSPNet 解析 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -355,13 +361,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">16k</span>
+    <span title="總字數">18k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">30 分鐘</span>
+    <span title="所需總閱讀時間">32 分鐘</span>
   </span>
 </div>
 <div class="busuanzi-count">
