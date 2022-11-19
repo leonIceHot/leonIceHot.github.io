@@ -402,9 +402,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
-      
 
-      <time title="創建時間：2022-10-17 09:14:20 / 修改時間：09:22:01" itemprop="dateCreated datePublished" datetime="2022-10-17T09:14:20+08:00">2022-10-17</time>
+      <time title="創建時間：2022-10-17 09:14:20" itemprop="dateCreated datePublished" datetime="2022-10-17T09:14:20+08:00">2022-10-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-11-19 21:04:25" itemprop="dateModified" datetime="2022-11-19T21:04:25+08:00">2022-11-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -511,7 +517,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-09-28 15:26:13" itemprop="dateModified" datetime="2022-09-28T15:26:13+08:00">2022-09-28</time>
+      <time title="修改時間：2022-11-19 21:04:32" itemprop="dateModified" datetime="2022-11-19T21:04:32+08:00">2022-11-19</time>
     </span>
 
   
@@ -521,7 +527,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>334</span>
+      <span>627</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -540,8 +546,19 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>  (cspnet)          (cspnet)           (helpers)<br>cspresnet50 –&gt; _create_cspnet -&gt; build_model_with_cfg  </p>
-<p>-&gt; CspModelCfg – –&gt; stem: CspStemCfg      –&gt; model_cfg –&gt; BottleneckBlock<br>                  –&gt; stages: CspStagesCfg</p>
-<p>–&gt; create_csp_stem  –&gt; create_csp_stages  –&gt; CspNet  –&gt;_init_weights </p>
+<p>–&gt; CspNet<br>    –&gt;  CspModelCfg<br>        –&gt; stem: CspStemCfg      –&gt; model_cfg<br>        –&gt; stages: CspStagesCfg</p>
+<pre><code>--&gt; create_csp_stem  
+--&gt; create_csp_stages  
+    --&gt;  _get_stage_fn() --&gt; crossstage
+    --&gt;  _get_block_fn() --&gt; Block         
+                            --&gt; DarkBlock 
+                            --&gt; EdgeBlock 
+                            --&gt; BottleneckBlock 
+    --&gt;  _get_attn_fn()  --&gt; partial
+--&gt; head  
+    --&gt; ClassifierHead
+</code></pre>
+<p>–&gt;_init_weights </p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/09/27/CSPNet-%E8%A7%A3%E6%9E%90/#more" rel="contents">
@@ -1212,13 +1229,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">19k</span>
+    <span title="總字數">20k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">35 分鐘</span>
+    <span title="所需總閱讀時間">36 分鐘</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
