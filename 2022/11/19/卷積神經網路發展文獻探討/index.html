@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="前言最近整理Object Detection、Object Tracking、Dilated Convolutional、Deformable Convolution等最近幾年至2022的文獻資料，若有興趣文獻撰寫內容請參考科技部補助研究專案110結案報告書面。">
+    <meta name="description" content="前言最近整理Object Detection、Multiple Object Tracking、Dilated Convolutional、Deformable Convolution等最近幾年至2022的文獻資料，若有興趣文獻撰寫內容請參考科技部補助研究專案110結案報告書面。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="卷積神經網路發展文獻探討">
 <meta property="og:url" content="https://leonicehot.github.io/2022/11/19/%E5%8D%B7%E7%A9%8D%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E7%99%BC%E5%B1%95%E6%96%87%E7%8D%BB%E6%8E%A2%E8%A8%8E/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="前言最近整理Object Detection、Object Tracking、Dilated Convolutional、Deformable Convolution等最近幾年至2022的文獻資料，若有興趣文獻撰寫內容請參考科技部補助研究專案110結案報告書面。">
+<meta property="og:description" content="前言最近整理Object Detection、Multiple Object Tracking、Dilated Convolutional、Deformable Convolution等最近幾年至2022的文獻資料，若有興趣文獻撰寫內容請參考科技部補助研究專案110結案報告書面。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-11-19T13:29:06.000Z">
-<meta property="article:modified_time" content="2022-11-27T12:47:47.399Z">
+<meta property="article:modified_time" content="2022-11-27T12:49:43.024Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
@@ -114,7 +114,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object-Detection"><span class="nav-number">2.</span> <span class="nav-text">Object Detection</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object-Tracking"><span class="nav-number">3.</span> <span class="nav-text">Object Tracking</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dilated-Convolutional"><span class="nav-number">4.</span> <span class="nav-text">Dilated Convolutional</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deformable-Convolution"><span class="nav-number">5.</span> <span class="nav-text">Deformable Convolution</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object-Detection"><span class="nav-number">2.</span> <span class="nav-text">Object Detection</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Multiple-Object-Tracking"><span class="nav-number">3.</span> <span class="nav-text">Multiple Object Tracking</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dilated-Convolutional"><span class="nav-number">4.</span> <span class="nav-text">Dilated Convolutional</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deformable-Convolution"><span class="nav-number">5.</span> <span class="nav-text">Deformable Convolution</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -212,7 +212,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-11-27 20:47:47" itemprop="dateModified" datetime="2022-11-27T20:47:47+08:00">2022-11-27</time>
+      <time title="修改時間：2022-11-27 20:49:43" itemprop="dateModified" datetime="2022-11-27T20:49:43+08:00">2022-11-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -249,7 +249,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近整理Object Detection、Object Tracking、Dilated Convolutional、Deformable Convolution等最近幾年至2022的文獻資料，若有興趣文獻撰寫內容請參考科技部補助研究專案110結案報告書面。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近整理Object Detection、Multiple Object Tracking、Dilated Convolutional、Deformable Convolution等最近幾年至2022的文獻資料，若有興趣文獻撰寫內容請參考科技部補助研究專案110結案報告書面。</p>
 <span id="more"></span>
 
 <h1 id="Object-Detection"><a href="#Object-Detection" class="headerlink" title="Object Detection"></a>Object Detection</h1><ol>
@@ -266,7 +266,7 @@
 <li>[Liu22] Liu, S., Li, F., Zhang, H., Yang, X., Qi, X., Su, H., … &amp; Zhang, L. (2022). DAB-DETR: Dynamic anchor boxes are better queries for DETR. arXiv preprint arXiv:2201.12329.</li>
 </ol>
 <p>DAB-DETR: Dynamic Anchor Boxes Are Better Queries For DETR 作者解說<br><a target="_blank" rel="noopener" href="https://www.koushare.com/video/videodetail/28969">https://www.koushare.com/video/videodetail/28969</a> </p>
-<h1 id="Object-Tracking"><a href="#Object-Tracking" class="headerlink" title="Object Tracking"></a>Object Tracking</h1><ol>
+<h1 id="Multiple-Object-Tracking"><a href="#Multiple-Object-Tracking" class="headerlink" title="Multiple Object Tracking"></a>Multiple Object Tracking</h1><ol>
 <li>[Sort16]-Bewley, A., Ge, Z., Ott, L., Ramos, F., &amp; Upcroft, B. (2016, September). Simple online and realtime tracking. In 2016 IEEE international conference on image processing (ICIP) (pp. 3464-3468). IEEE.</li>
 <li>[Deep Sort17]-Wojke, N., Bewley, A., &amp; Paulus, D. (2017, September). Simple online and realtime tracking with a deep association metric. In 2017 IEEE international conference on image processing (ICIP) (pp. 3645-3649). IEEE.</li>
 <li>[JDE20]-Wang, Z., Zheng, L., Liu, Y., Li, Y., &amp; Wang, S. (2020, August). Towards real-time multi-object tracking. In European Conference on Computer Vision (pp. 107-122). Springer, Cham.</li>
