@@ -28,7 +28,7 @@
 <meta property="og:description" content="前言最近整理Object Detection、Object Tracking、Dilated Convolutional、Deformable Convolution等最近幾年至2022的文獻資料，若有興趣文獻撰寫內容請參考科技部補助研究專案110結案報告書面。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-11-19T13:29:06.000Z">
-<meta property="article:modified_time" content="2022-11-20T04:00:38.029Z">
+<meta property="article:modified_time" content="2022-11-27T12:47:47.399Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
@@ -212,7 +212,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-11-20 12:00:38" itemprop="dateModified" datetime="2022-11-20T12:00:38+08:00">2022-11-20</time>
+      <time title="修改時間：2022-11-27 20:47:47" itemprop="dateModified" datetime="2022-11-27T20:47:47+08:00">2022-11-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -231,14 +231,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>6.9k</span>
+      <span>8.7k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>13 分鐘</span>
+      <span>16 分鐘</span>
     </span>
 </div>
 
@@ -252,58 +252,56 @@
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近整理Object Detection、Object Tracking、Dilated Convolutional、Deformable Convolution等最近幾年至2022的文獻資料，若有興趣文獻撰寫內容請參考科技部補助研究專案110結案報告書面。</p>
 <span id="more"></span>
 
-<h1 id="Object-Detection"><a href="#Object-Detection" class="headerlink" title="Object Detection"></a>Object Detection</h1><details>
-<summary>文獻</summary>
-[Ren15] Ren, S., He, K., Girshick, R., & Sun, J. (2015). Faster r-cnn: Towards real-time object detection with region proposal networks. Advances in neural information processing systems, 28.
-[He16] He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 770-778).
-[Redmon16] Redmon, J., Divvala, S., Girshick, R., & Farhadi, A. (2016). You only look once: Unified, real-time object detection. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 779-788).
-[Liu16] Liu, W., Anguelov, D., Erhan, D., Szegedy, C., Reed, S., Fu, C. Y., & Berg, A. C. (2016, October). Ssd: Single shot multibox detector. In European conference on computer vision (pp. 21-37). Springer, Cham.
-[Redmon17] Redmon, J., & Farhadi, A. (2017). YOLO9000: better, faster, stronger. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 7263-7271).
-[Redmon18] Redmon, J., & Farhadi, A. (2018). Yolov3: An incremental improvement. arXiv preprint arXiv:1804.02767.
-[Lin17] Lin, T. Y., Dollár, P., Girshick, R., He, K., Hariharan, B., & Belongie, S. (2017). Feature pyramid networks for object detection. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 2117-2125).
-[Carion20] Carion, N., Massa, F., Synnaeve, G., Usunier, N., Kirillov, A., & Zagoruyko, S. (2020, August). End-to-end object detection with transformers. In European conference on computer vision (pp. 213-229).
-[Li22] Li, F., Zhang, H., Liu, S., Guo, J., Ni, L. M., & Zhang, L. (2022). Dn-detr: Accelerate detr training by introducing query denoising. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 13619-13627).
-[Zhang22] Zhang, H., Li, F., Liu, S., Zhang, L., Su, H., Zhu, J., ... & Shum, H. Y. (2022). Dino: Detr with improved denoising anchor boxes for end-to-end object detection. arXiv preprint arXiv:2203.03605.
-[Liu22] Liu, S., Li, F., Zhang, H., Yang, X., Qi, X., Su, H., ... & Zhang, L. (2022). DAB-DETR: Dynamic anchor boxes are better queries for DETR. arXiv preprint arXiv:2201.12329.
-
+<h1 id="Object-Detection"><a href="#Object-Detection" class="headerlink" title="Object Detection"></a>Object Detection</h1><ol>
+<li>[Ren15] Ren, S., He, K., Girshick, R., &amp; Sun, J. (2015). Faster r-cnn: Towards real-time object detection with region proposal networks. Advances in neural information processing systems, 28.</li>
+<li>[He16] He, K., Zhang, X., Ren, S., &amp; Sun, J. (2016). Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 770-778).</li>
+<li>[Redmon16] Redmon, J., Divvala, S., Girshick, R., &amp; Farhadi, A. (2016). You only look once: Unified, real-time object detection. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 779-788).</li>
+<li>[Liu16] Liu, W., Anguelov, D., Erhan, D., Szegedy, C., Reed, S., Fu, C. Y., &amp; Berg, A. C. (2016, October). Ssd: Single shot multibox detector. In European conference on computer vision (pp. 21-37). Springer, Cham.</li>
+<li>[Redmon17] Redmon, J., &amp; Farhadi, A. (2017). YOLO9000: better, faster, stronger. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 7263-7271).</li>
+<li>[Redmon18] Redmon, J., &amp; Farhadi, A. (2018). Yolov3: An incremental improvement. arXiv preprint arXiv:1804.02767.</li>
+<li>[Lin17] Lin, T. Y., Dollár, P., Girshick, R., He, K., Hariharan, B., &amp; Belongie, S. (2017). Feature pyramid networks for object detection. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 2117-2125).</li>
+<li>[Carion20] Carion, N., Massa, F., Synnaeve, G., Usunier, N., Kirillov, A., &amp; Zagoruyko, S. (2020, August). End-to-end object detection with transformers. In European conference on computer vision (pp. 213-229).</li>
+<li>[Li22] Li, F., Zhang, H., Liu, S., Guo, J., Ni, L. M., &amp; Zhang, L. (2022). Dn-detr: Accelerate detr training by introducing query denoising. In Proceedings of the IEEE&#x2F;CVF Conference on Computer Vision and Pattern Recognition (pp. 13619-13627).</li>
+<li>[Zhang22] Zhang, H., Li, F., Liu, S., Zhang, L., Su, H., Zhu, J., … &amp; Shum, H. Y. (2022). Dino: Detr with improved denoising anchor boxes for end-to-end object detection. arXiv preprint arXiv:2203.03605.</li>
+<li>[Liu22] Liu, S., Li, F., Zhang, H., Yang, X., Qi, X., Su, H., … &amp; Zhang, L. (2022). DAB-DETR: Dynamic anchor boxes are better queries for DETR. arXiv preprint arXiv:2201.12329.</li>
+</ol>
 <p>DAB-DETR: Dynamic Anchor Boxes Are Better Queries For DETR 作者解說<br><a target="_blank" rel="noopener" href="https://www.koushare.com/video/videodetail/28969">https://www.koushare.com/video/videodetail/28969</a> </p>
-</details>
-
-<h1 id="Object-Tracking"><a href="#Object-Tracking" class="headerlink" title="Object Tracking"></a>Object Tracking</h1><details>
-<summary>文獻</summary>
-</details>
-
-<h1 id="Dilated-Convolutional"><a href="#Dilated-Convolutional" class="headerlink" title="Dilated Convolutional"></a>Dilated Convolutional</h1><details>
-<summary>文獻</summary>
-[Yu15] Yu, F., & Koltun, V. (2015). Multi-scale context aggregation by dilated convolutions. arXiv preprint arXiv:1511.07122.
-[Long15] Long, J., Shelhamer, E., & Darrell, T. (2015). Fully convolutional networks for semantic segmentation. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 3431-3440).
-[He16] He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 770-778).
-[Simonyan14] Simonyan, K., & Zisserman, A. (2014). Very deep convolutional networks for large-scale image recognition. arXiv preprint arXiv:1409.1556.
-[Ioffe15] Ioffe, S., & Szegedy, C. (2015, June). Batch normalization: Accelerating deep network training by reducing internal covariate shift. In International conference on machine learning (pp. 448-456). PMLR.
-[Agarap18] Agarap, A. F. (2018). Deep learning using rectified linear units (relu). arXiv preprint arXiv:1803.08375.
-[Strubell17] Strubell, E., Verga, P., Belanger, D., & McCallum, A. (2017). Fast and accurate entity recognition with iterated dilated convolutions. arXiv preprint arXiv:1702.02098.
-[Yu17] Yu, F., Koltun, V., & Funkhouser, T. (2017). Dilated residual networks. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 472-480).
-[Wang18] Wang, P., Chen, P., Yuan, Y., Liu, D., Huang, Z., Hou, X., & Cottrell, G. (2018, March). Understanding convolution for semantic segmentation. In 2018 IEEE winter conference on applications of computer vision (WACV) (pp. 1451-1460). Ieee.
-[Wang18] Wang, Z., & Ji, S. (2018, July). Smoothed dilated convolutions for improved dense prediction. In Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (pp. 2486-2495).
-[Li18] Li, Y., Zhang, X., & Chen, D. (2018). Csrnet: Dilated convolutional neural networks for understanding the highly congested scenes. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 1091-1100).
-[Mehta18] Mehta, S., Rastegari, M., Caspi, A., Shapiro, L., & Hajishirzi, H. (2018). Espnet: Efficient spatial pyramid of dilated convolutions for semantic segmentation. In Proceedings of the european conference on computer vision (ECCV) (pp. 552-568).
-</details>
-
-<h1 id="Deformable-Convolution"><a href="#Deformable-Convolution" class="headerlink" title="Deformable Convolution"></a>Deformable Convolution</h1><details>
-<summary>文獻</summary>
-[Rublee11] Rublee, E., Rabaud, V., Konolige, K., & Bradski, G. (2011, November). ORB: An efficient alternative to SIFT or SURF. In 2011 International conference on computer vision (pp. 2564-2571). Ieee.
-[He16] He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 770-778).
-[Dai17] Dai, J., Qi, H., Xiong, Y., Li, Y., Zhang, G., Hu, H., & Wei, Y. (2017). Deformable convolutional networks. In Proceedings of the IEEE international conference on computer vision (pp. 764-773).
-[Lee17] Lee, J., Bang, J., & Yang, S. I. (2017, October). Object detection with sliding window in images including multiple similar objects. In 2017 international conference on information and communication technology convergence (ICTC) (pp. 803-806). IEEE.
-[DeTone18] DeTone, D., Malisiewicz, T., & Rabinovich, A. (2018). Superpoint: Self-supervised interest point detection and description. In Proceedings of the IEEE conference on computer vision and pattern recognition workshops (pp. 224-236).
-[Zhu19] Zhu, X., Hu, H., Lin, S., & Dai, J. (2019). Deformable convnets v2: More deformable, better results. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 9308-9316).
-[Cao20] Cao, D., Chen, Z., & Gao, L. (2020). An improved object detection algorithm based on multi-scaled and deformable convolutional neural networks. Human-centric Computing and Information Sciences, 10(1), 1-22.
-[Zhu20] Zhu, X., Su, W., Lu, L., Li, B., Wang, X., & Dai, J. (2020). Deformable detr: Deformable transformers for end-to-end object detection. arXiv preprint arXiv:2010.04159.
-[Sun21] Sun, J., Shen, Z., Wang, Y., Bao, H., & Zhou, X. (2021). LoFTR: Detector-free local feature matching with transformers. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 8922-8931).
-[Park22] Park, J., Yoo, S., Park, J., & Kim, H. J. (2022, June). Deformable graph convolutional networks. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 36, No. 7, pp. 7949-7956).
-</details>
-
-
+<h1 id="Object-Tracking"><a href="#Object-Tracking" class="headerlink" title="Object Tracking"></a>Object Tracking</h1><ol>
+<li>[Sort16]-Bewley, A., Ge, Z., Ott, L., Ramos, F., &amp; Upcroft, B. (2016, September). Simple online and realtime tracking. In 2016 IEEE international conference on image processing (ICIP) (pp. 3464-3468). IEEE.</li>
+<li>[Deep Sort17]-Wojke, N., Bewley, A., &amp; Paulus, D. (2017, September). Simple online and realtime tracking with a deep association metric. In 2017 IEEE international conference on image processing (ICIP) (pp. 3645-3649). IEEE.</li>
+<li>[JDE20]-Wang, Z., Zheng, L., Liu, Y., Li, Y., &amp; Wang, S. (2020, August). Towards real-time multi-object tracking. In European Conference on Computer Vision (pp. 107-122). Springer, Cham.</li>
+<li>[Fairmot21]-Zhang, Y., Wang, C., Wang, X., Zeng, W., &amp; Liu, W. (2021). Fairmot: On the fairness of detection and re-identification in multiple object tracking. International Journal of Computer Vision, 129(11), 3069-3087.</li>
+<li>[Transmot21]-Chu, P., Wang, J., You, Q., Ling, H., &amp; Liu, Z. (2021). Transmot: Spatial-temporal graph transformer for multiple object tracking. arXiv preprint arXiv:2104.00194.</li>
+<li>[OCSORT22]-Cao, J., Weng, X., Khirodkar, R., Pang, J., &amp; Kitani, K. (2022). Observation-Centric SORT: Rethinking SORT for Robust Multi-Object Tracking. arXiv preprint arXiv:2203.14360.</li>
+<li>[Bytetrack22]-Zhang, Y., Sun, P., Jiang, Y., Yu, D., Weng, F., Yuan, Z., … &amp; Wang, X. (2022). Bytetrack: Multi-object tracking by associating every detection box. In European Conference on Computer Vision (pp. 1-21). Springer, Cham.</li>
+<li>[Strongsort22]-Du, Y., Song, Y., Yang, B., &amp; Zhao, Y. (2022). Strongsort: Make deepsort great again. arXiv preprint arXiv:2202.13514.</li>
+</ol>
+<h1 id="Dilated-Convolutional"><a href="#Dilated-Convolutional" class="headerlink" title="Dilated Convolutional"></a>Dilated Convolutional</h1><ol>
+<li>[Yu15] Yu, F., &amp; Koltun, V. (2015). Multi-scale context aggregation by dilated convolutions. arXiv preprint arXiv:1511.07122.</li>
+<li>[Long15] Long, J., Shelhamer, E., &amp; Darrell, T. (2015). Fully convolutional networks for semantic segmentation. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 3431-3440).</li>
+<li>[He16] He, K., Zhang, X., Ren, S., &amp; Sun, J. (2016). Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 770-778).</li>
+<li>[Simonyan14] Simonyan, K., &amp; Zisserman, A. (2014). Very deep convolutional networks for large-scale image recognition. arXiv preprint arXiv:1409.1556.</li>
+<li>[Ioffe15] Ioffe, S., &amp; Szegedy, C. (2015, June). Batch normalization: Accelerating deep network training by reducing internal covariate shift. In International conference on machine learning (pp. 448-456). PMLR.</li>
+<li>[Agarap18] Agarap, A. F. (2018). Deep learning using rectified linear units (relu). arXiv preprint arXiv:1803.08375.</li>
+<li>[Strubell17] Strubell, E., Verga, P., Belanger, D., &amp; McCallum, A. (2017). Fast and accurate entity recognition with iterated dilated convolutions. arXiv preprint arXiv:1702.02098.</li>
+<li>[Yu17] Yu, F., Koltun, V., &amp; Funkhouser, T. (2017). Dilated residual networks. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 472-480).</li>
+<li>[Wang18] Wang, P., Chen, P., Yuan, Y., Liu, D., Huang, Z., Hou, X., &amp; Cottrell, G. (2018, March). Understanding convolution for semantic segmentation. In 2018 IEEE winter conference on applications of computer vision (WACV) (pp. 1451-1460). Ieee.</li>
+<li>[Wang18] Wang, Z., &amp; Ji, S. (2018, July). Smoothed dilated convolutions for improved dense prediction. In Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining (pp. 2486-2495).</li>
+<li>[Li18] Li, Y., Zhang, X., &amp; Chen, D. (2018). Csrnet: Dilated convolutional neural networks for understanding the highly congested scenes. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 1091-1100).</li>
+<li>[Mehta18] Mehta, S., Rastegari, M., Caspi, A., Shapiro, L., &amp; Hajishirzi, H. (2018). Espnet: Efficient spatial pyramid of dilated convolutions for semantic segmentation. In Proceedings of the european conference on computer vision (ECCV) (pp. 552-568).</li>
+</ol>
+<h1 id="Deformable-Convolution"><a href="#Deformable-Convolution" class="headerlink" title="Deformable Convolution"></a>Deformable Convolution</h1><ol>
+<li>[Rublee11] Rublee, E., Rabaud, V., Konolige, K., &amp; Bradski, G. (2011, November). ORB: An efficient alternative to SIFT or SURF. In 2011 International conference on computer vision (pp. 2564-2571). Ieee.</li>
+<li>[He16] He, K., Zhang, X., Ren, S., &amp; Sun, J. (2016). Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 770-778).</li>
+<li>[Dai17] Dai, J., Qi, H., Xiong, Y., Li, Y., Zhang, G., Hu, H., &amp; Wei, Y. (2017). Deformable convolutional networks. In Proceedings of the IEEE international conference on computer vision (pp. 764-773).</li>
+<li>[Lee17] Lee, J., Bang, J., &amp; Yang, S. I. (2017, October). Object detection with sliding window in images including multiple similar objects. In 2017 international conference on information and communication technology convergence (ICTC) (pp. 803-806). IEEE.</li>
+<li>[DeTone18] DeTone, D., Malisiewicz, T., &amp; Rabinovich, A. (2018). Superpoint: Self-supervised interest point detection and description. In Proceedings of the IEEE conference on computer vision and pattern recognition workshops (pp. 224-236).</li>
+<li>[Zhu19] Zhu, X., Hu, H., Lin, S., &amp; Dai, J. (2019). Deformable convnets v2: More deformable, better results. In Proceedings of the IEEE&#x2F;CVF conference on computer vision and pattern recognition (pp. 9308-9316).</li>
+<li>[Cao20] Cao, D., Chen, Z., &amp; Gao, L. (2020). An improved object detection algorithm based on multi-scaled and deformable convolutional neural networks. Human-centric Computing and Information Sciences, 10(1), 1-22.</li>
+<li>[Zhu20] Zhu, X., Su, W., Lu, L., Li, B., Wang, X., &amp; Dai, J. (2020). Deformable detr: Deformable transformers for end-to-end object detection. arXiv preprint arXiv:2010.04159.</li>
+<li>[Sun21] Sun, J., Shen, Z., Wang, Y., Bao, H., &amp; Zhou, X. (2021). LoFTR: Detector-free local feature matching with transformers. In Proceedings of the IEEE&#x2F;CVF conference on computer vision and pattern recognition (pp. 8922-8931).</li>
+<li>[Park22] Park, J., Yoo, S., Park, J., &amp; Kim, H. J. (2022, June). Deformable graph convolutional networks. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 36, No. 7, pp. 7949-7956).</li>
+</ol>
 
     </div>
 
@@ -356,13 +354,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">30k</span>
+    <span title="總字數">31k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">54 分鐘</span>
+    <span title="所需總閱讀時間">57 分鐘</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
