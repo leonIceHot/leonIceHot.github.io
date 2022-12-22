@@ -20,30 +20,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="前言簡易Bug紀錄">
+    <meta name="description" content="背景協助友人Linux 資料庫安裝，現場環境為Debian Linux 8，當天並無SOP之東西，當場指令測試與系統安裝，並將測試結果寫成SOP，即時安裝部署。此系統棘手部分為並非圖形介面，屬於文字介面，此系統作為大專院校選課系統而使用，涵蓋整間資訊教室，由於當年維護的人已經不幸離世，無留下任何資料，所以透過已知線索將環境建置起來。安裝環境時，全程透過VMWare EXSI7.0連結Linux與鏡">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python Bug 紀錄">
-<meta property="og:url" content="https://leonicehot.github.io/2022/10/17/Python-Bug-%E7%B4%80%E9%8C%84/index.html">
+<meta property="og:title" content="資訊系統部署">
+<meta property="og:url" content="https://leonicehot.github.io/2022/12/22/%E8%B3%87%E8%A8%8A%E7%B3%BB%E7%B5%B1%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="前言簡易Bug紀錄">
+<meta property="og:description" content="背景協助友人Linux 資料庫安裝，現場環境為Debian Linux 8，當天並無SOP之東西，當場指令測試與系統安裝，並將測試結果寫成SOP，即時安裝部署。此系統棘手部分為並非圖形介面，屬於文字介面，此系統作為大專院校選課系統而使用，涵蓋整間資訊教室，由於當年維護的人已經不幸離世，無留下任何資料，所以透過已知線索將環境建置起來。安裝環境時，全程透過VMWare EXSI7.0連結Linux與鏡">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Python-Bug-%E7%B4%80%E9%8C%84%2F0.png?alt=media&token=452a83a4-ae3d-4587-8944-94e81054d331">
-<meta property="article:published_time" content="2022-10-17T01:14:20.000Z">
-<meta property="article:modified_time" content="2022-11-19T13:04:25.113Z">
+<meta property="article:published_time" content="2022-12-22T05:39:55.000Z">
+<meta property="article:modified_time" content="2022-12-22T06:37:45.278Z">
 <meta property="article:author" content="利醬">
-<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Python-Bug-%E7%B4%80%E9%8C%84%2F0.png?alt=media&token=452a83a4-ae3d-4587-8944-94e81054d331">
 
 
-<link rel="canonical" href="https://leonicehot.github.io/2022/10/17/Python-Bug-%E7%B4%80%E9%8C%84/">
+<link rel="canonical" href="https://leonicehot.github.io/2022/12/22/%E8%B3%87%E8%A8%8A%E7%B3%BB%E7%B5%B1%E9%83%A8%E7%BD%B2/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2022/10/17/Python-Bug-%E7%B4%80%E9%8C%84/","path":"2022/10/17/Python-Bug-紀錄/","title":"Python Bug 紀錄"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2022/12/22/%E8%B3%87%E8%A8%8A%E7%B3%BB%E7%B5%B1%E9%83%A8%E7%BD%B2/","path":"2022/12/22/資訊系統部署/","title":"資訊系統部署"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Python Bug 紀錄 | 利醬の休憩房</title>
+<title>資訊系統部署 | 利醬の休憩房</title>
   
 
 
@@ -117,7 +114,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%95%8F%E9%A1%8C"><span class="nav-number">2.</span> <span class="nav-text">問題</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%BA%AB%E5%AE%89%E8%A3%9D"><span class="nav-number">2.</span> <span class="nav-text">資料庫安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql"><span class="nav-number">2.1.</span> <span class="nav-text">mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oracle"><span class="nav-number">2.2.</span> <span class="nav-text">oracle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sybase"><span class="nav-number">2.3.</span> <span class="nav-text">sybase</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -179,7 +176,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2022/10/17/Python-Bug-%E7%B4%80%E9%8C%84/">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2022/12/22/%E8%B3%87%E8%A8%8A%E7%B3%BB%E7%B5%B1%E9%83%A8%E7%BD%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -192,12 +189,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Python Bug 紀錄 | 利醬の休憩房">
+      <meta itemprop="name" content="資訊系統部署 | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Python Bug 紀錄
+          資訊系統部署
         </h1>
 
         <div class="post-meta-container">
@@ -207,15 +204,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2022-10-17 09:14:20" itemprop="dateCreated datePublished" datetime="2022-10-17T09:14:20+08:00">2022-10-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-11-19 21:04:25" itemprop="dateModified" datetime="2022-11-19T21:04:25+08:00">2022-11-19</time>
+      <time title="創建時間：2022-12-22 13:39:55 / 修改時間：14:37:45" itemprop="dateCreated datePublished" datetime="2022-12-22T13:39:55+08:00">2022-12-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -223,7 +214,7 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
+          <a href="/categories/Database/" itemprop="url" rel="index"><span itemprop="name">Database</span></a>
         </span>
     </span>
 
@@ -234,14 +225,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>160</span>
+      <span>962</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>1 分鐘</span>
+      <span>2 分鐘</span>
     </span>
 </div>
 
@@ -252,16 +243,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>簡易Bug紀錄</p>
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>協助友人Linux 資料庫安裝，現場環境為Debian Linux 8，<br>當天並無SOP之東西，當場指令測試與系統安裝，並將測試結果寫成SOP，即時安裝部署。<br>此系統棘手部分為並非圖形介面，屬於文字介面，<br>此系統作為大專院校選課系統而使用，涵蓋整間資訊教室，<br>由於當年維護的人已經不幸離世，無留下任何資料，所以透過已知線索將環境建置起來。<br>安裝環境時，全程透過VMWare EXSI7.0連結Linux與鏡像備份，即可遠端操作。<br>Linux透過wegt 下載資料時常故障，所以直接從瀏覽器下載資料，<br>為了加快檔案傳輸，解壓縮的部分使用本地端先行解壓縮，<br>再透過 WinSCP 與 FileZilla 將檔案傳送至遠端的Linux系統，<br>由於第一次使用Debian Linux，並做了這篇的紀錄，<br>sybase Linux環境設定多到嚇人呀~~~~，<br>全程耗時約5個多小時，後續由該公司接手Debian Linux 11的升級部分。</p>
 <span id="more"></span>
 
-<h1 id="問題"><a href="#問題" class="headerlink" title="問題"></a>問題</h1><ol>
-<li>OSError: 47918080 requested and 0 written<br>硬碟空間不足<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Python-Bug-%E7%B4%80%E9%8C%84%2F0.png?alt=media&token=452a83a4-ae3d-4587-8944-94e81054d331" alt="0"></li>
-</ol>
-<p>Solution<br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/37657939/oserror-269892000-requested-and-269188084-written">https://stackoverflow.com/questions/37657939/oserror-269892000-requested-and-269188084-written</a></p>
-<ol start="2">
-<li></li>
-</ol>
+<h1 id="資料庫安裝"><a href="#資料庫安裝" class="headerlink" title="資料庫安裝"></a>資料庫安裝</h1><h2 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h2><p><a target="_blank" rel="noopener" href="http://repo.mysql.com/mysql-apt-config_0.8.13-1_all.deb">http://repo.mysql.com/mysql-apt-config_0.8.13-1_all.deb</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i mysql.deb</span><br><span class="line">apt update</span><br><span class="line">apt install mysql-server</span><br></pre></td></tr></table></figure>
+
+<h2 id="oracle"><a href="#oracle" class="headerlink" title="oracle"></a>oracle</h2><p>打包：tar -xvzf<br>解包： tar xvf FileName.tar</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash setupo.sh</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<h2 id="sybase"><a href="#sybase" class="headerlink" title="sybase"></a>sybase</h2><p><a target="_blank" rel="noopener" href="http://www.dbainfo.net/ase-v15-7-download-page.htm">http://www.dbainfo.net/ase-v15-7-download-page.htm</a></p>
+<p>Sybase ASE 16.0 download and install on Linux platform<br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=GY0x7BbrveA&amp;ab_channel=LearnSelf">https://www.youtube.com/watch?v=GY0x7BbrveA&amp;ab_channel=LearnSelf</a></p>
+<p><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/10aJLz3hP-tCOHWBrktZjug#list/path=%2Fsharelink3694380806-996194041873477%2FASE15.7&amp;parentPath=%2Fsharelink3694380806-996194041873477">https://pan.baidu.com/s/10aJLz3hP-tCOHWBrktZjug#list/path=%2Fsharelink3694380806-996194041873477%2FASE15.7&amp;parentPath=%2Fsharelink3694380806-996194041873477</a></p>
+<p><a target="_blank" rel="noopener" href="https://hostmedia.uk/client/knowledgebase/201204230/How-to-install-a-.bin-file-using-SSH-on-UbuntuorCentOS.html">https://hostmedia.uk/client/knowledgebase/201204230/How-to-install-a-.bin-file-using-SSH-on-UbuntuorCentOS.html</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod +x setup.bin</span><br><span class="line">./setup.bin</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -270,22 +265,16 @@
     
 
     <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/Python/" rel="tag"># Python</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/09/27/CSPNet-%E8%A7%A3%E6%9E%90/" rel="prev" title="CSPNet 解析">
-                  <i class="fa fa-chevron-left"></i> CSPNet 解析
+                <a href="/2022/11/20/%E7%89%A9%E9%AB%94%E8%BF%BD%E8%B9%A4%E7%B4%80%E9%8C%84/" rel="prev" title="物體追蹤紀錄">
+                  <i class="fa fa-chevron-left"></i> 物體追蹤紀錄
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/11/13/%E5%8D%80%E5%9F%9F%E7%B6%B2%E8%B7%AF%E6%AA%94%E6%A1%88%E5%85%B1%E4%BA%AB%E8%A8%AD%E5%AE%9A/" rel="next" title="區域網路檔案共享設定">
-                  區域網路檔案共享設定 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>

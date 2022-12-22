@@ -60,7 +60,7 @@
 <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%204-1.png?alt=media&token=3bf62792-7ec7-4d8e-96d4-8b2699cc58fb">
 <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%204-2.png?alt=media&token=3b057398-5f2d-44f3-b94f-da45c5a94cf0">
 <meta property="article:published_time" content="2022-11-13T01:07:33.000Z">
-<meta property="article:modified_time" content="2022-11-22T11:35:05.250Z">
+<meta property="article:modified_time" content="2022-12-22T08:05:08.649Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F1.VGG_ILSVRC_16_pool5.prototxt.png?alt=media&token=16df6b5e-0a06-46e8-aad7-9a63f35af959">
@@ -147,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A0%90%E8%A8%93%E7%B7%B4%E6%A8%A1%E5%9E%8B-VGG16-model"><span class="nav-number">2.</span> <span class="nav-text">預訓練模型 VGG16 model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Caffe"><span class="nav-number">2.1.</span> <span class="nav-text">Caffe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PyTorch"><span class="nav-number">2.2.</span> <span class="nav-text">PyTorch</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E9%9B%86"><span class="nav-number">3.</span> <span class="nav-text">資料集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Paris"><span class="nav-number">3.1.</span> <span class="nav-text">Paris</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oxford"><span class="nav-number">3.2.</span> <span class="nav-text">oxford</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%B9%E5%BE%B5%E8%90%83%E5%8F%96-Feature-Extraction"><span class="nav-number">4.</span> <span class="nav-text">特徵萃取 Feature Extraction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%B9%E5%BE%B5%E6%9F%A5%E8%A9%A2-Feature-Queries"><span class="nav-number">5.</span> <span class="nav-text">特徵查詢 Feature Queries</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A9%97%E8%AD%89-Evaluation"><span class="nav-number">6.</span> <span class="nav-text">驗證 Evaluation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bug-%E9%9B%86%E7%B5%90"><span class="nav-number">7.</span> <span class="nav-text">Bug 集結</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E6%96%87%E7%8D%BB"><span class="nav-number">8.</span> <span class="nav-text">參考文獻</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Crow-Method"><span class="nav-number">2.</span> <span class="nav-text">Crow Method</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A0%90%E8%A8%93%E7%B7%B4%E6%A8%A1%E5%9E%8B-VGG16-model"><span class="nav-number">3.</span> <span class="nav-text">預訓練模型 VGG16 model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Caffe"><span class="nav-number">3.1.</span> <span class="nav-text">Caffe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PyTorch"><span class="nav-number">3.2.</span> <span class="nav-text">PyTorch</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E9%9B%86"><span class="nav-number">4.</span> <span class="nav-text">資料集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Paris"><span class="nav-number">4.1.</span> <span class="nav-text">Paris</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oxford"><span class="nav-number">4.2.</span> <span class="nav-text">oxford</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%B9%E5%BE%B5%E8%90%83%E5%8F%96-Feature-Extraction"><span class="nav-number">5.</span> <span class="nav-text">特徵萃取 Feature Extraction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%B9%E5%BE%B5%E6%9F%A5%E8%A9%A2-Feature-Queries"><span class="nav-number">6.</span> <span class="nav-text">特徵查詢 Feature Queries</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A9%97%E8%AD%89-Evaluation"><span class="nav-number">7.</span> <span class="nav-text">驗證 Evaluation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bug-%E9%9B%86%E7%B5%90"><span class="nav-number">8.</span> <span class="nav-text">Bug 集結</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E6%96%87%E7%8D%BB"><span class="nav-number">9.</span> <span class="nav-text">參考文獻</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -160,13 +160,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -245,7 +245,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-11-22 19:35:05" itemprop="dateModified" datetime="2022-11-22T19:35:05+08:00">2022-11-22</time>
+      <time title="修改時間：2022-12-22 16:05:08" itemprop="dateModified" datetime="2022-12-22T16:05:08+08:00">2022-12-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -264,14 +264,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>912</span>
+      <span>1.4k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>2 分鐘</span>
+      <span>3 分鐘</span>
     </span>
 </div>
 
@@ -285,10 +285,14 @@
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>為了改善閉環檢測的方法，參考FSCW的方法，發現比較Crow的方法，便依此作為範本，<br>實作時發現此專案是早年使用Caffe模型寫的，此模型已經過時，因此改寫為PyTorch版本。</p>
 <span id="more"></span>
 
+<h1 id="Crow-Method"><a href="#Crow-Method" class="headerlink" title="Crow Method"></a>Crow Method</h1><p><a target="_blank" rel="noopener" href="https://github.com/YahooArchive/crow">https://github.com/YahooArchive/crow</a></p>
 <h1 id="預訓練模型-VGG16-model"><a href="#預訓練模型-VGG16-model" class="headerlink" title="預訓練模型 VGG16 model"></a>預訓練模型 VGG16 model</h1><h2 id="Caffe"><a href="#Caffe" class="headerlink" title="Caffe"></a>Caffe</h2><p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F1.VGG_ILSVRC_16_pool5.prototxt.png?alt=media&token=16df6b5e-0a06-46e8-aad7-9a63f35af959" alt="1.VGG_ILSVRC_16_pool5.prototxt"></p>
 <h2 id="PyTorch"><a href="#PyTorch" class="headerlink" title="PyTorch"></a>PyTorch</h2><p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F2.VGG16_bn.png?alt=media&token=1db369c1-ce0f-428c-a7f3-710a25be88cb" alt="2.VGG16_bn"></p>
 <p>參考寫法<br>Image Feature Extraction Using PyTorch Case Study: Image Clustering using<br>K-Means Algorithm<br><a target="_blank" rel="noopener" href="https://towardsdatascience.com/image-feature-extraction-using-pytorch-e3b327c3607a">https://towardsdatascience.com/image-feature-extraction-using-pytorch-e3b327c3607a</a></p>
-<h1 id="資料集"><a href="#資料集" class="headerlink" title="資料集"></a>資料集</h1><h2 id="Paris"><a href="#Paris" class="headerlink" title="Paris"></a>Paris</h2><p>Linux 執行 get_paris.sh<br>Windows 需改為bat檔</p>
+<h1 id="資料集"><a href="#資料集" class="headerlink" title="資料集"></a>資料集</h1><h2 id="Paris"><a href="#Paris" class="headerlink" title="Paris"></a>Paris</h2><p>Paris<br>官方網站<br><a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/">https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/</a></p>
+<p>Get data<br><a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/paris_1-v1.tgz">https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/paris_1-v1.tgz</a><br><a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/paris_2-v1.tgz">https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/paris_2-v1.tgz</a></p>
+<p>Get labels<br><a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/paris_120310.tgz">https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/paris_120310.tgz</a></p>
+<p>Linux 執行 get_paris.sh<br>Windows 需改為bat檔</p>
 <p>Paris 資料集有圖片無法讀取 需刪除<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F6.paris-1.png?alt=media&token=b7a8c8c6-3b66-4ec4-9102-bfbb145b1fcf" alt="6.paris-1"></p>
 <p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F7.paris-2.png?alt=media&token=bf1785d2-e5cf-4478-808a-9dc5b5d027d6" alt="7.paris-2"></p>
 <p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F8.paris-3.png?alt=media&token=ca316c14-4630-4812-9b42-6727f7f911cf" alt="8.paris-3"></p>
@@ -300,7 +304,10 @@
 <p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F14.paris-9.png?alt=media&token=44d7c5da-0ce5-43ed-8287-97ab208a639d" alt="14.paris-9"></p>
 <p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F15.paris-10.png?alt=media&token=c436f9af-3303-44a5-9e8a-84cb969a16ed" alt="15.paris-10"></p>
 <p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F16.paris-11.png?alt=media&token=6b3b021b-c8ae-4e3a-ab9f-d928aa22b28d" alt="16.paris-11"></p>
-<h2 id="oxford"><a href="#oxford" class="headerlink" title="oxford"></a>oxford</h2><p>Linux 執行 get_oxford.sh<br>Windows 需改為bat檔</p>
+<h2 id="oxford"><a href="#oxford" class="headerlink" title="oxford"></a>oxford</h2><p>Oxford<br>官方網站<br><a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/">https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/</a>.</p>
+<p>Get data<br><a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/oxbuild_images-v1.tgz">https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/oxbuild_images-v1.tgz</a></p>
+<p>Get labels<br><a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/gt_files_170407.tgz">https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/gt_files_170407.tgz</a></p>
+<p>Linux 執行 get_oxford.sh<br>Windows 需改為bat檔</p>
 <h1 id="特徵萃取-Feature-Extraction"><a href="#特徵萃取-Feature-Extraction" class="headerlink" title="特徵萃取 Feature Extraction"></a>特徵萃取 Feature Extraction</h1><p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F3.%E7%89%B9%E5%BE%B5%E8%90%83%E5%8F%96.png?alt=media&token=e221771c-2578-4b63-b50b-bb717e981d4f" alt="3.特徵萃取"></p>
 <h1 id="特徵查詢-Feature-Queries"><a href="#特徵查詢-Feature-Queries" class="headerlink" title="特徵查詢 Feature Queries"></a>特徵查詢 Feature Queries</h1><p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F4.oxford%20%E8%B3%87%E6%96%99%E9%9B%86.png?alt=media&token=dc2099d3-7d42-463d-83fc-3c6e7aee9495" alt="4.oxford 資料集"></p>
 <p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F5.paris%E8%B3%87%E6%96%99%E9%9B%86.png?alt=media&token=d54d4ac3-10f8-49ad-b7a6-d0a738c3911a" alt="5.paris資料集"></p>
@@ -322,8 +329,6 @@
 <p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%204-2.png?alt=media&token=3b057398-5f2d-44f3-b94f-da45c5a94cf0" alt="Bug 4-2"></p>
 <h1 id="參考文獻"><a href="#參考文獻" class="headerlink" title="參考文獻"></a>參考文獻</h1><ol>
 <li><p>Kalantidis, Y., Mellina, C., &amp; Osindero, S. (2016, October). Cross-dimensional weighting for aggregated deep convolutional features. In European conference on computer vision (pp. 685-701). Springer, Cham.</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/YahooArchive/crow">https://github.com/YahooArchive/crow</a></p>
 </li>
 <li><p>Zhang, B. J., Liu, G. H., &amp; Hu, J. K. (2022). Filtering Deep Convolutional Features for Image Retrieval. International Journal of Pattern Recognition and Artificial Intelligence, 36(01), 2252003.</p>
 </li>
@@ -380,13 +385,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">30k</span>
+    <span title="總字數">31k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">54 分鐘</span>
+    <span title="所需總閱讀時間">57 分鐘</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
