@@ -20,25 +20,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Don&#39;t be afraid of change; growing up is also a form of change.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="利醬の休憩房">
-<meta property="og:url" content="https://leonicehot.github.io/archives/2022/05/index.html">
+    <meta name="description" content="ROS Camera12sudo apt install ros-humble-usb-camros2 run usb_cam usb_cam_node_exe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ROS Tools">
+<meta property="og:url" content="https://leonicehot.github.io/2023/03/08/2023/ROS-Camera/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="Don&#39;t be afraid of change; growing up is also a form of change.">
+<meta property="og:description" content="ROS Camera12sudo apt install ros-humble-usb-camros2 run usb_cam usb_cam_node_exe">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2023-03-08T03:37:33.000Z">
+<meta property="article:modified_time" content="2023-03-08T03:55:40.962Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://leonicehot.github.io/archives/2022/05/">
+<link rel="canonical" href="https://leonicehot.github.io/2023/03/08/2023/ROS-Camera/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"archives/2022/05/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2023/03/08/2023/ROS-Camera/","path":"2023/03/08/2023/ROS-Camera/","title":"ROS Tools"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>歸檔 | 利醬の休憩房</title>
+<title>ROS Tools | 利醬の休憩房</title>
   
 
 
@@ -73,7 +75,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">利醬の休憩房</h1>
+      <p class="site-title">利醬の休憩房</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -99,7 +101,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -112,6 +114,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ROS-Camera"><span class="nav-number">1.</span> <span class="nav-text">ROS Camera</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -162,110 +165,112 @@
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/03/08/2023/ROS-Camera/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="Don't be afraid of change; growing up is also a form of change.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ROS Tools | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ROS Tools
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2023-03-08 11:37:33 / 修改時間：11:55:40" itemprop="dateCreated datePublished" datetime="2023-03-08T11:37:33+08:00">2023-03-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Robot-Operating-System/" itemprop="url" rel="index"><span itemprop="name">Robot Operating System</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>10</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>1 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="ROS-Camera"><a href="#ROS-Camera" class="headerlink" title="ROS Camera"></a>ROS Camera</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ros-humble-usb-cam</span><br><span class="line">ros2 run usb_cam usb_cam_node_exe</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
         
-        <span class="collection-header">還行! 目前共有 35 篇文章。 繼續努力。</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-05-15T13:31:47+08:00"
-              content="2022-05-15">
-          05-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/15/2022/Color-Contrast-Enhancement-%E6%BC%94%E7%AE%97%E6%B3%95/" itemprop="url">
-            <span itemprop="name">Color Contrast Enhancement 演算法</span>
-          </a>
-      </div>
-
-      
-    </header>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/12/30/2022/FlutterFile-Authentication/" rel="prev" title="Flutter Social Authentication">
+                  <i class="fa fa-chevron-left"></i> Flutter Social Authentication
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-05-15T11:00:37+08:00"
-              content="2022-05-15">
-          05-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/15/2022/ORB-SLAM3-%E5%AE%89%E8%A3%9D%E6%8C%87%E5%8D%97/" itemprop="url">
-            <span itemprop="name">ORB-SLAM3 安裝指南</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-05-15T08:53:12+08:00"
-              content="2022-05-15">
-          05-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/15/2022/%E6%96%B0%E5%8F%B0%E5%B9%A3%E7%A1%AC%E5%B9%A3%E5%BD%B1%E5%83%8F%E8%BC%AA%E5%BB%93%E5%81%B5%E6%B8%AC%E5%8F%8A%E8%A8%88%E7%AE%97%E9%87%91%E9%A1%8D/" itemprop="url">
-            <span itemprop="name">新台幣硬幣影像輪廓偵測及計算金額</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-05-15T08:46:15+08:00"
-              content="2022-05-15">
-          05-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/15/2022/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F/" itemprop="url">
-            <span itemprop="name">應用各種濾波器去除各種雜訊影像</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
 
 </div>
   </main>
