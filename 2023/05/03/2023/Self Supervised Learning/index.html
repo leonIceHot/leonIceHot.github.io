@@ -20,27 +20,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介自監督式學習的目標是學習到具有良好泛化效能的特徵表示，這些特徵可以被轉移到其他任務中。它在缺乏標記資料的情況下，通過利用大量未標記資料來提高機器學習的效能和可應用性。自監督式學習已經在計算機視覺、自然語言處理、語音識別等領域取得了許多重要的成果，並且具有廣泛的應用前景。">
+    <meta name="description" content="簡介自監督式學習的目標是學習到具有良好泛化效能的特徵表示，這些特徵可以被轉移到其他任務中。它在缺乏標記資料的情況下，通過利用大量未標記資料來提高機器學習的效能和可應用性。自監督式學習已經在電腦視覺、自然語言處理、語音識別等領域取得了許多重要的成果，並且具有廣泛的應用前景。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自監督式學習">
-<meta property="og:url" content="https://leonicehot.github.io/2023/05/03/2023/%E8%87%AA%E7%9B%A3%E7%9D%A3%E5%BC%8F%E5%AD%B8%E7%BF%92/index.html">
+<meta property="og:title" content="Self Supervised Learning">
+<meta property="og:url" content="https://leonicehot.github.io/2023/05/03/2023/Self%20Supervised%20Learning/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介自監督式學習的目標是學習到具有良好泛化效能的特徵表示，這些特徵可以被轉移到其他任務中。它在缺乏標記資料的情況下，通過利用大量未標記資料來提高機器學習的效能和可應用性。自監督式學習已經在計算機視覺、自然語言處理、語音識別等領域取得了許多重要的成果，並且具有廣泛的應用前景。">
+<meta property="og:description" content="簡介自監督式學習的目標是學習到具有良好泛化效能的特徵表示，這些特徵可以被轉移到其他任務中。它在缺乏標記資料的情況下，通過利用大量未標記資料來提高機器學習的效能和可應用性。自監督式學習已經在電腦視覺、自然語言處理、語音識別等領域取得了許多重要的成果，並且具有廣泛的應用前景。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-05-03T03:46:15.000Z">
-<meta property="article:modified_time" content="2023-05-04T02:11:14.004Z">
+<meta property="article:modified_time" content="2023-06-15T01:44:09.368Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://leonicehot.github.io/2023/05/03/2023/%E8%87%AA%E7%9B%A3%E7%9D%A3%E5%BC%8F%E5%AD%B8%E7%BF%92/">
+<link rel="canonical" href="https://leonicehot.github.io/2023/05/03/2023/Self%20Supervised%20Learning/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2023/05/03/2023/%E8%87%AA%E7%9B%A3%E7%9D%A3%E5%BC%8F%E5%AD%B8%E7%BF%92/","path":"2023/05/03/2023/自監督式學習/","title":"自監督式學習"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2023/05/03/2023/Self%20Supervised%20Learning/","path":"2023/05/03/2023/Self Supervised Learning/","title":"Self Supervised Learning"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>自監督式學習 | 利醬の休憩房</title>
+<title>Self Supervised Learning | 利醬の休憩房</title>
   
 
 
@@ -127,18 +127,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-count">66</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -176,7 +176,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/05/03/2023/%E8%87%AA%E7%9B%A3%E7%9D%A3%E5%BC%8F%E5%AD%B8%E7%BF%92/">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/05/03/2023/Self%20Supervised%20Learning/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -189,12 +189,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="自監督式學習 | 利醬の休憩房">
+      <meta itemprop="name" content="Self Supervised Learning | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          自監督式學習
+          Self Supervised Learning
         </h1>
 
         <div class="post-meta-container">
@@ -212,7 +212,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-05-04 10:11:14" itemprop="dateModified" datetime="2023-05-04T10:11:14+08:00">2023-05-04</time>
+      <time title="修改時間：2023-06-15 09:44:09" itemprop="dateModified" datetime="2023-06-15T09:44:09+08:00">2023-06-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -221,6 +221,14 @@
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/Artificial-Intelligence/" itemprop="url" rel="index"><span itemprop="name">Artificial Intelligence</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Artificial-Intelligence/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Artificial-Intelligence/Machine-Learning/Self-Supervised-Learning/" itemprop="url" rel="index"><span itemprop="name">Self Supervised Learning</span></a>
         </span>
     </span>
 
@@ -249,7 +257,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>自監督式學習的目標是學習到具有良好泛化效能的特徵表示，這些特徵可以被轉移到其他任務中。它在缺乏標記資料的情況下，通過利用大量未標記資料來提高機器學習的效能和可應用性。自監督式學習已經在計算機視覺、自然語言處理、語音識別等領域取得了許多重要的成果，並且具有廣泛的應用前景。</p>
+        <h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>自監督式學習的目標是學習到具有良好泛化效能的特徵表示，這些特徵可以被轉移到其他任務中。它在缺乏標記資料的情況下，通過利用大量未標記資料來提高機器學習的效能和可應用性。自監督式學習已經在電腦視覺、自然語言處理、語音識別等領域取得了許多重要的成果，並且具有廣泛的應用前景。</p>
 <span id="more"></span>
 
 <h1 id="定義"><a href="#定義" class="headerlink" title="定義"></a>定義</h1><p>自監督式學習（Self-Supervised Learning）是一種機器學習方法，其中模型利用未標記的資料來學習有用的特徵表示，而不需要人工標記的標籤。相對於傳統的監督學習，自監督式學習利用資料中的內在結構和相關性來建立輔助目標，使模型能夠自主學習和提取特徵。</p>
@@ -342,13 +350,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">80k</span>
+    <span title="總字數">90k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">2:26</span>
+    <span title="所需總閱讀時間">2:43</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

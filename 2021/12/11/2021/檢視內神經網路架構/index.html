@@ -22,25 +22,25 @@
 
     <meta name="description" content="torchsummary  1234567device &#x3D; torch.device(&amp;#x27;cuda&amp;#x27; if torch.cuda.is_available() else &amp;#x27;cpu&amp;#x27;)model &#x3D; SuperPointNet_gauss2()model &#x3D; model.to(device)# check keras-like model summary usi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="檢視神經網路模型參數總量">
-<meta property="og:url" content="https://leonicehot.github.io/2021/12/11/2021/%E6%AA%A2%E8%A6%96%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E6%A8%A1%E5%9E%8B%E5%8F%83%E6%95%B8%E7%B8%BD%E9%87%8F/index.html">
+<meta property="og:title" content="檢視內神經網路架構">
+<meta property="og:url" content="https://leonicehot.github.io/2021/12/11/2021/%E6%AA%A2%E8%A6%96%E5%85%A7%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E6%9E%B6%E6%A7%8B/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
 <meta property="og:description" content="torchsummary  1234567device &#x3D; torch.device(&amp;#x27;cuda&amp;#x27; if torch.cuda.is_available() else &amp;#x27;cpu&amp;#x27;)model &#x3D; SuperPointNet_gauss2()model &#x3D; model.to(device)# check keras-like model summary usi">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2021-12-11T10:59:22.000Z">
-<meta property="article:modified_time" content="2021-12-12T13:17:41.603Z">
+<meta property="article:modified_time" content="2023-06-15T02:10:14.678Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://leonicehot.github.io/2021/12/11/2021/%E6%AA%A2%E8%A6%96%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E6%A8%A1%E5%9E%8B%E5%8F%83%E6%95%B8%E7%B8%BD%E9%87%8F/">
+<link rel="canonical" href="https://leonicehot.github.io/2021/12/11/2021/%E6%AA%A2%E8%A6%96%E5%85%A7%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E6%9E%B6%E6%A7%8B/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2021/12/11/2021/%E6%AA%A2%E8%A6%96%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E6%A8%A1%E5%9E%8B%E5%8F%83%E6%95%B8%E7%B8%BD%E9%87%8F/","path":"2021/12/11/2021/檢視神經網路模型參數總量/","title":"檢視神經網路模型參數總量"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2021/12/11/2021/%E6%AA%A2%E8%A6%96%E5%85%A7%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E6%9E%B6%E6%A7%8B/","path":"2021/12/11/2021/檢視內神經網路架構/","title":"檢視內神經網路架構"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>檢視神經網路模型參數總量 | 利醬の休憩房</title>
+<title>檢視內神經網路架構 | 利醬の休憩房</title>
   
 
 
@@ -127,18 +127,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-count">66</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -176,7 +176,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2021/12/11/2021/%E6%AA%A2%E8%A6%96%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E6%A8%A1%E5%9E%8B%E5%8F%83%E6%95%B8%E7%B8%BD%E9%87%8F/">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2021/12/11/2021/%E6%AA%A2%E8%A6%96%E5%85%A7%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E6%9E%B6%E6%A7%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -189,12 +189,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="檢視神經網路模型參數總量 | 利醬の休憩房">
+      <meta itemprop="name" content="檢視內神經網路架構 | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          檢視神經網路模型參數總量
+          檢視內神經網路架構
         </h1>
 
         <div class="post-meta-container">
@@ -212,7 +212,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2021-12-12 21:17:41" itemprop="dateModified" datetime="2021-12-12T21:17:41+08:00">2021-12-12</time>
+      <time title="修改時間：2023-06-15 10:10:14" itemprop="dateModified" datetime="2023-06-15T10:10:14+08:00">2023-06-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -220,7 +220,15 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Deep-Learning/" itemprop="url" rel="index"><span itemprop="name">Deep Learning</span></a>
+          <a href="/categories/Artificial-Intelligence/" itemprop="url" rel="index"><span itemprop="name">Artificial Intelligence</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Artificial-Intelligence/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Artificial-Intelligence/Machine-Learning/Deep-Learning/" itemprop="url" rel="index"><span itemprop="name">Deep Learning</span></a>
         </span>
     </span>
 
@@ -231,7 +239,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>179</span>
+      <span>166</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -307,13 +315,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">80k</span>
+    <span title="總字數">90k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">2:26</span>
+    <span title="所需總閱讀時間">2:43</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
