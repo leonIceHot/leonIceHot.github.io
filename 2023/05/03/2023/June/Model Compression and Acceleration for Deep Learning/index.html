@@ -28,7 +28,7 @@
 <meta property="og:description" content="簡介神經網路壓縮是一種技術，旨在減少神經網路的大小和複雜性，同時保持其效能。這對於在資源受限的環境中使用神經網路非常有用，例如行動裝置或嵌入式系統。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-05-03T07:45:46.000Z">
-<meta property="article:modified_time" content="2023-06-16T02:02:12.972Z">
+<meta property="article:modified_time" content="2023-07-05T04:56:17.199Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
@@ -114,7 +114,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E7%BE%A9"><span class="nav-number">2.</span> <span class="nav-text">定義</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B6%B2%E8%B7%AF%E5%A3%93%E7%B8%AE"><span class="nav-number">2.1.</span> <span class="nav-text">網路壓縮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B6%B2%E8%B7%AF%E6%A8%A1%E5%9E%8B%E5%8A%A0%E9%80%9F%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">網路模型加速方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E5%A3%93%E7%B8%AE%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">模型壓縮方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A5%E9%A9%9F"><span class="nav-number">4.</span> <span class="nav-text">步驟</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E7%A1%AC%E9%AB%94%E5%8A%A0%E9%80%9F"><span class="nav-number">5.</span> <span class="nav-text">模型硬體加速</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%87%89%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">應用</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E7%BE%A9"><span class="nav-number">2.</span> <span class="nav-text">定義</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B6%B2%E8%B7%AF%E5%A3%93%E7%B8%AE"><span class="nav-number">2.1.</span> <span class="nav-text">網路壓縮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B6%B2%E8%B7%AF%E6%A8%A1%E5%9E%8B%E5%8A%A0%E9%80%9F%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">網路模型加速方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E5%A3%93%E7%B8%AE%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">模型壓縮方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A5%E9%A9%9F"><span class="nav-number">4.</span> <span class="nav-text">步驟</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E7%A1%AC%E9%AB%94%E5%8A%A0%E9%80%9F"><span class="nav-number">5.</span> <span class="nav-text">模型硬體加速</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Training"><span class="nav-number">5.1.</span> <span class="nav-text">Training</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inference"><span class="nav-number">5.2.</span> <span class="nav-text">Inference</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%87%89%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">應用</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -127,13 +127,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">86</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -212,7 +212,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-16 10:02:12" itemprop="dateModified" datetime="2023-06-16T10:02:12+08:00">2023-06-16</time>
+      <time title="修改時間：2023-07-05 12:56:17" itemprop="dateModified" datetime="2023-07-05T12:56:17+08:00">2023-07-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -239,14 +239,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>4.4k</span>
+      <span>4.8k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>8 分鐘</span>
+      <span>9 分鐘</span>
     </span>
 </div>
 
@@ -332,6 +332,12 @@
 </ol>
 <p>較新的硬體加速方法還在不斷發展，例如量子計算、神經網絡處理器（NNP）等。這些技術的目標是提供更高的運算速度、能效和功能，以滿足不斷增長的機器學習需求。</p>
 <p>在選擇和應用模型硬體加速技術時，需要考慮硬體資源、模型特性、應用需求以及相關的軟體支援。同時，還需要進行性能評估和測試，以確定加速方法的實際效果和成本效益。</p>
+<h2 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h2><h2 id="Inference"><a href="#Inference" class="headerlink" title="Inference"></a>Inference</h2><p>推論模型（Inference Model）是指在機器學習或深度學習中，已經訓練好並且用於進行預測或推斷的模型。它是在訓練模型完成後所生成的模型，用於對新的數據進行預測或分類。</p>
+<p>訓練模型通常需要進行多次迭代訓練，並根據訓練數據進行參數優化，以最小化訓練誤差。一旦訓練完成，推論模型就可以用於實際應用中，對新的數據進行預測。</p>
+<p>推論模型通常是針對特定任務進行優化的，例如圖像分類、物體檢測、語音識別等。在實際應用中，推論模型通常需要在現有的硬體平台上運行，如雲服務、邊緣設備或嵌入式系統。</p>
+<p>為了提高推論模型的效能，通常會採取一些優化措施，如模型壓縮、量化、模型裁剪等，以減小模型的體積和計算需求，從而實現更快速的預測速度。</p>
+<p>需要注意的是，推論模型與訓練模型不同，它不再需要進行反向傳播和參數更新，而是專注於對新數據進行預測。因此，在推論模型中通常會忽略一些訓練中使用的組件，如損失函數和優化器。</p>
+<p>總結來說，推論模型是訓練模型的一個快照，用於對新數據進行預測或推斷，並且需要進行一些優化以實現高效率的預測。</p>
 <h1 id="應用"><a href="#應用" class="headerlink" title="應用"></a>應用</h1><ol>
 <li><p>行動裝置和嵌入式系統：在行動裝置和嵌入式系統上運行大型神經網路需要消耗大量的計算資源和電池壽命。神經網路壓縮技術可以減少模型的大小和計算需求，使其能夠在資源有限的環境中高效運行，例如在智能手機、智能穿戴設備和無人機中應用。</p>
 </li>
@@ -396,13 +402,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">128k</span>
+    <span title="總字數">145k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">3:53</span>
+    <span title="所需總閱讀時間">4:23</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
