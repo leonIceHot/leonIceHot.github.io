@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://leonicehot.github.io/images/2023/Brain-MRI-Segmentation-Techniques/segresnet.png">
 <meta property="og:image" content="https://leonicehot.github.io/images/2023/Brain-MRI-Segmentation-Techniques/Evaluation.png">
 <meta property="article:published_time" content="2023-06-14T09:01:57.000Z">
-<meta property="article:modified_time" content="2023-06-20T03:35:55.407Z">
+<meta property="article:modified_time" content="2023-07-06T06:34:48.795Z">
 <meta property="article:author" content="利醬">
 <meta property="article:tag" content="MRI">
 <meta name="twitter:card" content="summary">
@@ -120,7 +120,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%86%AB%E5%AD%B8%E5%BD%B1%E5%83%8F%E4%BB%8B%E7%B4%B9"><span class="nav-number">2.</span> <span class="nav-text">醫學影像介紹</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%85%A6%E9%83%A8%E7%9A%84%E7%B5%90%E6%A7%8B"><span class="nav-number">2.1.</span> <span class="nav-text">腦部的結構</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MRI"><span class="nav-number">2.2.</span> <span class="nav-text">MRI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MRI-%E5%BD%B1%E5%83%8F%E9%A1%9E%E5%9E%8B"><span class="nav-number">2.2.1.</span> <span class="nav-text">MRI 影像類型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PET"><span class="nav-number">2.3.</span> <span class="nav-text">PET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#X-ray"><span class="nav-number">2.4.</span> <span class="nav-text">X-ray</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CT"><span class="nav-number">2.5.</span> <span class="nav-text">CT</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92"><span class="nav-number">3.</span> <span class="nav-text">深度學習</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">3.1.</span> <span class="nav-text">Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Public"><span class="nav-number">3.1.1.</span> <span class="nav-text">Public</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Brain-Tumor-MRI-Segmentation-Methods"><span class="nav-number">3.2.</span> <span class="nav-text">Brain Tumor MRI Segmentation Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2D-Images-Segmentation"><span class="nav-number">3.2.1.</span> <span class="nav-text">2D Images Segmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3D-Volumes-Segmentation"><span class="nav-number">3.2.2.</span> <span class="nav-text">3D Volumes Segmentation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Evaluation-Metric"><span class="nav-number">3.3.</span> <span class="nav-text">Evaluation Metric</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AB%96%E6%96%87"><span class="nav-number">4.</span> <span class="nav-text">論文</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%86%AB%E5%AD%B8%E5%BD%B1%E5%83%8F%E4%BB%8B%E7%B4%B9"><span class="nav-number">2.</span> <span class="nav-text">醫學影像介紹</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%85%A6%E9%83%A8%E7%9A%84%E7%B5%90%E6%A7%8B"><span class="nav-number">2.1.</span> <span class="nav-text">腦部的結構</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MRI"><span class="nav-number">2.2.</span> <span class="nav-text">MRI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MRI-%E5%BD%B1%E5%83%8F%E9%A1%9E%E5%9E%8B"><span class="nav-number">2.2.1.</span> <span class="nav-text">MRI 影像類型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92"><span class="nav-number">3.</span> <span class="nav-text">深度學習</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">3.1.</span> <span class="nav-text">Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Public"><span class="nav-number">3.1.1.</span> <span class="nav-text">Public</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Brain-Tumor-MRI-Segmentation-Methods"><span class="nav-number">3.2.</span> <span class="nav-text">Brain Tumor MRI Segmentation Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2D-Images-Segmentation"><span class="nav-number">3.2.1.</span> <span class="nav-text">2D Images Segmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3D-Volumes-Segmentation"><span class="nav-number">3.2.2.</span> <span class="nav-text">3D Volumes Segmentation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Evaluation-Metric"><span class="nav-number">3.3.</span> <span class="nav-text">Evaluation Metric</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AB%96%E6%96%87"><span class="nav-number">4.</span> <span class="nav-text">論文</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -133,13 +133,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">84</span>
+          <span class="site-state-item-count">89</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">26</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -218,7 +218,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-20 11:35:55" itemprop="dateModified" datetime="2023-06-20T11:35:55+08:00">2023-06-20</time>
+      <time title="修改時間：2023-07-06 14:34:48" itemprop="dateModified" datetime="2023-07-06T14:34:48+08:00">2023-07-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -249,14 +249,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>12k</span>
+      <span>11k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>21 分鐘</span>
+      <span>19 分鐘</span>
     </span>
 </div>
 
@@ -328,25 +328,6 @@
 </li>
 <li><p>動態應力強化MRI（Dynamic contrast-enhanced MRI, DCE-MRI）：這種掃描可以觀察造影劑在體內的分佈和移動，尤其適用於研究腫瘤的血流供應和血管透明度。</p>
 </li>
-</ol>
-<p>每種影像都有其特點和應用場景，醫生會根據病人的症狀和診斷需求選擇合適的MRI掃描類型。</p>
-<h2 id="PET"><a href="#PET" class="headerlink" title="PET"></a>PET</h2><p>  正位子發射斷層掃描(Positron Emission Tomography;PET)是一種影像檢測方式，可以幫助揭示組織和器官的運作方式。其工作原理是使用放射性藥物（追蹤劑）來顯示活動，有時可以在其他影像檢測中顯示出疾病。</p>
-<p>  以下是其工作原理：</p>
-<p>  少量的放射性物質注入身體。這種物質被稱為標記劑或追蹤劑，最常見的是含有放射性同位素的葡萄糖。組織或器官消耗葡萄糖作為能源，因此這種標記劑可以幫助顯示哪些部分的活動增加。</p>
-<p>  當標記劑在身體中分布後，您將被安置在PET掃描機中。此機器掃描身體並偵測標記劑的放射性。</p>
-<p>  掃描機使用檢測到的放射性來創建一個圖像，顯示身體組織的活躍程度。高度活躍的區域（例如，某些類型的癌症）可能會吸收更多的放射性葡萄糖，並在掃描中顯示為“熱點”。</p>
-<p>  這種技術常用於癌症診斷和評估，評估心臟疾病的影響，以及了解大腦如何運作。PET掃描可以提供醫生關於疾病活動的詳細信息，幫助他們更好地制定治療計劃。</p>
-<h2 id="X-ray"><a href="#X-ray" class="headerlink" title="X-ray"></a>X-ray</h2><p>  X射線影像學是一種醫學影像技術，透過使用X射線（一種形式的電離輻射）來獲得人體內部結構的圖像。這種技術特別適合觀察骨骼結構，並且在某些情況下也可以用於觀察軟組織。</p>
-<p>  在X射線影像學中，X射線從一個源頭射出，穿過人體，然後被一個探測器接收。當X射線穿過人體時，不同組織對其吸收程度不同。例如，骨骼對X射線的吸收最強，因此在影像上顯示為白色或淺灰色。而軟組織，如肌肉和內臟對X射線的吸收較弱，因此在影像上顯示為深灰色或黑色。</p>
-<p>  X射線影像技術的主要應用包括骨折檢測、牙科影像學、胸部影像學（如肺部疾病檢測）等。然而，由於X射線是一種形式的電離輻射，這意味著過多的曝露可能會增加癌症風險。因此，在進行X射線檢查時，應該考慮到患者的總輻射曝露劑量。</p>
-<h2 id="CT"><a href="#CT" class="headerlink" title="CT"></a>CT</h2><p>  電腦斷層掃描（Computed Tomography，CT）是一種醫學影像技術，通過旋轉X射線源和對應的探測器，從體內多個角度獲取X射線圖像，再由電腦進行重建，得到人體內部結構的斷層影像。這種技術可以提供比傳統X射線更詳細、更準確的診斷信息。</p>
-<p>  CT掃描有許多用途，包括但不限於：</p>
-<ol>
-<li>檢查骨骼結構，如頭骨、胸骨、脊柱和四肢等。</li>
-<li>確定內部傷害或疾病的位置、性質和大小，如腫瘤、感染、心臟病、肺病等。</li>
-<li>指導某些醫學操作，如生物檢或設置導管等。</li>
-<li>監測疾病的進程，如評估治療效果或追蹤病情變化。</li>
-<li>然而，與MRI相比，CT掃描使用的是電離輻射，因此接受者會暴露在一定劑量的輻射中，這是需要在使用CT掃描時考慮的因素。</li>
 </ol>
 <h1 id="深度學習"><a href="#深度學習" class="headerlink" title="深度學習"></a>深度學習</h1><h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><h3 id="Public"><a href="#Public" class="headerlink" title="Public"></a>Public</h3><ol>
 <li>BraTS<br>The model is trained to segment 3 nested subregions of primary brain tumors (gliomas):</li>
@@ -536,13 +517,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">146k</span>
+    <span title="總字數">169k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">4:25</span>
+    <span title="所需總閱讀時間">5:06</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
