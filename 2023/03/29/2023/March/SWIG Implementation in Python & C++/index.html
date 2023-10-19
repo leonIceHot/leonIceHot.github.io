@@ -22,28 +22,28 @@
 
     <meta name="description" content="Simplified Wrapper and Interface GeneratorSWIG is most commonly used to create high-level interpreted or compiled programming environments, user interfaces">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SWIG 實作 Python 與 C++ 介面">
-<meta property="og:url" content="https://leonicehot.github.io/2023/03/29/2023/March/SWIG-%E5%AF%A6%E4%BD%9C-Python-%E8%88%87-C-%E4%BB%8B%E9%9D%A2/index.html">
+<meta property="og:title" content="SWIG Implementation in Python &amp; C++">
+<meta property="og:url" content="https://leonicehot.github.io/2023/03/29/2023/March/SWIG%20Implementation%20in%20Python%20&%20C++/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
 <meta property="og:description" content="Simplified Wrapper and Interface GeneratorSWIG is most commonly used to create high-level interpreted or compiled programming environments, user interfaces">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://leonicehot.github.io/images/SWIG-%E5%AF%A6%E4%BD%9C-Python-%E8%88%87-C-%E4%BB%8B%E9%9D%A2/var-setting.png">
 <meta property="og:image" content="https://leonicehot.github.io/images/SWIG-%E5%AF%A6%E4%BD%9C-Python-%E8%88%87-C-%E4%BB%8B%E9%9D%A2/SWIG.png">
 <meta property="article:published_time" content="2023-03-29T01:35:15.000Z">
-<meta property="article:modified_time" content="2023-03-29T02:45:47.687Z">
+<meta property="article:modified_time" content="2023-10-12T03:15:22.588Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://leonicehot.github.io/images/SWIG-%E5%AF%A6%E4%BD%9C-Python-%E8%88%87-C-%E4%BB%8B%E9%9D%A2/var-setting.png">
 
 
-<link rel="canonical" href="https://leonicehot.github.io/2023/03/29/2023/March/SWIG-%E5%AF%A6%E4%BD%9C-Python-%E8%88%87-C-%E4%BB%8B%E9%9D%A2/">
+<link rel="canonical" href="https://leonicehot.github.io/2023/03/29/2023/March/SWIG%20Implementation%20in%20Python%20&%20C++/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2023/03/29/2023/March/SWIG-%E5%AF%A6%E4%BD%9C-Python-%E8%88%87-C-%E4%BB%8B%E9%9D%A2/","path":"2023/03/29/2023/March/SWIG-實作-Python-與-C-介面/","title":"SWIG 實作 Python 與 C++ 介面"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2023/03/29/2023/March/SWIG%20Implementation%20in%20Python%20&%20C++/","path":"2023/03/29/2023/March/SWIG Implementation in Python & C++/","title":"SWIG Implementation in Python & C++"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>SWIG 實作 Python 與 C++ 介面 | 利醬の休憩房</title>
+<title>SWIG Implementation in Python & C++ | 利醬の休憩房</title>
   
 
 
@@ -130,18 +130,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">100</span>
+          <span class="site-state-item-count">101</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -179,7 +179,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/03/29/2023/March/SWIG-%E5%AF%A6%E4%BD%9C-Python-%E8%88%87-C-%E4%BB%8B%E9%9D%A2/">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/03/29/2023/March/SWIG%20Implementation%20in%20Python%20&%20C++/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -192,12 +192,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="SWIG 實作 Python 與 C++ 介面 | 利醬の休憩房">
+      <meta itemprop="name" content="SWIG Implementation in Python & C++ | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          SWIG 實作 Python 與 C++ 介面
+          SWIG Implementation in Python & C++
         </h1>
 
         <div class="post-meta-container">
@@ -207,9 +207,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
-      
 
-      <time title="創建時間：2023-03-29 09:35:15 / 修改時間：10:45:47" itemprop="dateCreated datePublished" datetime="2023-03-29T09:35:15+08:00">2023-03-29</time>
+      <time title="創建時間：2023-03-29 09:35:15" itemprop="dateCreated datePublished" datetime="2023-03-29T09:35:15+08:00">2023-03-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-10-12 11:15:22" itemprop="dateModified" datetime="2023-10-12T11:15:22+08:00">2023-10-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -291,8 +297,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/03/13/2023/March/React-%E5%88%9D%E6%8E%A2/" rel="prev" title="React 初探">
-                  <i class="fa fa-chevron-left"></i> React 初探
+                <a href="/2023/03/13/2023/March/Introductio%20to%20React/" rel="prev" title="Introductio to React">
+                  <i class="fa fa-chevron-left"></i> Introductio to React
                 </a>
             </div>
             <div class="post-nav-item">
@@ -330,13 +336,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">203k</span>
+    <span title="總字數">206k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">6:10</span>
+    <span title="所需總閱讀時間">6:15</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

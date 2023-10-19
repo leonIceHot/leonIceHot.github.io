@@ -20,27 +20,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="BraTS challenges 2018Training dataset 285 cases (210HGG and 75 LGG)Testing dataset 191 casesEach cases with four 3D MRI modalities (T1, T1C, T2, FLAIR)The input size: 240x240x155The annotations: Whole">
+    <meta name="description" content="簡介We focus on automatic segmentation of multiple anatomical structures in (whole body) CT images.Many segmentation algorithms exist for this task. However, in most cases they suffer from 3 problems:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nii檔說明">
-<meta property="og:url" content="https://leonicehot.github.io/2023/06/29/2023/June/nii%E6%AA%94%E8%AA%AA%E6%98%8E/index.html">
+<meta property="og:title" content="Computed Tomography Imaging">
+<meta property="og:url" content="https://leonicehot.github.io/2023/10/12/2023/October/Computed%20Tomography%20Imaging/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="BraTS challenges 2018Training dataset 285 cases (210HGG and 75 LGG)Testing dataset 191 casesEach cases with four 3D MRI modalities (T1, T1C, T2, FLAIR)The input size: 240x240x155The annotations: Whole">
+<meta property="og:description" content="簡介We focus on automatic segmentation of multiple anatomical structures in (whole body) CT images.Many segmentation algorithms exist for this task. However, in most cases they suffer from 3 problems:">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2023-06-29T03:45:02.000Z">
-<meta property="article:modified_time" content="2023-07-05T02:57:22.058Z">
+<meta property="article:published_time" content="2023-10-12T02:16:35.000Z">
+<meta property="article:modified_time" content="2023-10-19T02:18:08.283Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://leonicehot.github.io/2023/06/29/2023/June/nii%E6%AA%94%E8%AA%AA%E6%98%8E/">
+<link rel="canonical" href="https://leonicehot.github.io/2023/10/12/2023/October/Computed%20Tomography%20Imaging/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2023/06/29/2023/June/nii%E6%AA%94%E8%AA%AA%E6%98%8E/","path":"2023/06/29/2023/June/nii檔說明/","title":"nii檔說明"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2023/10/12/2023/October/Computed%20Tomography%20Imaging/","path":"2023/10/12/2023/October/Computed Tomography Imaging/","title":"Computed Tomography Imaging"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>nii檔說明 | 利醬の休憩房</title>
+<title>Computed Tomography Imaging | 利醬の休憩房</title>
   
 
 
@@ -114,7 +114,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BraTS-challenges-2018"><span class="nav-number">1.</span> <span class="nav-text">BraTS challenges 2018</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NII%E6%AA%94"><span class="nav-number">2.</span> <span class="nav-text">NII檔</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#voxel"><span class="nav-number">3.</span> <span class="nav-text">voxel</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gliomas"><span class="nav-number">4.</span> <span class="nav-text">gliomas</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Low-grade-gliomas"><span class="nav-number">4.1.</span> <span class="nav-text">Low-grade gliomas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High-grade-gliomas"><span class="nav-number">4.2.</span> <span class="nav-text">High-grade gliomas</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3D-Slicer"><span class="nav-number">5.</span> <span class="nav-text">3D Slicer</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dataset"><span class="nav-number">2.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference:</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -127,18 +127,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">100</span>
+          <span class="site-state-item-count">101</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -176,7 +176,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/06/29/2023/June/nii%E6%AA%94%E8%AA%AA%E6%98%8E/">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/10/12/2023/October/Computed%20Tomography%20Imaging/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -189,12 +189,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="nii檔說明 | 利醬の休憩房">
+      <meta itemprop="name" content="Computed Tomography Imaging | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          nii檔說明
+          Computed Tomography Imaging
         </h1>
 
         <div class="post-meta-container">
@@ -205,14 +205,14 @@
       </span>
       <span class="post-meta-item-text">發表於</span>
 
-      <time title="創建時間：2023-06-29 11:45:02" itemprop="dateCreated datePublished" datetime="2023-06-29T11:45:02+08:00">2023-06-29</time>
+      <time title="創建時間：2023-10-12 10:16:35" itemprop="dateCreated datePublished" datetime="2023-10-12T10:16:35+08:00">2023-10-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-07-05 10:57:22" itemprop="dateModified" datetime="2023-07-05T10:57:22+08:00">2023-07-05</time>
+      <time title="修改時間：2023-10-19 10:18:08" itemprop="dateModified" datetime="2023-10-19T10:18:08+08:00">2023-10-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -243,14 +243,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>2.6k</span>
+      <span>1.3k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>5 分鐘</span>
+      <span>2 分鐘</span>
     </span>
 </div>
 
@@ -261,42 +261,25 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="BraTS-challenges-2018"><a href="#BraTS-challenges-2018" class="headerlink" title="BraTS challenges 2018"></a>BraTS challenges 2018</h1><p>Training dataset 285 cases (210HGG and 75 LGG)<br>Testing dataset 191 cases<br>Each cases with four 3D MRI modalities (T1, T1C, T2, FLAIR)<br>The input size: 240x240x155<br>The annotations: Whole Tumor (WT)、Tumor Core (TC)、Enhancing Tumor (ET)</p>
+        <h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>We focus on automatic segmentation of multiple anatomical structures in (whole body) CT images.<br>Many segmentation algorithms exist for this task. However, in most cases they suffer from 3 problems: </p>
+<ol>
+<li>They are difficult to use (the code and data is not publicly available or difficult to use). </li>
+<li>They do not generalize (often the training dataset was curated to only contain very clean images which do not reflect<br>the image distribution found during clinical routine) </li>
+<li>The algorithm can only segment one anatomical structure. For more structures several algorithms have to be used which increases the effort required to set up the system.</li>
+</ol>
+<p>In this work we publish a new dataset and segmentation toolkit which solves all three of these problems:<br>In 1204 CT images we segmented 104 anatomical structures (27 organs, 59 bones, 10 muscles, 8 vessels)</p>
 <span id="more"></span>
-
-<h1 id="NII檔"><a href="#NII檔" class="headerlink" title="NII檔"></a>NII檔</h1><p>NII檔（NIfTI-1檔案格式）是一種常用的醫學影像文件格式，用於儲存三維（3D）和四維（4D）醫學影像數據。NII檔是基於NIfTI（Neuroimaging Informatics Technology Initiative）標準的擴展，旨在提供一種簡單且兼容的文件格式，方便在不同軟件和平台之間進行醫學影像數據的交換和處理。</p>
-<p>NII檔是一種二進制文件，可以包含單一時間點或多個時間點的三維圖像數據。它可以儲存各種醫學影像數據，如腦部MRI、CT掃描、PET掃描等。NII檔包括兩個主要組成部分：</p>
-<p>頭文件（Header）：頭文件包含了對NII檔的描述和元數據信息，如圖像的維度（尺寸）、像素分辨率、數據類型、掃描參數等。頭文件通常以”.hdr”或”.nii”擴展名保存。</p>
-<p>數據文件（Data）：數據文件包含了實際的圖像數據，按照頭文件中定義的維度和數據類型進行組織和儲存。數據文件通常以”.img”或”.nii”擴展名保存。</p>
-<p>NII檔的優勢在於其簡單性和可兼容性。它可以被多種醫學影像處理軟件和工具廣泛支持，並且能夠方便地進行數據交換和共享。在醫學影像研究和臨床應用中，NII檔是一個重要的文件格式，用於儲存和處理三維和四維醫學影像數據。</p>
-<h1 id="voxel"><a href="#voxel" class="headerlink" title="voxel"></a>voxel</h1><p>Voxel（Volume Pixel）是指三維（3D）空間中的體素或體積圖元。類似於二維（2D）圖像中的圖元（Pixel），Voxel是三維資料的最小單位。它可以被視為一個立方體，具有在三個方向上的長度、寬度和高度。</p>
-<p>在醫學影像學中，voxel通常用於描述醫學影像（如MRI、CT、PET等）中的三維數據。每個voxel代表了體積數據中的一個小立ㄇ提取有關結構、功能和病變的信息。</p>
-<p>voxel的大小是指每個voxel在三個維度上的尺寸。例如，一個1mm x 1mm x 1mm的voxel大小表示每個voxel在X、Y、Z三個方向上的邊長都是1毫米。voxel大小的選擇取決於影像的空間解析度需求以及研究或臨床應用的目的。</p>
-<p>在計算機圖形學和模擬中，voxel也常用於描述三維場景或物體。通過在三維空間中的每個位置上賦予一個值或特性，可以創建出三維數據集，用於建模、渲染和模擬。</p>
-<h1 id="gliomas"><a href="#gliomas" class="headerlink" title="gliomas"></a>gliomas</h1><h2 id="Low-grade-gliomas"><a href="#Low-grade-gliomas" class="headerlink" title="Low-grade gliomas"></a>Low-grade gliomas</h2><p>Low-grade gliomas（低級別膠質母細胞瘤）是一種腦腫瘤，屬於膠質母細胞瘤的一個子類別。它們是一種相對較慢生長的腦腫瘤，通常發展緩慢並具有較好的預後。</p>
-<p>低級別膠質母細胞瘤的細胞學特徵表明它們是膠質母細胞的起源，這是一種腦部支持結構的細胞。低級別膠質母細胞瘤通常分為兩個主要亞型：濕地型和星形細胞型。濕地型低級別膠質母細胞瘤細胞具有類似神經細胞的外觀，而星形細胞型低級別膠質母細胞瘤細胞則具有類似星形細胞的外觀。</p>
-<p>低級別膠質母細胞瘤通常在年輕成人或中年人中發生，並且在兒童中比較罕見。常見的症狀可能包括頭痛、癲癇、視覺問題、語言或運動功能障礙，這取決於腫瘤的位置。</p>
-<p>治療低級別膠質母細胞瘤的方法通常是手術切除腫瘤，以盡可能刪除大部分或全部的腫瘤組織。手術後可能需要輔助放射治療或化學治療來控制殘留腫瘤或預防復發。</p>
-<p>低級別膠質母細胞瘤的預後通常較好，但治療結果取決於多個因素，包括腫瘤的大小、位置、細胞學特徵和患者的年齡和整體健康狀況。定期的隨訪和影像檢查是必要的，以監測腫瘤的生長和可能的復發。</p>
-<h2 id="High-grade-gliomas"><a href="#High-grade-gliomas" class="headerlink" title="High-grade gliomas"></a>High-grade gliomas</h2><p>High-grade gliomas（高級別膠質母細胞瘤）是一種惡性腦腫瘤，屬於膠質母細胞瘤的一個子類別。它們是一種快速生長且侵襲性的腦腫瘤，通常預後不良。</p>
-<p>高級別膠質母細胞瘤的細胞學特徵表明它們源於膠質母細胞，這是腦部支持結構的細胞。高級別膠質母細胞瘤通常根據細胞特徵和分子特徵進一步分類，包括最常見的類型：顱內膠質母細胞瘤（Glioblastoma，GBM）。</p>
-<p>高級別膠質母細胞瘤通常在成人中發生，而在兒童中較為罕見。它們通常生長速度快，具有侵襲性生長和血管新生的特徵。高級別膠質母細胞瘤的症狀可能包括頭痛、噁心、嘔吐、癲癇、神經功能障礙等，這取決於腫瘤的位置和大小。</p>
-<p>治療高級別膠質母細胞瘤的常見方法包括手術切除腫瘤、放射治療和化學治療。然而，由於高級別膠質母細胞瘤的侵襲性生長和細胞異質性，往往難以完全切除。因此，復發風險和預後仍然不理想。</p>
-<p>高級別膠質母細胞瘤的預後通常較差，存活率相對較低。預後取決於多個因素，包括腫瘤的細胞學特徵、分子特徵、患者的年齡、整體健康狀況以及治療的效果。早期診斷、綜合治療和定期的隨訪是管理高級別膠質母細胞瘤的重要措施。</p>
-<h1 id="3D-Slicer"><a href="#3D-Slicer" class="headerlink" title="3D Slicer"></a>3D Slicer</h1><ol>
-<li><p>Download 3D Slicer<br><a target="_blank" rel="noopener" href="https://download.slicer.org/">https://download.slicer.org/</a></p>
+<h1 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h1><p>Dataset with segmentations of 117 important anatomical structures in 1228 CT images<br><a target="_blank" rel="noopener" href="https://zenodo.org/record/8367088">https://zenodo.org/record/8367088</a></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h1><ol>
+<li><p>TotalSegmentator: Robust Segmentation of 104 Anatomic Structures in CT Images<br><a target="_blank" rel="noopener" href="http://aixpaper.com/view/totalsegmentator_robust_segmentation_of_104_anatomical_structures_in_ct_images">http://aixpaper.com/view/totalsegmentator_robust_segmentation_of_104_anatomical_structures_in_ct_images</a></p>
 </li>
-<li><p>Edit source<br>sudo vim &#x2F;etc&#x2F;apt&#x2F;sources.list<br>deb <a target="_blank" rel="noopener" href="http://us.archive.ubuntu.com/ubuntu">http://us.archive.ubuntu.com/ubuntu</a> focal main restricted<br>deb <a target="_blank" rel="noopener" href="http://security.ubuntu.com/ubuntu">http://security.ubuntu.com/ubuntu</a> focal-security main restricted<br>deb <a target="_blank" rel="noopener" href="http://us.archive.ubuntu.com/ubuntu">http://us.archive.ubuntu.com/ubuntu</a> focal-updates main restricted</p>
-<p>sudo apt update<br>sudo apt install libpulse-dev<br>sudo apt install libxcb-xinerama0</p>
+<li><p>TotalSegmentator<br><a target="_blank" rel="noopener" href="https://github.com/wasserth/TotalSegmentator/tree/master">https://github.com/wasserth/TotalSegmentator/tree/master</a></p>
 </li>
-<li><p>Open 3D Slicer<br>.&#x2F;Slicer</p>
+<li><p>SlicerTotalSegmentator<br><a target="_blank" rel="noopener" href="https://github.com/lassoan/SlicerTotalSegmentator">https://github.com/lassoan/SlicerTotalSegmentator</a></p>
+</li>
+<li><p>Edge Inference<br>Optimization of CT Lung Lobe Segmentation for Edge Inference<br><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3594806.3594855">https://dl.acm.org/doi/10.1145/3594806.3594855</a></p>
 </li>
 </ol>
-<p>Source : </p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/70317889/cannot-install-libpulse-dev-in-ubuntu">https://stackoverflow.com/questions/70317889/cannot-install-libpulse-dev-in-ubuntu</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39942341/article/details/121219006">https://blog.csdn.net/qq_39942341/article/details/121219006</a></li>
-</ul>
 
     </div>
 
@@ -310,14 +293,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/06/28/2023/June/%E7%94%9F%E7%89%A9%E6%A8%99%E8%A8%98%E6%96%BC%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E7%9A%84%E6%87%89%E7%94%A8/" rel="prev" title="Biomarker">
-                  <i class="fa fa-chevron-left"></i> Biomarker
+                <a href="/2023/08/31/2023/August/Sparsity-Learning/" rel="prev" title="Sparsity Learning">
+                  <i class="fa fa-chevron-left"></i> Sparsity Learning
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/06/30/2023/June/Optimization%20in%20Deep%20Learning/" rel="next" title="Optimization in Deep Learning">
-                  Optimization in Deep Learning <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -349,13 +329,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">203k</span>
+    <span title="總字數">206k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">6:10</span>
+    <span title="所需總閱讀時間">6:15</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

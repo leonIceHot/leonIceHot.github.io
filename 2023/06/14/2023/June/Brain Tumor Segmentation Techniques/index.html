@@ -22,8 +22,8 @@
 
     <meta name="description" content="簡介核磁共振造影（MRI）是檢測腦部腫瘤的主要診斷工具之一。MRI可以提供高解析度的腦部圖像，使醫生能夠詳細地查看腦部的結構和變化，並確定腫瘤的位置、大小和種類。 MRI掃描可以清楚地區分腦部的不同組織，包括白質、灰質和腦室。此外，MRI可以顯示出腦部的血流情況，這在評估腫瘤的生長情況和病情嚴重程度時非常重要，因為某些類型的腫瘤會引起周圍血流的增加。 MRI掃描通常包括數種不同類型的圖像，例如T1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Brain MRI Segmentation Techniques">
-<meta property="og:url" content="https://leonicehot.github.io/2023/06/14/2023/June/Brain%20MRI%20Segmentation%20Techniques/index.html">
+<meta property="og:title" content="Brain Tumor Segmentation Techniques">
+<meta property="og:url" content="https://leonicehot.github.io/2023/06/14/2023/June/Brain%20Tumor%20Segmentation%20Techniques/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
 <meta property="og:description" content="簡介核磁共振造影（MRI）是檢測腦部腫瘤的主要診斷工具之一。MRI可以提供高解析度的腦部圖像，使醫生能夠詳細地查看腦部的結構和變化，並確定腫瘤的位置、大小和種類。 MRI掃描可以清楚地區分腦部的不同組織，包括白質、灰質和腦室。此外，MRI可以顯示出腦部的血流情況，這在評估腫瘤的生長情況和病情嚴重程度時非常重要，因為某些類型的腫瘤會引起周圍血流的增加。 MRI掃描通常包括數種不同類型的圖像，例如T1">
 <meta property="og:locale" content="zh_TW">
@@ -32,21 +32,20 @@
 <meta property="og:image" content="https://leonicehot.github.io/images/2023/Brain-MRI-Segmentation-Techniques/segresnet.png">
 <meta property="og:image" content="https://leonicehot.github.io/images/2023/Brain-MRI-Segmentation-Techniques/Evaluation.png">
 <meta property="article:published_time" content="2023-06-14T09:01:57.000Z">
-<meta property="article:modified_time" content="2023-07-06T06:34:48.795Z">
+<meta property="article:modified_time" content="2023-10-19T02:15:59.412Z">
 <meta property="article:author" content="利醬">
-<meta property="article:tag" content="MRI">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://leonicehot.github.io/images/2023/Brain-MRI-Segmentation-Techniques/gray-matter-vs-white-matter.webp">
 
 
-<link rel="canonical" href="https://leonicehot.github.io/2023/06/14/2023/June/Brain%20MRI%20Segmentation%20Techniques/">
+<link rel="canonical" href="https://leonicehot.github.io/2023/06/14/2023/June/Brain%20Tumor%20Segmentation%20Techniques/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2023/06/14/2023/June/Brain%20MRI%20Segmentation%20Techniques/","path":"2023/06/14/2023/June/Brain MRI Segmentation Techniques/","title":"Brain MRI Segmentation Techniques"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2023/06/14/2023/June/Brain%20Tumor%20Segmentation%20Techniques/","path":"2023/06/14/2023/June/Brain Tumor Segmentation Techniques/","title":"Brain Tumor Segmentation Techniques"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Brain MRI Segmentation Techniques | 利醬の休憩房</title>
+<title>Brain Tumor Segmentation Techniques | 利醬の休憩房</title>
   
 
 
@@ -133,18 +132,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">100</span>
+          <span class="site-state-item-count">101</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -182,7 +181,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/06/14/2023/June/Brain%20MRI%20Segmentation%20Techniques/">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/06/14/2023/June/Brain%20Tumor%20Segmentation%20Techniques/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -195,12 +194,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Brain MRI Segmentation Techniques | 利醬の休憩房">
+      <meta itemprop="name" content="Brain Tumor Segmentation Techniques | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Brain MRI Segmentation Techniques
+          Brain Tumor Segmentation Techniques
         </h1>
 
         <div class="post-meta-container">
@@ -218,7 +217,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-07-06 14:34:48" itemprop="dateModified" datetime="2023-07-06T14:34:48+08:00">2023-07-06</time>
+      <time title="修改時間：2023-10-19 10:15:59" itemprop="dateModified" datetime="2023-10-19T10:15:59+08:00">2023-10-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -371,15 +370,13 @@
 </li>
 </ol>
 <h2 id="Brain-Tumor-MRI-Segmentation-Methods"><a href="#Brain-Tumor-MRI-Segmentation-Methods" class="headerlink" title="Brain Tumor MRI Segmentation Methods"></a>Brain Tumor MRI Segmentation Methods</h2><h3 id="2D-Images-Segmentation"><a href="#2D-Images-Segmentation" class="headerlink" title="2D Images Segmentation"></a>2D Images Segmentation</h3><ul>
-<li><p>U-Net<br><img src="/../../images/2023/Brain-MRI-Segmentation-Techniques/UNet.png" alt="UNet">   </p>
-<ul>
+<li>U-Net<br><img src="/../../images/2023/Brain-MRI-Segmentation-Techniques/UNet.png" alt="UNet">   <ul>
 <li><a target="_blank" rel="noopener" href="https://github.com/milesial/Pytorch-UNet">https://github.com/milesial/Pytorch-UNet</a></li>
 </ul>
 </li>
-<li><p>SegNet</p>
-</li>
-<li><p>Znet</p>
-</li>
+<li>SegNet  </li>
+<li>Swin UNETR </li>
+<li>nnUNet</li>
 </ul>
 <h3 id="3D-Volumes-Segmentation"><a href="#3D-Volumes-Segmentation" class="headerlink" title="3D Volumes Segmentation"></a>3D Volumes Segmentation</h3><ul>
 <li><p>Input : </p>
@@ -470,9 +467,6 @@
     
 
     <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/MRI/" rel="tag"># MRI</a>
-          </div>
 
         
 
@@ -517,13 +511,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">203k</span>
+    <span title="總字數">206k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">6:10</span>
+    <span title="所需總閱讀時間">6:15</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
