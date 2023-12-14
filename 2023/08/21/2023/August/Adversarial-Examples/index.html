@@ -28,7 +28,7 @@
 <meta property="og:description" content="簡介對抗性示例（Adversarial Examples）是指在機器學習和人工智慧領域中，經過故意修改的輸入數據，通常是對原始數據進行微小但精心設計的改變，這種修改可以導致訓練有素的機器學習模型產生出錯誤的結果。 對抗性示例的產生是通過在原始輸入數據中添加微小的、人眼難以察覺的扰動，這些扰動在數據空間中的位置通常是調整過的，以便最大限度地欺騙機器學習模型。儘管對抗性示例的改變通常對人類觀察者來說是">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-08-21T04:00:21.000Z">
-<meta property="article:modified_time" content="2023-08-22T01:18:38.033Z">
+<meta property="article:modified_time" content="2023-12-13T02:26:06.091Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
@@ -127,13 +127,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">101</span>
+          <span class="site-state-item-count">111</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -212,7 +212,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-08-22 09:18:38" itemprop="dateModified" datetime="2023-08-22T09:18:38+08:00">2023-08-22</time>
+      <time title="修改時間：2023-12-13 10:26:06" itemprop="dateModified" datetime="2023-12-13T10:26:06+08:00">2023-12-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -224,7 +224,11 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Artificial-Intelligence/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a>
+          <a href="/categories/Artificial-Intelligence/Trustworthy-AI/" itemprop="url" rel="index"><span itemprop="name">Trustworthy AI</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Artificial-Intelligence/Trustworthy-AI/Adversarial-Robustness/" itemprop="url" rel="index"><span itemprop="name">Adversarial Robustness</span></a>
         </span>
     </span>
 
@@ -291,75 +295,26 @@
 <p>實現穩健泛化涉及訓練不過於敏感於輸入數據的微小變化或對抗性操作的模型。正則化、數據增強、遷移學習、對抗性訓練以及整合領域知識等技術可以有助於增強模型的穩健泛化能力。</p>
 <p>穩健泛化對於安全關鍵應用特別重要，如自動駕駛、醫學診斷和金融風險評估等，這些應用中模型的預測可能對現實世界產生重大影響。通過設計能夠應對各種挑戰和不確定性情況的模型，研究人員旨在確保機器學習系統在多樣環境中具有可信賴性和可靠性。</p>
 <ul>
-<li><pre><code>R-ADMM
-</code></pre>
-<ul>
-<li><pre><code>HYDRA
-</code></pre>
-<ul>
-<li><pre><code>BCS-P
-</code></pre>
-<ul>
-<li><pre><code>DNR
-</code></pre>
-<ul>
-<li><pre><code>MAD
-</code></pre>
-<ul>
-<li><pre><code>HARP
-</code></pre>
-</li>
+<li>R-ADMM</li>
+<li>HYDRA</li>
+<li>BCS-P</li>
+<li>DNR</li>
+<li>MAD</li>
+<li>HARP</li>
+<li>ERK </li>
+<li>LAMP</li>
+<li>SAP (Sparsity-informed Adaptive Pruning )</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>ERK </p>
 <ul>
-<li><pre><code>LAMP
-</code></pre>
-<ul>
-<li><pre><code>SAP (Sparsity-informed Adaptive Pruning )
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>channel pruning</p>
-</li>
-<li><p>weight pruning</p>
-</li>
+<li>channel pruning</li>
+<li>weight pruning</li>
 </ul>
 <h2 id="Adversarial-Attacks"><a href="#Adversarial-Attacks" class="headerlink" title="Adversarial Attacks"></a>Adversarial Attacks</h2><h3 id="White-box-Attack"><a href="#White-box-Attack" class="headerlink" title="White box Attack"></a>White box Attack</h3><h3 id="Black-box-Attack"><a href="#Black-box-Attack" class="headerlink" title="Black box Attack"></a>Black box Attack</h3><ul>
-<li><pre><code>PGD
-</code></pre>
-<ul>
-<li><pre><code>C &amp; W
-</code></pre>
-<ul>
-<li><pre><code>APGD
-</code></pre>
-<ul>
-<li><pre><code>AA
-</code></pre>
-<ul>
-<li><pre><code>FREE-AT
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li>PGD</li>
+<li>C &amp; W</li>
+<li>APGD</li>
+<li>AA</li>
+<li>FREE-AT</li>
 </ul>
 <h2 id="Adversarial-Defence"><a href="#Adversarial-Defence" class="headerlink" title="Adversarial Defence"></a>Adversarial Defence</h2><h3 id="Barrier-Zone-Defense"><a href="#Barrier-Zone-Defense" class="headerlink" title="Barrier Zone Defense"></a>Barrier Zone Defense</h3><p>“Barrier Zone Defense” 是一種防禦機制，主要用於提升機器學習模型對抗性攻擊的穩健性。這個概念是指在數據特徵空間中建立一個稱為「Barrier Zone」的區域，該區域充當了機器學習模型的保護層，可以幫助模型識別和排除對抗性示例。</p>
 <p>在「Barrier Zone Defense」中，模型被設計為能夠區分正常數據和潛在的對抗性示例。在特定的特徵空間內，模型會將正常數據聚集在一個區域內，而對抗性示例則可能處於這個區域之外。如果模型的輸入位於這個區域之外，則該輸入被視為可能是對抗性的，因此模型可以採取相應的防禦措施，比如拒絕預測或進行更進一步的分析。</p>
@@ -521,13 +476,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">206k</span>
+    <span title="總字數">219k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">6:15</span>
+    <span title="所需總閱讀時間">6:38</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
