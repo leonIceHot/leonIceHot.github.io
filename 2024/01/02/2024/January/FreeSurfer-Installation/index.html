@@ -20,27 +20,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Introduction目前在隱私保護下的數據使用，主要有四種流派，分別是多方安全計算（MPC）、差分隱私（DP）、安全屋（TEE）及聯邦學習。隱私保護技術是一系列方法和工具，用於保護個人數據免於未經授權的訪問、使用或泄露。這些技術旨在確保個人信息的安全性和隱私性，同時在數據的使用和共享方面提供適當的控制和保護。">
+    <meta name="description" content="IntroductionFreeSurfer is a software suite used for the analysis and processing of neuroimaging data, particularly focusing on structural brain MRI scans. It’s an open-source software package develope">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Privacy Platform">
-<meta property="og:url" content="https://leonicehot.github.io/2023/11/27/2023/November/Privacy%20Platform/index.html">
+<meta property="og:title" content="FreeSurfer Installation">
+<meta property="og:url" content="https://leonicehot.github.io/2024/01/02/2024/January/FreeSurfer-Installation/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="Introduction目前在隱私保護下的數據使用，主要有四種流派，分別是多方安全計算（MPC）、差分隱私（DP）、安全屋（TEE）及聯邦學習。隱私保護技術是一系列方法和工具，用於保護個人數據免於未經授權的訪問、使用或泄露。這些技術旨在確保個人信息的安全性和隱私性，同時在數據的使用和共享方面提供適當的控制和保護。">
+<meta property="og:description" content="IntroductionFreeSurfer is a software suite used for the analysis and processing of neuroimaging data, particularly focusing on structural brain MRI scans. It’s an open-source software package develope">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2023-11-27T07:09:02.000Z">
-<meta property="article:modified_time" content="2023-12-22T03:13:53.268Z">
+<meta property="article:published_time" content="2024-01-02T13:22:40.000Z">
+<meta property="article:modified_time" content="2024-01-02T13:41:52.661Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://leonicehot.github.io/2023/11/27/2023/November/Privacy%20Platform/">
+<link rel="canonical" href="https://leonicehot.github.io/2024/01/02/2024/January/FreeSurfer-Installation/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2023/11/27/2023/November/Privacy%20Platform/","path":"2023/11/27/2023/November/Privacy Platform/","title":"Privacy Platform"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2024/01/02/2024/January/FreeSurfer-Installation/","path":"2024/01/02/2024/January/FreeSurfer-Installation/","title":"FreeSurfer Installation"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Privacy Platform | 利醬の休憩房</title>
+<title>FreeSurfer Installation | 利醬の休憩房</title>
   
 
 
@@ -114,7 +114,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Privacy-Platform"><span class="nav-number">2.</span> <span class="nav-text">Privacy Platform</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#FATE-Federated-AI-Technology-Enabler"><span class="nav-number">2.1.</span> <span class="nav-text">FATE (Federated AI Technology Enabler)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PaddleFL-Paddle-Federated-Learning"><span class="nav-number">2.2.</span> <span class="nav-text">PaddleFL (Paddle Federated Learning)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PySyft"><span class="nav-number">2.3.</span> <span class="nav-text">PySyft</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TensorFlow-Federated"><span class="nav-number">2.4.</span> <span class="nav-text">TensorFlow Federated</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FedML"><span class="nav-number">2.5.</span> <span class="nav-text">FedML</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FreeSurfer"><span class="nav-number">2.</span> <span class="nav-text">FreeSurfer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Installation"><span class="nav-number">3.</span> <span class="nav-text">Installation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -133,7 +133,7 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -176,7 +176,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/11/27/2023/November/Privacy%20Platform/">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2024/01/02/2024/January/FreeSurfer-Installation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -189,12 +189,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Privacy Platform | 利醬の休憩房">
+      <meta itemprop="name" content="FreeSurfer Installation | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Privacy Platform
+          FreeSurfer Installation
         </h1>
 
         <div class="post-meta-container">
@@ -204,15 +204,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2023-11-27 15:09:02" itemprop="dateCreated datePublished" datetime="2023-11-27T15:09:02+08:00">2023-11-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-12-22 11:13:53" itemprop="dateModified" datetime="2023-12-22T11:13:53+08:00">2023-12-22</time>
+      <time title="創建時間：2024-01-02 21:22:40 / 修改時間：21:41:52" itemprop="dateCreated datePublished" datetime="2024-01-02T21:22:40+08:00">2024-01-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -224,15 +218,11 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Artificial-Intelligence/Trustworthy-AI/" itemprop="url" rel="index"><span itemprop="name">Trustworthy AI</span></a>
+          <a href="/categories/Artificial-Intelligence/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Artificial-Intelligence/Trustworthy-AI/Privacy-Preserving-Computing/" itemprop="url" rel="index"><span itemprop="name">Privacy-Preserving Computing</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Artificial-Intelligence/Trustworthy-AI/Privacy-Preserving-Computing/Federated-Learning/" itemprop="url" rel="index"><span itemprop="name">Federated Learning</span></a>
+          <a href="/categories/Artificial-Intelligence/Machine-Learning/Medical-Image-Processing/" itemprop="url" rel="index"><span itemprop="name">Medical Image Processing</span></a>
         </span>
     </span>
 
@@ -243,14 +233,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>741</span>
+      <span>1.8k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>1 分鐘</span>
+      <span>3 分鐘</span>
     </span>
 </div>
 
@@ -261,19 +251,41 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>目前在隱私保護下的數據使用，主要有四種流派，分別是多方安全計算（MPC）、差分隱私（DP）、安全屋（TEE）及聯邦學習。隱私保護技術是一系列方法和工具，用於保護個人數據免於未經授權的訪問、使用或泄露。這些技術旨在確保個人信息的安全性和隱私性，同時在數據的使用和共享方面提供適當的控制和保護。</p>
+        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>FreeSurfer is a software suite used for the analysis and processing of neuroimaging data, particularly focusing on structural brain MRI scans. It’s an open-source software package developed by the Athinoula A. Martinos Center for Biomedical Imaging at Massachusetts General Hospital and Harvard Medical School.</p>
 <span id="more"></span>
+<h1 id="FreeSurfer"><a href="#FreeSurfer" class="headerlink" title="FreeSurfer"></a>FreeSurfer</h1><p>This tool is primarily used for tasks such as cortical surface reconstruction, volumetric segmentation, subcortical structure analysis, and cortical thickness measurements. FreeSurfer employs a series of algorithms and processing steps to segment different brain structures, map the cortical surface, and provide quantitative information about brain anatomy.</p>
+<p>It is widely utilized in neuroscience research, clinical studies, and medical imaging to study brain anatomy, examine changes in brain structures related to various neurological disorders, and analyze brain development.</p>
+<p>The software operates through command-line tools and also provides a graphical user interface (GUI) called Freeview for visualization and manipulation of neuroimaging data. Its functionalities include the ability to generate 3D models of brain structures, visualize and analyze cortical thickness, surface area, and volume measurements, among other neuroimaging metrics.</p>
+<p>FreeSurfer has contributed significantly to the understanding of brain structure and function and is commonly used in studies related to Alzheimer’s disease, schizophrenia, multiple sclerosis, and other neurological conditions.<!--more--></p>
+<h1 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1><ol>
+<li><p>Environment Installation</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository universe</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install csh tcsh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Download FreeSurfer<br><a target="_blank" rel="noopener" href="https://surfer.nmr.mgh.harvard.edu/fswiki/rel7downloads">https://surfer.nmr.mgh.harvard.edu/fswiki/rel7downloads</a></p>
+</li>
+<li><p>Extract the file</p>
+</li>
+<li><p>Add the license file<br><a href="https://link.zhihu.com/?target=https://surfer.nmr.mgh.harvard.edu/registration.html">https://link.zhihu.com/?target=https%3A//surfer.nmr.mgh.harvard.edu/registration.html</a></p>
+</li>
+<li><p>Configurations</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/freesurfer</span><br><span class="line">$ export FREESURFER_HOME=/home/cluster/freesurfer</span><br><span class="line">$ source $FREESURFER_HOME/SetUpFreeSurfer.sh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Success</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-------- freesurfer-linux-ubuntu20_x86_64-7.4.0-20230510-e558e6e --------</span><br><span class="line">Setting up environment for FreeSurfer/FS-FAST (and FSL)</span><br><span class="line">FREESURFER_HOME   /home/cluster/freesurfer</span><br><span class="line">FSFAST_HOME       /home/cluster/freesurfer/fsfast</span><br><span class="line">FSF_OUTPUT_FORMAT nii.gz</span><br><span class="line">SUBJECTS_DIR      /home/cluster/freesurfer/subjects</span><br><span class="line">MNI_DIR           /home/cluster/freesurfer/mni</span><br></pre></td></tr></table></figure></li>
+<li><p>Test</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ which freeview</span><br></pre></td></tr></table></figure>
 
-<h1 id="Privacy-Platform"><a href="#Privacy-Platform" class="headerlink" title="Privacy Platform"></a>Privacy Platform</h1><h2 id="FATE-Federated-AI-Technology-Enabler"><a href="#FATE-Federated-AI-Technology-Enabler" class="headerlink" title="FATE (Federated AI Technology Enabler)"></a>FATE (Federated AI Technology Enabler)</h2><h2 id="PaddleFL-Paddle-Federated-Learning"><a href="#PaddleFL-Paddle-Federated-Learning" class="headerlink" title="PaddleFL (Paddle Federated Learning)"></a>PaddleFL (Paddle Federated Learning)</h2><h2 id="PySyft"><a href="#PySyft" class="headerlink" title="PySyft"></a>PySyft</h2><p>PySyft是一個用於私隱保護機器學習的Python庫。它基於PyTorch，旨在實現安全和私隱保護的機器學習技術。PySyft提供了工具和功能，使得在分散式環境中進行機器學習模型訓練和預測時能夠保護敏感數據。</p>
-<p>主要功能：</p>
-<ol>
-<li>安全多方計算（Secure Multi-Party Computation，SMPC）：允許不同實體之間共同訓練機器學習模型，而不必直接共享原始數據。這意味著數據可以在參與者之間加密傳遞，從而確保了隱私。</li>
-<li>差分隱私（Differential Privacy）：在機器學習過程中引入噪聲以保護個人數據。PySyft提供了實現差分隱私技術的工具，使得數據訓練過程中保持個人信息匿名化。</li>
-<li>安全模型交換：允許參與者在不暴露模型細節的情況下共同使用模型。這意味著模型權重和結構可以加密地傳遞，而不會被未經授權的用戶讀取。</li>
-<li>分散式機器學習：在分散式環境中，多個設備或節點之間共同訓練模型，同時保護數據隱私。</li>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ recon-all</span><br></pre></td></tr></table></figure>
+
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ recon-all --help</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="TensorFlow-Federated"><a href="#TensorFlow-Federated" class="headerlink" title="TensorFlow Federated"></a>TensorFlow Federated</h2><h2 id="FedML"><a href="#FedML" class="headerlink" title="FedML"></a>FedML</h2><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
-<li>馮霽：聯邦學習是目前隱私保護最重要也有效的技術<br><a target="_blank" rel="noopener" href="https://edge.aif.tw/federated-learning/">https://edge.aif.tw/federated-learning/</a></li>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<li><p>FreeSurfer Version 7 Release<br><a target="_blank" rel="noopener" href="https://surfer.nmr.mgh.harvard.edu/fswiki/rel7downloads">https://surfer.nmr.mgh.harvard.edu/fswiki/rel7downloads</a></p>
+</li>
+<li><p>freesurfer7.2.0安装在Ubuntu 21.04<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/538412463">https://zhuanlan.zhihu.com/p/538412463</a></p>
+</li>
+<li><p>Unable to locate package csh or tcsh [closed]<br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/66954590/unable-to-locate-package-csh-or-tcsh">https://stackoverflow.com/questions/66954590/unable-to-locate-package-csh-or-tcsh</a></p>
+</li>
 </ol>
 
     </div>
@@ -288,14 +300,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/11/27/2023/November/Fed-BioMed/" rel="prev" title="Fed-BioMed">
-                  <i class="fa fa-chevron-left"></i> Fed-BioMed
+                <a href="/2023/12/27/2023/December/Common-machine-learning-evaluation-metrics/" rel="prev" title="Common machine learning evaluation metrics">
+                  <i class="fa fa-chevron-left"></i> Common machine learning evaluation metrics
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/12/08/2023/December/PySyft/" rel="next" title="PySyft">
-                  PySyft <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -316,7 +325,7 @@
 
 <div class="copyright">
   &copy; 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -327,13 +336,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">222k</span>
+    <span title="總字數">224k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">6:43</span>
+    <span title="所需總閱讀時間">6:47</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
