@@ -28,7 +28,7 @@
 <meta property="og:description" content="簡介Shared Memory（共享記憶體）是一種行程間通訊（Inter-Process Communication，IPC）的機制，用來讓不同的行程（程式）能夠在同一計算機上共享一個記憶體區域，以進行高效的資料交換。共享記憶體是現代作業系統中最常用的 IPC 方法之一，因為它能夠比其他 IPC 機制（如管道Pipeline、訊息佇列 Message queue等）提供更高的資料傳輸效率。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-10-13T01:17:03.000Z">
-<meta property="article:modified_time" content="2024-10-13T01:27:17.486Z">
+<meta property="article:modified_time" content="2024-10-13T01:29:36.505Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
@@ -201,7 +201,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2024-10-13 09:17:03 / 修改時間：09:27:17" itemprop="dateCreated datePublished" datetime="2024-10-13T09:17:03+08:00">2024-10-13</time>
+      <time title="創建時間：2024-10-13 09:17:03 / 修改時間：09:29:36" itemprop="dateCreated datePublished" datetime="2024-10-13T09:17:03+08:00">2024-10-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -248,8 +248,8 @@
 <li>記憶體區域的創建與映射：</li>
 </ol>
 <ul>
-<li>創建：一個進程可以創建一個共享記憶體區域，該區域在操作系統的記憶體空間中保留一定的地址範圍。</li>
-<li>映射：其他進程可以通過操作系統提供的 IPC 機制，將該共享記憶體映射到自己的地址空間中，這樣這些進程可以直接訪問相同的記憶體數據。</li>
+<li>創建：一個行程可以創建一個共享記憶體區域，該區域在作業系統的記憶體空間中保留一定的地址範圍。</li>
+<li>映射：其他行程可以通過操作系統提供的 IPC 機制，將該共享記憶體映射到自己的地址空間中，這樣這些進程可以直接訪問相同的記憶體數據。</li>
 </ul>
 <ol start="2">
 <li>讀寫共享數據：</li>
