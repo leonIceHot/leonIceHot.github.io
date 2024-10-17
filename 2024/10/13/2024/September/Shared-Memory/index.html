@@ -28,7 +28,7 @@
 <meta property="og:description" content="簡介Shared Memory（共享記憶體）是一種行程間通訊（Inter-Process Communication，IPC）的機制，用來讓不同的行程（程式）能夠在同一計算機上共享一個記憶體區域，以進行高效的資料交換。共享記憶體是現代作業系統中最常用的 IPC 方法之一，因為它能夠比其他 IPC 機制（如管道Pipeline、訊息佇列 Message queue等）提供更高的資料傳輸效率。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-10-13T01:17:03.000Z">
-<meta property="article:modified_time" content="2024-10-13T01:48:54.423Z">
+<meta property="article:modified_time" content="2024-10-17T14:58:46.224Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
@@ -199,9 +199,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
-      
 
-      <time title="創建時間：2024-10-13 09:17:03 / 修改時間：09:48:54" itemprop="dateCreated datePublished" datetime="2024-10-13T09:17:03+08:00">2024-10-13</time>
+      <time title="創建時間：2024-10-13 09:17:03" itemprop="dateCreated datePublished" datetime="2024-10-13T09:17:03+08:00">2024-10-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-10-17 22:58:46" itemprop="dateModified" datetime="2024-10-17T22:58:46+08:00">2024-10-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -224,7 +230,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>991</span>
+      <span>993</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -255,9 +261,12 @@
 <li>讀寫共享資料：</li>
 </ol>
 <ul>
-<li>共享記憶體允許行程直接讀取和寫入記憶體中的資料，這避免了複製資料的開銷。行程可以通過共享記憶體區域交換大規模資料，而無需進行複雜的資料傳輸操作。</li>
+<li>共享記憶體: 允許行程直接讀取和寫入記憶體中的資料，這避免了複製資料的開銷。行程可以通過共享記憶體區域交換大規模資料，而無需進行複雜的資料傳輸操作。</li>
 </ul>
-<p>3.同步問題： 由於多個行程可以同時讀寫共享記憶體，因此需要一些同步機制來防止資料競爭（Race Condition）和一致性問題。通常會使用 信號量（Semaphore） 或 互斥鎖（Mutex） 來保證共享記憶體中的資料不會被同時修改。</p>
+<p>3.同步問題： </p>
+<ul>
+<li>由於多個行程可以同時讀寫共享記憶體，因此需要一些同步機制來防止資料競爭（Race Condition）和一致性問題。通常會使用 信號量（Semaphore） 或 互斥鎖（Mutex） 來保證共享記憶體中的資料不會被同時修改。</li>
+</ul>
 <p>優點：</p>
 <ol>
 <li><p>高速資料傳輸：共享記憶體是所有 IPC 機制中最有效率的方式之一，因為它省去了行程之間複製資料的過程。行程可以直接在共享記憶體中讀取和寫入資料，這比通過管道或消息隊列更快。</p>
