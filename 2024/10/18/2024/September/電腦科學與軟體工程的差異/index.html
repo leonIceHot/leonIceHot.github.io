@@ -20,27 +20,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="SASS（Syntactically Awesome Style Sheets）和 SCSS（Sassy CSS）都是 CSS 的擴展語言，可以在 CSS 的基礎上增加一些功能，使得 CSS 更加易讀、易寫、易維護。 SASS 是一種以 Ruby 為基礎的語言，它使用了類似 Ruby 的語法和許多特性，例如變量、嵌套規則、Mixin、函數等，可以大大簡化 CSS 的編寫。使用 SASS，可以定義變">
+    <meta name="description" content="電腦科學（Computer Science）和軟體工程（Software Engineering）雖然關聯密切，但它們是不同的學科，有不同的重點和目標。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SASS&#x2F;SCSS 基本語法實作">
-<meta property="og:url" content="https://leonicehot.github.io/2023/04/18/2023/April/SASS-SCSS-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95%E5%AF%A6%E4%BD%9C/index.html">
+<meta property="og:title" content="電腦科學與軟體工程的差異">
+<meta property="og:url" content="https://leonicehot.github.io/2024/10/18/2024/September/%E9%9B%BB%E8%85%A6%E7%A7%91%E5%AD%B8%E8%88%87%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E7%9A%84%E5%B7%AE%E7%95%B0/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="SASS（Syntactically Awesome Style Sheets）和 SCSS（Sassy CSS）都是 CSS 的擴展語言，可以在 CSS 的基礎上增加一些功能，使得 CSS 更加易讀、易寫、易維護。 SASS 是一種以 Ruby 為基礎的語言，它使用了類似 Ruby 的語法和許多特性，例如變量、嵌套規則、Mixin、函數等，可以大大簡化 CSS 的編寫。使用 SASS，可以定義變">
+<meta property="og:description" content="電腦科學（Computer Science）和軟體工程（Software Engineering）雖然關聯密切，但它們是不同的學科，有不同的重點和目標。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2023-04-18T00:38:39.000Z">
-<meta property="article:modified_time" content="2024-04-14T15:10:58.043Z">
+<meta property="article:published_time" content="2024-10-18T04:33:20.000Z">
+<meta property="article:modified_time" content="2024-10-18T04:36:07.648Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://leonicehot.github.io/2023/04/18/2023/April/SASS-SCSS-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95%E5%AF%A6%E4%BD%9C/">
+<link rel="canonical" href="https://leonicehot.github.io/2024/10/18/2024/September/%E9%9B%BB%E8%85%A6%E7%A7%91%E5%AD%B8%E8%88%87%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E7%9A%84%E5%B7%AE%E7%95%B0/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2023/04/18/2023/April/SASS-SCSS-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95%E5%AF%A6%E4%BD%9C/","path":"2023/04/18/2023/April/SASS-SCSS-基本語法實作/","title":"SASS/SCSS 基本語法實作"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2024/10/18/2024/September/%E9%9B%BB%E8%85%A6%E7%A7%91%E5%AD%B8%E8%88%87%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E7%9A%84%E5%B7%AE%E7%95%B0/","path":"2024/10/18/2024/September/電腦科學與軟體工程的差異/","title":"電腦科學與軟體工程的差異"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>SASS/SCSS 基本語法實作 | 利醬の休憩房</title>
+<title>電腦科學與軟體工程的差異 | 利醬の休憩房</title>
   
 
 
@@ -101,7 +101,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -114,6 +114,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%BB%E8%85%A6%E7%A7%91%E5%AD%B8%EF%BC%88Computer-Science%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">電腦科學（Computer Science）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%EF%BC%88Software-Engineering%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">軟體工程（Software Engineering）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E5%8D%80%E5%88%A5%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">主要區別：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%A9%E8%80%85%E7%9A%84%E8%81%AF%E7%B9%AB%EF%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">兩者的聯繫：</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -170,7 +171,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/04/18/2023/April/SASS-SCSS-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95%E5%AF%A6%E4%BD%9C/">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2024/10/18/2024/September/%E9%9B%BB%E8%85%A6%E7%A7%91%E5%AD%B8%E8%88%87%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E7%9A%84%E5%B7%AE%E7%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -183,12 +184,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="SASS/SCSS 基本語法實作 | 利醬の休憩房">
+      <meta itemprop="name" content="電腦科學與軟體工程的差異 | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          SASS/SCSS 基本語法實作
+          電腦科學與軟體工程的差異
         </h1>
 
         <div class="post-meta-container">
@@ -198,15 +199,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2023-04-18 08:38:39" itemprop="dateCreated datePublished" datetime="2023-04-18T08:38:39+08:00">2023-04-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-04-14 23:10:58" itemprop="dateModified" datetime="2024-04-14T23:10:58+08:00">2024-04-14</time>
+      <time title="創建時間：2024-10-18 12:33:20 / 修改時間：12:36:07" itemprop="dateCreated datePublished" datetime="2024-10-18T12:33:20+08:00">2024-10-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -214,11 +209,7 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Software-Engineering/" itemprop="url" rel="index"><span itemprop="name">Software Engineering</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Software-Engineering/Web-Development/" itemprop="url" rel="index"><span itemprop="name">Web Development</span></a>
+          <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
         </span>
     </span>
 
@@ -229,14 +220,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>533</span>
+      <span>1.2k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>1 分鐘</span>
+      <span>2 分鐘</span>
     </span>
 </div>
 
@@ -247,10 +238,26 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>SASS（Syntactically Awesome Style Sheets）和 SCSS（Sassy CSS）都是 CSS 的擴展語言，可以在 CSS 的基礎上增加一些功能，使得 CSS 更加易讀、易寫、易維護。</p>
-<p>SASS 是一種以 Ruby 為基礎的語言，它使用了類似 Ruby 的語法和許多特性，例如變量、嵌套規則、Mixin、函數等，可以大大簡化 CSS 的編寫。使用 SASS，可以定義變量，方便地管理顏色、字體大小等常用屬性，同時可以使用 Mixin 和函數，實現代碼的重用和結構的組織。不過，SASS 的語法需要學習，並且需要安裝 Ruby 環境。</p>
-<p>SCSS 則是 SASS 的一種新的語法，它基於 CSS3 的語法，使用了大括號、分號等符號，更接近 CSS 的語法，因此可以更容易地學習和使用。同樣支持變量、嵌套規則、Mixin、函數等功能，並且可以使用現有的 CSS 代碼。使用 SCSS，可以在不修改現有 CSS 的情況下進行擴展和改進。</p>
-<p>總的來說，SASS 和 SCSS 都是非常有用的工具，可以讓 CSS 更加易讀、易寫、易維護，並且提高開發效率和代碼重用性。如果您還沒有使用過它們，建議可以了解一下它們的基本語法和用法，並在實際開發中進行應用。</p>
+        <p>電腦科學（Computer Science）和軟體工程（Software Engineering）雖然關聯密切，但它們是不同的學科，有不同的重點和目標。 </p>
+<span id="more"></span>
+
+<h1 id="電腦科學（Computer-Science）"><a href="#電腦科學（Computer-Science）" class="headerlink" title="電腦科學（Computer Science）"></a>電腦科學（Computer Science）</h1><p>定義：電腦科學是一門理論與實踐結合的學科，涵蓋了計算的基本理論、演算法、資料結構、硬體與軟體系統等各方面的研究。它關注計算過程、計算機的內部運作、資料處理等問題，並發展解決計算問題的工具和方法。</p>
+<p>重點：</p>
+<p>理論基礎：包括計算理論、圖靈機、可計算性、計算複雜性等。這些理論研究計算的可能性、效率和限制。<br>演算法與資料結構：設計高效的演算法來解決問題，研究如何優化資料存儲與處理。<br>人工智慧：如機器學習、深度學習、自然語言處理、電腦視覺等。<br>硬體架構：研究計算機的物理結構，包含處理器設計、內存結構、計算資源管理等。<br>範疇：電腦科學範疇廣泛，涵蓋了演算法、密碼學、資料庫系統、分散式計算、操作系統、電腦網路等領域。</p>
+<p>應用：電腦科學更注重解決抽象的問題，通過演算法設計、數學模型和理論研究，為其他學科和應用提供基礎。</p>
+<h1 id="軟體工程（Software-Engineering）"><a href="#軟體工程（Software-Engineering）" class="headerlink" title="軟體工程（Software Engineering）"></a>軟體工程（Software Engineering）</h1><p>定義：軟體工程專注於系統化、學科化的軟體開發和維護過程。其目標是開發高品質的軟體系統，並確保它們在整個軟體生命週期中可用、可維護和可擴展。</p>
+<p>重點：</p>
+<p>軟體設計與架構：研究如何規劃軟體的結構和組織，確保軟體具有良好的可維護性、可重用性和可擴展性。<br>開發過程：強調軟體開發生命周期，包括需求分析、設計、實作、測試、部署和維護。<br>項目管理：軟體工程中涉及大量的協作與管理，專注於如何組織團隊、分配資源、控制時間和成本，確保軟體如期交付。<br>品質保證：通過測試、自動化工具、代碼審查等手段，確保軟體質量並減少錯誤和漏洞。<br>範疇：軟體工程更注重實際的軟體開發流程，從需求規範到最終產品的部署，關注如何有效率地開發大規模、可維護且高效的軟體系統。</p>
+<p>應用：軟體工程專注於如何系統化地開發可靠的軟體，適用於大型項目或團隊合作，涉及商業應用、企業級軟體開發等。</p>
+<h1 id="主要區別："><a href="#主要區別：" class="headerlink" title="主要區別："></a>主要區別：</h1><ul>
+<li><p>學術 vs. 工程：電腦科學更偏向於理論和基礎研究，解決抽象的計算問題；軟體工程則更關注於實際問題的解決，並強調開發過程的規劃、設計和管理。</p>
+</li>
+<li><p>研究 vs. 應用：電腦科學強調的是技術和理論創新，軟體工程則偏重於將這些技術應用到實際軟體項目的開發中。</p>
+</li>
+</ul>
+<p>課程內容：<br>電腦科學的課程通常包含數學、離散數學、演算法、資料結構、編譯器設計等理論性強的科目。<br>軟體工程的課程則會包含軟體架構設計、項目管理、版本控制、測試技術和敏捷開發等實用工具和技術。</p>
+<h1 id="兩者的聯繫："><a href="#兩者的聯繫：" class="headerlink" title="兩者的聯繫："></a>兩者的聯繫：</h1><p>雖然電腦科學和軟體工程各有不同的重點，但它們相輔相成。電腦科學提供了開發軟體所需的理論基礎，而軟體工程則將這些理論應用於實際項目，開發出穩定且高效的軟體產品。</p>
+<p>總結：<br>電腦科學：更理論化，研究計算的基本原理和技術。<br>軟體工程：更應用化，強調實踐中的軟體開發和管理。<br>這兩者的結合推動了現代科技的發展，從理論創新到實際軟體產品的交付，都是建立在電腦科學和軟體工程的共同基礎上。</p>
 
     </div>
 
@@ -264,13 +271,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/04/17/2023/April/React-%E8%88%87-icon-%E5%9C%96%E6%A8%99%E5%B7%A5%E5%85%B7/" rel="prev" title="React 與 icon 圖標工具">
-                  <i class="fa fa-chevron-left"></i> React 與 icon 圖標工具
+                <a href="/2024/10/18/2024/September/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/" rel="prev" title="鋸齒現象">
+                  <i class="fa fa-chevron-left"></i> 鋸齒現象
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/04/18/2023/April/Javascript%20%E5%A3%93%E7%B8%AE%E7%A8%8B%E5%BC%8F%E7%A2%BC%E8%88%87%E5%BE%A9%E5%8E%9F/" rel="next" title="Javascript 壓縮程式碼與復原">
-                  Javascript 壓縮程式碼與復原 <i class="fa fa-chevron-right"></i>
+                <a href="/2024/10/18/2024/September/%E9%9B%BB%E8%85%A6%E8%A6%96%E8%A6%BA%E3%80%81%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86%E5%92%8C%E6%A8%A1%E5%BC%8F%E8%AD%98%E5%88%A5%E7%9A%84%E9%97%9C%E8%81%AF/" rel="next" title="電腦視覺、影像處理和模式識別的關聯">
+                  電腦視覺、影像處理和模式識別的關聯 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
