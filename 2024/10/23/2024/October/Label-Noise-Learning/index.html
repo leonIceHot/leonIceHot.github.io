@@ -28,7 +28,7 @@
 <meta property="og:description" content="Label noise learning（標籤雜訊學習）是機器學習中的一個研究領域，專注於應對資料集中錯誤或不準確的標籤問題。標籤雜訊通常會導致模型的效能下降，特別是當訓練資料中的錯誤標籤比例較高時，模型可能會學習到錯誤的模式，從而影響其泛化能力。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-10-23T15:16:08.000Z">
-<meta property="article:modified_time" content="2024-10-26T01:11:41.132Z">
+<meta property="article:modified_time" content="2024-10-26T13:44:16.135Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
@@ -207,7 +207,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-10-26 09:11:41" itemprop="dateModified" datetime="2024-10-26T09:11:41+08:00">2024-10-26</time>
+      <time title="修改時間：2024-10-26 21:44:16" itemprop="dateModified" datetime="2024-10-26T21:44:16+08:00">2024-10-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -268,10 +268,8 @@
 </ul>
 </li>
 <li><p>與對稱和非對稱雜訊的關係：</p>
-</li>
-</ol>
 <ul>
-<li><p>對稱雜訊（Symmetric Noise） 是標籤可能被錯誤地標記為任何其他類別，且這些錯誤的概率相同。<br>與此相比，類別條件雜訊中的錯誤發生概率是不均勻的，依賴於類別之間的混淆關係。</p>
+<li><p>對稱雜訊（Symmetric Noise） 是標籤可能被錯誤地標記為任何其他類別，且這些錯誤的概率相同。<br> 與此相比，類別條件雜訊中的錯誤發生概率是不均勻的，依賴於類別之間的混淆關係。</p>
 <ul>
 <li>在對稱雜訊中，資料集中每個類別的樣本都有相等的概率被隨機標記為其他類別。<br>  這種雜訊通常與資料的特徵無關，是隨機產生的。    <ul>
 <li><p>例如，對於一個10類的分類問題，對稱雜訊下，每個類別中的某些樣本可能有 10% 的概率被錯誤標記為其他 9 個類別中的任意一個。</p>
@@ -281,8 +279,9 @@
 </ul>
 </li>
 </ul>
+</li>
+<li><p>非對稱雜訊（Asymmetric Noise） 是指某些類別之間的錯誤標記比其他類別更常見，這是一種特殊形式的類別條件雜訊。</p>
 <ul>
-<li>非對稱雜訊（Asymmetric Noise） 是指某些類別之間的錯誤標記比其他類別更常見，這是一種特殊形式的類別條件雜訊。<ul>
 <li><p>非對稱雜訊是指標籤錯誤發生在某些特定的類別之間，且這些錯誤並非隨機發生。</p>
 <ul>
 <li><p>例如，在手寫數字識別中，數字 “5” 可能更常被錯誤標記為數字 “6”，但不會被標記為數字 “1”。<br>  這種錯誤通常是由於類別之間的相似性導致的。</p>
@@ -295,9 +294,8 @@
 </li>
 </ul>
 </li>
-</ul>
-<ol start="4">
-<li>實例依賴雜訊（Instance-Dependent Noise, IDN） <ul>
+<li><p>實例依賴雜訊（Instance-Dependent Noise, IDN） </p>
+<ul>
 <li>Instance-Dependent Noise 是指在機器學習中，某些樣本的標籤錯誤取決於這些樣本的特徵或屬性。<br> 與其他類型的雜訊（如對稱雜訊或無關雜訊）不同，Instance-Dependent Noise 的特點是錯誤標籤的模式與特定的實例有關，這使得某些類別的樣本比其他樣本更容易出現標籤錯誤。</li>
 </ul>
 </li>
@@ -354,7 +352,7 @@
 <ol>
 <li>醫學影像分類：醫療資料標註錯誤可能導致診斷錯誤，因此需要應對標籤雜訊。</li>
 <li>自動駕駛：在標註路況或物體類別時，人為錯誤可能導致標籤雜訊，影響車輛的決策。</li>
-<li>互聯網資料分類：網絡上的資料標註通常由眾包方式完成，因此很容易產生雜訊。</li>
+<li>網際網路資料分類：網路上的資料標註通常由眾包方式完成，因此很容易產生雜訊。</li>
 </ol>
 
     </div>
