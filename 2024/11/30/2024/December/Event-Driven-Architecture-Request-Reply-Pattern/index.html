@@ -28,7 +28,7 @@
 <meta property="og:description" content="事件驅動架構（Event-Driven Architecture, EDA）：請求&#x2F;回應模式（Request&#x2F;Reply Pattern）請求&#x2F;回應模式是分散式系統中常見的通訊模式，特別適合於事件驅動架構（EDA）。當一個元件（請求者）需要從另一個元件（回應者）獲取資料或觸發某個動作，並期望收到回應時，會使用此模式。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-11-30T09:45:06.000Z">
-<meta property="article:modified_time" content="2024-11-30T09:59:37.891Z">
+<meta property="article:modified_time" content="2024-11-30T10:03:47.179Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
@@ -121,13 +121,13 @@
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">利醬</p>
-  <div class="site-description" itemprop="description">部落格記載著電腦科學基礎知識、前瞻科技、科學探討、工程技術之筆記。</div>
+  <div class="site-description" itemprop="description">部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。</div>
 </div>
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">136</span>
+          <span class="site-state-item-count">138</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -185,7 +185,7 @@
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="利醬の休憩房">
-      <meta itemprop="description" content="部落格記載著電腦科學基礎知識、前瞻科技、科學探討、工程技術之筆記。">
+      <meta itemprop="description" content="部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
@@ -206,7 +206,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2024-11-30 17:45:06 / 修改時間：17:59:37" itemprop="dateCreated datePublished" datetime="2024-11-30T17:45:06+08:00">2024-11-30</time>
+      <time title="創建時間：2024-11-30 17:45:06 / 修改時間：18:03:47" itemprop="dateCreated datePublished" datetime="2024-11-30T17:45:06+08:00">2024-11-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -229,14 +229,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>1.3k</span>
+      <span>1.4k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>2 分鐘</span>
+      <span>3 分鐘</span>
     </span>
 </div>
 
@@ -307,7 +307,13 @@
 <h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>在事件驅動架構中，請求&#x2F;回應模式適合需要雙向通訊或即時回應的場景，例如 API 調用、資料查詢、交易處理等。然而，對於需要高可擴展性或解耦的系統，則可能需要結合其他模式（如<strong>發佈&#x2F;訂閱模式</strong>）來實現更靈活的架構設計。</p>
 <h1 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h1><p>ActiveMQ<br><a target="_blank" rel="noopener" href="https://github.com/wmr513/messaging/tree/master/01_10_Request_Reply_Code">https://github.com/wmr513/messaging/tree/master/01_10_Request_Reply_Code</a></p>
 <p>RabbitMQ<br><a target="_blank" rel="noopener" href="https://github.com/wmr513/streaming/blob/master/kafka/TradeGenerator.java">https://github.com/wmr513/streaming/blob/master/kafka/TradeGenerator.java</a><br><a target="_blank" rel="noopener" href="https://github.com/wmr513/streaming/blob/master/kafka/TradeValidator.java">https://github.com/wmr513/streaming/blob/master/kafka/TradeValidator.java</a></p>
-<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p>Lesson 1 - Event-Driven Architecture: Request&#x2F;Reply Processing (Jan 22, 2018)<br><a target="_blank" rel="noopener" href="https://www.developertoarchitect.com/lessons/">https://www.developertoarchitect.com/lessons/</a></p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p>Lesson 1 - Event-Driven Architecture: Request&#x2F;Reply Processing (Jan 22, 2018)</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.developertoarchitect.com/lessons/">https://www.developertoarchitect.com/lessons/</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=3bxAm3XIFmk&amp;list=PLdsOZAx8I5umhnn5LLTNJbFgwA3xbycar&amp;index=200&amp;ab_channel=SoftwareArchitectureMonday">https://www.youtube.com/watch?v=3bxAm3XIFmk&amp;list=PLdsOZAx8I5umhnn5LLTNJbFgwA3xbycar&amp;index=200&amp;ab_channel=SoftwareArchitectureMonday</a></p>
+</li>
+</ul>
 
     </div>
 
@@ -326,6 +332,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2024/12/04/2024/December/%E5%88%87%E6%8F%9B-dotnet-%E7%89%88%E6%9C%AC/" rel="next" title="切換.NET版本">
+                  切換.NET版本 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -357,13 +366,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">276k</span>
+    <span title="總字數">281k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:22</span>
+    <span title="所需總閱讀時間">8:31</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
