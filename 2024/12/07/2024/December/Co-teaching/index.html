@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://leonicehot.github.io/images/2024/coteaching/architecture.png">
 <meta property="og:image" content="https://leonicehot.github.io/images/2024/coteaching/coteaching-algorithms.png">
 <meta property="article:published_time" content="2024-12-07T04:27:27.000Z">
-<meta property="article:modified_time" content="2024-12-07T04:43:33.122Z">
+<meta property="article:modified_time" content="2024-12-07T04:49:50.736Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://leonicehot.github.io/images/2024/coteaching/architecture.png">
@@ -117,7 +117,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Theory-Fundamental"><span class="nav-number">2.</span> <span class="nav-text">Theory Fundamental</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Related-literature"><span class="nav-number">3.</span> <span class="nav-text">Related literature</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Statical-learning-method"><span class="nav-number">3.1.</span> <span class="nav-text">Statical learning method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Learning-to-teach-methods"><span class="nav-number">3.2.</span> <span class="nav-text">Learning to teach methods:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other-deep-learning-approach"><span class="nav-number">3.3.</span> <span class="nav-text">Other deep learning approach:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Difference"><span class="nav-number">4.</span> <span class="nav-text">Difference</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithms-design"><span class="nav-number">5.</span> <span class="nav-text">Algorithms design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Design-thinking"><span class="nav-number">5.1.</span> <span class="nav-text">Design thinking</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Design-keypoints"><span class="nav-number">5.2.</span> <span class="nav-text">Design keypoints</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">6.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Datasets"><span class="nav-number">6.1.</span> <span class="nav-text">Datasets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Noise"><span class="nav-number">6.2.</span> <span class="nav-text">Noise</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-architecture"><span class="nav-number">6.3.</span> <span class="nav-text">Network architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Baseline-method"><span class="nav-number">6.4.</span> <span class="nav-text">Baseline method:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Evaluation-matrix"><span class="nav-number">6.5.</span> <span class="nav-text">Evaluation matrix:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Future-direction"><span class="nav-number">6.6.</span> <span class="nav-text">Future direction:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Engineering-Implementation"><span class="nav-number">7.</span> <span class="nav-text">Engineering Implementation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">8.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Theory-Fundamental"><span class="nav-number">2.</span> <span class="nav-text">Theory Fundamental</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Related-literature"><span class="nav-number">3.</span> <span class="nav-text">Related literature</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Statical-learning-method"><span class="nav-number">3.1.</span> <span class="nav-text">Statical learning method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Learning-to-teach-methods"><span class="nav-number">3.2.</span> <span class="nav-text">Learning to teach methods:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other-deep-learning-approach"><span class="nav-number">3.3.</span> <span class="nav-text">Other deep learning approach:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Difference"><span class="nav-number">4.</span> <span class="nav-text">Difference</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithms-design"><span class="nav-number">5.</span> <span class="nav-text">Algorithms design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Design-thinking"><span class="nav-number">5.1.</span> <span class="nav-text">Design thinking</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Design-keypoints"><span class="nav-number">5.2.</span> <span class="nav-text">Design keypoints</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">6.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Datasets"><span class="nav-number">6.1.</span> <span class="nav-text">Datasets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Noise"><span class="nav-number">6.2.</span> <span class="nav-text">Noise</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-architecture"><span class="nav-number">6.3.</span> <span class="nav-text">Network architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Baseline-method"><span class="nav-number">6.4.</span> <span class="nav-text">Baseline method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Evaluation-matrix"><span class="nav-number">6.5.</span> <span class="nav-text">Evaluation matrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Future-direction"><span class="nav-number">6.6.</span> <span class="nav-text">Future direction</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Engineering-Implementation"><span class="nav-number">7.</span> <span class="nav-text">Engineering Implementation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">8.</span> <span class="nav-text">Reference</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -209,7 +209,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2024-12-07 12:27:27 / 修改時間：12:43:33" itemprop="dateCreated datePublished" datetime="2024-12-07T12:27:27+08:00">2024-12-07</time>
+      <time title="創建時間：2024-12-07 12:27:27 / 修改時間：12:49:50" itemprop="dateCreated datePublished" datetime="2024-12-07T12:27:27+08:00">2024-12-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -246,13 +246,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><ul>
+        <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><ol>
 <li><p>This paper proposed paradigm called Co-teaching, which trains deep neural networks robustly under noisy supervision</p>
 </li>
 <li><p>The Key is to maintain two networks simultaneously, and cross-trains on instances screened by the “small loss” criteria.</p>
-</li>
-</ul>
-<ol>
+<ul>
 <li><p>Author trains two deep neural networks simultaneously, and let them teach each other given every mini-batch: </p>
 <ul>
 <li>Each network feeds forward all data and selects some data of possibly clean labels.</li>
@@ -262,10 +260,11 @@
 </li>
 <li><p>Investigate the theoretical guarantees for Co-teaching</p>
 </li>
-</ol>
-<ul>
-<li>Experiment<br>The papaer conducts MNIST, CIFAR-10 and CIFAR-100 on noisy labels.<br>The results is that co-teaching is much superior to the state-of-the-art methods in the robustness of trained deep models.</li>
 </ul>
+</li>
+<li><p>Experiment<br>The papaer conducts MNIST, CIFAR-10 and CIFAR-100 on noisy labels.<br>The results is that co-teaching is much superior to the state-of-the-art methods in the robustness of trained deep models.</p>
+</li>
+</ol>
 <span id="more"></span>
 <h1 id="Theory-Fundamental"><a href="#Theory-Fundamental" class="headerlink" title="Theory Fundamental"></a>Theory Fundamental</h1><p><img src="/../../images/2024/coteaching/architecture.png" alt="architecture"></p>
 <h1 id="Related-literature"><a href="#Related-literature" class="headerlink" title="Related literature"></a>Related literature</h1><h2 id="Statical-learning-method"><a href="#Statical-learning-method" class="headerlink" title="Statical learning method"></a>Statical learning method</h2><p>Loss Function Method:</p>
@@ -344,10 +343,17 @@
 </ul>
 </li>
 </ul>
-<h1 id="Difference"><a href="#Difference" class="headerlink" title="Difference"></a>Difference</h1><p>Co-training is for semi-supervised learning (SSL)</p>
+<h1 id="Difference"><a href="#Difference" class="headerlink" title="Difference"></a>Difference</h1><ul>
+<li><p>Co-training is for semi-supervised learning (SSL)</p>
 <ul>
-<li>[COLT1998]-Combining labeled and unlabeled data with co-training.<br>Co-teaching is for learning with noisy labels (LNL)</li>
+<li>[COLT1998]-Combining labeled and unlabeled data with co-training.</li>
+</ul>
+</li>
+<li><p>Co-teaching is for learning with noisy labels (LNL)</p>
+<ul>
 <li>author proposed method</li>
+</ul>
+</li>
 </ul>
 <h1 id="Algorithms-design"><a href="#Algorithms-design" class="headerlink" title="Algorithms design"></a>Algorithms design</h1><h2 id="Design-thinking"><a href="#Design-thinking" class="headerlink" title="Design thinking"></a>Design thinking</h2><p><img src="/../../images/2024/coteaching/coteaching-algorithms.png" alt="switch"></p>
 <h2 id="Design-keypoints"><a href="#Design-keypoints" class="headerlink" title="Design keypoints"></a>Design keypoints</h2><p>Q1. Why can sampling small-loss instances based on dynamic R(T) help us find clean instances?<br>Q2. Why do we need two networks and cross-update the parameters?</p>
@@ -374,7 +380,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="Baseline-method"><a href="#Baseline-method" class="headerlink" title="Baseline method:"></a>Baseline method:</h2><ol>
+<h2 id="Baseline-method"><a href="#Baseline-method" class="headerlink" title="Baseline method"></a>Baseline method</h2><ol>
 <li><p>Bootstrap<br>[ICLR2015]-Training deep neural networks on noisy labels with bootstrapping</p>
 </li>
 <li><p>S-model<br>[ICLR2017]-Training deep neural-networks using a noise adaptation layer</p>
@@ -386,10 +392,10 @@
 <li><p>MentorNet<br>[ICML2018]-Mentornet: Learning data-driven curriculum for very deep neural networks on corrupted labels</p>
 </li>
 </ol>
-<h2 id="Evaluation-matrix"><a href="#Evaluation-matrix" class="headerlink" title="Evaluation matrix:"></a>Evaluation matrix:</h2><ul>
+<h2 id="Evaluation-matrix"><a href="#Evaluation-matrix" class="headerlink" title="Evaluation matrix"></a>Evaluation matrix</h2><ul>
 <li>Noise Transition Matrices</li>
 </ul>
-<h2 id="Future-direction"><a href="#Future-direction" class="headerlink" title="Future direction:"></a>Future direction:</h2><ul>
+<h2 id="Future-direction"><a href="#Future-direction" class="headerlink" title="Future direction"></a>Future direction</h2><ul>
 <li>Generalization performance analysis</li>
 </ul>
 <h1 id="Engineering-Implementation"><a href="#Engineering-Implementation" class="headerlink" title="Engineering Implementation"></a>Engineering Implementation</h1><ul>
