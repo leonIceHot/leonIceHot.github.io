@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="簡介 ERP代表企業資源規劃，是一個全面集成和管理企業所有業務流程和資源的軟件系統。 ERP系統通常由多個模塊組成，包括財務、購買、銷售、庫存、生產、人力資源和客戶關係管理等。 ERP系統可以幫助企業自動化許多業務流程，從而提高效率、降低成本並改善生產力。 ERP系統還可以讓企業更好地管理供應鏈、生產進度和銷售情況，從而更好地預測市場需求和優化企業運營。 不同的ERP系統有不同的特點和功">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ERP 微型系統建置">
+<meta property="og:url" content="https://leonicehot.github.io/2023/04/19/2023/April/ERP-%E5%BE%AE%E5%9E%8B%E7%B3%BB%E7%B5%B1%E5%BB%BA%E7%BD%AE/index.html">
+<meta property="og:site_name" content="利醬の休憩房">
+<meta property="og:description" content="簡介 ERP代表企業資源規劃，是一個全面集成和管理企業所有業務流程和資源的軟件系統。 ERP系統通常由多個模塊組成，包括財務、購買、銷售、庫存、生產、人力資源和客戶關係管理等。 ERP系統可以幫助企業自動化許多業務流程，從而提高效率、降低成本並改善生產力。 ERP系統還可以讓企業更好地管理供應鏈、生產進度和銷售情況，從而更好地預測市場需求和優化企業運營。 不同的ERP系統有不同的特點和功">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2023-04-19T02:02:42.000Z">
+<meta property="article:modified_time" content="2024-12-11T10:57:35.359Z">
+<meta property="article:author" content="利醬">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://leonicehot.github.io/2023/04/19/2023/April/ERP-%E5%BE%AE%E5%9E%8B%E7%B3%BB%E7%B5%B1%E5%BB%BA%E7%BD%AE/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2023/04/19/2023/April/ERP-%E5%BE%AE%E5%9E%8B%E7%B3%BB%E7%B5%B1%E5%BB%BA%E7%BD%AE/","path":"2023/04/19/2023/April/ERP-微型系統建置/","title":"ERP 微型系統建置"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ERP 微型系統建置 | 利醬の休憩房</title>
+  
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">利醬の休憩房</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#open-source-erp-system"><span class="nav-number">2.</span> <span class="nav-text">Open Source ERP System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9D%E6%AD%A5%E8%A6%8F%E5%8A%83"><span class="nav-number">3.</span> <span class="nav-text">初步規劃</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%92%B0%E5%A2%83%E8%A6%8F%E5%8A%83"><span class="nav-number">3.1.</span> <span class="nav-text">環境規劃</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D%E7%92%B0%E5%A2%83"><span class="nav-number">4.</span> <span class="nav-text">安裝環境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%9D"><span class="nav-number">4.1.</span> <span class="nav-text">基本安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E5%AE%89%E8%A3%9D"><span class="nav-number">4.2.</span> <span class="nav-text">前端安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#yarn"><span class="nav-number">4.2.1.</span> <span class="nav-text">yarn</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm"><span class="nav-number">4.2.2.</span> <span class="nav-text">npm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql"><span class="nav-number">4.3.</span> <span class="nav-text">MySQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%BA%AB%E5%AE%89%E8%A3%9D"><span class="nav-number">4.4.</span> <span class="nav-text">資料庫安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%BA%AB%E8%A8%AD%E5%AE%9A"><span class="nav-number">4.5.</span> <span class="nav-text">資料庫設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E7%AB%AF%E5%9F%B7%E8%A1%8C"><span class="nav-number">4.6.</span> <span class="nav-text">本地端執行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#yarn-1"><span class="nav-number">4.6.1.</span> <span class="nav-text">yarn</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%AB%AF%E5%9F%B7%E8%A1%8C"><span class="nav-number">4.7.</span> <span class="nav-text">伺服器端執行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E6%93%B4%E5%85%85"><span class="nav-number">5.</span> <span class="nav-text">功能擴充</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E9%A0%81%E9%9D%A2%E6%96%B0%E5%A2%9E"><span class="nav-number">5.1.</span> <span class="nav-text">前端頁面新增</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%8C%E7%AB%AF%E5%BB%BA%E7%AB%8Bapi"><span class="nav-number">5.2.</span> <span class="nav-text">後端建立API</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%8C%E7%BA%8C%E6%94%B9%E5%96%84"><span class="nav-number">6.</span> <span class="nav-text">後續改善</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF"><span class="nav-number">6.1.</span> <span class="nav-text">前端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%8C%E7%AB%AF"><span class="nav-number">6.2.</span> <span class="nav-text">後端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%BA%AB"><span class="nav-number">6.3.</span> <span class="nav-text">資料庫</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">利醬</p>
+  <div class="site-description" itemprop="description">部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/leonIceHot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leonIceHot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hj098128@outlook.com" title="E-Mail → mailto:hj098128@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cake.me/s--qj9aPrlEs32gLEtK1_lI_g--/hj098128" title="Cake → https:&#x2F;&#x2F;www.cake.me&#x2F;s--qj9aPrlEs32gLEtK1_lI_g--&#x2F;hj098128" rel="noopener" target="_blank">Cake</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/04/19/2023/April/ERP-%E5%BE%AE%E5%9E%8B%E7%B3%BB%E7%B5%B1%E5%BB%BA%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ERP 微型系統建置 | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ERP 微型系統建置
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2023-04-19 10:02:42" itemprop="dateCreated datePublished" datetime="2023-04-19T10:02:42+08:00">2023-04-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-12-11 18:57:35" itemprop="dateModified" datetime="2024-12-11T18:57:35+08:00">2024-12-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Software-Engineering/" itemprop="url" rel="index"><span itemprop="name">Software Engineering</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Software-Engineering/Web-Development/" itemprop="url" rel="index"><span itemprop="name">Web Development</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Software-Engineering/Web-Development/Backend/" itemprop="url" rel="index"><span itemprop="name">Backend</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Software-Engineering/Web-Development/Backend/Django/" itemprop="url" rel="index"><span itemprop="name">Django</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>3.8k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>7 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="簡介">簡介</h1>
+<p>ERP代表企業資源規劃，是一個全面集成和管理企業所有業務流程和資源的軟件系統。
+ERP系統通常由多個模塊組成，包括財務、購買、銷售、庫存、生產、人力資源和客戶關係管理等。</p>
+<p>ERP系統可以幫助企業自動化許多業務流程，從而提高效率、降低成本並改善生產力。
+ERP系統還可以讓企業更好地管理供應鏈、生產進度和銷售情況，從而更好地預測市場需求和優化企業運營。</p>
+<p>不同的ERP系統有不同的特點和功能，企業可以根據自身的需求和預算選擇適合的ERP系統。
+然而，實施ERP系統是一個複雜的過程，需要企業精心計劃和管理，以確保系統能夠順利運作並產生預期的效益。
+<span id="more"></span></p>
+<h1 id="open-source-erp-system">Open Source ERP System</h1>
+<p>https://github.com/himool/Himool-ERP 本專案僅供學術交流使用</p>
+<h1 id="初步規劃">初步規劃</h1>
+<h2 id="環境規劃">環境規劃</h2>
+<ul>
+<li>IDE
+<ul>
+<li>PyCharm Professional</li>
+<li>Navicat Premium 16</li>
+<li>Docker</li>
+</ul></li>
+<li>前端
+<ul>
+<li>Vue 2.6</li>
+<li>元件: Ant Design Vue 1.x</li>
+</ul></li>
+<li>後端
+<ul>
+<li>Python 3.9</li>
+<li>Django 3.2</li>
+<li>Django REST framework 3.12.4</li>
+</ul></li>
+<li>資料庫
+<ul>
+<li>MySQL 8.0</li>
+</ul></li>
+</ul>
+<h1 id="安裝環境">安裝環境</h1>
+<h2 id="基本安裝">基本安裝</h2>
+<p>pip install -r requirements.txt</p>
+<h2 id="前端安裝">前端安裝</h2>
+<h3 id="yarn">yarn</h3>
+<p>cd frontend yarn config set ignore-engines true yarn add <span class="citation" data-cites="vue/cli-service">@vue/cli-service</span>
+package.json <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;devDependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;@vue/cli-plugin-babel&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^5.0.8&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;@vue/cli-plugin-eslint&quot;</span><span class="punctuation">:</span> <span class="string">&quot;~4.5.0&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure> yarn add <span class="citation" data-cites="vue/cli-plugin-babel">@vue/cli-plugin-babel</span> yarn
+install</p>
+<h3 id="npm">npm</h3>
+<p>cd frontend npm i <span class="citation" data-cites="vue/cli-service">@vue/cli-service</span> npm i <span class="citation" data-cites="vue/cli-plugin-babel">@vue/cli-plugin-babel</span></p>
+<h2 id="mysql">MySQL</h2>
+<h2 id="資料庫安裝">資料庫安裝</h2>
+<ol type="1">
+<li><p>Docker 下載 MySQL image <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull mysql</span><br></pre></td></tr></table></figure>
+https://hub.docker.com/_/mysql</p></li>
+<li><p>Docker 啟動容器 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name sql2 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=Dev127336 -d mysql:8  </span><br></pre></td></tr></table></figure> run : docker 建立 container
+並且執行的指令 –name : 指定容器為 sql2 -p 3306:3306 : 將容器的 3306
+端口映射到主機的 3306 端口。 -e MYSQL_ROOT_PASSWORD=Dev127336 : 初始化
+root 用戶的密碼為 Dev127336。 -d mysql:8 : 背景執行 MySQL 映像</p></li>
+<li><p>登入mysql <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure></p></li>
+<li><p>修改密碼 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;Dev127336&#x27;;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>添加遠端登入 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &#x27;DevAuth&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;Dev127336&#x27;;</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &#x27;DevAuth&#x27;@&#x27;%&#x27;;</span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<p>https://ithelp.ithome.com.tw/articles/10272193</p>
+<ul>
+<li>Error Python MySQL OperationalError: 1045, “Access denied for user
+root@‘localhost’
+https://stackoverflow.com/questions/17425523/python-mysql-operationalerror-1045-access-denied-for-user-rootlocalhost</li>
+</ul>
+<h2 id="資料庫設定">資料庫設定</h2>
+<ol type="1">
+<li><p>資料庫連結 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="comment"># 方法一</span></span><br><span class="line">    <span class="string">&#x27;default&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;ENGINE&#x27;</span>: <span class="string">&#x27;django.db.backends.mysql&#x27;</span>,   <span class="comment"># 資料庫引擎</span></span><br><span class="line">        <span class="string">&#x27;NAME&#x27;</span>: <span class="string">&#x27;erp_db&#x27;</span>,                       <span class="comment"># 資料庫名稱</span></span><br><span class="line">        <span class="string">&#x27;USER&#x27;</span>: <span class="string">&#x27;admin&#x27;</span>,                        <span class="comment"># 資料庫登錄用戶名</span></span><br><span class="line">        <span class="string">&#x27;PASSWORD&#x27;</span>: <span class="string">&#x27;admin&#x27;</span>,                    <span class="comment"># 密碼</span></span><br><span class="line">        <span class="string">&#x27;HOST&#x27;</span>: <span class="string">&#x27;127.0.0.1&#x27;</span>,                    <span class="comment"># 資料庫主機IP，如保持預設，則為127.0.0.1</span></span><br><span class="line">        <span class="string">&#x27;PORT&#x27;</span>: <span class="number">3306</span>,                           <span class="comment"># 資料庫埠號，如保持默認，則為3306</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>資料庫字串設定為urf8mb4 tools/create_configs <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Database</span></span><br><span class="line"><span class="comment"># https://docs.djangoproject.com/en/3.2/ref/settings/#databases</span></span><br><span class="line"></span><br><span class="line">BASE_DIR = Path(__file__).resolve().parent.parent</span><br><span class="line">DATABASES = &#123;&#123;</span><br><span class="line">    <span class="string">&#x27;default&#x27;</span>: &#123;&#123;</span><br><span class="line">        <span class="string">&#x27;ENGINE&#x27;</span>: <span class="string">&#x27;django.db.backends.mysql&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;HOST&#x27;</span>: <span class="string">&#x27;&#123;host&#125;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;PORT&#x27;</span>: <span class="string">&#x27;3306&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;USER&#x27;</span>: <span class="string">&#x27;&#123;user&#125;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;PASSWORD&#x27;</span>: <span class="string">&#x27;&#123;passowrd&#125;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;NAME&#x27;</span>: <span class="string">&#x27;&#123;database_name&#125;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;OPTIONS&#x27;</span>: &#123;&#123;<span class="string">&#x27;charset&#x27;</span>: <span class="string">&#x27;utf8mb4&#x27;</span>&#125;&#125;,</span><br><span class="line">    &#125;&#125;</span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set global character_set_server=utf8mb4;</span><br><span class="line">set global character_set_database=utf8mb4;</span><br><span class="line">set global character_set_client=utf8mb4;</span><br><span class="line">set global character_set_connection=utf8mb4;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>建立資料庫 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE erp_db;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>轉移資料庫</p></li>
+</ol>
+<ul>
+<li>重新製作資料遷移
+<ul>
+<li>python manage.py makemigrations</li>
+</ul></li>
+<li>應用資料遷移
+<ul>
+<li>python manage.py migrate</li>
+</ul></li>
+</ul>
+<ol start="5" type="1">
+<li>建立使用者</li>
+</ol>
+<ul>
+<li>python manage.py runscript create_user</li>
+</ul>
+<h2 id="本地端執行">本地端執行</h2>
+<h3 id="yarn-1">yarn</h3>
+<p>yarn serve ### npm npm run serve</p>
+<h2 id="伺服器端執行">伺服器端執行</h2>
+<h1 id="功能擴充">功能擴充</h1>
+<h2 id="前端頁面新增">前端頁面新增</h2>
+<ol type="1">
+<li><p>menus.js <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  key<span class="punctuation">:</span> &#x27;<span class="number">10</span>&#x27;<span class="punctuation">,</span> name<span class="punctuation">:</span> &#x27;工程管理&#x27;<span class="punctuation">,</span> icon<span class="punctuation">:</span> &#x27;team&#x27;<span class="punctuation">,</span> submenus<span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span>key<span class="punctuation">:</span> &#x27;/engineering/engineer&#x27;<span class="punctuation">,</span> name<span class="punctuation">:</span> &#x27;工程師&#x27;<span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>frontend/src/views</p></li>
+</ol>
+<ul>
+<li>views -&gt; engineering/engineer/index.vue <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">a-card</span> <span class="attr">title</span>=<span class="string">&quot;生產計畫詳情&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">a-button</span> <span class="attr">slot</span>=<span class="string">&quot;extra&quot;</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> <span class="attr">style</span>=<span class="string">&quot;margin-right: 8px;&quot;</span> <span class="attr">ghost</span> <span class="attr">v-print</span>=<span class="string">&quot;&#x27;#printContent&#x27;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">a-icon</span> <span class="attr">type</span>=<span class="string">&quot;printer&quot;</span> /&gt;</span>列印&lt;/a-button</span></span><br><span class="line"><span class="language-xml">      &gt;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">a-button</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">slot</span>=<span class="string">&quot;extra&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">ghost</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        @<span class="attr">click</span>=<span class="string">&quot;</span></span></span></span><br><span class="line"><span class="string"><span class="tag"><span class="language-xml">          () =&gt; &#123;</span></span></span></span><br><span class="line"><span class="string"><span class="tag"><span class="language-xml">            this.$router.go(-1);</span></span></span></span><br><span class="line"><span class="string"><span class="tag"><span class="language-xml">          &#125;</span></span></span></span><br><span class="line"><span class="string"><span class="tag"><span class="language-xml">        &quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      &gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">a-icon</span> <span class="attr">type</span>=<span class="string">&quot;left&quot;</span> /&gt;</span>返回&lt;/a-button</span></span><br><span class="line"><span class="language-xml">      &gt;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">&quot;printContent&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">a-spin</span> <span class="attr">:spinning</span>=<span class="string">&quot;loading&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;barcode&quot;</span> <span class="attr">style</span>=<span class="string">&quot;float: right&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">a-descriptions</span> <span class="attr">bordered</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">a-descriptions-item</span> <span class="attr">label</span>=<span class="string">&quot;生產計畫單號&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">              &#123;&#123; item.number &#125;&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">a-descriptions-item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">a-descriptions-item</span> <span class="attr">label</span>=<span class="string">&quot;銷售單號&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">              &#123;&#123; item.sales_order_number &#125;&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">a-descriptions-item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">a-descriptions-item</span> <span class="attr">label</span>=<span class="string">&quot;狀態&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">              &#123;&#123; item.status_display &#125;&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">a-descriptions-item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;/<span class="name">a-descriptions</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">a-spin</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">a-card</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">return</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">loading</span>: <span class="literal">false</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">item</span>: &#123;&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="3" type="1">
+<li>frontend/src/components</li>
+</ol>
+<ul>
+<li>components -&gt; frontend/components/Engineering/Engineer.vue</li>
+</ul>
+<ol start="4" type="1">
+<li>frontend/src/api</li>
+</ol>
+<ul>
+<li>api -&gt; frontend/api/engineering.js</li>
+</ul>
+<ol start="5" type="1">
+<li>frontend/src/router</li>
+</ol>
+<ul>
+<li><p>router -&gt; frontend/router/index.js<br>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> engineering <span class="keyword">from</span> <span class="string">&#x27;./engineering&#x27;</span></span><br></pre></td></tr></table></figure> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routes = [index, user, account, manage, system, report, basicData, goods, purchasing, sale, warehouse, finance, production,engineering];</span><br></pre></td></tr></table></figure></p></li>
+<li><p>router -&gt; frontend/router/engineering.js
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">path</span>: <span class="string">&#x27;/engineering&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;engineering&#x27;</span>,</span><br><span class="line">  <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;@/layouts/BaseLayout&#x27;</span>),</span><br><span class="line">  <span class="attr">redirect</span>: <span class="string">&#x27;/engineering/engineer&#x27;</span>,</span><br><span class="line">  <span class="attr">children</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">path</span>: <span class="string">&#x27;engineer&#x27;</span>,</span><br><span class="line">      <span class="attr">meta</span>: &#123; <span class="attr">title</span>: <span class="string">&#x27;工程管理&#x27;</span>, <span class="attr">permission</span>: <span class="string">&#x27;engineering&#x27;</span> &#125;,</span><br><span class="line">      <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;@/views/engineering/engineer/index&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+</ul>
+<ol start="6" type="1">
+<li>frontend/src</li>
+</ol>
+<ul>
+<li>frontend/src/permissions.js <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> permissions = &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="string">&#x27;engineer&#x27;</span>:<span class="string">&#x27;工程管理&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="7" type="1">
+<li>scripts/init_permission <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    &#x27;name&#x27;<span class="punctuation">:</span> &#x27;工程管理&#x27;<span class="punctuation">,</span></span><br><span class="line">    &#x27;permissions&#x27;<span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span>&#x27;name&#x27;<span class="punctuation">:</span> &#x27;工程師&#x27;<span class="punctuation">,</span> &#x27;code&#x27;<span class="punctuation">:</span> &#x27;engineer&#x27;<span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="後端建立api">後端建立API</h2>
+<ol type="1">
+<li>根目錄建立app <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py startapp musics</span><br></pre></td></tr></table></figure> 將musics資料夾移動到apps資料夾</li>
+</ol>
+<ul>
+<li><p>後端建立的檔案 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- musics</span><br><span class="line">  - migrations</span><br><span class="line">    - __init__.py</span><br><span class="line">  - __init__.py</span><br><span class="line">  - admin.py</span><br><span class="line">  - apps.py</span><br><span class="line">  - models.py</span><br><span class="line">  - tests.py</span><br><span class="line">  - views.py</span><br></pre></td></tr></table></figure></p></li>
+<li><p>專案的檔案 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">- message</span><br><span class="line">  - migrations</span><br><span class="line">    - __init__.py</span><br><span class="line">  - __init__.py</span><br><span class="line">  - admin.py</span><br><span class="line">  - apps.py</span><br><span class="line">  - filters.py</span><br><span class="line">  - models.py</span><br><span class="line">  - permissions.py</span><br><span class="line">  - schemas.py</span><br><span class="line">  - serializers.py    </span><br><span class="line">  - tests.py</span><br><span class="line">  - urls.py</span><br><span class="line">  - views.py</span><br></pre></td></tr></table></figure></p></li>
+</ul>
+<ol start="2" type="1">
+<li>加入設定檔 project/setting.py</li>
+</ol>
+<p>添加 - apps.musics - rest_framework</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    <span class="string">&#x27;django.contrib.admin&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.auth&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.contenttypes&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.sessions&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.messages&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.staticfiles&#x27;</span>,</span><br><span class="line"></span><br><span class="line">    <span class="string">&#x27;rest_framework&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django_filters&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;drf_spectacular&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django_extensions&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;debug_toolbar&#x27;</span>,</span><br><span class="line">    ...</span><br><span class="line">    <span class="string">&#x27;apps.option&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;apps.manage&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;apps.musics&#x27;</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<ol start="3" type="1">
+<li>Model-Template-View</li>
+</ol>
+<ul>
+<li>Model: 透過model引入資料庫，建立後台
+<ul>
+<li>models.py<br>
+</li>
+</ul></li>
+<li>View: 透過view的定義，傳送頁面與get/post
+<ul>
+<li>views.py<br>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> extensions.common.schema <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> extensions.common.base <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> extensions.permissions <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> extensions.exceptions <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> extensions.viewsets <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> apps.flow.serializers <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> apps.flow.permissions <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> apps.flow.filters <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> apps.flow.schemas <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> apps.flow.models <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure></li>
+</ul></li>
+<li>Template: 頁面顯示資料
+<ul>
+<li>顯示頁面
+<ul>
+<li>frontend/src/views</li>
+<li>frontend/src/components</li>
+</ul></li>
+<li>路由控制
+<ul>
+<li>frontend/src/router</li>
+</ul></li>
+<li>Django REST Framework (DRF)
+<ul>
+<li>frontend/src/api</li>
+</ul></li>
+</ul></li>
+</ul>
+<ol start="4" type="1">
+<li>Model 介紹</li>
+</ol>
+<ul>
+<li>class Meta 在 Django 中，每個模型（Model）都可以包含一個名為 Meta
+的內部類別（Inner Class），該類定義了一些元數據（Meta
+Data），這些元數據描述了模型本身的一些特性。</li>
+</ul>
+<p>Meta 內部類通常被用來定義以下內容：</p>
+<ul>
+<li><p>資料表的名稱：使用 db_table 屬性可以自定義資料表的名稱，否則
+Django 會根據模型名稱自動生成一個名稱。</p></li>
+<li><p>模型的排序方式：使用 ordering
+屬性可以定義模型實例的預設排序方式。該屬性可以是一個單一的欄位名稱，也可以是多個欄位名稱的列表，以逗號分隔。</p></li>
+<li><p>模型的限制條件：使用 unique_together
+屬性可以指定模型的多個欄位必須共同滿足唯一性限制。使用 constraints
+屬性可以指定模型的其他限制條件，例如 CHECK 約束。</p></li>
+<li><p>模型的資料庫連接：使用 using
+屬性可以指定模型使用的資料庫連接，如果有多個資料庫，可以為不同的模型指定不同的連接。</p></li>
+<li><p>模型的顯示名稱：使用 verbose_name
+屬性可以為模型定義一個人類可讀的名稱，例如 “文章” 或 “使用者”。</p></li>
+<li><p>模型的複數顯示名稱：使用 verbose_name_plural
+屬性可以為模型定義一個複數形式的顯示名稱，例如 “文章” 的複數形式為
+“文章”。</p></li>
+</ul>
+<p>總之，Meta
+內部類提供了一種簡單而方便的方式來定義模型的元數據，這些元數據能夠影響模型的行為和外觀。</p>
+<ul>
+<li>unique_together
+它允許您在定義模型時指定多個欄位的組合必須唯一，這樣就可以實現複合唯一性約束（Compound
+Unique Constraint）。</li>
+</ul>
+<p>例如，假設您有一個模型名為 Person，該模型有兩個欄位 first_name 和
+last_name，您希望這兩個欄位的組合必須唯一，這樣就可以使用
+unique_together 選項來實現： <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>(models.Model):</span><br><span class="line">    first_name = models.CharField(max_length=<span class="number">30</span>)</span><br><span class="line">    last_name = models.CharField(max_length=<span class="number">30</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        unique_together = (<span class="string">&#x27;first_name&#x27;</span>, <span class="string">&#x27;last_name&#x27;</span>)</span><br></pre></td></tr></table></figure> 當您使用 unique_together
+定義了一個唯一性約束後，Django 會自動創建一個複合索引（Compound
+Index）來加速查詢。這個索引可以確保該欄位組合的唯一性，如果嘗試插入一個重複的組合，則會引發一個
+IntegrityError 錯誤。</p>
+<p>需要注意的是，unique_together
+選項接受一個元組（Tuple）作為參數，其中每個元素是一個欄位名稱。您可以定義任意數量的欄位，但最少需要定義兩個欄位。此外，使用
+unique_together 定義的唯一性約束只對 Django
+級別有效，不會在資料庫中建立真正的唯一性約束。如果需要在資料庫層面實現唯一性約束，請考慮使用
+unique=True 屬性或 unique constraint。</p>
+<ol start="5" type="1">
+<li>多出的檔案</li>
+</ol>
+<ul>
+<li><p>filters.py <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django_filters.rest_framework <span class="keyword">import</span> FilterSet</span><br><span class="line"><span class="keyword">from</span> django_filters.filters <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> apps.stock_transfer.models <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">StockTransferOrderFilter</span>(<span class="title class_ inherited__">FilterSet</span>):</span><br><span class="line">    start_date = DateFilter(field_name=<span class="string">&#x27;create_time&#x27;</span>, lookup_expr=<span class="string">&#x27;gte&#x27;</span>, label=<span class="string">&#x27;開始日期&#x27;</span>)</span><br><span class="line">    end_date = DateFilter(field_name=<span class="string">&#x27;create_time&#x27;</span>, lookup_expr=<span class="string">&#x27;lt&#x27;</span>, label=<span class="string">&#x27;結束日期&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = StockTransferOrder</span><br><span class="line">        fields = [<span class="string">&#x27;number&#x27;</span>, <span class="string">&#x27;out_warehouse&#x27;</span>, <span class="string">&#x27;in_warehouse&#x27;</span>, <span class="string">&#x27;handler&#x27;</span>, <span class="string">&#x27;is_void&#x27;</span>, <span class="string">&#x27;creator&#x27;</span>,<span class="string">&#x27;start_date&#x27;</span>, <span class="string">&#x27;end_date&#x27;</span>]</span><br><span class="line">__all__ = [</span><br><span class="line">    <span class="string">&#x27;StockTransferOrderFilter&#x27;</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p></li>
+<li><p>permissions.py <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> extensions.permissions <span class="keyword">import</span> ModelPermission</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">InventoryWarningPermission</span>(<span class="title class_ inherited__">ModelPermission</span>):</span><br><span class="line">    code = <span class="string">&#x27;inventory_warning&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ShelfLifeWarningPermission</span>(<span class="title class_ inherited__">ModelPermission</span>):</span><br><span class="line">    code = <span class="string">&#x27;shelf_life_warning&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">StockInReminderPermission</span>(<span class="title class_ inherited__">ModelPermission</span>):</span><br><span class="line">    code = <span class="string">&#x27;stock_in_reminder&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">StockOutReminderPermission</span>(<span class="title class_ inherited__">ModelPermission</span>):</span><br><span class="line">    code = <span class="string">&#x27;stock_out_reminder&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">__all__ = [</span><br><span class="line">    <span class="string">&#x27;InventoryWarningPermission&#x27;</span>, <span class="string">&#x27;ShelfLifeWarningPermission&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;StockInReminderPermission&#x27;</span>, <span class="string">&#x27;StockOutReminderPermission&#x27;</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p></li>
+<li><p>schemas.py <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> extensions.serializers <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CSRFTokenResponse</span>(<span class="title class_ inherited__">Serializer</span>):</span><br><span class="line">    token = CharField(label=<span class="string">&#x27;權杖&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LoginRequest</span>(<span class="title class_ inherited__">Serializer</span>):</span><br><span class="line">    username = CharField(label=<span class="string">&#x27;用戶名&#x27;</span>)</span><br><span class="line">    password = CharField(label=<span class="string">&#x27;密碼&#x27;</span>)</span><br><span class="line"></span><br><span class="line">__all__ = [</span><br><span class="line">    <span class="string">&#x27;CSRFTokenResponse&#x27;</span>, <span class="string">&#x27;LoginRequest&#x27;</span>,    </span><br><span class="line">]</span><br></pre></td></tr></table></figure></p></li>
+<li><p>serializers.py <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> extensions.common.base <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> extensions.serializers <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> extensions.exceptions <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> apps.stock_in.models <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> apps.stock_out.models <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">StockInOrderReminderSerializer</span>(<span class="title class_ inherited__">BaseSerializer</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;入庫任務提醒&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    warehouse_number = CharField(source=<span class="string">&#x27;warehouse.number&#x27;</span>, read_only=<span class="literal">True</span>, label=<span class="string">&#x27;倉庫編號&#x27;</span>)</span><br><span class="line">    warehouse_name = CharField(source=<span class="string">&#x27;warehouse.name&#x27;</span>, read_only=<span class="literal">True</span>, label=<span class="string">&#x27;倉庫名稱&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = StockInOrder</span><br><span class="line">        fields = [<span class="string">&#x27;id&#x27;</span>, <span class="string">&#x27;number&#x27;</span>, <span class="string">&#x27;warehouse&#x27;</span>, <span class="string">&#x27;warehouse_number&#x27;</span>, <span class="string">&#x27;warehouse_name&#x27;</span>,</span><br><span class="line">                  <span class="string">&#x27;total_quantity&#x27;</span>, <span class="string">&#x27;remain_quantity&#x27;</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">StockOutOrderReminderSerializer</span>(<span class="title class_ inherited__">BaseSerializer</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;出庫任務提醒&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    warehouse_number = CharField(source=<span class="string">&#x27;warehouse.number&#x27;</span>, read_only=<span class="literal">True</span>, label=<span class="string">&#x27;倉庫編號&#x27;</span>)</span><br><span class="line">    warehouse_name = CharField(source=<span class="string">&#x27;warehouse.name&#x27;</span>, read_only=<span class="literal">True</span>, label=<span class="string">&#x27;倉庫名稱&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = StockOutOrder</span><br><span class="line">        fields = [<span class="string">&#x27;id&#x27;</span>, <span class="string">&#x27;number&#x27;</span>, <span class="string">&#x27;warehouse&#x27;</span>, <span class="string">&#x27;warehouse_number&#x27;</span>, <span class="string">&#x27;warehouse_name&#x27;</span>,</span><br><span class="line">                  <span class="string">&#x27;total_quantity&#x27;</span>, <span class="string">&#x27;remain_quantity&#x27;</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">__all__ = [</span><br><span class="line">    <span class="string">&#x27;StockInOrderReminderSerializer&#x27;</span>, <span class="string">&#x27;StockOutOrderReminderSerializer&#x27;</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p></li>
+<li><p>urls.py <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> extensions.routers <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> apps.message.views <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">router = BaseRouter()</span><br><span class="line">router.register(<span class="string">&#x27;inventory_warnings&#x27;</span>, InventoryWarningViewSet, <span class="string">&#x27;inventory_warning&#x27;</span>)</span><br><span class="line">router.register(<span class="string">&#x27;stock_in_order_reminders&#x27;</span>, StockInOrderReminderViewSet, <span class="string">&#x27;stock_in_order_reminder&#x27;</span>)</span><br><span class="line">router.register(<span class="string">&#x27;stock_out_order_reminders&#x27;</span>, StockOutOrderReminderViewSet, <span class="string">&#x27;stock_out_order_reminder&#x27;</span>)</span><br><span class="line">urlpatterns = router.urls</span><br></pre></td></tr></table></figure></p></li>
+</ul>
+<h1 id="後續改善">後續改善</h1>
+<ul>
+<li>套件升級</li>
+<li>修改業務流程</li>
+</ul>
+<h2 id="前端">前端</h2>
+<ul>
+<li>Vue 3.x
+<ul>
+<li>Component: Ant Design Vue 3.x</li>
+<li>https://antdv.com/components/overview</li>
+</ul></li>
+<li>React 18
+<ul>
+<li>Component: Ant Design React 5.4.4</li>
+<li>https://ant.design/docs/react/introduce</li>
+</ul></li>
+</ul>
+<h2 id="後端">後端</h2>
+<ul>
+<li>Django
+<ul>
+<li>Python 3.11</li>
+<li>Django 4.2.0</li>
+<li>Python Flask</li>
+</ul></li>
+</ul>
+<h2 id="資料庫">資料庫</h2>
+<ul>
+<li>MySQL 8.0</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/04/19/2023/April/Web-%E9%96%8B%E7%99%BC%E5%B7%A5%E5%85%B7/" rel="prev" title="Web 開發工具">
+                  <i class="fa fa-chevron-left"></i> Web 開發工具
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/04/26/2023/April/Cookie%E3%80%81Session%E3%80%81Token%E4%B9%8B%E6%A9%9F%E5%88%B6/" rel="next" title="Cookie、Session、Token之機制">
+                  Cookie、Session、Token之機制 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">利醬</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">307k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

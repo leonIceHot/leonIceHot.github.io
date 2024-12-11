@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="鋸齒現象（aliasing）是指在數位影像或視覺顯示中，當邊緣或斜線被顯示為一系列不平滑的階梯狀像素時所產生的視覺效果，這些不平滑的邊緣看起來像鋸齒或台階，尤其在低解析度下更明顯。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="鋸齒現象">
+<meta property="og:url" content="https://leonicehot.github.io/2024/10/18/2024/October/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/index.html">
+<meta property="og:site_name" content="利醬の休憩房">
+<meta property="og:description" content="鋸齒現象（aliasing）是指在數位影像或視覺顯示中，當邊緣或斜線被顯示為一系列不平滑的階梯狀像素時所產生的視覺效果，這些不平滑的邊緣看起來像鋸齒或台階，尤其在低解析度下更明顯。">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://leonicehot.github.io/2024/10/18/2024/images/2024/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/1.webp">
+<meta property="og:image" content="https://leonicehot.github.io/2024/10/18/2024/images/2024/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/2.webp">
+<meta property="article:published_time" content="2024-10-18T03:33:04.000Z">
+<meta property="article:modified_time" content="2024-12-11T10:57:38.261Z">
+<meta property="article:author" content="利醬">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://leonicehot.github.io/2024/10/18/2024/images/2024/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/1.webp">
+
+
+<link rel="canonical" href="https://leonicehot.github.io/2024/10/18/2024/October/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2024/10/18/2024/October/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/","path":"2024/10/18/2024/October/鋸齒現象/","title":"鋸齒現象"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>鋸齒現象 | 利醬の休憩房</title>
+  
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">利醬の休憩房</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch-resize-antialias%E7%9A%84%E5%BD%B1%E9%9F%BF"><span class="nav-number">1.</span> <span class="nav-text">Pytorch Resize
+antialias的影響</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%96%E7%89%87%E8%AA%AA%E6%98%8E-1"><span class="nav-number">2.</span> <span class="nav-text">圖片說明 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%96%E7%89%87%E8%AA%AA%E6%98%8E-2"><span class="nav-number">3.</span> <span class="nav-text">圖片說明 2</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">利醬</p>
+  <div class="site-description" itemprop="description">部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/leonIceHot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leonIceHot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hj098128@outlook.com" title="E-Mail → mailto:hj098128@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cake.me/s--qj9aPrlEs32gLEtK1_lI_g--/hj098128" title="Cake → https:&#x2F;&#x2F;www.cake.me&#x2F;s--qj9aPrlEs32gLEtK1_lI_g--&#x2F;hj098128" rel="noopener" target="_blank">Cake</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2024/10/18/2024/October/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="鋸齒現象 | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          鋸齒現象
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2024-10-18 11:33:04" itemprop="dateCreated datePublished" datetime="2024-10-18T11:33:04+08:00">2024-10-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-12-11 18:57:38" itemprop="dateModified" datetime="2024-12-11T18:57:38+08:00">2024-12-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Image-Processing/" itemprop="url" rel="index"><span itemprop="name">Image Processing</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>3 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>鋸齒現象（aliasing）是指在數位影像或視覺顯示中，當邊緣或斜線被顯示為一系列不平滑的階梯狀像素時所產生的視覺效果，這些不平滑的邊緣看起來像鋸齒或台階，尤其在低解析度下更明顯。
+<span id="more"></span> # 形成原因：
+鋸齒現象通常在影像縮放、線條渲染、或3D圖形處理時發生，特別是在解析度不足或影像縮小時出現。這是因為影像或圖形在數位化時，是以像素為單位來表示連續的線條或邊緣。當斜線或曲線無法與像素網格完全對齊時，就會出現鋸齒效應。</p>
+<ul>
+<li><p>例子：
+文字或圖形邊緣：當你看到數位圖片或文字的邊緣出現一種「不平滑」的階梯狀邊緣。
+遊戲畫面：在電腦或遊戲中，特別是在低解析度下，物體的邊緣會看起來不平滑，像是一系列小台階。</p></li>
+<li><p>解決方法：</p>
+<ul>
+<li><p>抗鋸齒技術（Anti-aliasing）：
+抗鋸齒技術是用來減少或消除鋸齒現象的濾波技術。它通過對邊緣進行平滑處理，使斜線或曲線看起來更加自然和平滑，減少階梯狀邊緣的感覺。</p></li>
+<li><p>提高解析度：
+更高的解析度可以減少鋸齒現象，因為每個像素表示的區域會更小，影像邊緣能夠更接近於連續的線條。</p></li>
+<li><p>視覺比較：
+想像一條在低解析度下顯示的對角線，它可能看起來像一系列方格相連，而不是一條平滑的線。這種「方格感」就是鋸齒現象。</p></li>
+</ul></li>
+<li><p>影像中的鋸齒現象：</p>
+<ul>
+<li>無抗鋸齒處理：物體邊緣會顯得不平滑，邊界部分出現台階狀的鋸齒。</li>
+<li>有抗鋸齒處理：邊緣會顯得較為平滑，鋸齒感減少或消失。
+抗鋸齒技術在數字影像處理、電腦圖形學和遊戲開發中廣泛應用，以提升視覺效果的品質。</li>
+</ul></li>
+</ul>
+<h1 id="pytorch-resize-antialias的影響">Pytorch Resize
+antialias的影響</h1>
+<p>在 torchvision.transforms.Resize 中，antialias=True
+是用來在影像縮放時進行抗鋸齒處理的選項。</p>
+<ul>
+<li><p>解釋： torchvision.transforms.Resize： 這是 torchvision
+中用來調整影像大小的轉換工具。
+你可以將圖片的尺寸改變到指定的大小，無論是放大還是縮小。</p></li>
+<li><p>antialias=True： 當 antialias=True
+時，在圖片縮小（downsampling）時會使用抗鋸齒（anti-aliasing）技術來處理影像，減少因縮小而產生的邊緣鋸齒現象。
+抗鋸齒是一種濾波技術，能平滑縮小後的影像邊緣，使得影像不會顯得過於粗糙或失真，特別是在圖片包含細節時。</p></li>
+<li><p>什麼時候使用 antialias=True？
+縮小圖片時：當你從大圖縮小到小圖時，使用抗鋸齒有助於保留影像的細節，避免邊緣產生明顯的鋸齒狀。
+放大圖片時：如果你只是放大圖片，抗鋸齒的影響會比較小。</p></li>
+<li><p>總結： antialias=True
+主要是為了在影像縮小時進行抗鋸齒處理，確保輸出的影像質量更高，邊緣更平滑。</p></li>
+</ul>
+<h1 id="圖片說明-1">圖片說明 1</h1>
+<p><img src="../../images/2024/鋸齒現象/1.webp" alt="1">
+這張圖片展示了在使用 torchvision.transforms.Resize
+進行影像縮放時，antialias=True
+如何減少鋸齒現象。左側的影像在縮放後出現了明顯的鋸齒效應，邊緣呈現出像素化的階梯狀。右側的影像則經過抗鋸齒處理，邊緣變得平滑，顯示了
+antialias=True 如何在縮小影像時提升質量並消除鋸齒效果。</p>
+<h1 id="圖片說明-2">圖片說明 2</h1>
+<p><img src="../../images/2024/鋸齒現象/2.webp" alt="2">
+這張圖片展示了兩條對角線的對比，說明了鋸齒現象。左側的線條顯示了鋸齒現象，即邊緣呈現階梯狀的鋸齒邊，這是由於影像解析度不足或像素化導致的。而右側的線條經過抗鋸齒處理，邊緣變得平滑且自然，清楚地表現了抗鋸齒技術如何改善視覺效果。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/10/13/2024/October/STEM/" rel="prev" title="STEM">
+                  <i class="fa fa-chevron-left"></i> STEM
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/10/18/2024/October/%E9%9B%BB%E8%85%A6%E7%A7%91%E5%AD%B8%E8%88%87%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E7%9A%84%E5%B7%AE%E7%95%B0/" rel="next" title="電腦科學與軟體工程的差異">
+                  電腦科學與軟體工程的差異 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">利醬</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">307k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

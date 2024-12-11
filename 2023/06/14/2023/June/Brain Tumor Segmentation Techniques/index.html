@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="簡介 核磁共振造影（MRI）是檢測腦部腫瘤的主要診斷工具之一。 MRI可以提供高解析度的腦部圖像，使醫生能夠詳細地查看腦部的結構和變化，並確定腫瘤的位置、大小和種類。 MRI掃描可以清楚地區分腦部的不同組織，包括白質、灰質和腦室。此外，MRI可以顯示出腦部的血流情況，這在評估腫瘤的生長情況和病情嚴重程度時非常重要，因為某些類型的腫瘤會引起周圍血流的增加。 MRI掃描通常包括數種不同類型的圖">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Brain Tumor Segmentation Techniques">
+<meta property="og:url" content="https://leonicehot.github.io/2023/06/14/2023/June/Brain%20Tumor%20Segmentation%20Techniques/index.html">
+<meta property="og:site_name" content="利醬の休憩房">
+<meta property="og:description" content="簡介 核磁共振造影（MRI）是檢測腦部腫瘤的主要診斷工具之一。 MRI可以提供高解析度的腦部圖像，使醫生能夠詳細地查看腦部的結構和變化，並確定腫瘤的位置、大小和種類。 MRI掃描可以清楚地區分腦部的不同組織，包括白質、灰質和腦室。此外，MRI可以顯示出腦部的血流情況，這在評估腫瘤的生長情況和病情嚴重程度時非常重要，因為某些類型的腫瘤會引起周圍血流的增加。 MRI掃描通常包括數種不同類型的圖">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://leonicehot.github.io/2023/06/14/2023/images/2023/Brain-MRI-Segmentation-Techniques/gray-matter-vs-white-matter.webp">
+<meta property="og:image" content="https://leonicehot.github.io/2023/06/14/2023/images/2023/Brain-MRI-Segmentation-Techniques/segresnet.png">
+<meta property="og:image" content="https://leonicehot.github.io/2023/06/14/2023/images/2023/Brain-MRI-Segmentation-Techniques/Evaluation.png">
+<meta property="article:published_time" content="2023-06-14T09:01:57.000Z">
+<meta property="article:modified_time" content="2024-12-11T10:57:36.409Z">
+<meta property="article:author" content="利醬">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://leonicehot.github.io/2023/06/14/2023/images/2023/Brain-MRI-Segmentation-Techniques/gray-matter-vs-white-matter.webp">
+
+
+<link rel="canonical" href="https://leonicehot.github.io/2023/06/14/2023/June/Brain%20Tumor%20Segmentation%20Techniques/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2023/06/14/2023/June/Brain%20Tumor%20Segmentation%20Techniques/","path":"2023/06/14/2023/June/Brain Tumor Segmentation Techniques/","title":"Brain Tumor Segmentation Techniques"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Brain Tumor Segmentation Techniques | 利醬の休憩房</title>
+  
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">利醬の休憩房</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mri"><span class="nav-number">1.1.</span> <span class="nav-text">MRI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mri-%E5%BD%B1%E5%83%8F%E9%A1%9E%E5%9E%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">MRI 影像類型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92"><span class="nav-number">2.</span> <span class="nav-text">深度學習</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dataset"><span class="nav-number">2.1.</span> <span class="nav-text">Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#public"><span class="nav-number">2.1.1.</span> <span class="nav-text">Public</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#brain-tumor-mri-segmentation-methods"><span class="nav-number">2.2.</span> <span class="nav-text">Brain Tumor MRI
+Segmentation Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#images-segmentation"><span class="nav-number">2.2.1.</span> <span class="nav-text">Images Segmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#d-volumes-segmentation"><span class="nav-number">2.2.2.</span> <span class="nav-text">3D Volumes Segmentation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#evaluation-metric"><span class="nav-number">2.3.</span> <span class="nav-text">Evaluation Metric</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AB%96%E6%96%87"><span class="nav-number">3.</span> <span class="nav-text">論文</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">利醬</p>
+  <div class="site-description" itemprop="description">部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/leonIceHot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leonIceHot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hj098128@outlook.com" title="E-Mail → mailto:hj098128@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cake.me/s--qj9aPrlEs32gLEtK1_lI_g--/hj098128" title="Cake → https:&#x2F;&#x2F;www.cake.me&#x2F;s--qj9aPrlEs32gLEtK1_lI_g--&#x2F;hj098128" rel="noopener" target="_blank">Cake</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/06/14/2023/June/Brain%20Tumor%20Segmentation%20Techniques/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Brain Tumor Segmentation Techniques | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Brain Tumor Segmentation Techniques
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2023-06-14 17:01:57" itemprop="dateCreated datePublished" datetime="2023-06-14T17:01:57+08:00">2023-06-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-12-11 18:57:36" itemprop="dateModified" datetime="2024-12-11T18:57:36+08:00">2024-12-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Medical-Image-Processing/" itemprop="url" rel="index"><span itemprop="name">Medical Image Processing</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>12k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>22 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="簡介">簡介</h1>
+<p>核磁共振造影（MRI）是檢測腦部腫瘤的主要診斷工具之一。
+MRI可以提供高解析度的腦部圖像，使醫生能夠詳細地查看腦部的結構和變化，並確定腫瘤的位置、大小和種類。</p>
+<p>MRI掃描可以清楚地區分腦部的不同組織，包括白質、灰質和腦室。此外，MRI可以顯示出腦部的血流情況，這在評估腫瘤的生長情況和病情嚴重程度時非常重要，因為某些類型的腫瘤會引起周圍血流的增加。</p>
+<p>MRI掃描通常包括數種不同類型的圖像，例如T1加權圖像、T2加權圖像和脂肪抑制圖像。有時，為了提高腫瘤的可見性，可能會使用一種名為「對比劑」的特殊物質。對比劑可以使腫瘤在掃描中更為明顯，從而使醫生能更準確地評估其大小和位置。</p>
+<p>然而，儘管MRI在診斷腦部腫瘤方面非常有用，但它並不能提供所有需要的信息。在確定腫瘤的確切類型和治療策略之前，可能還需要進行其他檢查，例如生物檢或基因檢測。
+<span id="more"></span> # 醫學影像介紹 ## 腦部的結構 <img src="../../images/2023/Brain-MRI-Segmentation-Techniques/gray-matter-vs-white-matter.webp" alt="gray-matter-vs-white-matter"><br>
+來源:
+https://www.technologynetworks.com/neuroscience/articles/gray-matter-vs-white-matter-322973</p>
+<h2 id="mri">MRI</h2>
+<p>核磁共振造影（Magnetic Resonance
+Imaging，MRI）是一種非侵入性醫療診斷技術，利用磁場和電腦技術，為醫生提供身體內部結構的詳細影像。它尤其適用於軟組織的影像檢查，例如大腦、脊髓、心臟等。不過，對於一些具有金屬成分的物體，例如某些類型的心臟節律器或人工關節等，MRI檢查可能存在風險。在接受MRI檢查前，應該告知醫生或醫療技師任何可能影響檢查的醫療歷史或特殊情況。</p>
+<h3 id="mri-影像類型">MRI 影像類型</h3>
+<p>在MRI掃描中，會產生多種類型的影像，以便於不同的診斷需求。以下是一些常見的MRI影像類型：</p>
+<ol type="1">
+<li>T1加權影像（T1-weighted
+images）：在這種影像中，脂肪組織通常顯示為亮白色，而水或含水的組織（如脊髓液）顯示為暗色。這種影像非常適合查看解剖結構。
+T1加權影像（T1-weighted
+images）是腦部磁共振成像（MRI）中的一種影像類型。它在MRI中使用的加權方法可以突出組織的特定特徵，對於檢測腦部組織的解剖結構和病變具有重要價值。</li>
+</ol>
+<p>T1加權影像主要基於組織的長T1鬆弛時間（T1 relaxation
+time）進行成像。在T1加權影像中，脂肪組織呈現高信號亮度（高信號），而灰質和白質腦組織則呈現不同的信號強度，通常灰質較深（低信號）而白質較亮（高信號）。這種對比使得T1加權影像能夠顯示出腦部組織之間的差異和結構細節。</p>
+<p>T1加權影像常用於評估腦部結構、病變和解剖細節，並有助於診斷和處理腦部疾病，例如腫瘤、卒中、炎症、出血和先天性畸形等。它還可以用於評估腦組織的大小、形狀和組織類型。</p>
+<ol start="2" type="1">
+<li>T1c是腦部磁共振成像（MRI）報告中的一個術語，用於描述腦腫瘤的分期。
+T分期系統是根據腫瘤在MRI影像中的特徵來評估其分期和擴散程度。在T分期系統中，T1代表腫瘤的結構特徵，而c則表示對比增強。</li>
+</ol>
+<p>具體來說，T1c代表在腦部MRI中，使用造影劑（對比劑）對腫瘤進行了增強顯示。造影劑是一種注射入血管的物質，可以幫助醫生更清楚地看到腫瘤的位置和腫瘤與周圍組織的關係。T1c分期通常意味著腫瘤在MRI影像中的增強區域。</p>
+<p>腦腫瘤的T分期是醫生評估腫瘤的重要指標之一，它可以幫助醫生確定腫瘤的擴散程度，以指導治療計劃和預後評估。對於T1c分期，腫瘤通常被認為已經有對比劑的增強區域，這可能表明腫瘤已經在組織中形成了血管供應。</p>
+<p>請注意，T分期僅是評估腦腫瘤的一個方面，並且在確定最佳治療和預後評估時，醫生還需要考慮其他因素，如腫瘤類型、大小、位置以及患者的整體健康狀況。只有醫生能夠根據完整的臨床評估和影像資料提供準確的解釋和建議。</p>
+<ol start="3" type="1">
+<li>T2加權影像（T2-weighted
+images）：這種影像與T1加權影像相反，脂肪組織顯示為暗色，而含水的組織顯示為亮白色。這種影像尤其適合用於識別水腫、炎症和某些類型的腫瘤。
+T2加權影像（T2-weighted
+images）是腦部磁共振成像（MRI）中的一種影像類型。它是通過對組織的T2鬆弛時間（T2
+relaxation time）進行加權成像，以突出組織的特定特徵。</li>
+</ol>
+<p>在T2加權影像中，不同組織呈現不同的信號強度。一般而言，液體（如腦脊液）和水分含量較高的組織呈現高信號亮度（高信號），而實質組織（如灰質和白質腦組織）呈現相對較低的信號強度（低信號）。這種對比使得T2加權影像能夠提供有關組織水分含量、水分分佈和病理改變的信息。</p>
+<p>T2加權影像在腦部MRI中具有多種應用，包括但不限於以下方面：</p>
+<p>檢測腦部病變：T2加權影像對於檢測腦部病變（如腫瘤、梗死、炎症、囊腫等）具有高度敏感性。病變區域通常呈現高信號或異常信號，這有助於醫生確定病變的位置、大小和分佈。</p>
+<p>組織區別和解剖學評估：T2加權影像能夠清晰顯示腦部組織之間的區別和解剖結構，包括灰質和白質腦組織、腦脊液、血管等。這對於評估組織形態、大小和分佈以及觀察解剖結構異常非常重要。</p>
+<p>水分含量評估：T2加權影像提供了有關組織水分含量和水分分佈的信息。這對於檢測腫瘤、水腫和其他水分異常具有重要價值。</p>
+<p>檢測神經退行性疾病：T2加權影像可用於檢測神經退行性疾病，如阿茲海默病和帕金森病等。這些疾病通常與組織中的變化和損傷相關，T2加權影像可以提供相應的信息。</p>
+<ol start="4" type="1">
+<li>液體抑制影像（Fluid-attenuated inversion recovery,
+FLAIR）：這種影像是一種特殊的T2加權影像，可以抑制脊髓液的信號，使得腦組織的變化更容易被觀察到。
+FLAIR（Fluid-Attenuated Inversion
+Recovery）是腦部磁共振成像（MRI）中的一種影像類型。它是一種特殊的磁共振序列，用於增強腦部組織中的病變檢測和顯示。</li>
+</ol>
+<p>FLAIR影像通過特殊的脈衝序列，將液體信號（如腦脊液）抑制至很低的水平，同時突出顯示灰質和白質腦組織，以及與腦部病變相關的組織改變。這種抑制液體信號的能力使FLAIR影像對於檢測和定位白質病變、腦部梗死、炎症、腫瘤和其他病理情況具有高度敏感性。</p>
+<p>FLAIR影像與其他腦部MRI序列相互補充，共同提供更全面的影像評估。與傳統T2加權影像相比，FLAIR影像可以提供更好的組織對比度，尤其是在檢測白質腦病變時更為敏感。</p>
+<p>FLAIR影像在診斷和監測多種腦部疾病中具有重要的應用，包括但不限於以下方面：</p>
+<p>腦部炎症和感染的檢測：FLAIR影像對於檢測腦部炎症和感染具有高度敏感性，可以顯示相應區域的信號異常和病變擴散。</p>
+<p>白質腦病變的檢測：FLAIR影像對於白質腦病變（如腦梗死、脫髓鞘病變等）的檢測和定位具有高度敏感性。它可以顯示出白質區域中的信號異常和病變細節。</p>
+<p>腦腫瘤的檢測：FLAIR影像可以幫助檢測和定位腦腫瘤，特別是在白質中的腫瘤檢測上具有優勢。</p>
+<p>FLAIR影像在臨床實踐中被廣泛使用，它能提供對腦部病變和組織改變的詳細信息，幫助醫生進行診斷、治療計劃和監測。然而，對FLAIR影像的解讀和評估應由專業醫生進行，結合臨床情況和其他影像學資料進行綜合評估。</p>
+<ol start="5" type="1">
+<li>擴散張量影像（Diffusion tensor imaging,
+DTI）：這種影像能夠獲得腦部的水分子擴散情況，尤其適合顯示白質纖維束的結構和方向。
+擴散張量成像（Diffusion Tensor
+Imaging，DTI）是一種用於腦部磁共振成像（MRI）的高細度影像技術，旨在評估水分子在組織中的擴散行為和方向。它提供了關於腦部組織微觀結構和連接性的詳細信息。</li>
+</ol>
+<p>DTI通過測量水分子在組織中的運動方向和速率來獲取數據。水分子在組織中的擴散通常受到組織微觀結構（如神經纖維束）的限制和影響。DTI使用多個擴散梯度方向的MRI掃描序列，以估計擴散張量，該張量描述了水分子在三個空間維度上的擴散特性。</p>
+<p>DTI提供了許多有用的結構和連接性信息：</p>
+<ul>
+<li><p>纖維束定向：DTI可以揭示腦部神經纖維束的定向和連接性，幫助我們了解腦部的結構連接網絡。通過評估水分子的主擴散方向，DTI可以顯示出白質纖維束的定向和連接性。</p></li>
+<li><p>腦部連接性：DTI可以用於評估腦部區域之間的連接性和通信。通過分析水分子在腦部組織中的擴散方向和程度，DTI可提供關於不同腦區域之間的神經纖維連接情況的信息。</p></li>
+<li><p>神經退行性疾病：DTI可用於研究和評估神經退行性疾病（如阿茲海默病、帕金森病）中的腦部結構改變。通過檢測和比較正常組織和受影響組織中的擴散張量特徵，DTI可以提供有關病理變化的信息。</p></li>
+<li><p>白質病變評估：DTI可用於檢測和評估白質病變，如腦梗死、脫髓鞘病變等。它可以提供有關受影響區域的擴散特性和纖維束結構的信息。</p>
+<p>需要注意的是，DTI的解讀和評估需要專業醫生或研究人員進行，並結合其他臨床信息和影像學資料進行綜合分析。DTI是一種有力的工具，可幫助我們更深入地研究和了解腦部結構和連接性的特徵。</p></li>
+</ul>
+<ol start="6" type="1">
+<li><p>功能性MRI（Functional MRI,
+fMRI）：這種影像可以捕捉腦部在執行特定任務時的活動變化，或在休息狀態下的活動變化。</p></li>
+<li><p>對比增強MRI：在這種掃描中，通過注射一種稱為造影劑的特殊物質來提高特定組織或結構的對比度，使其在影像上更清晰可見。</p></li>
+<li><p>動態應力強化MRI（Dynamic contrast-enhanced MRI,
+DCE-MRI）：這種掃描可以觀察造影劑在體內的分佈和移動，尤其適用於研究腫瘤的血流供應和血管透明度。</p></li>
+</ol>
+<h1 id="深度學習">深度學習</h1>
+<h2 id="dataset">Dataset</h2>
+<h3 id="public">Public</h3>
+<ol type="1">
+<li>BraTS The model is trained to segment 3 nested subregions of primary
+brain tumors (gliomas):</li>
+</ol>
+<ul>
+<li>the “enhancing tumor” (ET),
+<ul>
+<li>The ET is described by areas that show hyper intensity in T1c when
+compared to T1, but also when compared to “healthy” white matter in
+T1c.</li>
+<li>“增強腫瘤”這個詞用來形容在注入對比劑後在影像掃描中顯得更明亮或更突出的腫瘤。</li>
+<li>對比劑是一種可以改善體內結構或體液在醫學影像技術中的可見性的物質，例如CT掃描或MRI掃描。</li>
+<li>“增強”這個詞描述了對比劑與腫瘤的相互作用，導致腫瘤在掃描中更為明顯。</li>
+<li>在某些情況下，這種增強可以幫助醫生更準確地定位和評估腫瘤的大小，以及判斷治療的效果。</li>
+</ul></li>
+<li>the “tumor core” (TC),
+<ul>
+<li>The TC describes the bulk of the tumor, which is what is typically
+resected. The TC entails the ET, as well as the necrotic (fluid-filled)
+and the non-enhancing (solid) parts of the tumor.</li>
+<li>“腫瘤核心”是用來形容腫瘤的中心部分的詞語。這個區域通常是腫瘤最活躍的部分，可能包含有變異的細胞。</li>
+<li>在許多情況下，腫瘤核心可能與周邊區域有著顯著的差異，這有助於醫生更好地理解腫瘤的性質並選擇最適合的治療方式。</li>
+</ul></li>
+<li>the “whole tumor” (WT) based on 4 aligned input MRI scans (T1c, T1,
+T2, FLAIR).
+<ul>
+<li>The WT describes the complete extent of the disease, as it entails
+the TC and the peritumoral edema (ED), which is typically depicted by
+hyper-intense signal in FLAIR.</li>
+<li>“全腫瘤”一般指的是腫瘤的全部，包含所有的部分和區域。這可能包括腫瘤核心、腫瘤周邊區域，以及可能的微環境變化等。</li>
+</ul></li>
+<li>腦瘤的分級通常依賴於世界衛生組織（World Health
+Organization，WHO）的標準。</li>
+<li>WHO將腦瘤分為四個等級：</li>
+</ul>
+<ol type="1">
+<li><p>等級 I：這些腦瘤生長速度慢，細胞看起來與正常的腦細胞非常相似。
+等級 I 的腦瘤可能可以完全切除。</p></li>
+<li><p>等級 II：等級 II 的腦瘤生長速度較慢，但比等級 I
+的腦瘤看起來更異常。
+這些腦瘤可能會滲透到周邊的正常腦組織中，並且可能會進展到更高的等級。</p></li>
+<li><p>等級 III：這些腦瘤的細胞看起來非常異常，並且生長速度快。 等級 III
+的腦瘤通常會滲透到周邊的正常腦組織中。</p></li>
+<li><p>等級 IV：等級 IV 的腦瘤生長速度最快，細胞的異常程度最大。
+這些腦瘤會大量侵略周邊的腦組織，並且經常導致明顯的臨床症狀。</p></li>
+</ol>
+<h2 id="brain-tumor-mri-segmentation-methods">Brain Tumor MRI
+Segmentation Methods</h2>
+<h3 id="images-segmentation">Images Segmentation</h3>
+<p>近代機器學習應用於醫學影像分割的神經網路架構有以下幾種，以U-Net最具代表，隨之延伸變形有SegResNet、Swin
+UNETR與nnUNet。 1. U-Net 的特點是其 U
+形狀的網絡結構，包括編碼器（用於特徵提取）和解碼器（用於生成分割遮罩）。特徵連結有助於保留良好的影像上下文信息，從而提高分割的準確度。
+2.
+SegResNet是基於ResNet的變體，它使用深度殘差區塊來增強特徵提取，同時保留了空間信息，生成高解析度的特徵圖，有助於保留影像細節，因此適用於多類別分割。
+3. Swin
+UNETR是一個基於Transformer架構的神經網路，結合了UNet的結構和Transformer的注意機制(Self-Attention)，支援並行處理與多尺度特徵萃取，取得優異的效能。
+4. nnU-Net
+具有高度自定義性，包括預處理和後處理工具，用於影像的預處理（例如強度歸一化、重採樣等）和分割結果的後處理（例如非極大值抑制、後處理過濾等）。</p>
+<h3 id="d-volumes-segmentation">3D Volumes Segmentation</h3>
+<ul>
+<li>Input :
+<ul>
+<li>T1c</li>
+<li>T1</li>
+<li>T2</li>
+<li>FLAIR</li>
+</ul></li>
+<li>Output :
+<ul>
+<li>Label 0: TC tumor subregion</li>
+<li>Label 1: WT tumor subregion</li>
+<li>Label 2: ET tumor subregion</li>
+</ul></li>
+<li>3D U-Net
+<ul>
+<li>https://github.com/wolny/pytorch-3dunet/blob/master/pytorch3dunet/unet3d/model.py</li>
+</ul></li>
+<li>SegResNet <img src="../../images/2023/Brain-MRI-Segmentation-Techniques/segresnet.png" alt="segResNet">
+<ul>
+<li>https://github.com/IAmSuyogJadhav/3d-mri-brain-tumor-segmentation-using-autoencoder-regularization</li>
+<li>https://catalog.ngc.nvidia.com/orgs/nvidia/teams/monaitoolkit/models/monai_brats_mri_segmentation</li>
+</ul></li>
+</ul>
+<h2 id="evaluation-metric">Evaluation Metric</h2>
+<figure>
+<img src="../../images/2023/Brain-MRI-Segmentation-Techniques/Evaluation.png" alt="Evaluationmetric">
+<figcaption aria-hidden="true">Evaluationmetric</figcaption>
+</figure>
+<h1 id="論文">論文</h1>
+<ul>
+<li><p>Liu, J., Li, M., Wang, J., Wu, F., Liu, T., &amp; Pan, Y. (2014).
+A survey of MRI-based brain tumor segmentation methods. Tsinghua science
+and technology, 19(6), 578-595.</p></li>
+<li><p>Menze, B. H., Jakab, A., Bauer, S., Kalpathy-Cramer, J.,
+Farahani, K., Kirby, J., … &amp; Van Leemput, K. (2014). The multimodal
+brain tumor image segmentation benchmark (BRATS). IEEE transactions on
+medical imaging, 34(10), 1993-2024.</p></li>
+<li><p>Ronneberger, O., Fischer, P., &amp; Brox, T. (2015). U-net:
+Convolutional networks for biomedical image segmentation. In Medical
+Image Computing and Computer-Assisted Intervention–MICCAI 2015: 18th
+International Conference, Munich, Germany, October 5-9, 2015,
+Proceedings, Part III 18 (pp. 234-241). Springer International
+Publishing.</p></li>
+<li><p>Çiçek, Ö., Abdulkadir, A., Lienkamp, S. S., Brox, T., &amp;
+Ronneberger, O. (2016). 3D U-Net: learning dense volumetric segmentation
+from sparse annotation. In Medical Image Computing and Computer-Assisted
+Intervention–MICCAI 2016: 19th International Conference, Athens, Greece,
+October 17-21, 2016, Proceedings, Part II 19 (pp. 424-432). Springer
+International Publishing.</p></li>
+<li><p>Shin, H. C., Roth, H. R., Gao, M., Lu, L., Xu, Z., Nogues, I., …
+&amp; Summers, R. M. (2016). Deep convolutional neural networks for
+computer-aided detection: CNN architectures, dataset characteristics and
+transfer learning. IEEE transactions on medical imaging, 35(5),
+1285-1298.</p></li>
+<li><p>Pereira, S., Pinto, A., Alves, V., &amp; Silva, C. A. (2016).
+Brain tumor segmentation using convolutional neural networks in MRI
+images. IEEE transactions on medical imaging, 35(5), 1240-1251.</p></li>
+<li><p>Yang, G., Yu, S., Dong, H., Slabaugh, G., Dragotti, P. L., Ye,
+X., … &amp; Firmin, D. (2017). DAGAN: deep de-aliasing generative
+adversarial networks for fast compressed sensing MRI reconstruction.
+IEEE transactions on medical imaging, 37(6), 1310-1321.</p></li>
+<li><p>Bakas, S., Akbari, H., Sotiras, A., Bilello, M., Rozycki, M.,
+Kirby, J. S., … &amp; Davatzikos, C. (2017). Advancing the cancer genome
+atlas glioma MRI collections with expert segmentation labels and
+radiomic features. Scientific data, 4(1), 1-13.</p></li>
+<li><p>Bakas, S., Akbari, H., Sotiras, A., Bilello, M., Rozycki, M.,
+Kirby, J., … &amp; Davatzikos, C. (2017). Segmentation labels and
+radiomic features for the pre-operative scans of the TCGA-LGG
+collection. The cancer imaging archive, 286.</p></li>
+<li><p>Zbontar, J., Knoll, F., Sriram, A., Murrell, T., Huang, Z.,
+Muckley, M. J., … &amp; Lui, Y. W. (2018). fastMRI: An open dataset and
+benchmarks for accelerated MRI. arXiv preprint
+arXiv:1811.08839.</p></li>
+<li><p>Wang, G., Li, W., Zuluaga, M. A., Pratt, R., Patel, P. A.,
+Aertsen, M., … &amp; Vercauteren, T. (2018). Interactive medical image
+segmentation using deep learning with image-specific fine tuning. IEEE
+transactions on medical imaging, 37(7), 1562-1573.</p></li>
+<li><p>Myronenko, A. (2019). 3D MRI brain tumor segmentation using
+autoencoder regularization. In Brainlesion: Glioma, Multiple Sclerosis,
+Stroke and Traumatic Brain Injuries: 4th International Workshop,
+BrainLes 2018, Held in Conjunction with MICCAI 2018, Granada, Spain,
+September 16, 2018, Revised Selected Papers, Part II 4 (pp. 311-320).
+Springer International Publishing.</p></li>
+<li><p>Tamilselvi, R., Nagaraj, A., Beham, M. P., &amp; Sandhiya, M. B.
+(2020, February). BRAMSIT: A Database for Brain Tumor Diagnosis and
+Detection. In 2020 Sixth International Conference on Bio Signals,
+Images, and Instrumentation (ICBSII) (pp. 1-5). IEEE.</p></li>
+<li><p>Sriram, A., Zbontar, J., Murrell, T., Defazio, A., Zitnick, C.
+L., Yakubova, N., … &amp; Johnson, P. (2020). End-to-end variational
+networks for accelerated MRI reconstruction. In Medical Image Computing
+and Computer Assisted Intervention–MICCAI 2020: 23rd International
+Conference, Lima, Peru, October 4–8, 2020, Proceedings, Part II 23
+(pp. 64-73). Springer International Publishing.</p></li>
+<li><p>Baid, U., Ghodasara, S., Mohan, S., Bilello, M., Calabrese, E.,
+Colak, E., … &amp; Bakas, S. (2021). The RSNA-ASNR-MICCAI BraTS 2021
+benchmark on brain tumor segmentation and radiogenomic classification.
+arXiv preprint arXiv:2107.02314.</p></li>
+<li><p>Hatamizadeh, A., Nath, V., Tang, Y., Yang, D., Roth, H. R., &amp;
+Xu, D. (2021, September). Swin unetr: Swin transformers for semantic
+segmentation of brain tumors in mri images. In International MICCAI
+Brainlesion Workshop (pp. 272-284). Cham: Springer International
+Publishing.</p></li>
+<li><p>Tang, Y., Yang, D., Li, W., Roth, H. R., Landman, B., Xu, D., …
+&amp; Hatamizadeh, A. (2022). Self-supervised pre-training of swin
+transformers for 3d medical image analysis. In Proceedings of the
+IEEE/CVF Conference on Computer Vision and Pattern Recognition
+(pp. 20730-20740).</p></li>
+<li><p>Zhou, T., Ruan, S., &amp; Hu, H. (2022). A literature survey of
+MR-based brain tumor segmentation with missing modalities. Computerized
+Medical Imaging and Graphics, 102167.</p></li>
+<li><p>Jun, W., &amp; Liyuan, Z. (2022). Brain Tumor Classification
+Based on Attention Guided Deep Learning Model. International Journal of
+Computational Intelligence Systems, 15(1), 35.</p></li>
+<li><p>Soomro, T. A., Zheng, L., Afifi, A. J., Ali, A., Soomro, S., Yin,
+M., &amp; Gao, J. (2022). Image segmentation for MR brain tumor
+detection using machine learning: A Review. IEEE Reviews in Biomedical
+Engineering.</p></li>
+<li><p>Mohammed, Y. M., El Garouani, S., &amp; Jellouli, I. (2023). A
+survey of methods for brain tumor segmentation-based MRI images. Journal
+of Computational Design and Engineering, 10(1), 266-293.</p></li>
+<li><p>Solanki, S., Singh, U. P., Chouhan, S. S., &amp; Jain, S. (2023).
+Brain Tumor Detection and Classification using Intelligence Techniques:
+An Overview. IEEE Access.</p></li>
+<li><p>Gupta, A., Dixit, M., Mishra, V. K., Singh, A., &amp; Dayal, A.
+(2023). Brain Tumor Segmentation from MRI Images using Deep Learning
+Techniques. arXiv preprint arXiv:2305.00257.</p></li>
+<li><p>Kirillov, A., Mintun, E., Ravi, N., Mao, H., Rolland, C.,
+Gustafson, L., … &amp; Girshick, R. (2023). Segment anything. arXiv
+preprint arXiv:2304.02643.</p></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/05/18/2023/May/Uncertainty/" rel="prev" title="Uncertainty">
+                  <i class="fa fa-chevron-left"></i> Uncertainty
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/06/15/2023/June/Image-Quality-Assessment/" rel="next" title="Image Quality Assessment">
+                  Image Quality Assessment <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">利醬</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">307k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

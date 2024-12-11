@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="PPPoE（Point-to-Point Protocol over Ethernet，乙太網上的點對點協定）是一種網路協定，用於透過乙太網路建立點對點連接，主要用於 DSL寬頻接入網路。PPPoE 結合了 PPP（Point-to-Point Protocol，點對點協定）的安全性和驗證機制，並將其應用在乙太網路等多使用者環境中。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu PPPoE 連線設定">
+<meta property="og:url" content="https://leonicehot.github.io/2024/10/13/2024/October/Ubuntu-PPPoE%E9%80%A3%E7%B7%9A%E8%A8%AD%E5%AE%9A/index.html">
+<meta property="og:site_name" content="利醬の休憩房">
+<meta property="og:description" content="PPPoE（Point-to-Point Protocol over Ethernet，乙太網上的點對點協定）是一種網路協定，用於透過乙太網路建立點對點連接，主要用於 DSL寬頻接入網路。PPPoE 結合了 PPP（Point-to-Point Protocol，點對點協定）的安全性和驗證機制，並將其應用在乙太網路等多使用者環境中。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-10-13T00:02:43.000Z">
+<meta property="article:modified_time" content="2024-12-11T10:57:38.142Z">
+<meta property="article:author" content="利醬">
+<meta property="article:tag" content="Ubuntu">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://leonicehot.github.io/2024/10/13/2024/October/Ubuntu-PPPoE%E9%80%A3%E7%B7%9A%E8%A8%AD%E5%AE%9A/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2024/10/13/2024/October/Ubuntu-PPPoE%E9%80%A3%E7%B7%9A%E8%A8%AD%E5%AE%9A/","path":"2024/10/13/2024/October/Ubuntu-PPPoE連線設定/","title":"Ubuntu PPPoE 連線設定"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Ubuntu PPPoE 連線設定 | 利醬の休憩房</title>
+  
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">利醬の休憩房</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%A8-ubuntu-%E4%B8%8A%E9%85%8D%E7%BD%AE-pppoe"><span class="nav-number">1.</span> <span class="nav-text">在 Ubuntu 上配置 PPPoE：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">2.</span> <span class="nav-text">參考文章</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">利醬</p>
+  <div class="site-description" itemprop="description">部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/leonIceHot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leonIceHot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hj098128@outlook.com" title="E-Mail → mailto:hj098128@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cake.me/s--qj9aPrlEs32gLEtK1_lI_g--/hj098128" title="Cake → https:&#x2F;&#x2F;www.cake.me&#x2F;s--qj9aPrlEs32gLEtK1_lI_g--&#x2F;hj098128" rel="noopener" target="_blank">Cake</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2024/10/13/2024/October/Ubuntu-PPPoE%E9%80%A3%E7%B7%9A%E8%A8%AD%E5%AE%9A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Ubuntu PPPoE 連線設定 | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Ubuntu PPPoE 連線設定
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2024-10-13 08:02:43" itemprop="dateCreated datePublished" datetime="2024-10-13T08:02:43+08:00">2024-10-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-12-11 18:57:38" itemprop="dateModified" datetime="2024-12-11T18:57:38+08:00">2024-12-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Computer-Networks/" itemprop="url" rel="index"><span itemprop="name">Computer Networks</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.8k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>3 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>PPPoE（Point-to-Point Protocol over
+Ethernet，乙太網上的點對點協定）是一種網路協定，用於透過乙太網路建立點對點連接，主要用於
+DSL寬頻接入網路。PPPoE 結合了 PPP（Point-to-Point
+Protocol，點對點協定）的安全性和驗證機制，並將其應用在乙太網路等多使用者環境中。
+<span id="more"></span> # PPPoE 的工作原理： PPPoE
+通常用於寬頻網路，特別是家庭端和小型辦公室的 DSL
+連接。它允許多個終端設備通過單一的 DSL
+連接共享網路服務，同時每個使用者仍可以使用其個人的帳號進行身份驗證和管理。</p>
+<p>PPPoE 工作的基本流程分為兩個階段： 1. 發現階段： - PPPoE
+客戶端設備首先通過廣播方式向網路查找 PPPoE 服務提供者（如 ISP
+的接入伺服器）。 - 在這個階段，客戶端會使用 PPPoE
+進行發現，確定可用的服務並與伺服器進行鏈接。 2. 會話階段： -
+發現過程結束後，PPP
+會話正式開始，客戶端和伺服器進行身份驗證（如使用者和密碼）。 -
+認證成功後，客戶端設備將獲得一個 IP 地址，並可以通過 ISP 進行上網。 -
+在連接期間，所有傳輸的數據會被封裝到 PPPoE
+封包中，透過以太網進行傳輸。</p>
+<p>PPPoE 的優點： 1. 身份驗證：PPPoE 支持 PPP 的驗證機制，如
+PAP（Password Authentication Protocol，密碼驗證協定）和 CHAP（Challenge
+Handshake Authentication
+Protocol，挑戰握手驗證協定），能夠確保網路連接的安全性。</p>
+<ol start="2" type="1">
+<li><p>動態 IP 地址分配：PPPoE
+協定允許服務提供商（ISP）為每個使用者分配動態 IP 地址，這有助於有效利用
+IP 資源，特別是在家庭寬頻接入中。</p></li>
+<li><p>帳號管理和計費：許多 ISP 使用 PPPoE
+進行連接管理和流量計費，因為每個用戶都需要使用其個人的帳號進行連接，這使得追蹤和管理用戶的使用情況變得容易。</p></li>
+<li><p>可擴展性：PPPoE
+非常適合多使用者環境，如小型企業或住宅社區，允許多個設備通過同一個 DSL
+連接訪問網路。</p></li>
+</ol>
+<p>PPPoE 的缺點： 1. 開銷大：由於 PPPoE 在每個封包中都增加了協定頭（8
+字節的 PPPoE 頭），因此會佔用一定的帶寬資源，特別是在較低速率的 DSL
+連接上，這可能會導致性能下降。</p>
+<ol start="2" type="1">
+<li><p>配置相對複雜：相比於 DHCP 等自動分配方式，PPPoE
+需要手動配置帳號、密碼等資訊，對於普通用戶來說可能會增加配置難度。</p></li>
+<li><p>會話保持：PPPoE
+使用點對點協定，因此每次連接建立和終止時都會進行會話管理。如果網路連接不穩定，會導致頻繁的會話重建，影響使用體驗。</p></li>
+</ol>
+<p>PPPoE 的常見應用場景： 1. DSL 寬頻：PPPoE 最常見的應用場景是在 DSL
+寬頻接入中，用於將家庭或小型辦公室連接到 ISP 提供的互聯網服務。</p>
+<ol start="2" type="1">
+<li><p>家用網路與路由器：許多家庭路由器支持
+PPPoE，允許通過路由器的用戶使用 ISP 提供的帳號進行互聯網連接。</p></li>
+<li><p>企業網路：一些企業使用 PPPoE
+作為其遠程辦公或分支機構連接到主網路的方式，特別是在多個分支機構需要通過一條線路連接到主網路的情況下。</p></li>
+</ol>
+<h1 id="在-ubuntu-上配置-pppoe">在 Ubuntu 上配置 PPPoE：</h1>
+<ol type="1">
+<li><p>安裝 PPPoE 工具： 通常需要 pppoeconf 工具來配置 PPPoE。
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install pppoeconf</span><br></pre></td></tr></table></figure></p></li>
+<li><p>配置 PPPoE： 使用 pppoeconf 命令來自動檢測和配置 PPPoE 連接。
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pppoeconf</span><br><span class="line">過程中系統會提示輸入 ISP 提供的使用者和密碼，並且允許系統自動修改網路設置以啟用 PPPoE。</span><br></pre></td></tr></table></figure></p></li>
+<li><p>啟動和停止 PPPoE 連接：</p></li>
+</ol>
+<ul>
+<li><p>啟動 PPPoE 連接： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pon dsl-provider</span><br></pre></td></tr></table></figure></p></li>
+<li><p>停止 PPPoE 連接： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo poff</span><br></pre></td></tr></table></figure></p></li>
+<li><p>查看 PPPoE 連接狀態： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip addr show</span><br></pre></td></tr></table></figure></p></li>
+</ul>
+<h1 id="參考文章">參考文章</h1>
+<ol type="1">
+<li><p>在Ubuntu上進行PPPoE撥號
+https://blog.cre0809.com/archives/259/</p></li>
+<li><p>Ubuntu 上的 PPPoE 設定
+https://stevenitlife.blogspot.com/2020/05/ubuntu-pppoe.html</p></li>
+<li><p>Ubuntu 20.04 上的 PPPoE 設定
+https://www.cjkuo.net/ubuntu-20-04-pppoe/</p></li>
+<li><p>Ubuntu 網路設定 - PPPoE (ADSL) 指令
+https://note.drx.tw/2008/08/networkpppoe-adsl.html</p></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/10/13/2024/October/Ubuntu-%E8%88%87-Windows%E6%AA%94%E6%A1%88%E5%82%B3%E8%BC%B8%E6%96%B9%E6%B3%95/" rel="prev" title="Ubuntu 與 Windows 檔案傳輸方法">
+                  <i class="fa fa-chevron-left"></i> Ubuntu 與 Windows 檔案傳輸方法
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/10/13/2024/October/Shared-Memory/" rel="next" title="Shared Memory">
+                  Shared Memory <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">利醬</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">307k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="簡介 機器學習（Machine Learning，簡稱ML）是人工智慧（Artificial Intelligence，簡稱AI）的一個重要分支，旨在使計算機能夠通過學習從數據中提取模式和知識，並使用這些模式和知識來做出預測、做出決策或執行特定任務，而不需要明確地進行編程。 機器學習的主要目標是使計算機能夠自動學習並改進它們的性能，而不需要人類明確地指導或規定每個步驟。這通常是通過使用大量的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Machine Learning">
+<meta property="og:url" content="https://leonicehot.github.io/2023/07/18/2023/July/Machine-Learning/index.html">
+<meta property="og:site_name" content="利醬の休憩房">
+<meta property="og:description" content="簡介 機器學習（Machine Learning，簡稱ML）是人工智慧（Artificial Intelligence，簡稱AI）的一個重要分支，旨在使計算機能夠通過學習從數據中提取模式和知識，並使用這些模式和知識來做出預測、做出決策或執行特定任務，而不需要明確地進行編程。 機器學習的主要目標是使計算機能夠自動學習並改進它們的性能，而不需要人類明確地指導或規定每個步驟。這通常是通過使用大量的">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2023-07-18T01:27:10.000Z">
+<meta property="article:modified_time" content="2024-12-11T10:57:36.253Z">
+<meta property="article:author" content="利醬">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://leonicehot.github.io/2023/07/18/2023/July/Machine-Learning/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2023/07/18/2023/July/Machine-Learning/","path":"2023/07/18/2023/July/Machine-Learning/","title":"Machine Learning"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Machine Learning | 利醬の休憩房</title>
+  
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">利醬の休憩房</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%B8%E7%BF%92%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">學習方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A9%85%E5%8B%95%E6%96%B9%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">驅動方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#data-driven"><span class="nav-number">3.1.</span> <span class="nav-text">Data-Driven</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#model-driven"><span class="nav-number">3.2.</span> <span class="nav-text">Model-driven</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#learning-techniques"><span class="nav-number">4.</span> <span class="nav-text">Learning Techniques</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#multi-class-learning"><span class="nav-number">4.1.</span> <span class="nav-text">Multi-Class Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#multi-label-learning"><span class="nav-number">4.2.</span> <span class="nav-text">Multi-Label Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#multi-task-learning"><span class="nav-number">4.3.</span> <span class="nav-text">Multi-Task Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#multi-domain-learning"><span class="nav-number">4.4.</span> <span class="nav-text">Multi-Domain Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#multi-instance-learning"><span class="nav-number">4.5.</span> <span class="nav-text">Multi-Instance Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#multi-view-learning"><span class="nav-number">4.6.</span> <span class="nav-text">Multi-View Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#multi-objective-learning"><span class="nav-number">4.7.</span> <span class="nav-text">Multi-Objective Learning</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">利醬</p>
+  <div class="site-description" itemprop="description">部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/leonIceHot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leonIceHot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hj098128@outlook.com" title="E-Mail → mailto:hj098128@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cake.me/s--qj9aPrlEs32gLEtK1_lI_g--/hj098128" title="Cake → https:&#x2F;&#x2F;www.cake.me&#x2F;s--qj9aPrlEs32gLEtK1_lI_g--&#x2F;hj098128" rel="noopener" target="_blank">Cake</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/07/18/2023/July/Machine-Learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Machine Learning | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Machine Learning
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2023-07-18 09:27:10" itemprop="dateCreated datePublished" datetime="2023-07-18T09:27:10+08:00">2023-07-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-12-11 18:57:36" itemprop="dateModified" datetime="2024-12-11T18:57:36+08:00">2024-12-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Artificial-Intelligence/" itemprop="url" rel="index"><span itemprop="name">Artificial Intelligence</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Artificial-Intelligence/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>4.9k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>9 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="簡介">簡介</h1>
+<p>機器學習（Machine Learning，簡稱ML）是人工智慧（Artificial
+Intelligence，簡稱AI）的一個重要分支，旨在使計算機能夠通過學習從數據中提取模式和知識，並使用這些模式和知識來做出預測、做出決策或執行特定任務，而不需要明確地進行編程。</p>
+<p>機器學習的主要目標是使計算機能夠自動學習並改進它們的性能，而不需要人類明確地指導或規定每個步驟。這通常是通過使用大量的數據和數學算法來實現的。
+<span id="more"></span></p>
+<h1 id="學習方法">學習方法</h1>
+<p>在機器學習中，常見的學習方法包括：</p>
+<ol type="1">
+<li><p>監督式學習（Supervised
+Learning）：使用帶有標籤（已知結果）的訓練數據，使機器學習模型能夠預測新的、未知數據的標籤。常見的應用包括分類和回歸問題。</p></li>
+<li><p>非監督式學習（Unsupervised
+Learning）：使用未標記的訓練數據，模型尋找數據中的模式和結構，通常用於聚類和降維等任務。</p></li>
+<li><p>強化學習（Reinforcement
+Learning）：機器通過與環境的交互學習，以最大化達成目標的累計獎勵。這在需要做出一系列決策的情況下很有用。</p></li>
+<li><p>自監督式學習（Self-Supervised
+Learning）是一種機器學習方法，其中模型利用未標記的資料來學習有用的特徵表示，而不需要人工標記的標籤。</p></li>
+</ol>
+<p>機器學習在各個領域都有廣泛的應用，包括自然語言處理、計算機視覺、運籌學、金融、醫療、自動駕駛等。它已成為現代科技中不可或缺的一部分，並持續推動著科技和社會的進步。</p>
+<h1 id="驅動方式">驅動方式</h1>
+<h2 id="data-driven">Data-Driven</h2>
+<p>資料驅動（Data-Driven）是指在解決問題或做出決策時，依賴並利用大量的數據來指導和支持決策過程。這種方法強調將數據視為重要的資源，通過分析和利用數據中的模式、趨勢和統計信息來獲取洞察力、做出預測和指導行動。</p>
+<p>資料驅動的方法在當今數字時代得到廣泛應用，隨著數據的快速生成和數據存儲和處理能力的提升，我們能夠收集和分析大量的數據來探索和理解現象、發現規律以及支持決策。這種方法主要基於以下原則：</p>
+<p>數據收集：資料驅動的方法要求從各種來源收集相關的數據，這可能包括結構化數據（例如數據庫、表格等）和非結構化數據（例如文本、圖像、音頻等）。</p>
+<p>數據分析：通過應用統計、機器學習、深度學習等技術，對數據進行分析和建模，以提取有價值的信息、模式和關聯。</p>
+<p>洞察力和預測：通過對數據進行深入分析，我們可以獲得對現象和問題的洞察力，並基於數據模型和模式進行預測和推斷。</p>
+<p>基於數據的決策：資料驅動方法將數據的洞察力應用於決策過程中，這可以是自動化的決策或為決策者提供有關行動建議和優化策略。</p>
+<p>資料驅動方法在許多領域中都有廣泛應用，包括商業、金融、醫療保健、交通運輸、科學研究等。透過資料驅動的方法，我們可以利用數據的價值和潛力來獲得更深入的理解，提高效率和效能，並做出更明智的決策。</p>
+<h2 id="model-driven">Model-driven</h2>
+<p>模型驅動（Model-Driven）是指在解決問題或做出決策時，基於建立和使用特定的模型來指導和支持決策過程。這種方法強調建立一個能夠描述問題或現象的模型，並使用該模型進行分析、預測和優化。</p>
+<p>在模型驅動方法中，模型是對問題或系統進行抽象和描述的數學或統計表示。這些模型可以是基於物理定律、統計模型、機器學習模型或其他形式的數學模型。模型通常由一組參數或變量組成，用於表示問題的關鍵特徵、結構和行為。</p>
+<p>模型驅動方法的基本原則包括：</p>
+<p>模型建立：建立描述問題的數學或統計模型，這可能涉及對現有知識的建模、數據分析、實驗觀察等。</p>
+<p>模型驗證：通過與實際數據的比較或實驗驗證來確定模型的準確性和可靠性。</p>
+<p>模型分析：使用模型進行數據分析、參數優化、行為預測等，以獲得對問題的洞察力和理解。</p>
+<p>模型應用：將模型應用於問題解決或決策制定中，例如進行預測、優化、控制等。</p>
+<p>模型驅動方法在許多領域中都有應用，包括工程、物理學、經濟學、金融、控制系統等。透過模型驅動的方法，我們可以基於對問題的理論和結構建立具有預測能力的模型，從而進行預測、優化和決策。然而，模型驅動方法通常需要對問題進行詳細的建模和理解，並依賴於模型的準確性和適用性。</p>
+<h1 id="learning-techniques">Learning Techniques</h1>
+<h2 id="multi-class-learning">Multi-Class Learning</h2>
+<p>多類別學習（Multi-Class
+Learning）是一種機器學習任務，其目標是將輸入數據點分配給多個預定義的類別或分類之一。在多類別學習中，每個數據點只能屬於多個可用選項中的一個類別。</p>
+<p>多類別學習的目標是訓練一個模型，能夠對未見數據點準確預測正確的類別標籤。通常，這是通過使用帶有標籤的數據集來訓練監督式學習算法來完成的，其中每個數據點都與已知的類別標籤相關聯。</p>
+<h2 id="multi-label-learning">Multi-Label Learning</h2>
+<p>多標籤學習（Multi-Label
+Learning）是一種機器學習任務，與多類別學習不同。在多標籤學習中，每個輸入數據點可以同時屬於多個標籤或類別。</p>
+<p>舉例來說，假設我們有一個圖像分類任務，其中每個圖像可以同時包含多個物體或場景。我們可能希望模型能夠同時預測圖像中存在的多個標籤，例如”貓”、“樹”、“太陽”等等。</p>
+<p>多標籤學習的目標是訓練一個模型，能夠對未見數據點同時預測多個標籤。通常，這是通過使用帶有多個標籤的標記數據集來完成的。在訓練期間，模型將學習如何將輸入數據點映射到它所屬的多個標籤集合。多標籤學習常用於自然語言處理（例如文本分類和標註）和圖像處理（例如圖像標註和標誌檢測）等領域。</p>
+<h2 id="multi-task-learning">Multi-Task Learning</h2>
+<p>多任務學習（Multi-Task
+Learning）是一種機器學習方法，旨在同時學習和優化多個相關的任務。在傳統的單任務學習中，我們通常為每個任務設計獨立的模型，並對每個任務進行單獨的訓練。而在多任務學習中，我們將多個相關的任務結合起來，共享模型的表示能力和學習過程。</p>
+<p>多任務學習的目標是通過同時學習多個相關任務，提高模型的整體性能和泛化能力。這種方法的基本假設是，不同的任務之間存在一些共享的特徵或知識，這些共享特徵可以幫助模型更好地理解和處理不同的任務。</p>
+<p>在多任務學習中，模型通常包含共享的特徵提取器，用於捕獲通用的特徵表示。然後，每個任務都有自己的特定分支或頭部，用於從共享表示中進一步學習任務特定的知識。這樣，模型可以同時考慮多個任務的特徵和目標，從而提高整體學習效果。</p>
+<p>多任務學習在各種領域都有應用，包括自然語言處理、計算機視覺、語音識別和醫學影像等。透過多任務學習，模型可以從多個相關任務中獲得更全面和綜合的知識，進而提升整體性能。</p>
+<h2 id="multi-domain-learning">Multi-Domain Learning</h2>
+<p>多領域學習（Multi-Domain
+Learning）是一種機器學習方法，旨在處理在不同領域之間具有差異性的數據集。在多領域學習中，每個領域都有其獨特的特徵和統計分布，而學習算法的目標是在這些不同領域之間進行共享或轉移學習，以提高模型的泛化能力。</p>
+<p>傳統的機器學習方法通常在單一領域上進行建模和訓練，並期望在相同領域的測試數據上達到良好的性能。然而，現實中的數據集通常涉及多個不同領域，例如電子商務中的不同產品類別、醫學領域中的不同疾病類型等。在這種情況下，多領域學習可以幫助模型充分利用不同領域之間的共享結構和特徵，以改進在新領域中的泛化能力。</p>
+<p>多領域學習的方法包括特徵共享（feature sharing）、領域適應（domain
+adaptation）和多任務學習（multi-task
+learning）等。特徵共享方法通過在不同領域之間共享特徵表示，從而將領域間的知識傳遞給目標領域。領域適應方法則專注於在源領域和目標領域之間進行特徵轉換或模型調整，以減少領域之間的差異。多任務學習則通過在多個相關任務之間共享模型參數，以提高模型的整體性能。</p>
+<p>多領域學習在許多應用場景中都具有重要意義，如情感分析、推薦系統、醫學影像處理等。通過適當的多領域學習方法，模型可以更好地利用不同領域間的知識和結構，從而提高對新領域數據的預測能力和泛化性能。</p>
+<h2 id="multi-instance-learning">Multi-Instance Learning</h2>
+<p>多實例學習（Multi-Instance
+Learning）是一種特殊的監督式學習問題，它處理的是具有不完全標籤的數據集。在多實例學習中，數據被組織為「袋子」（bag）的形式，每個袋子由多個實例（instances）組成。</p>
+<p>在多實例學習中，袋子被標記為正例（positive）或負例（negative），但無法確定哪個具體實例是正例或負例。換句話說，袋子被標記為正例，如果至少包含一個正例實例；袋子被標記為負例，如果所有實例都是負例。這種情況常見於許多現實世界的應用，例如圖像分類、文本分類、藥物發現等。</p>
+<p>多實例學習的目標是訓練一個模型，能夠從袋子級別的標籤推斷實例級別的標籤。換句話說，模型學習如何從包含正例袋子和負例袋子中學習實例級別的區分特徵。</p>
+<p>多實例學習方法包括傳統的袋子表示（bag-level
+representation）方法和實例級別的表示方法。傳統的袋子表示方法使用袋子級別的特徵來訓練模型，而實例級別的表示方法則將袋子內的每個實例視為獨立的數據點，並利用實例級別的特徵進行訓練。</p>
+<p>多實例學習在處理具有不完全標籤的數據集時非常有用，可以應用於許多領域，如醫學影像解釋、物體檢測和文本分類等。</p>
+<h2 id="multi-view-learning">Multi-View Learning</h2>
+<p>多視角學習（Multi-View
+Learning）是一種機器學習方法，旨在利用來自多個視圖或表示的信息來提高模型的學習性能和泛化能力。在多視角學習中，每個視圖都是對數據的不同表示或特徵提取方式。</p>
+<p>傳統的單視圖學習假設每個數據點都有一個單一的視圖或表示。然而，多視角學習利用多個視圖的信息，從而提供更全面和豐富的特徵表示。這些視圖可以是來自不同傳感器、不同特徵提取方法或不同觀測角度的數據。</p>
+<p>多視角學習的目標是通過整合多個視圖的信息來提高學習性能。這可以通過同時學習多個視圖之間的關聯性以及每個視圖的獨立特徵來實現。透過整合多個視圖的信息，模型可以獲得更全面和一致的特徵表示，從而提高對未見數據的泛化能力。</p>
+<p>多視角學習有許多應用場景，包括圖像分類、視頻分析、文本分類和生物信息學等。在這些場景中，多個視圖可以提供不同的視角、分辨率、模態性質或上下文信息，進而提供更豐富的數據描述。</p>
+<p>常見的多視角學習方法包括共享表示學習、視圖一致性學習和多視角聚集等。這些方法旨在在多個視圖之間建立一致性、互補性或互動性，以幫助模型更好地利用多視角的信息。</p>
+<h2 id="multi-objective-learning">Multi-Objective Learning</h2>
+<p>多目標學習（Multi-Objective
+Learning）是一種機器學習方法，旨在同時優化多個相關的目標函數或優化指標。在多目標學習中，不僅關注單一目標的最佳結果，而是追求在多個目標之間達到一個平衡或優化的解。</p>
+<p>在傳統的單目標學習中，我們通常關注單一目標的最大化或最小化，例如最小化誤差或最大化準確性。然而，在實際應用中，我們可能面臨多個相關的目標，並且這些目標可能存在衝突或難以同時實現。</p>
+<p>多目標學習的目標是找到一組解，這組解在多個目標之間達到一種平衡或優化。這種平衡的解稱為「帕約前沿（Pareto
+Front）」，代表了在所有可能解中無法進一步改善一個目標而不犧牲其他目標的解集合。</p>
+<p>多目標學習的方法包括基於優勢排序的方法（Dominance-based
+methods）、進化算法（Evolutionary
+algorithms）、多目標支持向量機（Multi-Objective Support Vector
+Machines）等。這些方法試圖在搜索解空間中找到一組非支配解（Non-dominant
+solutions），這些解在多個目標之間達到一種平衡。</p>
+<p>多目標學習在各種領域和應用中都有應用，例如組合優化、智能交通系統、金融投資等。通過多目標學習，可以同時考慮多個目標，從而獲得更全面和平衡的解決方案，幫助決策者在多個目標之間做出最佳選擇。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/07/17/2023/July/Active-Learning/" rel="prev" title="Active Learning">
+                  <i class="fa fa-chevron-left"></i> Active Learning
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/07/24/2023/July/Chain-Of-Thought-Prompting/" rel="next" title="Chain-Of-Thought Prompting">
+                  Chain-Of-Thought Prompting <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">利醬</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">307k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
