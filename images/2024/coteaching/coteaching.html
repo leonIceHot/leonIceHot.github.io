@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Co-teaching: Robust Training of Deep Neural Networks with Extremely Noisy Labels AbstractMemorization efforts of deep neural network  Noise Transition Matrix[CVPR2017]- Making Deep Neural Networks Rob">
+<meta property="og:type" content="website">
+<meta property="og:title" content="利醬の休憩房">
+<meta property="og:url" content="https://leonicehot.github.io/images/2024/coteaching/coteaching.html">
+<meta property="og:site_name" content="利醬の休憩房">
+<meta property="og:description" content="Co-teaching: Robust Training of Deep Neural Networks with Extremely Noisy Labels AbstractMemorization efforts of deep neural network  Noise Transition Matrix[CVPR2017]- Making Deep Neural Networks Rob">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-12-11T14:39:04.503Z">
+<meta property="article:modified_time" content="2024-11-07T09:00:37.811Z">
+<meta property="article:author" content="利醬">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://leonicehot.github.io/images/2024/coteaching/coteaching">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/images/2024/coteaching/coteaching.html","path":"images/2024/coteaching/coteaching.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title> | 利醬の休憩房
+</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">利醬の休憩房</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-backward-correction-procedure"><span class="nav-number">2.</span> <span class="nav-text">The backward correction procedure</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Theorem-I"><span class="nav-number">2.1.</span> <span class="nav-text">Theorem I</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Proof-1"><span class="nav-number">2.2.</span> <span class="nav-text">Proof 1</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-forward-correction-procedure"><span class="nav-number">3.</span> <span class="nav-text">The forward correction procedure</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%8F%E5%AD%90%E7%9A%84%E6%8E%A8%E5%B0%8E"><span class="nav-number">4.</span> <span class="nav-text">式子的推導</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Theorem-2"><span class="nav-number">4.1.</span> <span class="nav-text">Theorem 2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%84%E9%83%A8%E5%88%86%E7%9A%84%E8%A7%A3%E9%87%8B"><span class="nav-number">5.</span> <span class="nav-text">各部分的解釋</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%8F%E5%AD%90%E7%9A%84%E6%8E%A8%E5%B0%8E%E9%81%8E%E7%A8%8B"><span class="nav-number">6.</span> <span class="nav-text">式子的推導過程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A9%E9%99%A3T%E5%92%8C%E5%87%BD%E6%95%B8%CF%88%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">7.</span> <span class="nav-text">矩陣T和函數ψ的作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E9%80%99%E6%A8%A3%E5%AE%9A%E7%BE%A9%E6%90%8D%E5%A4%B1%E5%87%BD%E6%95%B8%EF%BC%9F"><span class="nav-number">8.</span> <span class="nav-text">為什麼要這樣定義損失函數？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">9.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Proof-2-1"><span class="nav-number">9.1.</span> <span class="nav-text">Proof 2 - 1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AD%89%E6%98%8E%E9%81%8E%E7%A8%8B%E7%9A%84%E7%B0%A1%E5%8C%96%E8%A7%A3%E9%87%8B"><span class="nav-number">9.1.1.</span> <span class="nav-text">證明過程的簡化解釋</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Proof-2-2"><span class="nav-number">9.2.</span> <span class="nav-text">Proof 2 - 2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-overall-algorithm"><span class="nav-number">10.</span> <span class="nav-text">The overall algorithm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Theorem-3-1"><span class="nav-number">11.</span> <span class="nav-text">Theorem 3 - 1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%99%E5%9C%A8%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E4%B8%AD%E4%BB%A3%E8%A1%A8%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-number">11.1.</span> <span class="nav-text">這在機器學習中代表什麼？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Theorem-3-2"><span class="nav-number">12.</span> <span class="nav-text">Theorem 3 - 2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Phenomenon"><span class="nav-number">13.</span> <span class="nav-text">Phenomenon</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Contributions-Proposed-method-Co-teaching"><span class="nav-number">14.</span> <span class="nav-text">Contributions: Proposed method : Co-teaching</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiment"><span class="nav-number">15.</span> <span class="nav-text">Experiment:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">15.1.</span> <span class="nav-text">Dataset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Flipping-Method"><span class="nav-number">16.</span> <span class="nav-text">Flipping Method</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Symmetry-flipping"><span class="nav-number">16.1.</span> <span class="nav-text">Symmetry flipping</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pair-flipping"><span class="nav-number">16.2.</span> <span class="nav-text">Pair flipping</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Implementation"><span class="nav-number">17.</span> <span class="nav-text">Implementation</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">利醬</p>
+  <div class="site-description" itemprop="description">部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner page posts-expand">
+
+
+    
+    
+    
+    <div class="post-block" lang="zh-TW"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta-container">
+  <ul class="breadcrumb">
+            <li><a href="/images/">IMAGES</a></li>
+            <li><a href="/images/2024/">2024</a></li>
+            <li><a href="/images/2024/coteaching/">COTEACHING</a></li>
+            <li>COTEACHING</li>
+  </ul>
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <p>Co-teaching: Robust Training of Deep Neural Networks with Extremely Noisy Labels</p>
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>Memorization efforts of deep neural network</p>
+<ol>
+<li>Noise Transition Matrix<br>[CVPR2017]- Making Deep Neural Networks Robust to Label Noise: A Loss Correction Approach<br>作者: Giorgio Patrini, Alessandro Rozza, Aditya Krishna Menon, Richard Nock, Lizhen Qu<br>會議: IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017<br>論文地址: <a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content_cvpr_2017/papers/Patrini_Making_Deep_Neural_CVPR_2017_paper.pdf">https://openaccess.thecvf.com/content_cvpr_2017/papers/Patrini_Making_Deep_Neural_CVPR_2017_paper.pdf</a><br>Github: <a target="_blank" rel="noopener" href="https://github.com/giorgiop/loss-correction">https://github.com/giorgiop/loss-correction</a></li>
+</ol>
+<h1 id="The-backward-correction-procedure"><a href="#The-backward-correction-procedure" class="headerlink" title="The backward correction procedure"></a>The backward correction procedure</h1><h2 id="Theorem-I"><a href="#Theorem-I" class="headerlink" title="Theorem I"></a>Theorem I</h2><p>定理內容<br>定理1主要在說明，在給定一個非奇異的雜訊矩陣T的情況下，我們可以對原來的損失函數進行一個線性變換，得到一個新的損失函數。<br>這個新的損失函數與原來的損失函數在最小化問題上是等價的，也就是說，最小化新損失函數得到的模型，也同時最小化了原來的損失函數。</p>
+<p>關鍵概念與符號解釋</p>
+<ul>
+<li><p>損失函數ℓ(p̂(y|x))：</p>
+<ul>
+<li>ℓ：代表損失函數，用來衡量模型預測值與真實值之間的差異。</li>
+<li>p̂(y|x)：表示模型在給定輸入x時，預測輸出為y的機率。</li>
+</ul>
+</li>
+<li><p>雜訊矩陣T：</p>
+<ul>
+<li>T是一個可逆矩陣，表示一種噪聲或擾動。</li>
+<li>T^-1是T的逆矩陣。</li>
+</ul>
+</li>
+<li><p>變換後的損失函數ℓ^(p̂(y|x))：</p>
+<ul>
+<li>ℓ^：表示經過T^-1變換後的新的損失函數。</li>
+</ul>
+</li>
+<li><p>E_y[·]： 表示對所有可能的輸出y取期望。</p>
+<ul>
+<li>argmin： 表示使後面的式子取最小值的參數。</li>
+</ul>
+</li>
+</ul>
+<p>定理的意義</p>
+<ul>
+<li>損失函數的變換： 定理表明，我們可以對原始的損失函數進行線性變換，而不改變模型的優化目標。</li>
+<li>最小化問題的等價性： 原始損失函數的最小值點和變換後的損失函數的最小值點是一致的。</li>
+<li>引入靈活性： 通過設計不同的矩陣T，我們可以對損失函數進行各種變換，以適應不同的任務和需求。</li>
+</ul>
+<h2 id="Proof-1"><a href="#Proof-1" class="headerlink" title="Proof 1"></a>Proof 1</h2><p>證明過程解析</p>
+<ol>
+<li>引入變換:</li>
+</ol>
+<ul>
+<li>將原始損失函數ℓ(p̂(y|x))乘以一個可逆矩陣T，再乘以其逆矩陣T^-1。這個操作相當於對損失函數進行了一個恆等變換，並沒有改變其本質。</li>
+</ul>
+<ol start="2">
+<li>利用期望值的線性性質:</li>
+</ol>
+<ul>
+<li>期望運算具有線性性質，即E[aX+bY] &#x3D; aE[X] + bE[Y]，其中a和b是常數，X和Y是隨機變量。</li>
+<li>根據期望的線性性質，可以將T^-1提到期望運算符E外面。</li>
+</ul>
+<ol start="3">
+<li>抵消變換:</li>
+</ol>
+<ul>
+<li>T乘以T^-1等於單位矩陣I，因此T^-1乘以T可以消去，只剩下原始的損失函數的期望。</li>
+</ul>
+<p>證明結論<br>通過上述的推導，我們證明了：</p>
+<p>E_y|x [ℓ^(p̂(y|x))] &#x3D; E_y|x [ℓ(p̂(y|x))]<br>這表明，對損失函數進行線性變換後，其期望值保持不變。因此，最小化變換後的損失函數等價於最小化原始的損失函數。</p>
+<p>證明意義</p>
+<ul>
+<li>理論基礎: 為損失函數的變換提供了理論依據，說明這種變換不會改變優化問題的解。</li>
+<li>靈活性: 允許我們對損失函數進行各種變換，以適應不同的任務和需求。</li>
+<li>正則化: 可以通過設計特殊的矩陣T來引入正則化項，改善模型的泛化能力。</li>
+</ul>
+<h1 id="The-forward-correction-procedure"><a href="#The-forward-correction-procedure" class="headerlink" title="The forward correction procedure"></a>The forward correction procedure</h1><p>這個式子在機器學習中，特別是分類問題中，定義了一種特殊的損失函數。它通過對模型預測的機率分布進行轉換，引入了一個矩陣T來影響最終的損失。換句話說，這個損失函數不僅考慮了模型預測的準確性，還引入了額外的因素來調整不同類別的重要性。</p>
+<p>各部分的解釋</p>
+<ul>
+<li>ℓ(e^i, p̂(y|x))：<ul>
+<li>表示在給定輸入x的情況下，模型預測為第i類（即one-hot向量e^i），但真實機率分布為p̂(y|x)時的損失。</li>
+</ul>
+</li>
+<li>p̂(y&#x3D;e^i|x)：<ul>
+<li>表示模型預測在給定輸入x的情況下，輸出為第i類的機率。</li>
+</ul>
+</li>
+<li>T：<ul>
+<li>個矩陣，用於對機率分布進行線性轉換。</li>
+</ul>
+</li>
+<li>C：<ul>
+<li>類別的總數。</li>
+</ul>
+</li>
+<li>j：<ul>
+<li>用於遍歷所有類別的索引。</li>
+</ul>
+</li>
+</ul>
+<h1 id="式子的推導"><a href="#式子的推導" class="headerlink" title="式子的推導"></a>式子的推導</h1><p>這個式子從一個基本的負對數似然損失出發，通過引入條件機率和矩陣T，逐步轉換得到最終形式。</p>
+<ol>
+<li>初始形式：<br>損失函數的初始形式是負對數似然，表示模型預測的機率分布與真實分布之間的差異。</li>
+<li>引入條件機率：<br>通過引入條件機率p(ỹ&#x3D;e^j|y&#x3D;e^i)將機率分布進行分解。這個條件機率表示在真實標籤為i的情況下，模型預測為j的機率。</li>
+<li>引入矩陣T：<br>將條件機率p(ỹ&#x3D;e^j|y&#x3D;e^i)替換為矩陣T的元素T_ji。這相當於對原始的機率分布進行了一個線性變換。</li>
+</ol>
+<ul>
+<li>矩陣T的作用</li>
+</ul>
+<ol>
+<li>調整類別的權重：<br>通過設置不同的T_ji值，可以調整不同類別對總損失的貢獻。例如，如果某個類別的樣本數量較少，可以增大對應的T_ji值，使得模型更加關注這個類別。</li>
+<li>引入先驗知識：<br>矩陣T可以用来引入一些先驗知識，例如類别的層次結構或相關性。</li>
+<li>實現特定的正則化：<br>通過選擇合適的矩阵T，可以實現L1正則化或L2正則化等。</li>
+</ol>
+<ul>
+<li>為什麼要這樣定義損失函數？</li>
+</ul>
+<ol>
+<li>靈活性和可定制性：<br>通过引入矩阵T，我们可以对损失函数进行灵活的定制，以适应不同的任务和数据集。</li>
+<li>處理類別不平衡問題：<br>可以通过调整T_ji的值来平衡不同类别的樣本數量。</li>
+<li>引入先驗知識：<br>可以將先驗知識融入到模型中，提高模型的性能。</li>
+</ol>
+<h2 id="Theorem-2"><a href="#Theorem-2" class="headerlink" title="Theorem 2"></a>Theorem 2</h2><p>這個式子在機器學習中定義了一種特殊的損失函數。它通過對模型的輸出進行線性變換，再計算原始的損失函數，達到調整模型學習重點的目的。</p>
+<h1 id="各部分的解釋"><a href="#各部分的解釋" class="headerlink" title="各部分的解釋"></a>各部分的解釋</h1><p>ℓ(h(x))：<br>表示原始的損失函數，用來衡量模型的輸出h(x)與真實標籤之間的差異。<br>h(x)：<br>表示模型對輸入x的輸出，通常是一個向量或標量。<br>T：<br>一個矩陣，用來對模型的輸出進行線性變換。<br>ψ^-1：<br>函數ψ的逆函數，它對模型的輸出進行了非線性的變換。<br>ℓ^(h(x))：<br>表示經過變換後的新的損失函數。</p>
+<h1 id="式子的推導過程"><a href="#式子的推導過程" class="headerlink" title="式子的推導過程"></a>式子的推導過程</h1><ol>
+<li>模型輸出變換：<br>首先，模型的輸出h(x)經過一個非線性變換ψ^-1，得到一個新的表示。</li>
+<li>線性變換：<br>然後，這個新的表示再乘以一個矩陣T，進行線性變換。</li>
+<li>計算損失：<br>最後，將變換後的結果作為輸入，計算原始的損失函數ℓ。</li>
+</ol>
+<h1 id="矩陣T和函數ψ的作用"><a href="#矩陣T和函數ψ的作用" class="headerlink" title="矩陣T和函數ψ的作用"></a>矩陣T和函數ψ的作用</h1><ol>
+<li>矩陣T：</li>
+</ol>
+<ul>
+<li>調整類別權重： 類似於之前的解釋，通過設置不同的T，可以調整不同類別對總損失的貢獻。</li>
+<li>引入先驗知識： 可以將先驗知識融入到模型中，例如類別的層次結構或相關性。</li>
+</ul>
+<ol start="2">
+<li>函數ψ：</li>
+</ol>
+<ul>
+<li>非線性變換： 可以對模型的輸出進行非線性變換，增加模型的表達能力。</li>
+<li>特徵工程： 可以將原始特徵轉換到一個新的特徵空間，以便更好地進行分類或回歸。</li>
+</ul>
+<h1 id="為什麼要這樣定義損失函數？"><a href="#為什麼要這樣定義損失函數？" class="headerlink" title="為什麼要這樣定義損失函數？"></a>為什麼要這樣定義損失函數？</h1><ol>
+<li>靈活性：<br>通過調整矩陣T和函數ψ，可以設計出各種各樣的損失函數，以適應不同的任務和數據。</li>
+<li>可解釋性：<br>對於某些特定的T和ψ，可以給出比較直觀的解釋。</li>
+<li>改善模型性能：<br>在某些情況下，這種變換後的損失函數可以幫助模型更好地學習到數據中的模式，提高模型的泛化能力。</li>
+</ol>
+<h1 id><a href="#" class="headerlink" title></a></h1><p>它表示：找到一個函數h，使得變換後的損失函數ℓ^的期望值最小化，這等同於找到一個函數h，使得原始損失函數ℓ的期望值最小化。</p>
+<p>各部分的解釋</p>
+<ul>
+<li>argmin: 代表找到使後面的式子值最小的參數。</li>
+<li>E_x,y: 表示對所有可能的輸入x和輸出y取期望值。</li>
+<li>ℓ(y, h(x))： 原始的損失函數，用來衡量模型的輸出h(x)與真實標籤y之間的差異。</li>
+<li>ℓ^(y, h(x))： 變換後的損失函數，通常是通過對原始損失函數進行一些操作得到的。</li>
+<li>h(x)： 模型的輸出，也就是模型對輸入x的預測結果。</li>
+<li>ψ^-1： 一個函數，對模型的輸出進行非線性變換。</li>
+<li>T： 一個矩陣，用來對模型的輸出進行線性變換。</li>
+</ul>
+<p>式子的意義</p>
+<ol>
+<li>損失函數的變換： 這個式子告訴我們，通過對原始損失函數進行一些變換，可以得到一個新的損失函數。</li>
+<li>優化目標不變： 儘管損失函數的形式改變了，但優化的目標並沒有改變，仍然是找到一個使損失最小的模型。</li>
+<li>靈活性： 通過設計不同的變換方式（即不同的ψ和T），可以針對不同的問題設計出不同的損失函數，提高模型的性能。</li>
+</ol>
+<p>為什麼要這樣變換損失函數？</p>
+<ol>
+<li>處理不平衡數據： 對於某些類別的樣本數量遠少於其他類別的情況，可以通過設計特殊的變換，來增大少數類別的樣本權重，使模型更加關注少數類別。</li>
+<li>引入先驗知識： 可以通過設計變換，將一些先驗知識融入到模型中，提高模型的性能。</li>
+<li>改善模型泛化能力： 有些變換可以幫助模型更好地學習到數據中的模式，提高模型的泛化能力。</li>
+</ol>
+<h2 id="Proof-2-1"><a href="#Proof-2-1" class="headerlink" title="Proof 2 - 1"></a>Proof 2 - 1</h2><p>即使我們對原始的損失函數進行了一系列的變換，最終得到的最佳解是不會改變的。換句話說，我們可以透過轉換損失函數，來達到不同的優化目的，但最終得到的模型仍然是最佳的。</p>
+<p>符號解釋：</p>
+<ul>
+<li>ℓ(y, h(x))： 原始的損失函數，用來衡量模型的預測 h(x) 與真實標籤 y 之間的差異。</li>
+<li>ℓ^ψ(y, h(x))： 轉換後的損失函數。</li>
+<li>T： 一個非奇異矩陣，代表一種噪聲或擾動。</li>
+<li>ψ^-1： 函數 ψ 的逆函數，用來對模型的輸出進行非線性變換。</li>
+<li>ϕ： 複合函數，等於 ψ^-1 與 T 的複合。</li>
+</ul>
+<h3 id="證明過程的簡化解釋"><a href="#證明過程的簡化解釋" class="headerlink" title="證明過程的簡化解釋"></a>證明過程的簡化解釋</h3><ol>
+<li>損失函數的轉換：<br>我們對原始的損失函數進行了兩次轉換：<br>首先，對模型的輸出 h(x) 進行了線性變換 (乘以 T 的轉置)，然後再進行非線性變換 (經過 ψ^-1)。<br>之後，將變換後的結果作為新的輸入，代入原始的損失函數中。</li>
+<li>複合函數 ϕ：<br>我們將上述兩個變換合併成一個新的函數 ϕ。由於 T 和 ψ^-1 都是可逆的，所以 ϕ 也是可逆的。</li>
+<li>轉換後的損失函數也是合適的：<br>證明表明，轉換後的損失函數仍然是一個有效的損失函數，可以用来衡量模型的好壞。</li>
+<li>最小化問題的等價性：<br>最重要的是，證明了最小化轉換後的損失函數，等同於最小化原始的損失函數。也就是說，無論我們用哪一個損失函數來訓練模型，最終得到的最佳模型都是一樣的。</li>
+</ol>
+<h2 id="Proof-2-2"><a href="#Proof-2-2" class="headerlink" title="Proof 2 - 2"></a>Proof 2 - 2</h2><p>這段證明旨在說明：即使我們對原始的損失函數進行了特定的轉換，最終找到的最優解是不會改變的。換句話說，我們可以透過轉換損失函數，來達到不同的優化目的，但最終得到的模型仍然是最佳的。</p>
+<p>符號解釋：</p>
+<ul>
+<li>ℓ(y, h(x))： 原始的損失函數，用來衡量模型的預測 h(x) 與真實標籤 y 之間的差異。</li>
+<li>ℓ^ψ(y, h(x))： 轉換後的損失函數。</li>
+<li>T： 一個非奇異矩陣，代表一種噪聲或擾動。</li>
+<li>ψ^-1： 函數 ψ 的逆函數，用來對模型的輸出進行非線性變換。</li>
+<li>ϕ： 複合函數，等於 ψ^-1 與 T 的複合。</li>
+<li>E_x,ỹ： 表示對所有可能的輸入 x 和輸出 ỹ 取期望值。</li>
+</ul>
+<p>證明過程的簡化解釋</p>
+<ol>
+<li>損失函數的轉換：<br>我們對原始的損失函數進行了兩次轉換：<br>首先，對模型的輸出 h(x) 進行了線性變換 (乘以 T 的轉置)，然後再進行非線性變換 (經過 ψ^-1)。<br>之後，將變換後的結果作為新的輸入，代入原始的損失函數中。</li>
+<li>複合函數 ϕ：<br>我們將上述兩個變換合併成一個新的函數 ϕ。由於 T 和 ψ^-1 都是可逆的，所以 ϕ 也是可逆的。</li>
+<li>最小化問題的等價性：<br>最重要的是，證明了最小化轉換後的損失函數，等同於最小化原始的損失函數。也就是說，無論我們用哪一個損失函數來訓練模型，最終得到的最佳模型都是一樣的。</li>
+</ol>
+<h1 id="The-overall-algorithm"><a href="#The-overall-algorithm" class="headerlink" title="The overall algorithm"></a>The overall algorithm</h1><h1 id="Theorem-3-1"><a href="#Theorem-3-1" class="headerlink" title="Theorem 3 - 1"></a>Theorem 3 - 1</h1><p>對於每個類別 j（屬於所有類別的集合 C），都存在一個「完美範例」，其意義為：</p>
+<ol>
+<li>存在一個樣本 x^j 屬於樣本空間 X，且滿足以下兩個條件：</li>
+</ol>
+<ul>
+<li>樣本 x^j 出現的機率大於 0：也就是說，這個樣本在數據集中是存在的。</li>
+<li>給定樣本 x^j，其屬於類別 j 的機率為 1：這表示這個樣本是類別 j 的一個非常典型的代表，沒有任何屬於其他類別的可能性。<br>換句話說，對於每個類別，都存在一個「純粹」的樣本，這個樣本百分之百屬於這個類別，沒有任何雜質。</li>
+</ul>
+<h2 id="這在機器學習中代表什麼？"><a href="#這在機器學習中代表什麼？" class="headerlink" title="這在機器學習中代表什麼？"></a>這在機器學習中代表什麼？</h2><ol>
+<li>理想狀態： 這種情況通常是理想化的，在現實數據中，很少有樣本能完全代表一個類別。</li>
+<li>數據質量： 如果一個數據集滿足這個條件，表示這個數據集的標註非常準確，每個樣本都屬於且僅屬於一個類別。</li>
+<li>模型評估： 這樣的數據集可以用來評估模型的分類能力，如果一個模型無法正確分類這些「完美範例」，那麼這個模型的性能肯定是有問題的。</li>
+</ol>
+<h1 id="Theorem-3-2"><a href="#Theorem-3-2" class="headerlink" title="Theorem 3 - 2"></a>Theorem 3 - 2</h1><p>文字的意思<br>這段文字在描述一個模型（用 h 表示）在處理有噪聲（corrupted）的數據時的特性。</p>
+<p>逐句解析：</p>
+<ul>
+<li><p>(2) given sufficiently many corrupted samples, h is rich enough to model p(ỹ|x) accurately.</p>
+<ul>
+<li>翻譯： 給定足夠多的有噪聲樣本，模型 h 足夠複雜，能準確地模擬給定輸入 x 時，輸出 ỹ 的機率分布 p(ỹ|x)。</li>
+<li>解釋： 這句話的意思是，如果我們給模型提供大量的有噪聲的數據，模型就能夠學習到這些數據中的規律，並且能夠準確地預測新的、有噪聲的數據的輸出結果。這表示模型具有很強的泛化能力，可以適應各種不同的噪聲情況。</li>
+</ul>
+</li>
+<li><p>It follows that ∀i,j ∈ [c], Tij &#x3D; p(ỹ &#x3D; ej|xi).</p>
+<ul>
+<li>翻譯： 由此可得，對於所有的 i 和 j（其中 i, j 都屬於類別集合 c），Tij 等於給定輸入 xi 時，輸出 ỹ 等於 ej 的機率。</li>
+<li>解釋： 這句話是基於上一句的結論得出的。它表示，在模型學習了足夠多的有噪聲數據後，我們可以用 Tij 來表示當輸入為 xi 時，輸出屬於第 j 類的機率。這意味著模型可以為每個輸入和輸出類別提供一個機率估計。</li>
+</ul>
+</li>
+</ul>
+<p>整段文字的含義<br>這段文字的核心思想是：如果我們給一個模型提供足夠多的有噪聲的數據，這個模型就能夠學習到這些數據中的規律，並且能夠準確地預測新的、有噪聲的數據的輸出結果。而且，模型可以為每個輸入和輸出類別提供一個機率估計。</p>
+<p>[ICML2023]- Identifiability of Label Noise Transition Matrix<br>作者: Yang Liu, Hao Cheng, Kun Zhang<br>會議: International Conference on Machine Learning<br>Github: <a target="_blank" rel="noopener" href="https://github.com/UCSC-REAL/Identifiability">https://github.com/UCSC-REAL/Identifiability</a></p>
+<p>[NeurIPS2022]-Estimating Noise Transition Matrix with Label Correlations for Noisy Multi-Label Learning<br>作者: Shikun Li, Xiaobo Xia, Hansong Zhang, Yibing Zhan, Shiming Ge, Tongliang Liu<br>會議: Advances in Neural Information Processing Systems 35 (NeurIPS 2022)<br>論文地址: <a target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper_files/paper/2022/file/98f8c89ae042c512e6c87e0e0c2a0f98-Paper-Conference.pdf">https://proceedings.neurips.cc/paper_files/paper/2022/file/98f8c89ae042c512e6c87e0e0c2a0f98-Paper-Conference.pdf</a><br>Github: <a target="_blank" rel="noopener" href="https://github.com/tmllab/2022_NeurIPS_Multi-Label-T">https://github.com/tmllab/2022_NeurIPS_Multi-Label-T</a></p>
+<ol start="2">
+<li><p>MentorNet<br>[ICML2018]-Mentornet: Learning data-driven curriculum for very deep neural networks on corrupted labels<br>作者: Lu Jiang, Zhengyuan Zhou, Thomas Leung, Li-Jia Li, Li Fei-Fei<br>會議: International Conference on Machine Learning (ICML), 2018<br>論文地址: <a target="_blank" rel="noopener" href="https://proceedings.mlr.press/v80/jiang18c/jiang18c.pdf">https://proceedings.mlr.press/v80/jiang18c/jiang18c.pdf</a><br>Github: <a target="_blank" rel="noopener" href="https://github.com/google/mentornet">https://github.com/google/mentornet</a></p>
+</li>
+<li><p>Decoupling<br>[NIPS2017]-Decoupling” when to update” from” how to update<br>作者: Junnan Li, Richard Socher, Steven C. H. Hoi<br>會議: Advances in Neural Information Processing Systems (NeurIPS), 2019<br>論文地址: <a target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper_files/paper/2017/file/58d4d1e7b1e97b258c9ed0b37e02d087-Paper.pdf">https://proceedings.neurips.cc/paper_files/paper/2017/file/58d4d1e7b1e97b258c9ed0b37e02d087-Paper.pdf</a><br>Github: <a target="_blank" rel="noopener" href="https://github.com/emalach/UpdateByDisagreement">https://github.com/emalach/UpdateByDisagreement</a></p>
+</li>
+</ol>
+<h1 id="Phenomenon"><a href="#Phenomenon" class="headerlink" title="Phenomenon"></a>Phenomenon</h1><h1 id="Contributions-Proposed-method-Co-teaching"><a href="#Contributions-Proposed-method-Co-teaching" class="headerlink" title="Contributions: Proposed method : Co-teaching"></a>Contributions: Proposed method : Co-teaching</h1><p>Train two deep neural network simutaneously and teach each other given every mini-batch</p>
+<ol>
+<li>Each networks feeds forward all data and select possibly clean label data</li>
+<li>Two network communicate with each other in this mini-batch data</li>
+<li>Back propagation select peer data and update</li>
+</ol>
+<h1 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment:"></a>Experiment:</h1><p>Network structure</p>
+<ul>
+<li>Leaky-ReLU (LReLU)</li>
+</ul>
+<ol>
+<li><p>Temporal Ensembling<br>[ICLR2017]-Temporal ensembling for semi-supervised learning<br>作者: Takeru Miyato, Shin-ichi Maeda, Masanori Koyama, Shin Ishii<br>會議: IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2019（早期版本發表於 2017 ICLR）<br>論文地址: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1704.03976">https://arxiv.org/abs/1704.03976</a><br>Github: <a target="_blank" rel="noopener" href="https://github.com/ferretj/temporal-ensembling">https://github.com/ferretj/temporal-ensembling</a></p>
+</li>
+<li><p>Virtual Adversarial Training<br>[ICLR2016]-Virtual adversarial training for semi-supervised text classification<br>作者: Takeru Miyato, Shin-ichi Maeda, Masanori Koyama, Shin Ishii<br>會議: IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2019（早期版本發表於 2017 ICLR）<br>論文地址: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1704.03976">https://arxiv.org/abs/1704.03976</a><br>Github: <a target="_blank" rel="noopener" href="https://github.com/9310gaurav/virtual-adversarial-training">https://github.com/9310gaurav/virtual-adversarial-training</a></p>
+</li>
+<li><p>F-correction<br>[CVPR2017]-Making Deep Neural Networks Robust to Label Noise: A Loss Correction Approach<br>作者: Giorgio Patrini, Alessandro Rozza, Aditya Krishna Menon, Richard Nock, Lizhen Qu</p>
+</li>
+<li><p>S-model<br>[CVPR2019]-Probabilistic End-to-end Noise Correction for Learning with Noisy Labels<br>作者: Kuan-Hui Lee, Xiaodong Liu, Erik Learned-Miller, Alan L. Yuille<br>會議: CVPR 2018<br>論文地址: <a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Yi_Probabilistic_End-To-End_Noise_Correction_for_Learning_With_Noisy_Labels_CVPR_2019_paper.pdf">https://openaccess.thecvf.com/content_CVPR_2019/papers/Yi_Probabilistic_End-To-End_Noise_Correction_for_Learning_With_Noisy_Labels_CVPR_2019_paper.pdf</a><br>Github: <a target="_blank" rel="noopener" href="https://github.com/yikun2019/PENCIL">https://github.com/yikun2019/PENCIL</a></p>
+</li>
+<li><p>Bootstrap<br>[ICLR2015]-Training Deep Neural Networks using Noisy Labels with Bootstrapping<br>作者: R. Shu, H. S. Lee, and H. Jin<br>會議: International Conference on Learning Representations (ICLR), 2015<br>論文地址: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1412.6596">https://arxiv.org/abs/1412.6596</a><br>Github: <a target="_blank" rel="noopener" href="https://github.com/dr-darryl-wright/Noisy-Labels-with-Bootstrapping">https://github.com/dr-darryl-wright/Noisy-Labels-with-Bootstrapping</a></p>
+</li>
+</ol>
+<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ol>
+<li>MNIST</li>
+<li>CIFAR-10</li>
+<li>CIFAR-100</li>
+</ol>
+<h1 id="Flipping-Method"><a href="#Flipping-Method" class="headerlink" title="Flipping Method"></a>Flipping Method</h1><h2 id="Symmetry-flipping"><a href="#Symmetry-flipping" class="headerlink" title="Symmetry flipping"></a>Symmetry flipping</h2><p>Symmetry flipping 用於改善神經網路模型的泛化能力。這種技術通過對資料進行水平、垂直或對角線上的對稱翻轉來增加訓練數據的多樣性，使模型學到更穩定的特徵表示。</p>
+<h2 id="Pair-flipping"><a href="#Pair-flipping" class="headerlink" title="Pair flipping"></a>Pair flipping</h2><p>Pair flipping 用於模擬噪聲標籤的技術。它涉及將每個類別中的一部分樣本誤標為相鄰的類別（例如，將「貓」標記為「狗」）。這樣的錯誤標籤情況通常被用來評估模型在處理相似類別之間的標籤噪聲時的穩健性。</p>
+<h1 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h1><p><a target="_blank" rel="noopener" href="https://github.com/bhanML/Co-teaching">https://github.com/bhanML/Co-teaching</a></p>
+
+      </div>
+      
+      
+      
+    </div>
+  <ul class="breadcrumb">
+            <li><a href="/images/">IMAGES</a></li>
+            <li><a href="/images/2024/">2024</a></li>
+            <li><a href="/images/2024/coteaching/">COTEACHING</a></li>
+            <li>COTEACHING</li>
+  </ul>
+
+    
+    
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">利醬</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">286k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">8:39</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

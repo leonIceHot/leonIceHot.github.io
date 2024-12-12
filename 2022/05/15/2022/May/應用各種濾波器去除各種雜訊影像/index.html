@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="研究背景產生雜訊影像, 濾波後效果除視覺效果比較外, 利用與原影像計算PSNR來比較結果。至少需產生三種雜訊影像, 每種至少利用3種濾波器實作比較其結果, 測試影像使用Lenna.bmp。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="應用各種濾波器去除各種雜訊影像">
+<meta property="og:url" content="https://leonicehot.github.io/2022/05/15/2022/May/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F/index.html">
+<meta property="og:site_name" content="利醬の休憩房">
+<meta property="og:description" content="研究背景產生雜訊影像, 濾波後效果除視覺效果比較外, 利用與原影像計算PSNR來比較結果。至少需產生三種雜訊影像, 每種至少利用3種濾波器實作比較其結果, 測試影像使用Lenna.bmp。">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%E8%88%87PSNR%E6%AF%94%E8%BC%83.png?alt=media&token=a9b69991-b308-4222-958c-6cdf9a7d3e51">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E6%BF%BE%E6%B3%A2%E5%99%A8%E8%88%87PSNR%E6%AF%94%E8%BC%83.png?alt=media&token=0b457c9c-7b51-4990-8604-b051a178cd0f">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2FLenna.bmp?alt=media&token=1e08381d-eb0f-4ae9-8cdd-5b435196ab1a">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%871.png?alt=media&token=8da0145c-4bba-415c-9904-f016d31bc58d">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%872.png?alt=media&token=1d18efb7-52a4-452f-9297-c46b6f18c8b0">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%873.png?alt=media&token=911f427d-9306-4c91-a49c-7b3509ede4db">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%874.png?alt=media&token=7ad161a5-40c9-4f32-a37b-e066c57cd05b">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%875.png?alt=media&token=659773d8-7fe9-4c21-9314-a9728372f6a3">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%876.png?alt=media&token=62b3dc76-adbf-400d-a38a-d7874cce8958">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%877.png?alt=media&token=994cd5f8-be5b-4e82-91de-aea021ada8e5">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%878.png?alt=media&token=cf53165d-971b-43b4-a3dc-78072477e0ab">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%879.png?alt=media&token=ddf77b18-c4e8-4776-b28b-a59f44278ad6">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%8710.png?alt=media&token=715f70ac-a2a8-4c66-914d-83abc4f587ed">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%8711.png?alt=media&token=7ee864b9-07cb-4936-adfc-9464ccfda11e">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%8712.png?alt=media&token=3ce24977-48bc-4b4b-8665-9fc64c7af117">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%8713.png?alt=media&token=6f0bd318-1fb5-4ed7-b650-9d9f42aa0e63">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%8714.png?alt=media&token=7110c948-a302-43a9-8bc8-5d6fdfd05f87">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%8715.png?alt=media&token=e33faade-a4a2-4794-9707-8540c915fff6">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%8716.png?alt=media&token=18fda7c7-c6d8-46b8-877f-d184c695f7da">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%8717.png?alt=media&token=f2d784c8-22de-4a14-985c-eae6de809427">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%8718.png?alt=media&token=4d9c2872-7d37-4db1-a712-821f00ffe619">
+<meta property="article:published_time" content="2022-05-15T00:46:15.000Z">
+<meta property="article:modified_time" content="2024-12-11T10:57:35.062Z">
+<meta property="article:author" content="利醬">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%E8%88%87PSNR%E6%AF%94%E8%BC%83.png?alt=media&token=a9b69991-b308-4222-958c-6cdf9a7d3e51">
+
+
+<link rel="canonical" href="https://leonicehot.github.io/2022/05/15/2022/May/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2022/05/15/2022/May/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F/","path":"2022/05/15/2022/May/應用各種濾波器去除各種雜訊影像/","title":"應用各種濾波器去除各種雜訊影像"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>應用各種濾波器去除各種雜訊影像 | 利醬の休憩房</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">利醬の休憩房</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">研究背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E5%AF%A6%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">程式實作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%A6%E9%A9%97%E6%AF%94%E8%BC%83"><span class="nav-number">3.</span> <span class="nav-text">實驗比較</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%A6%E9%A9%97%E7%B5%90%E6%9E%9C%E5%9C%96"><span class="nav-number">4.</span> <span class="nav-text">實驗結果圖</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">利醬</p>
+  <div class="site-description" itemprop="description">部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2022/05/15/2022/May/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="應用各種濾波器去除各種雜訊影像 | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          應用各種濾波器去除各種雜訊影像
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-05-15 08:46:15" itemprop="dateCreated datePublished" datetime="2022-05-15T08:46:15+08:00">2022-05-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-12-11 18:57:35" itemprop="dateModified" datetime="2024-12-11T18:57:35+08:00">2024-12-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Image-Processing/" itemprop="url" rel="index"><span itemprop="name">Image Processing</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>2 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="研究背景"><a href="#研究背景" class="headerlink" title="研究背景"></a>研究背景</h1><p>產生雜訊影像, 濾波後效果除視覺效果比較外, 利用與原影像計算PSNR來比較結果。<br>至少需產生三種雜訊影像, 每種至少利用3種濾波器實作比較其結果, 測試影像使用Lenna.bmp。</p>
+<span id="more"></span>
+
+<h1 id="程式實作"><a href="#程式實作" class="headerlink" title="程式實作"></a>程式實作</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import cv2</span><br><span class="line">from numpy.random import uniform, normal, exponential, rayleigh</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line"></span><br><span class="line">def uniform_noise( f, scale ):		# 均勻雜訊</span><br><span class="line">	g = f.copy( )	</span><br><span class="line">	nr, nc = f.shape[:2]</span><br><span class="line">	for x in range( nr ):</span><br><span class="line">		for y in range( nc ):</span><br><span class="line">			value = f[x,y] + uniform( 0, 1 ) * scale	</span><br><span class="line">			g[x,y] = np.uint8( np.clip( value, 0, 255 ) )</span><br><span class="line">	return g</span><br><span class="line"></span><br><span class="line">def gaussian_noise( f, scale ):		# 高斯雜訊</span><br><span class="line">	g = f.copy( )	</span><br><span class="line">	nr, nc = f.shape[:2]</span><br><span class="line">	for x in range( nr ):</span><br><span class="line">		for y in range( nc ):</span><br><span class="line">			value = f[x,y] + normal( 0, scale ) 	</span><br><span class="line">			g[x,y] = np.uint8( np.clip( value, 0, 255 ) )</span><br><span class="line">	return g</span><br><span class="line"></span><br><span class="line">def exponential_noise( f, scale ):	# 指數雜訊</span><br><span class="line">	g = f.copy( )	</span><br><span class="line">	nr, nc = f.shape[:2]</span><br><span class="line">	for x in range( nr ):</span><br><span class="line">		for y in range( nc ):</span><br><span class="line">			value = f[x,y] + exponential( scale ) 	</span><br><span class="line">			g[x,y] = np.uint8( np.clip( value, 0, 255 ) )</span><br><span class="line">	return g</span><br><span class="line"></span><br><span class="line">def rayleigh_noise( f, scale ):		# 瑞雷雜訊</span><br><span class="line">	g = f.copy( )	</span><br><span class="line">	nr, nc = f.shape[:2]</span><br><span class="line">	for x in range( nr ):</span><br><span class="line">		for y in range( nc ):</span><br><span class="line">			value = f[x,y] + rayleigh( scale ) 	</span><br><span class="line">			g[x,y] = np.uint8( np.clip( value, 0, 255 ) )</span><br><span class="line">	return g</span><br><span class="line"></span><br><span class="line">def salt_pepper_noise( f, probability ):  # 鹽與胡椒雜訊</span><br><span class="line">	g = f.copy( )	</span><br><span class="line">	nr, nc = f.shape[:2]</span><br><span class="line">	for x in range( nr ):</span><br><span class="line">		for y in range( nc ):</span><br><span class="line">			value = uniform( 0, 1 )</span><br><span class="line">			if value &gt; 0 and value &lt;= probability / 2:</span><br><span class="line">				g[x,y] = 0</span><br><span class="line">			elif value &gt; probability / 2 and value &lt;= probability:</span><br><span class="line">				g[x,y] = 255</span><br><span class="line">			else:</span><br><span class="line">				g[x,y] = f[x,y]</span><br><span class="line">	return g</span><br><span class="line"></span><br><span class="line">def PSNR( f, g ):					# PSNR</span><br><span class="line">	nr, nc = f.shape[:2]</span><br><span class="line">	MSE = 0.0</span><br><span class="line">	for x in range( nr ):</span><br><span class="line">		for y in range( nc ):</span><br><span class="line">			MSE += ( float( f[x,y] ) - float( g[x,y] ) ) ** 2</span><br><span class="line">	MSE /= ( nr * nc )</span><br><span class="line">	PSNR = 10 * np.log10( ( 255 * 255 ) / MSE )</span><br><span class="line">	return PSNR</span><br><span class="line"></span><br><span class="line">def histogram( f ):</span><br><span class="line">	if f.ndim != 3:</span><br><span class="line">		hist = cv2.calcHist( [f], [0], None, [256], [0,256] )</span><br><span class="line">		plt.plot( hist )</span><br><span class="line">	else:</span><br><span class="line">		color = ( &#x27;b&#x27;, &#x27;g&#x27;, &#x27;r&#x27; )</span><br><span class="line">		for i, col in enumerate( color ):</span><br><span class="line">			hist = cv2.calcHist( f, [i], None, [256], [0,256] )</span><br><span class="line">			plt.plot( hist, color = col )</span><br><span class="line">	plt.xlim( [0,256] )</span><br><span class="line">	plt.xlabel( &quot;Intensity&quot; )</span><br><span class="line">	plt.ylabel( &quot;#Intensities&quot; )</span><br><span class="line">	plt.show( )</span><br><span class="line"></span><br><span class="line">def main( ):</span><br><span class="line">	print( &quot;Image Degradation with Noise Model&quot; )</span><br><span class="line">	print( &quot;(1) Uniform Noise&quot; )</span><br><span class="line">	print( &quot;(2) Gaussian Noise&quot; )</span><br><span class="line">	print( &quot;(3) Exponential Noise&quot; )</span><br><span class="line">	print( &quot;(4) Rayleigh Noise&quot; )</span><br><span class="line">	print( &quot;(5) Salt and Pepper Noise&quot; )</span><br><span class="line">	method = eval( input( &quot;Please enter your choice: &quot; ) )	</span><br><span class="line">	if method &gt;= 1 and method &lt;= 4:</span><br><span class="line">		scale = eval( input( &quot;Please enter scale(e.g., 20): &quot; ) )</span><br><span class="line">	elif method == 5:</span><br><span class="line">		probability = eval( input ( &quot;Please enter probability(e.g., 0.05): &quot; ) )</span><br><span class="line">	else:</span><br><span class="line">		print( &quot;Noise model not supported!&quot; )</span><br><span class="line">		exit( )</span><br><span class="line">	img1 = cv2.imread( &quot;gaussian_noise_15.bmp&quot;, -1 )</span><br><span class="line">	if method == 1:</span><br><span class="line">		img2 = uniform_noise( img1, scale )</span><br><span class="line">	elif method == 2:</span><br><span class="line">		img2 = gaussian_noise( img1, scale )</span><br><span class="line">	elif method == 3:</span><br><span class="line">		img2 = exponential_noise( img1, scale )</span><br><span class="line">	elif method == 4:</span><br><span class="line">		img2 = rayleigh_noise( img1, scale )</span><br><span class="line">	else:</span><br><span class="line">		img2 = salt_pepper_noise( img1, probability )    </span><br><span class="line">	print( &quot;PSNR =&quot;, PSNR( img1, img2 ) )</span><br><span class="line">	cv2.imshow( &#x27;lenna&#x27;, img1 )</span><br><span class="line">	cv2.imshow( &#x27;Uniform Noise_10_test&#x27;, img2 )   </span><br><span class="line">	cv2.imwrite(&quot;Uniform Noise_10_test.bmp&quot;, img2 )      </span><br><span class="line">	histogram( img2 )  </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">if __name__ == &#x27;__main__&#x27;:    </span><br><span class="line">    main()</span><br><span class="line">    cv2.waitKey( 0 )</span><br><span class="line">    cv2.destroyAllWindows( )</span><br></pre></td></tr></table></figure>
+
+<h1 id="實驗比較"><a href="#實驗比較" class="headerlink" title="實驗比較"></a>實驗比較</h1><ol>
+<li><p>雜訊影像與PSNR比較<br>表一為雜訊影像與PSNR比較，在Uniform Noise當中，如圖1至圖3濾波器影像的變化可知，隨著Scale的值下降，PSNR的值隨之上升，影像失真越少，保有原有的品質。Gaussian Noise亦有相同的變化，如圖4至圖6所示。但是Salt and Pepper Noise，如圖7至圖9，隨著機率值的上升，PSNR的值隨之下降，與前面兩個相比，影像品質失真較多。接著將PSNR較佳的結果，進入下一個實驗。<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%E8%88%87PSNR%E6%AF%94%E8%BC%83.png?alt=media&token=a9b69991-b308-4222-958c-6cdf9a7d3e51" alt="雜訊影像與PSNR比較"></p>
+</li>
+<li><p>濾波器與PSNR比較<br>表2為濾波器與PSNR比較，本實驗將圖3 Uniform Noise, Scale: 10、圖6 Gaussian Noise, Scale: 10、圖7 Salt and Pepper Noise, Probability: 0.05之雜訊影像圖進行比較。從多種雜訊圖比較均值濾波器（Average filter）、高斯濾波器（Gausian filter）、雙邊濾波器（Bilateral Filter）去除雜訊影像之結果。可見雙邊濾波器具有較佳的結果，PSNR所得分數較高，比其他兩者濾波器勝出許多，次之為高斯濾波器，最小為均值濾波器。去除雜訊影像之結果圖可於圖12 uniform_noise_10_bilateralFilter、圖15 gaussian_noise_10_bilateralFilter、圖18 salt_pepper_noise_bilateralFilter所示，去除雜訊影像後可其肉眼所見相當清晰。</p>
+</li>
+</ol>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E6%BF%BE%E6%B3%A2%E5%99%A8%E8%88%87PSNR%E6%AF%94%E8%BC%83.png?alt=media&token=0b457c9c-7b51-4990-8604-b051a178cd0f" alt="濾波器與PSNR比較"></p>
+<h1 id="實驗結果圖"><a href="#實驗結果圖" class="headerlink" title="實驗結果圖"></a>實驗結果圖</h1><ul>
+<li>測試影像<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2FLenna.bmp?alt=media&token=1e08381d-eb0f-4ae9-8cdd-5b435196ab1a" alt="Lenna"></li>
+</ul>
+<ol>
+<li><p>圖 1 Uniform Noise, Scale: 20<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%871.png?alt=media&token=8da0145c-4bba-415c-9904-f016d31bc58d" alt="圖1"></p>
+</li>
+<li><p>圖 2 Uniform Noise, Scale: 15<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%872.png?alt=media&token=1d18efb7-52a4-452f-9297-c46b6f18c8b0" alt="圖2"></p>
+</li>
+<li><p>圖 3 Uniform Noise, Scale: 10<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%873.png?alt=media&token=911f427d-9306-4c91-a49c-7b3509ede4db" alt="圖3"></p>
+</li>
+<li><p>圖 4 Gaussian Noise, Scale: 20<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%874.png?alt=media&token=7ad161a5-40c9-4f32-a37b-e066c57cd05b" alt="圖4"></p>
+</li>
+<li><p>圖 5 Gaussian Noise, Scale: 15<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%875.png?alt=media&token=659773d8-7fe9-4c21-9314-a9728372f6a3" alt="圖5"></p>
+</li>
+<li><p>圖 6 Gaussian Noise, Scale: 10<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%876.png?alt=media&token=62b3dc76-adbf-400d-a38a-d7874cce8958" alt="圖6"></p>
+</li>
+<li><p>圖 7 Salt and Pepper Noise, Probability: 0.05<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%877.png?alt=media&token=994cd5f8-be5b-4e82-91de-aea021ada8e5" alt="圖7"></p>
+</li>
+<li><p>圖 8 Salt and Pepper Noise, Probability: 0.10<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%878.png?alt=media&token=cf53165d-971b-43b4-a3dc-78072477e0ab" alt="圖8"></p>
+</li>
+<li><p>圖 9 Salt and Pepper Noise, Probability: 0.15<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%879.png?alt=media&token=ddf77b18-c4e8-4776-b28b-a59f44278ad6" alt="圖9"></p>
+</li>
+<li><p>圖 10 uniform_noise_10_blur<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%8710.png?alt=media&token=715f70ac-a2a8-4c66-914d-83abc4f587ed" alt="圖10"></p>
+</li>
+<li><p>圖11 uniform_noise_10_GaussianBlur<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%8711.png?alt=media&token=7ee864b9-07cb-4936-adfc-9464ccfda11e" alt="圖11"></p>
+</li>
+<li><p>圖 12 uniform_noise_10_bilateralFilter<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%8712.png?alt=media&token=3ce24977-48bc-4b4b-8665-9fc64c7af117" alt="圖12"></p>
+</li>
+<li><p>圖 13 gaussian_noise_10_blur<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%8713.png?alt=media&token=6f0bd318-1fb5-4ed7-b650-9d9f42aa0e63" alt="圖13"></p>
+</li>
+<li><p>圖14 gaussian_noise_10_GaussianBlur<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%8714.png?alt=media&token=7110c948-a302-43a9-8bc8-5d6fdfd05f87" alt="圖14"></p>
+</li>
+<li><p>圖15 gaussian_noise_10_bilateralFilter<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%8715.png?alt=media&token=e33faade-a4a2-4794-9707-8540c915fff6" alt="圖15"></p>
+</li>
+<li><p>圖 16 salt_pepper_noise_blur<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%8716.png?alt=media&token=18fda7c7-c6d8-46b8-877f-d184c695f7da" alt="圖16"></p>
+</li>
+<li><p>圖 17 salt_pepper_noise_GaussianBlur<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%8717.png?alt=media&token=f2d784c8-22de-4a14-985c-eae6de809427" alt="圖17">    </p>
+</li>
+<li><p>圖 18 salt_pepper_noise_bilateralFilter<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E6%87%89%E7%94%A8%E5%90%84%E7%A8%AE%E6%BF%BE%E6%B3%A2%E5%99%A8%E5%8E%BB%E9%99%A4%E5%90%84%E7%A8%AE%E9%9B%9C%E8%A8%8A%E5%BD%B1%E5%83%8F%2F%E5%9C%96%E7%89%8718.png?alt=media&token=4d9c2872-7d37-4db1-a712-821f00ffe619" alt="圖18"></p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/04/22/2022/April/Firebase-%E7%94%A8%E9%80%94/" rel="prev" title="Firebase 用途介紹">
+                  <i class="fa fa-angle-left"></i> Firebase 用途介紹
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/05/15/2022/May/%E6%96%B0%E5%8F%B0%E5%B9%A3%E7%A1%AC%E5%B9%A3%E5%BD%B1%E5%83%8F%E8%BC%AA%E5%BB%93%E5%81%B5%E6%B8%AC%E5%8F%8A%E8%A8%88%E7%AE%97%E9%87%91%E9%A1%8D/" rel="next" title="新台幣硬幣影像輪廓偵測及計算金額">
+                  新台幣硬幣影像輪廓偵測及計算金額 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">利醬</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">286k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">8:39</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

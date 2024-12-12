@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><meta name="generator" content="Hexo 6.3.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
@@ -16,17 +14,17 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本研究提出了一項綜合實證研究，深入探討了深度神經網絡（DNN）中各種隨機化技術之間的相互作用及其對學習性能的影響。已有研究表明，將隨機性引入 DNN 的訓練過程，通過各種方法在不同階段進行隨機化，對減少過擬合和提高泛化能力有顯著益處。然而，像權重噪聲、丟棄法（Dropout）等隨機化技術之間的交互作用尚未得到充分理解。因此，如何有效地結合這些方法以優化 DNN 性能仍然是一個挑戰。">
+    <meta name="description" content="本研究提出了一項綜合實證研究，深入探討了深度神經網絡（DNN）中各種隨機化技術之間的相互作用及其對學習性能的影響。已有研究表明，將隨機性引入 DNN 的訓練過程，通過各種方法在不同階段進行隨機化，對減少過擬合和提高泛化能力有顯著益處。然而，像權重噪聲、丟棄法（Dropout）等隨機化技術之間的交互作用尚未得到充分理解。因此，如何有效地結合這些方法以優化 DNN 性能仍然是一個挑戰。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Randomness techniques in deep neural networks">
 <meta property="og:url" content="https://leonicehot.github.io/2024/10/31/2024/October/randomness-techniques-in-deep-neural-networks/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="本研究提出了一項綜合實證研究，深入探討了深度神經網絡（DNN）中各種隨機化技術之間的相互作用及其對學習性能的影響。已有研究表明，將隨機性引入 DNN 的訓練過程，通過各種方法在不同階段進行隨機化，對減少過擬合和提高泛化能力有顯著益處。然而，像權重噪聲、丟棄法（Dropout）等隨機化技術之間的交互作用尚未得到充分理解。因此，如何有效地結合這些方法以優化 DNN 性能仍然是一個挑戰。">
+<meta property="og:description" content="本研究提出了一項綜合實證研究，深入探討了深度神經網絡（DNN）中各種隨機化技術之間的相互作用及其對學習性能的影響。已有研究表明，將隨機性引入 DNN 的訓練過程，通過各種方法在不同階段進行隨機化，對減少過擬合和提高泛化能力有顯著益處。然而，像權重噪聲、丟棄法（Dropout）等隨機化技術之間的交互作用尚未得到充分理解。因此，如何有效地結合這些方法以優化 DNN 性能仍然是一個挑戰。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-10-31T07:15:27.000Z">
 <meta property="article:modified_time" content="2024-12-11T11:06:49.104Z">
@@ -35,7 +33,6 @@
 
 
 <link rel="canonical" href="https://leonicehot.github.io/2024/10/31/2024/October/randomness-techniques-in-deep-neural-networks/">
-
 
 
 <script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2024/10/31/2024/October/randomness-techniques-in-deep-neural-networks/","path":"2024/10/31/2024/October/randomness-techniques-in-deep-neural-networks/","title":"Randomness techniques in deep neural networks"}</script>
@@ -49,9 +46,7 @@
 
 
 
-  <script async defer data-website-id="" src=""></script>
 
-  <script defer data-domain="" src=""></script>
 
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
@@ -66,9 +61,6 @@
       <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切換導航欄" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -82,17 +74,13 @@
   </div>
 
   <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
     </div>
   </div>
 </div>
 
 
 
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
-  </ul>
-</nav>
 
 
 
@@ -115,16 +103,16 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">1.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">利醬</p>
   <div class="site-description" itemprop="description">部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。</div>
 </div>
-<div class="site-state-wrap site-overview-item animated">
+<div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
@@ -144,23 +132,12 @@
       </div>
   </nav>
 </div>
-  <div class="links-of-author site-overview-item animated">
-      <span class="links-of-author-item">
-        <a href="https://github.com/leonIceHot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leonIceHot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:hj098128@outlook.com" title="E-Mail → mailto:hj098128@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.cake.me/s--qj9aPrlEs32gLEtK1_lI_g--/hj098128" title="Cake → https:&#x2F;&#x2F;www.cake.me&#x2F;s--qj9aPrlEs32gLEtK1_lI_g--&#x2F;hj098128" rel="noopener" target="_blank">Cake</a>
-      </span>
-  </div>
-
-
 
         </div>
       </div>
     </div>
+
+    
   </aside>
 
 
@@ -232,14 +209,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>826</span>
+      <span>779</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>2 分鐘</span>
+      <span>1 分鐘</span>
     </span>
 </div>
 
@@ -249,26 +226,13 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-        <p>本研究提出了一項綜合實證研究，深入探討了深度神經網絡（DNN）中各種隨機化技術之間的相互作用及其對學習性能的影響。已有研究表明，將隨機性引入
-DNN
-的訓練過程，通過各種方法在不同階段進行隨機化，對減少過擬合和提高泛化能力有顯著益處。然而，像權重噪聲、<strong>丟棄法（Dropout）</strong>等隨機化技術之間的交互作用尚未得到充分理解。因此，如何有效地結合這些方法以優化
-DNN 性能仍然是一個挑戰。 <span id="more"></span> # 摘要
-為了解決這一問題，我們將現有的隨機化技術分為四個主要類別：分別在數據層面、模型結構層面、優化或學習過程層面引入隨機性。這一分類有助於識別當前隨機化機制的研究空白，並提出了兩種新的隨機化技術：將噪聲引入損失函數以及隨機遮掩梯度更新。</p>
-<p>在實證研究中，我們使用粒子群優化器（PSO）進行超參數優化（HPO），探索不同配置的空間，確定在何處以及注入多少隨機性能最大化
-DNN 性能。我們在標準計算機視覺基準數據集（MNIST、FASHION-MNIST、CIFAR10
-和 CIFAR100）上評估了各種隨機化技術對 DNN 架構的影響。經過超過 30,000
-個配置的評估，我們對隨機化技術之間的相互作用及其對 DNN
-性能的綜合影響進行了詳細分析。</p>
-<p>研究結果顯示，數據增強和權重初始化的隨機化是提高性能的主要因素。此外，相關性分析表明，不同的優化器（如
-Adam
-和帶動量的梯度下降法）在訓練過程中偏好不同類型的隨機化。完整的實現和生成的數據集已公開於
-GitHub 上。</p>
-<h1 id="reference">Reference</h1>
-<ol type="1">
-<li>Rolling the dice for better deep learning performance: A study of
-randomness techniques in deep neural networks
-https://www.sciencedirect.com/science/article/pii/S0020025524004134</li>
+    <div class="post-body" itemprop="articleBody"><p>本研究提出了一項綜合實證研究，深入探討了深度神經網絡（DNN）中各種隨機化技術之間的相互作用及其對學習性能的影響。已有研究表明，將隨機性引入 DNN 的訓練過程，通過各種方法在不同階段進行隨機化，對減少過擬合和提高泛化能力有顯著益處。然而，像權重噪聲、<strong>丟棄法（Dropout）</strong>等隨機化技術之間的交互作用尚未得到充分理解。因此，如何有效地結合這些方法以優化 DNN 性能仍然是一個挑戰。</p>
+<span id="more"></span>
+<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>為了解決這一問題，我們將現有的隨機化技術分為四個主要類別：分別在數據層面、模型結構層面、優化或學習過程層面引入隨機性。這一分類有助於識別當前隨機化機制的研究空白，並提出了兩種新的隨機化技術：將噪聲引入損失函數以及隨機遮掩梯度更新。</p>
+<p>在實證研究中，我們使用粒子群優化器（PSO）進行超參數優化（HPO），探索不同配置的空間，確定在何處以及注入多少隨機性能最大化 DNN 性能。我們在標準計算機視覺基準數據集（MNIST、FASHION-MNIST、CIFAR10 和 CIFAR100）上評估了各種隨機化技術對 DNN 架構的影響。經過超過 30,000 個配置的評估，我們對隨機化技術之間的相互作用及其對 DNN 性能的綜合影響進行了詳細分析。</p>
+<p>研究結果顯示，數據增強和權重初始化的隨機化是提高性能的主要因素。此外，相關性分析表明，不同的優化器（如 Adam 和帶動量的梯度下降法）在訓練過程中偏好不同類型的隨機化。完整的實現和生成的數據集已公開於 GitHub 上。</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<li>Rolling the dice for better deep learning performance: A study of randomness techniques in deep neural networks<br><a target="_blank" rel="noopener" href="https://www.sciencedirect.com/science/article/pii/S0020025524004134">https://www.sciencedirect.com/science/article/pii/S0020025524004134</a></li>
 </ol>
 
     </div>
@@ -284,12 +248,12 @@ https://www.sciencedirect.com/science/article/pii/S0020025524004134</li>
           <div class="post-nav">
             <div class="post-nav-item">
                 <a href="/2024/10/31/2024/October/Deploy-a-React-Application-with-Nginx-on-Ubuntu-24.04%20LTS/" rel="prev" title="Deploy a React Application with Nginx on Ubuntu 24.04 LTS">
-                  <i class="fa fa-chevron-left"></i> Deploy a React Application with Nginx on Ubuntu 24.04 LTS
+                  <i class="fa fa-angle-left"></i> Deploy a React Application with Nginx on Ubuntu 24.04 LTS
                 </a>
             </div>
             <div class="post-nav-item">
                 <a href="/2024/11/01/2024/Nomember/Model-Trustworthiness/" rel="next" title="Model Trustworthiness">
-                  Model Trustworthiness <i class="fa fa-chevron-right"></i>
+                  Model Trustworthiness <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -308,27 +272,26 @@ https://www.sciencedirect.com/science/article/pii/S0020025524004134</li>
   <footer class="footer">
     <div class="footer-inner">
 
-
-<div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2024</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">利醬</span>
-</div>
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">利醬</span>
+  </div>
 <div class="wordcount">
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">307k</span>
+    <span title="總字數">286k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">9:19</span>
+    <span title="所需總閱讀時間">8:39</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
@@ -348,7 +311,6 @@ https://www.sciencedirect.com/science/article/pii/S0020025524004134</li>
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -357,9 +319,11 @@ https://www.sciencedirect.com/science/article/pii/S0020025524004134</li>
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
 
   
+
+
 
 
 

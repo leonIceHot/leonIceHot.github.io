@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="問題點有一天伺服器重新開機完，啟動Docker給使用者使用時，使用者連線進入docker container 環境中出現奇怪的現象， 問題狀況(1) nvidia-smi無法顯示 1Failed to initizlize NVML: Unknown Error (2) torch.cuda.is_available() 回傳False(3) Let’s use 0 GPUs.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="伺服器維護 - Docker 容器管理">
+<meta property="og:url" content="https://leonicehot.github.io/2022/08/20/2022/August/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker-%E7%AE%A1%E7%90%86/index.html">
+<meta property="og:site_name" content="利醬の休憩房">
+<meta property="og:description" content="問題點有一天伺服器重新開機完，啟動Docker給使用者使用時，使用者連線進入docker container 環境中出現奇怪的現象， 問題狀況(1) nvidia-smi無法顯示 1Failed to initizlize NVML: Unknown Error (2) torch.cuda.is_available() 回傳False(3) Let’s use 0 GPUs.">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker%E7%AE%A1%E7%90%86%2Fconfig.png?alt=media&token=b216826c-507b-49e3-9720-1af1835a0926">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker%E7%AE%A1%E7%90%86%2Fgrub.png?alt=media&token=4af854b1-02cc-43dc-bbc3-4d0d53ac6a38">
+<meta property="article:published_time" content="2022-08-20T10:39:33.000Z">
+<meta property="article:modified_time" content="2024-12-11T10:57:34.941Z">
+<meta property="article:author" content="利醬">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker%E7%AE%A1%E7%90%86%2Fconfig.png?alt=media&token=b216826c-507b-49e3-9720-1af1835a0926">
+
+
+<link rel="canonical" href="https://leonicehot.github.io/2022/08/20/2022/August/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker-%E7%AE%A1%E7%90%86/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2022/08/20/2022/August/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker-%E7%AE%A1%E7%90%86/","path":"2022/08/20/2022/August/伺服器維護-Docker-管理/","title":"伺服器維護 - Docker 容器管理"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>伺服器維護 - Docker 容器管理 | 利醬の休憩房</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">利醬の休憩房</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%95%8F%E9%A1%8C%E9%BB%9E"><span class="nav-number">1.</span> <span class="nav-text">問題點</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%8F%E9%A1%8C%E7%8B%80%E6%B3%81"><span class="nav-number">1.1.</span> <span class="nav-text">問題狀況</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%AD%E5%82%99"><span class="nav-number">2.</span> <span class="nav-text">設備</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">解決方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">參考</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">利醬</p>
+  <div class="site-description" itemprop="description">部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2022/08/20/2022/August/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker-%E7%AE%A1%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="伺服器維護 - Docker 容器管理 | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          伺服器維護 - Docker 容器管理
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-08-20 18:39:33" itemprop="dateCreated datePublished" datetime="2022-08-20T18:39:33+08:00">2022-08-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-12-11 18:57:34" itemprop="dateModified" datetime="2024-12-11T18:57:34+08:00">2024-12-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Software-Engineering/" itemprop="url" rel="index"><span itemprop="name">Software Engineering</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Software-Engineering/Software-Development/" itemprop="url" rel="index"><span itemprop="name">Software Development</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Software-Engineering/Software-Development/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>419</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>1 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="問題點"><a href="#問題點" class="headerlink" title="問題點"></a>問題點</h1><p>有一天伺服器重新開機完，啟動Docker給使用者使用時，<br>使用者連線進入docker container 環境中出現奇怪的現象，</p>
+<h2 id="問題狀況"><a href="#問題狀況" class="headerlink" title="問題狀況"></a>問題狀況</h2><p>(1) nvidia-smi無法顯示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Failed to initizlize NVML: Unknown Error</span><br></pre></td></tr></table></figure>
+<p>(2) torch.cuda.is_available() 回傳False<br>(3) Let’s use 0 GPUs.</p>
+<span id="more"></span>
+
+<h1 id="設備"><a href="#設備" class="headerlink" title="設備"></a>設備</h1><p>Dgx Station<br>OS: Ubuntu 18.03<br>CPU: Intel Xeon E5-2698 v4 2.2GHz (20 core)<br>GPUs: 4X Tesla V100 32GB<br>System Memory: DDR4 256GB<br>Network: Double 10GBase-T(RJ-45)<br>Monitor: 3X DisplayPort, 4k solutions</p>
+<h1 id="解決方法"><a href="#解決方法" class="headerlink" title="解決方法"></a>解決方法</h1><ol>
+<li>開啟管理者權限<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure></li>
+<li>修改參數<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/default</span><br><span class="line">gedit grub</span><br><span class="line">修改 GRUB_CMDLINE_LINUX_DEFAULT=&quot;... systemd.unified_cgroup_hierarchy=false&quot;   </span><br><span class="line"></span><br><span class="line">cd /etc/nvidia-container-runtime</span><br><span class="line">gedit config.toml</span><br><span class="line">修改 no-cgroups = false</span><br></pre></td></tr></table></figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker%E7%AE%A1%E7%90%86%2Fconfig.png?alt=media&token=b216826c-507b-49e3-9720-1af1835a0926" alt="config"></li>
+</ol>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%B6%AD%E8%AD%B7-Docker%E7%AE%A1%E7%90%86%2Fgrub.png?alt=media&token=4af854b1-02cc-43dc-bbc3-4d0d53ac6a38" alt="grub"></p>
+<ol start="3">
+<li><p>引導配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重新啟動電腦</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>確認參數是否添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/cmdline</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h1><p>【踩坑】docker 中使用 Nvidia GPU<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/mightbxg/article/details/119733088">https://blog.csdn.net/mightbxg/article/details/119733088</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/06/01/2022/June/IP-Webcam/" rel="prev" title="IP Webcam">
+                  <i class="fa fa-angle-left"></i> IP Webcam
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/09/27/2022/September/CSPNet-%E8%A7%A3%E6%9E%90/" rel="next" title="CSPNet 解析">
+                  CSPNet 解析 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">利醬</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">286k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">8:39</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

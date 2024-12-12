@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><meta name="generator" content="Hexo 6.3.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
@@ -16,17 +14,17 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介 分散式機器學習（Distributed Machine Learning）是指在多台機器或計算資源上進行機器學習模型的訓練。它涉及將訓練過程分成多個任務，並在不同的機器上同時執行，通常這些機器連接在一個分散式系統中。 在分散式機器學習中，每台機器處理部分資料或模型的一部分，它們通過協作來共同訓練模型。機器之間交換信息，例如模型參數或梯度，以確保同步和收斂。這種協作方法利用了多台機器的計">
+    <meta name="description" content="簡介分散式機器學習（Distributed Machine Learning）是指在多台機器或計算資源上進行機器學習模型的訓練。它涉及將訓練過程分成多個任務，並在不同的機器上同時執行，通常這些機器連接在一個分散式系統中。 在分散式機器學習中，每台機器處理部分資料或模型的一部分，它們通過協作來共同訓練模型。機器之間交換信息，例如模型參數或梯度，以確保同步和收斂。這種協作方法利用了多台機器的計算能力，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Distributed Machine Learning">
 <meta property="og:url" content="https://leonicehot.github.io/2023/06/16/2023/June/Distributed-Machine-Learning/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介 分散式機器學習（Distributed Machine Learning）是指在多台機器或計算資源上進行機器學習模型的訓練。它涉及將訓練過程分成多個任務，並在不同的機器上同時執行，通常這些機器連接在一個分散式系統中。 在分散式機器學習中，每台機器處理部分資料或模型的一部分，它們通過協作來共同訓練模型。機器之間交換信息，例如模型參數或梯度，以確保同步和收斂。這種協作方法利用了多台機器的計">
+<meta property="og:description" content="簡介分散式機器學習（Distributed Machine Learning）是指在多台機器或計算資源上進行機器學習模型的訓練。它涉及將訓練過程分成多個任務，並在不同的機器上同時執行，通常這些機器連接在一個分散式系統中。 在分散式機器學習中，每台機器處理部分資料或模型的一部分，它們通過協作來共同訓練模型。機器之間交換信息，例如模型參數或梯度，以確保同步和收斂。這種協作方法利用了多台機器的計算能力，">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-06-16T01:16:52.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:36.442Z">
@@ -35,7 +33,6 @@
 
 
 <link rel="canonical" href="https://leonicehot.github.io/2023/06/16/2023/June/Distributed-Machine-Learning/">
-
 
 
 <script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2023/06/16/2023/June/Distributed-Machine-Learning/","path":"2023/06/16/2023/June/Distributed-Machine-Learning/","title":"Distributed Machine Learning"}</script>
@@ -49,9 +46,7 @@
 
 
 
-  <script async defer data-website-id="" src=""></script>
 
-  <script defer data-domain="" src=""></script>
 
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
@@ -66,9 +61,6 @@
       <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切換導航欄" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -82,17 +74,13 @@
   </div>
 
   <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
     </div>
   </div>
 </div>
 
 
 
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
-  </ul>
-</nav>
 
 
 
@@ -115,16 +103,16 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%84%AA%E9%BB%9E"><span class="nav-number">2.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">實作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dataloader"><span class="nav-number">3.1.</span> <span class="nav-text">DataLoader</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dataparallel"><span class="nav-number">3.2.</span> <span class="nav-text">DataParallel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#distributeddataparallel"><span class="nav-number">3.3.</span> <span class="nav-text">DistributedDataParallel</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%84%AA%E9%BB%9E"><span class="nav-number">2.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">實作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DataLoader"><span class="nav-number">3.1.</span> <span class="nav-text">DataLoader</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DataParallel"><span class="nav-number">3.2.</span> <span class="nav-text">DataParallel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DistributedDataParallel"><span class="nav-number">3.3.</span> <span class="nav-text">DistributedDataParallel</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">利醬</p>
   <div class="site-description" itemprop="description">部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。</div>
 </div>
-<div class="site-state-wrap site-overview-item animated">
+<div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
@@ -144,23 +132,12 @@
       </div>
   </nav>
 </div>
-  <div class="links-of-author site-overview-item animated">
-      <span class="links-of-author-item">
-        <a href="https://github.com/leonIceHot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leonIceHot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:hj098128@outlook.com" title="E-Mail → mailto:hj098128@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.cake.me/s--qj9aPrlEs32gLEtK1_lI_g--/hj098128" title="Cake → https:&#x2F;&#x2F;www.cake.me&#x2F;s--qj9aPrlEs32gLEtK1_lI_g--&#x2F;hj098128" rel="noopener" target="_blank">Cake</a>
-      </span>
-  </div>
-
-
 
         </div>
       </div>
     </div>
+
+    
   </aside>
 
 
@@ -244,7 +221,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>2.5k</span>
+      <span>2.4k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -261,76 +238,48 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-        <h1 id="簡介">簡介</h1>
-<p>分散式機器學習（Distributed Machine
-Learning）是指在多台機器或計算資源上進行機器學習模型的訓練。它涉及將訓練過程分成多個任務，並在不同的機器上同時執行，通常這些機器連接在一個分散式系統中。</p>
-<p>在分散式機器學習中，每台機器處理部分資料或模型的一部分，它們通過協作來共同訓練模型。機器之間交換信息，例如模型參數或梯度，以確保同步和收斂。這種協作方法利用了多台機器的計算能力，實現更快速和高效的訓練。
-<span id="more"></span></p>
-<h1 id="優點">優點</h1>
-<p>分散式機器學習具有以下幾個優勢：</p>
-<ol type="1">
-<li><p>可擴展性：通過在多台機器上分佈訓練過程，分散式機器學習能夠擴展到大規模資料和計算量。</p></li>
-<li><p>加速訓練時間：利用多台機器的並行處理能力，分散式機器學習能夠顯著減少訓練時間，提高效率。</p></li>
-<li><p>增加計算能力：分散式機器學習允許利用多台機器的計算資源，從而可以處理更大型的模型或更複雜的任務。</p></li>
-<li><p>增強可靠性：分散式機器學習具有冗余性，如果其中一台機器發生故障，其他機器仍然可以繼續訓練和工作。</p></li>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>分散式機器學習（Distributed Machine Learning）是指在多台機器或計算資源上進行機器學習模型的訓練。它涉及將訓練過程分成多個任務，並在不同的機器上同時執行，通常這些機器連接在一個分散式系統中。</p>
+<p>在分散式機器學習中，每台機器處理部分資料或模型的一部分，它們通過協作來共同訓練模型。機器之間交換信息，例如模型參數或梯度，以確保同步和收斂。這種協作方法利用了多台機器的計算能力，實現更快速和高效的訓練。</p>
+<span id="more"></span>
+
+<h1 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h1><p>分散式機器學習具有以下幾個優勢：</p>
+<ol>
+<li><p>可擴展性：通過在多台機器上分佈訓練過程，分散式機器學習能夠擴展到大規模資料和計算量。</p>
+</li>
+<li><p>加速訓練時間：利用多台機器的並行處理能力，分散式機器學習能夠顯著減少訓練時間，提高效率。</p>
+</li>
+<li><p>增加計算能力：分散式機器學習允許利用多台機器的計算資源，從而可以處理更大型的模型或更複雜的任務。</p>
+</li>
+<li><p>增強可靠性：分散式機器學習具有冗余性，如果其中一台機器發生故障，其他機器仍然可以繼續訓練和工作。</p>
+</li>
 </ol>
-<h1 id="實作">實作</h1>
-<p>要實現分散式機器學習，通常需要使用特定的分散式機器學習框架或庫，如TensorFlow的分散式訓練、PyTorch的分散式訓練等。這些框架提供了用於處理分散式機器學習的API和工具，包括資料並行處理、模型參數同步、通信和協調等功能。同時，配置和管理分散式機器學習所需的計算資源也是一個重要的挑戰，需要考慮網絡連接、資料分發和通信等方面的因素。</p>
-<h2 id="dataloader">DataLoader</h2>
-<ol type="1">
-<li>pin_momory pin_memory
-是在深度學習中常見的一個參數或選項，通常用於加速資料讀取。在使用 GPU
-進行深度學習訓練時，資料往往需要從主記憶體（RAM）中讀取到 GPU
-記憶體中進行計算。然而，主記憶體和 GPU
-記憶體之間的資料傳輸速度可能有所不同，其中主記憶體到 GPU
-記憶體的傳輸速度較慢。</li>
+<h1 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h1><p>要實現分散式機器學習，通常需要使用特定的分散式機器學習框架或庫，如TensorFlow的分散式訓練、PyTorch的分散式訓練等。這些框架提供了用於處理分散式機器學習的API和工具，包括資料並行處理、模型參數同步、通信和協調等功能。同時，配置和管理分散式機器學習所需的計算資源也是一個重要的挑戰，需要考慮網絡連接、資料分發和通信等方面的因素。</p>
+<h2 id="DataLoader"><a href="#DataLoader" class="headerlink" title="DataLoader"></a>DataLoader</h2><ol>
+<li>pin_momory<br>pin_memory 是在深度學習中常見的一個參數或選項，通常用於加速資料讀取。在使用 GPU 進行深度學習訓練時，資料往往需要從主記憶體（RAM）中讀取到 GPU 記憶體中進行計算。然而，主記憶體和 GPU 記憶體之間的資料傳輸速度可能有所不同，其中主記憶體到 GPU 記憶體的傳輸速度較慢。</li>
 </ol>
-<p>pin_memory
-參數可以在資料加載時用於將資料加載到主記憶體中的固定記憶體頁面（pinned
-memory）。這樣一來，在將資料從主記憶體傳輸到 GPU
-記憶體時，可以達到更高的傳輸速度，提高資料讀取的效率。</p>
-<p>通常，當使用具有 GPU
-加速的深度學習框架（如PyTorch或TensorFlow）時，可以在資料加載的過程中設置
-pin_memory=True，以啟用資料的固定記憶體頁面功能。這在處理大型資料集或穩健行程需要高效率資料讀取的情況下特別有用。</p>
-<p>需要注意的是，pin_memory 參數僅在使用 GPU
-計算時才有效，並且需要一定的額外記憶體來容納固定記憶體頁面。因此，在設置
-pin_memory=True 時需要確保系統具有足夠的可用記憶體。</p>
-<ol start="2" type="1">
-<li>num_worker
-在機器學習中，num_workers（工作行程數量）是指用於加載和處理資料的並行工作行程的數量。在訓練模型時，資料通常需要從存儲設備（如硬盤或固態硬盤）中讀取並進行預處理，然後才能傳遞到模型進行訓練。由於資料讀取和預處理是一個相對耗時的操作，使用多個工作行程可以加速資料的處理。</li>
+<p>pin_memory 參數可以在資料加載時用於將資料加載到主記憶體中的固定記憶體頁面（pinned memory）。這樣一來，在將資料從主記憶體傳輸到 GPU 記憶體時，可以達到更高的傳輸速度，提高資料讀取的效率。</p>
+<p>通常，當使用具有 GPU 加速的深度學習框架（如PyTorch或TensorFlow）時，可以在資料加載的過程中設置 pin_memory&#x3D;True，以啟用資料的固定記憶體頁面功能。這在處理大型資料集或穩健行程需要高效率資料讀取的情況下特別有用。</p>
+<p>需要注意的是，pin_memory 參數僅在使用 GPU 計算時才有效，並且需要一定的額外記憶體來容納固定記憶體頁面。因此，在設置 pin_memory&#x3D;True 時需要確保系統具有足夠的可用記憶體。</p>
+<ol start="2">
+<li>num_worker<br>在機器學習中，num_workers（工作行程數量）是指用於加載和處理資料的並行工作行程的數量。在訓練模型時，資料通常需要從存儲設備（如硬盤或固態硬盤）中讀取並進行預處理，然後才能傳遞到模型進行訓練。由於資料讀取和預處理是一個相對耗時的操作，使用多個工作行程可以加速資料的處理。</li>
 </ol>
 <p>num_workers的選擇取決於多個因素，包括資料的大小、資料的複雜性、設備的性能等。一般來說，如果資料集較小且預處理的操作較簡單，可以選擇較少的num_workers。而對於大型資料集或需要複雜預處理操作的情況，可以增加num_workers以加速資料處理的速度。</p>
 <p>然而，選擇適當的num_workers也需要考慮系統資源的限制。過多的工作行程可能會導致記憶體消耗過高或者系統負載過重，從而影響整體性能。因此，在選擇num_workers時，需要在加速資料處理的同時，保持系統的穩定性和平衡。</p>
 <p>需要注意的是，不同的機器學習框架和函式庫對於num_workers的使用方式可能有所不同。在使用特定框架或函式庫時，可以參考其相應的文檔或指南以了解如何正確配置num_workers的值。</p>
-<h2 id="dataparallel">DataParallel</h2>
-<p>Multi-GPU Training nn.DataParallel 是 PyTorch
-框架中提供的一個用於實現模型的資料並行處理的模塊。 它可以在多張 GPU
-上同時運行模型的訓練或推論過程。</p>
-<p>使用 nn.DataParallel 可以簡化實現模型的並行處理，只需將模型包裝在
-nn.DataParallel 中即可。例如： <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line"><span class="comment"># 創建模型</span></span><br><span class="line">model = MyModel()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 將模型包裝在 nn.DataParallel 中</span></span><br><span class="line">model = nn.DataParallel(model)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 GPU 上進行訓練或推論</span></span><br><span class="line">inputs = torch.randn(<span class="number">10</span>, <span class="number">3</span>, <span class="number">224</span>, <span class="number">224</span>)  <span class="comment"># 假設有 10 筆輸入資料</span></span><br><span class="line">outputs = model(inputs)</span><br></pre></td></tr></table></figure></p>
-<h2 id="distributeddataparallel">DistributedDataParallel</h2>
-<p>DistributedDataParallel 是 PyTorch
-框架中提供的一個用於分散式訓練的模塊，用於在多個節點上的多個 GPU
-上執行模型的訓練。</p>
-<p>DistributedDataParallel 模塊擴展了 nn.DataParallel
-的功能，允許在多個節點之間進行分散式的訓練。每個節點上可以有多個
-GPU，並且這些 GPU
-可以在不同節點之間進行通信和同步。這使得可以實現更大規模的訓練，並在分散式環境中有效地使用多個計算資源。</p>
-<p>使用 DistributedDataParallel
-需要進行一些額外的設置和配置，包括初始化分散式環境、指定節點和 GPU
-的配置、設置通信後端等。以下是使用 DistributedDataParallel
-的一個簡單示例：</p>
+<h2 id="DataParallel"><a href="#DataParallel" class="headerlink" title="DataParallel"></a>DataParallel</h2><p>Multi-GPU Training<br>nn.DataParallel 是 PyTorch 框架中提供的一個用於實現模型的資料並行處理的模塊。<br>它可以在多張 GPU 上同時運行模型的訓練或推論過程。</p>
+<p>使用 nn.DataParallel 可以簡化實現模型的並行處理，只需將模型包裝在 nn.DataParallel 中即可。例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line"><span class="comment"># 創建模型</span></span><br><span class="line">model = MyModel()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 將模型包裝在 nn.DataParallel 中</span></span><br><span class="line">model = nn.DataParallel(model)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 GPU 上進行訓練或推論</span></span><br><span class="line">inputs = torch.randn(<span class="number">10</span>, <span class="number">3</span>, <span class="number">224</span>, <span class="number">224</span>)  <span class="comment"># 假設有 10 筆輸入資料</span></span><br><span class="line">outputs = model(inputs)</span><br></pre></td></tr></table></figure>
+
+<h2 id="DistributedDataParallel"><a href="#DistributedDataParallel" class="headerlink" title="DistributedDataParallel"></a>DistributedDataParallel</h2><p>DistributedDataParallel 是 PyTorch 框架中提供的一個用於分散式訓練的模塊，用於在多個節點上的多個 GPU 上執行模型的訓練。</p>
+<p>DistributedDataParallel 模塊擴展了 nn.DataParallel 的功能，允許在多個節點之間進行分散式的訓練。每個節點上可以有多個 GPU，並且這些 GPU 可以在不同節點之間進行通信和同步。這使得可以實現更大規模的訓練，並在分散式環境中有效地使用多個計算資源。</p>
+<p>使用 DistributedDataParallel 需要進行一些額外的設置和配置，包括初始化分散式環境、指定節點和 GPU 的配置、設置通信後端等。以下是使用 DistributedDataParallel 的一個簡單示例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">import</span> torch.distributed <span class="keyword">as</span> dist</span><br><span class="line"><span class="keyword">from</span> torch.nn.parallel <span class="keyword">import</span> DistributedDataParallel</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化分散式訓練環境</span></span><br><span class="line">dist.init_process_group(backend=<span class="string">&#x27;nccl&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 創建模型</span></span><br><span class="line">model = MyModel()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 將模型包裝在 DistributedDataParallel 中</span></span><br><span class="line">model = DistributedDataParallel(model)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在每個節點上設置 GPU</span></span><br><span class="line">device = torch.device(<span class="string">&#x27;cuda&#x27;</span>)</span><br><span class="line">model.to(device)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 GPU 上進行訓練</span></span><br><span class="line">inputs = torch.randn(<span class="number">10</span>, <span class="number">3</span>, <span class="number">224</span>, <span class="number">224</span>).to(device)  <span class="comment"># 假設有 10 筆輸入資料</span></span><br><span class="line">outputs = model(inputs)</span><br></pre></td></tr></table></figure>
 <p>在使用 DistributedDataParallel 時，需要注意以下幾點：</p>
 <p>需要在每個節點上初始化分散式訓練環境，以便進行節點間的通信和同步。</p>
 <p>模型需要在每個節點上進行設置，以確保在正確的 GPU 上運行。</p>
 <p>設備（device）需要在每個節點上進行設置，以確保資料和模型在正確的設備上進行處理。</p>
-<p>使用 DistributedDataParallel
-時，可能需要進行一些額外的設定和調整，以確保分散式訓練的正確運行，例如設置通信後端、調整通信的資料佈局等。</p>
-<p>總結來說，DistributedDataParallel
-是用於實現分散式訓練的重要模塊，可以在多個節點上的多個 GPU
-上同時進行模型訓練，提供了一種有效地利用分散式計算資源的方式。</p>
+<p>使用 DistributedDataParallel 時，可能需要進行一些額外的設定和調整，以確保分散式訓練的正確運行，例如設置通信後端、調整通信的資料佈局等。</p>
+<p>總結來說，DistributedDataParallel 是用於實現分散式訓練的重要模塊，可以在多個節點上的多個 GPU 上同時進行模型訓練，提供了一種有效地利用分散式計算資源的方式。</p>
 
     </div>
 
@@ -345,12 +294,12 @@ GPU，並且這些 GPU
           <div class="post-nav">
             <div class="post-nav-item">
                 <a href="/2023/06/15/2023/June/Image-Quality-Assessment/" rel="prev" title="Image Quality Assessment">
-                  <i class="fa fa-chevron-left"></i> Image Quality Assessment
+                  <i class="fa fa-angle-left"></i> Image Quality Assessment
                 </a>
             </div>
             <div class="post-nav-item">
                 <a href="/2023/06/19/2023/June/Software-Deployment/" rel="next" title="Software Deployment">
-                  Software Deployment <i class="fa fa-chevron-right"></i>
+                  Software Deployment <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -369,27 +318,26 @@ GPU，並且這些 GPU
   <footer class="footer">
     <div class="footer-inner">
 
-
-<div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2024</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">利醬</span>
-</div>
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">利醬</span>
+  </div>
 <div class="wordcount">
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">307k</span>
+    <span title="總字數">286k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">9:19</span>
+    <span title="所需總閱讀時間">8:39</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
@@ -409,7 +357,6 @@ GPU，並且這些 GPU
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -418,9 +365,11 @@ GPU，並且這些 GPU
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
 
   
+
+
 
 
 

@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><meta name="generator" content="Hexo 6.3.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
@@ -16,26 +14,30 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Abstract 標籤雜訊學習背景 (Background)  標籤雜訊學習中的核心是 雜訊轉換矩陣 (noise transition matrix)，描述純淨標籤翻轉為雜訊標籤的機率。 統計一致性分類器 (Statistically consistent classifiers$的建立依賴於轉換矩陣的準確學習。  現有挑戰與方法 (Existing Challenges a">
+    <meta name="description" content="Abstract標籤雜訊學習背景 (Background) 標籤雜訊學習中的核心是 雜訊轉換矩陣 (noise transition matrix)，描述純淨標籤翻轉為雜訊標籤的機率。 統計一致性分類器 (Statistically consistent classifiers$的建立依賴於轉換矩陣的準確學習。  現有挑戰與方法 (Existing Challenges and Methods)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="T-Revision">
 <meta property="og:url" content="https://leonicehot.github.io/2024/12/11/2024/December/T-Revision/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="Abstract 標籤雜訊學習背景 (Background)  標籤雜訊學習中的核心是 雜訊轉換矩陣 (noise transition matrix)，描述純淨標籤翻轉為雜訊標籤的機率。 統計一致性分類器 (Statistically consistent classifiers$的建立依賴於轉換矩陣的準確學習。  現有挑戰與方法 (Existing Challenges a">
+<meta property="og:description" content="Abstract標籤雜訊學習背景 (Background) 標籤雜訊學習中的核心是 雜訊轉換矩陣 (noise transition matrix)，描述純淨標籤翻轉為雜訊標籤的機率。 統計一致性分類器 (Statistically consistent classifiers$的建立依賴於轉換矩陣的準確學習。  現有挑戰與方法 (Existing Challenges and Methods)">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://leonicehot.github.io/images/2024/T-Revision/Table1.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2024/T-Revision/Table2.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2024/T-Revision/Table3.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2024/T-Revision/Table4.png">
 <meta property="article:published_time" content="2024-12-11T11:26:57.000Z">
-<meta property="article:modified_time" content="2024-12-11T14:06:28.466Z">
+<meta property="article:modified_time" content="2024-12-11T14:32:44.784Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://leonicehot.github.io/images/2024/T-Revision/Table1.png">
 
 
 <link rel="canonical" href="https://leonicehot.github.io/2024/12/11/2024/December/T-Revision/">
-
 
 
 <script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2024/12/11/2024/December/T-Revision/","path":"2024/12/11/2024/December/T-Revision/","title":"T-Revision"}</script>
@@ -49,9 +51,7 @@
 
 
 
-  <script async defer data-website-id="" src=""></script>
 
-  <script defer data-domain="" src=""></script>
 
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
@@ -66,9 +66,6 @@
       <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切換導航欄" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -82,17 +79,13 @@
   </div>
 
   <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
     </div>
   </div>
 </div>
 
 
 
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
-  </ul>
-</nav>
 
 
 
@@ -115,43 +108,16 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%99%E7%B1%A4%E9%9B%9C%E8%A8%8A%E5%AD%B8%E7%BF%92%E8%83%8C%E6%99%AF-background"><span class="nav-number">1.1.</span> <span class="nav-text">標籤雜訊學習背景
-(Background)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8F%BE%E6%9C%89%E6%8C%91%E6%88%B0%E8%88%87%E6%96%B9%E6%B3%95-existing-challenges-and-methods"><span class="nav-number">1.2.</span> <span class="nav-text">現有挑戰與方法
-(Existing Challenges and Methods)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%9C%E8%80%85%E6%8F%90%E5%87%BA%E7%9A%84%E6%96%B9%E6%B3%95-proposed-method"><span class="nav-number">1.3.</span> <span class="nav-text">作者提出的方法
-(Proposed Method)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%A6%E9%A9%97%E7%B5%90%E6%9E%9C-experimental-results"><span class="nav-number">1.4.</span> <span class="nav-text">實驗結果
-(Experimental Results)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%99%E7%B1%A4%E9%9B%9C%E8%A8%8A%E5%AD%B8%E7%BF%92%E8%83%8C%E6%99%AF-background-on-label-noise-learning"><span class="nav-number">2.1.</span> <span class="nav-text">標籤雜訊學習背景
-(Background on Label-Noise Learning)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8F%BE%E6%9C%89%E6%8C%91%E6%88%B0%E8%88%87%E6%94%B9%E9%80%B2-challenges-and-improvements"><span class="nav-number">2.2.</span> <span class="nav-text">現有挑戰與改進
-(Challenges and Improvements$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#label-noise-learning-with-anchor-points"><span class="nav-number">3.</span> <span class="nav-text">Label-Noise Learning
-with Anchor Points</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A0%90%E5%82%99%E7%9F%A5%E8%AD%98-preliminaries"><span class="nav-number">3.1.</span> <span class="nav-text">預備知識
-(Preliminaries)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%89%E7%A7%BB%E7%9F%A9%E9%99%A3-transition-matrix"><span class="nav-number">3.2.</span> <span class="nav-text">轉移矩陣 (Transition
-Matrix)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E6%83%85%E6%B3%81"><span class="nav-number">3.2.1.</span> <span class="nav-text">一般情況</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E8%AD%98%E5%88%A5%E6%80%A7%E5%95%8F%E9%A1%8C"><span class="nav-number">3.2.2.</span> <span class="nav-text">非識別性問題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E7%9A%84%E7%A0%94%E7%A9%B6%E7%AF%84%E7%96%87"><span class="nav-number">3.2.3.</span> <span class="nav-text">本文的研究範疇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%96%BC%E9%A1%9E%E5%88%A5%E7%9A%84%E8%BD%89%E7%A7%BB%E7%9F%A9%E9%99%A3-class-dependent-transition-matrix%E5%8D%B3"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">基於類別的轉移矩陣
-(class-dependent transition matrix)，即：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BE%8B%E7%84%A1%E9%97%9C%E7%9A%84%E8%BD%89%E7%A7%BB%E7%9F%A9%E9%99%A3-instance-independent-transition-matrix"><span class="nav-number">3.2.3.2.</span> <span class="nav-text">實例無關的轉移矩陣
-(instance-independent transition matrix)，</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90"><span class="nav-number">3.2.4.</span> <span class="nav-text">總結</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E8%87%B4%E6%80%A7%E6%BC%94%E7%AE%97%E6%B3%95"><span class="nav-number">3.3.</span> <span class="nav-text">一致性演算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B0%A1%E5%96%AE%E6%A6%82%E8%BF%B0"><span class="nav-number">3.3.1.</span> <span class="nav-text">簡單概述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E8%87%B4%E6%80%A7%E8%A7%A3%E9%87%8B"><span class="nav-number">3.3.2.</span> <span class="nav-text">一致性解釋：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%8C%A8%E9%BB%9E-anchor-points"><span class="nav-number">3.4.</span> <span class="nav-text">錨點 (Anchor Points)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E7%BE%A9"><span class="nav-number">3.4.1.</span> <span class="nav-text">定義</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%8C%A8%E9%BB%9E%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">3.4.2.</span> <span class="nav-text">錨點的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%BC%8F%E8%A7%A3%E9%87%8B"><span class="nav-number">3.4.3.</span> <span class="nav-text">公式解釋</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E9%8C%A8%E9%BB%9E%E8%A8%88%E7%AE%97%E8%BD%89%E6%8F%9B%E7%9F%A9%E9%99%A3"><span class="nav-number">3.4.4.</span> <span class="nav-text">使用錨點計算轉換矩陣</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%8C%A8%E9%BB%9E%E5%81%87%E8%A8%AD%E7%9A%84%E6%8C%91%E6%88%B0"><span class="nav-number">3.4.5.</span> <span class="nav-text">錨點假設的挑戰</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90-1"><span class="nav-number">3.4.5.1.</span> <span class="nav-text">總結</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%8C%A8%E9%BB%9E%E5%81%87%E8%A8%AD%E7%9A%84%E6%93%B4%E5%B1%95"><span class="nav-number">3.4.6.</span> <span class="nav-text">錨點假設的擴展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%8F%AF%E7%B4%84%E6%80%A7%E5%81%87%E8%A8%AD"><span class="nav-number">3.4.7.</span> <span class="nav-text">不可約性假設</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%8C%A8%E9%BB%9E%E5%AE%9A%E7%BE%A9"><span class="nav-number">3.4.8.</span> <span class="nav-text">錨點定義</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%8C%A8%E9%BB%9E%E7%9A%84%E6%93%B4%E5%B1%95%E5%AE%9A%E7%BE%A9"><span class="nav-number">3.4.9.</span> <span class="nav-text">錨點的擴展定義</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90-2"><span class="nav-number">3.4.9.1.</span> <span class="nav-text">總結</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E6%AF%94%E4%BE%8B%E4%BC%B0%E8%A8%88-mixture-proportion-estimation"><span class="nav-number">3.5.</span> <span class="nav-text">混合比例估計
-(Mixture Proportion Estimation)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.5.1.</span> <span class="nav-text">混合模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E6%AF%94%E4%BE%8B%E4%BC%B0%E8%A8%88%E7%9A%84%E5%95%8F%E9%A1%8C"><span class="nav-number">3.5.2.</span> <span class="nav-text">混合比例估計的問題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">3.5.3.</span> <span class="nav-text">常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%9F%E6%9C%9B%E6%9C%80%E5%A4%A7%E5%8C%96em%E6%BC%94%E7%AE%97%E6%B3%95"><span class="nav-number">3.5.3.1.</span> <span class="nav-text">期望最大化（EM）演算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B7%E9%AB%94%E7%9A%84%E6%AD%A5%E9%A9%9F"><span class="nav-number">3.5.3.2.</span> <span class="nav-text">具體的步驟：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%89%E7%A7%BB%E7%9F%A9%E9%99%A3%E5%AD%B8%E7%BF%92%E8%88%87%E6%B7%B7%E5%90%88%E6%AF%94%E4%BE%8B%E4%BC%B0%E8%A8%88%E7%9A%84%E9%97%9C%E8%81%AF"><span class="nav-number">3.6.</span> <span class="nav-text">轉移矩陣學習與混合比例估計的關聯</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#label-noise-learning-without-anchor-points"><span class="nav-number">4.</span> <span class="nav-text">Label-Noise Learning
-without Anchor Points</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%96-1%E8%AA%AA%E6%98%8E%E6%80%A7%E5%AF%A6%E9%A9%97%E7%B5%90%E6%9E%9C%E4%BB%A55%E9%A1%9E%E5%88%86%E9%A1%9E%E5%95%8F%E9%A1%8C%E7%82%BA%E4%BE%8B"><span class="nav-number">4.1.</span> <span class="nav-text">圖
-1：說明性實驗結果（以5類分類問題為例）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%B8%E7%BF%92%E8%BD%89%E7%A7%BB%E7%9F%A9%E9%99%A3%E7%9A%84%E6%8C%91%E6%88%B0"><span class="nav-number">4.1.1.</span> <span class="nav-text">學習轉移矩陣的挑戰</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%A8%E9%9A%AA%E4%B8%80%E8%87%B4%E4%BC%B0%E8%A8%88%E5%99%A8-risk-consistent-estimator"><span class="nav-number">4.1.2.</span> <span class="nav-text">風險一致估計器
-(Risk-consistent Estimator)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%8B%E7%B4%B9"><span class="nav-number">4.1.2.1.</span> <span class="nav-text">介紹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%82%B3%E7%B5%B1%E6%96%B9%E6%B3%95%E7%9A%84%E5%95%8F%E9%A1%8C%E4%BE%9D%E8%B3%B4%E8%BD%89%E7%A7%BB%E7%9F%A9%E9%99%A3%E7%9A%84%E5%8F%8D%E7%9F%A9%E9%99%A330"><span class="nav-number">4.1.2.2.</span> <span class="nav-text">傳統方法的問題：依賴轉移矩陣的反矩陣[30]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%81%BF%E5%85%8D%E5%8F%8D%E7%9F%A9%E9%99%A3%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">4.1.2.3.</span> <span class="nav-text">避免反矩陣的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E4%BD%B3%E5%8C%96%E6%90%8D%E5%A4%B1%E5%87%BD%E6%95%B8%E4%BE%86%E4%BC%B0%E8%A8%88py-x-x"><span class="nav-number">4.1.2.4.</span> <span class="nav-text">最佳化損失函數來估計\(P(Y | X &#x3D; x)\)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E6%80%A7%E5%8A%A0%E6%AC%8A%E6%8A%80%E8%A1%93-importance-reweighting"><span class="nav-number">4.1.2.5.</span> <span class="nav-text">重要性加權技術
-(Importance Reweighting)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E7%8F%BE%E8%88%87-t-%E4%BF%AE%E6%AD%A3%E6%96%B9%E6%B3%95"><span class="nav-number">4.1.2.6.</span> <span class="nav-text">實現與 T-修正方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BB%8B%E7%B4%B9"><span class="nav-number">4.1.2.6.1.</span> <span class="nav-text">方法介紹</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E8%AA%AA%E6%98%8E"><span class="nav-number">4.1.2.6.2.</span> <span class="nav-text">特殊說明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC-t-%E4%BF%AE%E6%AD%A3%E6%96%B9%E6%B3%95%E6%9C%89%E6%95%88"><span class="nav-number">4.1.2.6.3.</span> <span class="nav-text">為什麼 T-修正方法有效？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E5%84%AA%E5%8B%A2"><span class="nav-number">4.1.2.6.4.</span> <span class="nav-text">方法的優勢</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%9B%E5%8C%96%E8%AA%A4%E5%B7%AE-generalization-error"><span class="nav-number">4.1.3.</span> <span class="nav-text">泛化誤差 (Generalization
-Error)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">4.1.3.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%9B%E5%8C%96%E7%95%8C%E9%99%90%E6%8E%A8%E5%B0%8E"><span class="nav-number">4.1.3.2.</span> <span class="nav-text">泛化界限推導</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9A%E7%90%86-1"><span class="nav-number">4.1.3.2.1.</span> <span class="nav-text">定理 1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%84%AA%E5%8B%A2"><span class="nav-number">4.1.3.2.2.</span> <span class="nav-text">方法優勢</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AF%A6%E9%A9%97%E7%B5%90%E6%9E%9C"><span class="nav-number">4.1.3.2.3.</span> <span class="nav-text">實驗結果</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90-3"><span class="nav-number">4.1.3.2.4.</span> <span class="nav-text">總結</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%A6%E9%A9%97%E7%B5%90%E6%9E%9C%E8%88%87%E8%B3%87%E6%96%99%E9%9B%86%E8%AA%AA%E6%98%8E"><span class="nav-number">5.</span> <span class="nav-text">實驗結果與資料集說明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8-1%E5%88%86%E9%A1%9E%E6%BA%96%E7%A2%BA%E7%8E%87-%E7%99%BE%E5%88%86%E6%AF%94-%E5%8F%8A%E6%A8%99%E6%BA%96%E5%B7%AE"><span class="nav-number">5.1.</span> <span class="nav-text">表 1：分類準確率 (百分比)
-及標準差</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC%E8%AA%AA%E6%98%8E"><span class="nav-number">5.1.1.</span> <span class="nav-text">表格說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%9C%E8%A8%8A%E9%A1%9E%E5%9E%8B"><span class="nav-number">5.1.2.</span> <span class="nav-text">雜訊類型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%9C%E9%8D%B5%E7%B5%90%E6%9E%9C"><span class="nav-number">5.1.3.</span> <span class="nav-text">關鍵結果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mnist"><span class="nav-number">5.1.3.1.</span> <span class="nav-text">MNIST</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cifar-10"><span class="nav-number">5.1.3.2.</span> <span class="nav-text">CIFAR-10</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cifar-100"><span class="nav-number">5.1.3.3.</span> <span class="nav-text">CIFAR-100</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90-4"><span class="nav-number">5.1.3.4.</span> <span class="nav-text">總結</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8-2%E5%88%86%E9%A1%9E%E6%BA%96%E7%A2%BA%E7%8E%87"><span class="nav-number">5.2.</span> <span class="nav-text">表 2：分類準確率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E9%9B%86%E8%AA%AA%E6%98%8E"><span class="nav-number">5.2.1.</span> <span class="nav-text">資料集說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%9C%E8%A8%8A%E8%A8%AD%E7%BD%AE"><span class="nav-number">5.2.2.</span> <span class="nav-text">雜訊設置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B5%90%E8%AB%96"><span class="nav-number">5.2.3.</span> <span class="nav-text">結論</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8-3mnist-%E8%B3%87%E6%96%99%E9%9B%86%E7%9A%84%E5%88%86%E9%A1%9E%E6%BA%96%E7%A2%BA%E7%8E%87-%E7%99%BE%E5%88%86%E6%AF%94"><span class="nav-number">5.3.</span> <span class="nav-text">表 3：MNIST
-資料集的分類準確率 (百分比)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC%E8%AA%AA%E6%98%8E-1"><span class="nav-number">5.3.1.</span> <span class="nav-text">表格說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%9C%E8%A8%8A%E6%83%85%E5%A2%83%E4%B8%8B%E7%9A%84%E5%88%86%E9%A1%9E%E7%B5%90%E6%9E%9C"><span class="nav-number">5.3.2.</span> <span class="nav-text">雜訊情境下的分類結果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sym-60-%E9%9B%9C%E8%A8%8A"><span class="nav-number">5.3.2.1.</span> <span class="nav-text">Sym-60% 雜訊</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sym-70-%E9%9B%9C%E8%A8%8A"><span class="nav-number">5.3.2.2.</span> <span class="nav-text">Sym-70% 雜訊</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sym-80-%E9%9B%9C%E8%A8%8A"><span class="nav-number">5.3.2.3.</span> <span class="nav-text">Sym-80% 雜訊</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90-5"><span class="nav-number">5.3.2.4.</span> <span class="nav-text">總結</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8-4clothing1m-%E8%B3%87%E6%96%99%E9%9B%86%E7%9A%84%E5%88%86%E9%A1%9E%E6%BA%96%E7%A2%BA%E7%8E%87-%E7%99%BE%E5%88%86%E6%AF%94"><span class="nav-number">5.4.</span> <span class="nav-text">表 4：Clothing1M
-資料集的分類準確率 (百分比)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC%E8%AA%AA%E6%98%8E-2"><span class="nav-number">5.4.1.</span> <span class="nav-text">表格說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%B7%9A%E6%96%B9%E6%B3%95%E6%AF%94%E8%BC%83-baselines"><span class="nav-number">5.4.2.</span> <span class="nav-text">基線方法比較 (Baselines)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90-6"><span class="nav-number">5.4.3.</span> <span class="nav-text">總結</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B6%B2%E8%B7%AF%E7%B5%90%E6%A7%8B%E8%88%87%E5%84%AA%E5%8C%96-network-structure-and-optimization"><span class="nav-number">5.5.</span> <span class="nav-text">網路結構與優化
-(Network Structure and Optimization)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B8%BD%E8%A6%BD"><span class="nav-number">5.5.1.</span> <span class="nav-text">總覽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E9%9A%8E%E6%AE%B5%E5%AD%B8%E7%BF%92%E8%BD%89%E6%8F%9B%E7%9F%A9%E9%99%A3-hatt"><span class="nav-number">5.5.2.</span> <span class="nav-text">第一階段：學習轉換矩陣 \(\hat{T}\)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E9%9A%8E%E6%AE%B5%E5%88%86%E9%A1%9E%E5%99%A8%E8%88%87%E4%BF%AE%E6%AD%A3%E8%AE%8A%E6%95%B8%E7%9A%84%E5%AD%B8%E7%BF%92"><span class="nav-number">5.5.3.</span> <span class="nav-text">第二階段：分類器與修正變數的學習</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mnist-%E5%92%8C-cifar"><span class="nav-number">5.5.3.1.</span> <span class="nav-text">1. MNIST 和 CIFAR</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#clothing1m"><span class="nav-number">5.5.3.2.</span> <span class="nav-text">2. Clothing1M</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90-7"><span class="nav-number">5.5.3.3.</span> <span class="nav-text">總結</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%A1%9E%E6%BA%96%E7%A2%BA%E7%8E%87%E6%AF%94%E8%BC%83-comparison-for-classification-accuracy"><span class="nav-number">5.6.</span> <span class="nav-text">分類準確率比較
-(Comparison for Classification Accuracy)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%8C%A8%E9%BB%9E%E6%A8%A3%E6%9C%AC%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7-the-importance-of-anchor-points"><span class="nav-number">5.6.1.</span> <span class="nav-text">錨點樣本的重要性
-(The Importance of Anchor Points)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%94%E8%BC%83%E7%B5%90%E6%9E%9C"><span class="nav-number">5.6.2.</span> <span class="nav-text">比較結果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%A1%E9%8C%A8%E9%BB%9E%E6%96%B9%E6%B3%95%E7%9A%84%E9%80%80%E5%8C%96-performance-degeneration-without-anchor-points"><span class="nav-number">5.7.</span> <span class="nav-text">無錨點方法的退化
-(Performance Degeneration Without Anchor Points)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E9%9B%9C%E8%A8%8A%E7%9A%84%E5%BD%B1%E9%9F%BF"><span class="nav-number">5.7.1.</span> <span class="nav-text">增加雜訊的影響</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%A8%E9%9A%AA%E4%B8%80%E8%87%B4%E6%80%A7%E4%BC%B0%E8%A8%88%E5%99%A8%E8%88%87%E5%88%86%E9%A1%9E%E5%99%A8%E4%B8%80%E8%87%B4%E6%80%A7%E4%BC%B0%E8%A8%88%E5%99%A8%E7%9A%84%E6%AF%94%E8%BC%83"><span class="nav-number">5.8.</span> <span class="nav-text">風險一致性估計器與分類器一致性估計器的比較</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90-8"><span class="nav-number">5.8.1.</span> <span class="nav-text">總結</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#t-%E4%BF%AE%E6%AD%A3%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7-the-importance-of-t-revision"><span class="nav-number">5.9.</span> <span class="nav-text">T
-修正的重要性 (The Importance of T-Revision)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9C%9F%E5%AF%A6%E4%B8%96%E7%95%8C%E8%B3%87%E6%96%99%E9%9B%86%E4%B8%8A%E7%9A%84%E6%AF%94%E8%BC%83-comparison-on-real-world-dataset"><span class="nav-number">5.10.</span> <span class="nav-text">真實世界資料集上的比較
-(Comparison on Real-World Dataset)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%94%E8%BC%83%E8%BD%89%E6%8F%9B%E7%9F%A9%E9%99%A3%E7%9A%84%E4%BC%B0%E8%A8%88%E6%95%88%E6%9E%9C-comparison-for-estimating-transition-matrices"><span class="nav-number">5.11.</span> <span class="nav-text">比較轉換矩陣的估計效果
-(Comparison for Estimating Transition Matrices)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E8%AB%96-conclusion"><span class="nav-number">6.</span> <span class="nav-text">結論 (Conclusion)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">7.</span> <span class="nav-text">Reference</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#review"><span class="nav-number">8.</span> <span class="nav-text">Review</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch-implementation"><span class="nav-number">9.</span> <span class="nav-text">Pytorch Implementation</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%99%E7%B1%A4%E9%9B%9C%E8%A8%8A%E5%AD%B8%E7%BF%92%E8%83%8C%E6%99%AF-Background"><span class="nav-number">1.1.</span> <span class="nav-text">標籤雜訊學習背景 (Background)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8F%BE%E6%9C%89%E6%8C%91%E6%88%B0%E8%88%87%E6%96%B9%E6%B3%95-Existing-Challenges-and-Methods"><span class="nav-number">1.2.</span> <span class="nav-text">現有挑戰與方法 (Existing Challenges and Methods)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%9C%E8%80%85%E6%8F%90%E5%87%BA%E7%9A%84%E6%96%B9%E6%B3%95-Proposed-Method"><span class="nav-number">1.3.</span> <span class="nav-text">作者提出的方法 (Proposed Method)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%A6%E9%A9%97%E7%B5%90%E6%9E%9C-Experimental-Results"><span class="nav-number">1.4.</span> <span class="nav-text">實驗結果 (Experimental Results)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%99%E7%B1%A4%E9%9B%9C%E8%A8%8A%E5%AD%B8%E7%BF%92%E8%83%8C%E6%99%AF-Background-on-Label-Noise-Learning"><span class="nav-number">2.1.</span> <span class="nav-text">標籤雜訊學習背景 (Background on Label-Noise Learning)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8F%BE%E6%9C%89%E6%8C%91%E6%88%B0%E8%88%87%E6%94%B9%E9%80%B2-Challenges-and-Improvements"><span class="nav-number">2.2.</span> <span class="nav-text">現有挑戰與改進 (Challenges and Improvements$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Label-Noise-Learning-with-Anchor-Points"><span class="nav-number">3.</span> <span class="nav-text">Label-Noise Learning with Anchor Points</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A0%90%E5%82%99%E7%9F%A5%E8%AD%98-Preliminaries"><span class="nav-number">3.1.</span> <span class="nav-text">預備知識 (Preliminaries)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%89%E7%A7%BB%E7%9F%A9%E9%99%A3-Transition-Matrix"><span class="nav-number">3.2.</span> <span class="nav-text">轉移矩陣 (Transition Matrix)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E6%83%85%E6%B3%81"><span class="nav-number">3.2.1.</span> <span class="nav-text">一般情況</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E8%AD%98%E5%88%A5%E6%80%A7%E5%95%8F%E9%A1%8C"><span class="nav-number">3.2.2.</span> <span class="nav-text">非識別性問題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E7%9A%84%E7%A0%94%E7%A9%B6%E7%AF%84%E7%96%87"><span class="nav-number">3.2.3.</span> <span class="nav-text">本文的研究範疇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%96%BC%E9%A1%9E%E5%88%A5%E7%9A%84%E8%BD%89%E7%A7%BB%E7%9F%A9%E9%99%A3-class-dependent-transition-matrix-%EF%BC%8C%E5%8D%B3%EF%BC%9A"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">基於類別的轉移矩陣 (class-dependent transition matrix)，即：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BE%8B%E7%84%A1%E9%97%9C%E7%9A%84%E8%BD%89%E7%A7%BB%E7%9F%A9%E9%99%A3-instance-independent-transition-matrix-%EF%BC%8C"><span class="nav-number">3.2.3.2.</span> <span class="nav-text">實例無關的轉移矩陣 (instance-independent transition matrix)，</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90"><span class="nav-number">3.2.4.</span> <span class="nav-text">總結</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E8%87%B4%E6%80%A7%E6%BC%94%E7%AE%97%E6%B3%95"><span class="nav-number">3.3.</span> <span class="nav-text">一致性演算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B0%A1%E5%96%AE%E6%A6%82%E8%BF%B0%EF%BC%9A"><span class="nav-number">3.3.1.</span> <span class="nav-text">簡單概述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E8%87%B4%E6%80%A7%E8%A7%A3%E9%87%8B%EF%BC%9A"><span class="nav-number">3.3.2.</span> <span class="nav-text">一致性解釋：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%8C%A8%E9%BB%9E-Anchor-Points"><span class="nav-number">3.4.</span> <span class="nav-text">錨點 (Anchor Points)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E7%BE%A9"><span class="nav-number">3.4.1.</span> <span class="nav-text">定義</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%8C%A8%E9%BB%9E%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">3.4.2.</span> <span class="nav-text">錨點的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%BC%8F%E8%A7%A3%E9%87%8B"><span class="nav-number">3.4.3.</span> <span class="nav-text">公式解釋</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E9%8C%A8%E9%BB%9E%E8%A8%88%E7%AE%97%E8%BD%89%E6%8F%9B%E7%9F%A9%E9%99%A3"><span class="nav-number">3.4.4.</span> <span class="nav-text">使用錨點計算轉換矩陣</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%8C%A8%E9%BB%9E%E5%81%87%E8%A8%AD%E7%9A%84%E6%8C%91%E6%88%B0"><span class="nav-number">3.4.5.</span> <span class="nav-text">錨點假設的挑戰</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90-1"><span class="nav-number">3.4.5.1.</span> <span class="nav-text">總結</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%8C%A8%E9%BB%9E%E5%81%87%E8%A8%AD%E7%9A%84%E6%93%B4%E5%B1%95"><span class="nav-number">3.4.6.</span> <span class="nav-text">錨點假設的擴展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%8F%AF%E7%B4%84%E6%80%A7%E5%81%87%E8%A8%AD"><span class="nav-number">3.4.7.</span> <span class="nav-text">不可約性假設</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%8C%A8%E9%BB%9E%E5%AE%9A%E7%BE%A9"><span class="nav-number">3.4.8.</span> <span class="nav-text">錨點定義</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%8C%A8%E9%BB%9E%E7%9A%84%E6%93%B4%E5%B1%95%E5%AE%9A%E7%BE%A9"><span class="nav-number">3.4.9.</span> <span class="nav-text">錨點的擴展定義</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90-2"><span class="nav-number">3.4.9.1.</span> <span class="nav-text">總結</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E6%AF%94%E4%BE%8B%E4%BC%B0%E8%A8%88-Mixture-Proportion-Estimation"><span class="nav-number">3.5.</span> <span class="nav-text">混合比例估計 (Mixture Proportion Estimation)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.5.1.</span> <span class="nav-text">混合模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E6%AF%94%E4%BE%8B%E4%BC%B0%E8%A8%88%E7%9A%84%E5%95%8F%E9%A1%8C"><span class="nav-number">3.5.2.</span> <span class="nav-text">混合比例估計的問題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">3.5.3.</span> <span class="nav-text">常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%9F%E6%9C%9B%E6%9C%80%E5%A4%A7%E5%8C%96%EF%BC%88EM%EF%BC%89%E6%BC%94%E7%AE%97%E6%B3%95"><span class="nav-number">3.5.3.1.</span> <span class="nav-text">期望最大化（EM）演算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B7%E9%AB%94%E7%9A%84%E6%AD%A5%E9%A9%9F%EF%BC%9A"><span class="nav-number">3.5.3.2.</span> <span class="nav-text">具體的步驟：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%89%E7%A7%BB%E7%9F%A9%E9%99%A3%E5%AD%B8%E7%BF%92%E8%88%87%E6%B7%B7%E5%90%88%E6%AF%94%E4%BE%8B%E4%BC%B0%E8%A8%88%E7%9A%84%E9%97%9C%E8%81%AF"><span class="nav-number">3.6.</span> <span class="nav-text">轉移矩陣學習與混合比例估計的關聯</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Label-Noise-Learning-without-Anchor-Points"><span class="nav-number">4.</span> <span class="nav-text">Label-Noise Learning without Anchor Points</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%96-1%EF%BC%9A%E8%AA%AA%E6%98%8E%E6%80%A7%E5%AF%A6%E9%A9%97%E7%B5%90%E6%9E%9C%EF%BC%88%E4%BB%A55%E9%A1%9E%E5%88%86%E9%A1%9E%E5%95%8F%E9%A1%8C%E7%82%BA%E4%BE%8B%EF%BC%89"><span class="nav-number">4.1.</span> <span class="nav-text">圖 1：說明性實驗結果（以5類分類問題為例）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%B8%E7%BF%92%E8%BD%89%E7%A7%BB%E7%9F%A9%E9%99%A3%E7%9A%84%E6%8C%91%E6%88%B0"><span class="nav-number">4.1.1.</span> <span class="nav-text">學習轉移矩陣的挑戰</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%A8%E9%9A%AA%E4%B8%80%E8%87%B4%E4%BC%B0%E8%A8%88%E5%99%A8-Risk-consistent-Estimator"><span class="nav-number">4.1.2.</span> <span class="nav-text">風險一致估計器 (Risk-consistent Estimator)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%8B%E7%B4%B9"><span class="nav-number">4.1.2.1.</span> <span class="nav-text">介紹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%82%B3%E7%B5%B1%E6%96%B9%E6%B3%95%E7%9A%84%E5%95%8F%E9%A1%8C%EF%BC%9A%E4%BE%9D%E8%B3%B4%E8%BD%89%E7%A7%BB%E7%9F%A9%E9%99%A3%E7%9A%84%E5%8F%8D%E7%9F%A9%E9%99%A3-30"><span class="nav-number">4.1.2.2.</span> <span class="nav-text">傳統方法的問題：依賴轉移矩陣的反矩陣[30]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%81%BF%E5%85%8D%E5%8F%8D%E7%9F%A9%E9%99%A3%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">4.1.2.3.</span> <span class="nav-text">避免反矩陣的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E4%BD%B3%E5%8C%96%E6%90%8D%E5%A4%B1%E5%87%BD%E6%95%B8%E4%BE%86%E4%BC%B0%E8%A8%88-P-Y-X-x"><span class="nav-number">4.1.2.4.</span> <span class="nav-text">最佳化損失函數來估計$P(Y | X &#x3D; x)$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E6%80%A7%E5%8A%A0%E6%AC%8A%E6%8A%80%E8%A1%93-Importance-Reweighting"><span class="nav-number">4.1.2.5.</span> <span class="nav-text">重要性加權技術 (Importance Reweighting)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E7%8F%BE%E8%88%87-T-%E4%BF%AE%E6%AD%A3%E6%96%B9%E6%B3%95"><span class="nav-number">4.1.2.6.</span> <span class="nav-text">實現與 T-修正方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BB%8B%E7%B4%B9"><span class="nav-number">4.1.2.6.1.</span> <span class="nav-text">方法介紹</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E8%AA%AA%E6%98%8E"><span class="nav-number">4.1.2.6.2.</span> <span class="nav-text">特殊說明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC-T-%E4%BF%AE%E6%AD%A3%E6%96%B9%E6%B3%95%E6%9C%89%E6%95%88%EF%BC%9F"><span class="nav-number">4.1.2.6.3.</span> <span class="nav-text">為什麼 T-修正方法有效？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E5%84%AA%E5%8B%A2"><span class="nav-number">4.1.2.6.4.</span> <span class="nav-text">方法的優勢</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%9B%E5%8C%96%E8%AA%A4%E5%B7%AE-Generalization-Error"><span class="nav-number">4.1.3.</span> <span class="nav-text">泛化誤差 (Generalization Error)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">4.1.3.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%9B%E5%8C%96%E7%95%8C%E9%99%90%E6%8E%A8%E5%B0%8E"><span class="nav-number">4.1.3.2.</span> <span class="nav-text">泛化界限推導</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9A%E7%90%86-1"><span class="nav-number">4.1.3.2.1.</span> <span class="nav-text">定理 1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%84%AA%E5%8B%A2"><span class="nav-number">4.1.3.2.2.</span> <span class="nav-text">方法優勢</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AF%A6%E9%A9%97%E7%B5%90%E6%9E%9C"><span class="nav-number">4.1.3.2.3.</span> <span class="nav-text">實驗結果</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90-3"><span class="nav-number">4.1.3.2.4.</span> <span class="nav-text">總結</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%A6%E9%A9%97%E7%B5%90%E6%9E%9C%E8%88%87%E8%B3%87%E6%96%99%E9%9B%86%E8%AA%AA%E6%98%8E"><span class="nav-number">5.</span> <span class="nav-text">實驗結果與資料集說明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8-1%EF%BC%9A%E5%88%86%E9%A1%9E%E6%BA%96%E7%A2%BA%E7%8E%87-%E7%99%BE%E5%88%86%E6%AF%94-%E5%8F%8A%E6%A8%99%E6%BA%96%E5%B7%AE"><span class="nav-number">5.1.</span> <span class="nav-text">表 1：分類準確率 (百分比) 及標準差</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC%E8%AA%AA%E6%98%8E"><span class="nav-number">5.1.1.</span> <span class="nav-text">表格說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%9C%E8%A8%8A%E9%A1%9E%E5%9E%8B"><span class="nav-number">5.1.2.</span> <span class="nav-text">雜訊類型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%9C%E9%8D%B5%E7%B5%90%E6%9E%9C"><span class="nav-number">5.1.3.</span> <span class="nav-text">關鍵結果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MNIST"><span class="nav-number">5.1.3.1.</span> <span class="nav-text">MNIST</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CIFAR-10"><span class="nav-number">5.1.3.2.</span> <span class="nav-text">CIFAR-10</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CIFAR-100"><span class="nav-number">5.1.3.3.</span> <span class="nav-text">CIFAR-100</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90-4"><span class="nav-number">5.1.3.4.</span> <span class="nav-text">總結</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8-2%EF%BC%9A%E5%88%86%E9%A1%9E%E6%BA%96%E7%A2%BA%E7%8E%87"><span class="nav-number">5.2.</span> <span class="nav-text">表 2：分類準確率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E9%9B%86%E8%AA%AA%E6%98%8E"><span class="nav-number">5.2.1.</span> <span class="nav-text">資料集說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%9C%E8%A8%8A%E8%A8%AD%E7%BD%AE"><span class="nav-number">5.2.2.</span> <span class="nav-text">雜訊設置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B5%90%E8%AB%96"><span class="nav-number">5.2.3.</span> <span class="nav-text">結論</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8-3%EF%BC%9AMNIST-%E8%B3%87%E6%96%99%E9%9B%86%E7%9A%84%E5%88%86%E9%A1%9E%E6%BA%96%E7%A2%BA%E7%8E%87-%E7%99%BE%E5%88%86%E6%AF%94"><span class="nav-number">5.3.</span> <span class="nav-text">表 3：MNIST 資料集的分類準確率 (百分比)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC%E8%AA%AA%E6%98%8E-1"><span class="nav-number">5.3.1.</span> <span class="nav-text">表格說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%9C%E8%A8%8A%E6%83%85%E5%A2%83%E4%B8%8B%E7%9A%84%E5%88%86%E9%A1%9E%E7%B5%90%E6%9E%9C"><span class="nav-number">5.3.2.</span> <span class="nav-text">雜訊情境下的分類結果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Sym-60-%E9%9B%9C%E8%A8%8A"><span class="nav-number">5.3.2.1.</span> <span class="nav-text">Sym-60% 雜訊</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sym-70-%E9%9B%9C%E8%A8%8A"><span class="nav-number">5.3.2.2.</span> <span class="nav-text">Sym-70% 雜訊</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sym-80-%E9%9B%9C%E8%A8%8A"><span class="nav-number">5.3.2.3.</span> <span class="nav-text">Sym-80% 雜訊</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90-5"><span class="nav-number">5.3.2.4.</span> <span class="nav-text">總結</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8-4%EF%BC%9AClothing1M-%E8%B3%87%E6%96%99%E9%9B%86%E7%9A%84%E5%88%86%E9%A1%9E%E6%BA%96%E7%A2%BA%E7%8E%87-%E7%99%BE%E5%88%86%E6%AF%94"><span class="nav-number">5.4.</span> <span class="nav-text">表 4：Clothing1M 資料集的分類準確率 (百分比)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC%E8%AA%AA%E6%98%8E-2"><span class="nav-number">5.4.1.</span> <span class="nav-text">表格說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%B7%9A%E6%96%B9%E6%B3%95%E6%AF%94%E8%BC%83-Baselines"><span class="nav-number">5.4.2.</span> <span class="nav-text">基線方法比較 (Baselines)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90-6"><span class="nav-number">5.4.3.</span> <span class="nav-text">總結</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B6%B2%E8%B7%AF%E7%B5%90%E6%A7%8B%E8%88%87%E5%84%AA%E5%8C%96-Network-Structure-and-Optimization"><span class="nav-number">5.5.</span> <span class="nav-text">網路結構與優化 (Network Structure and Optimization)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B8%BD%E8%A6%BD"><span class="nav-number">5.5.1.</span> <span class="nav-text">總覽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E9%9A%8E%E6%AE%B5%EF%BC%9A%E5%AD%B8%E7%BF%92%E8%BD%89%E6%8F%9B%E7%9F%A9%E9%99%A3-hat-T"><span class="nav-number">5.5.2.</span> <span class="nav-text">第一階段：學習轉換矩陣 $\hat{T}$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E9%9A%8E%E6%AE%B5%EF%BC%9A%E5%88%86%E9%A1%9E%E5%99%A8%E8%88%87%E4%BF%AE%E6%AD%A3%E8%AE%8A%E6%95%B8%E7%9A%84%E5%AD%B8%E7%BF%92"><span class="nav-number">5.5.3.</span> <span class="nav-text">第二階段：分類器與修正變數的學習</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-MNIST-%E5%92%8C-CIFAR"><span class="nav-number">5.5.3.1.</span> <span class="nav-text">1. MNIST 和 CIFAR</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Clothing1M"><span class="nav-number">5.5.3.2.</span> <span class="nav-text">2. Clothing1M</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90-7"><span class="nav-number">5.5.3.3.</span> <span class="nav-text">總結</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%A1%9E%E6%BA%96%E7%A2%BA%E7%8E%87%E6%AF%94%E8%BC%83-Comparison-for-Classification-Accuracy"><span class="nav-number">5.6.</span> <span class="nav-text">分類準確率比較 (Comparison for Classification Accuracy)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%8C%A8%E9%BB%9E%E6%A8%A3%E6%9C%AC%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7-The-Importance-of-Anchor-Points"><span class="nav-number">5.6.1.</span> <span class="nav-text">錨點樣本的重要性 (The Importance of Anchor Points)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%94%E8%BC%83%E7%B5%90%E6%9E%9C"><span class="nav-number">5.6.2.</span> <span class="nav-text">比較結果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%A1%E9%8C%A8%E9%BB%9E%E6%96%B9%E6%B3%95%E7%9A%84%E9%80%80%E5%8C%96-Performance-Degeneration-Without-Anchor-Points"><span class="nav-number">5.7.</span> <span class="nav-text">無錨點方法的退化 (Performance Degeneration Without Anchor Points)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E9%9B%9C%E8%A8%8A%E7%9A%84%E5%BD%B1%E9%9F%BF"><span class="nav-number">5.7.1.</span> <span class="nav-text">增加雜訊的影響</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%A8%E9%9A%AA%E4%B8%80%E8%87%B4%E6%80%A7%E4%BC%B0%E8%A8%88%E5%99%A8%E8%88%87%E5%88%86%E9%A1%9E%E5%99%A8%E4%B8%80%E8%87%B4%E6%80%A7%E4%BC%B0%E8%A8%88%E5%99%A8%E7%9A%84%E6%AF%94%E8%BC%83"><span class="nav-number">5.8.</span> <span class="nav-text">風險一致性估計器與分類器一致性估計器的比較</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90-8"><span class="nav-number">5.8.1.</span> <span class="nav-text">總結</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T-%E4%BF%AE%E6%AD%A3%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7-The-Importance-of-T-Revision"><span class="nav-number">5.9.</span> <span class="nav-text">T 修正的重要性 (The Importance of T-Revision)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9C%9F%E5%AF%A6%E4%B8%96%E7%95%8C%E8%B3%87%E6%96%99%E9%9B%86%E4%B8%8A%E7%9A%84%E6%AF%94%E8%BC%83-Comparison-on-Real-World-Dataset"><span class="nav-number">5.10.</span> <span class="nav-text">真實世界資料集上的比較 (Comparison on Real-World Dataset)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%94%E8%BC%83%E8%BD%89%E6%8F%9B%E7%9F%A9%E9%99%A3%E7%9A%84%E4%BC%B0%E8%A8%88%E6%95%88%E6%9E%9C-Comparison-for-Estimating-Transition-Matrices"><span class="nav-number">5.11.</span> <span class="nav-text">比較轉換矩陣的估計效果 (Comparison for Estimating Transition Matrices)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E8%AB%96-Conclusion"><span class="nav-number">6.</span> <span class="nav-text">結論 (Conclusion)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">7.</span> <span class="nav-text">Reference</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review"><span class="nav-number">8.</span> <span class="nav-text">Review</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pytorch-Implementation"><span class="nav-number">9.</span> <span class="nav-text">Pytorch Implementation</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">利醬</p>
   <div class="site-description" itemprop="description">部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。</div>
 </div>
-<div class="site-state-wrap site-overview-item animated">
+<div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
@@ -171,23 +137,12 @@ Error)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class
       </div>
   </nav>
 </div>
-  <div class="links-of-author site-overview-item animated">
-      <span class="links-of-author-item">
-        <a href="https://github.com/leonIceHot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leonIceHot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:hj098128@outlook.com" title="E-Mail → mailto:hj098128@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.cake.me/s--qj9aPrlEs32gLEtK1_lI_g--/hj098128" title="Cake → https:&#x2F;&#x2F;www.cake.me&#x2F;s--qj9aPrlEs32gLEtK1_lI_g--&#x2F;hj098128" rel="noopener" target="_blank">Cake</a>
-      </span>
-  </div>
-
-
 
         </div>
       </div>
     </div>
+
+    
   </aside>
 
 
@@ -234,7 +189,7 @@ Error)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2024-12-11 19:26:57 / 修改時間：22:06:28" itemprop="dateCreated datePublished" datetime="2024-12-11T19:26:57+08:00">2024-12-11</time>
+      <time title="創建時間：2024-12-11 19:26:57 / 修改時間：22:32:44" itemprop="dateCreated datePublished" datetime="2024-12-11T19:26:57+08:00">2024-12-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -253,14 +208,14 @@ Error)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>19k</span>
+      <span>17k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>35 分鐘</span>
+      <span>32 分鐘</span>
     </span>
 </div>
 
@@ -270,1269 +225,992 @@ Error)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class
     
     
     
-    <div class="post-body" itemprop="articleBody">
-        <h1 id="abstract">Abstract</h1>
-<h2 id="標籤雜訊學習背景-background"><strong>標籤雜訊學習背景</strong>
-(Background)</h2>
-<ul>
-<li>標籤雜訊學習中的核心是 <strong>雜訊轉換矩陣</strong> (noise
-transition matrix)，描述純淨標籤翻轉為雜訊標籤的機率。</li>
-<li><strong>統計一致性分類器</strong> (Statistically consistent
-classifiers$的建立依賴於轉換矩陣的準確學習。</li>
+    <div class="post-body" itemprop="articleBody"><h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><h2 id="標籤雜訊學習背景-Background"><a href="#標籤雜訊學習背景-Background" class="headerlink" title="標籤雜訊學習背景 (Background)"></a><strong>標籤雜訊學習背景</strong> (Background)</h2><ul>
+<li>標籤雜訊學習中的核心是 <strong>雜訊轉換矩陣</strong> (noise transition matrix)，描述純淨標籤翻轉為雜訊標籤的機率。</li>
+<li><strong>統計一致性分類器</strong> (Statistically consistent classifiers$的建立依賴於轉換矩陣的準確學習。</li>
 </ul>
-<h2 id="現有挑戰與方法-existing-challenges-and-methods"><strong>現有挑戰與方法</strong>
-(Existing Challenges and Methods)</h2>
-<ul>
-<li><strong>利用錨點樣本</strong> (Anchor Points)：
-<ul>
+<h2 id="現有挑戰與方法-Existing-Challenges-and-Methods"><a href="#現有挑戰與方法-Existing-Challenges-and-Methods" class="headerlink" title="現有挑戰與方法 (Existing Challenges and Methods)"></a><strong>現有挑戰與方法</strong> (Existing Challenges and Methods)</h2><ul>
+<li><strong>利用錨點樣本</strong> (Anchor Points)：<ul>
 <li>現有理論表明，轉換矩陣可以通過錨點樣本（例如，幾乎確定屬於某類的資料點）來學習。</li>
-<li><strong>挑戰</strong>：
-<ul>
+<li><strong>挑戰</strong>：<ul>
 <li>如果資料集中不存在錨點樣本，轉換矩陣將學習不佳，進而導致一致性分類器性能顯著下降。</li>
-</ul></li>
-</ul></li>
 </ul>
-<h2 id="作者提出的方法-proposed-method"><strong>作者提出的方法</strong>
-(Proposed Method)</h2>
-<ul>
-<li><strong><span class="math inline">\(T\)</span>-修正方法 (T-Revision
-Method)</strong>：
-<ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="作者提出的方法-Proposed-Method"><a href="#作者提出的方法-Proposed-Method" class="headerlink" title="作者提出的方法 (Proposed Method)"></a><strong>作者提出的方法</strong> (Proposed Method)</h2><ul>
+<li>**$T$-修正方法 (T-Revision Method)**：<ul>
 <li>在不使用錨點樣本的情況下，有效學習轉換矩陣，從而提升分類器性能。</li>
-<li><strong>方法步驟</strong>：
-<ol type="1">
-<li><strong>初始矩陣估計</strong>：
-<ul>
+<li><strong>方法步驟</strong>：<ol>
+<li><strong>初始矩陣估計</strong>：<ul>
 <li>通過利用與錨點相似的資料點（具有高雜訊後驗機率的資料），初始化轉換矩陣。</li>
-</ul></li>
-<li><strong>加入鬆弛變數</strong>：
-<ul>
-<li>修改初始化的矩陣，加入鬆弛變數 (slack
-variable)，與分類器一起在帶噪資料上進行聯合學習與驗證。</li>
-</ul></li>
-</ol></li>
-</ul></li>
 </ul>
-<h2 id="實驗結果-experimental-results"><strong>實驗結果</strong>
-(Experimental Results)</h2>
-<ul>
-<li><strong>資料集</strong>：
-<ul>
+</li>
+<li><strong>加入鬆弛變數</strong>：<ul>
+<li>修改初始化的矩陣，加入鬆弛變數 (slack variable)，與分類器一起在帶噪資料上進行聯合學習與驗證。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="實驗結果-Experimental-Results"><a href="#實驗結果-Experimental-Results" class="headerlink" title="實驗結果 (Experimental Results)"></a><strong>實驗結果</strong> (Experimental Results)</h2><ul>
+<li><strong>資料集</strong>：<ul>
 <li>在基準模擬資料集和真實世界標籤雜訊資料集上進行實驗。</li>
-</ul></li>
-<li><strong>結果分析</strong>：
-<ul>
+</ul>
+</li>
+<li><strong>結果分析</strong>：<ul>
 <li>即使未使用錨點樣本，所提出的方法顯示出卓越性能。</li>
-</ul></li>
-<li><strong>性能優勢</strong>：
-<ul>
+</ul>
+</li>
+<li><strong>性能優勢</strong>：<ul>
 <li>結果顯示，該方法的表現優於現有的最先進標籤雜訊學習方法</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <span id="more"></span>
-<h1 id="introduction">Introduction</h1>
-<h2 id="標籤雜訊學習背景-background-on-label-noise-learning"><strong>標籤雜訊學習背景</strong>
-(Background on Label-Noise Learning)</h2>
-<ul>
-<li><strong>重要性</strong>：
+
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="標籤雜訊學習背景-Background-on-Label-Noise-Learning"><a href="#標籤雜訊學習背景-Background-on-Label-Noise-Learning" class="headerlink" title="標籤雜訊學習背景 (Background on Label-Noise Learning)"></a><strong>標籤雜訊學習背景</strong> (Background on Label-Noise Learning)</h2><ul>
+<li><p><strong>重要性</strong>：</p>
 <ul>
 <li>隨著資料集規模日益增大，準確標注大型資料集的成本高昂，這導致了帶有雜訊標籤的廉價資料集的興起。</li>
-</ul></li>
-<li><strong>方法分類</strong>：
-<ol type="1">
-<li><strong>統計上不一致/一致的分類器</strong>：
+</ul>
+</li>
+<li><p><strong>方法分類</strong>：</p>
+<ol>
+<li><p><strong>統計上不一致&#x2F;一致的分類器</strong>：</p>
 <ul>
-<li>利用啟發式方法減少雜訊標籤的影響，例如：
-<ul>
+<li>利用啟發式方法減少雜訊標籤的影響，例如：<ul>
 <li>選擇可靠樣本[14,24,45]。</li>
 <li>重新加權正確樣本[15,33]。</li>
 <li>正確標籤[17,23,32,37]</li>
 <li>使用輔助信息[21,39]。</li>
 <li>添加正則化項[12,13,21,39,43]。</li>
-</ul></li>
+</ul>
+</li>
 <li>這些方法效果良好，但缺乏統計一致性。</li>
-</ul></li>
-<li><strong>標籤雜訊學習中的一致性演算法分類</strong> <strong>1.
-風險一致性與分類器一致性演算法</strong>
+</ul>
+</li>
+<li><p><strong>標籤雜訊學習中的一致性演算法分類</strong><br> <strong>1. 風險一致性與分類器一致性演算法</strong></p>
 <ul>
-<li><strong>風險一致性方法</strong>：
-<ul>
-<li>擁有統計上一致的估計器，目的是最小化基於純淨數據的風險（clean
-risk）。</li>
-</ul></li>
-<li><strong>分類器一致性方法</strong>：
-<ul>
+<li><strong>風險一致性方法</strong>：<ul>
+<li>擁有統計上一致的估計器，目的是最小化基於純淨數據的風險（clean risk）。</li>
+</ul>
+</li>
+<li><strong>分類器一致性方法</strong>：<ul>
 <li>保證從雜訊數據中學習到的分類器與理想分類器（基於純淨數據的分類器）一致。</li>
-</ul></li>
 </ul>
-<strong>2. 雜訊轉換矩陣的作用</strong>
+</li>
+</ul>
+<p> <strong>2. 雜訊轉換矩陣的作用</strong></p>
 <ul>
-<li>使用 <strong>雜訊轉換矩陣 (noise transition matrix)</strong>
-構建一致性演算法：
-<ul>
+<li>使用 <strong>雜訊轉換矩陣 (noise transition matrix)</strong> 構建一致性演算法：<ul>
 <li>表示純淨標籤翻轉為雜訊標籤的機率。</li>
-<li>設 $ Y $ 為純淨標籤，$ {Y} $ 為雜訊標籤，$ X $ 為特徵：
-<ul>
-<li><strong>雜訊後驗機率 (noisy class posterior probability)</strong>
-<span class="math inline">\(P(\bar{Y}|X=x)\)</span> 可以用來學習轉換矩陣
-$ T(X=x$$。</li>
-<li><strong>純淨後驗機率 (clean class posterior probability)</strong>
-<span class="math inline">\(P(Y|X=x)\)</span> 可以由以下公式推導： <span class="math display">\[
-P(Y|X=x$= (T(X=x))^{-1} P(\bar{Y}|X=x)
-\]</span></li>
-</ul></li>
-</ul></li>
+<li>設 $Y$ 為純淨標籤，$\bar{Y}$ 為雜訊標籤，$X$ 為特徵：<ul>
+<li><strong>雜訊後驗機率 (noisy class posterior probability)</strong> $P(\bar{Y}|X&#x3D;x)$  可以用來學習轉換矩陣 $T(X&#x3D;x。</li>
+<li><strong>純淨後驗機率 (clean class posterior probability)</strong> $P(Y|X&#x3D;x)$ 可以由以下公式推導：<br>$$<br>P(Y|X&#x3D;x&#x3D;(T(X&#x3D;x))^{-1} P(\bar{Y}|X&#x3D;x)<br>$$</li>
 </ul>
-<strong>3. 常用方法與挑戰</strong>
+</li>
+</ul>
+</li>
+</ul>
+<p> <strong>3. 常用方法與挑戰</strong></p>
 <ul>
-<li><strong>損失函數調整</strong>：
-<ul>
+<li><strong>損失函數調整</strong>：<ul>
 <li>修改損失函數以保證風險一致性。</li>
 <li>相關研究包括 [17, 22, 26, 29, 35, 49]。</li>
-</ul></li>
-<li><strong>雜訊適應層 (Noise Adaptation Layer)</strong>：
-<ul>
-<li>在深度神經網絡中添加雜訊適應層來設計分類器一致性演算法 [9, 30, 38,
-47].。</li>
+</ul>
+</li>
+<li>**雜訊適應層 (Noise Adaptation Layer)**：<ul>
+<li>在深度神經網絡中添加雜訊適應層來設計分類器一致性演算法 [9, 30, 38, 47].。</li>
 <li>此類演算法理論基礎強，但高度依賴於成功學習轉換矩陣。</li>
-</ul></li>
-</ul></li>
-</ol></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
 </ul>
 <hr>
-<h2 id="現有挑戰與改進-challenges-and-improvements"><strong>現有挑戰與改進</strong>
-(Challenges and Improvements$</h2>
+<h2 id="現有挑戰與改進-Challenges-and-Improvements"><a href="#現有挑戰與改進-Challenges-and-Improvements" class="headerlink" title="現有挑戰與改進 (Challenges and Improvements$"></a><strong>現有挑戰與改進</strong> (Challenges and Improvements$</h2><ul>
+<li><p><strong>轉換矩陣學習的挑戰與方法</strong></p>
+</li>
+<li><p><strong>1. 基於風險一致性估計器的學習方法</strong></p>
 <ul>
-<li><strong>轉換矩陣學習的挑戰與方法</strong></li>
-<li><strong>1. 基於風險一致性估計器的學習方法</strong>
-<ul>
-<li><strong>交叉驗證方法 (Cross-Validation Method)</strong>：
+<li><p>**交叉驗證方法 (Cross-Validation Method)**：</p>
 <ul>
 <li>僅使用雜訊數據進行二分類問題的轉換矩陣學習。</li>
-<li><strong>限制</strong>：
-<ul>
+<li><strong>限制</strong>：<ul>
 <li>不適用於多分類問題，因為計算複雜度隨分類數量指數增長。</li>
-</ul></li>
-</ul></li>
-<li><strong>當前風險一致性估計器的問題</strong>：
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>當前風險一致性估計器的問題</strong>：</p>
 <ul>
 <li>涉及轉換矩陣的逆運算，導致計算低效。</li>
 <li>當轉換矩陣不可逆時，可能導致性能退化。</li>
-</ul></li>
 </ul>
-<hr></li>
-<li><strong>2. 獨立於風險一致性估計器的學習方法</strong>
+</li>
+</ul>
+<hr>
+</li>
+<li><p><strong>2. 獨立於風險一致性估計器的學習方法</strong></p>
 <ul>
-<li><strong>混合比例估計 (Mixture Proportion Estimation)</strong>：
+<li><p>**混合比例估計 (Mixture Proportion Estimation)**：</p>
 <ul>
 <li>通過混合比例參數高效學習轉換矩陣。</li>
 <li>相關研究包括 [22, 31, 35, 36]。</li>
-</ul></li>
-<li><strong>假設與挑戰</strong>：
+</ul>
+</li>
+<li><p><strong>假設與挑戰</strong>：</p>
 <ul>
-<li>這些方法需要錨點樣本（anchor
-points），即確定屬於某特定類別的樣本。</li>
-<li><strong>挑戰</strong>：
-<ul>
+<li>這些方法需要錨點樣本（anchor points），即確定屬於某特定類別的樣本。</li>
+<li><strong>挑戰</strong>：<ul>
 <li>如果缺乏錨點樣本，轉換矩陣的學習可能效果不佳。</li>
 <li>這會導致現有一致性演算法的準確性下降。</li>
-</ul></li>
-</ul></li>
-<li><strong>總結</strong>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>總結</strong></p>
 <ul>
 <li>現有方法在處理多分類問題或缺乏錨點樣本的情況下，仍存在局限性。</li>
 <li>提升轉換矩陣學習效率和穩健性的技術，仍是關鍵挑戰。</li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <hr>
 <ul>
-<li><strong>3. 本文提出的改進 T-Revision 方法</strong>：
+<li><p><strong>3. 本文提出的改進 T-Revision 方法</strong>：</p>
 <ul>
-<li><strong>背景</strong>
+<li><p><strong>背景</strong></p>
 <ul>
-<li>當錨點假設（anchor-point
-assumptions）不成立時，現有方法的轉換矩陣學習可能效果不佳[41,46]。</li>
-<li>為了解決此問題，本文提出了一種 <strong>T-修正方法（T-Revision
-Method）</strong>，用於高效學習轉換矩陣，進而提升分類器性能。</li>
-</ul></li>
-<li><strong>方法描述</strong>
-<ol type="1">
-<li><strong>初始化轉換矩陣</strong>：
+<li>當錨點假設（anchor-point assumptions）不成立時，現有方法的轉換矩陣學習可能效果不佳[41,46]。</li>
+<li>為了解決此問題，本文提出了一種 <strong>T-修正方法（T-Revision Method）</strong>，用於高效學習轉換矩陣，進而提升分類器性能。</li>
+</ul>
+</li>
+<li><p><strong>方法描述</strong></p>
+<ol>
+<li><p><strong>初始化轉換矩陣</strong>：</p>
 <ul>
 <li>通過利用與錨點相似的樣本初始化轉換矩陣。</li>
-<li>這些樣本具有較高的 <strong>雜訊類別後驗機率（noisy class posterior
-probabilities）</strong>。</li>
-</ul></li>
-<li><strong>加入鬆弛變數</strong>：
+<li>這些樣本具有較高的 <strong>雜訊類別後驗機率（noisy class posterior probabilities）</strong>。</li>
+</ul>
+</li>
+<li><p><strong>加入鬆弛變數</strong>：</p>
 <ul>
 <li>修改初始化的轉換矩陣，添加鬆弛變數（slack variable）。</li>
 <li>鬆弛變數與分類器一同使用雜訊數據進行聯合學習與驗證。</li>
-</ul></li>
-<li><strong>理論收斂性</strong>：
+</ul>
+</li>
+<li><p><strong>理論收斂性</strong>：</p>
 <ul>
 <li>如果給定真實的轉換矩陣，該方法將在增加雜訊訓練樣本數量的情況下收斂至基於純淨數據的分類風險。</li>
-</ul></li>
-</ol></li>
-<li><strong>優勢</strong>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>優勢</strong>  </p>
 <ul>
 <li>本文提出的啟發式調整方法可以使轉換矩陣學習更加準確，進而使分類風險小化。</li>
-<li>實驗結果表明：
-<ul>
+<li>實驗結果表明：<ul>
 <li>T-修正方法學到的轉換矩陣更接近於真實值。</li>
 <li>該方法在分類性能上顯著優於現有最先進演算法。</li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <hr>
 <ul>
-<li><strong>鬆弛變數 (Slack Variable)</strong>
+<li><p><strong>鬆弛變數 (Slack Variable)</strong></p>
 <ul>
-<li><strong>概念</strong>
-<ul>
+<li><strong>概念</strong><ul>
 <li>鬆弛變數是一個附加變數，用於放寬原始問題中的約束條件，允許一定的偏差或誤差。</li>
-<li>數學表述： <span class="math display">\[
-  g(x$+ s = 0, \quad s \geq 0
-\]</span>
+<li>數學表述：<br>$$<br>  g(x$+ s &#x3D; 0, \quad s \geq 0<br>$$<ul>
+<li>$s$ 是鬆弛變數，表示允許的偏差。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>作用</strong></p>
+<ol>
+<li><p><strong>放寬約束條件</strong>：</p>
 <ul>
-<li><span class="math inline">\(s\)</span>
-是鬆弛變數，表示允許的偏差。</li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><strong>作用</strong>
-<ol type="1">
-<li><strong>放寬約束條件</strong>：
-<ul>
-<li>將嚴格約束 <span class="math inline">\(Ax \leq b\)</span> 轉化為
-<span class="math inline">\(Ax + s = b, \quad s \geq 0\)</span>。</li>
-</ul></li>
-<li><strong>處理雜訊或不確定性</strong>：
+<li>將嚴格約束 $Ax \leq b$ 轉化為 $Ax + s &#x3D; b, \quad s \geq 0$。</li>
+</ul>
+</li>
+<li><p><strong>處理雜訊或不確定性</strong>：</p>
 <ul>
 <li>容忍數據中的標籤或特徵偏差。</li>
-</ul></li>
-<li><strong>應用於轉換矩陣學習</strong>：
-<ul>
-<li>在標籤雜訊學習中，鬆弛變數 $ T $ 用於修正轉換矩陣 $ T^$：</li>
 </ul>
-<span class="math display">\[
-   T^\top + \Delta T
-\]</span></li>
-</ol></li>
+</li>
+<li><p><strong>應用於轉換矩陣學習</strong>：</p>
+<ul>
+<li>在標籤雜訊學習中，鬆弛變數 $ \Delta T $ 用於修正轉換矩陣 $ T^\top $：</li>
+</ul>
+<p> $$<br>   T^\top + \Delta T<br> $$</p>
+</li>
+</ol>
+</li>
 </ul>
 <hr>
 <ul>
-<li><strong>方法優勢與實驗驗證</strong> (Advantages and Experimental
-Validation)
-<ul>
-<li><strong>方法優勢</strong>：
+<li><strong>方法優勢與實驗驗證</strong> (Advantages and Experimental Validation)<ul>
+<li><p><strong>方法優勢</strong>：</p>
 <ul>
 <li>改進轉換矩陣使其更接近於真實標註矩陣。</li>
 <li>減少對錨點假設的依賴，適用於更廣泛的應用情境。</li>
 <li>在純淨資料風險下收斂到理想分類器。</li>
-</ul></li>
-<li><strong>實驗結果</strong>：
-<ul>
-<li>$ T $-修正方法能顯著提升分類性能，尤其在應用於標籤雜訊資料時。<br>
+</ul>
 </li>
+<li><p><strong>實驗結果</strong>：</p>
+<ul>
+<li>$ T $-修正方法能顯著提升分類性能，尤其在應用於標籤雜訊資料時。      </li>
 <li>實驗表明，學到的轉換矩陣更接近於真實轉換矩陣。</li>
-</ul></li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <hr>
-<h1 id="label-noise-learning-with-anchor-points">Label-Noise Learning
-with Anchor Points</h1>
-<h2 id="預備知識-preliminaries"><strong>預備知識
-(Preliminaries)</strong></h2>
+<h1 id="Label-Noise-Learning-with-Anchor-Points"><a href="#Label-Noise-Learning-with-Anchor-Points" class="headerlink" title="Label-Noise Learning with Anchor Points"></a>Label-Noise Learning with Anchor Points</h1><h2 id="預備知識-Preliminaries"><a href="#預備知識-Preliminaries" class="headerlink" title="預備知識 (Preliminaries)"></a><strong>預備知識 (Preliminaries)</strong></h2><ul>
+<li><p><strong>1. 問題定義</strong></p>
 <ul>
-<li><strong>1. 問題定義</strong>
+<li>定義隨機變數對 $(X, Y)$，其分佈為 $D$，並滿足：<br>$$<br>(X, Y$\in \mathcal{X} \times {1, 2, \ldots, C}<br>$$<ul>
+<li>$\mathcal{X}$ 是特徵空間，$\mathcal{X} \subseteq \mathbb{R}^d$。</li>
+<li>$C$ 是標籤類別的數量。</li>
+</ul>
+</li>
+<li>目標：對於任意樣本 $x \in \mathcal{X}$，預測其標籤 $y$。</li>
+</ul>
+</li>
+<li><p><strong>2. 現實問題</strong></p>
 <ul>
-<li>定義隨機變數對 <span class="math inline">\((X, Y)\)</span>，其分佈為
-<span class="math inline">\(D\)</span>，並滿足： <span class="math display">\[
-(X, Y$\in \mathcal{X} \times \{1, 2, \ldots, C\}
-\]</span>
+<li>在許多現實中的分類問題中：<ul>
+<li>分佈 $D$ 下的訓練樣本 $(X, Y)$ 是不可得的。</li>
+<li>標籤 $Y$ 在觀測前會獨立翻轉，產生雜訊標籤 $\bar{Y}$。</li>
+</ul>
+</li>
+<li>因此，實際能獲得的是 <strong>帶有雜訊的訓練樣本</strong>：<br>$$<br>{(X_i, \bar{Y}<em>i)}</em>{i&#x3D;1}^n<br>$$<ul>
+<li>其中 $ \bar{Y}_i $ 是雜訊標籤。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>3. 雜訊分佈</strong></p>
 <ul>
-<li><span class="math inline">\(\mathcal{X}\)</span> 是特徵空間，<span class="math inline">\(\mathcal{X} \subseteq \mathbb{R}^d\)</span>。</li>
-<li><span class="math inline">\(C\)</span> 是標籤類別的數量。</li>
-</ul></li>
-<li>目標：對於任意樣本 <span class="math inline">\(x \in
-\mathcal{X}\)</span>，預測其標籤 <span class="math inline">\(y\)</span>。</li>
-</ul></li>
-<li><strong>2. 現實問題</strong>
-<ul>
-<li>在許多現實中的分類問題中：
-<ul>
-<li>分佈 <span class="math inline">\(D\)</span> 下的訓練樣本 <span class="math inline">\((X, Y)\)</span> 是不可得的。</li>
-<li>標籤 <span class="math inline">\(Y\)</span>
-在觀測前會獨立翻轉，產生雜訊標籤 <span class="math inline">\(\bar{Y}\)</span>。</li>
-</ul></li>
-<li>因此，實際能獲得的是 <strong>帶有雜訊的訓練樣本</strong>： <span class="math display">\[
-\{(X_i, \bar{Y}_i)\}_{i=1}^n
-\]</span>
-<ul>
-<li>其中 $ {Y}_i $ 是雜訊標籤。</li>
-</ul></li>
-</ul></li>
-<li><strong>3. 雜訊分佈</strong>
-<ul>
-<li>記 <span class="math inline">\(\bar{D}\)</span> 為雜訊隨機變數 <span class="math inline">\((X, \bar{Y})\)</span> 的分佈，滿足： <span class="math display">\[
-  (X, \bar{Y}$\in \mathcal{X} \times \{1, 2, \ldots, C\}
-  \]</span></li>
-</ul></li>
+<li>記 $\bar{D}$ 為雜訊隨機變數 $(X, \bar{Y})$ 的分佈，滿足：<br>  $$<br>  (X, \bar{Y}$\in \mathcal{X} \times {1, 2, \ldots, C}<br>  $$</li>
+</ul>
+</li>
 </ul>
 <p>這部分引出了在標籤雜訊環境下分類器學習的背景，為後續方法的提出奠定基礎。</p>
 <hr>
-<h2 id="轉移矩陣-transition-matrix"><strong>轉移矩陣 (Transition
-Matrix)</strong></h2>
-<p><span class="math display">\[
-T \in [0,1]^{C \times C}
-\]</span></p>
-<h3 id="一般情況">一般情況</h3>
-<p>轉移矩陣 <span class="math inline">\(T\)</span> 通常取決於實例
-(instances)，即： <span class="math display">\[
-T_{ij}(X = x$= P(\tilde{Y} = j \mid Y = i, X = x),
-\]</span></p>
-<p>表示當真實標籤為 <span class="math inline">\(Y = i\)</span>
-時，給定實例 <span class="math inline">\(X = x\)</span>，被標記為 <span class="math inline">\(\tilde{Y} = j\)</span> 的條件機率。</p>
-<h3 id="非識別性問題">非識別性問題</h3>
-<p>在只有雜訊樣本的情況下， 如果沒有額外假設，基於實例的轉移矩陣
-(instance-dependent transition matrix<span class="math inline">\(是**不可識別的**。例如：\)</span>$ P( = j X =
-x<span class="math inline">\(= \sum_{i=1}^C T_{ij}(X = x\)</span>P(Y = i
-X = x), <span class="math display">\[
-或
-\]</span> P( = j X = x<span class="math inline">\(= \sum_{i=1}^C
-T&#39;_{ij}(X = x\)</span>P’(Y = i X = x), $$ 這兩種情況都成立。</p>
-<p>這裡： 當 <span class="math inline">\(T&#39;_{ij}(X = x\)</span>= $
-時，兩者表達的是相同的轉移機制。</p>
-<h3 id="本文的研究範疇">本文的研究範疇</h3>
-<p>目前，大多數的方法專注於此種情況[13, 14, 26, 29, 30]</p>
-<h4 id="基於類別的轉移矩陣-class-dependent-transition-matrix即"><strong>基於類別的轉移矩陣</strong>
-(class-dependent transition matrix)，即：</h4>
-<p><span class="math display">\[
-  P(\tilde{Y} = j \mid Y = i, X = x$= P(\tilde{Y} = j \mid Y = i),
-  \]</span> 與實例無關。</p>
-<h4 id="實例無關的轉移矩陣-instance-independent-transition-matrix"><strong>實例無關的轉移矩陣</strong>
-(instance-independent transition matrix)，</h4>
-<p>它在輕微條件下是可識別的。</p>
-<h3 id="總結">總結</h3>
-<p>這段內容解釋了轉移矩陣如何描述雜訊標籤與真實標籤之間的關係，並區分了基於實例的與實例無關的轉移矩陣。由於基於實例的轉移矩陣在沒有額外假設時是不可識別的，研究更傾向於探索基於類別的、實例無關的轉移矩陣。</p>
+<h2 id="轉移矩陣-Transition-Matrix"><a href="#轉移矩陣-Transition-Matrix" class="headerlink" title="轉移矩陣 (Transition Matrix)"></a><strong>轉移矩陣 (Transition Matrix)</strong></h2><p>$$<br>T \in [0,1]^{C \times C}<br>$$</p>
+<h3 id="一般情況"><a href="#一般情況" class="headerlink" title="一般情況"></a>一般情況</h3><p>轉移矩陣 $T$ 通常取決於實例 (instances)，即：<br>$$<br>T_{ij}(X &#x3D; x$&#x3D; P(\tilde{Y} &#x3D; j \mid Y &#x3D; i, X &#x3D; x),<br>$$</p>
+<p>表示當真實標籤為 $Y &#x3D; i$ 時，給定實例 $X &#x3D; x$，被標記為 $\tilde{Y} &#x3D; j$ 的條件機率。</p>
+<h3 id="非識別性問題"><a href="#非識別性問題" class="headerlink" title="非識別性問題"></a>非識別性問題</h3><p>在只有雜訊樣本的情況下，<br>如果沒有額外假設，基於實例的轉移矩陣 (instance-dependent transition matrix$是不可識別的。<br>例如：<br>$$<br>P(\tilde{Y} &#x3D; j \mid X &#x3D; x$&#x3D; \sum_{i&#x3D;1}^C T_{ij}(X &#x3D; x$P(Y &#x3D; i \mid X &#x3D; x),<br>$$<br>或<br>$$<br>P(\tilde{Y} &#x3D; j \mid X &#x3D; x$&#x3D; \sum_{i&#x3D;1}^C T’_{ij}(X &#x3D; x$P’(Y &#x3D; i \mid X &#x3D; x),<br>$$<br>這兩種情況都成立。</p>
+<p>這裡：<br>當 $T’<em>{ij}(X &#x3D; x$&#x3D; \frac{T</em>{ij}(X &#x3D; x$P(Y &#x3D; i \mid X &#x3D; x)}{P’(\tilde{Y} &#x3D; i \mid X &#x3D; x)}$ 時，兩者表達的是相同的轉移機制。</p>
+<h3 id="本文的研究範疇"><a href="#本文的研究範疇" class="headerlink" title="本文的研究範疇"></a>本文的研究範疇</h3><p>目前，大多數的方法專注於此種情況[13, 14, 26, 29, 30]</p>
+<h4 id="基於類別的轉移矩陣-class-dependent-transition-matrix-，即："><a href="#基於類別的轉移矩陣-class-dependent-transition-matrix-，即：" class="headerlink" title="基於類別的轉移矩陣 (class-dependent transition matrix)，即："></a><strong>基於類別的轉移矩陣</strong> (class-dependent transition matrix)，即：</h4><p>  $$<br>  P(\tilde{Y} &#x3D; j \mid Y &#x3D; i, X &#x3D; x$&#x3D; P(\tilde{Y} &#x3D; j \mid Y &#x3D; i),<br>  $$<br>  與實例無關。</p>
+<h4 id="實例無關的轉移矩陣-instance-independent-transition-matrix-，"><a href="#實例無關的轉移矩陣-instance-independent-transition-matrix-，" class="headerlink" title="實例無關的轉移矩陣 (instance-independent transition matrix)，"></a><strong>實例無關的轉移矩陣</strong> (instance-independent transition matrix)，</h4><p>  它在輕微條件下是可識別的。</p>
+<h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><p>這段內容解釋了轉移矩陣如何描述雜訊標籤與真實標籤之間的關係，並區分了基於實例的與實例無關的轉移矩陣。由於基於實例的轉移矩陣在沒有額外假設時是不可識別的，研究更傾向於探索基於類別的、實例無關的轉移矩陣。</p>
 <hr>
-<h2 id="一致性演算法">一致性演算法</h2>
-<p>這段文字描述了一致性演算法的概念，並討論了轉移矩陣在這些演算法中的應用。</p>
-<h3 id="簡單概述">簡單概述：</h3>
-<ul>
-<li>轉移矩陣將雜訊資料和乾淨資料的類別後驗機率連接起來。這使得我們能夠構建一致性演算法（consistent
-algorithms）。</li>
-<li>該演算法的應用範疇包括：
-<ul>
-<li>修改損失函數：轉移矩陣可用於調整損失函數，構建風險一致性估計量（risk-consistent
-estimators）[26, 35, 30]。</li>
-<li>修正假設：它還被用來修正假設，以構建分類器一致性演算法（classifier-consistent
-algorithms）[9, 30, 47]。</li>
-</ul></li>
+<h2 id="一致性演算法"><a href="#一致性演算法" class="headerlink" title="一致性演算法"></a>一致性演算法</h2><p>這段文字描述了一致性演算法的概念，並討論了轉移矩陣在這些演算法中的應用。</p>
+<h3 id="簡單概述："><a href="#簡單概述：" class="headerlink" title="簡單概述："></a>簡單概述：</h3><ul>
+<li>轉移矩陣將雜訊資料和乾淨資料的類別後驗機率連接起來。這使得我們能夠構建一致性演算法（consistent algorithms）。</li>
+<li>該演算法的應用範疇包括：<ul>
+<li>修改損失函數：轉移矩陣可用於調整損失函數，構建風險一致性估計量（risk-consistent estimators）[26, 35, 30]。</li>
+<li>修正假設：它還被用來修正假設，以構建分類器一致性演算法（classifier-consistent algorithms）[9, 30, 47]。</li>
 </ul>
-<h3 id="一致性解釋">一致性解釋：</h3>
-<ul>
+</li>
+</ul>
+<h3 id="一致性解釋："><a href="#一致性解釋：" class="headerlink" title="一致性解釋："></a>一致性解釋：</h3><ul>
 <li>風險一致性估計量：當雜訊樣本數量增多時，通過修正的損失函數所計算的經驗風險將會收斂到由乾淨資料樣本和原始損失函數計算的期望風險。</li>
 <li>分類器一致性：如果演算法在增大雜訊樣本數量後，所學得的分類器最終會收斂到由乾淨資料學習到的最優分類器，那麼該演算法被稱為分類器一致性演算法。</li>
 </ul>
 <hr>
-<h2 id="錨點-anchor-points">錨點 (Anchor Points)</h2>
-<p>在學習過程中，為了構建一致性的演算法，<strong>準確學習轉移矩陣</strong>是關鍵。而為了學習這些轉移矩陣，提出了「錨點」(Anchor
-Points$的概念[22, 35]。</p>
-<h3 id="定義">定義</h3>
-<h3 id="錨點的作用"><strong>錨點的作用</strong></h3>
-<ul>
-<li>一致性演算法的成功依賴於準確學習的轉換矩陣 <span class="math inline">\(T\)</span>。</li>
-<li><strong>錨點的定義</strong>：
-<ul>
-<li>在純淨數據域中，如果一個樣本 <span class="math inline">\(x\)</span>
-滿足： <span class="math display">\[
-P(Y = i | X = x$= 1
-\]</span> 那麼該樣本 <span class="math inline">\(x\)</span> 是第 <span class="math inline">\(i\)</span> 類的錨點。</li>
-<li>對於 <span class="math inline">\(k \neq i\)</span>，有： <span class="math display">\[
-P(Y = k | X = x$= 0
-\]</span></li>
-</ul></li>
+<h2 id="錨點-Anchor-Points"><a href="#錨點-Anchor-Points" class="headerlink" title="錨點 (Anchor Points)"></a>錨點 (Anchor Points)</h2><p>在學習過程中，為了構建一致性的演算法，<strong>準確學習轉移矩陣</strong>是關鍵。而為了學習這些轉移矩陣，提出了「錨點」(Anchor Points$的概念[22, 35]。</p>
+<h3 id="定義"><a href="#定義" class="headerlink" title="定義"></a>定義</h3><h3 id="錨點的作用"><a href="#錨點的作用" class="headerlink" title="錨點的作用"></a><strong>錨點的作用</strong></h3><ul>
+<li>一致性演算法的成功依賴於準確學習的轉換矩陣 $T$。</li>
+<li><strong>錨點的定義</strong>：<ul>
+<li>在純淨數據域中，如果一個樣本 $x$ 滿足：<br>$$<br>P(Y &#x3D; i | X &#x3D; x$&#x3D; 1<br>$$<br>那麼該樣本 $x$ 是第 $i$ 類的錨點。</li>
+<li>對於 $k \neq i$，有：<br>$$<br>P(Y &#x3D; k | X &#x3D; x$&#x3D; 0<br>$$</li>
 </ul>
-<h3 id="公式解釋"><strong>公式解釋</strong></h3>
-<ul>
-<li><p>給定錨點<span class="math inline">\(x\)</span>，若<span class="math inline">\(P(Y = i \mid X = x\)</span>= 1$，則我們有：</p>
-<p><span class="math display">\[
-P(\tilde{Y} = j \mid X = x$= \sum_{k=1}^C T_{kj} P(Y = k \mid X = x$=
-T_{ij}.
-\]</span></p></li>
+</li>
 </ul>
-<ol type="1">
-<li><p><strong>左側：</strong> -<span class="math inline">\(P(\tilde{Y}
-= j \mid X = x)\)</span>：在樣本<span class="math inline">\(x\)</span>
-的條件下，($為類別<span class="math inline">\(j\)</span>
-的機率。</p></li>
-<li><p><strong>右側：</strong> -<span class="math inline">\(T_{kj}\)</span>：轉移矩陣中的元素，表示從真實類別<span class="math inline">\(k\)</span> 被標記為類別<span class="math inline">\(j\)</span> 的轉移機率。 -<span class="math inline">\(P(Y = k \mid X = x)\)</span>：給定樣本<span class="math inline">\(x\)</span>，真實類別為<span class="math inline">\(k\)</span> 的條件機率。</p></li>
+<h3 id="公式解釋"><a href="#公式解釋" class="headerlink" title="公式解釋"></a><strong>公式解釋</strong></h3><ul>
+<li><p>給定錨點$x$，若$P(Y &#x3D; i \mid X &#x3D; x$&#x3D; 1$，則我們有：</p>
+<p>$$<br>P(\tilde{Y} &#x3D; j \mid X &#x3D; x$&#x3D; \sum_{k&#x3D;1}^C T_{kj} P(Y &#x3D; k \mid X &#x3D; x$&#x3D; T_{ij}.<br>$$</p>
+</li>
+</ul>
+<ol>
+<li><p><strong>左側：</strong><br>-$P(\tilde{Y} &#x3D; j \mid X &#x3D; x)$：在樣本$x$ 的條件下，(\tilde{Y}$為類別$j$ 的機率。</p>
+</li>
+<li><p><strong>右側：</strong><br>-$T_{kj}$：轉移矩陣中的元素，表示從真實類別$k$ 被標記為類別$j$ 的轉移機率。<br>-$P(Y &#x3D; k \mid X &#x3D; x)$：給定樣本$x$，真實類別為$k$ 的條件機率。</p>
+</li>
 </ol>
 <ul>
-<li>當<span class="math inline">\(x\)</span> 是類別<span class="math inline">\(i\)</span> 的錨點時，<span class="math inline">\(P(Y = i \mid X = x\)</span>= 1<span class="math inline">\(，其他\)</span>k i$ 的機率為
-0，因此公式簡化為<span class="math inline">\(T_{ij}\)</span>。</li>
+<li>當$x$ 是類別$i$ 的錨點時，$P(Y &#x3D; i \mid X &#x3D; x$&#x3D; 1$，其他$k \neq i$ 的機率為 0，因此公式簡化為$T_{ij}$。</li>
 </ul>
-<h3 id="使用錨點計算轉換矩陣"><strong>使用錨點計算轉換矩陣</strong></h3>
-<ul>
-<li><p>利用錨點可以推導出以下公式： <span class="math display">\[
-P(Y = j | X = x$= \sum_{k=1}^C T_{kj} P(Y = k | X = x)
-\]</span> 簡化後，當<span class="math inline">\(x\)</span> 是第<span class="math inline">\(i\)</span> 類的錨點時： <span class="math display">\[
-P(Y = j | X = x$= T_{ij}
-\]</span></p></li>
-<li><p>轉換矩陣<span class="math inline">\(T\)</span>
-可通過估計錨點的噪聲類別後驗機率<span class="math inline">\(P(Y | X =
-x)\)</span> 來獲得。</p></li>
+<h3 id="使用錨點計算轉換矩陣"><a href="#使用錨點計算轉換矩陣" class="headerlink" title="使用錨點計算轉換矩陣"></a><strong>使用錨點計算轉換矩陣</strong></h3><ul>
+<li><p>利用錨點可以推導出以下公式：<br>$$<br>P(Y &#x3D; j | X &#x3D; x$&#x3D; \sum_{k&#x3D;1}^C T_{kj} P(Y &#x3D; k | X &#x3D; x)<br>$$<br>簡化後，當$x$ 是第$i$ 類的錨點時：<br>$$<br>P(Y &#x3D; j | X &#x3D; x$&#x3D; T_{ij}<br>$$</p>
+</li>
+<li><p>轉換矩陣$T$ 可通過估計錨點的噪聲類別後驗機率$P(Y | X &#x3D; x)$ 來獲得。</p>
+</li>
 </ul>
-<h3 id="錨點假設的挑戰"><strong>錨點假設的挑戰</strong></h3>
-<ul>
-<li><strong>強假設</strong>：
-<ul>
+<h3 id="錨點假設的挑戰"><a href="#錨點假設的挑戰" class="headerlink" title="錨點假設的挑戰"></a><strong>錨點假設的挑戰</strong></h3><ul>
+<li><strong>強假設</strong>：<ul>
 <li>要求給定的錨點在數據集中存在，但這一假設過於強烈。</li>
-</ul></li>
-<li><strong>實際應用中的錨點處理</strong>：
-<ul>
-<li>錨點可以通過理論方法（如文獻 [22]）或啟發式方法（如文獻
-[30]）識別。</li>
-</ul></li>
 </ul>
-<h4 id="總結-1"><strong>總結</strong></h4>
-<ul>
-<li>「錨點」的概念是用於準確學習轉移矩陣的關鍵，因為它利用了對應類別<span class="math inline">\(i\)</span> 的純淨資料點<span class="math inline">\(x\)</span>。</li>
-<li>該公式表明，通過錨點，可以直接計算轉移矩陣的對應元素<span class="math inline">\(T_{ij}\)</span>。</li>
+</li>
+<li><strong>實際應用中的錨點處理</strong>：<ul>
+<li>錨點可以通過理論方法（如文獻 [22]）或啟發式方法（如文獻 [30]）識別。</li>
+</ul>
+</li>
+</ul>
+<h4 id="總結-1"><a href="#總結-1" class="headerlink" title="總結"></a><strong>總結</strong></h4><ul>
+<li>「錨點」的概念是用於準確學習轉移矩陣的關鍵，因為它利用了對應類別$i$ 的純淨資料點$x$。</li>
+<li>該公式表明，通過錨點，可以直接計算轉移矩陣的對應元素$T_{ij}$。</li>
 </ul>
 <hr>
-<h3 id="錨點假設的擴展"><strong>錨點假設的擴展</strong></h3>
-<h3 id="不可約性假設"><strong>不可約性假設</strong></h3>
-<ul>
-<li>文獻中引入了以下假設來確保轉換矩陣是可識別的（irreducibility）：
-<span class="math display">\[
-\inf_x P(Y = i | X = x$\to 1
-\]</span> 這一假設保證了特定類別的樣本能夠被唯一識別。</li>
+<h3 id="錨點假設的擴展"><a href="#錨點假設的擴展" class="headerlink" title="錨點假設的擴展"></a><strong>錨點假設的擴展</strong></h3><h3 id="不可約性假設"><a href="#不可約性假設" class="headerlink" title="不可約性假設"></a><strong>不可約性假設</strong></h3><ul>
+<li>文獻中引入了以下假設來確保轉換矩陣是可識別的（irreducibility）：<br>$$<br>\inf_x P(Y &#x3D; i | X &#x3D; x$\to 1<br>$$<br>這一假設保證了特定類別的樣本能夠被唯一識別。</li>
 </ul>
-<h3 id="錨點定義"><strong>錨點定義</strong></h3>
-<ul>
-<li>錨點 <span class="math inline">\(x\)</span> 對於類別 <span class="math inline">\(i\)</span> 被定義為： <span class="math display">\[
-P(Y = i | X = x$= 1
-\]</span>
-<ul>
+<h3 id="錨點定義"><a href="#錨點定義" class="headerlink" title="錨點定義"></a><strong>錨點定義</strong></h3><ul>
+<li>錨點 $x$ 對於類別 $i$ 被定義為：<br>$$<br>P(Y &#x3D; i | X &#x3D; x$&#x3D; 1<br>$$<ul>
 <li>此定義來自文獻 [35, 22]。</li>
 <li>這樣的錨點有助於確保快速的收斂速率。</li>
-</ul></li>
 </ul>
-<h3 id="錨點的擴展定義"><strong>錨點的擴展定義</strong></h3>
-<ul>
-<li>在本文中，錨點的定義進行了推廣：
-<ul>
-<li>包括了後驗機率 <span class="math inline">\(P(Y = i | X = x)\)</span>
-等於或接近 1 的樣本。</li>
+</li>
+</ul>
+<h3 id="錨點的擴展定義"><a href="#錨點的擴展定義" class="headerlink" title="錨點的擴展定義"></a><strong>錨點的擴展定義</strong></h3><ul>
+<li>在本文中，錨點的定義進行了推廣：<ul>
+<li>包括了後驗機率 $P(Y &#x3D; i | X &#x3D; x)$ 等於或接近 1 的樣本。</li>
 <li>這樣的擴展適用於更廣泛的情境，而不僅限於極端情況。</li>
-</ul></li>
 </ul>
-<h4 id="總結-2"><strong>總結</strong></h4>
-<p>這一擴展定義減弱了原假設的限制性，使錨點概念能夠適用於更多的數據和應用場景。</p>
+</li>
+</ul>
+<h4 id="總結-2"><a href="#總結-2" class="headerlink" title="總結"></a><strong>總結</strong></h4><p>這一擴展定義減弱了原假設的限制性，使錨點概念能夠適用於更多的數據和應用場景。</p>
 <hr>
-<h2 id="混合比例估計-mixture-proportion-estimation">混合比例估計
-(Mixture Proportion Estimation)</h2>
-<p>混合比例估計是用來估算混合模型中不同成分的權重或比例的一種方法。混合模型通常由多個分布組成，每個分布代表資料的一個成分，而混合比例則是每個成分在整體中所佔的比重。</p>
-<h3 id="混合模型">混合模型</h3>
-<p>在混合模型中，資料假設來自於多個分布的組合。假設有 <span class="math inline">\(C\)</span> 個成分，則每個成分的機率密度函數 <span class="math inline">\(f_i(x)\)</span> 和其對應的混合比例 <span class="math inline">\(\pi_i\)</span> （滿足 <span class="math inline">\(\sum_{i=1}^C \pi_i =
-1\)</span>）描述了模型的結構。</p>
-<p>因此，混合模型的總體機率密度函數 <span class="math inline">\(f(x)\)</span> 可以表示為： <span class="math display">\[
-f(x$= \sum_{i=1}^C \pi_i f_i(x)
-\]</span></p>
+<h2 id="混合比例估計-Mixture-Proportion-Estimation"><a href="#混合比例估計-Mixture-Proportion-Estimation" class="headerlink" title="混合比例估計 (Mixture Proportion Estimation)"></a>混合比例估計 (Mixture Proportion Estimation)</h2><p>混合比例估計是用來估算混合模型中不同成分的權重或比例的一種方法。混合模型通常由多個分布組成，每個分布代表資料的一個成分，而混合比例則是每個成分在整體中所佔的比重。</p>
+<h3 id="混合模型"><a href="#混合模型" class="headerlink" title="混合模型"></a>混合模型</h3><p>在混合模型中，資料假設來自於多個分布的組合。假設有 $C$ 個成分，則每個成分的機率密度函數 $f_i(x)$ 和其對應的混合比例 $\pi_i$ （滿足 $\sum_{i&#x3D;1}^C \pi_i &#x3D; 1$）描述了模型的結構。</p>
+<p>因此，混合模型的總體機率密度函數 $f(x)$ 可以表示為：<br>$$<br>f(x$&#x3D; \sum_{i&#x3D;1}^C \pi_i f_i(x)<br>$$</p>
 <ul>
-<li>其中：
-<ul>
-<li><span class="math inline">\(\pi_i\)</span> 是第 <span class="math inline">\(i\)</span> 個成分的混合比例。</li>
-<li><span class="math inline">\(f_i(x)\)</span> 是第 <span class="math inline">\(i\)</span> 個成分的機率密度函數。</li>
-</ul></li>
+<li>其中：<ul>
+<li>$\pi_i$ 是第 $i$ 個成分的混合比例。</li>
+<li>$f_i(x)$ 是第 $i$ 個成分的機率密度函數。</li>
 </ul>
-<h3 id="混合比例估計的問題">混合比例估計的問題</h3>
-<p>混合比例估計的目的是根據觀察到的資料，估計出每個成分的混合比例 <span class="math inline">\(\pi_i\)</span>。這通常是挑戰性的一個問題，因為在大多數情況下，我們無法直接觀察到來自每個成分的資料點。</p>
-<h3 id="常用方法">常用方法</h3>
-<h4 id="期望最大化em演算法">期望最大化（EM）演算法</h4>
-<p>EM演算法是解決混合比例估計的一種常見方法，它用來在缺失資料情況下估計參數。在混合模型中，缺失的資料就是每個樣本屬於哪個成分的指標。</p>
-<p>EM演算法的基本步驟如下： 1. <strong>E步驟（期望步驟）：</strong>
-根據當前的參數估計每個資料點屬於每個成分的後驗機率，這些後驗機率稱為責任度（responsibility）。
-2. <strong>M步驟（最大化步驟）：</strong>
-根據責任度，更新模型的參數，包括每個成分的混合比例 <span class="math inline">\(\pi_i\)</span>
-和每個成分的參數（如均值和方差等）。</p>
-<h4 id="具體的步驟">具體的步驟：</h4>
-<ol type="1">
-<li><strong>初始化混合比例：</strong>
-假設每個成分的初始混合比例為均勻分布（或根據某種方法初始化）。</li>
-<li><strong>計算責任度：</strong>
-根據當前的參數和資料，計算每個資料點屬於每個成分的責任度。</li>
-<li><strong>更新參數：</strong>
-根據責任度，重新估算每個成分的參數，包括混合比例。</li>
+</li>
+</ul>
+<h3 id="混合比例估計的問題"><a href="#混合比例估計的問題" class="headerlink" title="混合比例估計的問題"></a>混合比例估計的問題</h3><p>混合比例估計的目的是根據觀察到的資料，估計出每個成分的混合比例 $\pi_i$。這通常是挑戰性的一個問題，因為在大多數情況下，我們無法直接觀察到來自每個成分的資料點。</p>
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><h4 id="期望最大化（EM）演算法"><a href="#期望最大化（EM）演算法" class="headerlink" title="期望最大化（EM）演算法"></a>期望最大化（EM）演算法</h4><p>EM演算法是解決混合比例估計的一種常見方法，它用來在缺失資料情況下估計參數。在混合模型中，缺失的資料就是每個樣本屬於哪個成分的指標。</p>
+<p>EM演算法的基本步驟如下：</p>
+<ol>
+<li><strong>E步驟（期望步驟）：</strong> 根據當前的參數估計每個資料點屬於每個成分的後驗機率，這些後驗機率稱為責任度（responsibility）。</li>
+<li><strong>M步驟（最大化步驟）：</strong> 根據責任度，更新模型的參數，包括每個成分的混合比例 $\pi_i$ 和每個成分的參數（如均值和方差等）。</li>
+</ol>
+<h4 id="具體的步驟："><a href="#具體的步驟：" class="headerlink" title="具體的步驟："></a>具體的步驟：</h4><ol>
+<li><strong>初始化混合比例：</strong> 假設每個成分的初始混合比例為均勻分布（或根據某種方法初始化）。</li>
+<li><strong>計算責任度：</strong> 根據當前的參數和資料，計算每個資料點屬於每個成分的責任度。</li>
+<li><strong>更新參數：</strong> 根據責任度，重新估算每個成分的參數，包括混合比例。</li>
 <li><strong>迭代過程：</strong> 重複E步驟和M步驟，直到收斂。</li>
 </ol>
 <hr>
-<h2 id="轉移矩陣學習與混合比例估計的關聯">轉移矩陣學習與混合比例估計的關聯</h2>
-<ol type="1">
-<li>轉移矩陣學習與混合比例估計的關聯：
+<h2 id="轉移矩陣學習與混合比例估計的關聯"><a href="#轉移矩陣學習與混合比例估計的關聯" class="headerlink" title="轉移矩陣學習與混合比例估計的關聯"></a>轉移矩陣學習與混合比例估計的關聯</h2><ol>
+<li><p>轉移矩陣學習與混合比例估計的關聯：</p>
 <ul>
 <li>轉移矩陣學習與混合比例估計是密切相關的，且後者與分類問題無關。混合比例估計在處理含有雜訊的資料時，會估計出每個類別的混合比例或轉移機率。</li>
-</ul></li>
-<li>學習轉移矩陣的假設：
+</ul>
+</li>
+<li><p>學習轉移矩陣的假設：</p>
 <ul>
-<li>為了確保學習轉移矩陣（或混合參數）的可學習性和效率，提出了一系列假設條件，這些假設在雜訊資料的情況下是必須的：
-<ul>
+<li>為了確保學習轉移矩陣（或混合參數）的可學習性和效率，提出了一系列假設條件，這些假設在雜訊資料的情況下是必須的：<ul>
 <li>不可約性（Irreducibility）：保證轉移過程能夠在所有類別之間進行轉移。</li>
-<li>錨點（Anchor Point）：指資料中存在一些屬於某一類的實例，其類別機率為
-1 或接近 1。</li>
+<li>錨點（Anchor Point）：指資料中存在一些屬於某一類的實例，其類別機率為 1 或接近 1。</li>
 <li>可分性（Separability）：不同類別之間的資料應該可以明確區分。</li>
-</ul></li>
-</ul></li>
-<li>錨點的必要性：
+</ul>
+</li>
+</ul>
+</li>
+<li><p>錨點的必要性：</p>
 <ul>
 <li>這些假設要求資料集中存在錨點，即某些樣本必須完全屬於某一類別，並且對應的類別機率接近1。</li>
 <li>當資料集或資料分佈中不存在錨點時，這些方法會導致不準確的轉移矩陣，進而降低當前一致性演算法的性能。</li>
-</ul></li>
-<li>研究動機：
+</ul>
+</li>
+<li><p>研究動機：</p>
 <ul>
 <li>由於沒有錨點會影響轉移矩陣的學習，這促使研究者探索如何在不使用確切錨點的情況下，保持一致性演算法的有效性。</li>
-</ul></li>
+</ul>
+</li>
 </ol>
 <hr>
-<h1 id="label-noise-learning-without-anchor-points">Label-Noise Learning
-without Anchor Points</h1>
-<h2 id="圖-1說明性實驗結果以5類分類問題為例">圖
-1：說明性實驗結果（以5類分類問題為例）</h2>
-<ul>
+<h1 id="Label-Noise-Learning-without-Anchor-Points"><a href="#Label-Noise-Learning-without-Anchor-Points" class="headerlink" title="Label-Noise Learning without Anchor Points"></a>Label-Noise Learning without Anchor Points</h1><h2 id="圖-1：說明性實驗結果（以5類分類問題為例）"><a href="#圖-1：說明性實驗結果（以5類分類問題為例）" class="headerlink" title="圖 1：說明性實驗結果（以5類分類問題為例）"></a>圖 1：說明性實驗結果（以5類分類問題為例）</h2><ul>
 <li>內容描述：</li>
 </ul>
-<ol type="1">
-<li><p><strong>雜訊類別後驗機率：</strong><br>
-給定某個樣本 <span class="math inline">\(P(Y|X = x\)</span>= [0.141;
-0.189; 0.239; 0.281;
-0.15]$，這是利用雜訊資料估算的類別後驗機率。</p></li>
-<li><p><strong>真實轉移矩陣：</strong><br>
-若給定真實的轉移矩陣 <span class="math inline">\(T\)</span>，我們可以推算出乾淨資料的類別後驗機率：
-<span class="math display">\[
-P(Y|X = x$= (T^T)^{-1}
-P(Y|X = x$= [0.15; 0.28; 0.25; 0.3; 0.02]
-\]</span> 這表明該樣本屬於第四類。</p></li>
-<li><p><strong>錯誤學習的轉移矩陣：</strong><br>
-如果轉移矩陣 <span class="math inline">\(T\)</span>
-沒有被正確學習（例如學習到的矩陣 <span class="math inline">\(\hat{T}\)</span> 與 <span class="math inline">\(T\)</span>
-只有第二行兩個條目略有不同），則可以推算出錯誤的類別後驗機率： <span class="math display">\[
-P(Y|X = x) = (\hat{T}^T)^{-1} P(Y|X = x) = [0.1587; 0.2697; 0.2796;
-0.2593; 0.0325]
-\]</span> 在這種情況下，樣本可能會錯誤地被分類為第三類。</p></li>
+<ol>
+<li><p><strong>雜訊類別後驗機率：</strong><br>給定某個樣本 $P(Y|X &#x3D; x$&#x3D; [0.141; 0.189; 0.239; 0.281; 0.15]$，這是利用雜訊資料估算的類別後驗機率。</p>
+</li>
+<li><p><strong>真實轉移矩陣：</strong><br>若給定真實的轉移矩陣 $T$，我們可以推算出乾淨資料的類別後驗機率：<br>$$<br> P(Y|X &#x3D; x$&#x3D; (T^T)^{-1}<br> P(Y|X &#x3D; x$&#x3D; [0.15; 0.28; 0.25; 0.3; 0.02]<br>$$<br>這表明該樣本屬於第四類。</p>
+</li>
+<li><p><strong>錯誤學習的轉移矩陣：</strong><br>如果轉移矩陣 $T$ 沒有被正確學習（例如學習到的矩陣 $\hat{T}$ 與 $T$ 只有第二行兩個條目略有不同），則可以推算出錯誤的類別後驗機率：<br>$$<br>P(Y|X &#x3D; x) &#x3D; (\hat{T}^T)^{-1} P(Y|X &#x3D; x) &#x3D; [0.1587; 0.2697; 0.2796; 0.2593; 0.0325]<br>$$<br>在這種情況下，樣本可能會錯誤地被分類為第三類。</p>
+</li>
 </ol>
 <ul>
-<li>總結：
-<ul>
-<li>這張圖展示了如何利用雜訊資料來估算乾淨資料的類別後驗機率。
-當轉移矩陣不準確時，會導致錯誤的後驗機率計算，並且可能會誤將某些樣本分類到錯誤的類別中。</li>
-</ul></li>
+<li>總結：<ul>
+<li>這張圖展示了如何利用雜訊資料來估算乾淨資料的類別後驗機率。<br>當轉移矩陣不準確時，會導致錯誤的後驗機率計算，並且可能會誤將某些樣本分類到錯誤的類別中。</li>
+</ul>
+</li>
 </ul>
 <hr>
-<h3 id="學習轉移矩陣的挑戰">學習轉移矩陣的挑戰</h3>
-<ul>
-<li>為了準確學習轉移矩陣<span class="math inline">\(P(\tilde{Y} | X =
-x)\)</span>，需要以下條件：
-<ul>
-<li><strong>估計雜訊類別後驗機率<span class="math inline">\(P(\tilde{Y}
-| X = x)\)</span>。</strong></li>
-<li><strong>提供錨點 (anchor points)。</strong><br>
-錨點是那些可以確保某一類別的條件機率接近 1
-的樣本，這是許多現有方法的基礎。</li>
-</ul></li>
+<h3 id="學習轉移矩陣的挑戰"><a href="#學習轉移矩陣的挑戰" class="headerlink" title="學習轉移矩陣的挑戰"></a>學習轉移矩陣的挑戰</h3><ul>
+<li>為了準確學習轉移矩陣$P(\tilde{Y} | X &#x3D; x)$，需要以下條件：<ul>
+<li><strong>估計雜訊類別後驗機率$P(\tilde{Y} | X &#x3D; x)$。</strong></li>
+<li><strong>提供錨點 (anchor points)。</strong><br>錨點是那些可以確保某一類別的條件機率接近 1 的樣本，這是許多現有方法的基礎。</li>
 </ul>
-<ol type="1">
-<li><strong>沒有錨點時的問題</strong>
+</li>
+</ul>
+<ol>
+<li><p><strong>沒有錨點時的問題</strong></p>
 <ul>
-<li><p>如果缺乏錨點，使用現有方法（如文獻 [ 22, 31, 35,
-36]）可能導致錯誤的轉移矩陣估計。例如： 將<span class="math inline">\(P(Y | X = x^i)\)</span> 視為矩陣<span class="math inline">\(L\)</span> 的第<span class="math inline">\(i\)</span> 列。 如果<span class="math inline">\(x^i\)</span> 是第<span class="math inline">\(i\)</span> 類的錨點，則<span class="math inline">\(L\)</span> 是單位矩陣。</p></li>
-<li><p>然而，當<span class="math inline">\(x^i\)</span>
-並非真正的錨點（即<span class="math inline">\(P(Y = i | X = x^i) \neq
-1\)</span>），學到的轉移矩陣會是<span class="math inline">\(TL\)</span>，其中<span class="math inline">\(L\)</span>
-是非單位矩陣，這將導致轉移矩陣不準確。</p></li>
-</ul></li>
-<li><strong>不準確的轉移矩陣對演算法的影響</strong>
+<li><p>如果缺乏錨點，使用現有方法（如文獻 [ 22, 31, 35, 36]）可能導致錯誤的轉移矩陣估計。例如：<br>將$P(Y | X &#x3D; x^i)$ 視為矩陣$L$ 的第$i$ 列。<br>如果$x^i$ 是第$i$ 類的錨點，則$L$ 是單位矩陣。</p>
+</li>
+<li><p>然而，當$x^i$ 並非真正的錨點（即$P(Y &#x3D; i | X &#x3D; x^i) \neq 1$），學到的轉移矩陣會是$TL$，其中$L$ 是非單位矩陣，這將導致轉移矩陣不準確。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>不準確的轉移矩陣對演算法的影響</strong></p>
 <ul>
 <li>基於錯誤的轉移矩陣，當前一致性演算法的性能會顯著下降。例如：</li>
-<li><strong>圖 1</strong> 展示了雜訊類別的後驗機率<span class="math inline">\(P(\tilde{Y} | X = x)\)</span>
-給定時，即使轉移矩陣<span class="math inline">\(T\)</span>
-僅在兩個條目上稍有變化（如<span class="math inline">\(\|T -
-\tilde{T}\|_1 / \|T\|_1 =
-0.02\)</span>），推斷出的乾淨資料的類別後驗機率可能導致錯誤分類。</li>
-</ul></li>
-<li><strong>錨點在現實世界中的挑戰</strong>
+<li><strong>圖 1</strong> 展示了雜訊類別的後驗機率$P(\tilde{Y} | X &#x3D; x)$ 給定時，即使轉移矩陣$T$ 僅在兩個條目上稍有變化（如$|T - \tilde{T}|_1 &#x2F; |T|_1 &#x3D; 0.02$），推斷出的乾淨資料的類別後驗機率可能導致錯誤分類。</li>
+</ul>
+</li>
+<li><p><strong>錨點在現實世界中的挑戰</strong></p>
 <ul>
-<li>錨點要求對應類別的條件機率接近或等於
-1，但這在許多現實應用中難以實現[41, 46]。
+<li><p>錨點要求對應類別的條件機率接近或等於 1，但這在許多現實應用中難以實現[41, 46]。</p>
 <ul>
 <li>例如：一些資料集或分布中並不包含錨點樣本。</li>
-</ul></li>
-<li>這使得研究如何在沒有錨點的情況下保持一致性演算法的效能成為重要問題。</li>
-</ul></li>
+</ul>
+</li>
+<li><p>這使得研究如何在沒有錨點的情況下保持一致性演算法的效能成為重要問題。</p>
+</li>
+</ul>
+</li>
 </ol>
 <ul>
-<li>總結
-<ul>
+<li>總結<ul>
 <li>這段內容強調了學習轉移矩陣時的挑戰，特別是在錨點缺失時的影響。它指出了現有方法的局限性，以及需要進一步研究以解決這些問題。</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <hr>
-<h3 id="風險一致估計器-risk-consistent-estimator">風險一致估計器
-(Risk-consistent Estimator)</h3>
-<h4 id="介紹"><strong>介紹</strong></h4>
-<ul>
+<h3 id="風險一致估計器-Risk-consistent-Estimator"><a href="#風險一致估計器-Risk-consistent-Estimator" class="headerlink" title="風險一致估計器 (Risk-consistent Estimator)"></a>風險一致估計器 (Risk-consistent Estimator)</h3><h4 id="介紹"><a href="#介紹" class="headerlink" title="介紹"></a><strong>介紹</strong></h4><ul>
 <li>風險一致估計器的目的是透過調整轉移矩陣的元素來最小化風險。</li>
 <li>其目標是使估計器在理論上與乾淨資料的期望風險一致，同時避免因轉移矩陣的設置不當而降低分類性能。</li>
 </ul>
-<h4 id="傳統方法的問題依賴轉移矩陣的反矩陣30"><strong>傳統方法的問題：依賴轉移矩陣的反矩陣[30]</strong></h4>
-<ul>
-<li>傳統的風險一致估計器依賴轉移矩陣的反矩陣<span class="math inline">\(T^{-1}\)</span> 來從雜訊標籤<span class="math inline">\(P(\tilde{Y} | X = x)\)</span> 推斷乾淨標籤<span class="math inline">\(P(Y | X = x)\)</span>，公式為： <span class="math display">\[
-P(Y | X = x) = (T^{-1})P(\tilde{Y} | X = x)
-\]</span></li>
-<li>這種方法的主要問題在於：
-<ol type="1">
-<li>如果<span class="math inline">\(T^{-1}\)</span>
-的估計不準確，可能導致嚴重的分類性能退化。</li>
+<h4 id="傳統方法的問題：依賴轉移矩陣的反矩陣-30"><a href="#傳統方法的問題：依賴轉移矩陣的反矩陣-30" class="headerlink" title="傳統方法的問題：依賴轉移矩陣的反矩陣[30]"></a><strong>傳統方法的問題：依賴轉移矩陣的反矩陣[30]</strong></h4><ul>
+<li>傳統的風險一致估計器依賴轉移矩陣的反矩陣$T^{-1}$ 來從雜訊標籤$P(\tilde{Y} | X &#x3D; x)$ 推斷乾淨標籤$P(Y | X &#x3D; x)$，公式為：<br>$$<br>P(Y | X &#x3D; x) &#x3D; (T^{-1})P(\tilde{Y} | X &#x3D; x)<br>$$</li>
+<li>這種方法的主要問題在於：<ol>
+<li>如果$T^{-1}$ 的估計不準確，可能導致嚴重的分類性能退化。</li>
 <li>調整轉移矩陣變得困難且不穩定。</li>
-</ol></li>
+</ol>
+</li>
 </ul>
-<h4 id="避免反矩陣的方法"><strong>避免反矩陣的方法</strong></h4>
-<ul>
-<li>為了解決上述問題，研究者提出直接估計<span class="math inline">\(P(Y
-| X = x)\)</span> 的方法，而不是依賴轉移矩陣的反矩陣[30, 47]。</li>
-<li>根據以下公式，可以直接用轉移矩陣<span class="math inline">\(T\)</span> 來估計： <span class="math display">\[
-T^T P(Y | X = x) = P(\tilde{Y} | X = x)
-\]</span></li>
-<li>利用此公式，可以同時估計乾淨的類別後驗機率<span class="math inline">\(P(Y | X = x)\)</span> 和真實的轉移矩陣<span class="math inline">\(T\)</span>。</li>
+<h4 id="避免反矩陣的方法"><a href="#避免反矩陣的方法" class="headerlink" title="避免反矩陣的方法"></a><strong>避免反矩陣的方法</strong></h4><ul>
+<li>為了解決上述問題，研究者提出直接估計$P(Y | X &#x3D; x)$ 的方法，而不是依賴轉移矩陣的反矩陣[30, 47]。</li>
+<li>根據以下公式，可以直接用轉移矩陣$T$ 來估計：<br>$$<br>T^T P(Y | X &#x3D; x) &#x3D; P(\tilde{Y} | X &#x3D; x)<br>$$</li>
+<li>利用此公式，可以同時估計乾淨的類別後驗機率$P(Y | X &#x3D; x)$ 和真實的轉移矩陣$T$。</li>
 </ul>
-<h4 id="最佳化損失函數來估計py-x-x"><strong>最佳化損失函數來估計<span class="math inline">\(P(Y | X = x)\)</span></strong></h4>
-<p>-<span class="math inline">\(P(\tilde{Y} | X = x)\)</span>
-可以通過最小化無權損失函數來學習[25]： <span class="math display">\[
-    \hat{R}_n(f) = \frac{1}{n} \sum_{i=1}^n \ell(f(X_i), \tilde{Y}_i),
-    \]</span> 其中<span class="math inline">\(\ell(f(X), Y)\)</span>
-是損失函數。</p>
+<h4 id="最佳化損失函數來估計-P-Y-X-x"><a href="#最佳化損失函數來估計-P-Y-X-x" class="headerlink" title="最佳化損失函數來估計$P(Y | X &#x3D; x)$"></a><strong>最佳化損失函數來估計$P(Y | X &#x3D; x)$</strong></h4><p>  -$P(\tilde{Y} | X &#x3D; x)$ 可以通過最小化無權損失函數來學習[25]：<br>    $$<br>    \hat{R}<em>n(f) &#x3D; \frac{1}{n} \sum</em>{i&#x3D;1}^n \ell(f(X_i), \tilde{Y}_i),<br>    $$<br>    其中$\ell(f(X), Y)$ 是損失函數。</p>
 <ul>
-<li>然而，僅僅透過最小化無權損失函數可能會導致乾淨資料的類別後驗機率估計不準確，特別是當轉移矩陣<span class="math inline">\(T\)</span> 被錯誤估計時。</li>
+<li>然而，僅僅透過最小化無權損失函數可能會導致乾淨資料的類別後驗機率估計不準確，特別是當轉移矩陣$T$ 被錯誤估計時。</li>
 </ul>
-<h4 id="重要性加權技術-importance-reweighting"><strong>重要性加權技術
-(Importance Reweighting)</strong></h4>
+<h4 id="重要性加權技術-Importance-Reweighting"><a href="#重要性加權技術-Importance-Reweighting" class="headerlink" title="重要性加權技術 (Importance Reweighting)"></a><strong>重要性加權技術 (Importance Reweighting)</strong></h4><ul>
+<li><p><strong>方法背景</strong></p>
 <ul>
-<li><strong>方法背景</strong>
+<li>若已知$P(Y | X &#x3D; x)$ 和$P(\bar{Y} | X &#x3D; x)$，可以使用 <strong>重要性重加權技術</strong> 來重寫基於純淨數據的期望風險，而不涉及轉換矩陣的逆運算。</li>
+</ul>
+</li>
+<li><p><strong>公式推導</strong></p>
 <ul>
-<li>若已知<span class="math inline">\(P(Y | X = x)\)</span> 和<span class="math inline">\(P(\bar{Y} | X = x)\)</span>，可以使用
-<strong>重要性重加權技術</strong>
-來重寫基於純淨數據的期望風險，而不涉及轉換矩陣的逆運算。</li>
-</ul></li>
-<li><strong>公式推導</strong>
+<li><p>** 純淨數據的風險表示**：<br>$$<br>R(f) &#x3D; \mathbb{E}_{(X,Y) \sim D}[\ell(f(X), Y)] &#x3D; \int_x \sum_i P_D(X &#x3D; x, Y &#x3D; i) \ell(f(x), i) dx<br>$$</p>
+</li>
+<li><p><strong>重加權技術應用</strong>：<br>利用噪聲數據的機率分佈$P_D(X &#x3D; x, \bar{Y} &#x3D; i)$：<br>$$<br>R(f) &#x3D; \int_x \sum_i \frac{P_D(X &#x3D; x, \bar{Y} &#x3D; i)}{P_D(X &#x3D; x, Y &#x3D; i)} P_D(Y &#x3D; i | X &#x3D; x) \ell(f(x), i) dx<br>$$</p>
+</li>
+<li><p><strong>簡化表示</strong>：<br>由於$P_D(Y &#x3D; i | X &#x3D; x)$ 已知，將公式進一步簡化為：<br>$$<br>R(f) &#x3D; \mathbb{E}_{(X, Y) \sim \bar{D}}[\tilde{\ell}(f(X), Y)]<br>$$</p>
 <ul>
-<li><p>** 純淨數據的風險表示**： <span class="math display">\[
-R(f) = \mathbb{E}_{(X,Y) \sim D}[\ell(f(X), Y)] = \int_x \sum_i P_D(X =
-x, Y = i) \ell(f(x), i) dx
-\]</span></p></li>
-<li><p><strong>重加權技術應用</strong>： 利用噪聲數據的機率分佈<span class="math inline">\(P_D(X = x, \bar{Y} = i)\)</span>： <span class="math display">\[
-R(f) = \int_x \sum_i \frac{P_D(X = x, \bar{Y} = i)}{P_D(X = x, Y = i)}
-P_D(Y = i | X = x) \ell(f(x), i) dx
-\]</span></p></li>
-<li><p><strong>簡化表示</strong>： 由於<span class="math inline">\(P_D(Y
-= i | X = x)\)</span> 已知，將公式進一步簡化為： <span class="math display">\[
-R(f) = \mathbb{E}_{(X, Y) \sim \bar{D}}[\tilde{\ell}(f(X), Y)]
-\]</span></p>
+<li>其中$\tilde{\ell}(f(x), i) &#x3D; \frac{P_D(Y &#x3D; i | X &#x3D; x)}{P_D(\bar{Y} &#x3D; i | X &#x3D; x)} \ell(f(x), i)$。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>假設條件</strong></p>
 <ul>
-<li>其中<span class="math inline">\(\tilde{\ell}(f(x), i) = \frac{P_D(Y
-= i | X = x)}{P_D(\bar{Y} = i | X = x)} \ell(f(x), i)\)</span>。</li>
-</ul></li>
-</ul></li>
-<li><strong>假設條件</strong>
-<ul>
-<li><strong>噪聲標籤假設</strong>：
-<ul>
+<li><strong>噪聲標籤假設</strong>：<ul>
 <li>假設標籤噪聲是條件獨立的，因此上述公式成立。</li>
-</ul></li>
-</ul></li>
-<li><strong>方法穩定性</strong>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>方法穩定性</strong></p>
 <ul>
-<li>利用轉換矩陣<span class="math inline">\(P(\bar{Y} | X = x) = T^\top
-P(Y | X = x)\)</span> 且對角元素<span class="math inline">\(T_{ii} &gt;
-0\)</span>，推導出： <span class="math display">\[
-P_D(\bar{Y} = i | X = x) \neq 0
-\]</span></li>
+<li>利用轉換矩陣$P(\bar{Y} | X &#x3D; x) &#x3D; T^\top P(Y | X &#x3D; x)$ 且對角元素$T_{ii} &gt; 0$，推導出：<br>$$<br>P_D(\bar{Y} &#x3D; i | X &#x3D; x) \neq 0<br>$$</li>
 <li>保證方法穩定性，無需截斷重要性比率。</li>
-</ul></li>
-<li><strong>總結</strong>
+</ul>
+</li>
+<li><p><strong>總結</strong></p>
 <ul>
 <li>此方法結合了噪聲數據後驗機率與純淨數據後驗機率，避免了矩陣運算的複雜性，並且在對角元素較大時具有穩定性。</li>
-</ul></li>
 </ul>
-<h4 id="實現與-t-修正方法">實現與 T-修正方法</h4>
-<h5 id="方法介紹">方法介紹</h5>
-<p>當轉換矩陣<span class="math inline">\(T\)</span>
-是未知的時，提出了一種基於修正的風險一致方法，利用<span class="math inline">\(\hat{R}_{n,w}(T^T + \Delta T, f)\)</span>
-來近似<span class="math inline">\(R(f)\)</span>。為此，採用以下兩階段的訓練流程：</p>
-<ol type="1">
-<li><strong>第一階段</strong>：
+</li>
+</ul>
+<h4 id="實現與-T-修正方法"><a href="#實現與-T-修正方法" class="headerlink" title="實現與 T-修正方法"></a>實現與 T-修正方法</h4><h5 id="方法介紹"><a href="#方法介紹" class="headerlink" title="方法介紹"></a>方法介紹</h5><p>當轉換矩陣$T$ 是未知的時，提出了一種基於修正的風險一致方法，利用$\hat{R}_{n,w}(T^T + \Delta T, f)$ 來近似$R(f)$。為此，採用以下兩階段的訓練流程：</p>
+<ol>
+<li><p><strong>第一階段</strong>：</p>
 <ul>
-<li>通過不加雜訊適配層的情況下，最小化非加權損失以學習<span class="math inline">\(\hat{P}(\hat{Y}|X=x)\)</span>。</li>
-<li>初始轉換矩陣<span class="math inline">\(\hat{T}\)</span>
-是基於那些具有最高預測機率<span class="math inline">\(\hat{P}(\hat{Y}|X=x)\)</span>
-的樣本來估計的。</li>
-</ul></li>
-<li><strong>第二階段</strong>：
+<li>通過不加雜訊適配層的情況下，最小化非加權損失以學習$\hat{P}(\hat{Y}|X&#x3D;x)$。</li>
+<li>初始轉換矩陣$\hat{T}$ 是基於那些具有最高預測機率$\hat{P}(\hat{Y}|X&#x3D;x)$ 的樣本來估計的。</li>
+</ul>
+</li>
+<li><p><strong>第二階段</strong>：</p>
 <ul>
-<li>在初始矩陣<span class="math inline">\(\hat{T}\)</span>
-基礎上加入一個修正變數<span class="math inline">\(\Delta
-T\)</span>，並通過最小化加權損失來同時學習分類器和<span class="math inline">\(\Delta T\)</span>。</li>
-<li>該流程被稱為<strong>加權 T-修正方法</strong>，其具體步驟在演算法 1
-中進行了總結。</li>
-</ul></li>
+<li>在初始矩陣$\hat{T}$ 基礎上加入一個修正變數$\Delta T$，並通過最小化加權損失來同時學習分類器和$\Delta T$。</li>
+<li>該流程被稱為<strong>加權 T-修正方法</strong>，其具體步驟在演算法 1 中進行了總結。</li>
+</ul>
+</li>
 </ol>
-<h5 id="特殊說明">特殊說明</h5>
-<ul>
-<li>許多基於錨點的標籤雜訊一致學習方法都採用類似的兩階段策略：
-<ul>
-<li>第一階段學習<span class="math inline">\(\hat{P}(\hat{Y}|X=x)\)</span> 和轉換矩陣<span class="math inline">\(T\)</span>。</li>
+<h5 id="特殊說明"><a href="#特殊說明" class="headerlink" title="特殊說明"></a>特殊說明</h5><ul>
+<li>許多基於錨點的標籤雜訊一致學習方法都採用類似的兩階段策略：<ul>
+<li>第一階段學習$\hat{P}(\hat{Y}|X&#x3D;x)$ 和轉換矩陣$T$。</li>
 <li>第二階段基於純淨資料學習分類器。</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <hr>
-<h5 id="為什麼-t-修正方法有效">為什麼 T-修正方法有效？</h5>
-<ul>
-<li>該方法透過最小化風險一致估計器來學習<span class="math inline">\(\Delta
-T\)</span>，此估計器在理論上趨近於純淨資料上的期望風險。</li>
-<li>修正變數<span class="math inline">\(\Delta T\)</span>
-也可以使用帶噪資料的驗證集進行檢驗，以確認<span class="math inline">\(\hat{P}(\hat{Y}|X=x)\)</span> 是否符合資料。</li>
+<h5 id="為什麼-T-修正方法有效？"><a href="#為什麼-T-修正方法有效？" class="headerlink" title="為什麼 T-修正方法有效？"></a>為什麼 T-修正方法有效？</h5><ul>
+<li>該方法透過最小化風險一致估計器來學習$\Delta T$，此估計器在理論上趨近於純淨資料上的期望風險。</li>
+<li>修正變數$\Delta T$ 也可以使用帶噪資料的驗證集進行檢驗，以確認$\hat{P}(\hat{Y}|X&#x3D;x)$ 是否符合資料。</li>
 </ul>
 <hr>
-<h5 id="方法的優勢">方法的優勢</h5>
-<ul>
-<li><p>與交叉驗證方法類似，但不需要嘗試多組參數組合（因為<span class="math inline">\(\Delta T\)</span>
-是學習得到的），因此計算效率更高。</p></li>
-<li><p>該方法可以提升一致性演算法的性能，即使轉換矩陣與分類器是聯合學習的情況下。</p></li>
-<li><p>若有純淨的驗證集可用，則可以更好地初始化轉換矩陣<span class="math inline">\(T\)</span>，驗證修正變數<span class="math inline">\(\Delta T\)</span>，以及微調深度神經網路。</p></li>
-<li><p>總結
-T-修正方法是一種高效且穩健的策略，用於在未知轉換矩陣的情況下，進行帶標籤雜訊的風險一致學習。</p></li>
+<h5 id="方法的優勢"><a href="#方法的優勢" class="headerlink" title="方法的優勢"></a>方法的優勢</h5><ul>
+<li><p>與交叉驗證方法類似，但不需要嘗試多組參數組合（因為$\Delta T$ 是學習得到的），因此計算效率更高。</p>
+</li>
+<li><p>該方法可以提升一致性演算法的性能，即使轉換矩陣與分類器是聯合學習的情況下。</p>
+</li>
+<li><p>若有純淨的驗證集可用，則可以更好地初始化轉換矩陣$T$，驗證修正變數$\Delta T$，以及微調深度神經網路。</p>
+</li>
+<li><p>總結<br>T-修正方法是一種高效且穩健的策略，用於在未知轉換矩陣的情況下，進行帶標籤雜訊的風險一致學習。</p>
+</li>
 </ul>
 <hr>
-<h3 id="泛化誤差-generalization-error">泛化誤差 (Generalization
-Error)</h3>
-<h4 id="背景">背景</h4>
-<ul>
+<h3 id="泛化誤差-Generalization-Error"><a href="#泛化誤差-Generalization-Error" class="headerlink" title="泛化誤差 (Generalization Error)"></a>泛化誤差 (Generalization Error)</h3><h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><ul>
 <li>本節理論上分析所提出的風險估計器在純淨資料上的泛化能力，並解釋如何將其應用於學習分類器。</li>
-<li>假設神經網絡具有<span class="math inline">\(d\)</span>層，權重矩陣為<span class="math inline">\(W_1, \ldots, W_d\)</span>，激活函數為<span class="math inline">\(\sigma_1, \ldots, \sigma_d\)</span>。</li>
-<li>神經網絡的輸出為<span class="math inline">\(h(x)\)</span>，並通過
-softmax 定義輸出<span class="math inline">\(g_i(x)\)</span>，其中：
-<span class="math display">\[
-g_i(x) = \exp(h_i(x)) / \sum_{k=1}^C \exp(h_k(x)), \quad i=1, \ldots, C
-\]</span></li>
-<li><span class="math inline">\(f\)</span>表示從假設空間<span class="math inline">\(F\)</span>中學習的分類器，目標是最小化<span class="math inline">\(\hat{R}_{n,w}(T^T + \Delta T, f)\)</span>。</li>
+<li>假設神經網絡具有$d$層，權重矩陣為$W_1, \ldots, W_d$，激活函數為$\sigma_1, \ldots, \sigma_d$。</li>
+<li>神經網絡的輸出為$h(x)$，並通過 softmax 定義輸出$g_i(x)$，其中：<br>$$<br>g_i(x) &#x3D; \exp(h_i(x)) &#x2F; \sum_{k&#x3D;1}^C \exp(h_k(x)), \quad i&#x3D;1, \ldots, C<br>$$</li>
+<li>$f$表示從假設空間$F$中學習的分類器，目標是最小化$\hat{R}_{n,w}(T^T + \Delta T, f)$。</li>
 </ul>
 <hr>
-<h4 id="泛化界限推導">泛化界限推導</h4>
-<ul>
-<li>假設資料<span class="math inline">\(x\)</span>的範數<span class="math inline">\(\|x\| \leq B\)</span>，損失函數<span class="math inline">\(\ell(f(x), \bar{y})\)</span>對於<span class="math inline">\(f(x)\)</span>是<span class="math inline">\(L\)</span>-Lipschitz 連續的，且被<span class="math inline">\(M\)</span>上界。</li>
-<li>給定分類器<span class="math inline">\(f\)</span>和修正變數<span class="math inline">\(\Delta
-T\)</span>，目標是從滿足條件的轉換矩陣中搜尋<span class="math inline">\(\Delta T\)</span>，以最小化風險。</li>
+<h4 id="泛化界限推導"><a href="#泛化界限推導" class="headerlink" title="泛化界限推導"></a>泛化界限推導</h4><ul>
+<li>假設資料$x$的範數$|x| \leq B$，損失函數$\ell(f(x), \bar{y})$對於$f(x)$是$L$-Lipschitz 連續的，且被$M$上界。</li>
+<li>給定分類器$f$和修正變數$\Delta T$，目標是從滿足條件的轉換矩陣中搜尋$\Delta T$，以最小化風險。</li>
 </ul>
-<h5 id="定理-1">定理 1</h5>
-<ul>
-<li>假設權重矩陣<span class="math inline">\(W_1, \ldots, W_d\)</span>的
-Frobenius 範數被<span class="math inline">\(M_1, \ldots,
-M_d\)</span>上界，激活函數為<span class="math inline">\(L\)</span>-Lipschitz 且逐元素應用（如
-ReLU）。</li>
-<li>假設損失函數為交叉熵損失： 
+<h5 id="定理-1"><a href="#定理-1" class="headerlink" title="定理 1"></a>定理 1</h5><ul>
+<li>假設權重矩陣$W_1, \ldots, W_d$的 Frobenius 範數被$M_1, \ldots, M_d$上界，激活函數為$L$-Lipschitz 且逐元素應用（如 ReLU）。</li>
+<li>假設損失函數為交叉熵損失：
   $$
   \ell(f(x), \bar{y}) = -\sum_{i=1}^C 1_{\{y = i\}} \log(g_i(x))
   $$
   </li>
-<li>對於任意<span class="math inline">\(\delta &gt;
-0\)</span>，以至少<span class="math inline">\(1 -
-\delta\)</span>的機率，有以下泛化界限： 
+<li>對於任意$\delta &gt; 0$，以至少$1 - \delta$的機率，有以下泛化界限：
   $$
   \mathbb{E}[\hat{R}_{n,w}(T^\top + \Delta T, f)] - R_{n,w}(T^\top + \Delta T, f) \leq \frac{2BCL(\sqrt{2d\log 2 + 1} \prod_{i=1}^d M_i)}{\sqrt{n}} + \frac{C M \sqrt{\log (1/\delta)}}{2n}.
   $$
   </li>
 </ul>
 <hr>
-<h5 id="方法優勢">方法優勢</h5>
-<ul>
-<li>詳細證明在附錄 C
-中給出。該邊界因子包含了深度神經網絡的假設空間複雜度，並基於已有文獻改進。</li>
+<h5 id="方法優勢"><a href="#方法優勢" class="headerlink" title="方法優勢"></a>方法優勢</h5><ul>
+<li>詳細證明在附錄 C 中給出。該邊界因子包含了深度神經網絡的假設空間複雜度，並基於已有文獻改進。</li>
 <li>儘管重新加權的損失更為複雜，但導出的泛化界限不會超過傳統方法。</li>
 <li>該方法不需要更大的訓練樣本來實現訓練誤差與測試誤差之間的小差距。</li>
 </ul>
 <hr>
-<h5 id="實驗結果">實驗結果</h5>
-<ul>
+<h5 id="實驗結果"><a href="#實驗結果" class="headerlink" title="實驗結果"></a>實驗結果</h5><ul>
 <li>定理中上界較小，意味著在實驗中，該方法將具有較小的泛化誤差。</li>
 <li>同時，該方法在分類性能上優於傳統方法，並未以更大的近似誤差為代價。</li>
 </ul>
-<h5 id="總結-3">總結</h5>
-<ul>
+<h5 id="總結-3"><a href="#總結-3" class="headerlink" title="總結"></a>總結</h5><ul>
 <li>該方法通過嚴格的理論推導證明其泛化能力良好，並且在實驗中驗證其在分類性能方面的優勢。</li>
 </ul>
 <hr>
-<h1 id="實驗結果與資料集說明">實驗結果與資料集說明</h1>
-<h2 id="表-1分類準確率-百分比-及標準差">表 1：分類準確率 (百分比)
-及標準差</h2>
-<h3 id="表格說明">表格說明</h3>
-<ul>
-<li>表格展示了不同方法在 MNIST、CIFAR-10 和 CIFAR-100
-資料集上的分類準確率（平均值和標準差）。</li>
-<li>方法分類：
-<ul>
+<h1 id="實驗結果與資料集說明"><a href="#實驗結果與資料集說明" class="headerlink" title="實驗結果與資料集說明"></a>實驗結果與資料集說明</h1><h2 id="表-1：分類準確率-百分比-及標準差"><a href="#表-1：分類準確率-百分比-及標準差" class="headerlink" title="表 1：分類準確率 (百分比) 及標準差"></a>表 1：分類準確率 (百分比) 及標準差</h2><p><img src="/../../images/2024/T-Revision/Table1.png" alt="Table1"></p>
+<h3 id="表格說明"><a href="#表格說明" class="headerlink" title="表格說明"></a>表格說明</h3><ul>
+<li>表格展示了不同方法在 MNIST、CIFAR-10 和 CIFAR-100 資料集上的分類準確率（平均值和標準差）。</li>
+<li>方法分類：<ul>
 <li><strong>“-A”</strong>：表示方法在完整資料集上運行，未移除可能的錨點樣本。</li>
-<li><strong>“-R”</strong>：表示方法使用修正的轉換矩陣 <span class="math inline">\(T + \Delta T\)</span>。</li>
-</ul></li>
+<li><strong>“-R”</strong>：表示方法使用修正的轉換矩陣 $T + \Delta T$。</li>
 </ul>
-<h3 id="雜訊類型">雜訊類型</h3>
-<ul>
+</li>
+</ul>
+<h3 id="雜訊類型"><a href="#雜訊類型" class="headerlink" title="雜訊類型"></a>雜訊類型</h3><ul>
 <li><strong>Sym-20</strong>：20% 樣本標籤帶有對稱雜訊。</li>
 <li><strong>Sym-50</strong>：50% 樣本標籤帶有對稱雜訊。</li>
 </ul>
-<h3 id="關鍵結果">關鍵結果</h3>
-<h4 id="mnist">MNIST</h4>
-<ul>
-<li>修正轉換矩陣的 <span class="math inline">\(Reweight-A-R\)</span>
-方法在 Sym-50 雜訊下取得最高準確率 (98.38 ± 0.04)。</li>
-<li>對比下，未修正的 <span class="math inline">\(Reweight-A\)</span>
-在相同條件下的準確率為 98.13 ± 0.19。</li>
+<h3 id="關鍵結果"><a href="#關鍵結果" class="headerlink" title="關鍵結果"></a>關鍵結果</h3><h4 id="MNIST"><a href="#MNIST" class="headerlink" title="MNIST"></a>MNIST</h4><ul>
+<li>修正轉換矩陣的 $Reweight-A-R$ 方法在 Sym-50 雜訊下取得最高準確率 (98.38 ± 0.04)。</li>
+<li>對比下，未修正的 $Reweight-A$ 在相同條件下的準確率為 98.13 ± 0.19。</li>
 </ul>
-<h4 id="cifar-10">CIFAR-10</h4>
-<ul>
-<li>在 Sym-50 雜訊下，修正矩陣的 <span class="math inline">\(Reweight-A-R\)</span> 方法達到最高準確率 (83.40 ±
-0.65)，顯著優於未修正的 <span class="math inline">\(Reweight-A\)</span>
-(80.16 ± 0.46)。</li>
+<h4 id="CIFAR-10"><a href="#CIFAR-10" class="headerlink" title="CIFAR-10"></a>CIFAR-10</h4><ul>
+<li>在 Sym-50 雜訊下，修正矩陣的 $Reweight-A-R$ 方法達到最高準確率 (83.40 ± 0.65)，顯著優於未修正的 $Reweight-A$ (80.16 ± 0.46)。</li>
 </ul>
-<h4 id="cifar-100">CIFAR-100</h4>
-<ul>
-<li>修正矩陣的 <span class="math inline">\(Reweight-A-R\)</span> 方法在
-Sym-50 雜訊下表現最佳，準確率為 50.24 ± 1.45。</li>
-<li>相比之下，未修正的 <span class="math inline">\(Reweight-A\)</span>
-僅達到 43.97 ± 0.67。</li>
+<h4 id="CIFAR-100"><a href="#CIFAR-100" class="headerlink" title="CIFAR-100"></a>CIFAR-100</h4><ul>
+<li>修正矩陣的 $Reweight-A-R$ 方法在 Sym-50 雜訊下表現最佳，準確率為 50.24 ± 1.45。</li>
+<li>相比之下，未修正的 $Reweight-A$ 僅達到 43.97 ± 0.67。</li>
 </ul>
-<h4 id="總結-4">總結</h4>
-<ul>
-<li><strong>修正的轉換矩陣方法 (“-R”)</strong>：
-<ul>
-<li>在高雜訊情況下（Sym-50），修正方法顯著提升分類準確率，尤其是在
-CIFAR-10 和 CIFAR-100 資料集上。</li>
-</ul></li>
-<li><strong>未修正的轉換矩陣方法 (“-A”)</strong>：
-<ul>
-<li>整體表現稍遜於修正方法，特別是在高雜訊的 CIFAR-100
-上表現差距明顯。</li>
-</ul></li>
+<h4 id="總結-4"><a href="#總結-4" class="headerlink" title="總結"></a>總結</h4><ul>
+<li>**修正的轉換矩陣方法 (“-R”)**：<ul>
+<li>在高雜訊情況下（Sym-50），修正方法顯著提升分類準確率，尤其是在 CIFAR-10 和 CIFAR-100 資料集上。</li>
+</ul>
+</li>
+<li>**未修正的轉換矩陣方法 (“-A”)**：<ul>
+<li>整體表現稍遜於修正方法，特別是在高雜訊的 CIFAR-100 上表現差距明顯。</li>
+</ul>
+</li>
 </ul>
 <hr>
-<h2 id="表-2分類準確率">表 2：分類準確率</h2>
+<h2 id="表-2：分類準確率"><a href="#表-2：分類準確率" class="headerlink" title="表 2：分類準確率"></a>表 2：分類準確率</h2><p><img src="/../../images/2024/T-Revision/Table2.png" alt="Table2"></p>
 <ul>
-<li>表格展示了不同方法在 MNIST、CIFAR-10 和 CIFAR-100
-資料集上的分類準確率（平均值和標準差）。</li>
-<li>方法分為兩類：
-<ul>
-<li><strong>“-N/A”</strong>：移除具有高估計 <span class="math inline">\(P(Y|X)\)</span> 的樣本。</li>
-<li><strong>“-R”</strong>：使用修正的轉換矩陣 <span class="math inline">\(T + \Delta T\)</span>。</li>
-</ul></li>
-<li>雜訊類型：
-<ul>
+<li>表格展示了不同方法在 MNIST、CIFAR-10 和 CIFAR-100 資料集上的分類準確率（平均值和標準差）。</li>
+<li>方法分為兩類：<ul>
+<li><strong>“-N&#x2F;A”</strong>：移除具有高估計 $P(Y|X)$ 的樣本。</li>
+<li><strong>“-R”</strong>：使用修正的轉換矩陣 $T + \Delta T$。</li>
+</ul>
+</li>
+<li>雜訊類型：<ul>
 <li><strong>Sym-20</strong>：20% 的樣本標籤帶有對稱雜訊。</li>
 <li><strong>Sym-50</strong>：50% 的樣本標籤帶有對稱雜訊。</li>
-</ul></li>
-<li>結果：
-<ul>
-<li>使用修正矩陣的 <span class="math inline">\(Reweight-N/A-R\)</span>
-和 <span class="math inline">\(Forward-N/A-R\)</span>
-方法在多個資料集上均取得較高的分類準確率，尤其是在雜訊較大的情況下（Sym-50）。</li>
-</ul></li>
 </ul>
-<h3 id="資料集說明">資料集說明</h3>
-<ol type="1">
-<li><strong>MNIST</strong>:
+</li>
+<li>結果：<ul>
+<li>使用修正矩陣的 $Reweight-N&#x2F;A-R$ 和 $Forward-N&#x2F;A-R$ 方法在多個資料集上均取得較高的分類準確率，尤其是在雜訊較大的情況下（Sym-50）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="資料集說明"><a href="#資料集說明" class="headerlink" title="資料集說明"></a>資料集說明</h3><ol>
+<li><p><strong>MNIST</strong>:</p>
 <ul>
 <li>包含 10 類圖片，60,000 張訓練圖片，10,000 張測試圖片。</li>
-</ul></li>
-<li><strong>CIFAR-10 和 CIFAR-100</strong>:
+</ul>
+</li>
+<li><p><strong>CIFAR-10 和 CIFAR-100</strong>:</p>
 <ul>
-<li>CIFAR-10 包含 10 類圖片，每類有 50,000 張訓練圖片和 10,000
-張測試圖片。</li>
-<li>CIFAR-100 包含 100 類圖片，每類有 500 張訓練圖片和 100
-張測試圖片。</li>
+<li>CIFAR-10 包含 10 類圖片，每類有 50,000 張訓練圖片和 10,000 張測試圖片。</li>
+<li>CIFAR-100 包含 100 類圖片，每類有 500 張訓練圖片和 100 張測試圖片。</li>
 <li>在所有資料集中，訓練資料的 10% 作為驗證集。</li>
-</ul></li>
-<li><strong>Clothing1M</strong>:
+</ul>
+</li>
+<li><p><strong>Clothing1M</strong>:</p>
 <ul>
-<li>包含 100 萬張帶有真實世界雜訊標籤的圖片，以及額外的 50k
-張純淨資料（用於訓練、驗證和測試）。</li>
-</ul></li>
+<li>包含 100 萬張帶有真實世界雜訊標籤的圖片，以及額外的 50k 張純淨資料（用於訓練、驗證和測試）。</li>
+</ul>
+</li>
 </ol>
-<h3 id="雜訊設置">雜訊設置</h3>
-<ul>
-<li>雜訊生成基於對稱翻轉設定（Symmetry Flipping），具體詳見附錄 D：
-<ul>
+<h3 id="雜訊設置"><a href="#雜訊設置" class="headerlink" title="雜訊設置"></a>雜訊設置</h3><ul>
+<li>雜訊生成基於對稱翻轉設定（Symmetry Flipping），具體詳見附錄 D：<ul>
 <li><strong>Sym-50</strong>：近一半樣本標籤帶有雜訊，為重度雜訊。</li>
 <li><strong>Sym-20</strong>：約 20% 樣本標籤帶有雜訊，為輕度雜訊。</li>
-<li><strong>配對翻轉</strong>：每行僅有兩個非零值的轉換矩陣（Pair
-Flipping），該情境在文獻中廣泛研究。</li>
-</ul></li>
+<li><strong>配對翻轉</strong>：每行僅有兩個非零值的轉換矩陣（Pair Flipping），該情境在文獻中廣泛研究。</li>
 </ul>
-<h3 id="結論">結論</h3>
-<ul>
-<li>實驗結果報告了分類準確率及學習到的轉換矩陣 <span class="math inline">\(T^T + \Delta T\)</span> 與真實轉換矩陣 <span class="math inline">\(T\)</span> 的差異。</li>
+</li>
+</ul>
+<h3 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h3><ul>
+<li>實驗結果報告了分類準確率及學習到的轉換矩陣 $T^T + \Delta T$ 與真實轉換矩陣 $T$ 的差異。</li>
 <li>所有實驗均重複 5 次，以保證結果穩定。</li>
 <li>修正的轉換矩陣方法在高雜訊情況下具有明顯的優勢，展示了其有效性和穩健性。</li>
 </ul>
 <hr>
-<h2 id="表-3mnist-資料集的分類準確率-百分比">表 3：MNIST
-資料集的分類準確率 (百分比)</h2>
-<h3 id="表格說明-1">表格說明</h3>
-<ul>
-<li><strong>目標</strong>：比較不同方法在 MNIST
-資料集下，應對不同標籤雜訊水平（Sym-60%、Sym-70%、Sym-80%）時的分類準確率，並提供其平均值與標準差。</li>
-<li><strong>方法分類</strong>：
-<ul>
+<h2 id="表-3：MNIST-資料集的分類準確率-百分比"><a href="#表-3：MNIST-資料集的分類準確率-百分比" class="headerlink" title="表 3：MNIST 資料集的分類準確率 (百分比)"></a>表 3：MNIST 資料集的分類準確率 (百分比)</h2><p><img src="/../../images/2024/T-Revision/Table3.png" alt="Table3"></p>
+<h3 id="表格說明-1"><a href="#表格說明-1" class="headerlink" title="表格說明"></a>表格說明</h3><ul>
+<li><strong>目標</strong>：比較不同方法在 MNIST 資料集下，應對不同標籤雜訊水平（Sym-60%、Sym-70%、Sym-80%）時的分類準確率，並提供其平均值與標準差。</li>
+<li><strong>方法分類</strong>：<ul>
 <li><strong>“-A”</strong>：方法在完整資料集上運行，未移除錨點樣本。</li>
-<li><strong>“-R”</strong>：方法使用修正的轉換矩陣 <span class="math inline">\(T + \Delta T\)</span>。</li>
-<li><strong>“-N/A”</strong>：方法移除具有高估計 <span class="math inline">\(P(Y|X)\)</span> 的樣本。</li>
-</ul></li>
+<li><strong>“-R”</strong>：方法使用修正的轉換矩陣 $T + \Delta T$。</li>
+<li><strong>“-N&#x2F;A”</strong>：方法移除具有高估計 $P(Y|X)$ 的樣本。</li>
 </ul>
-<h3 id="雜訊情境下的分類結果">雜訊情境下的分類結果</h3>
-<h4 id="sym-60-雜訊">Sym-60% 雜訊</h4>
-<ul>
-<li><strong>Forward-A-R</strong> 方法的準確率為 <strong>97.65 ±
-0.11</strong>，略低於 <strong>Reweight-A-R</strong>，後者達到最高準確率
-<strong>97.83 ± 0.18</strong>。</li>
-<li>未使用修正矩陣的 <strong>Forward-A</strong> 準確率為 <strong>97.10 ±
-0.08</strong>，明顯低於修正方法。</li>
+</li>
 </ul>
-<h4 id="sym-70-雜訊">Sym-70% 雜訊</h4>
-<ul>
-<li><strong>Reweight-A-R</strong> 方法表現最佳，準確率達到 <strong>97.13
-± 0.08</strong>。</li>
-<li>未修正的 <strong>Reweight-A</strong> 方法的準確率為 <strong>96.25 ±
-0.26</strong>。</li>
+<h3 id="雜訊情境下的分類結果"><a href="#雜訊情境下的分類結果" class="headerlink" title="雜訊情境下的分類結果"></a>雜訊情境下的分類結果</h3><h4 id="Sym-60-雜訊"><a href="#Sym-60-雜訊" class="headerlink" title="Sym-60% 雜訊"></a>Sym-60% 雜訊</h4><ul>
+<li><strong>Forward-A-R</strong> 方法的準確率為 <strong>97.65 ± 0.11</strong>，略低於 <strong>Reweight-A-R</strong>，後者達到最高準確率 <strong>97.83 ± 0.18</strong>。</li>
+<li>未使用修正矩陣的 <strong>Forward-A</strong> 準確率為 <strong>97.10 ± 0.08</strong>，明顯低於修正方法。</li>
 </ul>
-<h4 id="sym-80-雜訊">Sym-80% 雜訊</h4>
-<ul>
-<li>在高雜訊情境下，修正的 <strong>Reweight-A-R</strong>
-方法達到最高準確率 <strong>94.19 ± 0.45</strong>。</li>
-<li>未修正的 <strong>Reweight-A</strong> 準確率顯著下降為 <strong>93.79
-± 0.52</strong>。</li>
+<h4 id="Sym-70-雜訊"><a href="#Sym-70-雜訊" class="headerlink" title="Sym-70% 雜訊"></a>Sym-70% 雜訊</h4><ul>
+<li><strong>Reweight-A-R</strong> 方法表現最佳，準確率達到 <strong>97.13 ± 0.08</strong>。</li>
+<li>未修正的 <strong>Reweight-A</strong> 方法的準確率為 <strong>96.25 ± 0.26</strong>。</li>
 </ul>
-<h4 id="總結-5">總結</h4>
-<ul>
-<li><strong>修正方法（“-R”）</strong>：
-<ul>
-<li>在所有雜訊水平下均表現穩定，尤其在高雜訊 (Sym-80%)
-條件下顯著優於未修正方法。</li>
-<li><strong>Reweight-A-R</strong>
-方法在大多數情況下取得最佳結果，表明修正的轉換矩陣 <span class="math inline">\(T + \Delta T\)</span>
-對於處理雜訊資料至關重要。</li>
-</ul></li>
-<li><strong>未修正方法（“-A”）</strong>：
-<ul>
+<h4 id="Sym-80-雜訊"><a href="#Sym-80-雜訊" class="headerlink" title="Sym-80% 雜訊"></a>Sym-80% 雜訊</h4><ul>
+<li>在高雜訊情境下，修正的 <strong>Reweight-A-R</strong> 方法達到最高準確率 <strong>94.19 ± 0.45</strong>。</li>
+<li>未修正的 <strong>Reweight-A</strong> 準確率顯著下降為 <strong>93.79 ± 0.52</strong>。</li>
+</ul>
+<h4 id="總結-5"><a href="#總結-5" class="headerlink" title="總結"></a>總結</h4><ul>
+<li><strong>修正方法（”-R”）</strong>：<ul>
+<li>在所有雜訊水平下均表現穩定，尤其在高雜訊 (Sym-80%) 條件下顯著優於未修正方法。</li>
+<li><strong>Reweight-A-R</strong> 方法在大多數情況下取得最佳結果，表明修正的轉換矩陣 $T + \Delta T$ 對於處理雜訊資料至關重要。</li>
+</ul>
+</li>
+<li><strong>未修正方法（”-A”）</strong>：<ul>
 <li>在雜訊水平較高時（Sym-70%、Sym-80%），性能逐漸下降，顯示其對雜訊的抵抗能力不足。</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <hr>
-<h2 id="表-4clothing1m-資料集的分類準確率-百分比">表 4：Clothing1M
-資料集的分類準確率 (百分比)</h2>
-<h3 id="表格說明-2">表格說明</h3>
-<ul>
-<li><strong>目標</strong>：展示不同方法在真實世界雜訊資料集
-<strong>Clothing1M</strong> 上的分類準確率。</li>
-<li><strong>資料結果</strong>：
-<ul>
-<li><strong>Reweight-R</strong> 方法表現最佳，準確率達到
-<strong>74.18%</strong>。</li>
-<li><strong>Forward-R</strong> 方法次之，準確率為
-<strong>72.25%</strong>。</li>
-<li>傳統方法中：
-<ul>
-<li><strong>Forward</strong> 準確率為 <strong>71.79%</strong>。</li>
-<li><strong>Reweight</strong> 準確率為 <strong>70.95%</strong>。</li>
-<li><strong>Co-teaching</strong> 準確率為 <strong>58.68%</strong>。</li>
-<li><strong>MentorNet</strong> 準確率為 <strong>56.77%</strong>。</li>
-<li><strong>Decoupling</strong> 準確率最低，為
-<strong>53.98%</strong>。</li>
-</ul></li>
-</ul></li>
+<h2 id="表-4：Clothing1M-資料集的分類準確率-百分比"><a href="#表-4：Clothing1M-資料集的分類準確率-百分比" class="headerlink" title="表 4：Clothing1M 資料集的分類準確率 (百分比)"></a>表 4：Clothing1M 資料集的分類準確率 (百分比)</h2><p><img src="/../../images/2024/T-Revision/Table4.png" alt="Table4"></p>
+<h3 id="表格說明-2"><a href="#表格說明-2" class="headerlink" title="表格說明"></a>表格說明</h3><ul>
+<li><strong>目標</strong>：展示不同方法在真實世界雜訊資料集 <strong>Clothing1M</strong> 上的分類準確率。</li>
+<li><strong>資料結果</strong>：<ul>
+<li><strong>Reweight-R</strong> 方法表現最佳，準確率達到 **74.18%**。</li>
+<li><strong>Forward-R</strong> 方法次之，準確率為 **72.25%**。</li>
+<li>傳統方法中：<ul>
+<li><strong>Forward</strong> 準確率為 **71.79%**。</li>
+<li><strong>Reweight</strong> 準確率為 **70.95%**。</li>
+<li><strong>Co-teaching</strong> 準確率為 **58.68%**。</li>
+<li><strong>MentorNet</strong> 準確率為 **56.77%**。</li>
+<li><strong>Decoupling</strong> 準確率最低，為 **53.98%**。</li>
 </ul>
-<h3 id="基線方法比較-baselines">基線方法比較 (Baselines)</h3>
-<ul>
-<li><strong>基線方法選擇</strong>：
-<ul>
-<li><strong>Co-teaching [14]</strong>、<strong>MentorNet [15]</strong>
-和 <strong>Decoupling
-[24]</strong>：這三種方法設計良好，但未包含轉換矩陣的學習。</li>
-<li><strong>Forward [30]</strong> 和
-<strong>Reweight</strong>：這是基於一致性估計器的基線方法，分別為分類器一致性方法與風險一致性方法。</li>
-</ul></li>
-<li><strong>未比較的方法</strong>：
-<ul>
-<li>基於轉換矩陣逆的風險一致性估計方法（如 <strong>Backward
-[30]</strong>）未包含在比較中，因為其性能報告低於
-<strong>Forward</strong> 方法。</li>
-</ul></li>
+</li>
 </ul>
-<h3 id="總結-6">總結</h3>
-<ul>
-<li><strong>修正方法 Reweight-R</strong> 在 Clothing1M
-資料集上展現了最佳性能，表現出色，達到 <strong>74.18%</strong>。</li>
-<li>相比之下，未使用修正轉換矩陣的基線方法性能稍遜，尤其是 Decoupling 和
-MentorNet。</li>
-<li>結果表明，修正轉換矩陣 <span class="math inline">\(T + \Delta
-T\)</span> 方法在真實世界雜訊標籤環境中具有顯著的性能提升效果。</li>
+</li>
+</ul>
+<h3 id="基線方法比較-Baselines"><a href="#基線方法比較-Baselines" class="headerlink" title="基線方法比較 (Baselines)"></a>基線方法比較 (Baselines)</h3><ul>
+<li><strong>基線方法選擇</strong>：<ul>
+<li><strong>Co-teaching [14]<strong>、</strong>MentorNet [15]</strong> 和 **Decoupling [24]**：這三種方法設計良好，但未包含轉換矩陣的學習。</li>
+<li><strong>Forward [30]</strong> 和 <strong>Reweight</strong>：這是基於一致性估計器的基線方法，分別為分類器一致性方法與風險一致性方法。</li>
+</ul>
+</li>
+<li><strong>未比較的方法</strong>：<ul>
+<li>基於轉換矩陣逆的風險一致性估計方法（如 **Backward [30]**）未包含在比較中，因為其性能報告低於 <strong>Forward</strong> 方法。</li>
+</ul>
+</li>
+</ul>
+<h3 id="總結-6"><a href="#總結-6" class="headerlink" title="總結"></a>總結</h3><ul>
+<li><strong>修正方法 Reweight-R</strong> 在 Clothing1M 資料集上展現了最佳性能，表現出色，達到 **74.18%**。</li>
+<li>相比之下，未使用修正轉換矩陣的基線方法性能稍遜，尤其是 Decoupling 和 MentorNet。</li>
+<li>結果表明，修正轉換矩陣 $T + \Delta T$ 方法在真實世界雜訊標籤環境中具有顯著的性能提升效果。</li>
 </ul>
 <hr>
-<h2 id="網路結構與優化-network-structure-and-optimization">網路結構與優化
-(Network Structure and Optimization)</h2>
-<h3 id="總覽">總覽</h3>
-<ul>
-<li>為了公平比較，所有方法均在 NVIDIA Tesla V100 上使用 PyTorch
-的默認參數實現。</li>
-<li>不同資料集使用的網絡架構：
-<ul>
+<h2 id="網路結構與優化-Network-Structure-and-Optimization"><a href="#網路結構與優化-Network-Structure-and-Optimization" class="headerlink" title="網路結構與優化 (Network Structure and Optimization)"></a>網路結構與優化 (Network Structure and Optimization)</h2><h3 id="總覽"><a href="#總覽" class="headerlink" title="總覽"></a>總覽</h3><ul>
+<li>為了公平比較，所有方法均在 NVIDIA Tesla V100 上使用 PyTorch 的默認參數實現。</li>
+<li>不同資料集使用的網絡架構：<ul>
 <li><strong>MNIST</strong>：LeNet-5 網絡。</li>
 <li><strong>CIFAR-10</strong>：ResNet-18 網絡。</li>
 <li><strong>CIFAR-100</strong>：ResNet-34 網絡。</li>
-</ul></li>
 </ul>
-<h3 id="第一階段學習轉換矩陣-hatt">第一階段：學習轉換矩陣 <span class="math inline">\(\hat{T}\)</span></h3>
-<ul>
-<li>轉換矩陣 <span class="math inline">\(\hat{T}\)</span>
-的優化方法參考文獻 [30]。</li>
+</li>
 </ul>
-<h3 id="第二階段分類器與修正變數的學習">第二階段：分類器與修正變數的學習</h3>
-<h4 id="mnist-和-cifar">1. <strong>MNIST 和 CIFAR</strong></h4>
-<ul>
-<li>優化器：
-<ul>
-<li>初始使用 SGD，動量為 0.9，權重衰減為 <span class="math inline">\(10^{-4}\)</span>。</li>
-</ul></li>
-<li>超參數：
-<ul>
+<h3 id="第一階段：學習轉換矩陣-hat-T"><a href="#第一階段：學習轉換矩陣-hat-T" class="headerlink" title="第一階段：學習轉換矩陣 $\hat{T}$"></a>第一階段：學習轉換矩陣 $\hat{T}$</h3><ul>
+<li>轉換矩陣 $\hat{T}$ 的優化方法參考文獻 [30]。</li>
+</ul>
+<h3 id="第二階段：分類器與修正變數的學習"><a href="#第二階段：分類器與修正變數的學習" class="headerlink" title="第二階段：分類器與修正變數的學習"></a>第二階段：分類器與修正變數的學習</h3><h4 id="1-MNIST-和-CIFAR"><a href="#1-MNIST-和-CIFAR" class="headerlink" title="1. MNIST 和 CIFAR"></a>1. <strong>MNIST 和 CIFAR</strong></h4><ul>
+<li>優化器：<ul>
+<li>初始使用 SGD，動量為 0.9，權重衰減為 $10^{-4}$。</li>
+</ul>
+</li>
+<li>超參數：<ul>
 <li>批量大小：128。</li>
-<li>初始學習率：<span class="math inline">\(10^{-2}\)</span>。</li>
+<li>初始學習率：$10^{-2}$。</li>
 <li>學習率策略：在第 40 和 80 個 epoch 將學習率除以 10。</li>
 <li>總訓練次數：200 個 epoch。</li>
-</ul></li>
-<li>第二階段：
-<ul>
+</ul>
+</li>
+<li>第二階段：<ul>
 <li>優化器更換為 Adam。</li>
-<li>學習率更改為 <span class="math inline">\(5 \times
-10^{-7}\)</span>。</li>
-</ul></li>
-<li>資料增強：
-<ul>
-<li>對 CIFAR-10 和
-CIFAR-100，進行隨機水平翻轉和隨機裁剪，裁剪前在每側填充 4 個像素，得到
-<span class="math inline">\(32 \times 32\)</span> 的圖像。</li>
-</ul></li>
+<li>學習率更改為 $5 \times 10^{-7}$。</li>
 </ul>
-<h4 id="clothing1m">2. <strong>Clothing1M</strong></h4>
-<ul>
+</li>
+<li>資料增強：<ul>
+<li>對 CIFAR-10 和 CIFAR-100，進行隨機水平翻轉和隨機裁剪，裁剪前在每側填充 4 個像素，得到 $32 \times 32$ 的圖像。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-Clothing1M"><a href="#2-Clothing1M" class="headerlink" title="2. Clothing1M"></a>2. <strong>Clothing1M</strong></h4><ul>
 <li>使用在 ImageNet 上預訓練的 ResNet-50。</li>
-<li>第一階段：
-<ul>
+<li>第一階段：<ul>
 <li>初始化時，利用 100 萬帶噪資料和 5 萬純淨資料來訓練轉換矩陣。</li>
-</ul></li>
-<li>第二階段：
-<ul>
-<li>使用 SGD，動量為 0.9，權重衰減為 <span class="math inline">\(10^{-3}\)</span>。</li>
-<li>批量大小：32。</li>
-<li>學習率：<span class="math inline">\(10^{-3}\)</span> 和 <span class="math inline">\(10^{-4}\)</span>，各訓練 5 個 epoch。</li>
-</ul></li>
-<li>最後分類器與修正變數的學習：
-<ul>
-<li>使用 Adam 優化器。</li>
-<li>學習率設為 <span class="math inline">\(5 \times
-10^{-7}\)</span>。</li>
-</ul></li>
 </ul>
-<h4 id="總結-7">總結</h4>
-<ul>
+</li>
+<li>第二階段：<ul>
+<li>使用 SGD，動量為 0.9，權重衰減為 $10^{-3}$。</li>
+<li>批量大小：32。</li>
+<li>學習率：$10^{-3}$ 和 $10^{-4}$，各訓練 5 個 epoch。</li>
+</ul>
+</li>
+<li>最後分類器與修正變數的學習：<ul>
+<li>使用 Adam 優化器。</li>
+<li>學習率設為 $5 \times 10^{-7}$。</li>
+</ul>
+</li>
+</ul>
+<h4 id="總結-7"><a href="#總結-7" class="headerlink" title="總結"></a>總結</h4><ul>
 <li>本節詳細介紹了針對不同資料集的網絡架構和優化過程，包括學習率調整、優化器選擇以及資料增強方法。</li>
 <li>這些設定確保了實驗結果的公平性和方法的有效性。</li>
 </ul>
 <hr>
-<h2 id="分類準確率比較-comparison-for-classification-accuracy">分類準確率比較
-(Comparison for Classification Accuracy)</h2>
-<h3 id="錨點樣本的重要性-the-importance-of-anchor-points">錨點樣本的重要性
-(The Importance of Anchor Points)</h3>
-<ul>
-<li>修改資料集以展示錨點樣本的重要性：
-<ul>
-<li><strong>MNIST</strong> 資料集：移除了 <strong>40%</strong>
-具有最高後驗機率的樣本。</li>
-<li><strong>CIFAR-10 和 CIFAR-100</strong> 資料集：移除了
-<strong>20%</strong> 後驗機率最大的樣本。</li>
-</ul></li>
-<li>區分方法：
-<ul>
-<li>在完整資料集上運行的演算法標記為 <strong>“-A”</strong>。</li>
-<li>在修改後的資料集上運行的演算法標記為 <strong>“-N/A”</strong>。</li>
-</ul></li>
+<h2 id="分類準確率比較-Comparison-for-Classification-Accuracy"><a href="#分類準確率比較-Comparison-for-Classification-Accuracy" class="headerlink" title="分類準確率比較 (Comparison for Classification Accuracy)"></a>分類準確率比較 (Comparison for Classification Accuracy)</h2><h3 id="錨點樣本的重要性-The-Importance-of-Anchor-Points"><a href="#錨點樣本的重要性-The-Importance-of-Anchor-Points" class="headerlink" title="錨點樣本的重要性 (The Importance of Anchor Points)"></a>錨點樣本的重要性 (The Importance of Anchor Points)</h3><ul>
+<li>修改資料集以展示錨點樣本的重要性：<ul>
+<li><strong>MNIST</strong> 資料集：移除了 <strong>40%</strong> 具有最高後驗機率的樣本。</li>
+<li><strong>CIFAR-10 和 CIFAR-100</strong> 資料集：移除了 <strong>20%</strong> 後驗機率最大的樣本。</li>
 </ul>
-<h3 id="比較結果">比較結果</h3>
-<ol type="1">
-<li><strong>MNIST</strong>:
-<ul>
-<li><strong>“-N/A”</strong> 方法的表現更好，例如
-<strong>Decoupling-N/A</strong>、<strong>MentorNet-N/A</strong> 和
-<strong>Co-teaching-N/A</strong>。</li>
-</ul></li>
-<li><strong>CIFAR-10 和 CIFAR-100</strong>:
-<ul>
-<li><strong>“-A”</strong>
-方法表現更好，因為這些方法依賴於資料集屬性，而非轉換矩陣。</li>
-</ul></li>
+</li>
+<li>區分方法：<ul>
+<li>在完整資料集上運行的演算法標記為 <strong>“-A”</strong>。</li>
+<li>在修改後的資料集上運行的演算法標記為 <strong>“-N&#x2F;A”</strong>。</li>
+</ul>
+</li>
+</ul>
+<h3 id="比較結果"><a href="#比較結果" class="headerlink" title="比較結果"></a>比較結果</h3><ol>
+<li><strong>MNIST</strong>:<ul>
+<li><strong>“-N&#x2F;A”</strong> 方法的表現更好，例如 <strong>Decoupling-N&#x2F;A</strong>、<strong>MentorNet-N&#x2F;A</strong> 和 <strong>Co-teaching-N&#x2F;A</strong>。</li>
+</ul>
+</li>
+<li><strong>CIFAR-10 和 CIFAR-100</strong>:<ul>
+<li><strong>“-A”</strong> 方法表現更好，因為這些方法依賴於資料集屬性，而非轉換矩陣。</li>
+</ul>
+</li>
 </ol>
 <hr>
-<h2 id="無錨點方法的退化-performance-degeneration-without-anchor-points">無錨點方法的退化
-(Performance Degeneration Without Anchor Points)</h2>
-<ul>
-<li>比較 <strong>Forward-A</strong> 和 <strong>Reweight-A</strong>
-方法與其無錨點版本 <strong>Forward-N/A</strong> 和
-<strong>Reweight-N/A</strong>：
-<ul>
-<li><strong>MNIST</strong>：
-<ul>
+<h2 id="無錨點方法的退化-Performance-Degeneration-Without-Anchor-Points"><a href="#無錨點方法的退化-Performance-Degeneration-Without-Anchor-Points" class="headerlink" title="無錨點方法的退化 (Performance Degeneration Without Anchor Points)"></a>無錨點方法的退化 (Performance Degeneration Without Anchor Points)</h2><ul>
+<li>比較 <strong>Forward-A</strong> 和 <strong>Reweight-A</strong> 方法與其無錨點版本 <strong>Forward-N&#x2F;A</strong> 和 <strong>Reweight-N&#x2F;A</strong>：<ul>
+<li><strong>MNIST</strong>：<ul>
 <li>性能下降輕微，因為該資料集的分類界限分離良好。</li>
-</ul></li>
-<li><strong>CIFAR-100</strong>：
-<ul>
-<li><strong>“-N/A”</strong> 方法性能下降明顯，準確率降低了至少
-<strong>4%</strong>。</li>
-</ul></li>
-</ul></li>
 </ul>
-<h3 id="增加雜訊的影響">增加雜訊的影響</h3>
-<ul>
-<li>在 <strong>MNIST</strong> 資料集上，將雜訊比例提高到
-<strong>60%、70%、80%</strong>，詳細結果見表 3。</li>
+</li>
+<li><strong>CIFAR-100</strong>：<ul>
+<li><strong>“-N&#x2F;A”</strong> 方法性能下降明顯，準確率降低了至少 **4%**。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="增加雜訊的影響"><a href="#增加雜訊的影響" class="headerlink" title="增加雜訊的影響"></a>增加雜訊的影響</h3><ul>
+<li>在 <strong>MNIST</strong> 資料集上，將雜訊比例提高到 **60%、70%、80%**，詳細結果見表 3。</li>
 <li>隨著雜訊比例增加，所提出的方法比基線方法在性能上有顯著的提升。</li>
 </ul>
 <hr>
-<h2 id="風險一致性估計器與分類器一致性估計器的比較">風險一致性估計器與分類器一致性估計器的比較</h2>
-<ul>
-<li>比較表 1 中的 <strong>Reweight-A</strong> 與表 2 中的
-<strong>Forward-N/A</strong> 和 <strong>Reweight-N/A</strong>：
-<ul>
-<li><strong>Reweight</strong>
-方法作為風險一致性估計器，在理論和性能上均比 <strong>Forward</strong>
-方法略勝一籌。</li>
+<h2 id="風險一致性估計器與分類器一致性估計器的比較"><a href="#風險一致性估計器與分類器一致性估計器的比較" class="headerlink" title="風險一致性估計器與分類器一致性估計器的比較"></a>風險一致性估計器與分類器一致性估計器的比較</h2><ul>
+<li>比較表 1 中的 <strong>Reweight-A</strong> 與表 2 中的 <strong>Forward-N&#x2F;A</strong> 和 <strong>Reweight-N&#x2F;A</strong>：<ul>
+<li><strong>Reweight</strong> 方法作為風險一致性估計器，在理論和性能上均比 <strong>Forward</strong> 方法略勝一籌。</li>
 <li>在使用轉換矩陣的情況下，風險一致性方法性能更穩定。</li>
-</ul></li>
 </ul>
-<h3 id="總結-8">總結</h3>
-<ul>
+</li>
+</ul>
+<h3 id="總結-8"><a href="#總結-8" class="headerlink" title="總結"></a>總結</h3><ul>
 <li>錨點樣本對資料集和演算法的穩健性有重大影響，尤其是在高雜訊情境下。</li>
-<li>使用修正的轉換矩陣方法（如
-<strong>Reweight</strong>）顯示出更好的性能，特別是在雜訊比例較高的情況下。</li>
+<li>使用修正的轉換矩陣方法（如 <strong>Reweight</strong>）顯示出更好的性能，特別是在雜訊比例較高的情況下。</li>
 </ul>
 <hr>
-<h2 id="t-修正的重要性-the-importance-of-t-revision"><strong>T
-修正的重要性</strong> (The Importance of T-Revision)</h2>
-<ul>
-<li><strong>公平比較</strong>：為了進行公平比較，將
-<strong>Forward</strong> 方法設為基線，並引入<span class="math inline">\(T\)</span>-修正。
-<ul>
-<li>在表 1 和表 2 中，標記為 <strong>“-R”</strong> 的方法表示使用了<span class="math inline">\(T\)</span>-修正，即透過加入<span class="math inline">\(\Delta T\)</span> 修改學到的<span class="math inline">\(\hat{T}\)</span>。</li>
-</ul></li>
-<li><strong>結果比較</strong>： -<span class="math inline">\(T\)</span>-修正方法顯著優於其他方法。
-<ul>
-<li>在這些方法中，<strong>Reweight-R</strong> 顯著優於基線方法
-<strong>Forward-R</strong>。</li>
-<li><strong>原因分析</strong>： -<span class="math inline">\(T\)</span>-修正方法即使在未移除錨點樣本的情況下，也能提升分類性能。
-<ul>
+<h2 id="T-修正的重要性-The-Importance-of-T-Revision"><a href="#T-修正的重要性-The-Importance-of-T-Revision" class="headerlink" title="T 修正的重要性 (The Importance of T-Revision)"></a><strong>T 修正的重要性</strong> (The Importance of T-Revision)</h2><ul>
+<li><strong>公平比較</strong>：為了進行公平比較，將 <strong>Forward</strong> 方法設為基線，並引入$T$-修正。<ul>
+<li>在表 1 和表 2 中，標記為 <strong>“-R”</strong> 的方法表示使用了$T$-修正，即透過加入$\Delta T$ 修改學到的$\hat{T}$。</li>
+</ul>
+</li>
+<li><strong>結果比較</strong>：<br>-$T$-修正方法顯著優於其他方法。<ul>
+<li>在這些方法中，<strong>Reweight-R</strong> 顯著優於基線方法 <strong>Forward-R</strong>。</li>
+<li><strong>原因分析</strong>：<br>-$T$-修正方法即使在未移除錨點樣本的情況下，也能提升分類性能。<ul>
 <li>可能是因為網絡、轉換矩陣以及分類器是聯合學習和驗證的，而識別出的錨點樣本並不可靠。</li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <hr>
-<h2 id="真實世界資料集上的比較-comparison-on-real-world-dataset"><strong>真實世界資料集上的比較</strong>
-(Comparison on Real-World Dataset)</h2>
+<h2 id="真實世界資料集上的比較-Comparison-on-Real-World-Dataset"><a href="#真實世界資料集上的比較-Comparison-on-Real-World-Dataset" class="headerlink" title="真實世界資料集上的比較 (Comparison on Real-World Dataset)"></a><strong>真實世界資料集上的比較</strong> (Comparison on Real-World Dataset)</h2><ul>
+<li><p><strong>Clothing1M 資料集</strong>：</p>
 <ul>
-<li><strong>Clothing1M 資料集</strong>：
-<ul>
-<li>所提出的<span class="math inline">\(T\)</span>-修正方法在分類準確率上顯著優於基線方法。</li>
+<li>所提出的$T$-修正方法在分類準確率上顯著優於基線方法。</li>
 <li>具體結果見表 4，其中最高準確率已加粗標記。</li>
-</ul></li>
-<li><strong>總結</strong> -<span class="math inline">\(T\)</span>-修正方法通過聯合學習和優化<span class="math inline">\(T\)</span>，在合成和真實資料集上均展示了出色的性能。</li>
-<li><strong>Reweight-R</strong>
-方法在所有修正方法中表現最佳，特別是在真實世界資料集中，顯示出其應用潛力和穩健性。</li>
+</ul>
+</li>
+<li><p><strong>總結</strong><br>  -$T$-修正方法通過聯合學習和優化$T$，在合成和真實資料集上均展示了出色的性能。</p>
+</li>
+<li><p><strong>Reweight-R</strong> 方法在所有修正方法中表現最佳，特別是在真實世界資料集中，顯示出其應用潛力和穩健性。</p>
+</li>
 </ul>
 <hr>
-<h2 id="比較轉換矩陣的估計效果-comparison-for-estimating-transition-matrices">比較轉換矩陣的估計效果
-(Comparison for Estimating Transition Matrices)</h2>
+<h2 id="比較轉換矩陣的估計效果-Comparison-for-Estimating-Transition-Matrices"><a href="#比較轉換矩陣的估計效果-Comparison-for-Estimating-Transition-Matrices" class="headerlink" title="比較轉換矩陣的估計效果 (Comparison for Estimating Transition Matrices)"></a>比較轉換矩陣的估計效果 (Comparison for Estimating Transition Matrices)</h2><ul>
+<li><p><strong>目標</strong>：展示所提出的風險一致性估計器在修改轉換矩陣方面更為有效。</p>
+</li>
+<li><p><strong>方法</strong>：</p>
 <ul>
-<li><strong>目標</strong>：展示所提出的風險一致性估計器在修改轉換矩陣方面更為有效。</li>
-<li><strong>方法</strong>：
-<ul>
-<li>比較轉換矩陣的估計誤差，計算公式為： [ ]</li>
+<li>比較轉換矩陣的估計誤差，計算公式為：<br>[<br>\frac{|T - \hat{T} - \Delta T|_1}{|T|_1}<br>]</li>
 <li>圖 4 展示了相關的估計誤差。</li>
-</ul></li>
-<li><strong>結果分析</strong>：
+</ul>
+</li>
+<li><p><strong>結果分析</strong>：</p>
 <ul>
-<li>在所有情況下，基於風險一致性估計器的修正方法的估計誤差小於基於分類器一致性演算法的方法（如
-<strong>Forward-R</strong>）。</li>
-<li><strong>結論</strong>：
-<ul>
+<li>在所有情況下，基於風險一致性估計器的修正方法的估計誤差小於基於分類器一致性演算法的方法（如 <strong>Forward-R</strong>）。</li>
+<li><strong>結論</strong>：<ul>
 <li>風險一致性估計器在修改轉換矩陣方面更為強大。</li>
 <li>這也解釋了為什麼所提出的方法具有更好的性能。</li>
-</ul></li>
-</ul></li>
-<li><strong>附加說明</strong>：
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>附加說明</strong>：</p>
 <ul>
 <li>關於圖 4 的更多討論可以在附錄 E 中找到。</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <hr>
-<h1 id="結論-conclusion">結論 (Conclusion)</h1>
-<ul>
-<li><strong>本文貢獻</strong>：
+<h1 id="結論-Conclusion"><a href="#結論-Conclusion" class="headerlink" title="結論 (Conclusion)"></a>結論 (Conclusion)</h1><ul>
+<li><p><strong>本文貢獻</strong>：</p>
 <ul>
 <li>提出了一種適用於標籤雜訊學習的風險一致性估計方法。</li>
-<li>該方法不需要使用轉換矩陣的逆，並引入了一種簡單但有效的學習框架——( T
-)-修正（( T )-revision）。</li>
+<li>該方法不需要使用轉換矩陣的逆，並引入了一種簡單但有效的學習框架——( T )-修正（( T )-revision）。</li>
 <li>該框架能夠在雜訊監督下穩健地訓練深度神經網絡。</li>
-</ul></li>
-<li><strong>目標與核心思想</strong>：
+</ul>
+</li>
+<li><p><strong>目標與核心思想</strong>：</p>
 <ul>
 <li>保持當前一致性演算法在無錨點樣本或轉換矩陣學習較差的情況下的有效性與效率。</li>
 <li>核心思想是修正學到的轉換矩陣，並利用帶噪驗證集來驗證修正的效果。</li>
-</ul></li>
-<li><strong>實驗驗證</strong>：
+</ul>
+</li>
+<li><p><strong>實驗驗證</strong>：</p>
 <ul>
 <li>在合成資料和真實世界標籤雜訊資料上進行實驗。</li>
-<li>實驗結果表明，所提出的 ( T
-)-修正方法顯著提升了標籤雜訊學習的性能。</li>
-</ul></li>
-<li><strong>未來工作</strong>：
-<ol type="1">
+<li>實驗結果表明，所提出的 ( T )-修正方法顯著提升了標籤雜訊學習的性能。</li>
+</ul>
+</li>
+<li><p><strong>未來工作</strong>：</p>
+<ol>
 <li>將轉換矩陣的先驗知識（例如稀疏性）融入端到端學習系統。</li>
 <li>遞歸學習轉換矩陣和分類器，因為實驗顯示轉換矩陣可以被進一步優化。</li>
-</ol></li>
+</ol>
+</li>
 </ul>
-<h1 id="reference">Reference</h1>
-<ol type="1">
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
 <li>Are Anchor Points Really Indispensable in Label-Noise Learning?</li>
 </ol>
 <ul>
-<li>https://gcatnjust.github.io/ChenGong/paper/xia_nips19.pdf</li>
+<li><a target="_blank" rel="noopener" href="https://gcatnjust.github.io/ChenGong/paper/xia_nips19.pdf">https://gcatnjust.github.io/ChenGong/paper/xia_nips19.pdf</a></li>
 </ul>
-<h1 id="review">Review</h1>
-<ul>
-<li>https://papers.nips.cc/paper/2019/file/9308b0d6e5898366a4a986bc33f3d3e7-Reviews.html</li>
+<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://papers.nips.cc/paper/2019/file/9308b0d6e5898366a4a986bc33f3d3e7-Reviews.html">https://papers.nips.cc/paper/2019/file/9308b0d6e5898366a4a986bc33f3d3e7-Reviews.html</a></li>
 </ul>
-<h1 id="pytorch-implementation">Pytorch Implementation</h1>
-<ol type="1">
+<h1 id="Pytorch-Implementation"><a href="#Pytorch-Implementation" class="headerlink" title="Pytorch Implementation"></a>Pytorch Implementation</h1><ol>
 <li>T-Revision Github</li>
 </ol>
 <ul>
-<li>https://github.com/xiaoboxia/T-Revision</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/xiaoboxia/T-Revision">https://github.com/xiaoboxia/T-Revision</a></li>
 </ul>
 
     </div>
@@ -1548,7 +1226,7 @@ CIFAR-100，進行隨機水平翻轉和隨機裁剪，裁剪前在每側填充 4
           <div class="post-nav">
             <div class="post-nav-item">
                 <a href="/2024/12/07/2024/December/Co-teaching/" rel="prev" title="Co-teaching">
-                  <i class="fa fa-chevron-left"></i> Co-teaching
+                  <i class="fa fa-angle-left"></i> Co-teaching
                 </a>
             </div>
             <div class="post-nav-item">
@@ -1569,27 +1247,26 @@ CIFAR-100，進行隨機水平翻轉和隨機裁剪，裁剪前在每側填充 4
   <footer class="footer">
     <div class="footer-inner">
 
-
-<div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2024</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">利醬</span>
-</div>
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">利醬</span>
+  </div>
 <div class="wordcount">
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">307k</span>
+    <span title="總字數">286k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">9:19</span>
+    <span title="所需總閱讀時間">8:39</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
@@ -1609,7 +1286,6 @@ CIFAR-100，進行隨機水平翻轉和隨機裁剪，裁剪前在每側填充 4
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -1618,9 +1294,11 @@ CIFAR-100，進行隨機水平翻轉和隨機裁剪，裁剪前在每側填充 4
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
 
   
+
+
 
 
 
