@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介 Network Architecture Search (NAS) 是一種自動化的方法，用於搜索最佳神經網路架構以解決特定任務。NAS 旨在自動化神經網路的設計過程，以提高模型的性能和效能。 傳統上，神經網路的設計是由人工專家進行，他們根據經驗和直覺選擇網路結構和超參數。然而，隨著神經網路變得越來越複雜和多樣化，手動設計的過程變得困難且耗時。NAS 的目標是通過搜索算法自動探索最佳">
+    <meta name="description" content="簡介Network Architecture Search (NAS) 是一種自動化的方法，用於搜索最佳神經網路架構以解決特定任務。NAS 旨在自動化神經網路的設計過程，以提高模型的性能和效能。 傳統上，神經網路的設計是由人工專家進行，他們根據經驗和直覺選擇網路結構和超參數。然而，隨著神經網路變得越來越複雜和多樣化，手動設計的過程變得困難且耗時。NAS 的目標是通過搜索算法自動探索最佳的網路架構，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Network Architecture Search (NAS)">
 <meta property="og:url" content="https://leonicehot.github.io/2023/05/04/2023/May/Network-Architecture-Search-NAS/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介 Network Architecture Search (NAS) 是一種自動化的方法，用於搜索最佳神經網路架構以解決特定任務。NAS 旨在自動化神經網路的設計過程，以提高模型的性能和效能。 傳統上，神經網路的設計是由人工專家進行，他們根據經驗和直覺選擇網路結構和超參數。然而，隨著神經網路變得越來越複雜和多樣化，手動設計的過程變得困難且耗時。NAS 的目標是通過搜索算法自動探索最佳">
+<meta property="og:description" content="簡介Network Architecture Search (NAS) 是一種自動化的方法，用於搜索最佳神經網路架構以解決特定任務。NAS 旨在自動化神經網路的設計過程，以提高模型的性能和效能。 傳統上，神經網路的設計是由人工專家進行，他們根據經驗和直覺選擇網路結構和超參數。然而，隨著神經網路變得越來越複雜和多樣化，手動設計的過程變得困難且耗時。NAS 的目標是通過搜索算法自動探索最佳的網路架構，">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-05-04T00:36:12.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:37.299Z">
@@ -245,76 +245,51 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
-<p>Network Architecture Search (NAS)
-是一種自動化的方法，用於搜索最佳神經網路架構以解決特定任務。NAS
-旨在自動化神經網路的設計過程，以提高模型的性能和效能。</p>
-<p>傳統上，神經網路的設計是由人工專家進行，他們根據經驗和直覺選擇網路結構和超參數。然而，隨著神經網路變得越來越複雜和多樣化，手動設計的過程變得困難且耗時。NAS
-的目標是通過搜索算法自動探索最佳的網路架構，以提高網路的性能和效能。
-<span id="more"></span></p>
-<h1 id="定義">定義</h1>
-<p>Network Architecture Search (NAS)
-是一種自動化的方法，旨在自動搜索最佳的神經網路結構，以提高模型的性能和效能。傳統上，神經網路的設計是由人工專家進行，需要大量的經驗和時間。NAS
-的目標是通過使用優化算法或搜索策略，從大量的網路結構空間中自動搜索出最佳的結構。</p>
-<p>NAS
-的核心思想是通過搜索和評估各種不同的網路結構，以找到在特定任務或數據集上表現最好的網路結構。這種搜索過程可以在訓練過程中進行，也可以在獨立的搜索階段進行。</p>
-<p>NAS
-的搜索空間可以涵蓋網路的拓撲結構、層的數量、層的類型和超參數等。搜索空間可以非常龐大，包含了各種可能的網路結構組合。NAS
-使用各種優化算法、演化算法、強化學習等方法來探索和優化搜索空間，以找到最佳的網路結構。</p>
-<h1 id="步驟">步驟</h1>
-<p>下面是 Network Architecture Search (NAS) 的一般步驟：</p>
-<ol type="1">
-<li><p>定義搜索空間：首先，需要定義神經網路的搜索空間，即可能的網路結構和超參數的組合。搜索空間的定義涉及網路層的類型（例如卷積層、循環層、全連接層等）、層之間的連接方式、層的數量和大小等。</p></li>
-<li><p>搜索策略：選擇一種搜索策略或優化算法，用於在搜索空間中找到最佳的網路結構。常見的搜索策略包括演化算法、遺傳算法、強化學習、梯度下降等。這些算法通常根據某種性能指標（如準確度、效能、存儲需求等）來評估和選擇網路結構。</p></li>
-<li><p>評估和訓練：對每個候選網路結構進行評估和訓練。這通常涉及在訓練數據集上對網路進行訓練，然後使用驗證數據集來評估其性能。</p></li>
-<li><p>更新和迭代：根據評估結果，更新搜索策略並進行迭代，以找到更好的網路結構。這可能涉及增加搜索空間的多樣性、調整搜索策略的參數等。</p></li>
-<li><p>模型評估和部署：最終，選擇最佳的網路結構，對其進行測試和評估，然後部署到實際應用中。</p></li>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>Network Architecture Search (NAS) 是一種自動化的方法，用於搜索最佳神經網路架構以解決特定任務。NAS 旨在自動化神經網路的設計過程，以提高模型的性能和效能。</p>
+<p>傳統上，神經網路的設計是由人工專家進行，他們根據經驗和直覺選擇網路結構和超參數。然而，隨著神經網路變得越來越複雜和多樣化，手動設計的過程變得困難且耗時。NAS 的目標是通過搜索算法自動探索最佳的網路架構，以提高網路的性能和效能。</p>
+<span id="more"></span>
+
+<h1 id="定義"><a href="#定義" class="headerlink" title="定義"></a>定義</h1><p>Network Architecture Search (NAS) 是一種自動化的方法，旨在自動搜索最佳的神經網路結構，以提高模型的性能和效能。傳統上，神經網路的設計是由人工專家進行，需要大量的經驗和時間。NAS 的目標是通過使用優化算法或搜索策略，從大量的網路結構空間中自動搜索出最佳的結構。</p>
+<p>NAS 的核心思想是通過搜索和評估各種不同的網路結構，以找到在特定任務或數據集上表現最好的網路結構。這種搜索過程可以在訓練過程中進行，也可以在獨立的搜索階段進行。</p>
+<p>NAS 的搜索空間可以涵蓋網路的拓撲結構、層的數量、層的類型和超參數等。搜索空間可以非常龐大，包含了各種可能的網路結構組合。NAS 使用各種優化算法、演化算法、強化學習等方法來探索和優化搜索空間，以找到最佳的網路結構。</p>
+<h1 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h1><p>下面是 Network Architecture Search (NAS) 的一般步驟：</p>
+<ol>
+<li><p>定義搜索空間：首先，需要定義神經網路的搜索空間，即可能的網路結構和超參數的組合。搜索空間的定義涉及網路層的類型（例如卷積層、循環層、全連接層等）、層之間的連接方式、層的數量和大小等。</p>
+</li>
+<li><p>搜索策略：選擇一種搜索策略或優化算法，用於在搜索空間中找到最佳的網路結構。常見的搜索策略包括演化算法、遺傳算法、強化學習、梯度下降等。這些算法通常根據某種性能指標（如準確度、效能、存儲需求等）來評估和選擇網路結構。</p>
+</li>
+<li><p>評估和訓練：對每個候選網路結構進行評估和訓練。這通常涉及在訓練數據集上對網路進行訓練，然後使用驗證數據集來評估其性能。</p>
+</li>
+<li><p>更新和迭代：根據評估結果，更新搜索策略並進行迭代，以找到更好的網路結構。這可能涉及增加搜索空間的多樣性、調整搜索策略的參數等。</p>
+</li>
+<li><p>模型評估和部署：最終，選擇最佳的網路結構，對其進行測試和評估，然後部署到實際應用中。</p>
+</li>
 </ol>
-<p>需要注意的是，NAS
-的搜索空間可能非常大，因此需要有效的搜索策略和計算資源來進行搜索。此外，NAS
-還需要一個有效的評估和訓練框架來對每個候選網路結構進行訓練和評估。</p>
-<h1 id="分類">分類</h1>
-<p>Network Architecture Search (NAS)
-可以根據其方法和策略的不同，分為以下幾種類型：</p>
-<ol type="1">
-<li><p>優化算法型 NAS：這種 NAS
-方法使用優化算法來搜索最佳的網路結構。常見的優化算法包括演化算法（如遺傳算法、粒子群優化）、梯度下降和貝葉斯優化等。這些方法根據性能指標的反饋，進行網路結構的評估和調整，以找到最佳的結構。</p></li>
-<li><p>強化學習型 NAS：這種 NAS
-方法使用強化學習框架，將網路結構搜索視為一個策略學習問題。通常使用策略梯度方法或演算法（如
-REINFORCE、Proximal Policy
-Optimization）來優化策略，進而選擇最佳的網路結構。強化學習型 NAS
-通常使用獎勵信號來指導搜索過程，使網路結構在訓練過程中獲得更好的性能。</p></li>
-<li><p>演化型 NAS：這種 NAS
-方法基於演化算法的思想，使用遺傳算法或其他進化算法來進行網路結構的搜索。演化型
-NAS
-將不同的網路結構視為個體，使用交叉、突變等操作進行個體的演化和選擇，以找到性能較好的網路結構。這種方法通常需要設定合適的遺傳操作和適應度函數。</p></li>
-<li><p>範式學習型 NAS：這種 NAS
-方法利用範式學習（Meta-Learning）的思想，通過在多個相關任務上學習，從而尋找通用的網路結構。範式學習型
-NAS 使用元學習算法，例如 MAML（Model-Agnostic Meta-Learning）或
-Reptile，通過從多個任務的經驗中學習，生成適應於新任務的網路結構。</p></li>
+<p>需要注意的是，NAS 的搜索空間可能非常大，因此需要有效的搜索策略和計算資源來進行搜索。此外，NAS 還需要一個有效的評估和訓練框架來對每個候選網路結構進行訓練和評估。</p>
+<h1 id="分類"><a href="#分類" class="headerlink" title="分類"></a>分類</h1><p>Network Architecture Search (NAS) 可以根據其方法和策略的不同，分為以下幾種類型：</p>
+<ol>
+<li><p>優化算法型 NAS：這種 NAS 方法使用優化算法來搜索最佳的網路結構。常見的優化算法包括演化算法（如遺傳算法、粒子群優化）、梯度下降和貝葉斯優化等。這些方法根據性能指標的反饋，進行網路結構的評估和調整，以找到最佳的結構。</p>
+</li>
+<li><p>強化學習型 NAS：這種 NAS 方法使用強化學習框架，將網路結構搜索視為一個策略學習問題。通常使用策略梯度方法或演算法（如 REINFORCE、Proximal Policy Optimization）來優化策略，進而選擇最佳的網路結構。強化學習型 NAS 通常使用獎勵信號來指導搜索過程，使網路結構在訓練過程中獲得更好的性能。</p>
+</li>
+<li><p>演化型 NAS：這種 NAS 方法基於演化算法的思想，使用遺傳算法或其他進化算法來進行網路結構的搜索。演化型 NAS 將不同的網路結構視為個體，使用交叉、突變等操作進行個體的演化和選擇，以找到性能較好的網路結構。這種方法通常需要設定合適的遺傳操作和適應度函數。</p>
+</li>
+<li><p>範式學習型 NAS：這種 NAS 方法利用範式學習（Meta-Learning）的思想，通過在多個相關任務上學習，從而尋找通用的網路結構。範式學習型 NAS 使用元學習算法，例如 MAML（Model-Agnostic Meta-Learning）或 Reptile，通過從多個任務的經驗中學習，生成適應於新任務的網路結構。</p>
+</li>
 </ol>
-<p>這些分類只是基於 NAS
-方法的一些常見特點，實際上，還存在其他變體和混合型的 NAS 方法，</p>
-<h1 id="應用">應用</h1>
-<p>Network Architecture Search (NAS)
-的應用非常廣泛，以下列舉幾個常見的應用：</p>
-<ol type="1">
-<li><p>影像分類：在圖像分類任務中，NAS
-可以搜索最佳的卷積神經網路結構。以 ImageNet 數據集為例，NAS
-可以自動搜索出比 VGG、ResNet、Inception 更好的網路結構。</p></li>
-<li><p>物體偵測：在目標檢測任務中，NAS
-可以搜索最佳的物體檢測網路結構。以 COCO 數據集為例，NAS 可以自動搜索出比
-Faster R-CNN、YOLO 更好的網路結構。</p></li>
-<li><p>語音識別：在語音識別任務中，NAS
-可以搜索最佳的循環神經網路結構。以 TIMIT 數據集為例，NAS
-可以自動搜索出比 LSTM 更好的網路結構。</p></li>
-<li><p>自然語言處理：在自然語言處理任務中，NAS 可以搜索最佳的
-Transformer 網路結構。以 WMT14 數據集為例，NAS 可以自動搜索出比基於 LSTM
-的神經機器翻譯模型更好的網路結構。</p></li>
+<p>這些分類只是基於 NAS 方法的一些常見特點，實際上，還存在其他變體和混合型的 NAS 方法，</p>
+<h1 id="應用"><a href="#應用" class="headerlink" title="應用"></a>應用</h1><p>Network Architecture Search (NAS) 的應用非常廣泛，以下列舉幾個常見的應用：</p>
+<ol>
+<li><p>影像分類：在圖像分類任務中，NAS 可以搜索最佳的卷積神經網路結構。以 ImageNet 數據集為例，NAS 可以自動搜索出比 VGG、ResNet、Inception 更好的網路結構。</p>
+</li>
+<li><p>物體偵測：在目標檢測任務中，NAS 可以搜索最佳的物體檢測網路結構。以 COCO 數據集為例，NAS 可以自動搜索出比 Faster R-CNN、YOLO 更好的網路結構。</p>
+</li>
+<li><p>語音識別：在語音識別任務中，NAS 可以搜索最佳的循環神經網路結構。以 TIMIT 數據集為例，NAS 可以自動搜索出比 LSTM 更好的網路結構。</p>
+</li>
+<li><p>自然語言處理：在自然語言處理任務中，NAS 可以搜索最佳的 Transformer 網路結構。以 WMT14 數據集為例，NAS 可以自動搜索出比基於 LSTM 的神經機器翻譯模型更好的網路結構。</p>
+</li>
 </ol>
-<p>總之，NAS
-可以應用於各種任務和數據集，自動搜索最佳的神經網路結構，提高模型的性能、效能和泛化能力。在實踐中，NAS
-可以減少人工設計的時間和成本，並且可以發現一些新穎且有效的網路結構，推動神經網路的發展。</p>
+<p>總之，NAS 可以應用於各種任務和數據集，自動搜索最佳的神經網路結構，提高模型的性能、效能和泛化能力。在實踐中，NAS 可以減少人工設計的時間和成本，並且可以發現一些新穎且有效的網路結構，推動神經網路的發展。</p>
 
     </div>
 
@@ -366,13 +341,13 @@ Transformer 網路結構。以 WMT14 數據集為例，NAS 可以自動搜索出
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">288k</span>
+    <span title="總字數">290k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:44</span>
+    <span title="所需總閱讀時間">8:47</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

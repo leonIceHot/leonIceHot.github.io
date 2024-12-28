@@ -110,8 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#environments"><span class="nav-number">2.</span> <span class="nav-text">Environments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#step-1-basic-software-development"><span class="nav-number">3.</span> <span class="nav-text">Step 1 Basic Software
-Development</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mp-spdz"><span class="nav-number">3.1.</span> <span class="nav-text">MP-SPDZ</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#step-2-communication"><span class="nav-number">4.</span> <span class="nav-text">Step 2 Communication</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#running-without-vpn"><span class="nav-number">4.1.</span> <span class="nav-text">Running without VPN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#running-with-vpn"><span class="nav-number">4.2.</span> <span class="nav-text">Running with VPN</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Environments"><span class="nav-number">2.</span> <span class="nav-text">Environments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-1-Basic-Software-Development"><span class="nav-number">3.</span> <span class="nav-text">Step 1 Basic Software Development</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MP-SPDZ"><span class="nav-number">3.1.</span> <span class="nav-text">MP-SPDZ</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-2-Communication"><span class="nav-number">4.</span> <span class="nav-text">Step 2 Communication</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Running-without-VPN"><span class="nav-number">4.1.</span> <span class="nav-text">Running without VPN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Running-with-VPN"><span class="nav-number">4.2.</span> <span class="nav-text">Running with VPN</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -233,7 +232,7 @@ Development</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a 
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>805</span>
+      <span>801</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -250,32 +249,28 @@ Development</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a 
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="introduction">Introduction</h1>
-<span id="more"></span>
-<h1 id="environments">Environments</h1>
-<p>OS: Ubuntu 20</p>
-<h1 id="step-1-basic-software-development">Step 1 Basic Software
-Development</h1>
-<p>setup conda environments <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./scripts/configure_conda</span><br></pre></td></tr></table></figure> after setup installation *
-fedbiomed * fedbiomed-gui * fedbiomed-node * fedbiomed-researcher</p>
-<h2 id="mp-spdz">MP-SPDZ</h2>
-<p>MP-SPDZ是一個用於安全多方計算（Secure Multi-Party
-Computation，安全多方計算）的框架。它通常用於多方間在不暴露私密數據的情況下進行計算。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><span id="more"></span>
+<h1 id="Environments"><a href="#Environments" class="headerlink" title="Environments"></a>Environments</h1><p>OS: Ubuntu 20 </p>
+<h1 id="Step-1-Basic-Software-Development"><a href="#Step-1-Basic-Software-Development" class="headerlink" title="Step 1 Basic Software Development"></a>Step 1 Basic Software Development</h1><p>setup conda environments</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./scripts/configure_conda</span><br></pre></td></tr></table></figure>
+<p>after setup installation</p>
+<ul>
+<li>fedbiomed</li>
+<li>fedbiomed-gui</li>
+<li>fedbiomed-node</li>
+<li>fedbiomed-researcher</li>
+</ul>
+<h2 id="MP-SPDZ"><a href="#MP-SPDZ" class="headerlink" title="MP-SPDZ"></a>MP-SPDZ</h2><p>MP-SPDZ是一個用於安全多方計算（Secure Multi-Party Computation，安全多方計算）的框架。它通常用於多方間在不暴露私密數據的情況下進行計算。</p>
 <p>在多方計算中，參與者可以將其數據私密地分享給其他參與者，而不會讓其他人知曉其原始數據。MP-SPDZ框架專注於高效地執行這種計算，同時保護參與者的數據隱私。</p>
 <p>MP-SPDZ應用了多種密碼學和計算機科學技術，以實現安全多方計算的目標。它允許參與者在共享數據的同時進行各種計算操作，比如加密、解密、數據聚合等，而不會暴露原始數據給其他參與者或系統。</p>
 <p>該框架旨在提供高效的計算過程和良好的安全性保護，使得參與者能夠在保護數據隱私的前提下進行協作計算。這對於需要多方間合作但同時又需要保護數據隱私性的應用場景非常有用，比如金融、醫療等領域。</p>
 <p>MP-SPDZ框架的發展旨在為安全多方計算提供更高效、更安全的解決方案，使得數據共享和計算合作更具可行性。</p>
-<h1 id="step-2-communication">Step 2 Communication</h1>
-<h2 id="running-without-vpn">Running without VPN</h2>
-<h2 id="running-with-vpn">Running with VPN</h2>
-<ul>
-<li>clean all containers and files <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./scripts/fedbiomed_vpn clean</span><br></pre></td></tr></table></figure></li>
-<li>build all the docker containers <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./scripts/fedbiomed_vpn build</span><br></pre></td></tr></table></figure></li>
-<li>configure the wireguard encryption keys of all containers
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./scripts/fedbiomed_vpn configure</span><br></pre></td></tr></table></figure></li>
-<li>start the containers <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./scripts/fedbiomed_vpn start</span><br></pre></td></tr></table></figure></li>
-<li>check the containers status (presence and Wireguard configuration)
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./scripts/fedbiomed_vpn status</span><br></pre></td></tr></table></figure></li>
+<h1 id="Step-2-Communication"><a href="#Step-2-Communication" class="headerlink" title="Step 2 Communication"></a>Step 2 Communication</h1><h2 id="Running-without-VPN"><a href="#Running-without-VPN" class="headerlink" title="Running without VPN"></a>Running without VPN</h2><h2 id="Running-with-VPN"><a href="#Running-with-VPN" class="headerlink" title="Running with VPN"></a>Running with VPN</h2><ul>
+<li>clean all containers and files<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./scripts/fedbiomed_vpn clean</span><br></pre></td></tr></table></figure></li>
+<li>build all the docker containers<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./scripts/fedbiomed_vpn build</span><br></pre></td></tr></table></figure></li>
+<li>configure the wireguard encryption keys of all containers<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./scripts/fedbiomed_vpn configure</span><br></pre></td></tr></table></figure></li>
+<li>start the containers<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./scripts/fedbiomed_vpn start</span><br></pre></td></tr></table></figure></li>
+<li>check the containers status (presence and Wireguard configuration)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./scripts/fedbiomed_vpn status</span><br></pre></td></tr></table></figure></li>
 </ul>
 
     </div>
@@ -328,13 +323,13 @@ Computation，安全多方計算）的框架。它通常用於多方間在不暴
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">288k</span>
+    <span title="總字數">290k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:44</span>
+    <span title="所需總閱讀時間">8:47</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

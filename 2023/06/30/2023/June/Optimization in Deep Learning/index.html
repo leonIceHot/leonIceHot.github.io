@@ -19,19 +19,19 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Introduction 模型最佳化是指在機器學習和深度學習中，通過調整模型的參數或結構，以使其能夠在給定的任務或目標下達到最佳性能。">
+    <meta name="description" content="Introduction模型最佳化是指在機器學習和深度學習中，通過調整模型的參數或結構，以使其能夠在給定的任務或目標下達到最佳性能。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Optimization in Deep Learning">
 <meta property="og:url" content="https://leonicehot.github.io/2023/06/30/2023/June/Optimization%20in%20Deep%20Learning/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="Introduction 模型最佳化是指在機器學習和深度學習中，通過調整模型的參數或結構，以使其能夠在給定的任務或目標下達到最佳性能。">
+<meta property="og:description" content="Introduction模型最佳化是指在機器學習和深度學習中，通過調整模型的參數或結構，以使其能夠在給定的任務或目標下達到最佳性能。">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://leonicehot.github.io/2023/06/30/2023/images/2023/Deep-Learning-Optimization/generalization.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/Deep-Learning-Optimization/generalization.png">
 <meta property="article:published_time" content="2023-06-30T01:54:33.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:36.839Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://leonicehot.github.io/2023/06/30/2023/images/2023/Deep-Learning-Optimization/generalization.png">
+<meta name="twitter:image" content="https://leonicehot.github.io/images/2023/Deep-Learning-Optimization/generalization.png">
 
 
 <link rel="canonical" href="https://leonicehot.github.io/2023/06/30/2023/June/Optimization%20in%20Deep%20Learning/">
@@ -112,9 +112,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#goal"><span class="nav-number">2.</span> <span class="nav-text">Goal</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#data-preprocessing"><span class="nav-number">3.</span> <span class="nav-text">Data Preprocessing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#data"><span class="nav-number">3.1.</span> <span class="nav-text">Data</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#missing-data"><span class="nav-number">3.1.1.</span> <span class="nav-text">Missing data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#smoothing"><span class="nav-number">3.1.2.</span> <span class="nav-text">Smoothing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#normalization-and-standardization"><span class="nav-number">3.1.3.</span> <span class="nav-text">Normalization and
-Standardization</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#batch-normalization"><span class="nav-number">3.1.3.1.</span> <span class="nav-text">Batch Normalization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layer-normalization"><span class="nav-number">3.1.3.2.</span> <span class="nav-text">Layer Normalization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#group-normalization"><span class="nav-number">3.1.3.3.</span> <span class="nav-text">Group Normalization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#instance-normalization"><span class="nav-number">3.1.3.4.</span> <span class="nav-text">Instance Normalization</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#imbalanced-data"><span class="nav-number">3.1.4.</span> <span class="nav-text">Imbalanced data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#data-augmentation"><span class="nav-number">3.1.5.</span> <span class="nav-text">Data Augmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#homogeneous-data"><span class="nav-number">3.1.6.</span> <span class="nav-text">Homogeneous Data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#heterogeneous-data"><span class="nav-number">3.1.7.</span> <span class="nav-text">Heterogeneous Data</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hyperparameters"><span class="nav-number">3.2.</span> <span class="nav-text">Hyperparameters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hyperparameter-optimization"><span class="nav-number">3.3.</span> <span class="nav-text">Hyperparameter optimization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iterative"><span class="nav-number">3.4.</span> <span class="nav-text">Iterative</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#epoches"><span class="nav-number">3.5.</span> <span class="nav-text">Epoches</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#batch-size"><span class="nav-number">3.6.</span> <span class="nav-text">Batch size</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#algorithms"><span class="nav-number">3.7.</span> <span class="nav-text">Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#adam"><span class="nav-number">3.7.1.</span> <span class="nav-text">Adam</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#adamw"><span class="nav-number">3.7.2.</span> <span class="nav-text">AdamW</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#adamax"><span class="nav-number">3.7.3.</span> <span class="nav-text">Adamax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#adagrad"><span class="nav-number">3.7.4.</span> <span class="nav-text">Adagrad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rmsprop"><span class="nav-number">3.7.5.</span> <span class="nav-text">RMSprop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rprop"><span class="nav-number">3.7.6.</span> <span class="nav-text">Rprop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sgd"><span class="nav-number">3.7.7.</span> <span class="nav-text">SGD</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#learning-rate"><span class="nav-number">3.8.</span> <span class="nav-text">Learning rate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#schedulers-adjust-learning-rate"><span class="nav-number">3.9.</span> <span class="nav-text">Schedulers: Adjust learning
-rate</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#evaluation"><span class="nav-number">4.</span> <span class="nav-text">Evaluation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#fitting"><span class="nav-number">4.1.</span> <span class="nav-text">Fitting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#overfitting"><span class="nav-number">4.2.</span> <span class="nav-text">Overfitting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#underfitting"><span class="nav-number">4.3.</span> <span class="nav-text">Underfitting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#generalization"><span class="nav-number">4.4.</span> <span class="nav-text">Generalization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#strategy"><span class="nav-number">4.4.1.</span> <span class="nav-text">Strategy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#robustness"><span class="nav-number">4.5.</span> <span class="nav-text">Robustness</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Goal"><span class="nav-number">2.</span> <span class="nav-text">Goal</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Preprocessing"><span class="nav-number">3.</span> <span class="nav-text">Data Preprocessing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data"><span class="nav-number">3.1.</span> <span class="nav-text">Data</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Missing-data"><span class="nav-number">3.1.1.</span> <span class="nav-text">Missing data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Smoothing"><span class="nav-number">3.1.2.</span> <span class="nav-text">Smoothing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Normalization-and-Standardization"><span class="nav-number">3.1.3.</span> <span class="nav-text">Normalization and Standardization</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Batch-Normalization"><span class="nav-number">3.1.3.1.</span> <span class="nav-text">Batch Normalization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Layer-Normalization"><span class="nav-number">3.1.3.2.</span> <span class="nav-text">Layer Normalization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Group-Normalization"><span class="nav-number">3.1.3.3.</span> <span class="nav-text">Group Normalization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Instance-Normalization"><span class="nav-number">3.1.3.4.</span> <span class="nav-text">Instance Normalization</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Imbalanced-data"><span class="nav-number">3.1.4.</span> <span class="nav-text">Imbalanced data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Augmentation"><span class="nav-number">3.1.5.</span> <span class="nav-text">Data Augmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Homogeneous-Data"><span class="nav-number">3.1.6.</span> <span class="nav-text">Homogeneous Data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Heterogeneous-Data"><span class="nav-number">3.1.7.</span> <span class="nav-text">Heterogeneous Data</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Optimization"><span class="nav-number">4.</span> <span class="nav-text">Optimization</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hyperparameters"><span class="nav-number">4.1.</span> <span class="nav-text">Hyperparameters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hyperparameter-optimization"><span class="nav-number">4.2.</span> <span class="nav-text">Hyperparameter optimization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterative"><span class="nav-number">4.3.</span> <span class="nav-text">Iterative</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Epoches"><span class="nav-number">4.4.</span> <span class="nav-text">Epoches</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Batch-size"><span class="nav-number">4.5.</span> <span class="nav-text">Batch size</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithms"><span class="nav-number">4.6.</span> <span class="nav-text">Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Adam"><span class="nav-number">4.6.1.</span> <span class="nav-text">Adam</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AdamW"><span class="nav-number">4.6.2.</span> <span class="nav-text">AdamW</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adamax"><span class="nav-number">4.6.3.</span> <span class="nav-text">Adamax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adagrad"><span class="nav-number">4.6.4.</span> <span class="nav-text">Adagrad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RAdam"><span class="nav-number">4.6.5.</span> <span class="nav-text">RAdam</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SparseAdam"><span class="nav-number">4.6.6.</span> <span class="nav-text">SparseAdam</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RMSprop"><span class="nav-number">4.6.7.</span> <span class="nav-text">RMSprop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rprop"><span class="nav-number">4.6.8.</span> <span class="nav-text">Rprop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SGD"><span class="nav-number">4.6.9.</span> <span class="nav-text">SGD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASGD"><span class="nav-number">4.6.10.</span> <span class="nav-text">ASGD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LBFGS"><span class="nav-number">4.6.11.</span> <span class="nav-text">LBFGS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Learning-rate"><span class="nav-number">4.7.</span> <span class="nav-text">Learning rate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Schedulers-Adjust-learning-rate"><span class="nav-number">4.8.</span> <span class="nav-text">Schedulers: Adjust learning rate</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Evaluation"><span class="nav-number">5.</span> <span class="nav-text">Evaluation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fitting"><span class="nav-number">5.1.</span> <span class="nav-text">Fitting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Overfitting"><span class="nav-number">5.2.</span> <span class="nav-text">Overfitting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Underfitting"><span class="nav-number">5.3.</span> <span class="nav-text">Underfitting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generalization"><span class="nav-number">5.4.</span> <span class="nav-text">Generalization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Strategy"><span class="nav-number">5.4.1.</span> <span class="nav-text">Strategy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Robustness"><span class="nav-number">5.5.</span> <span class="nav-text">Robustness</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -253,100 +251,88 @@ rate</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-lin
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="introduction">Introduction</h1>
-<p>模型最佳化是指在機器學習和深度學習中，通過調整模型的參數或結構，以使其能夠在給定的任務或目標下達到最佳性能。
-<span id="more"></span></p>
-<h1 id="goal">Goal</h1>
-<p>在模型最佳化的過程中，我們通常追求以下目標：</p>
-<ol type="1">
-<li><p>最小化損失：通過調整模型的參數，使模型預測的輸出與實際值盡可能接近。這通常涉及到選擇合適的損失函數，並使用優化算法來最小化該損失函數。</p></li>
-<li><p>最大化性能指標：根據具體任務的需求，我們可以選擇不同的性能指標來評估模型的表現，如準確率、精確率、召回率、F1
-分數等。模型最佳化的目標是使這些性能指標達到最優狀態。</p></li>
-<li><p>避免過擬合或欠擬合：模型最佳化的過程中，需要平衡模型的複雜度和適應能力。過度擬合（Overfitting）指模型過於複雜，過度擬合訓練資料而在新資料上表現不佳。而欠擬合（Underfitting）則指模型過於簡單，無法很好地擬合訓練資料。模型最佳化需要找到合適的模型複雜度，以達到良好的泛化性能。</p></li>
+    <div class="post-body" itemprop="articleBody"><h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>模型最佳化是指在機器學習和深度學習中，通過調整模型的參數或結構，以使其能夠在給定的任務或目標下達到最佳性能。</p>
+<span id="more"></span>
+
+<h1 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h1><p>在模型最佳化的過程中，我們通常追求以下目標：</p>
+<ol>
+<li><p>最小化損失：通過調整模型的參數，使模型預測的輸出與實際值盡可能接近。這通常涉及到選擇合適的損失函數，並使用優化算法來最小化該損失函數。</p>
+</li>
+<li><p>最大化性能指標：根據具體任務的需求，我們可以選擇不同的性能指標來評估模型的表現，如準確率、精確率、召回率、F1 分數等。模型最佳化的目標是使這些性能指標達到最優狀態。</p>
+</li>
+<li><p>避免過擬合或欠擬合：模型最佳化的過程中，需要平衡模型的複雜度和適應能力。過度擬合（Overfitting）指模型過於複雜，過度擬合訓練資料而在新資料上表現不佳。而欠擬合（Underfitting）則指模型過於簡單，無法很好地擬合訓練資料。模型最佳化需要找到合適的模型複雜度，以達到良好的泛化性能。</p>
+</li>
 </ol>
-<h1 id="data-preprocessing">Data Preprocessing</h1>
-<p>是在進行機器學習或深度學習任務之前對原始資料進行一系列處理和轉換的過程。這個過程的目的是清理、轉換和準備資料，使其適合用於模型訓練和分析。</p>
+<h1 id="Data-Preprocessing"><a href="#Data-Preprocessing" class="headerlink" title="Data Preprocessing"></a>Data Preprocessing</h1><p>是在進行機器學習或深度學習任務之前對原始資料進行一系列處理和轉換的過程。這個過程的目的是清理、轉換和準備資料，使其適合用於模型訓練和分析。</p>
 <p>資料預處理可以包括以下步驟：</p>
-<ol type="1">
-<li><p>資料清理（Data
-cleaning）：處理缺失值、異常值和重複值等。這可能包括填充缺失值、刪除異常值或使用統計方法處理缺失資料。</p></li>
-<li><p>特徵選擇（Feature
-selection）：選擇最有意義和相關的特徵變量，並丟棄不必要的特徵。這可以減少特徵空間的維度，提高模型效果和計算效率。</p></li>
-<li><p>特徵縮放（Feature
-scaling）：對特徵資料進行縮放，使其具有相似的尺度和範圍。常見的縮放方法包括歸一化（Normalization）和標準化（Standardization）。</p></li>
-<li><p>特徵轉換（Feature
-transformation）：對特徵進行轉換，使其更符合模型的假設或需求。這可能包括對數轉換、多項式轉換、指數轉換等。</p></li>
-<li><p>資料集劃分（Data
-splitting）：將資料集劃分為訓練集、驗證集和測試集。這有助於評估模型的性能和泛化能力。</p></li>
-<li><p>資料標準化（Data
-normalization）：將資料按照預定的標準範圍進行縮放，以消除不同特徵之間的單位差異。</p></li>
-<li><p>資料轉換（Data
-transformation）：對資料應用特定的轉換函數，例如對數函數、指數函數、平方根函數等。</p></li>
+<ol>
+<li><p>資料清理（Data cleaning）：處理缺失值、異常值和重複值等。這可能包括填充缺失值、刪除異常值或使用統計方法處理缺失資料。</p>
+</li>
+<li><p>特徵選擇（Feature selection）：選擇最有意義和相關的特徵變量，並丟棄不必要的特徵。這可以減少特徵空間的維度，提高模型效果和計算效率。</p>
+</li>
+<li><p>特徵縮放（Feature scaling）：對特徵資料進行縮放，使其具有相似的尺度和範圍。常見的縮放方法包括歸一化（Normalization）和標準化（Standardization）。</p>
+</li>
+<li><p>特徵轉換（Feature transformation）：對特徵進行轉換，使其更符合模型的假設或需求。這可能包括對數轉換、多項式轉換、指數轉換等。</p>
+</li>
+<li><p>資料集劃分（Data splitting）：將資料集劃分為訓練集、驗證集和測試集。這有助於評估模型的性能和泛化能力。</p>
+</li>
+<li><p>資料標準化（Data normalization）：將資料按照預定的標準範圍進行縮放，以消除不同特徵之間的單位差異。</p>
+</li>
+<li><p>資料轉換（Data transformation）：對資料應用特定的轉換函數，例如對數函數、指數函數、平方根函數等。</p>
+</li>
 </ol>
 <p>資料預處理的目的是改善資料質量、減少噪音和不必要的變異性，並為後續的機器學習或深度學習模型提供更好的輸入。不同的任務和資料可能需要不同的預處理技術和步驟，因此在進行資料預處理時需要根據具體情況進行選擇和應用。</p>
-<h2 id="data">Data</h2>
-<h3 id="missing-data">Missing data</h3>
-<p>Missing
-data（缺失資料）是指在資料集中某些觀測值或變量的值缺失或未收集到的情況。缺失資料可能是由於多種原因引起的，例如實驗錯誤、資料蒐集過程中的錯誤、受訪者拒絕回答問題等。</p>
+<h2 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h2><h3 id="Missing-data"><a href="#Missing-data" class="headerlink" title="Missing data"></a>Missing data</h3><p>Missing data（缺失資料）是指在資料集中某些觀測值或變量的值缺失或未收集到的情況。缺失資料可能是由於多種原因引起的，例如實驗錯誤、資料蒐集過程中的錯誤、受訪者拒絕回答問題等。</p>
 <p>處理缺失資料是資料分析中的重要課題，因為缺失資料可能對分析結果和模型的準確性產生不利影響。在處理缺失資料時，可以考慮以下幾種策略：</p>
-<ol type="1">
-<li><p>刪除缺失資料：最簡單的方法是直接刪除具有缺失值的觀測值或變量。這種方法適用於缺失資料佔整體資料很小比例的情況，並且假設缺失資料是隨機的。</p></li>
-<li><p>插值法：插值法是通過推斷和填補缺失值，來估計缺失資料的方法。常見的插值方法包括均值插值、中值插值、線性插值和多重插值等。這些方法利用已有資料的特徵和相關信息來填補缺失值。</p></li>
-<li><p>模型方法：模型方法是利用現有的資料來建立預測模型，並用該模型預測缺失資料的值。例如，可以使用線性回歸模型、決策樹模型等進行預測。</p></li>
-<li><p>多重填補法：多重填補法是一種基於模型的方法，它通過在多個完整的資料集上重複執行插值和模型建構的過程，從而生成多個可能的填補資料集。然後，可以基於這些填補資料集進行分析。</p></li>
+<ol>
+<li><p>刪除缺失資料：最簡單的方法是直接刪除具有缺失值的觀測值或變量。這種方法適用於缺失資料佔整體資料很小比例的情況，並且假設缺失資料是隨機的。</p>
+</li>
+<li><p>插值法：插值法是通過推斷和填補缺失值，來估計缺失資料的方法。常見的插值方法包括均值插值、中值插值、線性插值和多重插值等。這些方法利用已有資料的特徵和相關信息來填補缺失值。</p>
+</li>
+<li><p>模型方法：模型方法是利用現有的資料來建立預測模型，並用該模型預測缺失資料的值。例如，可以使用線性回歸模型、決策樹模型等進行預測。</p>
+</li>
+<li><p>多重填補法：多重填補法是一種基於模型的方法，它通過在多個完整的資料集上重複執行插值和模型建構的過程，從而生成多個可能的填補資料集。然後，可以基於這些填補資料集進行分析。</p>
+</li>
 </ol>
 <p>選擇適當的缺失資料處理方法取決於資料的缺失模式、資料的特徵以及分析目的。需要注意的是，不恰當的處理方法可能導致偏誤的結果，因此在處理缺失資料時應謹慎選擇合適的方法並進行資料驗證。</p>
-<h3 id="smoothing">Smoothing</h3>
-<p>Data
-smoothing（資料平滑）是一種資料處理技術，旨在消除或減少資料中的噪音和不規則變動，以獲得更平滑的資料趨勢。通常，在實際資料中，存在著離群值、隨機噪音和瞬間變化等因素，這可能對資料的分析和解釋產生干擾。因此，資料平滑技術可以提供更穩定和一致的資料特徵。</p>
+<h3 id="Smoothing"><a href="#Smoothing" class="headerlink" title="Smoothing"></a>Smoothing</h3><p>Data smoothing（資料平滑）是一種資料處理技術，旨在消除或減少資料中的噪音和不規則變動，以獲得更平滑的資料趨勢。通常，在實際資料中，存在著離群值、隨機噪音和瞬間變化等因素，這可能對資料的分析和解釋產生干擾。因此，資料平滑技術可以提供更穩定和一致的資料特徵。</p>
 <p>資料平滑方法有很多種，其中一些常見的方法包括：</p>
-<ol type="1">
-<li><p>移動平均（Moving
-Average）：使用一個窗口（通常是固定大小的滑動窗口）計算在該窗口內的資料點的平均值。這可以消除隨機噪音並平滑資料趨勢。</p></li>
-<li><p>加權移動平均（Weighted Moving
-Average）：與移動平均類似，但給予不同資料點不同的權重，以更好地反映資料的趨勢。</p></li>
-<li><p>Savitzky-Golay濾波器：一種基於多項式擬合的平滑方法，通過在資料上擬合一個多項式曲線來平滑資料。</p></li>
-<li><p>指數平滑（Exponential
-Smoothing）：通過賦予最近資料點更高的權重來計算平滑值，使得最近的資料點對平滑結果的影響更大。</p></li>
-<li><p>Loess平滑：使用局部加權回歸方法，在每個資料點周圍擬合一個局部多項式曲線來進行平滑。</p></li>
+<ol>
+<li><p>移動平均（Moving Average）：使用一個窗口（通常是固定大小的滑動窗口）計算在該窗口內的資料點的平均值。這可以消除隨機噪音並平滑資料趨勢。</p>
+</li>
+<li><p>加權移動平均（Weighted Moving Average）：與移動平均類似，但給予不同資料點不同的權重，以更好地反映資料的趨勢。</p>
+</li>
+<li><p>Savitzky-Golay濾波器：一種基於多項式擬合的平滑方法，通過在資料上擬合一個多項式曲線來平滑資料。</p>
+</li>
+<li><p>指數平滑（Exponential Smoothing）：通過賦予最近資料點更高的權重來計算平滑值，使得最近的資料點對平滑結果的影響更大。</p>
+</li>
+<li><p>Loess平滑：使用局部加權回歸方法，在每個資料點周圍擬合一個局部多項式曲線來進行平滑。</p>
+</li>
 </ol>
 <p>資料平滑方法的選擇取決於資料的特性、目標和所需的平滑程度。然而，需要注意的是，過度平滑可能會導致資料的信息損失或模糊，因此在應用資料平滑技術時需要謹慎評估其效果。</p>
-<h3 id="normalization-and-standardization">Normalization and
-Standardization</h3>
-<p>Normalization（歸一化）和Standardization（標準化）是兩種常見的資料預處理技術，
-用於將資料轉換為更適合模型訓練和分析的形式。儘管它們的目標相似，但其具體方法和效果略有不同。</p>
-<ol type="1">
-<li><p>歸一化（Normalization）：
-Normalization（正規化）是指將資料調整到一個特定範圍或分佈的過程。在資料預處理中，正規化常用於將不同尺度和範圍的資料進行比較和分析，以確保它們處於可比較的狀態。</p>
-<p>在機器學習和深度學習中，正規化通常用於對特徵資料進行處理。
-常見的正規化方法包括以下幾種：</p>
-<ol type="a">
-<li><p>最小-最大正規化（Min-Max
-Normalization）：將資料按照特定的最小值和最大值進行縮放，使資料的值落在一個指定的範圍內。通常將資料縮放到0和1之間。</p></li>
-<li><p>Z-score 正規化（Z-score
-Normalization）：計算資料的平均值和標準差，將資料按照平均值和標準差進行標準化，使資料的均值為0，標準差為1。</p></li>
-<li><p>對數正規化（Log
-Normalization）：對數應用於資料，以處理偏度較大的資料分佈，使其更加符合正態分佈。</p></li>
+<h3 id="Normalization-and-Standardization"><a href="#Normalization-and-Standardization" class="headerlink" title="Normalization and Standardization"></a>Normalization and Standardization</h3><p>Normalization（歸一化）和Standardization（標準化）是兩種常見的資料預處理技術，<br>用於將資料轉換為更適合模型訓練和分析的形式。儘管它們的目標相似，但其具體方法和效果略有不同。</p>
+<ol>
+<li><p>歸一化（Normalization）：<br> Normalization（正規化）是指將資料調整到一個特定範圍或分佈的過程。在資料預處理中，正規化常用於將不同尺度和範圍的資料進行比較和分析，以確保它們處於可比較的狀態。</p>
+<p> 在機器學習和深度學習中，正規化通常用於對特徵資料進行處理。<br> 常見的正規化方法包括以下幾種：<br> a. 最小-最大正規化（Min-Max Normalization）：將資料按照特定的最小值和最大值進行縮放，使資料的值落在一個指定的範圍內。通常將資料縮放到0和1之間。</p>
+<p> b. Z-score 正規化（Z-score Normalization）：計算資料的平均值和標準差，將資料按照平均值和標準差進行標準化，使資料的均值為0，標準差為1。</p>
+<p> c. 對數正規化（Log Normalization）：對數應用於資料，以處理偏度較大的資料分佈，使其更加符合正態分佈。</p>
+<p> 正規化的目的是消除資料間的尺度差異，使得模型能夠更好地學習資料的特徵並提高模型的性能。它可以幫助避免由於資料尺度不同而引起的算法偏好，使得模型更穩定和可靠。不同的正規化方法適用於不同的資料分佈和問題場景，選擇合適的正規化方法需要根據具體的資料和任務來決定。</p>
+</li>
+<li><p>標準化（Standardization）：<br> Standardization（標準化）是一種資料預處理技術，用於將資料轉換成均值為0，標準差為1的標準正態分佈。這種轉換將資料的分佈縮放和重新定位，使其更易於進行比較和分析。</p>
+<p> 在機器學習和統計建模中，標準化常用於對特徵資料進行預處理。通常使用以下公式進行標準化計算：</p>
+<p> x’ &#x3D; (x - mean) &#x2F; std</p>
+<p> 其中，x是原始資料，mean是資料的平均值，std是資料的標準差，x’是標準化後的資料。</p>
+<p> 標準化的好處包括：</p>
+<p> 消除資料間的尺度差異：標準化可以消除資料的尺度差異，使得不同特徵之間的比較更加公平和可靠。</p>
+<p> 加速模型收斂：對於某些機器學習算法，標準化可以幫助加快模型的收斂速度，提高訓練效率。</p>
+<p> 提高模型性能：標準化可以改善模型的預測能力，減少由於資料尺度不同而引起的模型偏好，提高模型的準確性和穩定性。</p>
+<p> 需要注意的是，標準化並不改變資料的分佈形狀，只是將其轉換成標準正態分佈。在進行標準化時，需要計算資料的均值和標準差，並將其應用到所有資料點上。標準化可以應用於多維資料集中的每個特徵維度，或者整個資料集作為一個整體進行標準化。</p>
+</li>
 </ol>
-<p>正規化的目的是消除資料間的尺度差異，使得模型能夠更好地學習資料的特徵並提高模型的性能。它可以幫助避免由於資料尺度不同而引起的算法偏好，使得模型更穩定和可靠。不同的正規化方法適用於不同的資料分佈和問題場景，選擇合適的正規化方法需要根據具體的資料和任務來決定。</p></li>
-<li><p>標準化（Standardization）：
-Standardization（標準化）是一種資料預處理技術，用於將資料轉換成均值為0，標準差為1的標準正態分佈。這種轉換將資料的分佈縮放和重新定位，使其更易於進行比較和分析。</p>
-<p>在機器學習和統計建模中，標準化常用於對特徵資料進行預處理。通常使用以下公式進行標準化計算：</p>
-<p>x’ = (x - mean) / std</p>
-<p>其中，x是原始資料，mean是資料的平均值，std是資料的標準差，x’是標準化後的資料。</p>
-<p>標準化的好處包括：</p>
-<p>消除資料間的尺度差異：標準化可以消除資料的尺度差異，使得不同特徵之間的比較更加公平和可靠。</p>
-<p>加速模型收斂：對於某些機器學習算法，標準化可以幫助加快模型的收斂速度，提高訓練效率。</p>
-<p>提高模型性能：標準化可以改善模型的預測能力，減少由於資料尺度不同而引起的模型偏好，提高模型的準確性和穩定性。</p>
-<p>需要注意的是，標準化並不改變資料的分佈形狀，只是將其轉換成標準正態分佈。在進行標準化時，需要計算資料的均值和標準差，並將其應用到所有資料點上。標準化可以應用於多維資料集中的每個特徵維度，或者整個資料集作為一個整體進行標準化。</p></li>
-</ol>
-<h4 id="batch-normalization">Batch Normalization</h4>
-<p>Batch
-Normalization（批量標準化）是一種用於深度學習模型中的技術，用於解決梯度消失和梯度爆炸等問題，並加速模型的訓練和收斂。</p>
-<p>在深度神經網絡中，每個層的輸入資料分佈可能會發生變化，這種變化可能會對模型的學習和訓練產生負面影響。Batch
-Normalization的目的是將每個層的輸入進行標準化，使其在訓練過程中保持一個穩定的分佈。</p>
+<h4 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h4><p>Batch Normalization（批量標準化）是一種用於深度學習模型中的技術，用於解決梯度消失和梯度爆炸等問題，並加速模型的訓練和收斂。</p>
+<p>在深度神經網絡中，每個層的輸入資料分佈可能會發生變化，這種變化可能會對模型的學習和訓練產生負面影響。Batch Normalization的目的是將每個層的輸入進行標準化，使其在訓練過程中保持一個穩定的分佈。</p>
 <p>Batch Normalization的運作過程如下：</p>
-<ol type="1">
+<ol>
 <li>對於每個小批量的訓練資料，計算該批量資料的均值和標準差。</li>
 <li>將每個小批量的資料進行標準化，使其均值為0，標準差為1。</li>
 <li>使用兩個可學習的參數（縮放因子和位移因子），對標準化後的資料進行線性變換。</li>
@@ -354,19 +340,11 @@ Normalization的目的是將每個層的輸入進行標準化，使其在訓練�
 </ol>
 <p>Batch Normalization的優點包括：</p>
 <p>加速收斂：通過穩定輸入資料的分佈，可以加快模型的收斂速度，減少訓練時間。</p>
-<p>減輕梯度消失和梯度爆炸：Batch
-Normalization可以解決梯度消失和梯度爆炸問題，使得深層網絡的訓練更加穩定。</p>
-<p>減少對初始參數的依賴：Batch
-Normalization可以減少對初始參數的依賴，使得模型對參數初始化的選擇更加鬆散。</p>
-<p>需要注意的是，Batch
-Normalization在訓練和測試階段有不同的計算方式。在訓練階段，均值和標準差是在每個小批量的資料中計算的，而在測試階段，使用整個訓練集的均值和標準差進行標準化。這可以確保模型在測試階段的輸出結果具有一致性。</p>
-<h4 id="layer-normalization">Layer Normalization</h4>
-<p>Layer
-Normalization（層標準化）是一種用於深度學習模型中的正規化技術，旨在解決梯度消失和梯度爆炸等問題，同時提高模型的學習效果和泛化能力。</p>
-<p>與 Batch Normalization 不同，Layer Normalization
-不是基於小批量的統計信息進行正規化，而是在每個層的特徵維度上進行正規化。具體而言，Layer
-Normalization
-通過計算每個樣本在特徵維度上的均值和標準差，對該樣本的每個特徵進行獨立的正規化。</p>
+<p>減輕梯度消失和梯度爆炸：Batch Normalization可以解決梯度消失和梯度爆炸問題，使得深層網絡的訓練更加穩定。</p>
+<p>減少對初始參數的依賴：Batch Normalization可以減少對初始參數的依賴，使得模型對參數初始化的選擇更加鬆散。</p>
+<p>需要注意的是，Batch Normalization在訓練和測試階段有不同的計算方式。在訓練階段，均值和標準差是在每個小批量的資料中計算的，而在測試階段，使用整個訓練集的均值和標準差進行標準化。這可以確保模型在測試階段的輸出結果具有一致性。</p>
+<h4 id="Layer-Normalization"><a href="#Layer-Normalization" class="headerlink" title="Layer Normalization"></a>Layer Normalization</h4><p>Layer Normalization（層標準化）是一種用於深度學習模型中的正規化技術，旨在解決梯度消失和梯度爆炸等問題，同時提高模型的學習效果和泛化能力。</p>
+<p>與 Batch Normalization 不同，Layer Normalization 不是基於小批量的統計信息進行正規化，而是在每個層的特徵維度上進行正規化。具體而言，Layer Normalization 通過計算每個樣本在特徵維度上的均值和標準差，對該樣本的每個特徵進行獨立的正規化。</p>
 <p>Layer Normalization 的計算過程如下：</p>
 <p>對於每個樣本，計算其在特徵維度上的均值和標準差。</p>
 <p>對於每個特徵，將其值減去均值並除以標準差，從而使特徵的均值為0，標準差為1。</p>
@@ -374,124 +352,100 @@ Normalization
 <p>將線性變換後的特徵作為下一層的輸入。</p>
 <p>Layer Normalization 的優點包括：</p>
 <p>減輕梯度消失和梯度爆炸：通過對每個樣本在特徵維度上進行獨立的正規化，可以減輕梯度消失和梯度爆炸問題，使得模型訓練更加穩定。</p>
-<p>具有較強的表達能力：Layer Normalization
-的正規化是在特徵維度上進行的，可以更好地處理不同樣本之間的差異，增加模型的表達能力。</p>
-<p>不依賴於小批量的統計信息：與 Batch Normalization 不同，Layer
-Normalization
-在每個樣本上進行正規化，不依賴於小批量的統計信息，因此對小批量資料的大小不敏感。</p>
-<p>需要注意的是，Layer Normalization
-在訓練和測試階段使用的統計信息是一致的，通常使用整個訓練集的統計信息。這有助於確保模型在測試階段的輸出結果具有一致性。此外，Layer
-Normalization
-可以應用於不同類型的層，例如全連接層和卷積層，以提升模型的性能。</p>
-<h4 id="group-normalization">Group Normalization</h4>
-<p>Group Normalization（組標準化）是一種深度學習模型中的正規化技術，它與
-Batch Normalization 和 Layer Normalization
-類似，旨在解決梯度消失和梯度爆炸等問題，並提高模型的學習效果和泛化能力。</p>
-<p>Group Normalization
-將輸入特徵分成多個組（groups），並對每個組的特徵進行獨立的正規化。具體而言，將特徵通道（channel）分成
-k 個組，每個組包含 c/k
-個特徵通道。然後，在每個組內，對每個樣本計算其在特徵維度上的均值和標準差，並使用這些統計信息對該組的特徵進行正規化。</p>
+<p>具有較強的表達能力：Layer Normalization 的正規化是在特徵維度上進行的，可以更好地處理不同樣本之間的差異，增加模型的表達能力。</p>
+<p>不依賴於小批量的統計信息：與 Batch Normalization 不同，Layer Normalization 在每個樣本上進行正規化，不依賴於小批量的統計信息，因此對小批量資料的大小不敏感。</p>
+<p>需要注意的是，Layer Normalization 在訓練和測試階段使用的統計信息是一致的，通常使用整個訓練集的統計信息。這有助於確保模型在測試階段的輸出結果具有一致性。此外，Layer Normalization 可以應用於不同類型的層，例如全連接層和卷積層，以提升模型的性能。</p>
+<h4 id="Group-Normalization"><a href="#Group-Normalization" class="headerlink" title="Group Normalization"></a>Group Normalization</h4><p>Group Normalization（組標準化）是一種深度學習模型中的正規化技術，它與 Batch Normalization 和 Layer Normalization 類似，旨在解決梯度消失和梯度爆炸等問題，並提高模型的學習效果和泛化能力。</p>
+<p>Group Normalization 將輸入特徵分成多個組（groups），並對每個組的特徵進行獨立的正規化。具體而言，將特徵通道（channel）分成 k 個組，每個組包含 c&#x2F;k 個特徵通道。然後，在每個組內，對每個樣本計算其在特徵維度上的均值和標準差，並使用這些統計信息對該組的特徵進行正規化。</p>
 <p>Group Normalization 的計算過程如下：</p>
-<p>將特徵通道分成 k 個組，每個組包含 c/k 個特徵通道。</p>
+<p>將特徵通道分成 k 個組，每個組包含 c&#x2F;k 個特徵通道。</p>
 <p>對於每個樣本，計算其在每個組內特徵維度上的均值和標準差。</p>
 <p>對於每個組的特徵，將其值減去組內的均值並除以組內的標準差，從而使該組的特徵的均值為0，標準差為1。</p>
 <p>將線性變換後的特徵組合起來作為下一層的輸入。</p>
 <p>Group Normalization 的優點包括：</p>
 <p>減輕梯度消失和梯度爆炸：通過對每個組內的特徵進行獨立的正規化，可以減輕梯度消失和梯度爆炸問題，從而提高模型的穩定性。</p>
-<p>具有一定的彈性：Group Normalization
-可以在特徵通道的不同組合上進行正規化，因此可以應用於各種不同大小的模型和各種特徵通道數量。</p>
-<p>較少依賴於小批量統計信息：相較於 Batch Normalization，Group
-Normalization 的正規化是在每個組內進行的，因此不像 Batch Normalization
-那樣對小批量的大小敏感。</p>
-<p>需要注意的是，Group Normalization
-需要根據模型的特徵通道數量和組數來設定參數，並且在實際應用中需要仔細調整這些參數以獲得最佳的性能。</p>
-<h4 id="instance-normalization">Instance Normalization</h4>
-<p>Instance
-Normalization（實例標準化）是一種用於深度學習模型的正規化技術，類似於
-Batch Normalization、Layer Normalization 和 Group
-Normalization。它的目的是對每個樣本的特徵進行獨立的正規化，從而提高模型的學習效果和泛化能力。</p>
+<p>具有一定的彈性：Group Normalization 可以在特徵通道的不同組合上進行正規化，因此可以應用於各種不同大小的模型和各種特徵通道數量。</p>
+<p>較少依賴於小批量統計信息：相較於 Batch Normalization，Group Normalization 的正規化是在每個組內進行的，因此不像 Batch Normalization 那樣對小批量的大小敏感。</p>
+<p>需要注意的是，Group Normalization 需要根據模型的特徵通道數量和組數來設定參數，並且在實際應用中需要仔細調整這些參數以獲得最佳的性能。</p>
+<h4 id="Instance-Normalization"><a href="#Instance-Normalization" class="headerlink" title="Instance Normalization"></a>Instance Normalization</h4><p>Instance Normalization（實例標準化）是一種用於深度學習模型的正規化技術，類似於 Batch Normalization、Layer Normalization 和 Group Normalization。它的目的是對每個樣本的特徵進行獨立的正規化，從而提高模型的學習效果和泛化能力。</p>
 <p>Instance Normalization 的計算過程如下：</p>
 <p>對於每個樣本，計算其在特徵維度上的均值和標準差。</p>
 <p>對於每個樣本的每個特徵，將其值減去該樣本在特徵維度上的均值並除以該樣本在特徵維度上的標準差，從而使該樣本的特徵的均值為0，標準差為1。</p>
 <p>將線性變換後的特徵組合起來作為下一層的輸入。</p>
 <p>Instance Normalization 的優點包括：</p>
-<p>不依賴於小批量統計信息：與 Batch Normalization 不同，Instance
-Normalization
-對於小批量的大小不敏感，因為它是對每個樣本進行獨立的正規化。</p>
-<p>考慮每個樣本的特徵分佈：Instance Normalization
-考慮每個樣本在特徵維度上的分佈，因此可以適應不同樣本之間的差異，尤其適用於生成模型等場景。</p>
-<p>可適應不同尺度的特徵：Instance Normalization
-不需要事先設定組數或特徵通道數量，它根據每個樣本的特徵維度自適應地進行正規化，因此可以處理不同尺度的特徵。</p>
-<p>需要注意的是，Instance Normalization 在計算上與 Batch Normalization
-和 Group Normalization
-相比較耗時，特別是在特徵維度較大的情況下。因此，根據實際情況和模型需求，需要仔細考慮正規化方法的選擇。</p>
-<h3 id="imbalanced-data">Imbalanced data</h3>
-<p>不平衡資料（Imbalanced
-data）指的是在資料集中，不同類別或分類的分佈不平等的情況。當某一類別的樣本數量明顯少於其他類別時，就會出現資料不平衡或分佈不均衡的情況。</p>
+<p>不依賴於小批量統計信息：與 Batch Normalization 不同，Instance Normalization 對於小批量的大小不敏感，因為它是對每個樣本進行獨立的正規化。</p>
+<p>考慮每個樣本的特徵分佈：Instance Normalization 考慮每個樣本在特徵維度上的分佈，因此可以適應不同樣本之間的差異，尤其適用於生成模型等場景。</p>
+<p>可適應不同尺度的特徵：Instance Normalization 不需要事先設定組數或特徵通道數量，它根據每個樣本的特徵維度自適應地進行正規化，因此可以處理不同尺度的特徵。</p>
+<p>需要注意的是，Instance Normalization 在計算上與 Batch Normalization 和 Group Normalization 相比較耗時，特別是在特徵維度較大的情況下。因此，根據實際情況和模型需求，需要仔細考慮正規化方法的選擇。</p>
+<h3 id="Imbalanced-data"><a href="#Imbalanced-data" class="headerlink" title="Imbalanced data"></a>Imbalanced data</h3><p>不平衡資料（Imbalanced data）指的是在資料集中，不同類別或分類的分佈不平等的情況。當某一類別的樣本數量明顯少於其他類別時，就會出現資料不平衡或分佈不均衡的情況。</p>
 <p>不平衡資料在各種機器學習和統計建模任務中都可能帶來挑戰。大多數傳統的機器學習算法都是設計用於均衡資料集上，即每個類別具有相似數量的樣本。然而，當處理不平衡資料時，這些算法可能對多數類別產生偏見，並難以準確預測或分類少數類別。</p>
 <p>不平衡資料是指在分類問題中，訓練資料集中的類別標籤分佈嚴重不均的情況。換句話說，某一類別的實例數量遠大於其他類別，從而造成資料的不平衡。</p>
 <p>不平衡資料在機器學習中可能帶來挑戰，因為它可能導致模型偏向於預測多數類別。這是因為模型傾向於更準確地預測多數類別。</p>
 <p>不平衡資料可能產生以下幾個後果：</p>
-<ol type="1">
-<li><p>偏頗的模型：在不平衡資料上訓練的模型往往對多數類別產生偏見，因為算法的目標是最小化整體誤差。這可能導致在預測或識別少數類別實例時性能不佳。</p></li>
-<li><p>不準確的評估：當資料不平衡時，模型的準確度可能不是一個很好的評估指標。因為即使模型總體上預測得很好，但對於少數類別的預測效果可能不理想。</p></li>
-<li><p>資源浪費：由於多數類別樣本眾多，算法可能花費大量資源來處理這些樣本，而對於少數類別的樣本則相對較少。這可能導致資源的浪費和效率的降低。</p></li>
+<ol>
+<li><p>偏頗的模型：在不平衡資料上訓練的模型往往對多數類別產生偏見，因為算法的目標是最小化整體誤差。這可能導致在預測或識別少數類別實例時性能不佳。</p>
+</li>
+<li><p>不準確的評估：當資料不平衡時，模型的準確度可能不是一個很好的評估指標。因為即使模型總體上預測得很好，但對於少數類別的預測效果可能不理想。</p>
+</li>
+<li><p>資源浪費：由於多數類別樣本眾多，算法可能花費大量資源來處理這些樣本，而對於少數類別的樣本則相對較少。這可能導致資源的浪費和效率的降低。</p>
+</li>
 </ol>
 <p>不平衡資料的問題在現實世界的許多情況下都存在，例如罕見疾病的檢測、信用卡欺詐的檢測等。在處理不平衡資料時，我們可以使用一些方法來改善模型的性能，例如：</p>
-<ol type="1">
-<li><p>適當的評估指標：在不平衡資料集上，準確率可能並不是一個合適的評估指標，因為它可能被多數類別的預測結果主導。相反，我們可以使用其他指標，如查全率、查准率、F1分數等，來更全面地評估模型的性能。</p></li>
+<ol>
+<li><p>適當的評估指標：在不平衡資料集上，準確率可能並不是一個合適的評估指標，因為它可能被多數類別的預測結果主導。相反，我們可以使用其他指標，如查全率、查准率、F1分數等，來更全面地評估模型的性能。</p>
+</li>
 <li><p>類別平衡技術：這些技術旨在平衡資料集中各個類別的數量，</p>
-<ol type="1">
-<li>過採樣（oversampling）方法如SMOTE（Synthetic Minority Over-sampling
-Technique）和ADASYN（Adaptive Synthetic Sampling），或者</li>
-<li>過採樣（undersampling）方法如隨機選擇法（Random
-Under-sampling）。</li>
+<ol>
+<li>過採樣（oversampling）方法如SMOTE（Synthetic Minority Over-sampling Technique）和ADASYN（Adaptive Synthetic Sampling），或者</li>
+<li>過採樣（undersampling）方法如隨機選擇法（Random Under-sampling）。</li>
 <li>downsampling 下採樣</li>
-<li>Upsampling 上採樣</li>
-</ol></li>
-<li><p>模型調整：一些分類算法具有針對不平衡資料集的參數或技術，例如類別加權（class
-weighting）或降低多數類別的樣本權重。</p></li>
-<li><p>集成學習：將多個模型組合成集成模型，從而綜合利用各個模型的預測能力，改善對少數類別的預測性能。
-集成學習（Ensemble
-learning）是一種機器學習方法，通過結合多個學習器（稱為基學習器或弱學習器）的預測結果，以獲得更準確和穩定的預測結果。</p>
+<li>Upsampling  上採樣</li>
+</ol>
+</li>
+<li><p>模型調整：一些分類算法具有針對不平衡資料集的參數或技術，例如類別加權（class weighting）或降低多數類別的樣本權重。</p>
+</li>
+<li><p>集成學習：將多個模型組合成集成模型，從而綜合利用各個模型的預測能力，改善對少數類別的預測性能。<br>集成學習（Ensemble learning）是一種機器學習方法，通過結合多個學習器（稱為基學習器或弱學習器）的預測結果，以獲得更準確和穩定的預測結果。</p>
 <p>集成學習的基本思想是將多個獨立的學習器組合成一個整體，透過集體的決策或統計學方法，利用這些學習器之間的相互補充和相互協調，提高整體的學習性能。</p>
 <p>在集成學習中，常見的方法包括：</p>
-<ol type="1">
-<li><p>投票（Voting）：基於多個學習器的預測結果，進行多數投票或加權投票，以選擇最終的預測結果。</p></li>
-<li><p>平均（Averaging）：將多個學習器的預測結果進行平均，作為最終的預測結果。</p></li>
-<li><p>堆疊（Stacking）：訓練一個元學習器，它使用多個學習器的預測結果作為輸入，以生成最終的預測結果。</p></li>
-<li><p>梯度提升（Gradient
-Boosting）：通過依次訓練多個學習器，每個學習器都專注於改善前一個學習器的預測錯誤，以逐步提高整體的預測能力。</p></li>
+<ol>
+<li><p>投票（Voting）：基於多個學習器的預測結果，進行多數投票或加權投票，以選擇最終的預測結果。</p>
+</li>
+<li><p>平均（Averaging）：將多個學習器的預測結果進行平均，作為最終的預測結果。</p>
+</li>
+<li><p>堆疊（Stacking）：訓練一個元學習器，它使用多個學習器的預測結果作為輸入，以生成最終的預測結果。</p>
+</li>
+<li><p>梯度提升（Gradient Boosting）：通過依次訓練多個學習器，每個學習器都專注於改善前一個學習器的預測錯誤，以逐步提高整體的預測能力。</p>
+</li>
 </ol>
 <p>集成學習能夠有效地減少單個學習器的偏差（bias）和方差（variance），並提高整體的泛化能力。它在各種機器學習任務中都具有廣泛的應用，如分類、回歸、特徵選擇等。</p>
 <p>然而，使用集成學習時需要注意避免過度擬合（overfitting），確保基學習器之間的多樣性，並選擇合適的組合策略，以獲得最佳的預測結果。</p>
 <p>集成学习在各種機器學習任務中廣泛應用，包括分類、回歸、特徵選擇和異常檢測等。以下是一些集成學習的常見應用：</p>
-<p>I.
-分類任務：在分類問題中，集成學習可以通過結合多個分類器的預測結果來提高分類準確度。集成學習可以應用於圖像識別、文本分類、詐騙檢測等領域。</p>
-<ol start="2" type="I">
-<li><p>回歸任務：在回歸問題中，集成學習可以通過結合多個回歸器的預測結果來提高預測準確度。集成學習可以應用於房價預測、股票預測等領域。</p></li>
-<li><p>特徵選擇：集成學習可以通過結合多個特徵選擇器的結果，選擇最優的特徵子集，以提高模型的性能和泛化能力。</p></li>
-<li><p>異常檢測：在異常檢測問題中，集成學習可以通過結合多個異常檢測器的結果，提高檢測的準確性和鮮度。</p></li>
+<p>I. 分類任務：在分類問題中，集成學習可以通過結合多個分類器的預測結果來提高分類準確度。集成學習可以應用於圖像識別、文本分類、詐騙檢測等領域。</p>
+<p>II. 回歸任務：在回歸問題中，集成學習可以通過結合多個回歸器的預測結果來提高預測準確度。集成學習可以應用於房價預測、股票預測等領域。</p>
+<p>III. 特徵選擇：集成學習可以通過結合多個特徵選擇器的結果，選擇最優的特徵子集，以提高模型的性能和泛化能力。</p>
+<p>IV. 異常檢測：在異常檢測問題中，集成學習可以通過結合多個異常檢測器的結果，提高檢測的準確性和鮮度。</p>
+<p>集成學習的應用可以提高預測的準確性、穩定性和穩健性，尤其在處理複雜的、具有高度變異性的資料集時具有優勢。然而，在應用集成學習時，需要適當地選擇和組合基學習器，並考慮模型的過度擬合問題，以獲得最佳的結果。</p>
+</li>
 </ol>
-<p>集成學習的應用可以提高預測的準確性、穩定性和穩健性，尤其在處理複雜的、具有高度變異性的資料集時具有優勢。然而，在應用集成學習時，需要適當地選擇和組合基學習器，並考慮模型的過度擬合問題，以獲得最佳的結果。</p></li>
-</ol>
-<h3 id="data-augmentation">Data Augmentation</h3>
-<p>資料擴增（Data
-Augmentation）是一種常用的資料預處理技術，旨在增加訓練資料的多樣性和數量，以改善機器學習模型的性能。通過對原始資料進行各種變換和增強操作，可以生成額外的訓練樣本，使模型更具穩健性和泛化能力。</p>
+<h3 id="Data-Augmentation"><a href="#Data-Augmentation" class="headerlink" title="Data Augmentation"></a>Data Augmentation</h3><p>資料擴增（Data Augmentation）是一種常用的資料預處理技術，旨在增加訓練資料的多樣性和數量，以改善機器學習模型的性能。通過對原始資料進行各種變換和增強操作，可以生成額外的訓練樣本，使模型更具穩健性和泛化能力。</p>
 <p>資料擴增可以應用於各種類型的資料，包括圖像、語音、文本等。常見的資料擴增操作包括：</p>
-<ol type="1">
-<li><p>圖像翻轉和旋轉：將圖像水平或垂直翻轉，或進行不同角度的旋轉。</p></li>
-<li><p>圖像平移和縮放：將圖像在平面上進行平移或縮放，改變其位置和大小。</p></li>
-<li><p>圖像旋轉和扭曲：對圖像進行旋轉、扭曲或變形，增加形變的多樣性。</p></li>
-<li><p>圖像裁剪和填充：從原始圖像中裁剪出不同的區域，或在圖像周圍填充像素。</p></li>
-<li><p>顏色調整：調整圖像的亮度、對比度、飽和度等顏色屬性。</p></li>
-<li><p>噪聲添加：向圖像中添加隨機噪聲，模擬真實世界的變異性。</p></li>
+<ol>
+<li><p>圖像翻轉和旋轉：將圖像水平或垂直翻轉，或進行不同角度的旋轉。</p>
+</li>
+<li><p>圖像平移和縮放：將圖像在平面上進行平移或縮放，改變其位置和大小。</p>
+</li>
+<li><p>圖像旋轉和扭曲：對圖像進行旋轉、扭曲或變形，增加形變的多樣性。</p>
+</li>
+<li><p>圖像裁剪和填充：從原始圖像中裁剪出不同的區域，或在圖像周圍填充像素。</p>
+</li>
+<li><p>顏色調整：調整圖像的亮度、對比度、飽和度等顏色屬性。</p>
+</li>
+<li><p>噪聲添加：向圖像中添加隨機噪聲，模擬真實世界的變異性。</p>
+</li>
 </ol>
 <p>資料擴增的目的是增加訓練資料的多樣性，使模型對於不同的變換和變異具有穩健性。這樣可以幫助模型更好地學習資料中的模式和特徵，並提升模型的泛化能力，降低過擬合的風險。</p>
 <p>在應用資料擴增時，需要根據具體問題和資料特性選擇合適的擴增操作，並注意保持資料的合理性和真實性。同時，資料擴增應該在訓練集上進行，而不應該應用於驗證集或測試集，以保證模型在真實資料上的評估結果的可靠性。</p>
-<h3 id="homogeneous-data">Homogeneous Data</h3>
-<p>同構資料（Homogeneous
-Data）是指在特定情境下，資料具有相同或相似的特性和結構。這意味著資料在組成元素、特徵和屬性方面相似，並且可以進行直接比較、分析和處理。</p>
+<h3 id="Homogeneous-Data"><a href="#Homogeneous-Data" class="headerlink" title="Homogeneous Data"></a>Homogeneous Data</h3><p>同構資料（Homogeneous Data）是指在特定情境下，資料具有相同或相似的特性和結構。這意味著資料在組成元素、特徵和屬性方面相似，並且可以進行直接比較、分析和處理。</p>
 <p>在機器學習和資料分析中，同構資料常用於同一領域的問題，其中資料的屬性和特徵在不同樣本之間具有一致性。例如，對於一個文本分類問題，如果所有的樣本都是英文文本，具有相同的單詞和語法結構，那麼這些文本資料可以被視為同構資料。</p>
 <p>同構資料具有以下特點：</p>
 <p>相似的特徵：同構資料的樣本具有相似的特徵，這些特徵在不同樣本之間具有可比性和共性。</p>
@@ -499,73 +453,61 @@ Data）是指在特定情境下，資料具有相同或相似的特性和結構�
 <p>相似的分析方法：由於同構資料具有相似的特性和結構，因此可以使用相似的分析方法和模型進行處理和分析。</p>
 <p>同構資料的優點是在分析和建模過程中可以更容易地比較和理解資料。由於資料的特性和結構相似，模型的設計和參數調整相對較簡單。同構資料的缺點是對於某些特殊問題和異常情況可能不適用，並且無法捕捉到資料的多樣性和非均質性。</p>
 <p>在機器學習和資料分析中，了解資料是否屬於同構資料可以幫助選擇適當的分析方法和模型，並對資料進行適當的前處理和轉換。</p>
-<h3 id="heterogeneous-data">Heterogeneous Data</h3>
-<p>異構資料（Heterogeneous
-Data）是指在特定情境下，資料具有不同的特性、屬性和結構。這意味著資料在組成元素、特徵和屬性方面存在差異性，需要進行不同的處理和分析方法。</p>
+<h3 id="Heterogeneous-Data"><a href="#Heterogeneous-Data" class="headerlink" title="Heterogeneous Data"></a>Heterogeneous Data</h3><p>異構資料（Heterogeneous Data）是指在特定情境下，資料具有不同的特性、屬性和結構。這意味著資料在組成元素、特徵和屬性方面存在差異性，需要進行不同的處理和分析方法。</p>
 <p>在機器學習和資料分析中，異構資料常常出現在多個來源或多個領域的資料集中。這些資料可能具有不同的格式、單位、分佈或類型。異構資料的存在提出了挑戰，因為資料的差異性可能導致無法直接進行比較、結合或分析。</p>
 <p>異構資料的特點如下：</p>
 <p>不同的特徵：異構資料的樣本具有不同的特徵，這些特徵在不同樣本之間可能不可比較或不具有共性。</p>
 <p>不同的結構：異構資料的結構在不同樣本之間存在差異，例如資料的屬性、欄位和格式可能不同。</p>
 <p>不同的分析方法：由於異構資料的差異性，需要針對不同的資料類型和特性使用不同的分析方法和模型。</p>
 <p>處理異構資料的挑戰在於需要對資料進行適當的轉換、標準化和統一化，以使得不同資料可以進行比較和結合。這可能涉及到特徵選擇、資料轉換、維度降低等技術。此外，異構資料的分析方法需要根據具體情況進行選擇和調整。</p>
-<p>在處理異構資料時，重要的是了解資料的差異性，選擇適當的方法和工具，並進行有效的資料整合和分析。這將有助於獲得更全面、準確和有意義的結果。
-# Optimization
-在模型最佳化過程中，我們可以使用不同的優化算法，如梯度下降法（Gradient
-Descent）、隨機梯度下降法（Stochastic Gradient
-Descent）、自適應梯度法（Adagrad）、動量法（Momentum）、Adam
-等。這些優化算法可以根據目標函數的特性，更新模型參數以最小化損失或最大化性能指標。</p>
-<h2 id="hyperparameters">Hyperparameters</h2>
-<p>超參數（Hyperparameters）是在機器學習和深度學習模型中，不由模型自身學習得出的參數，而是在訓練過程之前需要手動設定的參數。這些超參數控制著模型的行為和性能，例如學習速率、批量大小、迭代次數等。</p>
+<p>在處理異構資料時，重要的是了解資料的差異性，選擇適當的方法和工具，並進行有效的資料整合和分析。這將有助於獲得更全面、準確和有意義的結果。</p>
+<h1 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h1><p>在模型最佳化過程中，我們可以使用不同的優化算法，如梯度下降法（Gradient Descent）、隨機梯度下降法（Stochastic Gradient Descent）、自適應梯度法（Adagrad）、動量法（Momentum）、Adam 等。這些優化算法可以根據目標函數的特性，更新模型參數以最小化損失或最大化性能指標。</p>
+<h2 id="Hyperparameters"><a href="#Hyperparameters" class="headerlink" title="Hyperparameters"></a>Hyperparameters</h2><p>超參數（Hyperparameters）是在機器學習和深度學習模型中，不由模型自身學習得出的參數，而是在訓練過程之前需要手動設定的參數。這些超參數控制著模型的行為和性能，例如學習速率、批量大小、迭代次數等。</p>
 <p>超參數的設置對於模型的性能和訓練結果具有重要影響。不同的超參數組合可能導致不同的結果，並且需要進行調整和優化以獲得最佳的性能。優秀的超參數設置可以提高模型的準確性、泛化能力和訓練效率。</p>
 <p>常見的超參數包括：</p>
-<ol type="1">
-<li><p>學習率（Learning
-Rate）：控制模型在每次更新時的參數變化程度，適當的學習率可以加快收斂速度，但過大或過小的學習率可能導致模型無法收斂或陷入局部最小值。</p></li>
-<li><p>批量大小（Batch
-Size）：指定每次訓練中所使用的樣本數量，影響模型參數更新的頻率和內存使用。較大的批量大小可以加速訓練過程，但可能會增加內存需求。</p></li>
-<li><p>迭代次數（Number of
-Epochs）：指定模型在整個訓練集上運行的次數。過少的迭代次數可能導致模型未能充分學習，而過多的迭代次數可能會導致過擬合。</p></li>
-<li><p>正則化參數（Regularization
-Parameter）：控制模型的複雜度，避免過擬合。正則化參數可以是L1正則化或L2正則化的係數。</p></li>
+<ol>
+<li><p>學習率（Learning Rate）：控制模型在每次更新時的參數變化程度，適當的學習率可以加快收斂速度，但過大或過小的學習率可能導致模型無法收斂或陷入局部最小值。</p>
+</li>
+<li><p>批量大小（Batch Size）：指定每次訓練中所使用的樣本數量，影響模型參數更新的頻率和內存使用。較大的批量大小可以加速訓練過程，但可能會增加內存需求。</p>
+</li>
+<li><p>迭代次數（Number of Epochs）：指定模型在整個訓練集上運行的次數。過少的迭代次數可能導致模型未能充分學習，而過多的迭代次數可能會導致過擬合。</p>
+</li>
+<li><p>正則化參數（Regularization Parameter）：控制模型的複雜度，避免過擬合。正則化參數可以是L1正則化或L2正則化的係數。</p>
+</li>
 </ol>
 <p>網絡結構相關超參數：例如卷積神經網絡（CNN）中的卷積核大小、池化窗口大小等。</p>
-<h2 id="hyperparameter-optimization">Hyperparameter optimization</h2>
-<p>選擇合適的超參數需要基於經驗和實驗來進行調整。通常，可以使用交叉驗證、網格搜索、隨機搜索等技術來搜索最佳的超參數組合，並通過比較模型的性能來選擇最優的超參數設置。</p>
-<h2 id="iterative">Iterative</h2>
-<p>Iterative（迭代）是指在解決問題或進行計算時，通過重複應用一組步驟或操作來逐漸逼近最終結果的過程。在迭代過程中，每一輪迭代都使用上一輪的結果作為新的輸入，並根據特定的規則或條件進行更新，直到滿足終止條件為止。</p>
+<h2 id="Hyperparameter-optimization"><a href="#Hyperparameter-optimization" class="headerlink" title="Hyperparameter optimization"></a>Hyperparameter optimization</h2><p>選擇合適的超參數需要基於經驗和實驗來進行調整。通常，可以使用交叉驗證、網格搜索、隨機搜索等技術來搜索最佳的超參數組合，並通過比較模型的性能來選擇最優的超參數設置。</p>
+<h2 id="Iterative"><a href="#Iterative" class="headerlink" title="Iterative"></a>Iterative</h2><p>Iterative（迭代）是指在解決問題或進行計算時，通過重複應用一組步驟或操作來逐漸逼近最終結果的過程。在迭代過程中，每一輪迭代都使用上一輪的結果作為新的輸入，並根據特定的規則或條件進行更新，直到滿足終止條件為止。</p>
 <p>迭代在計算機科學和數學中廣泛應用，特別是在數值計算和優化算法中。迭代算法通常以初始值開始，然後通過重複計算、更新和重新評估來逼近所需的結果。每一輪迭代都會使結果更接近最終目標，直到達到足夠的準確度或收斂到預定的終止條件。</p>
 <p>迭代的優點包括：</p>
-<ol type="1">
-<li><p>逐步逼近：迭代過程可以逐步逼近最終結果，每一輪迭代都會使結果更接近目標，並且可以在每一輪中進行中間結果的檢查和調整。</p></li>
-<li><p>靈活性：迭代算法具有靈活性，可以根據需要調整迭代步驟和終止條件，以達到更好的結果。</p></li>
-<li><p>適應性：迭代過程可以根據不斷變化的條件和數據進行調整，以提供更好的解決方案。</p></li>
+<ol>
+<li><p>逐步逼近：迭代過程可以逐步逼近最終結果，每一輪迭代都會使結果更接近目標，並且可以在每一輪中進行中間結果的檢查和調整。</p>
+</li>
+<li><p>靈活性：迭代算法具有靈活性，可以根據需要調整迭代步驟和終止條件，以達到更好的結果。</p>
+</li>
+<li><p>適應性：迭代過程可以根據不斷變化的條件和數據進行調整，以提供更好的解決方案。</p>
+</li>
 </ol>
-<h2 id="epoches">Epoches</h2>
-<p>在深度學習中，“epoch”（訓練週期）是指將整個訓練資料集完整地過一遍的次數。訓練一個深度學習模型通常需要將資料集分為多個小批次進行迭代更新參數，每個小批次的處理被稱為一個”batch”。</p>
-<p>一個”epoch”表示模型使用訓練資料集中的所有樣本進行一次前向傳播（forward
-propagation）和反向傳播（backward
-propagation）的過程，並通過優化算法進行參數更新。在訓練過程中，通常會選擇適當的epoch數量來訓練模型，直到模型達到期望的性能。</p>
+<h2 id="Epoches"><a href="#Epoches" class="headerlink" title="Epoches"></a>Epoches</h2><p>在深度學習中，”epoch”（訓練週期）是指將整個訓練資料集完整地過一遍的次數。訓練一個深度學習模型通常需要將資料集分為多個小批次進行迭代更新參數，每個小批次的處理被稱為一個”batch”。</p>
+<p>一個”epoch”表示模型使用訓練資料集中的所有樣本進行一次前向傳播（forward propagation）和反向傳播（backward propagation）的過程，並通過優化算法進行參數更新。在訓練過程中，通常會選擇適當的epoch數量來訓練模型，直到模型達到期望的性能。</p>
 <p>選擇適當的epoch數量取決於資料集的大小和複雜性，以及模型的架構和超參數設置。一般而言，epoch數量不宜過小，以充分利用訓練資料集中的信息，確保模型充分學習。同時，也要避免過度擬合（overfitting），即模型在訓練資料上達到很高的準確性但在新資料上表現不佳的情況。如果模型在訓練集上的準確性已經達到一個穩定的水平，但在驗證集上的準確性不再提升或開始下降，則可能意味著模型已經開始過度擬合。</p>
-<p>進一步優化模型性能的方法之一是使用早停（early
-stopping）策略，即在訓練過程中，根據驗證集的性能表現來停止訓練，以避免過度擬合。通常，當模型在驗證集上的性能不再提升時，可以停止訓練，選擇此時的epoch數量作為最終模型的訓練週期。</p>
+<p>進一步優化模型性能的方法之一是使用早停（early stopping）策略，即在訓練過程中，根據驗證集的性能表現來停止訓練，以避免過度擬合。通常，當模型在驗證集上的性能不再提升時，可以停止訓練，選擇此時的epoch數量作為最終模型的訓練週期。</p>
 <p>總結而言，epoch是深度學習中的一個重要概念，表示模型使用整個訓練資料集進行一次完整的訓練過程。適當的epoch數量可以幫助模型充分學習並避免過度擬合，同時需要根據具體問題和模型性能進行調整和優化。</p>
-<h2 id="batch-size">Batch size</h2>
-<p>批量大小（batch
-size）在深度學習中是指在一次訓練迭代中用於更新模型參數的樣本數量。在模型訓練過程中，資料集會被分為多個批次，每個批次包含一定數量的樣本。批量大小的選擇會直接影響模型的訓練速度和資源利用效率。</p>
+<h2 id="Batch-size"><a href="#Batch-size" class="headerlink" title="Batch size"></a>Batch size</h2><p>批量大小（batch size）在深度學習中是指在一次訓練迭代中用於更新模型參數的樣本數量。在模型訓練過程中，資料集會被分為多個批次，每個批次包含一定數量的樣本。批量大小的選擇會直接影響模型的訓練速度和資源利用效率。</p>
 <p>選擇適當的批量大小是一個重要的設計決策，可以考慮以下幾個因素：</p>
-<ol type="1">
-<li><p>記憶體限制：較大的批量大小需要更多的記憶體，因為需要同時加載和處理更多的資料。如果計算設備的記憶體有限，則需要根據可用記憶體量來選擇合適的批量大小。</p></li>
-<li><p>計算效率：較大的批量大小可以在單次計算中並行處理更多的資料，從而提高訓練效率。然而，過大的批量大小也可能導致計算資源的浪費，特別是在較小的模型或計算資源有限的情況下。</p></li>
-<li><p>模型穩定性：批量大小的選擇還會影響模型的穩定性和收斂性。較小的批量大小可能會增加模型訓練的隨機性，導致模型收斂不穩定。較大的批量大小可以平滑梯度估計，使模型更穩定，但也可能導致過度擬合的風險。</p></li>
-<li><p>學習率調整：批量大小的選擇還與學習率調整有關。較大的批量大小通常需要較大的學習率，而較小的批量大小可能需要較小的學習率。</p></li>
+<ol>
+<li><p>記憶體限制：較大的批量大小需要更多的記憶體，因為需要同時加載和處理更多的資料。如果計算設備的記憶體有限，則需要根據可用記憶體量來選擇合適的批量大小。</p>
+</li>
+<li><p>計算效率：較大的批量大小可以在單次計算中並行處理更多的資料，從而提高訓練效率。然而，過大的批量大小也可能導致計算資源的浪費，特別是在較小的模型或計算資源有限的情況下。</p>
+</li>
+<li><p>模型穩定性：批量大小的選擇還會影響模型的穩定性和收斂性。較小的批量大小可能會增加模型訓練的隨機性，導致模型收斂不穩定。較大的批量大小可以平滑梯度估計，使模型更穩定，但也可能導致過度擬合的風險。</p>
+</li>
+<li><p>學習率調整：批量大小的選擇還與學習率調整有關。較大的批量大小通常需要較大的學習率，而較小的批量大小可能需要較小的學習率。</p>
+</li>
 </ol>
 <p>一般來說，常見的批量大小取值為32、64、128等。選擇批量大小時需要根據具體問題和資料集進行評估和調整。可以通過試驗不同的批量大小，觀察模型的訓練速度和準確性，並根據實際情況做出適當的選擇。</p>
-<h2 id="algorithms">Algorithms</h2>
-<h3 id="adam">Adam</h3>
-<p>Adam（Adaptive Moment
-Estimation）是一種優化算法，常用於訓練深度學習模型。它結合了梯度下降和動量方法，以自適應的方式調整學習率，並提供更快速、穩定的收斂效果。</p>
-<p>Adam
-算法的核心思想是根據梯度的一階矩估計和二階矩估計來調整參數的更新。具體而言，它維護了每個參數的動量和過去梯度的平方平均值，並在更新參數時使用這些信息來調整學習率。</p>
+<h2 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms"></a>Algorithms</h2><h3 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h3><p>Adam（Adaptive Moment Estimation）是一種優化算法，常用於訓練深度學習模型。它結合了梯度下降和動量方法，以自適應的方式調整學習率，並提供更快速、穩定的收斂效果。</p>
+<p>Adam 算法的核心思想是根據梯度的一階矩估計和二階矩估計來調整參數的更新。具體而言，它維護了每個參數的動量和過去梯度的平方平均值，並在更新參數時使用這些信息來調整學習率。</p>
 <p>Adam 算法的更新步驟如下：</p>
 <p>初始化參數：設定初始參數和學習率。</p>
 <p>計算梯度：計算當前參數下的損失函數對於每個參數的梯度。</p>
@@ -573,18 +515,12 @@ Estimation）是一種優化算法，常用於訓練深度學習模型。它結�
 <p>計算二階矩估計：計算每個參數的二階矩（即梯度的平方）的指數移動平均值，用於調整學習率。</p>
 <p>更新參數：根據動量和學習率調整規則，更新每個參數的值。</p>
 <p>Adam 算法的優點包括：</p>
-<p>自適應學習率：Adam
-算法根據每個參數的二階矩估計自適應地調整學習率，使得在不同參數和不同時刻下，能夠有更合適的學習率。</p>
-<p>快速收斂：由於使用了動量和自適應的學習率，Adam
-算法通常能夠快速地收斂到局部最優解。</p>
-<p>對記憶體需求較低：相較於其他自適應方法，Adam
-算法對記憶體的需求相對較低，可以更好地處理大規模資料和大型模型。</p>
-<p>需要注意的是，Adam
-算法有一些超參數需要調整，例如學習率、動量和二階矩的衰減率等。在實際應用中，需要根據具體情況進行調參，以獲得最佳的模型性能。</p>
-<h3 id="adamw">AdamW</h3>
-<p>AdamW是對Adam優化算法的一種改進版本，主要用於深度學習模型的訓練。AdamW在Adam算法的基礎上引入了一個權重衰減項，旨在更好地控制權重的更新和正則化。</p>
-<p>AdamW的核心思想是在計算梯度更新時，將權重衰減（Weight
-Decay）考慮進來。權重衰減是一種正則化技術，通常通過在損失函數中添加正則項（如L2懲罰）來限制模型的參數大小，以防止過擬合。在AdamW中，權重衰減被集成到梯度的計算中，而不是在更新步驟中單獨處理。</p>
+<p>自適應學習率：Adam 算法根據每個參數的二階矩估計自適應地調整學習率，使得在不同參數和不同時刻下，能夠有更合適的學習率。</p>
+<p>快速收斂：由於使用了動量和自適應的學習率，Adam 算法通常能夠快速地收斂到局部最優解。</p>
+<p>對記憶體需求較低：相較於其他自適應方法，Adam 算法對記憶體的需求相對較低，可以更好地處理大規模資料和大型模型。</p>
+<p>需要注意的是，Adam 算法有一些超參數需要調整，例如學習率、動量和二階矩的衰減率等。在實際應用中，需要根據具體情況進行調參，以獲得最佳的模型性能。</p>
+<h3 id="AdamW"><a href="#AdamW" class="headerlink" title="AdamW"></a>AdamW</h3><p>AdamW是對Adam優化算法的一種改進版本，主要用於深度學習模型的訓練。AdamW在Adam算法的基礎上引入了一個權重衰減項，旨在更好地控制權重的更新和正則化。</p>
+<p>AdamW的核心思想是在計算梯度更新時，將權重衰減（Weight Decay）考慮進來。權重衰減是一種正則化技術，通常通過在損失函數中添加正則項（如L2懲罰）來限制模型的參數大小，以防止過擬合。在AdamW中，權重衰減被集成到梯度的計算中，而不是在更新步驟中單獨處理。</p>
 <p>AdamW的更新步驟如下：</p>
 <p>初始化參數：設定初始參數和學習率。</p>
 <p>計算梯度：計算當前參數下的損失函數對於每個參數的梯度。</p>
@@ -593,10 +529,8 @@ Decay）考慮進來。權重衰減是一種正則化技術，通常通過在損
 <p>計算權重衰減：根據權重衰減率調整梯度。</p>
 <p>更新參數：根據動量、學習率和調整後的梯度更新每個參數的值。</p>
 <p>相比於標準的Adam算法，AdamW的權重衰減項可以更有效地控制權重的更新，減少過擬合的風險。這對於深度學習模型的訓練非常重要，尤其是在大型模型和複雜任務中。</p>
-<h3 id="adamax">Adamax</h3>
-<p>Adamax是一種優化算法，它是對Adam算法的一個變體。Adamax主要用於深度學習模型的訓練，特別適用於處理具有稀疏梯度的問題。</p>
-<p>Adamax的名稱來自於它對梯度的估計方式，它使用了一階矩估計（即梯度的指數移動平均）和無窮范數（infinity
-norm）來更新參數。無窮范數是指向量中絕對值最大的元素。</p>
+<h3 id="Adamax"><a href="#Adamax" class="headerlink" title="Adamax"></a>Adamax</h3><p>Adamax是一種優化算法，它是對Adam算法的一個變體。Adamax主要用於深度學習模型的訓練，特別適用於處理具有稀疏梯度的問題。</p>
+<p>Adamax的名稱來自於它對梯度的估計方式，它使用了一階矩估計（即梯度的指數移動平均）和無窮范數（infinity norm）來更新參數。無窮范數是指向量中絕對值最大的元素。</p>
 <p>Adamax的更新步驟如下：</p>
 <p>初始化參數：設定初始參數和學習率。</p>
 <p>計算梯度：計算當前參數下的損失函數對於每個參數的梯度。</p>
@@ -604,8 +538,7 @@ norm）來更新參數。無窮范數是指向量中絕對值最大的元素。<
 <p>計算無窮范數：計算每個參數梯度的無窮范數。</p>
 <p>更新參數：根據一階矩估計、無窮范數和學習率更新每個參數的值。</p>
 <p>Adamax的特點是能夠處理具有稀疏梯度的問題，並且對於無窮范數的梯度估計更加穩定。它在處理非常大的梯度時表現較好，因為它對梯度的估計不受梯度大小的影響。</p>
-<h3 id="adagrad">Adagrad</h3>
-<p>Adagrad是一種優化算法，用於訓練機器學習模型。它基於梯度下降算法，但具有自適應學習率的特點，可以根據參數的更新情況自動調整學習率的大小。</p>
+<h3 id="Adagrad"><a href="#Adagrad" class="headerlink" title="Adagrad"></a>Adagrad</h3><p>Adagrad是一種優化算法，用於訓練機器學習模型。它基於梯度下降算法，但具有自適應學習率的特點，可以根據參數的更新情況自動調整學習率的大小。</p>
 <p>Adagrad的核心思想是根據參數的梯度來更新學習率，對於頻繁出現的參數，降低其學習率；對於不常出現的參數，增加其學習率。這樣做的目的是為了更好地處理稀疏梯度和不平衡資料的情況。</p>
 <p>Adagrad的更新步驟如下：</p>
 <p>初始化參數：設定初始參數和初始學習率。</p>
@@ -614,21 +547,18 @@ norm）來更新參數。無窮范數是指向量中絕對值最大的元素。<
 <p>調整學習率：根據參數的梯度平方和學習率進行調整。</p>
 <p>更新參數：根據調整後的學習率和梯度更新每個參數的值。</p>
 <p>Adagrad的特點是它能夠自動調整學習率，對於不常出現的參數，它的學習率會較大，使得這些參數的更新更快；而對於頻繁出現的參數，學習率較小，使得這些參數的更新較穩定。這樣可以更好地處理非平衡資料和稀疏梯度的問題。</p>
-<p>需要注意的是，Adagrad在訓練過程中會累積梯度的平方，這可能會導致學習率過早下降，使得模型在後期訓練過程中停止學習。
-### RAdam RAdam（Rectified
-Adam）是一種優化算法，它是對Adam算法的改進。RAdam旨在解決Adam算法在訓練初期的不穩定性問題，特別是對於深度學習模型。</p>
+<p>需要注意的是，Adagrad在訓練過程中會累積梯度的平方，這可能會導致學習率過早下降，使得模型在後期訓練過程中停止學習。</p>
+<h3 id="RAdam"><a href="#RAdam" class="headerlink" title="RAdam"></a>RAdam</h3><p>RAdam（Rectified Adam）是一種優化算法，它是對Adam算法的改進。RAdam旨在解決Adam算法在訓練初期的不穩定性問題，特別是對於深度學習模型。</p>
 <p>在Adam算法中，學習率在訓練初期通常設定較大，並且根據梯度的一階矩估計（即梯度的指數移動平均）進行調整。然而，在訓練初期，模型的參數還未充分收斂，梯度的估計可能不夠準確，這可能導致學習率過大，導致模型無法穩定地收斂。</p>
-<p>RAdam通過引入自適應學習率修正（Adaptive Learning Rate
-Correction）來改進Adam算法。它在計算梯度的一階矩估計時，對於未收斂的參數，使用修正的梯度估計。這樣可以更好地控制學習率的大小，避免過大的學習率對模型訓練的不穩定影響。</p>
+<p>RAdam通過引入自適應學習率修正（Adaptive Learning Rate Correction）來改進Adam算法。它在計算梯度的一階矩估計時，對於未收斂的參數，使用修正的梯度估計。這樣可以更好地控制學習率的大小，避免過大的學習率對模型訓練的不穩定影響。</p>
 <p>RAdam的更新步驟如下：</p>
 <p>初始化參數：設定初始參數和初始學習率。</p>
 <p>計算梯度：計算當前參數下的損失函數對於每個參數的梯度。</p>
 <p>計算一階矩估計：計算每個參數的一階矩（即梯度）的指數移動平均值。</p>
 <p>計算自適應學習率修正：根據修正的梯度估計和學習率的比例來計算自適應學習率修正因子。</p>
 <p>更新參數：根據自適應學習率修正因子和梯度更新每個參數的值。</p>
-<p>RAdam的改進主要在於修正了Adam算法在訓練初期的不穩定性，使得模型在訓練過程中更穩定且收斂更快。在實際應用中，RAdam可以作為Adam算法的替代選擇，特別適用於深度學習模型的訓練。
-### SparseAdam
-SparseAdam是一種優化算法，用於訓練稀疏模型，即模型中具有大量稀疏權重的情況。與常規的Adam優化算法相比，SparseAdam針對稀疏性進行了優化，以提高訓練效率和儲存效率。</p>
+<p>RAdam的改進主要在於修正了Adam算法在訓練初期的不穩定性，使得模型在訓練過程中更穩定且收斂更快。在實際應用中，RAdam可以作為Adam算法的替代選擇，特別適用於深度學習模型的訓練。</p>
+<h3 id="SparseAdam"><a href="#SparseAdam" class="headerlink" title="SparseAdam"></a>SparseAdam</h3><p>SparseAdam是一種優化算法，用於訓練稀疏模型，即模型中具有大量稀疏權重的情況。與常規的Adam優化算法相比，SparseAdam針對稀疏性進行了優化，以提高訓練效率和儲存效率。</p>
 <p>稀疏模型是指模型中有許多權重為零或接近零的參數，這種模型通常在特徵表示或激活函數中使用稀疏編碼技術，以節省儲存空間和計算成本。然而，對於常規的優化算法，它們對稀疏模型的訓練效果較差，因為它們無法有效處理稀疏權重的更新和儲存。</p>
 <p>SparseAdam的設計目的是解決稀疏模型訓練中的問題。它基於Adam算法，通過對稀疏權重進行分組操作，將不同分組的權重進行單獨的更新。這樣可以減少更新計算和儲存的成本，同時保持對梯度的有效利用。</p>
 <p>SparseAdam算法的優點包括：</p>
@@ -636,20 +566,14 @@ SparseAdam是一種優化算法，用於訓練稀疏模型，即模型中具有�
 <p>儲存效率：由於SparseAdam只儲存非零權重的位置和值，而不需要儲存所有權重，因此可以節省儲存空間。</p>
 <p>訓練效果：SparseAdam針對稀疏模型的訓練進行了優化，能夠更好地處理稀疏權重的更新和儲存，從而提高訓練效果。</p>
 <p>SparseAdam算法在稀疏模型的訓練中具有重要的應用價值，特別是在自然語言處理、推薦系統和圖像分割等領域。它可以幫助提高稀疏模型的訓練效率和儲存效率，同時確保模型的訓練結果。</p>
-<h3 id="rmsprop">RMSprop</h3>
-<p>RMSprop（Root Mean Square
-Propagation）是一種基於梯度下降的優化算法，用於訓練神經網絡模型。RMSprop算法旨在解決梯度下降算法中學習速率調整困難的問題，並改進Adagrad算法中的一些限制。</p>
-<p>RMSprop算法的基本思想是根據梯度平方的移動平均來調整參數的學習速率。具體而言，RMSprop算法維護一個指數加權移動平均（Exponentially
-Weighted Moving
-Average，EWMA）的平方梯度，並將其用於調整參數的學習速率。這樣可以根據最近的梯度變化情況自適應地調整學習速率，對於不同參數具有不同的學習速率，從而更有效地進行模型參數的更新。</p>
+<h3 id="RMSprop"><a href="#RMSprop" class="headerlink" title="RMSprop"></a>RMSprop</h3><p>RMSprop（Root Mean Square Propagation）是一種基於梯度下降的優化算法，用於訓練神經網絡模型。RMSprop算法旨在解決梯度下降算法中學習速率調整困難的問題，並改進Adagrad算法中的一些限制。</p>
+<p>RMSprop算法的基本思想是根據梯度平方的移動平均來調整參數的學習速率。具體而言，RMSprop算法維護一個指數加權移動平均（Exponentially Weighted Moving Average，EWMA）的平方梯度，並將其用於調整參數的學習速率。這樣可以根據最近的梯度變化情況自適應地調整學習速率，對於不同參數具有不同的學習速率，從而更有效地進行模型參數的更新。</p>
 <p>RMSprop算法的優點包括：</p>
 <p>自適應學習速率：RMSprop算法根據梯度平方的移動平均自適應地調整學習速率，對於不同參數具有不同的學習速率，可以更好地處理不同尺度的參數和變化幅度大的梯度。</p>
 <p>加速收斂：由於自適應的學習速率調整，RMSprop算法可以加速模型的收斂速度，提高訓練效率。</p>
 <p>抑制梯度爆炸：RMSprop算法通過對梯度進行平方根運算，可以有效地抑制梯度的爆炸問題，防止模型參數更新過大。</p>
 <p>RMSprop算法在實際應用中表現良好，特別適用於處理具有不同尺度參數的深度神經網絡模型。它是深度學習領域中常用的優化算法之一，被廣泛應用於各種圖像分類、物體檢測、語音識別等任務中。</p>
-<h3 id="rprop">Rprop</h3>
-<p>Rprop（Resilient
-Backpropagation）是一種基於梯度下降的優化算法，用於訓練神經網絡模型。Rprop算法旨在解決梯度下降算法中學習速率調整困難的問題，特別適用於處理高維度的資料和非凸優化問題。</p>
+<h3 id="Rprop"><a href="#Rprop" class="headerlink" title="Rprop"></a>Rprop</h3><p>Rprop（Resilient Backpropagation）是一種基於梯度下降的優化算法，用於訓練神經網絡模型。Rprop算法旨在解決梯度下降算法中學習速率調整困難的問題，特別適用於處理高維度的資料和非凸優化問題。</p>
 <p>Rprop算法的基本思想是根據梯度的正負方向來調整參數的學習速率。具體而言，對於每個參數，Rprop算法維護一個學習速率，並根據梯度的正負來更新該速率。如果梯度的正負方向與前一次的梯度方向相同，則學習速率會增加；如果梯度的正負方向與前一次的梯度方向相反，則學習速率會減少。這樣可以使模型在訓練過程中更快地收斂，並且對於峰值和平原區域的處理更為穩定。</p>
 <p>Rprop算法的優點包括：</p>
 <p>不依賴學習速率：Rprop算法自動調整參數的學習速率，不需要手動設置學習速率參數，減少了調參的困難性。</p>
@@ -657,9 +581,7 @@ Backpropagation）是一種基於梯度下降的優化算法，用於訓練神�
 <p>快速收斂：由於學習速率的適應性調整，Rprop算法在訓練過程中可以更快地收斂，提高了訓練效率。</p>
 <p>然而，Rprop算法也存在一些限制。例如，Rprop算法對於大規模資料集和複雜模型的訓練可能需要較長的時間。此外，Rprop算法對於噪聲敏感，當梯度的噪聲較大時，容易產生震盪現象。</p>
 <p>總體而言，Rprop算法是一種有效的神經網絡參數優化算法，特別適用於處理高維度和非凸優化問題。在實際應用中，可以根據具體情況選擇合適的優化算法來訓練神經網絡模型。</p>
-<h3 id="sgd">SGD</h3>
-<p>SGD（Stochastic Gradient
-Descent）是一種常用的優化算法，用於訓練機器學習和深度學習模型。它是一種基於梯度下降的迭代算法，用於最小化模型的損失函數。</p>
+<h3 id="SGD"><a href="#SGD" class="headerlink" title="SGD"></a>SGD</h3><p>SGD（Stochastic Gradient Descent）是一種常用的優化算法，用於訓練機器學習和深度學習模型。它是一種基於梯度下降的迭代算法，用於最小化模型的損失函數。</p>
 <p>SGD的核心思想是通過迭代更新模型的參數，以找到損失函數的局部最小值或近似最小值。在每個迭代步驟中，SGD從訓練集中隨機選擇一個樣本或一個小批次的樣本，計算該樣本的梯度，並根據梯度的方向和大小來更新模型的參數。這樣的隨機性使得SGD能夠在大規模資料集上高效地進行訓練。</p>
 <p>SGD的更新步驟如下：</p>
 <p>初始化參數：設定初始參數和學習率。</p>
@@ -667,9 +589,8 @@ Descent）是一種常用的優化算法，用於訓練機器學習和深度學�
 <p>計算梯度：計算所選樣本的損失函數對於每個參數的梯度。</p>
 <p>更新參數：根據梯度和學習率更新每個參數的值。</p>
 <p>重複步驟2至步驟4，直到達到設定的停止條件（例如達到最大迭代次數或損失函數收斂）。</p>
-<p>SGD的優點是計算和記憶體消耗較小，尤其在大資料集上的訓練中表現良好。然而，SGD也存在一些問題，例如可能收斂到局部最小值而不是全局最小值，且對於具有不同尺度的特徵可能收斂速度不同。為了克服這些問題，還有一些基於SGD的改進算法，例如動量法（Momentum）、AdaGrad、Adam等，可以根據具體問題的需求選擇適合的優化算法。
-### ASGD ASGD（Average Stochastic Gradient
-Descent）是一種改進的隨機梯度下降（SGD）優化算法。ASGD的目標是通過平均多個梯度更新的結果來減少訓練過程中的變動性，從而達到更穩定的模型訓練。</p>
+<p>SGD的優點是計算和記憶體消耗較小，尤其在大資料集上的訓練中表現良好。然而，SGD也存在一些問題，例如可能收斂到局部最小值而不是全局最小值，且對於具有不同尺度的特徵可能收斂速度不同。為了克服這些問題，還有一些基於SGD的改進算法，例如動量法（Momentum）、AdaGrad、Adam等，可以根據具體問題的需求選擇適合的優化算法。</p>
+<h3 id="ASGD"><a href="#ASGD" class="headerlink" title="ASGD"></a>ASGD</h3><p>ASGD（Average Stochastic Gradient Descent）是一種改進的隨機梯度下降（SGD）優化算法。ASGD的目標是通過平均多個梯度更新的結果來減少訓練過程中的變動性，從而達到更穩定的模型訓練。</p>
 <p>在傳統的SGD中，每個樣本或小批次的梯度更新會直接影響模型參數的變化。這種更新方式可能會在每個迭代步驟中引入大的變動，導致訓練過程中參數的不穩定性。ASGD通過平均多個梯度更新的結果，可以平滑這些變動，提高訓練的穩定性。</p>
 <p>ASGD的更新步驟如下：</p>
 <p>初始化參數：設定初始參數和學習率。</p>
@@ -678,149 +599,165 @@ Descent）是一種改進的隨機梯度下降（SGD）優化算法。ASGD的目
 <p>更新參數：根據梯度和學習率更新每個參數的值。</p>
 <p>計算平均更新：將每次更新的參數值進行平均。</p>
 <p>重複步驟2至步驟5，直到達到設定的停止條件。</p>
-<p>ASGD的優點是可以減少模型訓練過程中的變動性，使得模型的收斂更加穩定。特別是在大資料集或異構資料集上，ASGD能夠提供更穩健的訓練效果。然而，ASGD也存在一些缺點，例如需要額外的記憶體來保存多個參數更新，且在某些情況下可能導致模型訓練的速度變慢。因此，在使用ASGD時需要根據具體情況進行適當的調整和優化。
-### LBFGS L-BFGS (Limited-memory Broyden-Fletcher-Goldfarb-Shanno)
-是一種優化算法，用於解決無約束或有約束的非線性最優化問題。它是對BFGS算法的一種改進，通過限制記憶體使用來處理高維問題，並且適用於大型資料集。</p>
+<p>ASGD的優點是可以減少模型訓練過程中的變動性，使得模型的收斂更加穩定。特別是在大資料集或異構資料集上，ASGD能夠提供更穩健的訓練效果。然而，ASGD也存在一些缺點，例如需要額外的記憶體來保存多個參數更新，且在某些情況下可能導致模型訓練的速度變慢。因此，在使用ASGD時需要根據具體情況進行適當的調整和優化。</p>
+<h3 id="LBFGS"><a href="#LBFGS" class="headerlink" title="LBFGS"></a>LBFGS</h3><p>L-BFGS (Limited-memory Broyden-Fletcher-Goldfarb-Shanno) 是一種優化算法，用於解決無約束或有約束的非線性最優化問題。它是對BFGS算法的一種改進，通過限制記憶體使用來處理高維問題，並且適用於大型資料集。</p>
 <p>L-BFGS算法利用函數的梯度和Hessian矩陣的近似值來迭代地優化目標函數。它在每次迭代時更新梯度和近似的Hessian矩陣，並根據一定的規則更新模型參數，直到達到收斂條件。</p>
 <p>L-BFGS算法的主要特點包括：</p>
 <p>有效處理高維問題：L-BFGS算法通過限制記憶體使用來處理高維問題，因此在處理大型資料集時更具優勢。</p>
 <p>近似Hessian矩陣：L-BFGS算法使用近似的Hessian矩陣來指導優化過程，這樣可以減少計算量，同時仍然能夠達到良好的優化效果。</p>
 <p>支持無約束和有約束問題：L-BFGS算法可以處理無約束的最優化問題，也可以通過添加約束來處理有約束的最優化問題。</p>
 <p>L-BFGS算法在機器學習和資料科學領域有廣泛的應用，特別是在凸優化、深度學習和結構化預測等問題中。它通常用於解決較大規模的最優化問題，並在實踐中被證明具有良好的收斂性和效率。</p>
-<h2 id="learning-rate">Learning rate</h2>
-<p>學習率（learning
-rate）是深度學習中的一個重要超參數，它決定了模型在每次參數更新時的步長或距離。學習率的選擇對於模型的訓練和收斂速度至關重要。</p>
+<h2 id="Learning-rate"><a href="#Learning-rate" class="headerlink" title="Learning rate"></a>Learning rate</h2><p>學習率（learning rate）是深度學習中的一個重要超參數，它決定了模型在每次參數更新時的步長或距離。學習率的選擇對於模型的訓練和收斂速度至關重要。</p>
 <p>如果學習率過小，模型的收斂速度會變得很慢，需要更多的訓練時間才能達到理想的性能。另一方面，如果學習率過大，模型可能會在訓練過程中發生震盪或無法收斂，甚至可能會超出最佳解。因此，適當的學習率選擇對於獲得良好的模型性能至關重要。</p>
 <p>一般來說，選擇學習率時可以遵循以下原則：</p>
-<ol type="1">
-<li><p>初始學習率：通常可以選擇一個較小的初始學習率，例如0.1或0.01，然後根據訓練的效果進行調整。</p></li>
-<li><p>學習率衰減：在訓練過程中逐漸減小學習率，以使模型更加穩定地收斂。可以使用不同的衰減策略，如指數衰減、多項式衰減或餘弦衰減等。</p></li>
-<li><p>監控損失函數：觀察訓練過程中的損失函數值，如果損失函數不再下降或開始震盪，則可能需要減小學習率；如果訓練速度過慢，則可能需要增大學習率。</p></li>
-<li><p>批量大小：學習率的選擇也與批量大小有關。通常，較大的批量大小可以使用較大的學習率，而較小的批量大小可能需要較小的學習率。</p></li>
-<li><p>試驗和調整：根據具體的問題和資料集，可能需要進行多次試驗和調整，以找到最適合的學習率。</p></li>
+<ol>
+<li><p>初始學習率：通常可以選擇一個較小的初始學習率，例如0.1或0.01，然後根據訓練的效果進行調整。</p>
+</li>
+<li><p>學習率衰減：在訓練過程中逐漸減小學習率，以使模型更加穩定地收斂。可以使用不同的衰減策略，如指數衰減、多項式衰減或餘弦衰減等。</p>
+</li>
+<li><p>監控損失函數：觀察訓練過程中的損失函數值，如果損失函數不再下降或開始震盪，則可能需要減小學習率；如果訓練速度過慢，則可能需要增大學習率。</p>
+</li>
+<li><p>批量大小：學習率的選擇也與批量大小有關。通常，較大的批量大小可以使用較大的學習率，而較小的批量大小可能需要較小的學習率。</p>
+</li>
+<li><p>試驗和調整：根據具體的問題和資料集，可能需要進行多次試驗和調整，以找到最適合的學習率。</p>
+</li>
 </ol>
 <p>總之，選擇合適的學習率對於深度學習模型的訓練至關重要。需要根據具體情況進行試驗和調整，並考慮使用學習率調度器來自動調整學習率以獲得更好的模型性能。</p>
-<h2 id="schedulers-adjust-learning-rate">Schedulers: Adjust learning
-rate</h2>
-<p>在機器學習和深度學習中，優化算法的調度器（schedulers）是一種用於調整模型訓練過程中學習率（learning
-rate）的工具。學習率是優化算法中的一個重要超參數，它決定了模型參數在每次迭代中的更新程度。調整學習率可以影響模型的收斂速度和準確性。</p>
+<h2 id="Schedulers-Adjust-learning-rate"><a href="#Schedulers-Adjust-learning-rate" class="headerlink" title="Schedulers: Adjust learning rate"></a>Schedulers: Adjust learning rate</h2><p>在機器學習和深度學習中，優化算法的調度器（schedulers）是一種用於調整模型訓練過程中學習率（learning rate）的工具。學習率是優化算法中的一個重要超參數，它決定了模型參數在每次迭代中的更新程度。調整學習率可以影響模型的收斂速度和準確性。</p>
 <p>調度器的作用是根據訓練的進度或其他指標自動調整學習率。不同的調度器有不同的策略和算法，以下是一些常見的調度器：</p>
-<ol type="1">
-<li><p>階段性調度器（Step
-Scheduler）：在訓練的固定時間或固定迭代次數後，將學習率降低為原來的一個比例。這可以讓模型在訓練初期以較高的學習率快速學習，然後在後續訓練中逐漸降低學習率，以更細緻的方式調整模型參數。</p></li>
-<li><p>學習率衰減調度器（Learning Rate Decay
-Scheduler）：隨著訓練的進行，逐漸降低學習率。可以使用不同的衰減函數，如指數衰減、多項式衰減或餘弦衰減等，以控制學習率的變化速度和方式。</p></li>
-<li><p>自適應調度器（Adaptive
-Scheduler）：根據模型的表現和訓練進度動態調整學習率。例如，當模型的損失函數不再下降時，調度器可以減小學習率以細化參數的更新；當模型遇到局部最小值時，調度器可以增加學習率以跳出局部最小值。</p></li>
-<li><p>循環調度器（Cyclical
-Scheduler）：在一定範圍內循環改變學習率。這種調度器通常設置一個最小和最大學習率，模型在每個訓練週期內從最小值線性增加到最大值，然後再從最大值降低到最小值，這樣循環進行。</p></li>
+<ol>
+<li><p>階段性調度器（Step Scheduler）：在訓練的固定時間或固定迭代次數後，將學習率降低為原來的一個比例。這可以讓模型在訓練初期以較高的學習率快速學習，然後在後續訓練中逐漸降低學習率，以更細緻的方式調整模型參數。</p>
+</li>
+<li><p>學習率衰減調度器（Learning Rate Decay Scheduler）：隨著訓練的進行，逐漸降低學習率。可以使用不同的衰減函數，如指數衰減、多項式衰減或餘弦衰減等，以控制學習率的變化速度和方式。</p>
+</li>
+<li><p>自適應調度器（Adaptive Scheduler）：根據模型的表現和訓練進度動態調整學習率。例如，當模型的損失函數不再下降時，調度器可以減小學習率以細化參數的更新；當模型遇到局部最小值時，調度器可以增加學習率以跳出局部最小值。</p>
+</li>
+<li><p>循環調度器（Cyclical Scheduler）：在一定範圍內循環改變學習率。這種調度器通常設置一個最小和最大學習率，模型在每個訓練週期內從最小值線性增加到最大值，然後再從最大值降低到最小值，這樣循環進行。</p>
+</li>
 </ol>
 <p>這些調度器可根據具體的問題和需求進行選擇和調整。它們能夠幫助優化算法在訓練過程中找到更好的學習率，以提高模型的性能和收斂速度。</p>
-<h1 id="evaluation">Evaluation</h1>
-<p>訓練集和測試集的分割：將可用資料集分為訓練集和測試集，通常是按照一定比例隨機分割。訓練集用於模型的訓練，測試集用於評估模型在未知資料上的性能。</p>
-<ol type="1">
-<li><p>交叉驗證（Cross-Validation）：通過將資料集分為多個不重疊的子集，進行多次訓練和測試，以獲得對模型性能的更穩定估計。常見的交叉驗證方法包括
-k 折交叉驗證和留一驗證（Leave-One-Out）。</p></li>
-<li><p>混淆矩陣（Confusion
-Matrix）：對於分類問題，混淆矩陣提供了模型在每個類別上的預測結果與實際結果之間的對應關係。根據混淆矩陣，可以計算出各種評估指標，如準確率、精確率、召回率、F1
-分數等。</p></li>
-<li><p>ROC 曲線（Receiver Operating Characteristic Curve）和 AUC（Area
-Under the Curve）：用於二元分類問題，ROC
-曲線以不同的閾值繪製了真陽性率（True Positive Rate）和假陽性率（False
-Positive Rate）之間的關係。AUC 表示 ROC
-曲線下的面積，通常用於評估分類器的性能。</p></li>
-<li><p>平均絕對誤差（Mean Absolute Error，MAE）和均方誤差（Mean Squared
-Error，MSE）：用於回歸問題的評估指標，衡量模型預測值和實際值之間的差異程度。</p></li>
-<li><p>R
-平方（R-squared）：也稱為決定係數，用於評估回歸模型的拟合程度，衡量模型對變異數的解釋能力。</p></li>
-<li><p>過擬合和欠擬合的檢測：通過觀察模型在訓練集和測試集上的表現差異，可以檢測模型是否過度擬合（Overfitting）或欠擬合（Underfitting）。過度擬合意味著模型在訓練集上表現良好但在測試集上表現不佳，而欠擬合則意味著模型無法很好地擬合訓練資料。</p></li>
+<h1 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h1><p>訓練集和測試集的分割：將可用資料集分為訓練集和測試集，通常是按照一定比例隨機分割。訓練集用於模型的訓練，測試集用於評估模型在未知資料上的性能。</p>
+<ol>
+<li><p>交叉驗證（Cross-Validation）：通過將資料集分為多個不重疊的子集，進行多次訓練和測試，以獲得對模型性能的更穩定估計。常見的交叉驗證方法包括 k 折交叉驗證和留一驗證（Leave-One-Out）。</p>
+</li>
+<li><p>混淆矩陣（Confusion Matrix）：對於分類問題，混淆矩陣提供了模型在每個類別上的預測結果與實際結果之間的對應關係。根據混淆矩陣，可以計算出各種評估指標，如準確率、精確率、召回率、F1 分數等。</p>
+</li>
+<li><p>ROC 曲線（Receiver Operating Characteristic Curve）和 AUC（Area Under the Curve）：用於二元分類問題，ROC 曲線以不同的閾值繪製了真陽性率（True Positive Rate）和假陽性率（False Positive Rate）之間的關係。AUC 表示 ROC 曲線下的面積，通常用於評估分類器的性能。</p>
+</li>
+<li><p>平均絕對誤差（Mean Absolute Error，MAE）和均方誤差（Mean Squared Error，MSE）：用於回歸問題的評估指標，衡量模型預測值和實際值之間的差異程度。</p>
+</li>
+<li><p>R 平方（R-squared）：也稱為決定係數，用於評估回歸模型的拟合程度，衡量模型對變異數的解釋能力。</p>
+</li>
+<li><p>過擬合和欠擬合的檢測：通過觀察模型在訓練集和測試集上的表現差異，可以檢測模型是否過度擬合（Overfitting）或欠擬合（Underfitting）。過度擬合意味著模型在訓練集上表現良好但在測試集上表現不佳，而欠擬合則意味著模型無法很好地擬合訓練資料。</p>
+</li>
 </ol>
-<h2 id="fitting">Fitting</h2>
-<p>過擬合（Overfitting）和欠擬合（Underfitting）是機器學習和深度學習中常見的問題，可以通過以下方法來檢測它們：</p>
-<ol type="1">
-<li><p>觀察訓練集和測試集的表現：過擬合時，模型在訓練集上表現非常好，但在測試集上表現較差。相反，欠擬合時，模型在訓練集和測試集上的表現都較差。通過觀察模型在不同資料集上的表現，可以初步檢測過擬合和欠擬合。</p></li>
-<li><p>學習曲線（Learning
-Curve）：繪製模型在訓練集和測試集上的損失（或其他評估指標）隨著訓練樣本數量的變化情況。當模型過擬合時，訓練集的損失會逐漸降低，而測試集的損失可能會增加。而欠擬合時，訓練集和測試集的損失都會保持較高的水平。觀察學習曲線可以提供關於模型過擬合或欠擬合的線索。</p></li>
-<li><p>驗證曲線（Validation
-Curve）：繪製模型在不同超參數設置下的訓練集和測試集的損失（或其他評估指標）隨著超參數變化的情況。觀察驗證曲線可以幫助找到最佳的超參數設置，同時也可以檢測過擬合或欠擬合的情況。</p></li>
-<li><p>交叉驗證（Cross-Validation）：使用交叉驗證方法，如 k
-折交叉驗證，可以對模型進行多次訓練和測試，從而獲得對模型泛化性能的更穩定估計。觀察交叉驗證的結果可以判斷模型是否過擬合或欠擬合。</p></li>
-<li><p>正則化技術：正則化是一種用於控制模型複雜度的技術，可用於防止過擬合。常見的正則化方法包括
-L1 正則化（L1 Regularization）和 L2 正則化（L2
-Regularization）。通過調整正則化參數的值，可以平衡模型的複雜度和擬合能力。</p></li>
+<h2 id="Fitting"><a href="#Fitting" class="headerlink" title="Fitting"></a>Fitting</h2><p>過擬合（Overfitting）和欠擬合（Underfitting）是機器學習和深度學習中常見的問題，可以通過以下方法來檢測它們：</p>
+<ol>
+<li><p>觀察訓練集和測試集的表現：過擬合時，模型在訓練集上表現非常好，但在測試集上表現較差。相反，欠擬合時，模型在訓練集和測試集上的表現都較差。通過觀察模型在不同資料集上的表現，可以初步檢測過擬合和欠擬合。</p>
+</li>
+<li><p>學習曲線（Learning Curve）：繪製模型在訓練集和測試集上的損失（或其他評估指標）隨著訓練樣本數量的變化情況。當模型過擬合時，訓練集的損失會逐漸降低，而測試集的損失可能會增加。而欠擬合時，訓練集和測試集的損失都會保持較高的水平。觀察學習曲線可以提供關於模型過擬合或欠擬合的線索。</p>
+</li>
+<li><p>驗證曲線（Validation Curve）：繪製模型在不同超參數設置下的訓練集和測試集的損失（或其他評估指標）隨著超參數變化的情況。觀察驗證曲線可以幫助找到最佳的超參數設置，同時也可以檢測過擬合或欠擬合的情況。</p>
+</li>
+<li><p>交叉驗證（Cross-Validation）：使用交叉驗證方法，如 k 折交叉驗證，可以對模型進行多次訓練和測試，從而獲得對模型泛化性能的更穩定估計。觀察交叉驗證的結果可以判斷模型是否過擬合或欠擬合。</p>
+</li>
+<li><p>正則化技術：正則化是一種用於控制模型複雜度的技術，可用於防止過擬合。常見的正則化方法包括 L1 正則化（L1 Regularization）和 L2 正則化（L2 Regularization）。通過調整正則化參數的值，可以平衡模型的複雜度和擬合能力。</p>
+</li>
 </ol>
-<h2 id="overfitting">Overfitting</h2>
-<p>Overfitting（過擬合）是指機器學習或深度學習模型在訓練過程中過度擬合訓練資料，導致在新的、未見過的資料上表現不佳的現象。當模型過度擬合時，它在訓練資料上表現得很好，但無法泛化到新的資料集。</p>
+<h2 id="Overfitting"><a href="#Overfitting" class="headerlink" title="Overfitting"></a>Overfitting</h2><p>Overfitting（過擬合）是指機器學習或深度學習模型在訓練過程中過度擬合訓練資料，導致在新的、未見過的資料上表現不佳的現象。當模型過度擬合時，它在訓練資料上表現得很好，但無法泛化到新的資料集。</p>
 <p>過擬合的原因可能包括：</p>
-<ol type="1">
-<li><p>模型過於複雜：當模型具有較高的參數量或自由度時，它更容易對訓練資料中的噪音或特定樣本進行過度擬合。</p></li>
-<li><p>訓練資料不足：如果訓練資料量較少，模型可能無法從有限的資料中學習到普遍的模式，而是過度擬合訓練樣本。</p></li>
-<li><p>特徵過度匹配：如果模型過於依賴訓練資料的特定特徵，而忽略了其他重要的特徵，則可能出現過擬合的情況。</p></li>
+<ol>
+<li><p>模型過於複雜：當模型具有較高的參數量或自由度時，它更容易對訓練資料中的噪音或特定樣本進行過度擬合。</p>
+</li>
+<li><p>訓練資料不足：如果訓練資料量較少，模型可能無法從有限的資料中學習到普遍的模式，而是過度擬合訓練樣本。</p>
+</li>
+<li><p>特徵過度匹配：如果模型過於依賴訓練資料的特定特徵，而忽略了其他重要的特徵，則可能出現過擬合的情況。</p>
+</li>
 </ol>
 <p>過擬合的影響包括：</p>
-<ol type="1">
-<li><p>預測性能下降：過擬合的模型在新的資料上表現不佳，無法準確預測未見過的資料。</p></li>
-<li><p>模型不穩定：過擬合的模型對輕微的資料變動非常敏感，導致模型的預測結果不穩定。</p></li>
+<ol>
+<li><p>預測性能下降：過擬合的模型在新的資料上表現不佳，無法準確預測未見過的資料。</p>
+</li>
+<li><p>模型不穩定：過擬合的模型對輕微的資料變動非常敏感，導致模型的預測結果不穩定。</p>
+</li>
 </ol>
 <p>如何解決過擬合問題：</p>
-<ol type="1">
-<li><p>增加訓練資料量：提供更多的訓練資料，有助於模型學習更普遍的模式，減少對特定樣本的過度依賴。</p></li>
-<li><p>簡化模型：減少模型的複雜度，例如減少參數量、降低模型的層數或神經元數量等，以減少模型的自由度。</p></li>
-<li><p>正則化（Regularization）：引入正則化項，如L1正則化或L2正則化，以懲罰過大的模型參數，從而限制模型的複雜度。</p></li>
-<li><p>交叉驗證（Cross-validation）：使用交叉驗證方法評估模型的性能，選擇最佳的超參數設置，以減少過擬合的風險。</p></li>
-<li><p>提前停止（Early
-stopping）：在訓練過程中監控驗證集的誤差，當誤差開始增加時停止訓練，避免模型過度擬合訓練資料。</p></li>
+<ol>
+<li><p>增加訓練資料量：提供更多的訓練資料，有助於模型學習更普遍的模式，減少對特定樣本的過度依賴。</p>
+</li>
+<li><p>簡化模型：減少模型的複雜度，例如減少參數量、降低模型的層數或神經元數量等，以減少模型的自由度。</p>
+</li>
+<li><p>正則化（Regularization）：引入正則化項，如L1正則化或L2正則化，以懲罰過大的模型參數，從而限制模型的複雜度。</p>
+</li>
+<li><p>交叉驗證（Cross-validation）：使用交叉驗證方法評估模型的性能，選擇最佳的超參數設置，以減少過擬合的風險。</p>
+</li>
+<li><p>提前停止（Early stopping）：在訓練過程中監控驗證集的誤差，當誤差開始增加時停止訓練，避免模型過度擬合訓練資料。</p>
+</li>
 </ol>
 <p>解決過擬合問題需要根據具體情況和資料特性進行調整和優化，以達到良好的模型泛化能力。</p>
-<h2 id="underfitting">Underfitting</h2>
-<p>Underfitting（欠擬合）是指機器學習或深度學習模型在訓練過程中無法充分擬合訓練資料的現象。當模型欠擬合時，它在訓練資料和新的資料上的表現都不佳。</p>
+<h2 id="Underfitting"><a href="#Underfitting" class="headerlink" title="Underfitting"></a>Underfitting</h2><p>Underfitting（欠擬合）是指機器學習或深度學習模型在訓練過程中無法充分擬合訓練資料的現象。當模型欠擬合時，它在訓練資料和新的資料上的表現都不佳。</p>
 <p>欠擬合的原因可能包括：</p>
-<ol type="1">
-<li><p>模型過於簡單：當模型的參數量或自由度過少時，它可能無法捕捉到資料中的複雜模式和變異性。</p></li>
-<li><p>過少的訓練時間：如果訓練時間不足，模型可能無法充分學習資料中的特徵和模式。</p></li>
-<li><p>特徵不足或選擇不當：如果模型的特徵表示不足以捕捉資料的重要特徵，或者選擇的特徵不合適，則模型可能無法達到良好的擬合。</p></li>
+<ol>
+<li><p>模型過於簡單：當模型的參數量或自由度過少時，它可能無法捕捉到資料中的複雜模式和變異性。</p>
+</li>
+<li><p>過少的訓練時間：如果訓練時間不足，模型可能無法充分學習資料中的特徵和模式。</p>
+</li>
+<li><p>特徵不足或選擇不當：如果模型的特徵表示不足以捕捉資料的重要特徵，或者選擇的特徵不合適，則模型可能無法達到良好的擬合。</p>
+</li>
 </ol>
 <p>欠擬合的影響包括：</p>
-<ol type="1">
-<li><p>預測性能不佳：欠擬合的模型在訓練資料和新的資料上都無法準確預測，其預測能力有限。</p></li>
-<li><p>模型不足夠表達資料：欠擬合的模型無法充分表達資料中的複雜模式和變異性，無法捕捉資料的重要特徵。</p></li>
+<ol>
+<li><p>預測性能不佳：欠擬合的模型在訓練資料和新的資料上都無法準確預測，其預測能力有限。</p>
+</li>
+<li><p>模型不足夠表達資料：欠擬合的模型無法充分表達資料中的複雜模式和變異性，無法捕捉資料的重要特徵。</p>
+</li>
 </ol>
 <p>如何解決欠擬合問題：</p>
-<ol type="1">
-<li><p>增加模型的複雜度：增加模型的參數量、層數、神經元數量等，以增加模型的自由度，使其能夠更好地擬合資料。</p></li>
-<li><p>改進特徵選擇：選擇更具代表性和有信息量的特徵，或者進行特徵工程以提取更有意義的特徵表示。</p></li>
-<li><p>增加訓練時間或資料量：增加訓練時間或提供更多的訓練資料，以使模型有足夠的時間和資料進行學習。</p></li>
-<li><p>模型集成：使用集成學習方法，如隨機森林、梯度提升樹等，結合多個弱模型來提升整體的預測能力。</p></li>
+<ol>
+<li><p>增加模型的複雜度：增加模型的參數量、層數、神經元數量等，以增加模型的自由度，使其能夠更好地擬合資料。</p>
+</li>
+<li><p>改進特徵選擇：選擇更具代表性和有信息量的特徵，或者進行特徵工程以提取更有意義的特徵表示。</p>
+</li>
+<li><p>增加訓練時間或資料量：增加訓練時間或提供更多的訓練資料，以使模型有足夠的時間和資料進行學習。</p>
+</li>
+<li><p>模型集成：使用集成學習方法，如隨機森林、梯度提升樹等，結合多個弱模型來提升整體的預測能力。</p>
+</li>
 </ol>
 <p>解決欠擬合問題需要根據具體情況和資料特性進行調整和優化，以達到合適的模型擬合能力。</p>
-<h2 id="generalization">Generalization</h2>
-<p>在機器學習和深度學習中，泛化（Generalization）是指模型在未見過的資料上表現良好的能力。當我們訓練一個機器學習模型時，我們希望它不僅在訓練資料上表現好，而且能夠對新的、未見過的資料進行準確預測。</p>
+<h2 id="Generalization"><a href="#Generalization" class="headerlink" title="Generalization"></a>Generalization</h2><p>在機器學習和深度學習中，泛化（Generalization）是指模型在未見過的資料上表現良好的能力。當我們訓練一個機器學習模型時，我們希望它不僅在訓練資料上表現好，而且能夠對新的、未見過的資料進行準確預測。</p>
 <p>泛化能力是衡量模型好壞的一個重要指標。如果一個模型具有良好的泛化能力，它能夠將從訓練資料中學到的模式和規律推廣到未知的資料上，從而能夠對新的資料做出準確的預測。相反，如果一個模型在訓練資料上表現很好，但在測試資料或實際應用中表現差，則說明它沒有良好的泛化能力，可能出現了過擬合（Overfitting）的情況。</p>
-<p><img src="../../images/2023/Deep-Learning-Optimization/generalization.png" alt="generalization"> 記憶過程通常被分為三個主要階段： 1.
-記憶期:這是記憶過程的第一階段，發生在我們接觸到新的資訊或經驗時。在編碼階段，新的資訊被轉換為神經系統可以理解和處理的形式。此階段決定了資訊如何、何時、以及是否進入我們的記憶中。</p>
-<ol start="2" type="1">
-<li><p>平緩期:這是記憶過程的第二階段，在此階段，已經記憶期的資訊被存放在大腦中以供未來使用。儲存分為短期記憶和長期記憶，短期記憶的容量有限，而長期記憶則可以儲存大量資訊且持續時間長。</p></li>
-<li><p>泛化期:這是記憶過程的最後階段，當我們需要回憶或使用儲存在記憶中的資訊時，就會進行提取。回憶是提取的一種形式，但提取的過程不一定完全是意識的，有時也可能是無意識的。</p></li>
+<p><img src="/../../images/2023/Deep-Learning-Optimization/generalization.png" alt="generalization"><br>記憶過程通常被分為三個主要階段：</p>
+<ol>
+<li><p>記憶期:這是記憶過程的第一階段，發生在我們接觸到新的資訊或經驗時。在編碼階段，新的資訊被轉換為神經系統可以理解和處理的形式。此階段決定了資訊如何、何時、以及是否進入我們的記憶中。</p>
+</li>
+<li><p>平緩期:這是記憶過程的第二階段，在此階段，已經記憶期的資訊被存放在大腦中以供未來使用。儲存分為短期記憶和長期記憶，短期記憶的容量有限，而長期記憶則可以儲存大量資訊且持續時間長。</p>
+</li>
+<li><p>泛化期:這是記憶過程的最後階段，當我們需要回憶或使用儲存在記憶中的資訊時，就會進行提取。回憶是提取的一種形式，但提取的過程不一定完全是意識的，有時也可能是無意識的。</p>
+</li>
 </ol>
-<p>Power, A., Burda, Y., Edwards, H., Babuschkin, I., &amp; Misra, V.
-(2022). Grokking: Generalization beyond overfitting on small algorithmic
-datasets. arXiv preprint arXiv:2201.02177.</p>
-<h3 id="strategy">Strategy</h3>
-<p>為了提高模型的泛化能力，我們可以採取以下策略：</p>
-<ol type="1">
-<li><p>資料集的切分：將資料集分為訓練集、驗證集和測試集，用於模型的訓練、調參和評估。這樣可以確保模型在未見過的資料上進行驗證和測試。</p></li>
-<li><p>正則化：使用正則化技術，如L1正則化、L2正則化等，來控制模型的複雜度，防止過度擬合。這些技術可以限制模型參數的大小，降低模型的自由度，從而提高泛化能力。</p></li>
-<li><p>模型選擇：在訓練多個不同的模型或使用不同的算法，並選擇具有較好泛化能力的模型。可以通過交叉驗證等技術來評估模型在未見資料上的性能。</p></li>
-<li><p>資料增強：通過資料增強技術，如圖像旋轉、翻轉、平移等，來擴充訓練資料集，增加資料的多樣性，提高模型的泛化能力。</p></li>
+<p>Power, A., Burda, Y., Edwards, H., Babuschkin, I., &amp; Misra, V. (2022). Grokking: Generalization beyond overfitting on small algorithmic datasets. arXiv preprint arXiv:2201.02177.</p>
+<h3 id="Strategy"><a href="#Strategy" class="headerlink" title="Strategy"></a>Strategy</h3><p>為了提高模型的泛化能力，我們可以採取以下策略：</p>
+<ol>
+<li><p>資料集的切分：將資料集分為訓練集、驗證集和測試集，用於模型的訓練、調參和評估。這樣可以確保模型在未見過的資料上進行驗證和測試。</p>
+</li>
+<li><p>正則化：使用正則化技術，如L1正則化、L2正則化等，來控制模型的複雜度，防止過度擬合。這些技術可以限制模型參數的大小，降低模型的自由度，從而提高泛化能力。</p>
+</li>
+<li><p>模型選擇：在訓練多個不同的模型或使用不同的算法，並選擇具有較好泛化能力的模型。可以通過交叉驗證等技術來評估模型在未見資料上的性能。</p>
+</li>
+<li><p>資料增強：通過資料增強技術，如圖像旋轉、翻轉、平移等，來擴充訓練資料集，增加資料的多樣性，提高模型的泛化能力。</p>
+</li>
 </ol>
-<h2 id="robustness">Robustness</h2>
-<p>深度學習的穩健性是指模型對於輸入資料中的噪聲、干擾或異常情況的穩健性。在實際應用中，輸入資料往往包含噪聲、資料缺失、畸變或異常值等問題。穩健的深度學習模型能夠在面對這些挑戰時保持良好的性能。</p>
+<h2 id="Robustness"><a href="#Robustness" class="headerlink" title="Robustness"></a>Robustness</h2><p>深度學習的穩健性是指模型對於輸入資料中的噪聲、干擾或異常情況的穩健性。在實際應用中，輸入資料往往包含噪聲、資料缺失、畸變或異常值等問題。穩健的深度學習模型能夠在面對這些挑戰時保持良好的性能。</p>
 <p>深度學習模型的穩健性可以體現在多個方面：</p>
-<ol type="1">
-<li><p>噪聲穩健性：穩健的深度學習模型能夠在噪聲存在的情況下仍能產生準確的預測。這些噪聲可能來自於資料采集過程中的感測器噪聲、網絡傳輸中的干擾等。</p></li>
-<li><p>資料缺失穩健性：當輸入資料中存在缺失值時，穩健的深度學習模型能夠有效地處理這些缺失值，繼續進行準確的預測。</p></li>
-<li><p>畸變穩健性：穩健的深度學習模型能夠對於圖像中的旋轉、縮放、平移等畸變變換具有穩健性。這意味著模型能夠在處理經過變換後的圖像時仍能保持穩定的預測結果。</p></li>
-<li><p>異常值穩健性：穩健的深度學習模型能夠處理資料中的異常值或極端值，避免這些異常值對模型的預測結果產生過大的影響。</p></li>
+<ol>
+<li><p>噪聲穩健性：穩健的深度學習模型能夠在噪聲存在的情況下仍能產生準確的預測。這些噪聲可能來自於資料采集過程中的感測器噪聲、網絡傳輸中的干擾等。</p>
+</li>
+<li><p>資料缺失穩健性：當輸入資料中存在缺失值時，穩健的深度學習模型能夠有效地處理這些缺失值，繼續進行準確的預測。</p>
+</li>
+<li><p>畸變穩健性：穩健的深度學習模型能夠對於圖像中的旋轉、縮放、平移等畸變變換具有穩健性。這意味著模型能夠在處理經過變換後的圖像時仍能保持穩定的預測結果。</p>
+</li>
+<li><p>異常值穩健性：穩健的深度學習模型能夠處理資料中的異常值或極端值，避免這些異常值對模型的預測結果產生過大的影響。</p>
+</li>
 </ol>
 <p>實現深度學習模型的穩健性可以通過多種方法，例如使用正則化技術、資料擴增、模型集成、穩健損失函數等。這些方法可以增加模型的穩健性，提高其在實際應用中的可靠性和可用性。</p>
 
@@ -874,13 +811,13 @@ datasets. arXiv preprint arXiv:2201.02177.</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">288k</span>
+    <span title="總字數">290k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:44</span>
+    <span title="所需總閱讀時間">8:47</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介 電腦視覺（Computer Vision）、機器視覺（Machine Vision）和機器人視覺（Robot Vision）是三個相關但有所不同的概念。">
+    <meta name="description" content="簡介電腦視覺（Computer Vision）、機器視覺（Machine Vision）和機器人視覺（Robot Vision）是三個相關但有所不同的概念。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Visual System Differences">
 <meta property="og:url" content="https://leonicehot.github.io/2023/06/22/2023/June/Visual%20System%20Differences/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介 電腦視覺（Computer Vision）、機器視覺（Machine Vision）和機器人視覺（Robot Vision）是三個相關但有所不同的概念。">
+<meta property="og:description" content="簡介電腦視覺（Computer Vision）、機器視覺（Machine Vision）和機器人視覺（Robot Vision）是三個相關但有所不同的概念。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-06-22T08:03:47.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:36.956Z">
@@ -110,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#computer-vision"><span class="nav-number">2.</span> <span class="nav-text">Computer Vision</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#machine-vision"><span class="nav-number">3.</span> <span class="nav-text">Machine Vision</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#robot-vision"><span class="nav-number">4.</span> <span class="nav-text">Robot Vision</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pattern-recognition"><span class="nav-number">5.</span> <span class="nav-text">Pattern Recognition</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B7%92%E8%AB%96"><span class="nav-number">2.</span> <span class="nav-text">緒論</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Computer-Vision"><span class="nav-number">3.</span> <span class="nav-text">Computer Vision</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Machine-Vision"><span class="nav-number">4.</span> <span class="nav-text">Machine Vision</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Robot-Vision"><span class="nav-number">5.</span> <span class="nav-text">Robot Vision</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pattern-Recognition"><span class="nav-number">6.</span> <span class="nav-text">Pattern Recognition</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -237,61 +237,66 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
-<p>電腦視覺（Computer Vision）、機器視覺（Machine
-Vision）和機器人視覺（Robot Vision）是三個相關但有所不同的概念。
-<span id="more"></span> # 緒論 電腦視覺（Computer
-Vision）是一個廣泛的領域，涵蓋了使用電腦和算法對數字圖像和視訊資料進行分析、處理和理解的技術和方法。它的目標是使電腦能夠模擬和理解人類視覺系統的能力。電腦視覺的應用範圍非常廣泛，包括影像識別、物體追蹤、場景重建、行為分析等。</p>
-<p>機器視覺（Machine
-Vision）是應用於工業自動化領域的一個特定應用範疇。它是機器視覺系統使用感測器、硬體設備和軟體演算法，對影像進行擷取、處理和分析，以實現自動檢測、測量、分類和控制等任務。機器視覺通常用於生產線上的品質控制、檢測和監控等應用，旨在提高生產效率和品質。</p>
-<p>機器人視覺（Robot
-Vision）是機器人系統中使用視覺感測器和相關技術的能力。它是機器人在進行任務時使用視覺資訊來感知和理解環境的能力。機器人視覺結合了機器視覺和機器人技術，旨在讓機器人能夠以視覺方式感知、分析和與周圍環境互動。機器人視覺在自主導航、物體抓取、場景理解等方面具有重要應用。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>電腦視覺（Computer Vision）、機器視覺（Machine Vision）和機器人視覺（Robot Vision）是三個相關但有所不同的概念。</p>
+<span id="more"></span>
+<h1 id="緒論"><a href="#緒論" class="headerlink" title="緒論"></a>緒論</h1><p>電腦視覺（Computer Vision）是一個廣泛的領域，涵蓋了使用電腦和算法對數字圖像和視訊資料進行分析、處理和理解的技術和方法。它的目標是使電腦能夠模擬和理解人類視覺系統的能力。電腦視覺的應用範圍非常廣泛，包括影像識別、物體追蹤、場景重建、行為分析等。</p>
+<p>機器視覺（Machine Vision）是應用於工業自動化領域的一個特定應用範疇。它是機器視覺系統使用感測器、硬體設備和軟體演算法，對影像進行擷取、處理和分析，以實現自動檢測、測量、分類和控制等任務。機器視覺通常用於生產線上的品質控制、檢測和監控等應用，旨在提高生產效率和品質。</p>
+<p>機器人視覺（Robot Vision）是機器人系統中使用視覺感測器和相關技術的能力。它是機器人在進行任務時使用視覺資訊來感知和理解環境的能力。機器人視覺結合了機器視覺和機器人技術，旨在讓機器人能夠以視覺方式感知、分析和與周圍環境互動。機器人視覺在自主導航、物體抓取、場景理解等方面具有重要應用。</p>
 <p>總結而言，電腦視覺是一個廣泛的領域，研究如何使電腦理解和解釋視覺資訊。機器視覺則是應用於工業自動化領域的一個特定應用範疇。而機器人視覺則專注於機器人系統中使用視覺感測器和技術的能力，使機器人能夠以視覺方式感知和理解周圍環境。</p>
-<h1 id="computer-vision">Computer Vision</h1>
-<p>電腦視覺（Computer
-Vision）是一門研究如何使電腦系統能夠理解和解釋視覺資訊的學科。它利用數字圖像和視訊資料，結合電腦科學、數學和機器學習等領域的技術和方法，旨在實現對視覺資訊的自動分析、處理和理解。</p>
+<h1 id="Computer-Vision"><a href="#Computer-Vision" class="headerlink" title="Computer Vision"></a>Computer Vision</h1><p>電腦視覺（Computer Vision）是一門研究如何使電腦系統能夠理解和解釋視覺資訊的學科。它利用數字圖像和視訊資料，結合電腦科學、數學和機器學習等領域的技術和方法，旨在實現對視覺資訊的自動分析、處理和理解。</p>
 <p>電腦視覺的目標是使電腦能夠模擬和模仿人類視覺系統的功能，進行視覺感知、目標檢測、影像分類、物體追蹤、場景重建等任務。它通過進行圖像處理、特徵提取、模式識別和機器學習等步驟，使電腦能夠從視覺資訊中獲取有用的知識和理解。</p>
 <p>電腦視覺在許多領域都有廣泛的應用，包括但不限於：</p>
-<ol type="1">
-<li><p>安全監控：電腦視覺可以用於識別和追蹤人物、車輛或其他物體，以加強監控和安全管理。</p></li>
-<li><p>自動駕駛：電腦視覺可以幫助自動駕駛系統識別和追蹤道路標誌、車輛和行人，以實現自主導航和避障。</p></li>
-<li><p>醫學影像：電腦視覺可用於醫學影像分析，如腫瘤檢測、疾病診斷和手術規劃等。</p></li>
-<li><p>工業自動化：電腦視覺可應用於產品檢測、質量控制和機器人導航，提高生產效率和品質。</p></li>
-<li><p>視覺效果：電腦視覺在電影、電視和遊戲等娛樂領域中，可用於特效合成、虛擬現實和增強現實等方面。</p></li>
+<ol>
+<li><p>安全監控：電腦視覺可以用於識別和追蹤人物、車輛或其他物體，以加強監控和安全管理。</p>
+</li>
+<li><p>自動駕駛：電腦視覺可以幫助自動駕駛系統識別和追蹤道路標誌、車輛和行人，以實現自主導航和避障。</p>
+</li>
+<li><p>醫學影像：電腦視覺可用於醫學影像分析，如腫瘤檢測、疾病診斷和手術規劃等。</p>
+</li>
+<li><p>工業自動化：電腦視覺可應用於產品檢測、質量控制和機器人導航，提高生產效率和品質。</p>
+</li>
+<li><p>視覺效果：電腦視覺在電影、電視和遊戲等娛樂領域中，可用於特效合成、虛擬現實和增強現實等方面。</p>
+</li>
 </ol>
 <p>電腦視覺是人工智慧領域的一個重要研究方向，它將圖像和視覺資訊與機器學習和深度學習等技術相結合，開啟了許多新的應用和發展機會。隨著硬體和軟體技術的不斷進步，電腦視覺的應用領域和能力將不斷擴展和提升。</p>
-<h1 id="machine-vision">Machine Vision</h1>
-<p>機器視覺（Machine
-Vision）是一種自動化技術，將光學和影像處理技術應用於機器系統中，以使其能夠”看”和”理解”視覺資訊。機器視覺系統使用各種感測器（例如攝像頭）和相關的硬體設備，配合特定的軟體演算法，對視覺資訊進行擷取、處理、分析和解釋。</p>
+<h1 id="Machine-Vision"><a href="#Machine-Vision" class="headerlink" title="Machine Vision"></a>Machine Vision</h1><p>機器視覺（Machine Vision）是一種自動化技術，將光學和影像處理技術應用於機器系統中，以使其能夠”看”和”理解”視覺資訊。機器視覺系統使用各種感測器（例如攝像頭）和相關的硬體設備，配合特定的軟體演算法，對視覺資訊進行擷取、處理、分析和解釋。</p>
 <p>機器視覺旨在使機器能夠模仿人類視覺系統的功能，並自主地進行視覺感知和決策。它可以應用於各種領域，如工業自動化、檢測和監控、品質控制、機器人導航、醫學影像、安全監控等。</p>
 <p>機器視覺系統的運作流程通常包括以下步驟：</p>
-<ol type="1">
-<li><p>影像擷取：使用攝像頭或其他影像感測器來捕捉目標區域的影像或視訊。</p></li>
-<li><p>影像前處理：對擷取的影像進行處理，包括校正、去噪、對比度增強等，以提高影像質量。</p></li>
-<li><p>物體檢測和辨識：透過特定的演算法和模型，對影像中的物體進行檢測、分類和識別。</p></li>
-<li><p>特徵提取和分析：從影像中提取出關鍵特徵，例如形狀、顏色、紋理等，並進行進一步的分析。</p></li>
-<li><p>決策和判斷：根據特定的應用需求，機器視覺系統可以根據分析結果做出相應的決策和判斷。</p></li>
-<li><p>反饋和控制：根據視覺資訊的解釋結果，機器視覺系統可以控制相應的動作或發出警報等反應。</p></li>
+<ol>
+<li><p>影像擷取：使用攝像頭或其他影像感測器來捕捉目標區域的影像或視訊。</p>
+</li>
+<li><p>影像前處理：對擷取的影像進行處理，包括校正、去噪、對比度增強等，以提高影像質量。</p>
+</li>
+<li><p>物體檢測和辨識：透過特定的演算法和模型，對影像中的物體進行檢測、分類和識別。</p>
+</li>
+<li><p>特徵提取和分析：從影像中提取出關鍵特徵，例如形狀、顏色、紋理等，並進行進一步的分析。</p>
+</li>
+<li><p>決策和判斷：根據特定的應用需求，機器視覺系統可以根據分析結果做出相應的決策和判斷。</p>
+</li>
+<li><p>反饋和控制：根據視覺資訊的解釋結果，機器視覺系統可以控制相應的動作或發出警報等反應。</p>
+</li>
 </ol>
 <p>機器視覺的發展依賴於先進的影像處理和模式識別技術，以及計算能力的提升和演算法的改進。它可以大大提高生產效率、品質控制和檢測能力，並在許多領域帶來創新和改進。</p>
-<h1 id="robot-vision">Robot Vision</h1>
-<p>機器視覺（Robot
-Vision）是指機器或機器人系統使用視覺感測器（例如攝像頭）和相關的演算法和技術來模擬人類視覺能力的能力。它旨在讓機器能夠透過視覺資訊來感知、理解和與周圍環境互動。</p>
+<h1 id="Robot-Vision"><a href="#Robot-Vision" class="headerlink" title="Robot Vision"></a>Robot Vision</h1><p>機器視覺（Robot Vision）是指機器或機器人系統使用視覺感測器（例如攝像頭）和相關的演算法和技術來模擬人類視覺能力的能力。它旨在讓機器能夠透過視覺資訊來感知、理解和與周圍環境互動。</p>
 <p>機器視覺涉及許多不同的技術和應用，包括圖像處理、影像分析、模式識別、三維重建、物體追蹤、姿態估計等。這些技術結合了數學、統計學、計算機科學和人工智慧等領域的知識，以實現對視覺資訊的擷取、處理和解釋。</p>
 <p>機器視覺的應用非常廣泛，涵蓋了許多領域。例如，在工業自動化中，機器視覺可以用於檢測和分類產品，確保生產線上的質量控制；在醫療領域，它可以幫助醫生進行疾病診斷和手術操作；在無人駕駛汽車中，機器視覺可以用於道路標誌和障礙物的識別和辨識等。</p>
 <p>機器視覺的目標是讓機器能夠以類似於人類視覺的方式來感知世界，並根據視覺資訊做出相應的反應。這種能力對於機器人和自動化系統來說非常重要，因為視覺是人類最主要的感知方式之一，也是人機互動和環境理解的重要依據之一。通過機器視覺的應用，我們可以使機器更智能、更靈活地與人類進行交互，並在各種應用場景中提高生產力和效率。</p>
-<h1 id="pattern-recognition">Pattern Recognition</h1>
-<p>模式識別（Pattern
-Recognition）是一種將數據中的模式或規律識別出來的過程。它涉及分析和解釋數據，根據預定的標準或模型識別和分類模式。模式識別是人類認知的基本要素，也是計算機科學、機器學習和人工智能等領域的重要組成部分。</p>
+<h1 id="Pattern-Recognition"><a href="#Pattern-Recognition" class="headerlink" title="Pattern Recognition"></a>Pattern Recognition</h1><p>模式識別（Pattern Recognition）是一種將數據中的模式或規律識別出來的過程。它涉及分析和解釋數據，根據預定的標準或模型識別和分類模式。模式識別是人類認知的基本要素，也是計算機科學、機器學習和人工智能等領域的重要組成部分。</p>
 <p>在機器學習和人工智能的背景下，模式識別涉及開發能夠自動從數據中學習和識別模式的算法和模型。這些模式可以是數字、圖像、聲音或其他形式的數據結構。通過模式識別，計算機系統可以自動地從數據中提取有價值的信息，進行分類、分析和預測。</p>
 <p>模式識別的過程通常包括以下步驟：</p>
-<ol type="1">
-<li><p>數據收集：收集包含模式的數據，可以是結構化數據（如表格）或非結構化數據（如文本、圖像）。</p></li>
-<li><p>特徵提取：從原始數據中提取具有代表性的特徵，這些特徵可以是數值、統計指標、形狀描述、頻譜特徵等。</p></li>
-<li><p>特徵選擇：根據特定問題的需求，從提取的特徵中選擇最具信息量的特徵，以減少維度和計算成本。</p></li>
-<li><p>模型建立：根據特徵和標籤的對應關係，建立合適的模型，如決策樹、支持向量機、神經網絡等。</p></li>
-<li><p>模式識別：使用建立的模型對新數據進行預測或分類，並識別出數據中的模式或規律。</p></li>
-<li><p>模型評估：評估模型的性能和準確度，並進行必要的調整和改進。</p></li>
+<ol>
+<li><p>數據收集：收集包含模式的數據，可以是結構化數據（如表格）或非結構化數據（如文本、圖像）。</p>
+</li>
+<li><p>特徵提取：從原始數據中提取具有代表性的特徵，這些特徵可以是數值、統計指標、形狀描述、頻譜特徵等。</p>
+</li>
+<li><p>特徵選擇：根據特定問題的需求，從提取的特徵中選擇最具信息量的特徵，以減少維度和計算成本。</p>
+</li>
+<li><p>模型建立：根據特徵和標籤的對應關係，建立合適的模型，如決策樹、支持向量機、神經網絡等。</p>
+</li>
+<li><p>模式識別：使用建立的模型對新數據進行預測或分類，並識別出數據中的模式或規律。</p>
+</li>
+<li><p>模型評估：評估模型的性能和準確度，並進行必要的調整和改進。</p>
+</li>
 </ol>
 <p>模式識別在各個領域中都有廣泛的應用，如計算機視覺、語音識別、自然語言處理、金融領域的模式分析、醫學影像分析等。透過模式識別，我們能夠從大量數據中挖掘出有價值的信息和洞察，並為決策和問題解決提供支持。</p>
 
@@ -345,13 +350,13 @@ Recognition）是一種將數據中的模式或規律識別出來的過程。它
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">288k</span>
+    <span title="總字數">290k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:44</span>
+    <span title="所需總閱讀時間">8:47</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

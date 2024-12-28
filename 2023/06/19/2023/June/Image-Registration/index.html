@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介 影像配對是一種數字影像處理的技術，用於將兩張或多張同一場景的影像對齊。這些影像可能來自不同的時間、不同的視角或由不同的感應器拍攝。影像配對的目的是找到一個轉換函數或變換參數，可以將不同影像之間的特徵點或結構對齊，使它們在空間上對應到相同的位置。">
+    <meta name="description" content="簡介影像配對是一種數字影像處理的技術，用於將兩張或多張同一場景的影像對齊。這些影像可能來自不同的時間、不同的視角或由不同的感應器拍攝。影像配對的目的是找到一個轉換函數或變換參數，可以將不同影像之間的特徵點或結構對齊，使它們在空間上對應到相同的位置。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Image Registration">
 <meta property="og:url" content="https://leonicehot.github.io/2023/06/19/2023/June/Image-Registration/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介 影像配對是一種數字影像處理的技術，用於將兩張或多張同一場景的影像對齊。這些影像可能來自不同的時間、不同的視角或由不同的感應器拍攝。影像配對的目的是找到一個轉換函數或變換參數，可以將不同影像之間的特徵點或結構對齊，使它們在空間上對應到相同的位置。">
+<meta property="og:description" content="簡介影像配對是一種數字影像處理的技術，用於將兩張或多張同一場景的影像對齊。這些影像可能來自不同的時間、不同的視角或由不同的感應器拍攝。影像配對的目的是找到一個轉換函數或變換參數，可以將不同影像之間的特徵點或結構對齊，使它們在空間上對應到相同的位置。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-06-19T03:41:49.000Z">
 <meta property="article:modified_time" content="2024-12-28T15:33:13.869Z">
@@ -237,10 +237,9 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
-<p>影像配對是一種數字影像處理的技術，用於將兩張或多張同一場景的影像對齊。這些影像可能來自不同的時間、不同的視角或由不同的感應器拍攝。影像配對的目的是找到一個轉換函數或變換參數，可以將不同影像之間的特徵點或結構對齊，使它們在空間上對應到相同的位置。
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>影像配對是一種數字影像處理的技術，用於將兩張或多張同一場景的影像對齊。這些影像可能來自不同的時間、不同的視角或由不同的感應器拍攝。影像配對的目的是找到一個轉換函數或變換參數，可以將不同影像之間的特徵點或結構對齊，使它們在空間上對應到相同的位置。</p>
 <span id="more"></span>
-影像配對在許多領域都有廣泛的應用。在醫學影像中，它可以用於將不同時間或不同模態的影像對齊，從而進行病灶的比較和分析。在計算機視覺和機器視覺中，影像配對可以用於目標追蹤、物體識別和三維重建等應用。在遙感影像中，它可以用於衛星影像對齊、地圖製作和環境變化監測等。</p>
+<p>影像配對在許多領域都有廣泛的應用。在醫學影像中，它可以用於將不同時間或不同模態的影像對齊，從而進行病灶的比較和分析。在計算機視覺和機器視覺中，影像配對可以用於目標追蹤、物體識別和三維重建等應用。在遙感影像中，它可以用於衛星影像對齊、地圖製作和環境變化監測等。</p>
 <p>影像配對的方法通常包括特徵提取、特徵匹配和變換估計等步驟。特徵提取是從影像中提取出具有代表性的特徵點或描述子，例如角點、邊緣或局部紋理等。特徵匹配是將兩個影像中的特徵點進行配對，找到它們之間的對應關係。變換估計則是根據特徵點的對應關係，估計出影像之間的幾何變換參數，例如平移、旋轉、縮放或仿射變換等。</p>
 <p>影像配對的結果可以用於許多後續的應用，例如影像融合、影像重建、影像拼接和目標追蹤等。它在許多領域都扮演著重要角色，幫助我們從不同的影像中獲取更多有用的信息，從而提升我們對場景的理解和分析能力。</p>
 
@@ -294,13 +293,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">288k</span>
+    <span title="總字數">290k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:44</span>
+    <span title="所需總閱讀時間">8:47</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介 OAuth（Open Authorization）是一個開放標準的授權協議，用於授權第三方應用程序訪問用戶資源，並保護用戶的資源免於被盜用。OAuth 協議可以讓用戶授權第三方應用程式訪問其資源，而不需要將用戶名稱和密碼直接提供給第三方應用程式，從而保護用戶的隱私和安全性。 OAuth 2.0 是一個用於授權的開放標準，旨在簡化基於網路的應用程式對第三方服務的訪問控制。相比於 O">
+    <meta name="description" content="簡介OAuth（Open Authorization）是一個開放標準的授權協議，用於授權第三方應用程序訪問用戶資源，並保護用戶的資源免於被盜用。OAuth 協議可以讓用戶授權第三方應用程式訪問其資源，而不需要將用戶名稱和密碼直接提供給第三方應用程式，從而保護用戶的隱私和安全性。 OAuth 2.0 是一個用於授權的開放標準，旨在簡化基於網路的應用程式對第三方服務的訪問控制。相比於 OAuth 1.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OAuth之機制">
 <meta property="og:url" content="https://leonicehot.github.io/2023/04/26/2023/April/OAuth%E4%B9%8B%E6%A9%9F%E5%88%B6/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介 OAuth（Open Authorization）是一個開放標準的授權協議，用於授權第三方應用程序訪問用戶資源，並保護用戶的資源免於被盜用。OAuth 協議可以讓用戶授權第三方應用程式訪問其資源，而不需要將用戶名稱和密碼直接提供給第三方應用程式，從而保護用戶的隱私和安全性。 OAuth 2.0 是一個用於授權的開放標準，旨在簡化基於網路的應用程式對第三方服務的訪問控制。相比於 O">
+<meta property="og:description" content="簡介OAuth（Open Authorization）是一個開放標準的授權協議，用於授權第三方應用程序訪問用戶資源，並保護用戶的資源免於被盜用。OAuth 協議可以讓用戶授權第三方應用程式訪問其資源，而不需要將用戶名稱和密碼直接提供給第三方應用程式，從而保護用戶的隱私和安全性。 OAuth 2.0 是一個用於授權的開放標準，旨在簡化基於網路的應用程式對第三方服務的訪問控制。相比於 OAuth 1.">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-04-25T23:31:39.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:35.420Z">
@@ -110,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%85%B3%E8%89%B2%E4%BB%8B%E7%B4%B9"><span class="nav-number">2.</span> <span class="nav-text">腳色介紹</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#oauth-token"><span class="nav-number">3.</span> <span class="nav-text">OAuth Token</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%9E%E5%9E%8B"><span class="nav-number">3.1.</span> <span class="nav-text">類型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oauth-2.0"><span class="nav-number">3.2.</span> <span class="nav-text">OAuth 2.0</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%85%B3%E8%89%B2%E4%BB%8B%E7%B4%B9"><span class="nav-number">2.</span> <span class="nav-text">腳色介紹</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OAuth-Token"><span class="nav-number">3.</span> <span class="nav-text">OAuth Token</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%9E%E5%9E%8B"><span class="nav-number">3.1.</span> <span class="nav-text">類型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OAuth-2-0"><span class="nav-number">3.2.</span> <span class="nav-text">OAuth 2.0</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -241,80 +241,44 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
-<p>OAuth（Open
-Authorization）是一個開放標準的授權協議，用於授權第三方應用程序訪問用戶資源，並保護用戶的資源免於被盜用。OAuth
-協議可以讓用戶授權第三方應用程式訪問其資源，而不需要將用戶名稱和密碼直接提供給第三方應用程式，從而保護用戶的隱私和安全性。</p>
-<p>OAuth 2.0
-是一個用於授權的開放標準，旨在簡化基於網路的應用程式對第三方服務的訪問控制。相比於
-OAuth 1.0，OAuth 2.0 更為簡潔，易於實現和使用，並且支持多種授權類型。
-<span id="more"></span></p>
-<h1 id="腳色介紹">腳色介紹</h1>
-<p>OAuth 協議通常涉及到以下幾個角色：</p>
-<p>用戶（Resource
-Owner）：擁有資源的實體，可以授權第三方應用程序訪問其資源。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>OAuth（Open Authorization）是一個開放標準的授權協議，用於授權第三方應用程序訪問用戶資源，並保護用戶的資源免於被盜用。OAuth 協議可以讓用戶授權第三方應用程式訪問其資源，而不需要將用戶名稱和密碼直接提供給第三方應用程式，從而保護用戶的隱私和安全性。</p>
+<p>OAuth 2.0 是一個用於授權的開放標準，旨在簡化基於網路的應用程式對第三方服務的訪問控制。相比於 OAuth 1.0，OAuth 2.0 更為簡潔，易於實現和使用，並且支持多種授權類型。</p>
+<span id="more"></span>
+
+<h1 id="腳色介紹"><a href="#腳色介紹" class="headerlink" title="腳色介紹"></a>腳色介紹</h1><p>OAuth 協議通常涉及到以下幾個角色：</p>
+<p>用戶（Resource Owner）：擁有資源的實體，可以授權第三方應用程序訪問其資源。</p>
 <p>第三方應用程序（Client）：需要訪問用戶資源的應用程序。</p>
-<p>授權服務器（Authorization
-Server）：用於授權的服務器，負責驗證用戶身份，並向第三方應用程序發放授權
-Token。</p>
-<p>資源服務器（Resource
-Server）：擁有用戶資源的服務器，負責處理第三方應用程序的請求，並向第三方應用程序返回用戶資源。</p>
-<p>在 OAuth
-協議中，第三方應用程序需要向用戶發送授權請求，用戶通過授權界面授權，然後授權服務器向第三方應用程序發放授權
-Token。第三方應用程序可以使用授權 Token
-向資源服務器發送請求，獲取用戶資源。</p>
-<p>OAuth
-協議的主要優勢在於保護用戶資源的安全性和隱私，同時也可以減輕用戶與第三方應用程序之間的安全負擔。許多知名的網站和應用程序都使用
-OAuth 協議，如 Google、Facebook、Twitter 等。</p>
-<h1 id="oauth-token">OAuth Token</h1>
-<p>OAuth Token 是 OAuth 協議中的一種
-Token，它用於代表授權方（即用戶）向第三方應用程序授權訪問其資源。在
-OAuth 協議中，用戶可以通過授權界面向第三方應用程序授權，然後獲得一個
-OAuth Token，該 Token
-代表了用戶授權第三方應用程序訪問其資源的權限。第三方應用程序可以使用
-OAuth Token 向授權方的資源服務器發送請求，獲取用戶的資源。</p>
-<h2 id="類型">類型</h2>
-<ol type="1">
-<li><p>Access Token：Access Token 是 OAuth 協議中最常見的一種
-Token，它代表用戶授權第三方應用程序訪問其資源的權限。通常情況下，Access
-Token 的有效期較短，並且需要通過刷新或重新授權來更新。</p></li>
-<li><p>Refresh Token：Refresh Token 是一種可用於刷新 Access Token 的
-Token。當 Access Token 過期或失效時，第三方應用程序可以使用 Refresh
-Token 向授權方的資源服務器發送請求，獲取一個新的 Access Token。Refresh
-Token 通常比 Access Token
-的有效期更長，並且需要妥善保管以防止被竊取。</p></li>
-<li><p>Authorization Code：Authorization Code 是一種可用於獲取 Access
-Token
-的代碼。通常情況下，用戶在授權界面上授權第三方應用程序時，將獲得一個
-Authorization Code，然後第三方應用程序可以使用 Authorization Code
-向授權方的資源服務器發送請求，獲取一個 Access Token。</p></li>
+<p>授權服務器（Authorization Server）：用於授權的服務器，負責驗證用戶身份，並向第三方應用程序發放授權 Token。</p>
+<p>資源服務器（Resource Server）：擁有用戶資源的服務器，負責處理第三方應用程序的請求，並向第三方應用程序返回用戶資源。</p>
+<p>在 OAuth 協議中，第三方應用程序需要向用戶發送授權請求，用戶通過授權界面授權，然後授權服務器向第三方應用程序發放授權 Token。第三方應用程序可以使用授權 Token 向資源服務器發送請求，獲取用戶資源。</p>
+<p>OAuth 協議的主要優勢在於保護用戶資源的安全性和隱私，同時也可以減輕用戶與第三方應用程序之間的安全負擔。許多知名的網站和應用程序都使用 OAuth 協議，如 Google、Facebook、Twitter 等。</p>
+<h1 id="OAuth-Token"><a href="#OAuth-Token" class="headerlink" title="OAuth Token"></a>OAuth Token</h1><p>OAuth Token 是 OAuth 協議中的一種 Token，它用於代表授權方（即用戶）向第三方應用程序授權訪問其資源。在 OAuth 協議中，用戶可以通過授權界面向第三方應用程序授權，然後獲得一個 OAuth Token，該 Token 代表了用戶授權第三方應用程序訪問其資源的權限。第三方應用程序可以使用 OAuth Token 向授權方的資源服務器發送請求，獲取用戶的資源。</p>
+<h2 id="類型"><a href="#類型" class="headerlink" title="類型"></a>類型</h2><ol>
+<li><p>Access Token：Access Token 是 OAuth 協議中最常見的一種 Token，它代表用戶授權第三方應用程序訪問其資源的權限。通常情況下，Access Token 的有效期較短，並且需要通過刷新或重新授權來更新。</p>
+</li>
+<li><p>Refresh Token：Refresh Token 是一種可用於刷新 Access Token 的 Token。當 Access Token 過期或失效時，第三方應用程序可以使用 Refresh Token 向授權方的資源服務器發送請求，獲取一個新的 Access Token。Refresh Token 通常比 Access Token 的有效期更長，並且需要妥善保管以防止被竊取。</p>
+</li>
+<li><p>Authorization Code：Authorization Code 是一種可用於獲取 Access Token 的代碼。通常情況下，用戶在授權界面上授權第三方應用程序時，將獲得一個 Authorization Code，然後第三方應用程序可以使用 Authorization Code 向授權方的資源服務器發送請求，獲取一個 Access Token。</p>
+</li>
 </ol>
-<p>OAuth Token
-的安全性非常重要，因為它代表了用戶對其資源的授權。因此，第三方應用程序應該妥善保管
-OAuth
-Token，防止被竊取或泄露。同時，授權方的資源服務器也需要實現嚴格的安全機制，以防止
-OAuth Token 被非法使用。</p>
-<h2 id="oauth-2.0">OAuth 2.0</h2>
-<p>OAuth 2.0
-協議中包含了四種主要角色：用戶、客戶端、授權服務器和資源服務器。這些角色之間的關係如下：</p>
+<p>OAuth Token 的安全性非常重要，因為它代表了用戶對其資源的授權。因此，第三方應用程序應該妥善保管 OAuth Token，防止被竊取或泄露。同時，授權方的資源服務器也需要實現嚴格的安全機制，以防止 OAuth Token 被非法使用。</p>
+<h2 id="OAuth-2-0"><a href="#OAuth-2-0" class="headerlink" title="OAuth 2.0"></a>OAuth 2.0</h2><p>OAuth 2.0 協議中包含了四種主要角色：用戶、客戶端、授權服務器和資源服務器。這些角色之間的關係如下：</p>
 <p>用戶：擁有資源的實體，可以授權第三方應用程序訪問其資源。</p>
 <p>客戶端：需要訪問用戶資源的應用程序。</p>
-<p>授權服務器：用於授權的服務器，負責驗證用戶身份，並向客戶端發放授權
-Token。</p>
+<p>授權服務器：用於授權的服務器，負責驗證用戶身份，並向客戶端發放授權 Token。</p>
 <p>資源服務器：擁有用戶資源的服務器，負責處理客戶端的請求，並向客戶端返回用戶資源。</p>
-<p>OAuth 2.0
-協議中包含了多種授權類型，其中最常見的是授權碼（Authorization
-Code）流程。 該流程主要分為以下四個步驟：</p>
-<ol type="1">
-<li><p>用戶通過客戶端訪問授權服務器，授權服務器返回授權請求頁面。</p></li>
-<li><p>用戶在授權請求頁面上輸入授權信息，授權服務器通過驗證用戶身份，返回授權碼。</p></li>
-<li><p>客戶端通過授權碼向授權服務器請求授權 Token。</p></li>
-<li><p>授權服務器通過驗證授權碼，返回授權 Token
-給客戶端。客戶端可以使用授權 Token 向資源服務器請求用戶資源。</p></li>
+<p>OAuth 2.0 協議中包含了多種授權類型，其中最常見的是授權碼（Authorization Code）流程。<br>該流程主要分為以下四個步驟：</p>
+<ol>
+<li><p>用戶通過客戶端訪問授權服務器，授權服務器返回授權請求頁面。</p>
+</li>
+<li><p>用戶在授權請求頁面上輸入授權信息，授權服務器通過驗證用戶身份，返回授權碼。</p>
+</li>
+<li><p>客戶端通過授權碼向授權服務器請求授權 Token。</p>
+</li>
+<li><p>授權服務器通過驗證授權碼，返回授權 Token 給客戶端。客戶端可以使用授權 Token 向資源服務器請求用戶資源。</p>
+</li>
 </ol>
-<p>除了授權碼流程外，OAuth 2.0 還支持其他授權類型，如隱式授權（Implicit
-Grant）、密碼授權（Password Grant）、客戶端憑證授權（Client Credentials
-Grant）等。每種授權類型都有其特定的使用場景和限制，使用時需要注意其安全性和可用性。</p>
+<p>除了授權碼流程外，OAuth 2.0 還支持其他授權類型，如隱式授權（Implicit Grant）、密碼授權（Password Grant）、客戶端憑證授權（Client Credentials Grant）等。每種授權類型都有其特定的使用場景和限制，使用時需要注意其安全性和可用性。</p>
 
     </div>
 
@@ -366,13 +330,13 @@ Grant）等。每種授權類型都有其特定的使用場景和限制，使用
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">288k</span>
+    <span title="總字數">290k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:44</span>
+    <span title="所需總閱讀時間">8:47</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
