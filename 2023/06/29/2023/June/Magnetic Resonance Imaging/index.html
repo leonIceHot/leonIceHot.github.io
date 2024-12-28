@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="BraTS challenges 2018 Training dataset 285 cases (210HGG and 75 LGG) Testing dataset 191 cases Each cases with four 3D MRI modalities (T1, T1C, T2, FLAIR) The input size: 240x240x155 The annotation">
+    <meta name="description" content="BraTS challenges 2018Training dataset 285 cases (210HGG and 75 LGG)Testing dataset 191 casesEach cases with four 3D MRI modalities (T1, T1C, T2, FLAIR)The input size: 240x240x155The annotations: Whole">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Magnetic Resonance Imaging">
 <meta property="og:url" content="https://leonicehot.github.io/2023/06/29/2023/June/Magnetic%20Resonance%20Imaging/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="BraTS challenges 2018 Training dataset 285 cases (210HGG and 75 LGG) Testing dataset 191 cases Each cases with four 3D MRI modalities (T1, T1C, T2, FLAIR) The input size: 240x240x155 The annotation">
+<meta property="og:description" content="BraTS challenges 2018Training dataset 285 cases (210HGG and 75 LGG)Testing dataset 191 casesEach cases with four 3D MRI modalities (T1, T1C, T2, FLAIR)The input size: 240x240x155The annotations: Whole">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-06-29T03:45:02.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:36.748Z">
@@ -110,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#brats-challenges-2018"><span class="nav-number">1.</span> <span class="nav-text">BraTS challenges 2018</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nii%E6%AA%94"><span class="nav-number">2.</span> <span class="nav-text">NII檔</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#voxel"><span class="nav-number">3.</span> <span class="nav-text">voxel</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gliomas"><span class="nav-number">4.</span> <span class="nav-text">gliomas</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#low-grade-gliomas"><span class="nav-number">4.1.</span> <span class="nav-text">Low-grade gliomas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#high-grade-gliomas"><span class="nav-number">4.2.</span> <span class="nav-text">High-grade gliomas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#subventricular-zone"><span class="nav-number">4.3.</span> <span class="nav-text">Subventricular Zone</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#d-slicer"><span class="nav-number">5.</span> <span class="nav-text">3D Slicer</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BraTS-challenges-2018"><span class="nav-number">1.</span> <span class="nav-text">BraTS challenges 2018</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NII%E6%AA%94"><span class="nav-number">2.</span> <span class="nav-text">NII檔</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#voxel"><span class="nav-number">3.</span> <span class="nav-text">voxel</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gliomas"><span class="nav-number">4.</span> <span class="nav-text">gliomas</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Low-grade-gliomas"><span class="nav-number">4.1.</span> <span class="nav-text">Low-grade gliomas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High-grade-gliomas"><span class="nav-number">4.2.</span> <span class="nav-text">High-grade gliomas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subventricular-Zone"><span class="nav-number">4.3.</span> <span class="nav-text">Subventricular Zone</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3D-Slicer"><span class="nav-number">5.</span> <span class="nav-text">3D Slicer</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -237,65 +237,54 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="brats-challenges-2018">BraTS challenges 2018</h1>
-<p>Training dataset 285 cases (210HGG and 75 LGG) Testing dataset 191
-cases Each cases with four 3D MRI modalities (T1, T1C, T2, FLAIR) The
-input size: 240x240x155 The annotations: Whole Tumor (WT)、Tumor Core
-(TC)、Enhancing Tumor (ET) <span id="more"></span></p>
-<h1 id="nii檔">NII檔</h1>
-<p>NII檔（NIfTI-1檔案格式）是一種常用的醫學影像文件格式，用於儲存三維（3D）和四維（4D）醫學影像數據。NII檔是基於NIfTI（Neuroimaging
-Informatics Technology
-Initiative）標準的擴展，旨在提供一種簡單且兼容的文件格式，方便在不同軟件和平台之間進行醫學影像數據的交換和處理。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="BraTS-challenges-2018"><a href="#BraTS-challenges-2018" class="headerlink" title="BraTS challenges 2018"></a>BraTS challenges 2018</h1><p>Training dataset 285 cases (210HGG and 75 LGG)<br>Testing dataset 191 cases<br>Each cases with four 3D MRI modalities (T1, T1C, T2, FLAIR)<br>The input size: 240x240x155<br>The annotations: Whole Tumor (WT)、Tumor Core (TC)、Enhancing Tumor (ET)</p>
+<span id="more"></span>
+
+<h1 id="NII檔"><a href="#NII檔" class="headerlink" title="NII檔"></a>NII檔</h1><p>NII檔（NIfTI-1檔案格式）是一種常用的醫學影像文件格式，用於儲存三維（3D）和四維（4D）醫學影像數據。NII檔是基於NIfTI（Neuroimaging Informatics Technology Initiative）標準的擴展，旨在提供一種簡單且兼容的文件格式，方便在不同軟件和平台之間進行醫學影像數據的交換和處理。</p>
 <p>NII檔是一種二進制文件，可以包含單一時間點或多個時間點的三維圖像數據。它可以儲存各種醫學影像數據，如腦部MRI、CT掃描、PET掃描等。NII檔包括兩個主要組成部分：</p>
 <p>頭文件（Header）：頭文件包含了對NII檔的描述和元數據信息，如圖像的維度（尺寸）、像素分辨率、數據類型、掃描參數等。頭文件通常以”.hdr”或”.nii”擴展名保存。</p>
 <p>數據文件（Data）：數據文件包含了實際的圖像數據，按照頭文件中定義的維度和數據類型進行組織和儲存。數據文件通常以”.img”或”.nii”擴展名保存。</p>
 <p>NII檔的優勢在於其簡單性和可兼容性。它可以被多種醫學影像處理軟件和工具廣泛支持，並且能夠方便地進行數據交換和共享。在醫學影像研究和臨床應用中，NII檔是一個重要的文件格式，用於儲存和處理三維和四維醫學影像數據。</p>
-<h1 id="voxel">voxel</h1>
-<p>Voxel（Volume
-Pixel）是指三維（3D）空間中的體素或體積圖元。類似於二維（2D）圖像中的圖元（Pixel），Voxel是三維資料的最小單位。它可以被視為一個立方體，具有在三個方向上的長度、寬度和高度。</p>
+<h1 id="voxel"><a href="#voxel" class="headerlink" title="voxel"></a>voxel</h1><p>Voxel（Volume Pixel）是指三維（3D）空間中的體素或體積圖元。類似於二維（2D）圖像中的圖元（Pixel），Voxel是三維資料的最小單位。它可以被視為一個立方體，具有在三個方向上的長度、寬度和高度。</p>
 <p>在醫學影像學中，voxel通常用於描述醫學影像（如MRI、CT、PET等）中的三維數據。每個voxel代表了體積數據中的一個小立ㄇ提取有關結構、功能和病變的信息。</p>
-<p>voxel的大小是指每個voxel在三個維度上的尺寸。例如，一個1mm x 1mm x
-1mm的voxel大小表示每個voxel在X、Y、Z三個方向上的邊長都是1毫米。voxel大小的選擇取決於影像的空間解析度需求以及研究或臨床應用的目的。</p>
+<p>voxel的大小是指每個voxel在三個維度上的尺寸。例如，一個1mm x 1mm x 1mm的voxel大小表示每個voxel在X、Y、Z三個方向上的邊長都是1毫米。voxel大小的選擇取決於影像的空間解析度需求以及研究或臨床應用的目的。</p>
 <p>在計算機圖形學和模擬中，voxel也常用於描述三維場景或物體。通過在三維空間中的每個位置上賦予一個值或特性，可以創建出三維數據集，用於建模、渲染和模擬。</p>
-<h1 id="gliomas">gliomas</h1>
-<h2 id="low-grade-gliomas">Low-grade gliomas</h2>
-<p>Low-grade
-gliomas（低級別膠質母細胞瘤）是一種腦腫瘤，屬於膠質母細胞瘤的一個子類別。它們是一種相對較慢生長的腦腫瘤，通常發展緩慢並具有較好的預後。</p>
+<h1 id="gliomas"><a href="#gliomas" class="headerlink" title="gliomas"></a>gliomas</h1><h2 id="Low-grade-gliomas"><a href="#Low-grade-gliomas" class="headerlink" title="Low-grade gliomas"></a>Low-grade gliomas</h2><p>Low-grade gliomas（低級別膠質母細胞瘤）是一種腦腫瘤，屬於膠質母細胞瘤的一個子類別。它們是一種相對較慢生長的腦腫瘤，通常發展緩慢並具有較好的預後。</p>
 <p>低級別膠質母細胞瘤的細胞學特徵表明它們是膠質母細胞的起源，這是一種腦部支持結構的細胞。低級別膠質母細胞瘤通常分為兩個主要亞型：濕地型和星形細胞型。濕地型低級別膠質母細胞瘤細胞具有類似神經細胞的外觀，而星形細胞型低級別膠質母細胞瘤細胞則具有類似星形細胞的外觀。</p>
 <p>低級別膠質母細胞瘤通常在年輕成人或中年人中發生，並且在兒童中比較罕見。常見的症狀可能包括頭痛、癲癇、視覺問題、語言或運動功能障礙，這取決於腫瘤的位置。</p>
 <p>治療低級別膠質母細胞瘤的方法通常是手術切除腫瘤，以盡可能刪除大部分或全部的腫瘤組織。手術後可能需要輔助放射治療或化學治療來控制殘留腫瘤或預防復發。</p>
 <p>低級別膠質母細胞瘤的預後通常較好，但治療結果取決於多個因素，包括腫瘤的大小、位置、細胞學特徵和患者的年齡和整體健康狀況。定期的隨訪和影像檢查是必要的，以監測腫瘤的生長和可能的復發。</p>
-<h2 id="high-grade-gliomas">High-grade gliomas</h2>
-<p>High-grade
-gliomas（高級別膠質母細胞瘤）是一種惡性腦腫瘤，屬於膠質母細胞瘤的一個子類別。它們是一種快速生長且侵襲性的腦腫瘤，通常預後不良。</p>
+<h2 id="High-grade-gliomas"><a href="#High-grade-gliomas" class="headerlink" title="High-grade gliomas"></a>High-grade gliomas</h2><p>High-grade gliomas（高級別膠質母細胞瘤）是一種惡性腦腫瘤，屬於膠質母細胞瘤的一個子類別。它們是一種快速生長且侵襲性的腦腫瘤，通常預後不良。</p>
 <p>高級別膠質母細胞瘤的細胞學特徵表明它們源於膠質母細胞，這是腦部支持結構的細胞。高級別膠質母細胞瘤通常根據細胞特徵和分子特徵進一步分類，包括最常見的類型：顱內膠質母細胞瘤（Glioblastoma，GBM）。</p>
 <p>高級別膠質母細胞瘤通常在成人中發生，而在兒童中較為罕見。它們通常生長速度快，具有侵襲性生長和血管新生的特徵。高級別膠質母細胞瘤的症狀可能包括頭痛、噁心、嘔吐、癲癇、神經功能障礙等，這取決於腫瘤的位置和大小。</p>
 <p>治療高級別膠質母細胞瘤的常見方法包括手術切除腫瘤、放射治療和化學治療。然而，由於高級別膠質母細胞瘤的侵襲性生長和細胞異質性，往往難以完全切除。因此，復發風險和預後仍然不理想。</p>
 <p>高級別膠質母細胞瘤的預後通常較差，存活率相對較低。預後取決於多個因素，包括腫瘤的細胞學特徵、分子特徵、患者的年齡、整體健康狀況以及治療的效果。早期診斷、綜合治療和定期的隨訪是管理高級別膠質母細胞瘤的重要措施。</p>
-<h2 id="subventricular-zone">Subventricular Zone</h2>
-<p>腦室下區（Subventricular
-Zone，縮寫為SVZ）是大腦中的一個特殊區域，其中存在一個終身持續生成新神經元的過程，這個過程被稱為神經元生成。SVZ位於大腦側腦室的側壁，而大腦的側腦室是充滿腦脊液的腔體。SVZ是大腦產生新神經元的關鍵部分，這一過程被稱為成人神經元生成。</p>
+<h2 id="Subventricular-Zone"><a href="#Subventricular-Zone" class="headerlink" title="Subventricular Zone"></a>Subventricular Zone</h2><p>腦室下區（Subventricular Zone，縮寫為SVZ）是大腦中的一個特殊區域，其中存在一個終身持續生成新神經元的過程，這個過程被稱為神經元生成。SVZ位於大腦側腦室的側壁，而大腦的側腦室是充滿腦脊液的腔體。SVZ是大腦產生新神經元的關鍵部分，這一過程被稱為成人神經元生成。</p>
 <p>以下是有關腦室下區的主要特點和功能：</p>
-<ol type="1">
-<li><p>神經元生成：SVZ是成人大腦中的主要區域之一，其中存在著神經幹細胞，也稱為神經前體細胞。這些幹細胞有能力分化成各種類型的神經元和其他神經細胞。</p></li>
-<li><p>神經幹細胞：SVZ中的神經幹細胞是未成熟的細胞，它們具有分化為成熟神經元的潛力。這些細胞可以在大腦中的不同區域成為不同功能的神經元，從而參與學習、記憶和其他認知功能。</p></li>
-<li><p>神經修復：SVZ也在大腦受損或受傷後發揮重要作用。當大腦受損時，SVZ中的神經幹細胞可以參與修復過程，生成新的神經元，有助於修復損害。</p></li>
-<li><p>神經疾病研究：科學家們對SVZ的研究有助於我們更好地理解神經發育和神經再生，這對於治療神經疾病和創傷有重要意義。瞭解SVZ如何運作可以幫助開發新的治療方法和療法。</p></li>
+<ol>
+<li><p>神經元生成：SVZ是成人大腦中的主要區域之一，其中存在著神經幹細胞，也稱為神經前體細胞。這些幹細胞有能力分化成各種類型的神經元和其他神經細胞。</p>
+</li>
+<li><p>神經幹細胞：SVZ中的神經幹細胞是未成熟的細胞，它們具有分化為成熟神經元的潛力。這些細胞可以在大腦中的不同區域成為不同功能的神經元，從而參與學習、記憶和其他認知功能。</p>
+</li>
+<li><p>神經修復：SVZ也在大腦受損或受傷後發揮重要作用。當大腦受損時，SVZ中的神經幹細胞可以參與修復過程，生成新的神經元，有助於修復損害。</p>
+</li>
+<li><p>神經疾病研究：科學家們對SVZ的研究有助於我們更好地理解神經發育和神經再生，這對於治療神經疾病和創傷有重要意義。瞭解SVZ如何運作可以幫助開發新的治療方法和療法。</p>
+</li>
 </ol>
-<h1 id="d-slicer">3D Slicer</h1>
-<ol type="1">
-<li><p>Download 3D Slicer https://download.slicer.org/</p></li>
-<li><p>Edit source sudo vim /etc/apt/sources.list<br>
-deb http://us.archive.ubuntu.com/ubuntu focal main restricted deb
-http://security.ubuntu.com/ubuntu focal-security main restricted deb
-http://us.archive.ubuntu.com/ubuntu focal-updates main restricted</p>
-<p>sudo apt update sudo apt install libpulse-dev sudo apt install
-libxcb-xinerama0</p></li>
-<li><p>Open 3D Slicer ./Slicer</p></li>
+<h1 id="3D-Slicer"><a href="#3D-Slicer" class="headerlink" title="3D Slicer"></a>3D Slicer</h1><ol>
+<li><p>Download 3D Slicer<br><a target="_blank" rel="noopener" href="https://download.slicer.org/">https://download.slicer.org/</a></p>
+</li>
+<li><p>Edit source<br>sudo vim &#x2F;etc&#x2F;apt&#x2F;sources.list<br>deb <a target="_blank" rel="noopener" href="http://us.archive.ubuntu.com/ubuntu">http://us.archive.ubuntu.com/ubuntu</a> focal main restricted<br>deb <a target="_blank" rel="noopener" href="http://security.ubuntu.com/ubuntu">http://security.ubuntu.com/ubuntu</a> focal-security main restricted<br>deb <a target="_blank" rel="noopener" href="http://us.archive.ubuntu.com/ubuntu">http://us.archive.ubuntu.com/ubuntu</a> focal-updates main restricted</p>
+<p>sudo apt update<br>sudo apt install libpulse-dev<br>sudo apt install libxcb-xinerama0</p>
+</li>
+<li><p>Open 3D Slicer<br>.&#x2F;Slicer</p>
+</li>
 </ol>
-<p>Source : -
-https://stackoverflow.com/questions/70317889/cannot-install-libpulse-dev-in-ubuntu
-- https://blog.csdn.net/qq_39942341/article/details/121219006</p>
+<p>Source : </p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/70317889/cannot-install-libpulse-dev-in-ubuntu">https://stackoverflow.com/questions/70317889/cannot-install-libpulse-dev-in-ubuntu</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39942341/article/details/121219006">https://blog.csdn.net/qq_39942341/article/details/121219006</a></li>
+</ul>
 
     </div>
 
@@ -347,13 +336,13 @@ https://stackoverflow.com/questions/70317889/cannot-install-libpulse-dev-in-ubun
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">288k</span>
+    <span title="總字數">289k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:44</span>
+    <span title="所需總閱讀時間">8:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

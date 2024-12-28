@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介 這篇主要介紹Flutter串接Firebase 社交驗證的服務， 便將收集資料消化的過程記錄下來。">
+    <meta name="description" content="簡介這篇主要介紹Flutter串接Firebase 社交驗證的服務，便將收集資料消化的過程記錄下來。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Flutter Social Authentication">
 <meta property="og:url" content="https://leonicehot.github.io/2022/12/30/2022/December/FlutterFile-Authentication/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介 這篇主要介紹Flutter串接Firebase 社交驗證的服務， 便將收集資料消化的過程記錄下來。">
+<meta property="og:description" content="簡介這篇主要介紹Flutter串接Firebase 社交驗證的服務，便將收集資料消化的過程記錄下來。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-12-30T10:15:43.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:34.430Z">
@@ -110,8 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tutorial"><span class="nav-number">2.</span> <span class="nav-text">Tutorial</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#firebase-ui-for-authentication"><span class="nav-number">3.</span> <span class="nav-text">Firebase UI for
-authentication</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#activate-flutterfire-cli"><span class="nav-number">3.1.</span> <span class="nav-text">Activate FlutterFire CLI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-setup"><span class="nav-number">3.2.</span> <span class="nav-text">Package Setup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%86%E6%BA%90"><span class="nav-number">3.3.</span> <span class="nav-text">來源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#enable-multidex"><span class="nav-number">3.4.</span> <span class="nav-text">Enable multidex</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tutorial"><span class="nav-number">2.</span> <span class="nav-text">Tutorial</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Firebase-UI-for-authentication"><span class="nav-number">3.</span> <span class="nav-text">Firebase UI for authentication</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Activate-FlutterFire-CLI"><span class="nav-number">3.1.</span> <span class="nav-text">Activate FlutterFire CLI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Package-Setup"><span class="nav-number">3.2.</span> <span class="nav-text">Package Setup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%86%E6%BA%90"><span class="nav-number">3.3.</span> <span class="nav-text">來源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Enable-multidex"><span class="nav-number">3.4.</span> <span class="nav-text">Enable multidex</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -242,32 +241,25 @@ authentication</span></a><ol class="nav-child"><li class="nav-item nav-level-2">
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
-<p>這篇主要介紹Flutter串接Firebase 社交驗證的服務，
-便將收集資料消化的過程記錄下來。 <span id="more"></span></p>
-<h1 id="tutorial">Tutorial</h1>
-<ol type="1">
-<li><p>Flutter Tutorial: Firebase Auth Flow with Flutter Fire UI and CLI
-|| Email and Password
-https://www.youtube.com/watch?v=BRB_dME_Xe0&amp;ab_channel=JideGuru</p></li>
-<li><p>Flutter Firebase Authentication - Google, Facebook, Phone, Email
-&amp; Password Sign Up | Provider
-https://www.youtube.com/watch?v=u8H652UY-L8&amp;ab_channel=RivaanRanawat</p></li>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>這篇主要介紹Flutter串接Firebase 社交驗證的服務，<br>便將收集資料消化的過程記錄下來。</p>
+<span id="more"></span>
+
+<h1 id="Tutorial"><a href="#Tutorial" class="headerlink" title="Tutorial"></a>Tutorial</h1><ol>
+<li><p>Flutter Tutorial: Firebase Auth Flow with Flutter Fire UI and CLI || Email and Password<br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=BRB_dME_Xe0&ab_channel=JideGuru">https://www.youtube.com/watch?v=BRB_dME_Xe0&amp;ab_channel=JideGuru</a></p>
+</li>
+<li><p>Flutter Firebase Authentication - Google, Facebook, Phone, Email &amp; Password Sign Up | Provider<br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=u8H652UY-L8&ab_channel=RivaanRanawat">https://www.youtube.com/watch?v=u8H652UY-L8&amp;ab_channel=RivaanRanawat</a></p>
+</li>
 </ol>
-<h1 id="firebase-ui-for-authentication">Firebase UI for
-authentication</h1>
-<h2 id="activate-flutterfire-cli">Activate FlutterFire CLI</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dart pub global activate flutterfire_cli</span><br></pre></td></tr></table></figure>
-<h2 id="package-setup">Package Setup</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">flutter pub add firebase_core</span><br><span class="line">flutter pub add firebase_auth</span><br><span class="line">flutter pub add flutterfire_ui</span><br><span class="line">flutter pub add firebase_dynamic_links</span><br><span class="line">flutter pub add cloud_firestore</span><br><span class="line">flutter pub add firebase_storage</span><br></pre></td></tr></table></figure>
-<h2 id="來源">來源</h2>
-<ol type="1">
-<li><p>flutterfire_ui https://pub.dev/packages/flutterfire_ui</p></li>
-<li><p>Firebase UI for authentication
-https://github.com/firebase/flutterfire/blob/master/packages/firebase_ui_auth/doc/README.md</p></li>
+<h1 id="Firebase-UI-for-authentication"><a href="#Firebase-UI-for-authentication" class="headerlink" title="Firebase UI for authentication"></a>Firebase UI for authentication</h1><h2 id="Activate-FlutterFire-CLI"><a href="#Activate-FlutterFire-CLI" class="headerlink" title="Activate FlutterFire CLI"></a>Activate FlutterFire CLI</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dart pub global activate flutterfire_cli</span><br></pre></td></tr></table></figure>
+
+<h2 id="Package-Setup"><a href="#Package-Setup" class="headerlink" title="Package Setup"></a>Package Setup</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">flutter pub add firebase_core</span><br><span class="line">flutter pub add firebase_auth</span><br><span class="line">flutter pub add flutterfire_ui</span><br><span class="line">flutter pub add firebase_dynamic_links</span><br><span class="line">flutter pub add cloud_firestore</span><br><span class="line">flutter pub add firebase_storage</span><br></pre></td></tr></table></figure>
+<h2 id="來源"><a href="#來源" class="headerlink" title="來源"></a>來源</h2><ol>
+<li><p>flutterfire_ui<br><a target="_blank" rel="noopener" href="https://pub.dev/packages/flutterfire_ui">https://pub.dev/packages/flutterfire_ui</a></p>
+</li>
+<li><p>Firebase UI for authentication<br><a target="_blank" rel="noopener" href="https://github.com/firebase/flutterfire/blob/master/packages/firebase_ui_auth/doc/README.md">https://github.com/firebase/flutterfire/blob/master/packages/firebase_ui_auth/doc/README.md</a></p>
+</li>
 </ol>
-<h2 id="enable-multidex">Enable multidex</h2>
-<p>https://developer.android.com/studio/build/multidex#kts</p>
+<h2 id="Enable-multidex"><a href="#Enable-multidex" class="headerlink" title="Enable multidex"></a>Enable multidex</h2><p><a target="_blank" rel="noopener" href="https://developer.android.com/studio/build/multidex#kts">https://developer.android.com/studio/build/multidex#kts</a></p>
 
     </div>
 
@@ -319,13 +311,13 @@ https://github.com/firebase/flutterfire/blob/master/packages/firebase_ui_auth/do
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">288k</span>
+    <span title="總字數">289k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:44</span>
+    <span title="所需總閱讀時間">8:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

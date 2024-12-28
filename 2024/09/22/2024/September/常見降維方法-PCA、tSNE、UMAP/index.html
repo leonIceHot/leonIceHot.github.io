@@ -110,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81%E9%99%8D%E7%B6%AD"><span class="nav-number">1.</span> <span class="nav-text">為什麼需要降維？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E8%A6%8B%E7%9A%84%E9%99%8D%E7%B6%AD%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">常見的降維方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pca"><span class="nav-number">2.1.</span> <span class="nav-text">PCA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#t-sne"><span class="nav-number">2.2.</span> <span class="nav-text">t-SNE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#umap"><span class="nav-number">2.3.</span> <span class="nav-text">UMAP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">2.4.</span> <span class="nav-text">概述：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90%E6%AF%94%E8%BC%83"><span class="nav-number">3.</span> <span class="nav-text">總結比較：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81%E9%99%8D%E7%B6%AD%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">為什麼需要降維？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E8%A6%8B%E7%9A%84%E9%99%8D%E7%B6%AD%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">常見的降維方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PCA"><span class="nav-number">2.1.</span> <span class="nav-text">PCA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#t-SNE"><span class="nav-number">2.2.</span> <span class="nav-text">t-SNE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UMAP"><span class="nav-number">2.3.</span> <span class="nav-text">UMAP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0%EF%BC%9A"><span class="nav-number">2.4.</span> <span class="nav-text">概述：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90%E6%AF%94%E8%BC%83%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">總結比較：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -243,84 +243,42 @@
     
     <div class="post-body" itemprop="articleBody"><p>降維是指將高維資料轉換為低維資料的過程，同時保留資料的主要信息和結構。高維資料在很多情況下會帶來計算負擔和雜訊，通過降維技術，可以減少維度，降低資料的複雜性，從而提升算法效率，並且讓資料在低維空間中更易於理解和可視化。</p>
 <span id="more"></span>
-<h1 id="為什麼需要降維">為什麼需要降維？</h1>
-<ol type="1">
-<li><p>避免維度災難：隨著資料維度的增加，樣本量所需的急劇增大，計算量也隨之增加。這稱為維度災難，降維可以有效減少維度，降低運算和存儲的負擔。</p></li>
-<li><p>雜訊與冗餘：高維資料中常含有很多冗餘信息和雜訊，這些可能會干擾機器學習模型的性能。降維有助於過濾掉這些冗餘和雜訊信息，提取出資料中真正有用的特徵。</p></li>
-<li><p>可視化：高維資料難以可視化，人類只能直接理解 2D 或 3D
-空間中的資料。通過降維，可以將資料轉化為可視化的低維表示，更直觀地觀察資料的結構。</p></li>
-<li><p>提升模型性能：高維資料中的雜訊和冗餘特徵會影響模型的泛化能力。降維後，資料更簡潔，有助於避免過擬合，提升機器學習模型的性能。</p></li>
+<h1 id="為什麼需要降維？"><a href="#為什麼需要降維？" class="headerlink" title="為什麼需要降維？"></a>為什麼需要降維？</h1><ol>
+<li><p>避免維度災難：隨著資料維度的增加，樣本量所需的急劇增大，計算量也隨之增加。這稱為維度災難，降維可以有效減少維度，降低運算和存儲的負擔。</p>
+</li>
+<li><p>雜訊與冗餘：高維資料中常含有很多冗餘信息和雜訊，這些可能會干擾機器學習模型的性能。降維有助於過濾掉這些冗餘和雜訊信息，提取出資料中真正有用的特徵。</p>
+</li>
+<li><p>可視化：高維資料難以可視化，人類只能直接理解 2D 或 3D 空間中的資料。通過降維，可以將資料轉化為可視化的低維表示，更直觀地觀察資料的結構。</p>
+</li>
+<li><p>提升模型性能：高維資料中的雜訊和冗餘特徵會影響模型的泛化能力。降維後，資料更簡潔，有助於避免過擬合，提升機器學習模型的性能。</p>
+</li>
 </ol>
-<h1 id="常見的降維方法">常見的降維方法</h1>
-<p>PCA、t-SNE 和 UMAP
-是三種常見的降維方法，各自有不同的應用場景和特點。以下是對這三種方法的詳細比較和分析：</p>
-<h2 id="pca">PCA</h2>
-<p>論文: Principal components analysis (PCA)
-https://www.sciencedirect.com/science/article/abs/pii/009830049390090R</p>
-<p>概述： PCA
-是一種線性降維技術，通過計算資料集中變異最大的一些主成分，將資料從高維空間投影到低維空間。PCA
-保證了最大限度地保留資料的整體變異性。</p>
-<p>特點： 線性方法：假設資料中的重要結構是線性的，適合線性可分的資料集。
-全局結構：PCA
-更側重於保留資料的全局結構，能很好地保持資料集中較大的變異方向。
-計算效率高：PCA 是基於矩陣分解的方法，計算速度相對快。
-可解釋性強：結果易於解釋，主成分可以直接對應到資料中的變異方向，具備較強的可視化特性。
-局限性： 僅限線性關係：對於高度非線性的資料，PCA
-的效果可能不如非線性降維方法。 信息損失風險：PCA
-雖然保留了最大變異的主成分，但一些較小的變異信息可能被丟失。 適用場景：
-資料的變異主要是線性的。 高維資料集需要快速降維以進行進一步分析。</p>
-<h2 id="t-sne">t-SNE</h2>
-<p>論文: JMLR2008 - Visualizing data using t-SNE.
-https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf</p>
-<p>概述： t-SNE
-是一種非線性降維技術，專門用於將高維資料投影到低維空間中，同時保留資料的局部結構。t-SNE
-通常用於資料可視化，特別適合顯示高維資料中的聚類現象。</p>
-<ol type="1">
-<li><p>特點： 非線性方法：適合處理複雜的、高度非線性的資料。
-保留局部結構：在降維後，t-SNE
-更注重保持高維空間中資料點的鄰近關係，非常適合展示聚類和鄰域結構。
-可視化效果好：t-SNE 常用於 2D 或 3D
-空間中資料的可視化，能夠明顯展示資料中的聚類現象。</p></li>
-<li><p>局限性： 全局結構不保留：t-SNE
-更專注於局部鄰域，可能會丟失資料的全局拓撲結構，導致資料點之間的全局距離在降維後無法準確反映。
-計算較慢：特別是當資料集很大時，t-SNE 的計算效率會明顯下降。
-結果不穩定：t-SNE 的結果對參數（如
-perplexity）和初始條件比較敏感，且每次運行結果可能有所不同。 適用場景：
-高維資料集的可視化，尤其是當需要顯示資料中的聚類或鄰近關係時。
-非線性資料，且關注局部結構保留。</p></li>
+<h1 id="常見的降維方法"><a href="#常見的降維方法" class="headerlink" title="常見的降維方法"></a>常見的降維方法</h1><p>PCA、t-SNE 和 UMAP 是三種常見的降維方法，各自有不同的應用場景和特點。以下是對這三種方法的詳細比較和分析：</p>
+<h2 id="PCA"><a href="#PCA" class="headerlink" title="PCA"></a>PCA</h2><p>論文: Principal components analysis (PCA)<br><a target="_blank" rel="noopener" href="https://www.sciencedirect.com/science/article/abs/pii/009830049390090R">https://www.sciencedirect.com/science/article/abs/pii/009830049390090R</a></p>
+<p>概述：<br>PCA 是一種線性降維技術，通過計算資料集中變異最大的一些主成分，將資料從高維空間投影到低維空間。PCA 保證了最大限度地保留資料的整體變異性。</p>
+<p>特點：<br>線性方法：假設資料中的重要結構是線性的，適合線性可分的資料集。<br>全局結構：PCA 更側重於保留資料的全局結構，能很好地保持資料集中較大的變異方向。<br>計算效率高：PCA 是基於矩陣分解的方法，計算速度相對快。<br>可解釋性強：結果易於解釋，主成分可以直接對應到資料中的變異方向，具備較強的可視化特性。<br>局限性：<br>僅限線性關係：對於高度非線性的資料，PCA 的效果可能不如非線性降維方法。<br>信息損失風險：PCA 雖然保留了最大變異的主成分，但一些較小的變異信息可能被丟失。<br>適用場景：<br>資料的變異主要是線性的。<br>高維資料集需要快速降維以進行進一步分析。</p>
+<h2 id="t-SNE"><a href="#t-SNE" class="headerlink" title="t-SNE"></a>t-SNE</h2><p>論文: JMLR2008 - Visualizing data using t-SNE.<br><a target="_blank" rel="noopener" href="https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf">https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf</a></p>
+<p>概述：<br>t-SNE 是一種非線性降維技術，專門用於將高維資料投影到低維空間中，同時保留資料的局部結構。t-SNE 通常用於資料可視化，特別適合顯示高維資料中的聚類現象。</p>
+<ol>
+<li><p>特點：<br>非線性方法：適合處理複雜的、高度非線性的資料。<br>保留局部結構：在降維後，t-SNE 更注重保持高維空間中資料點的鄰近關係，非常適合展示聚類和鄰域結構。<br>可視化效果好：t-SNE 常用於 2D 或 3D 空間中資料的可視化，能夠明顯展示資料中的聚類現象。</p>
+</li>
+<li><p>局限性：<br>全局結構不保留：t-SNE 更專注於局部鄰域，可能會丟失資料的全局拓撲結構，導致資料點之間的全局距離在降維後無法準確反映。<br>計算較慢：特別是當資料集很大時，t-SNE 的計算效率會明顯下降。<br>結果不穩定：t-SNE 的結果對參數（如 perplexity）和初始條件比較敏感，且每次運行結果可能有所不同。<br>適用場景：<br>高維資料集的可視化，尤其是當需要顯示資料中的聚類或鄰近關係時。<br>非線性資料，且關注局部結構保留。</p>
+</li>
 </ol>
-<h2 id="umap">UMAP</h2>
-<h2 id="概述">概述：</h2>
-<p>論文: Umap: Uniform manifold approximation and projection for
-dimension reduction. https://arxiv.org/abs/1802.03426</p>
-<p>UMAP
-是一種非線性降維技術，旨在通過保留高維資料的局部和全局結構，將資料投影到低維空間中。UMAP
-是 t-SNE 的改進版本，具備更快的計算速度和更好的全局結構保持能力。</p>
-<ol type="1">
-<li><p>特點： 非線性方法：與 t-SNE 一樣，UMAP 非常適合處理非線性資料。
-保留局部與全局結構：UMAP
-不僅能很好地保持資料點之間的局部鄰域關係，還能比 t-SNE
-更好地保持全局結構。 高效計算：UMAP 通常比 t-SNE
-更快，能夠處理更大規模的資料集。 可調參數靈活性：UMAP 提供了諸如鄰域大小
-(n_neighbors) 和最小距離 (min_dist)
-等參數，這讓用戶可以靈活控制局部與全局結構的權衡。</p></li>
-<li><p>局限性： 參數調整要求較高：UMAP
-的效果對於不同參數的選擇非常敏感，需要通過調參來達到最佳效果。
-在非常稠密的資料上效果不佳：當資料點間距極其緊密時，UMAP
-可能會面臨挑戰。 適用場景：
-大規模資料集的降維，要求效率高且需保留資料的全局結構。
-非線性資料的降維與可視化。 聚類、異常檢測等任務的降維處理。</p></li>
+<h2 id="UMAP"><a href="#UMAP" class="headerlink" title="UMAP"></a>UMAP</h2><h2 id="概述："><a href="#概述：" class="headerlink" title="概述："></a>概述：</h2><p>論文: Umap: Uniform manifold approximation and projection for dimension reduction.<br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1802.03426">https://arxiv.org/abs/1802.03426</a></p>
+<p>UMAP 是一種非線性降維技術，旨在通過保留高維資料的局部和全局結構，將資料投影到低維空間中。UMAP 是 t-SNE 的改進版本，具備更快的計算速度和更好的全局結構保持能力。</p>
+<ol>
+<li><p>特點：<br>非線性方法：與 t-SNE 一樣，UMAP 非常適合處理非線性資料。<br>保留局部與全局結構：UMAP 不僅能很好地保持資料點之間的局部鄰域關係，還能比 t-SNE 更好地保持全局結構。<br>高效計算：UMAP 通常比 t-SNE 更快，能夠處理更大規模的資料集。<br>可調參數靈活性：UMAP 提供了諸如鄰域大小 (n_neighbors) 和最小距離 (min_dist) 等參數，這讓用戶可以靈活控制局部與全局結構的權衡。</p>
+</li>
+<li><p>局限性：<br>參數調整要求較高：UMAP 的效果對於不同參數的選擇非常敏感，需要通過調參來達到最佳效果。<br>在非常稠密的資料上效果不佳：當資料點間距極其緊密時，UMAP 可能會面臨挑戰。<br>適用場景：<br>大規模資料集的降維，要求效率高且需保留資料的全局結構。<br>非線性資料的降維與可視化。<br>聚類、異常檢測等任務的降維處理。</p>
+</li>
 </ol>
-<h1 id="總結比較">總結比較：</h1>
-<p>PCA 適合線性資料和需要快速降維的情況； t-SNE 和 UMAP
-都適合非線性資料的降維和可視化，但 UMAP
-在速度和全局結構保持上更具優勢，適合大規模資料。</p>
-<h1 id="reference">Reference</h1>
-<ol type="1">
-<li><p>常见的PCA、tSNE、UMAP降维及聚类基本原理及代码实例
-https://blog.csdn.net/qq_43337249/article/details/116612811</p></li>
-<li><p>understanding-umap
-https://pair-code.github.io/understanding-umap/</p></li>
+<h1 id="總結比較："><a href="#總結比較：" class="headerlink" title="總結比較："></a>總結比較：</h1><p>PCA 適合線性資料和需要快速降維的情況；<br>t-SNE 和 UMAP 都適合非線性資料的降維和可視化，但 UMAP 在速度和全局結構保持上更具優勢，適合大規模資料。</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<li><p>常见的PCA、tSNE、UMAP降维及聚类基本原理及代码实例<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43337249/article/details/116612811">https://blog.csdn.net/qq_43337249/article/details/116612811</a></p>
+</li>
+<li><p>understanding-umap<br><a target="_blank" rel="noopener" href="https://pair-code.github.io/understanding-umap/">https://pair-code.github.io/understanding-umap/</a></p>
+</li>
 </ol>
 
     </div>
@@ -373,13 +331,13 @@ https://pair-code.github.io/understanding-umap/</p></li>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">288k</span>
+    <span title="總字數">289k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:44</span>
+    <span title="所需總閱讀時間">8:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

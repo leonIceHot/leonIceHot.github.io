@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介 JAX 是由 Google Brain 團隊開發的一個開源數值計算庫，專為高效能、可組合性和自動微分而設計。它建立在 Python 上，並提供了一個類似於 NumPy 的介面，使得使用者可以使用熟悉的語法進行數值計算和科學計算。">
+    <meta name="description" content="簡介JAX 是由 Google Brain 團隊開發的一個開源數值計算庫，專為高效能、可組合性和自動微分而設計。它建立在 Python 上，並提供了一個類似於 NumPy 的介面，使得使用者可以使用熟悉的語法進行數值計算和科學計算。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAX">
 <meta property="og:url" content="https://leonicehot.github.io/2023/05/04/2023/June/JAX/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介 JAX 是由 Google Brain 團隊開發的一個開源數值計算庫，專為高效能、可組合性和自動微分而設計。它建立在 Python 上，並提供了一個類似於 NumPy 的介面，使得使用者可以使用熟悉的語法進行數值計算和科學計算。">
+<meta property="og:description" content="簡介JAX 是由 Google Brain 團隊開發的一個開源數值計算庫，專為高效能、可組合性和自動微分而設計。它建立在 Python 上，並提供了一個類似於 NumPy 的介面，使得使用者可以使用熟悉的語法進行數值計算和科學計算。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-05-04T01:53:23.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:36.630Z">
@@ -245,50 +245,27 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
-<p>JAX 是由 Google Brain
-團隊開發的一個開源數值計算庫，專為高效能、可組合性和自動微分而設計。它建立在
-Python 上，並提供了一個類似於 NumPy
-的介面，使得使用者可以使用熟悉的語法進行數值計算和科學計算。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>JAX 是由 Google Brain 團隊開發的一個開源數值計算庫，專為高效能、可組合性和自動微分而設計。它建立在 Python 上，並提供了一個類似於 NumPy 的介面，使得使用者可以使用熟悉的語法進行數值計算和科學計算。</p>
 <span id="more"></span>
-<h1 id="背景">背景</h1>
-<p>JAX 的背景可以追溯到 TensorFlow 中的一個子項目，名為
-Autograd。Autograd 是一個自動微分庫，用於計算函數的梯度。Google Brain
-團隊發現 Autograd
-在實現深度學習模型的自動微分時非常強大和高效。因此，他們決定將 Autograd
-進一步發展成為一個獨立的庫，即 JAX。</p>
-<p>JAX
-的設計目標是提供一個高性能的數值計算框架，同時具備可組合性和易用性。它借鑒了
-NumPy
-的設計風格，提供了類似的陣列操作和函數，使得用戶可以輕鬆地遷移現有的
-NumPy 代碼到 JAX。同時，JAX
-還引入了自動微分的功能，使得用戶可以方便地計算函數的梯度。</p>
-<p>JAX 的另一個關鍵特點是它使用 XLA（Accelerated Linear
-Algebra）編譯器來優化計算。XLA
-是一個將數值運算符編譯為高效機器代碼的編譯器，可以在 CPU、GPU 和 TPU
-上實現快速的數值計算。JAX 利用 XLA
-的優勢，實現了高性能和可擴展的計算。</p>
-<p>JAX
-在機器學習和科學計算領域得到了廣泛的應用。它提供了強大的自動微分能力，使得用戶可以方便地計算梯度，從而支持梯度下降和反向傳播等算法。同時，JAX
-還具有高性能計算和可組合性的優勢，使得用戶可以更有效地開發和訓練深度學習模型。</p>
-<h1 id="介紹">介紹</h1>
-<p>JAX 提供了以下主要功能：</p>
-<ol type="1">
-<li><p>自動微分：JAX
-具有強大的自動微分能力，可以自動計算複雜函數的梯度。這對於機器學習中的反向傳播算法非常有用，可以方便地計算損失函數對模型參數的梯度。</p></li>
-<li><p>XLA 加速：JAX 使用 XLA（Accelerated Linear
-Algebra）編譯器，將計算運算符編譯為高效的機器代碼，從而實現了快速的數值計算。這使得
-JAX 在大型數據集和複雜模型上具有出色的效能。</p></li>
-<li><p>函數轉換：JAX 提供了一組函數轉換工具，可以將普通的 Python
-函數轉換為可在加速硬件上運行的優化版本。這使得用戶可以編寫簡潔、易於理解的
-Python 代碼，同時獲得高效能。</p></li>
-<li><p>可組合性：JAX
-的設計非常注重可組合性，可以將不同的函數組合在一起，並在需要時進行自動微分。這使得用戶可以輕鬆構建和組合複雜的計算圖，並利用自動微分進行梯度計算。</p></li>
-<li><p>支持 GPU 和 TPU：JAX 提供了對 GPU 和 TPU
-的支持，可以在這些加速硬件上執行計算，從而進一步提高計算效能。</p></li>
+
+<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>JAX 的背景可以追溯到 TensorFlow 中的一個子項目，名為 Autograd。Autograd 是一個自動微分庫，用於計算函數的梯度。Google Brain 團隊發現 Autograd 在實現深度學習模型的自動微分時非常強大和高效。因此，他們決定將 Autograd 進一步發展成為一個獨立的庫，即 JAX。</p>
+<p>JAX 的設計目標是提供一個高性能的數值計算框架，同時具備可組合性和易用性。它借鑒了 NumPy 的設計風格，提供了類似的陣列操作和函數，使得用戶可以輕鬆地遷移現有的 NumPy 代碼到 JAX。同時，JAX 還引入了自動微分的功能，使得用戶可以方便地計算函數的梯度。</p>
+<p>JAX 的另一個關鍵特點是它使用 XLA（Accelerated Linear Algebra）編譯器來優化計算。XLA 是一個將數值運算符編譯為高效機器代碼的編譯器，可以在 CPU、GPU 和 TPU 上實現快速的數值計算。JAX 利用 XLA 的優勢，實現了高性能和可擴展的計算。</p>
+<p>JAX 在機器學習和科學計算領域得到了廣泛的應用。它提供了強大的自動微分能力，使得用戶可以方便地計算梯度，從而支持梯度下降和反向傳播等算法。同時，JAX 還具有高性能計算和可組合性的優勢，使得用戶可以更有效地開發和訓練深度學習模型。</p>
+<h1 id="介紹"><a href="#介紹" class="headerlink" title="介紹"></a>介紹</h1><p>JAX 提供了以下主要功能：</p>
+<ol>
+<li><p>自動微分：JAX 具有強大的自動微分能力，可以自動計算複雜函數的梯度。這對於機器學習中的反向傳播算法非常有用，可以方便地計算損失函數對模型參數的梯度。</p>
+</li>
+<li><p>XLA 加速：JAX 使用 XLA（Accelerated Linear Algebra）編譯器，將計算運算符編譯為高效的機器代碼，從而實現了快速的數值計算。這使得 JAX 在大型數據集和複雜模型上具有出色的效能。</p>
+</li>
+<li><p>函數轉換：JAX 提供了一組函數轉換工具，可以將普通的 Python 函數轉換為可在加速硬件上運行的優化版本。這使得用戶可以編寫簡潔、易於理解的 Python 代碼，同時獲得高效能。</p>
+</li>
+<li><p>可組合性：JAX 的設計非常注重可組合性，可以將不同的函數組合在一起，並在需要時進行自動微分。這使得用戶可以輕鬆構建和組合複雜的計算圖，並利用自動微分進行梯度計算。</p>
+</li>
+<li><p>支持 GPU 和 TPU：JAX 提供了對 GPU 和 TPU 的支持，可以在這些加速硬件上執行計算，從而進一步提高計算效能。</p>
+</li>
 </ol>
-<p>總之，JAX
-是一個強大的數值計算庫，提供了自動微分、高效能計算和函數轉換等功能。它在機器學習和科學計算領域具有廣泛的應用，並為用戶提供了方便且高效的工具。</p>
+<p>總之，JAX 是一個強大的數值計算庫，提供了自動微分、高效能計算和函數轉換等功能。它在機器學習和科學計算領域具有廣泛的應用，並為用戶提供了方便且高效的工具。</p>
 
     </div>
 
@@ -340,13 +317,13 @@ Python 代碼，同時獲得高效能。</p></li>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">288k</span>
+    <span title="總字數">289k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:44</span>
+    <span title="所需總閱讀時間">8:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

@@ -19,20 +19,20 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Introduction Simplified Wrapper and Interface Generator SWIG is most commonly used to create high-level interpreted or compiled programming environments, user interfaces">
+    <meta name="description" content="IntroductionSimplified Wrapper and Interface GeneratorSWIG is most commonly used to create high-level interpreted or compiled programming environments, user interfaces">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SWIG Implementation in Python &amp; C++">
 <meta property="og:url" content="https://leonicehot.github.io/2023/03/29/2023/March/SWIG%20Implementation%20in%20Python%20&%20C++/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="Introduction Simplified Wrapper and Interface Generator SWIG is most commonly used to create high-level interpreted or compiled programming environments, user interfaces">
+<meta property="og:description" content="IntroductionSimplified Wrapper and Interface GeneratorSWIG is most commonly used to create high-level interpreted or compiled programming environments, user interfaces">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://leonicehot.github.io/2023/03/29/2023/March/images/SWIG-%E5%AF%A6%E4%BD%9C-Python-%E8%88%87-C-%E4%BB%8B%E9%9D%A2/var-setting.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/03/29/2023/March/images/SWIG-%E5%AF%A6%E4%BD%9C-Python-%E8%88%87-C-%E4%BB%8B%E9%9D%A2/SWIG.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/SWIG-%E5%AF%A6%E4%BD%9C-Python-%E8%88%87-C-%E4%BB%8B%E9%9D%A2/var-setting.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/SWIG-%E5%AF%A6%E4%BD%9C-Python-%E8%88%87-C-%E4%BB%8B%E9%9D%A2/SWIG.png">
 <meta property="article:published_time" content="2023-03-29T01:35:15.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:37.144Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://leonicehot.github.io/2023/03/29/2023/March/images/SWIG-%E5%AF%A6%E4%BD%9C-Python-%E8%88%87-C-%E4%BB%8B%E9%9D%A2/var-setting.png">
+<meta name="twitter:image" content="https://leonicehot.github.io/images/SWIG-%E5%AF%A6%E4%BD%9C-Python-%E8%88%87-C-%E4%BB%8B%E9%9D%A2/var-setting.png">
 
 
 <link rel="canonical" href="https://leonicehot.github.io/2023/03/29/2023/March/SWIG%20Implementation%20in%20Python%20&%20C++/">
@@ -113,7 +113,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#swig"><span class="nav-number">2.</span> <span class="nav-text">SWIG</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#c"><span class="nav-number">3.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#interface-file"><span class="nav-number">4.</span> <span class="nav-text">Interface file</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#generate-swig"><span class="nav-number">5.</span> <span class="nav-text">Generate SWIG</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#distutils"><span class="nav-number">6.</span> <span class="nav-text">Distutils</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#test-demo"><span class="nav-number">7.</span> <span class="nav-text">Test Demo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#references"><span class="nav-number">8.</span> <span class="nav-text">References</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SWIG"><span class="nav-number">2.</span> <span class="nav-text">SWIG</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C"><span class="nav-number">3.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Interface-file"><span class="nav-number">4.</span> <span class="nav-text">Interface file</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Generate-SWIG"><span class="nav-number">5.</span> <span class="nav-text">Generate SWIG</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Distutils"><span class="nav-number">6.</span> <span class="nav-text">Distutils</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Test-Demo"><span class="nav-number">7.</span> <span class="nav-text">Test Demo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">8.</span> <span class="nav-text">References</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -227,7 +227,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>457</span>
+      <span>458</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -244,33 +244,37 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="introduction">Introduction</h1>
-<p>Simplified Wrapper and Interface Generator SWIG is most commonly used
-to create high-level interpreted or compiled programming environments,
-user interfaces <span id="more"></span></p>
-<h1 id="swig">SWIG</h1>
-<ol type="1">
-<li><p>下載 SWIG https://www.swig.org/</p></li>
-<li><p>環境變數設定 設定SWIG檔案資料夾 <img src="../images/SWIG-實作-Python-與-C-介面/var-setting.png" alt="SWIG"></p></li>
-<li><p>實作檔 <img src="../images/SWIG-實作-Python-與-C-介面/SWIG.png" alt="SWIG"></p></li>
+    <div class="post-body" itemprop="articleBody"><h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Simplified Wrapper and Interface Generator<br>SWIG is most commonly used to create high-level interpreted or compiled programming environments, user interfaces</p>
+<span id="more"></span>
+
+<h1 id="SWIG"><a href="#SWIG" class="headerlink" title="SWIG"></a>SWIG</h1><ol>
+<li><p>下載 SWIG <a target="_blank" rel="noopener" href="https://www.swig.org/">https://www.swig.org/</a></p>
+</li>
+<li><p>環境變數設定<br>設定SWIG檔案資料夾<br><img src="/../images/SWIG-%E5%AF%A6%E4%BD%9C-Python-%E8%88%87-C-%E4%BB%8B%E9%9D%A2/var-setting.png" alt="SWIG"></p>
+</li>
+<li><p>實作檔<br><img src="/../images/SWIG-%E5%AF%A6%E4%BD%9C-Python-%E8%88%87-C-%E4%BB%8B%E9%9D%A2/SWIG.png" alt="SWIG"></p>
+</li>
 </ol>
-<h1 id="c">C++</h1>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// File : example.cpp</span><br><span class="line">#include &lt;time.h&gt;</span><br><span class="line">double My_variable = 3.0;</span><br><span class="line"></span><br><span class="line">int fact(int n) &#123;</span><br><span class="line">    if (n &lt;= 1) return 1;</span><br><span class="line">    else return n*fact(n-1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int my_mod(int x, int y) &#123;</span><br><span class="line">    return (x%y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">char *get_time()</span><br><span class="line">&#123;</span><br><span class="line">    time_t ltime;</span><br><span class="line">    time(&amp;ltime);</span><br><span class="line">    return ctime(&amp;ltime);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="interface-file">Interface file</h1>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/* example.i */</span><br><span class="line">    %module example</span><br><span class="line">    %&#123;</span><br><span class="line">    /* Put header files here or function declarations like below */</span><br><span class="line">    extern double My_variable;</span><br><span class="line">    extern int fact(int n);</span><br><span class="line">    extern int my_mod(int x, int y);</span><br><span class="line">    extern char *get_time();</span><br><span class="line">    %&#125;</span><br><span class="line">    </span><br><span class="line">    extern double My_variable;</span><br><span class="line">    extern int fact(int n);</span><br><span class="line">    extern int my_mod(int x, int y);</span><br><span class="line">    extern char *get_time();</span><br></pre></td></tr></table></figure>
-<h1 id="generate-swig">Generate SWIG</h1>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swig -c++ -python example.i</span><br></pre></td></tr></table></figure>
-<p>產生兩個程式檔 1. example_wrap.cxx 2. example.cpp</p>
-<h1 id="distutils">Distutils</h1>
-<p>新建setup.py <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">from distutils.core import setup, Extension</span><br><span class="line"></span><br><span class="line">example_module = Extension(&#x27;_example&#x27;,</span><br><span class="line">                        sources=[&#x27;example_wrap.cxx&#x27;, &#x27;example.cpp&#x27;],</span><br><span class="line">                        )</span><br><span class="line"></span><br><span class="line">setup(name=&#x27;example&#x27;,</span><br><span class="line">    version=&#x27;1.0&#x27;,</span><br><span class="line">    author=&quot;chwang&quot;,</span><br><span class="line">    description=&quot;&quot;&quot;Simple swig example from docs&quot;&quot;&quot;,</span><br><span class="line">    ext_modules=[example_module],</span><br><span class="line">    py_modules=[&quot;example&quot;],</span><br><span class="line">    )</span><br></pre></td></tr></table></figure> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup.py build_ext --inplace</span><br></pre></td></tr></table></figure></p>
-<h1 id="test-demo">Test Demo</h1>
-<p>tea.py <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import example</span><br><span class="line">print(example.fact(4))</span><br><span class="line">print(example.my_mod(7,3))</span><br></pre></td></tr></table></figure></p>
-<h1 id="references">References</h1>
-<ol type="1">
-<li>SWIG 实现 Python 调用 C/C++
-https://www.jianshu.com/p/ccd239bd11d9</li>
-<li>Python and C++ SWIG Example
-https://gist.github.com/redfish-lee/5bc979d13e55cc51ba2fc7772a34e65e</li>
+<h1 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// File : example.cpp</span><br><span class="line">#include &lt;time.h&gt;</span><br><span class="line">double My_variable = 3.0;</span><br><span class="line"></span><br><span class="line">int fact(int n) &#123;</span><br><span class="line">    if (n &lt;= 1) return 1;</span><br><span class="line">    else return n*fact(n-1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int my_mod(int x, int y) &#123;</span><br><span class="line">    return (x%y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">char *get_time()</span><br><span class="line">&#123;</span><br><span class="line">    time_t ltime;</span><br><span class="line">    time(&amp;ltime);</span><br><span class="line">    return ctime(&amp;ltime);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Interface-file"><a href="#Interface-file" class="headerlink" title="Interface file"></a>Interface file</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/* example.i */</span><br><span class="line">    %module example</span><br><span class="line">    %&#123;</span><br><span class="line">    /* Put header files here or function declarations like below */</span><br><span class="line">    extern double My_variable;</span><br><span class="line">    extern int fact(int n);</span><br><span class="line">    extern int my_mod(int x, int y);</span><br><span class="line">    extern char *get_time();</span><br><span class="line">    %&#125;</span><br><span class="line">    </span><br><span class="line">    extern double My_variable;</span><br><span class="line">    extern int fact(int n);</span><br><span class="line">    extern int my_mod(int x, int y);</span><br><span class="line">    extern char *get_time();</span><br></pre></td></tr></table></figure>
+
+<h1 id="Generate-SWIG"><a href="#Generate-SWIG" class="headerlink" title="Generate SWIG"></a>Generate SWIG</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swig -c++ -python example.i</span><br></pre></td></tr></table></figure>
+<p>產生兩個程式檔</p>
+<ol>
+<li>example_wrap.cxx</li>
+<li>example.cpp</li>
+</ol>
+<h1 id="Distutils"><a href="#Distutils" class="headerlink" title="Distutils"></a>Distutils</h1><p>新建setup.py</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">from distutils.core import setup, Extension</span><br><span class="line"></span><br><span class="line">example_module = Extension(&#x27;_example&#x27;,</span><br><span class="line">                        sources=[&#x27;example_wrap.cxx&#x27;, &#x27;example.cpp&#x27;],</span><br><span class="line">                        )</span><br><span class="line"></span><br><span class="line">setup(name=&#x27;example&#x27;,</span><br><span class="line">    version=&#x27;1.0&#x27;,</span><br><span class="line">    author=&quot;chwang&quot;,</span><br><span class="line">    description=&quot;&quot;&quot;Simple swig example from docs&quot;&quot;&quot;,</span><br><span class="line">    ext_modules=[example_module],</span><br><span class="line">    py_modules=[&quot;example&quot;],</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup.py build_ext --inplace</span><br></pre></td></tr></table></figure>
+
+<h1 id="Test-Demo"><a href="#Test-Demo" class="headerlink" title="Test Demo"></a>Test Demo</h1><p>tea.py</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import example</span><br><span class="line">print(example.fact(4))</span><br><span class="line">print(example.my_mod(7,3))</span><br></pre></td></tr></table></figure>
+
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ol>
+<li>SWIG 实现 Python 调用 C&#x2F;C++<br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ccd239bd11d9">https://www.jianshu.com/p/ccd239bd11d9</a></li>
+<li>Python and C++ SWIG Example<br><a target="_blank" rel="noopener" href="https://gist.github.com/redfish-lee/5bc979d13e55cc51ba2fc7772a34e65e">https://gist.github.com/redfish-lee/5bc979d13e55cc51ba2fc7772a34e65e</a></li>
 </ol>
 
     </div>
@@ -323,13 +327,13 @@ https://gist.github.com/redfish-lee/5bc979d13e55cc51ba2fc7772a34e65e</li>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">288k</span>
+    <span title="總字數">289k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:44</span>
+    <span title="所需總閱讀時間">8:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

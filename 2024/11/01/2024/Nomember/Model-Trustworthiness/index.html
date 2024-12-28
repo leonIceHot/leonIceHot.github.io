@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="可解釋性 是提升人工智慧（AI）在醫學領域可信度的關鍵。然而，醫生對模型可解釋性的期望與這些模型的實際行為之間存在顯著差距。這一差距源於缺乏一個以醫生為中心的評估框架，該框架應能定量評估有效可解釋性對臨床實踐的實際益處。">
+    <meta name="description" content="可解釋性 是提升人工智慧（AI）在醫學領域可信度的關鍵。然而，醫生對模型可解釋性的期望與這些模型的實際行為之間存在顯著差距。這一差距源於缺乏一個以醫生為中心的評估框架，該框架應能定量評估有效可解釋性對臨床實踐的實際益處。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Model Trustworthiness">
 <meta property="og:url" content="https://leonicehot.github.io/2024/11/01/2024/Nomember/Model-Trustworthiness/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="可解釋性 是提升人工智慧（AI）在醫學領域可信度的關鍵。然而，醫生對模型可解釋性的期望與這些模型的實際行為之間存在顯著差距。這一差距源於缺乏一個以醫生為中心的評估框架，該框架應能定量評估有效可解釋性對臨床實踐的實際益處。">
+<meta property="og:description" content="可解釋性 是提升人工智慧（AI）在醫學領域可信度的關鍵。然而，醫生對模型可解釋性的期望與這些模型的實際行為之間存在顯著差距。這一差距源於缺乏一個以醫生為中心的評估框架，該框架應能定量評估有效可解釋性對臨床實踐的實際益處。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-11-01T15:57:35.000Z">
 <meta property="article:modified_time" content="2024-12-28T15:26:44.186Z">
@@ -97,7 +97,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -110,6 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -219,7 +220,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>639</span>
+      <span>638</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -236,21 +237,13 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>可解釋性
-是提升人工智慧（AI）在醫學領域可信度的關鍵。然而，醫生對模型可解釋性的期望與這些模型的實際行為之間存在顯著差距。這一差距源於缺乏一個以醫生為中心的評估框架，該框架應能定量評估有效可解釋性對臨床實踐的實際益處。
-<span id="more"></span> # 摘要 在本研究中，我們假設：優越的注意力圖（attention
-maps）
-作為一種模型解釋機制，應與醫生關注的信息一致，從而潛在地降低預測的不確定性並提升模型的可靠性。我們使用多模態
-Transformer
-模型，結合臨床數據與磁共振成像（MRI），來預測直腸癌的淋巴結轉移。我們探討了通過最先進的技術可視化的注意力圖與醫生理解的一致程度。</p>
+    <div class="post-body" itemprop="articleBody"><p>可解釋性 是提升人工智慧（AI）在醫學領域可信度的關鍵。然而，醫生對模型可解釋性的期望與這些模型的實際行為之間存在顯著差距。這一差距源於缺乏一個以醫生為中心的評估框架，該框架應能定量評估有效可解釋性對臨床實踐的實際益處。</p>
+<span id="more"></span>
+<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>在本研究中，我們假設：優越的注意力圖（attention maps） 作為一種模型解釋機制，應與醫生關注的信息一致，從而潛在地降低預測的不確定性並提升模型的可靠性。我們使用多模態 Transformer 模型，結合臨床數據與磁共振成像（MRI），來預測直腸癌的淋巴結轉移。我們探討了通過最先進的技術可視化的注意力圖與醫生理解的一致程度。</p>
 <p>隨後，我們比較了兩種不同的不確定性估計方法：</p>
-<p>單獨估計——僅基於預測概率的方差。
-人機交互估計——同時考慮預測概率的方差與醫生理解的一致性。
-研究結果顯示，人機交互方法並未比單獨估計方法具有顯著優勢。總結來說，此案例研究並未證實可解釋性能夠顯著提升模型的可靠性。表面的解釋可能會對醫生產生誤導，讓他們依賴於不確定的預測結果。這表明，在當前的可解釋性研究中，對注意力機制的作用不應被高估。</p>
-<ol type="1">
-<li>Can physician judgment enhance model trustworthiness? A case study
-on predicting pathological lymph nodes in rectal cancer
-https://www.sciencedirect.com/science/article/pii/S0933365724001714</li>
+<p>單獨估計——僅基於預測概率的方差。<br>人機交互估計——同時考慮預測概率的方差與醫生理解的一致性。<br>研究結果顯示，人機交互方法並未比單獨估計方法具有顯著優勢。總結來說，此案例研究並未證實可解釋性能夠顯著提升模型的可靠性。表面的解釋可能會對醫生產生誤導，讓他們依賴於不確定的預測結果。這表明，在當前的可解釋性研究中，對注意力機制的作用不應被高估。</p>
+<ol>
+<li>Can physician judgment enhance model trustworthiness? A case study on predicting pathological lymph nodes in rectal cancer<br><a target="_blank" rel="noopener" href="https://www.sciencedirect.com/science/article/pii/S0933365724001714">https://www.sciencedirect.com/science/article/pii/S0933365724001714</a></li>
 </ol>
 
     </div>
@@ -303,13 +296,13 @@ https://www.sciencedirect.com/science/article/pii/S0933365724001714</li>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">288k</span>
+    <span title="總字數">289k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:44</span>
+    <span title="所需總閱讀時間">8:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介 自監督式學習的目標是學習到具有良好泛化效能的特徵表示，這些特徵可以被轉移到其他任務中。它在缺乏標記資料的情況下，通過利用大量未標記資料來提高機器學習的效能和可應用性。自監督式學習已經在電腦視覺、自然語言處理、語音識別等領域取得了許多重要的成果，並且具有廣泛的應用前景。">
+    <meta name="description" content="簡介自監督式學習的目標是學習到具有良好泛化效能的特徵表示，這些特徵可以被轉移到其他任務中。它在缺乏標記資料的情況下，通過利用大量未標記資料來提高機器學習的效能和可應用性。自監督式學習已經在電腦視覺、自然語言處理、語音識別等領域取得了許多重要的成果，並且具有廣泛的應用前景。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Self Supervised Learning">
 <meta property="og:url" content="https://leonicehot.github.io/2023/05/03/2023/May/Self%20Supervised%20Learning/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介 自監督式學習的目標是學習到具有良好泛化效能的特徵表示，這些特徵可以被轉移到其他任務中。它在缺乏標記資料的情況下，通過利用大量未標記資料來提高機器學習的效能和可應用性。自監督式學習已經在電腦視覺、自然語言處理、語音識別等領域取得了許多重要的成果，並且具有廣泛的應用前景。">
+<meta property="og:description" content="簡介自監督式學習的目標是學習到具有良好泛化效能的特徵表示，這些特徵可以被轉移到其他任務中。它在缺乏標記資料的情況下，通過利用大量未標記資料來提高機器學習的效能和可應用性。自監督式學習已經在電腦視覺、自然語言處理、語音識別等領域取得了許多重要的成果，並且具有廣泛的應用前景。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-05-03T03:46:15.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:37.339Z">
@@ -245,50 +245,45 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
-<p>自監督式學習的目標是學習到具有良好泛化效能的特徵表示，這些特徵可以被轉移到其他任務中。它在缺乏標記資料的情況下，通過利用大量未標記資料來提高機器學習的效能和可應用性。自監督式學習已經在電腦視覺、自然語言處理、語音識別等領域取得了許多重要的成果，並且具有廣泛的應用前景。
-<span id="more"></span></p>
-<h1 id="定義">定義</h1>
-<p>自監督式學習（Self-Supervised
-Learning）是一種機器學習方法，其中模型利用未標記的資料來學習有用的特徵表示，而不需要人工標記的標籤。相對於傳統的監督學習，自監督式學習利用資料中的內在結構和相關性來建立輔助目標，使模型能夠自主學習和提取特徵。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>自監督式學習的目標是學習到具有良好泛化效能的特徵表示，這些特徵可以被轉移到其他任務中。它在缺乏標記資料的情況下，通過利用大量未標記資料來提高機器學習的效能和可應用性。自監督式學習已經在電腦視覺、自然語言處理、語音識別等領域取得了許多重要的成果，並且具有廣泛的應用前景。</p>
+<span id="more"></span>
+
+<h1 id="定義"><a href="#定義" class="headerlink" title="定義"></a>定義</h1><p>自監督式學習（Self-Supervised Learning）是一種機器學習方法，其中模型利用未標記的資料來學習有用的特徵表示，而不需要人工標記的標籤。相對於傳統的監督學習，自監督式學習利用資料中的內在結構和相關性來建立輔助目標，使模型能夠自主學習和提取特徵。</p>
 <p>在自監督式學習中，資料通常被設計成具有某種形式的自我監督目標。這個目標可以是通過對資料進行某種變換（如旋轉、遮擋、剪切等）來建立的，或者是通過預測資料的某些部分（如預測遺失的部分、上下文等）來建立的。模型被訓練來預測或恢復這些自我監督目標，從而學習到資料的有用表示。</p>
-<h1 id="目的">目的</h1>
-<p>自監督式學習的主要目的是通過使用未標記的資料來學習有用的特徵表示，從而提高機器學習模型的效能和可應用性。它主要追求以下目標：</p>
-<ol type="1">
-<li><p>特徵學習：自監督式學習旨在讓模型自主學習到有用的特徵表示。通過設計自我監督目標，模型被迫學習資料中的結構和相關性，從而提取出對任務有用的特徵。這些學習到的特徵可以在其他任務中轉移使用，提高模型的泛化能力。</p></li>
-<li><p>減少對標記資料的依賴：自監督式學習的一個主要優勢是減少對大量標記資料的需求。標記資料的標籤需要大量的人力和時間成本，而自監督式學習通過利用未標記資料，能夠在缺乏標記資料的情況下進行有效的學習和訓練。</p></li>
-<li><p>提高可應用性：自監督式學習使得機器學習模型能夠利用大量的未標記資料，這在現實世界中是相對容易獲取的。這樣可以擴大機器學習的應用範圍，使得模型在更多的場景和任務中具有可應用性。</p></li>
-<li><p>靈活性和自主性：自監督式學習的設計可以讓模型在學習過程中自主探索和提取資料中的有用資訊。模型可以通過預測、重建、填充等方式，根據自己的目標和需要進行學習，具有一定的靈活性和自主性。</p></li>
+<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>自監督式學習的主要目的是通過使用未標記的資料來學習有用的特徵表示，從而提高機器學習模型的效能和可應用性。它主要追求以下目標：</p>
+<ol>
+<li><p>特徵學習：自監督式學習旨在讓模型自主學習到有用的特徵表示。通過設計自我監督目標，模型被迫學習資料中的結構和相關性，從而提取出對任務有用的特徵。這些學習到的特徵可以在其他任務中轉移使用，提高模型的泛化能力。</p>
+</li>
+<li><p>減少對標記資料的依賴：自監督式學習的一個主要優勢是減少對大量標記資料的需求。標記資料的標籤需要大量的人力和時間成本，而自監督式學習通過利用未標記資料，能夠在缺乏標記資料的情況下進行有效的學習和訓練。</p>
+</li>
+<li><p>提高可應用性：自監督式學習使得機器學習模型能夠利用大量的未標記資料，這在現實世界中是相對容易獲取的。這樣可以擴大機器學習的應用範圍，使得模型在更多的場景和任務中具有可應用性。</p>
+</li>
+<li><p>靈活性和自主性：自監督式學習的設計可以讓模型在學習過程中自主探索和提取資料中的有用資訊。模型可以通過預測、重建、填充等方式，根據自己的目標和需要進行學習，具有一定的靈活性和自主性。</p>
+</li>
 </ol>
 <p>總的來說，自監督式學習旨在通過自主學習未標記資料中的有用特徵，降低對標記資料的需求，提高模型的泛化能力和可應用性，並擴大機器學習的應用範圍</p>
-<h1 id="分類">分類</h1>
-<ol type="1">
-<li><p>基於重建的自監督式學習（Reconstruction-based Self-Supervised
-Learning）：這種方法通過讓模型學習將輸入資料轉換為自身的重建版本，來學習有用的特徵表示。例如，自編碼器（Autoencoder）是一種常見的基於重建的自監督式學習方法，它通過最小化輸入和重建輸出之間的差異來學習特徵表示。</p></li>
-<li><p>基於對比的自監督式學習（Contrastive-based Self-Supervised
-Learning）：這種方法通過將正樣本（具有相似特徵的樣本）與負樣本（具有不同特徵的樣本）區分開來，來學習有用的特徵表示。例如，對比學習（Contrastive
-Learning）利用一對樣本之間的相似度度量，將正樣本拉近，將負樣本推遠，以學習到有意義的特徵表示。</p></li>
-<li><p>基於預測的自監督式學習（Prediction-based Self-Supervised
-Learning）：這種方法通過讓模型預測輸入資料的某些部分或上下文，來學習有用的特徵表示。例如，預測填充（Predictive
-Filling）方法要求模型預測被遮擋的圖像區域，從而促使模型學習到圖像的局部結構和特徵。</p></li>
-<li><p>基於生成的自監督式學習（Generative-based Self-Supervised
-Learning）：這種方法通過訓練一個生成模型，使其生成與真實資料相似的樣本，從而學習有用的特徵表示。例如，生成對抗網絡（Generative
-Adversarial
-Networks）是一種常見的基於生成的自監督式學習方法，它通過生成器和判別器之間的對抗訓練來學習特徵表示。</p></li>
+<h1 id="分類"><a href="#分類" class="headerlink" title="分類"></a>分類</h1><ol>
+<li><p>基於重建的自監督式學習（Reconstruction-based Self-Supervised Learning）：這種方法通過讓模型學習將輸入資料轉換為自身的重建版本，來學習有用的特徵表示。例如，自編碼器（Autoencoder）是一種常見的基於重建的自監督式學習方法，它通過最小化輸入和重建輸出之間的差異來學習特徵表示。</p>
+</li>
+<li><p>基於對比的自監督式學習（Contrastive-based Self-Supervised Learning）：這種方法通過將正樣本（具有相似特徵的樣本）與負樣本（具有不同特徵的樣本）區分開來，來學習有用的特徵表示。例如，對比學習（Contrastive Learning）利用一對樣本之間的相似度度量，將正樣本拉近，將負樣本推遠，以學習到有意義的特徵表示。</p>
+</li>
+<li><p>基於預測的自監督式學習（Prediction-based Self-Supervised Learning）：這種方法通過讓模型預測輸入資料的某些部分或上下文，來學習有用的特徵表示。例如，預測填充（Predictive Filling）方法要求模型預測被遮擋的圖像區域，從而促使模型學習到圖像的局部結構和特徵。</p>
+</li>
+<li><p>基於生成的自監督式學習（Generative-based Self-Supervised Learning）：這種方法通過訓練一個生成模型，使其生成與真實資料相似的樣本，從而學習有用的特徵表示。例如，生成對抗網絡（Generative Adversarial Networks）是一種常見的基於生成的自監督式學習方法，它通過生成器和判別器之間的對抗訓練來學習特徵表示。</p>
+</li>
 </ol>
-<h1 id="應用">應用</h1>
-<p>自監督式學習在多個領域中都有廣泛的應用，以下是一些常見的應用範疇：</p>
-<ol type="1">
-<li><p>電腦視覺（Computer
-Vision）：自監督式學習可以應用於影像和視頻處理任務，例如影像分類、物體偵測、影像分割等。通過自主學習有用的特徵表示，模型可以在缺乏標記資料的情況下進行視覺任務的學習。</p></li>
-<li><p>自然語言處理（Natural Language
-Processing）：自監督式學習可以應用於語言理解、文本生成、情感分析等自然語言處理任務。通過預測下一個詞語、填充遺漏的詞語或者生成與輸入文本相似的文本，模型可以學習到有意義的語言表示。</p></li>
-<li><p>語音識別（Speech
-Recognition）：自監督式學習可以用於語音識別和語音生成任務。模型可以通過預測遺漏的語音片段、根據上下文生成語音等方式，學習到有用的語音表示和特徵。</p></li>
-<li><p>推薦系統（Recommendation
-Systems）：自監督式學習可以應用於推薦系統中的用戶行為建模和推薦算法優化。模型可以通過預測用戶的行為或者學習到隱藏的用戶興趣，從而提供個性化的推薦結果。</p></li>
-<li><p>自動駕駛（Autonomous
-Driving）：自監督式學習可以應用於自動駕駛領域，幫助車輛感知和理解環境。通過預測自駕車的運動或者學習到對象的運動模式，模型可以提取有用的視覺和感知特徵。</p></li>
+<h1 id="應用"><a href="#應用" class="headerlink" title="應用"></a>應用</h1><p>自監督式學習在多個領域中都有廣泛的應用，以下是一些常見的應用範疇：</p>
+<ol>
+<li><p>電腦視覺（Computer Vision）：自監督式學習可以應用於影像和視頻處理任務，例如影像分類、物體偵測、影像分割等。通過自主學習有用的特徵表示，模型可以在缺乏標記資料的情況下進行視覺任務的學習。</p>
+</li>
+<li><p>自然語言處理（Natural Language Processing）：自監督式學習可以應用於語言理解、文本生成、情感分析等自然語言處理任務。通過預測下一個詞語、填充遺漏的詞語或者生成與輸入文本相似的文本，模型可以學習到有意義的語言表示。</p>
+</li>
+<li><p>語音識別（Speech Recognition）：自監督式學習可以用於語音識別和語音生成任務。模型可以通過預測遺漏的語音片段、根據上下文生成語音等方式，學習到有用的語音表示和特徵。</p>
+</li>
+<li><p>推薦系統（Recommendation Systems）：自監督式學習可以應用於推薦系統中的用戶行為建模和推薦算法優化。模型可以通過預測用戶的行為或者學習到隱藏的用戶興趣，從而提供個性化的推薦結果。</p>
+</li>
+<li><p>自動駕駛（Autonomous Driving）：自監督式學習可以應用於自動駕駛領域，幫助車輛感知和理解環境。通過預測自駕車的運動或者學習到對象的運動模式，模型可以提取有用的視覺和感知特徵。</p>
+</li>
 </ol>
 <p>這只是自監督式學習應用的一小部分示例，實際上它可以在許多領域中發揮作用。自監督式學習的優勢在於它不需要大量的標記資料，能夠利用未標記資料來提升學習效果</p>
 
@@ -342,13 +337,13 @@ Driving）：自監督式學習可以應用於自動駕駛領域，幫助車輛�
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">288k</span>
+    <span title="總字數">289k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:44</span>
+    <span title="所需總閱讀時間">8:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

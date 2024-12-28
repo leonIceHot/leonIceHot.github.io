@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介 Zero-shot learning（零樣本學習）、One-shot learning（單樣本學習）和Few-shot learning（少樣本學習）是三種在限制樣本情境下的機器學習方法，它們之間有以下的差異：  樣本數量：Zero-shot learning 是在完全沒有樣本的情況下進行學習，模型需要從類別的描述或屬性中推理和學習。One-shot learning 是在僅">
+    <meta name="description" content="簡介Zero-shot learning（零樣本學習）、One-shot learning（單樣本學習）和Few-shot learning（少樣本學習）是三種在限制樣本情境下的機器學習方法，它們之間有以下的差異：  樣本數量：Zero-shot learning 是在完全沒有樣本的情況下進行學習，模型需要從類別的描述或屬性中推理和學習。One-shot learning 是在僅有一個樣本的情況下">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Zero-shot, One-shot和Few-shot的差異">
 <meta property="og:url" content="https://leonicehot.github.io/2023/05/03/2023/May/Zero-shot-One-shot%E5%92%8CFew-shot%E7%9A%84%E5%B7%AE%E7%95%B0/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介 Zero-shot learning（零樣本學習）、One-shot learning（單樣本學習）和Few-shot learning（少樣本學習）是三種在限制樣本情境下的機器學習方法，它們之間有以下的差異：  樣本數量：Zero-shot learning 是在完全沒有樣本的情況下進行學習，模型需要從類別的描述或屬性中推理和學習。One-shot learning 是在僅">
+<meta property="og:description" content="簡介Zero-shot learning（零樣本學習）、One-shot learning（單樣本學習）和Few-shot learning（少樣本學習）是三種在限制樣本情境下的機器學習方法，它們之間有以下的差異：  樣本數量：Zero-shot learning 是在完全沒有樣本的情況下進行學習，模型需要從類別的描述或屬性中推理和學習。One-shot learning 是在僅有一個樣本的情況下">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-05-03T04:07:28.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:37.398Z">
@@ -110,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#zero-shot-learning"><span class="nav-number">2.</span> <span class="nav-text">Zero-shot learning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#one-shot-learning"><span class="nav-number">3.</span> <span class="nav-text">One-shot learning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#few-shot-learning"><span class="nav-number">4.</span> <span class="nav-text">Few-shot learning</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Zero-shot-learning"><span class="nav-number">2.</span> <span class="nav-text">Zero-shot learning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#One-shot-learning"><span class="nav-number">3.</span> <span class="nav-text">One-shot learning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Few-shot-learning"><span class="nav-number">4.</span> <span class="nav-text">Few-shot learning</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -245,88 +245,48 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
-<p>Zero-shot learning（零樣本學習）、One-shot
-learning（單樣本學習）和Few-shot
-learning（少樣本學習）是三種在限制樣本情境下的機器學習方法，它們之間有以下的差異：</p>
-<ol type="1">
-<li><p>樣本數量：Zero-shot learning
-是在完全沒有樣本的情況下進行學習，模型需要從類別的描述或屬性中推理和學習。One-shot
-learning
-是在僅有一個樣本的情況下進行學習，模型需要利用這一個樣本進行推理和識別。Few-shot
-learning
-是在僅有少量樣本的情況下進行學習，通常是數個或數十個樣本。</p></li>
-<li><p>物體任務：Zero-shot learning
-的目標是識別或推理之前從未見過的類別，模型需要從類別的描述或屬性中學習如何識別這些類別。One-shot
-learning
-的目標是通過僅有的一個樣本進行類別識別，模型需要學習如何將這個樣本與新的樣本進行比較。Few-shot
-learning
-的目標是通過少量樣本學習如何適應新的任務或類別，模型需要在有限的樣本上進行訓練和泛化。</p></li>
-<li><p>方法和策略：Zero-shot learning
-使用屬性推理、轉移學習或語義嵌入等方法來利用類別的描述或屬性進行學習和識別。One-shot
-learning
-通常使用相似度比較、生成模型或概念學習等方法來從僅有的一個樣本進行學習和識別。Few-shot
-learning
-則利用元學習、生成模型或轉移學習等方法來在少量樣本上進行訓練和泛化。</p></li>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>Zero-shot learning（零樣本學習）、One-shot learning（單樣本學習）和Few-shot learning（少樣本學習）是三種在限制樣本情境下的機器學習方法，它們之間有以下的差異：</p>
+<ol>
+<li><p>樣本數量：Zero-shot learning 是在完全沒有樣本的情況下進行學習，模型需要從類別的描述或屬性中推理和學習。One-shot learning 是在僅有一個樣本的情況下進行學習，模型需要利用這一個樣本進行推理和識別。Few-shot learning 是在僅有少量樣本的情況下進行學習，通常是數個或數十個樣本。</p>
+</li>
+<li><p>物體任務：Zero-shot learning 的目標是識別或推理之前從未見過的類別，模型需要從類別的描述或屬性中學習如何識別這些類別。One-shot learning 的目標是通過僅有的一個樣本進行類別識別，模型需要學習如何將這個樣本與新的樣本進行比較。Few-shot learning 的目標是通過少量樣本學習如何適應新的任務或類別，模型需要在有限的樣本上進行訓練和泛化。</p>
+</li>
+<li><p>方法和策略：Zero-shot learning 使用屬性推理、轉移學習或語義嵌入等方法來利用類別的描述或屬性進行學習和識別。One-shot learning 通常使用相似度比較、生成模型或概念學習等方法來從僅有的一個樣本進行學習和識別。Few-shot learning 則利用元學習、生成模型或轉移學習等方法來在少量樣本上進行訓練和泛化。</p>
+</li>
 </ol>
-<p>總體而言，Zero-shot learning
-是在沒有任何樣本的情況下學習和識別新的類別，One-shot learning
-是在僅有一個樣本的情況下學習和識別，Few-shot learning
-是在少量樣本的情況下學習和識別。</p>
+<p>總體而言，Zero-shot learning 是在沒有任何樣本的情況下學習和識別新的類別，One-shot learning 是在僅有一個樣本的情況下學習和識別，Few-shot learning 是在少量樣本的情況下學習和識別。</p>
 <span id="more"></span>
-<h1 id="zero-shot-learning">Zero-shot learning</h1>
-<p>Zero-shot
-learning（零樣本學習）是指在沒有任何訓練樣本的情況下，訓練機器學習模型來識別新的類別或任務。傳統的機器學習方法需要使用大量的樣本數據進行訓練，但在現實應用中，可能會遇到之前未見過的類別或任務，而這些類別在訓練集中是不存在的。</p>
-<p>Zero-shot learning
-的目標是使模型能夠通過理解和應用類別之間的關係和屬性，對新的類別進行準確的識別。為了實現這一目標，常見的
-zero-shot learning 方法包括：</p>
-<ol type="1">
-<li><p>屬性推理（Attribute
-Inference）：這種方法基於對類別屬性的推理。模型學習到類別的屬性，例如顏色、形狀、大小等，然後通過屬性推理來判斷新的類別。</p></li>
-<li><p>轉移學習（Transfer
-Learning）：轉移學習是指將從其他相關任務或類別中學到的知識和特徵轉移到新的任務或類別中。在
-zero-shot learning
-中，轉移學習可以利用已經訓練好的模型的知識和特徵，來進行新類別的識別。</p></li>
-<li><p>語義嵌入（Semantic
-Embedding）：語義嵌入方法將類別映射到一個低維度的向量空間，使得類別之間的關係可以用向量之間的距離或相似度來表示。模型通過學習類別的語義嵌入，可以將新的類別映射到該空間中，並根據其在空間中的位置進行識別。</p></li>
+<h1 id="Zero-shot-learning"><a href="#Zero-shot-learning" class="headerlink" title="Zero-shot learning"></a>Zero-shot learning</h1><p>Zero-shot learning（零樣本學習）是指在沒有任何訓練樣本的情況下，訓練機器學習模型來識別新的類別或任務。傳統的機器學習方法需要使用大量的樣本數據進行訓練，但在現實應用中，可能會遇到之前未見過的類別或任務，而這些類別在訓練集中是不存在的。</p>
+<p>Zero-shot learning 的目標是使模型能夠通過理解和應用類別之間的關係和屬性，對新的類別進行準確的識別。為了實現這一目標，常見的 zero-shot learning 方法包括：</p>
+<ol>
+<li><p>屬性推理（Attribute Inference）：這種方法基於對類別屬性的推理。模型學習到類別的屬性，例如顏色、形狀、大小等，然後通過屬性推理來判斷新的類別。</p>
+</li>
+<li><p>轉移學習（Transfer Learning）：轉移學習是指將從其他相關任務或類別中學到的知識和特徵轉移到新的任務或類別中。在 zero-shot learning 中，轉移學習可以利用已經訓練好的模型的知識和特徵，來進行新類別的識別。</p>
+</li>
+<li><p>語義嵌入（Semantic Embedding）：語義嵌入方法將類別映射到一個低維度的向量空間，使得類別之間的關係可以用向量之間的距離或相似度來表示。模型通過學習類別的語義嵌入，可以將新的類別映射到該空間中，並根據其在空間中的位置進行識別。</p>
+</li>
 </ol>
-<h1 id="one-shot-learning">One-shot learning</h1>
-<p>One-shot
-learning（單樣本學習）是指在只有一個樣本的情況下，訓練機器學習模型來識別新的類別或任務。在傳統的機器學習中，通常需要大量的樣本數據才能訓練出準確的模型，然而在某些情況下，我們可能只有一個樣本可用，例如罕見的類別、特殊的情境或稀有的事件。</p>
-<p>One-shot learning
-的目標是使模型能夠從僅有的一個樣本中學習到足夠的知識和特徵，以便在面對新的類別或任務時進行準確的識別或推理。為了實現這一目標，常見的
-one-shot learning 方法包括：</p>
-<ol type="1">
-<li><p>相似度比較（Similarity
-Comparison）：這種方法通常基於樣本之間的相似度計算進行識別。模型學習到如何比較新樣本與已知類別樣本之間的相似度，並根據最相似的樣本進行分類。</p></li>
-<li><p>概念學習（Concept
-Learning）：概念學習方法旨在學習到類別的通用特徵或屬性。模型通過一個概念的例子來學習該類別的特徵，並根據這些特徵來識別新的類別。</p></li>
-<li><p>生成模型（Generative
-Models）：生成模型是指通過學習數據的分布來生成新的樣本。在 one-shot
-learning
-中，生成模型可以用來生成額外的樣本數據，以增加訓練數據的多樣性，從而提高模型的識別能力。</p></li>
-<li><p>元學習（Meta-Learning）：元學習方法可以學習到如何快速適應新的任務。在
-one-shot learning
-中，元學習模型通過先前的學習經驗和知識，快速適應新的類別或任務。</p></li>
+<h1 id="One-shot-learning"><a href="#One-shot-learning" class="headerlink" title="One-shot learning"></a>One-shot learning</h1><p>One-shot learning（單樣本學習）是指在只有一個樣本的情況下，訓練機器學習模型來識別新的類別或任務。在傳統的機器學習中，通常需要大量的樣本數據才能訓練出準確的模型，然而在某些情況下，我們可能只有一個樣本可用，例如罕見的類別、特殊的情境或稀有的事件。</p>
+<p>One-shot learning 的目標是使模型能夠從僅有的一個樣本中學習到足夠的知識和特徵，以便在面對新的類別或任務時進行準確的識別或推理。為了實現這一目標，常見的 one-shot learning 方法包括：</p>
+<ol>
+<li><p>相似度比較（Similarity Comparison）：這種方法通常基於樣本之間的相似度計算進行識別。模型學習到如何比較新樣本與已知類別樣本之間的相似度，並根據最相似的樣本進行分類。</p>
+</li>
+<li><p>概念學習（Concept Learning）：概念學習方法旨在學習到類別的通用特徵或屬性。模型通過一個概念的例子來學習該類別的特徵，並根據這些特徵來識別新的類別。</p>
+</li>
+<li><p>生成模型（Generative Models）：生成模型是指通過學習數據的分布來生成新的樣本。在 one-shot learning 中，生成模型可以用來生成額外的樣本數據，以增加訓練數據的多樣性，從而提高模型的識別能力。</p>
+</li>
+<li><p>元學習（Meta-Learning）：元學習方法可以學習到如何快速適應新的任務。在 one-shot learning 中，元學習模型通過先前的學習經驗和知識，快速適應新的類別或任務。</p>
+</li>
 </ol>
-<h1 id="few-shot-learning">Few-shot learning</h1>
-<p>Few-shot
-learning（少樣本學習）是指在僅有少量樣本（通常是數個或數十個）的情況下，訓練機器學習模型來處理新的任務或類別。在傳統的機器學習中，通常需要大量的樣本數據才能訓練出準確的模型，然而在現實應用中，我們可能只有很少的樣本可用，而這使得傳統的學習方法難以達到良好的性能。</p>
-<p>Few-shot learning
-的目標是使模型能夠從有限的樣本中學習到泛化能力，並能夠在面對新的類別或任務時表現良好。為了實現這一目標，常見的
-few-shot learning 方法包括：</p>
-<ol type="1">
-<li><p>元學習（Meta-Learning）：元學習是指訓練一個模型來學習如何快速適應新任務。在
-few-shot learning
-中，元學習模型會通過從多個相似的少樣本學習任務中學習到共享的特徵和知識，然後使用這些學習到的知識來快速適應新的類別或任務。</p></li>
-<li><p>生成模型（Generative
-Models）：生成模型是指通過學習數據的分布來生成新的樣本。在 few-shot
-learning
-中，生成模型可以用來生成額外的樣本數據，以增加訓練數據的多樣性，從而提高模型的泛化能力。</p></li>
-<li><p>轉移學習（Transfer
-Learning）：轉移學習是指將從其他相關任務或類別中學到的知識和特徵轉移到新的任務或類別中。在
-few-shot learning
-中，轉移學習可以利用已經訓練好的模型的知識和特徵，快速適應新的類別或任務。</p></li>
+<h1 id="Few-shot-learning"><a href="#Few-shot-learning" class="headerlink" title="Few-shot learning"></a>Few-shot learning</h1><p>Few-shot learning（少樣本學習）是指在僅有少量樣本（通常是數個或數十個）的情況下，訓練機器學習模型來處理新的任務或類別。在傳統的機器學習中，通常需要大量的樣本數據才能訓練出準確的模型，然而在現實應用中，我們可能只有很少的樣本可用，而這使得傳統的學習方法難以達到良好的性能。</p>
+<p>Few-shot learning 的目標是使模型能夠從有限的樣本中學習到泛化能力，並能夠在面對新的類別或任務時表現良好。為了實現這一目標，常見的 few-shot learning 方法包括：</p>
+<ol>
+<li><p>元學習（Meta-Learning）：元學習是指訓練一個模型來學習如何快速適應新任務。在 few-shot learning 中，元學習模型會通過從多個相似的少樣本學習任務中學習到共享的特徵和知識，然後使用這些學習到的知識來快速適應新的類別或任務。</p>
+</li>
+<li><p>生成模型（Generative Models）：生成模型是指通過學習數據的分布來生成新的樣本。在 few-shot learning 中，生成模型可以用來生成額外的樣本數據，以增加訓練數據的多樣性，從而提高模型的泛化能力。</p>
+</li>
+<li><p>轉移學習（Transfer Learning）：轉移學習是指將從其他相關任務或類別中學到的知識和特徵轉移到新的任務或類別中。在 few-shot learning 中，轉移學習可以利用已經訓練好的模型的知識和特徵，快速適應新的類別或任務。</p>
+</li>
 </ol>
 
     </div>
@@ -379,13 +339,13 @@ few-shot learning
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">288k</span>
+    <span title="總字數">289k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:44</span>
+    <span title="所需總閱讀時間">8:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

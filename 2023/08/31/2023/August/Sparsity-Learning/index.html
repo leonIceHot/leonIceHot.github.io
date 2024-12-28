@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介 「稀疏學習」是一種機器學習技術，旨在學習具有稀疏性的模型或參數，以便有效地表示數據並提取重要的特徵。稀疏學習強調僅使用少量的非零元素來表示數據，從而減少計算和存儲的成本，同時保持良好的性能。">
+    <meta name="description" content="簡介「稀疏學習」是一種機器學習技術，旨在學習具有稀疏性的模型或參數，以便有效地表示數據並提取重要的特徵。稀疏學習強調僅使用少量的非零元素來表示數據，從而減少計算和存儲的成本，同時保持良好的性能。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sparsity Learning">
 <meta property="og:url" content="https://leonicehot.github.io/2023/08/31/2023/August/Sparsity-Learning/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介 「稀疏學習」是一種機器學習技術，旨在學習具有稀疏性的模型或參數，以便有效地表示數據並提取重要的特徵。稀疏學習強調僅使用少量的非零元素來表示數據，從而減少計算和存儲的成本，同時保持良好的性能。">
+<meta property="og:description" content="簡介「稀疏學習」是一種機器學習技術，旨在學習具有稀疏性的模型或參數，以便有效地表示數據並提取重要的特徵。稀疏學習強調僅使用少量的非零元素來表示數據，從而減少計算和存儲的成本，同時保持良好的性能。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-08-31T08:31:38.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:35.729Z">
@@ -110,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#structured-sparsity"><span class="nav-number">2.</span> <span class="nav-text">Structured Sparsity</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fisher-matrix"><span class="nav-number">3.</span> <span class="nav-text">Fisher Matrix</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jacobian-matrix"><span class="nav-number">4.</span> <span class="nav-text">Jacobian matrix</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hessian-matrix"><span class="nav-number">5.</span> <span class="nav-text">Hessian Matrix</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Structured-Sparsity"><span class="nav-number">2.</span> <span class="nav-text">Structured Sparsity</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fisher-Matrix"><span class="nav-number">3.</span> <span class="nav-text">Fisher Matrix</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Jacobian-matrix"><span class="nav-number">4.</span> <span class="nav-text">Jacobian matrix</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hessian-Matrix"><span class="nav-number">5.</span> <span class="nav-text">Hessian Matrix</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -241,39 +241,26 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
-<p>「稀疏學習」是一種機器學習技術，旨在學習具有稀疏性的模型或參數，以便有效地表示數據並提取重要的特徵。稀疏學習強調僅使用少量的非零元素來表示數據，從而減少計算和存儲的成本，同時保持良好的性能。
-<span id="more"></span></p>
-<h1 id="structured-sparsity">Structured Sparsity</h1>
-<p>「結構性稀疏性」是指機器學習和信號處理領域的一個概念，其中在模型的參數上施加了特定的稀疏模式。稀疏性是指向量或矩陣中的許多元素為零，這意味著只有一小部分元素攜帶著有意義的信息。結構性稀疏性更進一步，通過對這些非零元素的分佈進行約束，以引入更多的結構信息。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>「稀疏學習」是一種機器學習技術，旨在學習具有稀疏性的模型或參數，以便有效地表示數據並提取重要的特徵。稀疏學習強調僅使用少量的非零元素來表示數據，從而減少計算和存儲的成本，同時保持良好的性能。</p>
+<span id="more"></span>
+
+<h1 id="Structured-Sparsity"><a href="#Structured-Sparsity" class="headerlink" title="Structured Sparsity"></a>Structured Sparsity</h1><p>「結構性稀疏性」是指機器學習和信號處理領域的一個概念，其中在模型的參數上施加了特定的稀疏模式。稀疏性是指向量或矩陣中的許多元素為零，這意味著只有一小部分元素攜帶著有意義的信息。結構性稀疏性更進一步，通過對這些非零元素的分佈進行約束，以引入更多的結構信息。</p>
 <p>在結構性稀疏性中，我們不僅關注參數中的哪些元素是非零的，還關注它們之間的關係和模式。這種方法可以幫助我們更有效地學習和表示數據中的模式，同時減少需要優化的參數數量。</p>
 <p>例如，在圖像處理中，我們可能有一個帶有大量參數的神經網絡，用於圖像的特徵提取。傳統的稀疏性方法可能僅將某些參數設置為零，而結構性稀疏性可能會強制某些區域的參數為零，從而引入有關圖像結構的先驗知識。</p>
-<h1 id="fisher-matrix">Fisher Matrix</h1>
-<p>費雪矩陣（Fisher
-Matrix），也稱為費雪信息矩陣，是在統計學和資訊理論中使用的數學概念，用於量化一組觀測中關於統計模型參數的資訊量。它在估計參數的不確定性或誤差方面特別重要。</p>
+<h1 id="Fisher-Matrix"><a href="#Fisher-Matrix" class="headerlink" title="Fisher Matrix"></a>Fisher Matrix</h1><p>費雪矩陣（Fisher Matrix），也稱為費雪信息矩陣，是在統計學和資訊理論中使用的數學概念，用於量化一組觀測中關於統計模型參數的資訊量。它在估計參數的不確定性或誤差方面特別重要。</p>
 <p>在統計推斷的背景下，費雪矩陣用於評估在特定參數值附近的模型預測和實際觀測之間的敏感性。這個矩陣包含了有關模型參數的資訊，可以用來計算標準誤、置信區間和相關參數的不確定性等。</p>
 <p>費雪矩陣是由偏導數組成的矩陣，其中每個元素都是對模型參數的偏導數的期望值的平方。這些偏導數表示了模型預測和參數之間的聯繫，並告訴我們在參數空間中的哪些方向上預測較為敏感。</p>
 <p>在各種統計推斷和參數估計的應用中，費雪矩陣提供了有關參數不確定性的重要信息，幫助我們更好地理解模型的行為和預測。它在機器學習、統計分析、信號處理等領域中都有廣泛的應用。</p>
-<h1 id="jacobian-matrix">Jacobian matrix</h1>
-<p>雅可比矩陣（Jacobian
-Matrix）是一種在微分幾何學和多變量微積分中使用的數學工具，用於描述多變量函數的變化率和對應的坐標變化關係。這個概念在許多領域，包括微分方程、最佳化、機器學習等，都有廣泛的應用。</p>
-<p>考慮一個將多個輸入變數映射到多個輸出變數的函數。雅可比矩陣將這個多變量函數的局部變化率表示為一個矩陣。如果有一個函數
-f(x₁, x₂, …, xₙ) 有 n 個輸入變數和 m 個輸出變數，則其雅可比矩陣 J 是一個
-m × n 的矩陣，其中每個元素 (i, j) 表示輸出變數 i 對輸入變數 j
-的偏導數。</p>
+<h1 id="Jacobian-matrix"><a href="#Jacobian-matrix" class="headerlink" title="Jacobian matrix"></a>Jacobian matrix</h1><p>雅可比矩陣（Jacobian Matrix）是一種在微分幾何學和多變量微積分中使用的數學工具，用於描述多變量函數的變化率和對應的坐標變化關係。這個概念在許多領域，包括微分方程、最佳化、機器學習等，都有廣泛的應用。</p>
+<p>考慮一個將多個輸入變數映射到多個輸出變數的函數。雅可比矩陣將這個多變量函數的局部變化率表示為一個矩陣。如果有一個函數 f(x₁, x₂, …, xₙ) 有 n 個輸入變數和 m 個輸出變數，則其雅可比矩陣 J 是一個 m × n 的矩陣，其中每個元素 (i, j) 表示輸出變數 i 對輸入變數 j 的偏導數。</p>
 <p>雅可比矩陣在許多應用中都有重要作用。以下是一些應用範例：</p>
 <p>最佳化和梯度下降：雅可比矩陣能夠描述目標函數在特定點的梯度，這對於最佳化算法如梯度下降法非常有用。</p>
 <p>微分方程：在微分方程求解中，雅可比矩陣能夠描述系統在特定狀態點的變化率，對於穩定性分析和模擬非常重要。</p>
 <p>機器學習和神經網絡：在反向傳播算法中，雅可比矩陣用於計算損失函數對於模型參數的梯度，進而調整參數以最小化損失。</p>
 <p>變換和變換群：在幾何學和變換理論中，雅可比矩陣能夠描述坐標變換的影響，幫助我們理解對象的變換和變化。</p>
 <p>總之，雅可比矩陣是一個重要的數學工具，用於描述多變量函數的變化率，並在微分幾何學、最佳化、機器學習等領域中有廣泛的應用。</p>
-<h1 id="hessian-matrix">Hessian Matrix</h1>
-<p>海森矩陣（Hessian
-Matrix）是一種在多變量微積分和優化中使用的數學工具，用於描述多變量函數的二階偏導數信息，以評估函數的局部曲率和形狀。海森矩陣在最佳化、機器學習、數學建模等領域中具有重要的應用。</p>
-<p>對於一個具有 n 個變數的多變量函數 f(x₁, x₂, …, xₙ)，其海森矩陣 H
-是一個 n × n 的矩陣，其中每個元素 (i, j) 表示對於變數 xᵢ 和 xⱼ
-的偏導數的二階混合偏導數。換句話說，Hessian
-矩陣告訴我們在特定點周圍函數的變化率，這有助於理解函數的局部形狀。</p>
+<h1 id="Hessian-Matrix"><a href="#Hessian-Matrix" class="headerlink" title="Hessian Matrix"></a>Hessian Matrix</h1><p>海森矩陣（Hessian Matrix）是一種在多變量微積分和優化中使用的數學工具，用於描述多變量函數的二階偏導數信息，以評估函數的局部曲率和形狀。海森矩陣在最佳化、機器學習、數學建模等領域中具有重要的應用。</p>
+<p>對於一個具有 n 個變數的多變量函數 f(x₁, x₂, …, xₙ)，其海森矩陣 H 是一個 n × n 的矩陣，其中每個元素 (i, j) 表示對於變數 xᵢ 和 xⱼ 的偏導數的二階混合偏導數。換句話說，Hessian 矩陣告訴我們在特定點周圍函數的變化率，這有助於理解函數的局部形狀。</p>
 <p>在應用中，海森矩陣有幾個重要的用途：</p>
 <p>最佳化：在最佳化算法中，海森矩陣能夠描述目標函數的曲率，幫助決定最佳化的方向和步長。</p>
 <p>機器學習：在二次優化問題中，海森矩陣能夠幫助快速找到函數的最小值或最大值。也常用於牛頓法等優化算法中。</p>
@@ -330,13 +317,13 @@ Matrix）是一種在多變量微積分和優化中使用的數學工具，用�
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">288k</span>
+    <span title="總字數">289k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:44</span>
+    <span title="所需總閱讀時間">8:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
