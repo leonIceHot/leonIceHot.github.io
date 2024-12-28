@@ -108,7 +108,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#section"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A"><span class="nav-number">2.</span> <span class="nav-text">環境設定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A"><span class="nav-number">2.</span> <span class="nav-text">環境設定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -243,40 +243,46 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="section"></h1>
-<span id="more"></span>
-<h1 id="環境設定">環境設定</h1>
-<ol type="1">
-<li>環境安裝
+    <div class="post-body" itemprop="articleBody"><h1 id><a href="#" class="headerlink" title></a></h1><span id="more"></span>
+<h1 id="環境設定"><a href="#環境設定" class="headerlink" title="環境設定"></a>環境設定</h1><ol>
+<li><p>環境安裝</p>
 <ul>
-<li><p>安裝 npm <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install npm</span><br></pre></td></tr></table></figure></p></li>
-<li><p>安裝 React <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app frontend --template typescript</span><br></pre></td></tr></table></figure></p></li>
-<li><p>Publish <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure></p></li>
-</ul></li>
-<li>Transfer Your Built React App:
+<li><p>安裝 npm</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install npm</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安裝 React</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app frontend --template typescript</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Publish</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Transfer Your Built React App:</p>
 <ul>
 <li>將build的檔案 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /home/user/Web/frontend/build# </span><br></pre></td></tr></table></figure></li>
 <li>移動到 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r * /var/www/html</span><br></pre></td></tr></table></figure></li>
-</ul></li>
-<li>Configure Nginx
+</ul>
+</li>
+<li><p>Configure Nginx</p>
 <ul>
 <li>Create a new server block configuration file <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/nginx/sites-available/your_react_app.conf</span><br></pre></td></tr></table></figure></li>
 <li>Move file to new server block <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo scp -r /etc/nginx/sites-available/your_react_app.conf /etc/nginx/sites-enabled/</span><br></pre></td></tr></table></figure></li>
-</ul></li>
-<li>Test and Restart Nginx
+</ul>
+</li>
+<li><p>Test and Restart Nginx    </p>
 <ul>
-<li>Check for configuration <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nginx -t</span><br></pre></td></tr></table></figure></li>
+<li>Check for configuration  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nginx -t</span><br></pre></td></tr></table></figure></li>
 <li>Restart Nginx <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart nginx</span><br></pre></td></tr></table></figure></li>
-</ul></li>
+</ul>
+</li>
 </ol>
-<h1 id="reference">Reference</h1>
-<ol type="1">
-<li><p>create react app
-https://create-react-app.dev/docs/adding-typescript/</p></li>
-<li><p>How To Deploy a React Application with Nginx on Ubuntu
-https://www.digitalocean.com/community/tutorials/deploy-react-application-with-nginx-on-ubuntu</p></li>
-<li><p>How to Deploy a React.js App with Nginx on Ubuntu 20.04
-https://help.clouding.io/hc/en-us/articles/4407785919762-How-to-Deploy-a-React-js-App-with-Nginx-on-Ubuntu-20-04</p></li>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<li><p>create react app<br><a target="_blank" rel="noopener" href="https://create-react-app.dev/docs/adding-typescript/">https://create-react-app.dev/docs/adding-typescript/</a></p>
+</li>
+<li><p>How To Deploy a React Application with Nginx on Ubuntu<br><a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/tutorials/deploy-react-application-with-nginx-on-ubuntu">https://www.digitalocean.com/community/tutorials/deploy-react-application-with-nginx-on-ubuntu</a></p>
+</li>
+<li><p>How to Deploy a React.js App with Nginx on Ubuntu 20.04<br><a target="_blank" rel="noopener" href="https://help.clouding.io/hc/en-us/articles/4407785919762-How-to-Deploy-a-React-js-App-with-Nginx-on-Ubuntu-20-04">https://help.clouding.io/hc/en-us/articles/4407785919762-How-to-Deploy-a-React-js-App-with-Nginx-on-Ubuntu-20-04</a></p>
+</li>
 </ol>
 
     </div>
@@ -329,13 +335,13 @@ https://help.clouding.io/hc/en-us/articles/4407785919762-How-to-Deploy-a-React-j
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">291k</span>
+    <span title="總字數">292k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:48</span>
+    <span title="所需總閱讀時間">8:51</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

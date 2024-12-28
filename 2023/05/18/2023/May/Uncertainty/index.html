@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介 深度學習的不確定性主要來自於模型的內部結構和學習過程中的隨機性。以下是一些主要的不確定性因素：  初始化：深度學習模型的初始權重設置往往是隨機的，這會影響到模型學習的過程和最終結果。 訓練數據：如果訓練數據不足或者分布不均，可能會導致模型的學習結果不穩定。 模型結構：不同的模型架構和超參數會影響模型的表現和學習能力，這也會帶來一定的不確定性。 最佳化算法：深度學習通常使用隨機梯度">
+    <meta name="description" content="簡介深度學習的不確定性主要來自於模型的內部結構和學習過程中的隨機性。以下是一些主要的不確定性因素：  初始化：深度學習模型的初始權重設置往往是隨機的，這會影響到模型學習的過程和最終結果。  訓練數據：如果訓練數據不足或者分布不均，可能會導致模型的學習結果不穩定。  模型結構：不同的模型架構和超參數會影響模型的表現和學習能力，這也會帶來一定的不確定性。  最佳化算法：深度學習通常使用隨機梯度下降（S">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Uncertainty">
 <meta property="og:url" content="https://leonicehot.github.io/2023/05/18/2023/May/Uncertainty/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介 深度學習的不確定性主要來自於模型的內部結構和學習過程中的隨機性。以下是一些主要的不確定性因素：  初始化：深度學習模型的初始權重設置往往是隨機的，這會影響到模型學習的過程和最終結果。 訓練數據：如果訓練數據不足或者分布不均，可能會導致模型的學習結果不穩定。 模型結構：不同的模型架構和超參數會影響模型的表現和學習能力，這也會帶來一定的不確定性。 最佳化算法：深度學習通常使用隨機梯度">
+<meta property="og:description" content="簡介深度學習的不確定性主要來自於模型的內部結構和學習過程中的隨機性。以下是一些主要的不確定性因素：  初始化：深度學習模型的初始權重設置往往是隨機的，這會影響到模型學習的過程和最終結果。  訓練數據：如果訓練數據不足或者分布不均，可能會導致模型的學習結果不穩定。  模型結構：不同的模型架構和超參數會影響模型的表現和學習能力，這也會帶來一定的不確定性。  最佳化算法：深度學習通常使用隨機梯度下降（S">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-05-18T01:53:13.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:37.369Z">
@@ -110,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%9E%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">類型</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -245,38 +245,35 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
-<p>深度學習的不確定性主要來自於模型的內部結構和學習過程中的隨機性。以下是一些主要的不確定性因素：</p>
-<ol type="1">
-<li><p>初始化：深度學習模型的初始權重設置往往是隨機的，這會影響到模型學習的過程和最終結果。</p></li>
-<li><p>訓練數據：如果訓練數據不足或者分布不均，可能會導致模型的學習結果不穩定。</p></li>
-<li><p>模型結構：不同的模型架構和超參數會影響模型的表現和學習能力，這也會帶來一定的不確定性。</p></li>
-<li><p>最佳化算法：深度學習通常使用隨機梯度下降（SGD）或其變體來最佳化權重。這些算法的更新是基於訓練數據的隨機子集（或者稱為批次）進行的，這也會帶來不確定性。</p></li>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>深度學習的不確定性主要來自於模型的內部結構和學習過程中的隨機性。以下是一些主要的不確定性因素：</p>
+<ol>
+<li><p>初始化：深度學習模型的初始權重設置往往是隨機的，這會影響到模型學習的過程和最終結果。</p>
+</li>
+<li><p>訓練數據：如果訓練數據不足或者分布不均，可能會導致模型的學習結果不穩定。</p>
+</li>
+<li><p>模型結構：不同的模型架構和超參數會影響模型的表現和學習能力，這也會帶來一定的不確定性。</p>
+</li>
+<li><p>最佳化算法：深度學習通常使用隨機梯度下降（SGD）或其變體來最佳化權重。這些算法的更新是基於訓練數據的隨機子集（或者稱為批次）進行的，這也會帶來不確定性。</p>
+</li>
 </ol>
-<p>為了處理這些不確定性，研究人員有時會使用一些技術，例如概率建模（probabilistic
-modeling）或者貝葉斯深度學習（Bayesian deep
-learning）。這些方法可以對模型的不確定性進行量化，使我們能夠對模型的預測結果有更多的信心。
-<span id="more"></span> # 類型
-在機器學習和統計學中，不確定性（Uncertainty）是指對於某個事件或結果的不確定程度，即我們對該事件或結果的信心程度有多高或有多低。不確定性是一個重要的概念，因為它反映了模型對現實世界的預測或估計的信心水平。</p>
-<ol type="1">
-<li><p>模型不確定性（Model Uncertainty）：
-指的是由於模型的結構和參數的限制，對輸入和輸出之間的映射的不確定性。這可能源於模型的複雜性不足、訓練數據的噪聲或限制的模型假設。</p></li>
-<li><p>數據不確定性（Data Uncertainty）：
-來自於數據本身的不確定性，可能是由於測量誤差、樣本數不足或數據噪聲。在模型中，這種不確定性可以通過對數據的置信區間進行建模。</p></li>
-<li><p>參數不確定性（Parameter Uncertainty）：
-指的是模型參數的估計不確定性。這可以通過貝葉斯方法（Bayesian
-methods）來建模，其中參數被視為概率分佈而不是單一固定值。</p></li>
-<li><p>混淆不確定性（Ambiguity Uncertainty）：
-來自於問題本身的不確定性，即問題的定義或目標可能模棱兩可，從而導致模型難以精確預測。</p></li>
-<li><p>不確定性的類型（Epistemic Uncertainty vs. Aleatoric
-Uncertainty）：</p></li>
+<p>為了處理這些不確定性，研究人員有時會使用一些技術，例如概率建模（probabilistic modeling）或者貝葉斯深度學習（Bayesian deep learning）。這些方法可以對模型的不確定性進行量化，使我們能夠對模型的預測結果有更多的信心。</p>
+<span id="more"></span>
+<h1 id="類型"><a href="#類型" class="headerlink" title="類型"></a>類型</h1><p>在機器學習和統計學中，不確定性（Uncertainty）是指對於某個事件或結果的不確定程度，即我們對該事件或結果的信心程度有多高或有多低。不確定性是一個重要的概念，因為它反映了模型對現實世界的預測或估計的信心水平。</p>
+<ol>
+<li><p>模型不確定性（Model Uncertainty）： 指的是由於模型的結構和參數的限制，對輸入和輸出之間的映射的不確定性。這可能源於模型的複雜性不足、訓練數據的噪聲或限制的模型假設。</p>
+</li>
+<li><p>數據不確定性（Data Uncertainty）： 來自於數據本身的不確定性，可能是由於測量誤差、樣本數不足或數據噪聲。在模型中，這種不確定性可以通過對數據的置信區間進行建模。</p>
+</li>
+<li><p>參數不確定性（Parameter Uncertainty）： 指的是模型參數的估計不確定性。這可以通過貝葉斯方法（Bayesian methods）來建模，其中參數被視為概率分佈而不是單一固定值。</p>
+</li>
+<li><p>混淆不確定性（Ambiguity Uncertainty）： 來自於問題本身的不確定性，即問題的定義或目標可能模棱兩可，從而導致模型難以精確預測。</p>
+</li>
+<li><p>不確定性的類型（Epistemic Uncertainty vs. Aleatoric Uncertainty）：</p>
+</li>
 </ol>
 <ul>
-<li>Epistemic Uncertainty（知識不確定性）：
-源於我們對模型或系統的限制了解，通常可以透過更多的數據或改進模型來減少。</li>
-<li>Aleatoric Uncertainty（隨機不確定性）：
-源於系統本身的不可知性，即使有無窮多的數據和完美的模型，這種不確定性也無法完全消除。
-在實際應用中，理解和量化不確定性是非常重要的，特別是在需要做出風險評估或需要可靠決策的情況下。处理不確定性的方法包括貝葉斯統計方法、蒙特卡羅模擬、置信區間估計等。</li>
+<li>Epistemic Uncertainty（知識不確定性）： 源於我們對模型或系統的限制了解，通常可以透過更多的數據或改進模型來減少。</li>
+<li>Aleatoric Uncertainty（隨機不確定性）： 源於系統本身的不可知性，即使有無窮多的數據和完美的模型，這種不確定性也無法完全消除。<br>在實際應用中，理解和量化不確定性是非常重要的，特別是在需要做出風險評估或需要可靠決策的情況下。处理不確定性的方法包括貝葉斯統計方法、蒙特卡羅模擬、置信區間估計等。</li>
 </ul>
 
     </div>
@@ -329,13 +326,13 @@ Uncertainty）：</p></li>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">291k</span>
+    <span title="總字數">292k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:48</span>
+    <span title="所需總閱讀時間">8:51</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

@@ -19,27 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="前言 協助友人快速執行程式，將程式開發流程記錄下來以供參考，訓練完成時間約10個小時。 開發環境使用一張 Nvidia 2080Ti 顯示卡，程式並無大問題，簡單處理將logs資料夾刪除。 初步流程約半個小時內可以快速上手。">
+    <meta name="description" content="前言協助友人快速執行程式，將程式開發流程記錄下來以供參考，訓練完成時間約10個小時。開發環境使用一張 Nvidia 2080Ti 顯示卡，程式並無大問題，簡單處理將logs資料夾刪除。初步流程約半個小時內可以快速上手。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="L2T-ww - Learning What and Where to Transfer">
 <meta property="og:url" content="https://leonicehot.github.io/2022/04/17/2022/April/L2T-ww/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="前言 協助友人快速執行程式，將程式開發流程記錄下來以供參考，訓練完成時間約10個小時。 開發環境使用一張 Nvidia 2080Ti 顯示卡，程式並無大問題，簡單處理將logs資料夾刪除。 初步流程約半個小時內可以快速上手。">
+<meta property="og:description" content="前言協助友人快速執行程式，將程式開發流程記錄下來以供參考，訓練完成時間約10個小時。開發環境使用一張 Nvidia 2080Ti 顯示卡，程式並無大問題，簡單處理將logs資料夾刪除。初步流程約半個小時內可以快速上手。">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FOriginal%20data%20-%20CUB200.png?alt=media&amp;token=2d607547-c45b-47a4-8281-422391cde43d">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Fcub200%20dataset.png?alt=media&amp;token=b0536668-a66b-4428-8c7a-0488b62f9454">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FSplit%20data%20-%20CUB200.png?alt=media&amp;token=752d4444-c834-496d-bd83-9339ffeb7fb7">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FOriginal%20data%20-%20Stanford%20Dogs.png?alt=media&amp;token=54f61451-0002-4986-aeda-746d890eead5">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Fdog%20dataset.png?alt=media&amp;token=68a729ca-b375-4a95-bcf6-976d21f1e169">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FSplit%20data%20-%20Stanford%20Dogs.png?alt=media&amp;token=89cbe1cc-cbf3-43ad-8953-203e1e0ef571">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Ftrain%20cmd.png?alt=media&amp;token=37e3ed7f-c395-45b0-8ee6-a035a19252b3">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Ftrain%20process.png?alt=media&amp;token=16887b39-31a5-43e6-b41e-5fc0a9cb9378">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Fresult.png?alt=media&amp;token=6b320fb8-ca74-4661-9dc0-c34cb1b839a6">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FOriginal%20data%20-%20CUB200.png?alt=media&token=2d607547-c45b-47a4-8281-422391cde43d">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Fcub200%20dataset.png?alt=media&token=b0536668-a66b-4428-8c7a-0488b62f9454">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FSplit%20data%20-%20CUB200.png?alt=media&token=752d4444-c834-496d-bd83-9339ffeb7fb7">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FOriginal%20data%20-%20Stanford%20Dogs.png?alt=media&token=54f61451-0002-4986-aeda-746d890eead5">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Fdog%20dataset.png?alt=media&token=68a729ca-b375-4a95-bcf6-976d21f1e169">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FSplit%20data%20-%20Stanford%20Dogs.png?alt=media&token=89cbe1cc-cbf3-43ad-8953-203e1e0ef571">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Ftrain%20cmd.png?alt=media&token=37e3ed7f-c395-45b0-8ee6-a035a19252b3">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Ftrain%20process.png?alt=media&token=16887b39-31a5-43e6-b41e-5fc0a9cb9378">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Fresult.png?alt=media&token=6b320fb8-ca74-4661-9dc0-c34cb1b839a6">
 <meta property="article:published_time" content="2022-04-17T05:32:54.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:34.738Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FOriginal%20data%20-%20CUB200.png?alt=media&amp;token=2d607547-c45b-47a4-8281-422391cde43d">
+<meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FOriginal%20data%20-%20CUB200.png?alt=media&token=2d607547-c45b-47a4-8281-422391cde43d">
 
 
 <link rel="canonical" href="https://leonicehot.github.io/2022/04/17/2022/April/L2T-ww/">
@@ -230,7 +230,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>688</span>
+      <span>623</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -247,69 +247,54 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="前言">前言</h1>
-<p>協助友人快速執行程式，將程式開發流程記錄下來以供參考，訓練完成時間約10個小時。
-開發環境使用一張 Nvidia 2080Ti
-顯示卡，程式並無大問題，簡單處理將logs資料夾刪除。
-初步流程約半個小時內可以快速上手。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>協助友人快速執行程式，將程式開發流程記錄下來以供參考，訓練完成時間約10個小時。<br>開發環境使用一張 Nvidia 2080Ti 顯示卡，程式並無大問題，簡單處理將logs資料夾刪除。<br>初步流程約半個小時內可以快速上手。</p>
 <span id="more"></span>
-<h1 id="資料來源">資料來源</h1>
-<ul>
-<li><p>Source Code - L2T-ww https://github.com/alinlab/L2T-ww</p></li>
-<li><p>ICML 2019 Paper - Learning What and Where to Transfer
-https://arxiv.org/pdf/1905.05901.pdf</p></li>
+
+<h1 id="資料來源"><a href="#資料來源" class="headerlink" title="資料來源"></a>資料來源</h1><ul>
+<li><p>Source Code - L2T-ww<br><a target="_blank" rel="noopener" href="https://github.com/alinlab/L2T-ww">https://github.com/alinlab/L2T-ww</a></p>
+</li>
+<li><p>ICML 2019 Paper - Learning What and Where to Transfer<br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1905.05901.pdf">https://arxiv.org/pdf/1905.05901.pdf</a></p>
+</li>
 </ul>
-<h1 id="環境需求">環境需求</h1>
-<ul>
-<li>python&gt;=3.6</li>
-<li>pytorch&gt;=1.0</li>
+<h1 id="環境需求"><a href="#環境需求" class="headerlink" title="環境需求"></a>環境需求</h1><ul>
+<li>python&gt;&#x3D;3.6</li>
+<li>pytorch&gt;&#x3D;1.0</li>
 <li>torchvision</li>
-<li>cuda&gt;=9.0</li>
+<li>cuda&gt;&#x3D;9.0</li>
 </ul>
-<h1 id="資料集">資料集</h1>
-<p>將下載後的檔案根據下圖所示建立該目錄， 只針對CUB-200
-datasets與Stanford Dogs datasets，其餘未測試。</p>
+<h1 id="資料集"><a href="#資料集" class="headerlink" title="資料集"></a>資料集</h1><p>將下載後的檔案根據下圖所示建立該目錄，<br>只針對CUB-200 datasets與Stanford Dogs datasets，其餘未測試。</p>
 <ul>
-<li><p>The Caltech-UCSD Birds-200-2011 (CUB-200)
-https://data.deepai.org/CUB200(2011).zip</p></li>
-<li><p>Run cub200.py</p></li>
+<li>The Caltech-UCSD Birds-200-2011 (CUB-200)<br><a target="_blank" rel="noopener" href="https://data.deepai.org/CUB200(2011).zip">https://data.deepai.org/CUB200(2011).zip</a></li>
 </ul>
-<figure>
-<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FOriginal%20data%20-%20CUB200.png?alt=media&amp;token=2d607547-c45b-47a4-8281-422391cde43d" alt="Original data - CUB200">
-<figcaption aria-hidden="true">Original data - CUB200</figcaption>
-</figure>
-<figure>
-<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Fcub200%20dataset.png?alt=media&amp;token=b0536668-a66b-4428-8c7a-0488b62f9454" alt="cub200 dataset">
-<figcaption aria-hidden="true">cub200 dataset</figcaption>
-</figure>
-<figure>
-<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FSplit%20data%20-%20CUB200.png?alt=media&amp;token=752d4444-c834-496d-bd83-9339ffeb7fb7" alt="Split data - CUB200">
-<figcaption aria-hidden="true">Split data - CUB200</figcaption>
-</figure>
 <ul>
-<li>Stanford Dogs datasets
-http://vision.stanford.edu/aditya86/ImageNetDogs/ 下載對應的目錄
+<li>Run cub200.py</li>
+</ul>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FOriginal%20data%20-%20CUB200.png?alt=media&token=2d607547-c45b-47a4-8281-422391cde43d" alt="Original data - CUB200"></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Fcub200%20dataset.png?alt=media&token=b0536668-a66b-4428-8c7a-0488b62f9454" alt="cub200 dataset"></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FSplit%20data%20-%20CUB200.png?alt=media&token=752d4444-c834-496d-bd83-9339ffeb7fb7" alt="Split data - CUB200"></p>
 <ul>
+<li>Stanford Dogs datasets<br><a target="_blank" rel="noopener" href="http://vision.stanford.edu/aditya86/ImageNetDogs/">http://vision.stanford.edu/aditya86/ImageNetDogs/</a><br>下載對應的目錄<ul>
 <li>Images</li>
 <li>List</li>
-</ul></li>
-<li>Run dog.py <img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FOriginal%20data%20-%20Stanford%20Dogs.png?alt=media&amp;token=54f61451-0002-4986-aeda-746d890eead5" alt="Original data - Stanford Dogs"></li>
 </ul>
-<figure>
-<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Fdog%20dataset.png?alt=media&amp;token=68a729ca-b375-4a95-bcf6-976d21f1e169" alt="dog dataset">
-<figcaption aria-hidden="true">dog dataset</figcaption>
-</figure>
-<figure>
-<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FSplit%20data%20-%20Stanford%20Dogs.png?alt=media&amp;token=89cbe1cc-cbf3-43ad-8953-203e1e0ef571" alt="Split data - Stanford Dogs">
-<figcaption aria-hidden="true">Split data - Stanford Dogs</figcaption>
-</figure>
-<h1 id="訓練模型">訓練模型</h1>
-<p>開啟終端機，切換路徑至專案根目錄，輸入指令，開始訓練。</p>
+</li>
+</ul>
 <ul>
-<li><p>切換至專案目錄 <img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Ftrain%20cmd.png?alt=media&amp;token=37e3ed7f-c395-45b0-8ee6-a035a19252b3" alt="train cmd"></p></li>
-<li><p>指令 (Windows) <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">python train_l2t_ww.py --dataset dog --datasplit dog --dataroot ./data/dog --experiment ./logs/dog/</span><br><span class="line"></span><br><span class="line">python train_l2t_ww.py --dataset cub200 --datasplit cub200 --dataroot ./data/CUB_200_2011 --experiment ./logs/CUB_200_2011/</span><br><span class="line"></span><br><span class="line">python train_l2t_ww.py --dataset cifar100 --datasplit cifar100 --dataroot ./data/ --experiment logs/cifar100_0/ --source-path logs --source-model resnet32 --source-domain tinyimagenet-200 --target-model vgg9_bn --pairs 4-0,4-1,4-2,4-3,4-4,9-0,9-1,9-2,9-3,9-4,14-0,14-1,14-2,14-3,14-4 --batchSize 128</span><br><span class="line"></span><br><span class="line">python train_l2t_ww.py --dataset stl10 --datasplit stl10 --dataroot ./data/ --experiment logs/stl10_0/ --source-path logs --source-model resnet32 --source-domain tinyimagenet-200 --target-model vgg9_bn --pairs 4-0,4-1,4-2,4-3,4-4,9-0,9-1,9-2,9-3,9-4,14-0,14-1,14-2,14-3,14-4 --batchSize 128</span><br><span class="line"></span><br></pre></td></tr></table></figure></p></li>
-<li><p>訓練過程紀錄 <img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Ftrain%20process.png?alt=media&amp;token=16887b39-31a5-43e6-b41e-5fc0a9cb9378" alt="train process"></p></li>
-<li><p>訓練結果 <img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Fresult.png?alt=media&amp;token=6b320fb8-ca74-4661-9dc0-c34cb1b839a6" alt="result"></p></li>
+<li>Run dog.py<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FOriginal%20data%20-%20Stanford%20Dogs.png?alt=media&token=54f61451-0002-4986-aeda-746d890eead5" alt="Original data - Stanford Dogs"></li>
+</ul>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Fdog%20dataset.png?alt=media&token=68a729ca-b375-4a95-bcf6-976d21f1e169" alt="dog dataset"></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2FSplit%20data%20-%20Stanford%20Dogs.png?alt=media&token=89cbe1cc-cbf3-43ad-8953-203e1e0ef571" alt="Split data - Stanford Dogs"></p>
+<h1 id="訓練模型"><a href="#訓練模型" class="headerlink" title="訓練模型"></a>訓練模型</h1><p>開啟終端機，切換路徑至專案根目錄，輸入指令，開始訓練。</p>
+<ul>
+<li><p>切換至專案目錄<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Ftrain%20cmd.png?alt=media&token=37e3ed7f-c395-45b0-8ee6-a035a19252b3" alt="train cmd"></p>
+</li>
+<li><p>指令 (Windows) </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">python train_l2t_ww.py --dataset dog --datasplit dog --dataroot ./data/dog --experiment ./logs/dog/</span><br><span class="line"></span><br><span class="line">python train_l2t_ww.py --dataset cub200 --datasplit cub200 --dataroot ./data/CUB_200_2011 --experiment ./logs/CUB_200_2011/</span><br><span class="line"></span><br><span class="line">python train_l2t_ww.py --dataset cifar100 --datasplit cifar100 --dataroot ./data/ --experiment logs/cifar100_0/ --source-path logs --source-model resnet32 --source-domain tinyimagenet-200 --target-model vgg9_bn --pairs 4-0,4-1,4-2,4-3,4-4,9-0,9-1,9-2,9-3,9-4,14-0,14-1,14-2,14-3,14-4 --batchSize 128</span><br><span class="line"></span><br><span class="line">python train_l2t_ww.py --dataset stl10 --datasplit stl10 --dataroot ./data/ --experiment logs/stl10_0/ --source-path logs --source-model resnet32 --source-domain tinyimagenet-200 --target-model vgg9_bn --pairs 4-0,4-1,4-2,4-3,4-4,9-0,9-1,9-2,9-3,9-4,14-0,14-1,14-2,14-3,14-4 --batchSize 128</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>訓練過程紀錄<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Ftrain%20process.png?alt=media&token=16887b39-31a5-43e6-b41e-5fc0a9cb9378" alt="train process"></p>
+</li>
+<li><p>訓練結果<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/L2T-ww%2Fresult.png?alt=media&token=6b320fb8-ca74-4661-9dc0-c34cb1b839a6" alt="result"></p>
+</li>
 </ul>
 
     </div>
@@ -362,13 +347,13 @@ http://vision.stanford.edu/aditya86/ImageNetDogs/ 下載對應的目錄
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">291k</span>
+    <span title="總字數">292k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:48</span>
+    <span title="所需總閱讀時間">8:51</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

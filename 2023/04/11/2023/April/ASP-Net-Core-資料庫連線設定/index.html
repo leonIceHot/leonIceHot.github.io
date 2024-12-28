@@ -19,40 +19,40 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介 MS SQL Server以Database First為主的連線設定">
+    <meta name="description" content="簡介MS SQL Server以Database First為主的連線設定">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ASP.Net Core 資料庫連線設定">
 <meta property="og:url" content="https://leonicehot.github.io/2023/04/11/2023/April/ASP-Net-Core-%E8%B3%87%E6%96%99%E5%BA%AB%E9%80%A3%E7%B7%9A%E8%A8%AD%E5%AE%9A/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介 MS SQL Server以Database First為主的連線設定">
+<meta property="og:description" content="簡介MS SQL Server以Database First為主的連線設定">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/asp-net-core-web-api.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/NuGet.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/EntityFrameworkCore-SqlServer.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/NuGetConsole.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/Scaffold-DbContext.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/ERPContext.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/OnConfiguring.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/program.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/LocalDBDownload.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/SqlLocalDB.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/appsetting.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/mdf.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/database-attach1.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/database-attach2.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/server-management.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/server-management2.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/server-management3.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/server-management4.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/sql-server.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/APIController.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/TodoController.png">
-<meta property="og:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/json.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/asp-net-core-web-api.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/NuGet.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/EntityFrameworkCore-SqlServer.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/NuGetConsole.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/Scaffold-DbContext.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/ERPContext.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/OnConfiguring.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/program.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/LocalDBDownload.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/SqlLocalDB.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/appsetting.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/mdf.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/database-attach1.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/database-attach2.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/server-management.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/server-management2.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/server-management3.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/server-management4.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/sql-server.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/APIController.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/TodoController.png">
+<meta property="og:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/json.png">
 <meta property="article:published_time" content="2023-04-11T01:06:43.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:35.194Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://leonicehot.github.io/2023/04/11/2023/images/2023/ASP-NET-CORE-DATABASE/asp-net-core-web-api.png">
+<meta name="twitter:image" content="https://leonicehot.github.io/images/2023/ASP-NET-CORE-DATABASE/asp-net-core-web-api.png">
 
 
 <link rel="canonical" href="https://leonicehot.github.io/2023/04/11/2023/April/ASP-Net-Core-%E8%B3%87%E6%96%99%E5%BA%AB%E9%80%A3%E7%B7%9A%E8%A8%AD%E5%AE%9A/">
@@ -133,8 +133,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#asp.net-core-web-api"><span class="nav-number">2.</span> <span class="nav-text">ASP.Net Core Web API</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D%E5%A5%97%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">安裝套件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%A3%E7%B7%9A%E8%A8%AD%E5%AE%9A"><span class="nav-number">4.</span> <span class="nav-text">連線設定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#localdb-%E8%A8%AD%E5%AE%9A"><span class="nav-number">5.</span> <span class="nav-text">LocalDB 設定</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#sql-server-2022-express-localdb-%E5%AE%89%E8%A3%9D"><span class="nav-number">5.1.</span> <span class="nav-text">SQL Server 2022 Express
-LocalDB 安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%AF%E5%85%A5mdf"><span class="nav-number">5.2.</span> <span class="nav-text">匯入mdf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%95%9Fnuget-console"><span class="nav-number">5.3.</span> <span class="nav-text">開啟NuGet-Console</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%95%9F%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%AE%A1%E7%90%86"><span class="nav-number">5.4.</span> <span class="nav-text">開啟伺服器管理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%BA%AB%E7%89%A9%E4%BB%B6%E4%BD%BF%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">資料庫物件使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#crud"><span class="nav-number">7.</span> <span class="nav-text">CRUD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#create"><span class="nav-number">7.1.</span> <span class="nav-text">Create</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#read"><span class="nav-number">7.2.</span> <span class="nav-text">Read</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#update"><span class="nav-number">7.3.</span> <span class="nav-text">Update</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete"><span class="nav-number">7.4.</span> <span class="nav-text">Delete</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#references"><span class="nav-number">8.</span> <span class="nav-text">References</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ASP-Net-Core-Web-API"><span class="nav-number">2.</span> <span class="nav-text">ASP.Net Core Web API</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D%E5%A5%97%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">安裝套件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%A3%E7%B7%9A%E8%A8%AD%E5%AE%9A"><span class="nav-number">4.</span> <span class="nav-text">連線設定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LocalDB-%E8%A8%AD%E5%AE%9A"><span class="nav-number">5.</span> <span class="nav-text">LocalDB 設定</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-Server-2022-Express-LocalDB-%E5%AE%89%E8%A3%9D"><span class="nav-number">5.1.</span> <span class="nav-text">SQL Server 2022 Express LocalDB 安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%AF%E5%85%A5mdf"><span class="nav-number">5.2.</span> <span class="nav-text">匯入mdf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%95%9FNuGet-Console"><span class="nav-number">5.3.</span> <span class="nav-text">開啟NuGet-Console</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%95%9F%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%AE%A1%E7%90%86"><span class="nav-number">5.4.</span> <span class="nav-text">開啟伺服器管理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%BA%AB%E7%89%A9%E4%BB%B6%E4%BD%BF%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">資料庫物件使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CRUD"><span class="nav-number">7.</span> <span class="nav-text">CRUD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Create"><span class="nav-number">7.1.</span> <span class="nav-text">Create</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Read"><span class="nav-number">7.2.</span> <span class="nav-text">Read</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Update"><span class="nav-number">7.3.</span> <span class="nav-text">Update</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Delete"><span class="nav-number">7.4.</span> <span class="nav-text">Delete</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">8.</span> <span class="nav-text">References</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -265,57 +264,40 @@ LocalDB 安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-lin
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
-<p>MS SQL Server以Database First為主的連線設定 <span id="more"></span></p>
-<h1 id="asp.net-core-web-api">ASP.Net Core Web API</h1>
-<figure>
-<img src="../../images/2023/ASP-NET-CORE-DATABASE/asp-net-core-web-api.png" alt="asp-net-core-web-api">
-<figcaption aria-hidden="true">asp-net-core-web-api</figcaption>
-</figure>
-<h1 id="安裝套件">安裝套件</h1>
-<p><img src="../../images/2023/ASP-NET-CORE-DATABASE/NuGet.png" alt="NuGet"> <img src="../../images/2023/ASP-NET-CORE-DATABASE/EntityFrameworkCore-SqlServer.png" alt="EntityFrameworkCore-SqlServer"></p>
-<p>安裝下列套件 * Microsoft.EntityFrameworkCore *
-Microsoft.EntityFrameworkCore.SqlServer *
-Microsoft.EntityFrameworkCore.Tools *
-Microsoft.EntityFrameworkCore.Design</p>
-<h1 id="連線設定">連線設定</h1>
-<p><img src="../../images/2023/ASP-NET-CORE-DATABASE/NuGetConsole.png" alt="NuGetConsole"> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Scaffold-DbContext &quot;Server=伺服器位置;Database=資料庫;Trusted_Connection=True;</span><br><span class="line">TrustServerCertificate=True;User ID=帳號;Password=密碼&quot; Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force</span><br></pre></td></tr></table></figure> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scaffold-DbContext &quot;Server=DESKTOP-C7VSQGJ\SQLEXPRESS;Database=ERP;User ID=chwang;Password=Agh120986;Trusted_Connection=True;TrustServerCertificate=true;&quot; Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force -CoNtext ErpContext</span><br></pre></td></tr></table></figure> <img src="../../images/2023/ASP-NET-CORE-DATABASE/Scaffold-DbContext.png" alt="Scaffold-DbContext"></p>
-<p>產生ERPContext.cs會出現一個警告 <img src="../../images/2023/ASP-NET-CORE-DATABASE/ERPContext.png" alt="ERPContext"> #warning To protect potentially sensitive
-information in your connection string, you should move it out of source
-code. You can avoid scaffolding the connection string by using the Name=
-syntax to read it from configuration - see
-https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on
-storing connection strings, see
-http://go.microsoft.com/fwlink/?LinkId=723263.</p>
-<p>清空OnConfiguring <img src="../../images/2023/ASP-NET-CORE-DATABASE/OnConfiguring.png" alt="OnConfiguring"></p>
-<p>program.cs 增加下列之程式碼 <img src="../../images/2023/ASP-NET-CORE-DATABASE/program.png" alt="program"></p>
-<h1 id="localdb-設定">LocalDB 設定</h1>
-<h2 id="sql-server-2022-express-localdb-安裝">SQL Server 2022 Express
-LocalDB 安裝</h2>
-<p><img src="../../images/2023/ASP-NET-CORE-DATABASE/LocalDBDownload.png" alt="LocalDBDownload"> <img src="../../images/2023/ASP-NET-CORE-DATABASE/SqlLocalDB.png" alt="SqlLocalDB"> <img src="../../images/2023/ASP-NET-CORE-DATABASE/appsetting.png" alt="appsetting"></p>
-<h2 id="匯入mdf">匯入mdf</h2>
-<p>開啟完全控制權限 <img src="../../images/2023/ASP-NET-CORE-DATABASE/mdf.png" alt="mdf"> <img src="../../images/2023/ASP-NET-CORE-DATABASE/database-attach1.png" alt="database-attach1"> <img src="../../images/2023/ASP-NET-CORE-DATABASE/database-attach2.png" alt="database-attach2"></p>
-<h2 id="開啟nuget-console">開啟NuGet-Console</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scaffold-DbContext &quot;Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Todo.mdf;Integrated Security=True;Connect Timeout=30;TrustServerCertificate=true;&quot; Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force -CoNtext TodoContext</span><br></pre></td></tr></table></figure>
-<h2 id="開啟伺服器管理">開啟伺服器管理</h2>
-<p><img src="../../images/2023/ASP-NET-CORE-DATABASE/server-management.png" alt="server-management"> <img src="../../images/2023/ASP-NET-CORE-DATABASE/server-management2.png" alt="server-management2"> <img src="../../images/2023/ASP-NET-CORE-DATABASE/server-management3.png" alt="server-management3"> <img src="../../images/2023/ASP-NET-CORE-DATABASE/server-management4.png" alt="server-management4"> <img src="../../images/2023/ASP-NET-CORE-DATABASE/sql-server.png" alt="sql-server"></p>
-<h1 id="資料庫物件使用">資料庫物件使用</h1>
-<p><img src="../../images/2023/ASP-NET-CORE-DATABASE/APIController.png" alt="APIController"> <img src="../../images/2023/ASP-NET-CORE-DATABASE/TodoController.png" alt="TodoController"> https://localhost:7165/api/Todo <img src="../../images/2023/ASP-NET-CORE-DATABASE/json.png" alt="json"></p>
-<h1 id="crud">CRUD</h1>
-<h2 id="create">Create</h2>
-<h2 id="read">Read</h2>
-<h2 id="update">Update</h2>
-<h2 id="delete">Delete</h2>
-<h1 id="references">References</h1>
-<ol type="1">
-<li><p>ASP.NET Core Web API 入門教學 - 文章目錄
-https://blog.talllkai.com/ASPNETCore/Catalog</p></li>
-<li><p>[解決方式] 此憑證鏈結是由不受信任的授權單位發出的
-https://www.ruyut.com/2023/02/sqlexception-ssl-provider.html</p></li>
-<li><p>ASP.NET Core 6 - how to deal with the missing Startup.cs file
-https://mobiletonster.com/blog/code/aspnet-core-6-how-to-deal-with-the-missing-startupcs-file</p></li>
-<li><p>如何下載與升級 SQL Server Express LocalDB 到最新版
-https://blog.miniasp.com/post/2020/02/16/install-and-upgrade-sql-server-express-localdb</p></li>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>MS SQL Server以Database First為主的連線設定</p>
+<span id="more"></span>
+
+<h1 id="ASP-Net-Core-Web-API"><a href="#ASP-Net-Core-Web-API" class="headerlink" title="ASP.Net Core Web API"></a>ASP.Net Core Web API</h1><p><img src="/../../images/2023/ASP-NET-CORE-DATABASE/asp-net-core-web-api.png" alt="asp-net-core-web-api"></p>
+<h1 id="安裝套件"><a href="#安裝套件" class="headerlink" title="安裝套件"></a>安裝套件</h1><p><img src="/../../images/2023/ASP-NET-CORE-DATABASE/NuGet.png" alt="NuGet"><br><img src="/../../images/2023/ASP-NET-CORE-DATABASE/EntityFrameworkCore-SqlServer.png" alt="EntityFrameworkCore-SqlServer"></p>
+<p>安裝下列套件</p>
+<ul>
+<li>Microsoft.EntityFrameworkCore</li>
+<li>Microsoft.EntityFrameworkCore.SqlServer</li>
+<li>Microsoft.EntityFrameworkCore.Tools</li>
+<li>Microsoft.EntityFrameworkCore.Design</li>
+</ul>
+<h1 id="連線設定"><a href="#連線設定" class="headerlink" title="連線設定"></a>連線設定</h1><p><img src="/../../images/2023/ASP-NET-CORE-DATABASE/NuGetConsole.png" alt="NuGetConsole"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Scaffold-DbContext &quot;Server=伺服器位置;Database=資料庫;Trusted_Connection=True;</span><br><span class="line">TrustServerCertificate=True;User ID=帳號;Password=密碼&quot; Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scaffold-DbContext &quot;Server=DESKTOP-C7VSQGJ\SQLEXPRESS;Database=ERP;User ID=chwang;Password=Agh120986;Trusted_Connection=True;TrustServerCertificate=true;&quot; Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force -CoNtext ErpContext</span><br></pre></td></tr></table></figure>
+<p><img src="/../../images/2023/ASP-NET-CORE-DATABASE/Scaffold-DbContext.png" alt="Scaffold-DbContext"></p>
+<p>產生ERPContext.cs會出現一個警告<br><img src="/../../images/2023/ASP-NET-CORE-DATABASE/ERPContext.png" alt="ERPContext"><br>#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name&#x3D; syntax to read it from configuration - see <a target="_blank" rel="noopener" href="https://go.microsoft.com/fwlink/?linkid=2131148">https://go.microsoft.com/fwlink/?linkid=2131148</a>. For more guidance on storing connection strings, see <a target="_blank" rel="noopener" href="http://go.microsoft.com/fwlink/?LinkId=723263">http://go.microsoft.com/fwlink/?LinkId=723263</a>.</p>
+<p>清空OnConfiguring<br><img src="/../../images/2023/ASP-NET-CORE-DATABASE/OnConfiguring.png" alt="OnConfiguring"></p>
+<p>program.cs 增加下列之程式碼<br><img src="/../../images/2023/ASP-NET-CORE-DATABASE/program.png" alt="program"></p>
+<h1 id="LocalDB-設定"><a href="#LocalDB-設定" class="headerlink" title="LocalDB 設定"></a>LocalDB 設定</h1><h2 id="SQL-Server-2022-Express-LocalDB-安裝"><a href="#SQL-Server-2022-Express-LocalDB-安裝" class="headerlink" title="SQL Server 2022 Express LocalDB 安裝"></a>SQL Server 2022 Express LocalDB 安裝</h2><p><img src="/../../images/2023/ASP-NET-CORE-DATABASE/LocalDBDownload.png" alt="LocalDBDownload"><br><img src="/../../images/2023/ASP-NET-CORE-DATABASE/SqlLocalDB.png" alt="SqlLocalDB"><br><img src="/../../images/2023/ASP-NET-CORE-DATABASE/appsetting.png" alt="appsetting"></p>
+<h2 id="匯入mdf"><a href="#匯入mdf" class="headerlink" title="匯入mdf"></a>匯入mdf</h2><p>開啟完全控制權限<br><img src="/../../images/2023/ASP-NET-CORE-DATABASE/mdf.png" alt="mdf"><br><img src="/../../images/2023/ASP-NET-CORE-DATABASE/database-attach1.png" alt="database-attach1"><br><img src="/../../images/2023/ASP-NET-CORE-DATABASE/database-attach2.png" alt="database-attach2"></p>
+<h2 id="開啟NuGet-Console"><a href="#開啟NuGet-Console" class="headerlink" title="開啟NuGet-Console"></a>開啟NuGet-Console</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scaffold-DbContext &quot;Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Todo.mdf;Integrated Security=True;Connect Timeout=30;TrustServerCertificate=true;&quot; Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force -CoNtext TodoContext</span><br></pre></td></tr></table></figure>
+
+<h2 id="開啟伺服器管理"><a href="#開啟伺服器管理" class="headerlink" title="開啟伺服器管理"></a>開啟伺服器管理</h2><p><img src="/../../images/2023/ASP-NET-CORE-DATABASE/server-management.png" alt="server-management"><br><img src="/../../images/2023/ASP-NET-CORE-DATABASE/server-management2.png" alt="server-management2"><br><img src="/../../images/2023/ASP-NET-CORE-DATABASE/server-management3.png" alt="server-management3"><br><img src="/../../images/2023/ASP-NET-CORE-DATABASE/server-management4.png" alt="server-management4"><br><img src="/../../images/2023/ASP-NET-CORE-DATABASE/sql-server.png" alt="sql-server"></p>
+<h1 id="資料庫物件使用"><a href="#資料庫物件使用" class="headerlink" title="資料庫物件使用"></a>資料庫物件使用</h1><p><img src="/../../images/2023/ASP-NET-CORE-DATABASE/APIController.png" alt="APIController"><br><img src="/../../images/2023/ASP-NET-CORE-DATABASE/TodoController.png" alt="TodoController"><br><a target="_blank" rel="noopener" href="https://localhost:7165/api/Todo">https://localhost:7165/api/Todo</a><br><img src="/../../images/2023/ASP-NET-CORE-DATABASE/json.png" alt="json"></p>
+<h1 id="CRUD"><a href="#CRUD" class="headerlink" title="CRUD"></a>CRUD</h1><h2 id="Create"><a href="#Create" class="headerlink" title="Create"></a>Create</h2><h2 id="Read"><a href="#Read" class="headerlink" title="Read"></a>Read</h2><h2 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h2><h2 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h2><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ol>
+<li><p>ASP.NET Core Web API 入門教學 - 文章目錄<br><a target="_blank" rel="noopener" href="https://blog.talllkai.com/ASPNETCore/Catalog">https://blog.talllkai.com/ASPNETCore/Catalog</a></p>
+</li>
+<li><p>[解決方式] 此憑證鏈結是由不受信任的授權單位發出的<br><a target="_blank" rel="noopener" href="https://www.ruyut.com/2023/02/sqlexception-ssl-provider.html">https://www.ruyut.com/2023/02/sqlexception-ssl-provider.html</a></p>
+</li>
+<li><p>ASP.NET Core 6 - how to deal with the missing Startup.cs file<br><a target="_blank" rel="noopener" href="https://mobiletonster.com/blog/code/aspnet-core-6-how-to-deal-with-the-missing-startupcs-file">https://mobiletonster.com/blog/code/aspnet-core-6-how-to-deal-with-the-missing-startupcs-file</a></p>
+</li>
+<li><p>如何下載與升級 SQL Server Express LocalDB 到最新版<br><a target="_blank" rel="noopener" href="https://blog.miniasp.com/post/2020/02/16/install-and-upgrade-sql-server-express-localdb">https://blog.miniasp.com/post/2020/02/16/install-and-upgrade-sql-server-express-localdb</a></p>
+</li>
 </ol>
 
     </div>
@@ -368,13 +350,13 @@ https://blog.miniasp.com/post/2020/02/16/install-and-upgrade-sql-server-express-
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">291k</span>
+    <span title="總字數">292k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:48</span>
+    <span title="所需總閱讀時間">8:51</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
