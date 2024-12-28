@@ -19,21 +19,21 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介物體追蹤（Object Tracking）是指在連續的圖像序列中追蹤特定物體的過程。物體追蹤的物體是準確地定位並追蹤物體的位置、形狀和運動。多物體追蹤（Multi-object Tracking）是指在連續的圖像或視頻序列中同時追蹤多個不同物體的過程。多物體追蹤的物體是同時準確地定位和跟蹤多個物體的位置、形狀和運動。">
+    <meta name="description" content="簡介 物體追蹤（Object Tracking）是指在連續的圖像序列中追蹤特定物體的過程。物體追蹤的物體是準確地定位並追蹤物體的位置、形狀和運動。 多物體追蹤（Multi-object Tracking）是指在連續的圖像或視頻序列中同時追蹤多個不同物體的過程。多物體追蹤的物體是同時準確地定位和跟蹤多個物體的位置、形狀和運動。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Object Tracking">
 <meta property="og:url" content="https://leonicehot.github.io/2022/11/20/2022/November/Object%20Tracking/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介物體追蹤（Object Tracking）是指在連續的圖像序列中追蹤特定物體的過程。物體追蹤的物體是準確地定位並追蹤物體的位置、形狀和運動。多物體追蹤（Multi-object Tracking）是指在連續的圖像或視頻序列中同時追蹤多個不同物體的過程。多物體追蹤的物體是同時準確地定位和跟蹤多個物體的位置、形狀和運動。">
+<meta property="og:description" content="簡介 物體追蹤（Object Tracking）是指在連續的圖像序列中追蹤特定物體的過程。物體追蹤的物體是準確地定位並追蹤物體的位置、形狀和運動。 多物體追蹤（Multi-object Tracking）是指在連續的圖像或視頻序列中同時追蹤多個不同物體的過程。多物體追蹤的物體是同時準確地定位和跟蹤多個物體的位置、形狀和運動。">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://leonicehot.github.io/images/2022/%E7%89%A9%E9%AB%94%E8%BF%BD%E8%B9%A4%E7%B4%80%E9%8C%84/%E5%AE%89%E8%A3%9D%E7%AF%87.png">
-<meta property="og:image" content="https://leonicehot.github.io/images/2022/%E7%89%A9%E9%AB%94%E8%BF%BD%E8%B9%A4%E7%B4%80%E9%8C%84/cython_bbox.png">
-<meta property="og:image" content="https://leonicehot.github.io/images/2022/%E7%89%A9%E9%AB%94%E8%BF%BD%E8%B9%A4%E7%B4%80%E9%8C%84/%E7%89%A9%E9%AB%94%E8%BF%BD%E8%B9%A4.png">
+<meta property="og:image" content="https://leonicehot.github.io/2022/11/20/2022/November/images/2022/%E7%89%A9%E9%AB%94%E8%BF%BD%E8%B9%A4%E7%B4%80%E9%8C%84/%E5%AE%89%E8%A3%9D%E7%AF%87.png">
+<meta property="og:image" content="https://leonicehot.github.io/2022/11/20/2022/November/images/2022/%E7%89%A9%E9%AB%94%E8%BF%BD%E8%B9%A4%E7%B4%80%E9%8C%84/cython_bbox.png">
+<meta property="og:image" content="https://leonicehot.github.io/2022/11/20/2022/November/images/2022/%E7%89%A9%E9%AB%94%E8%BF%BD%E8%B9%A4%E7%B4%80%E9%8C%84/%E7%89%A9%E9%AB%94%E8%BF%BD%E8%B9%A4.png">
 <meta property="article:published_time" content="2022-11-20T11:26:11.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:34.795Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://leonicehot.github.io/images/2022/%E7%89%A9%E9%AB%94%E8%BF%BD%E8%B9%A4%E7%B4%80%E9%8C%84/%E5%AE%89%E8%A3%9D%E7%AF%87.png">
+<meta name="twitter:image" content="https://leonicehot.github.io/2022/11/20/2022/November/images/2022/%E7%89%A9%E9%AB%94%E8%BF%BD%E8%B9%A4%E7%B4%80%E9%8C%84/%E5%AE%89%E8%A3%9D%E7%AF%87.png">
 
 
 <link rel="canonical" href="https://leonicehot.github.io/2022/11/20/2022/November/Object%20Tracking/">
@@ -114,7 +114,13 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%A9%E9%AB%94%E8%BF%BD%E8%B9%A4"><span class="nav-number">2.</span> <span class="nav-text">物體追蹤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E7%89%A9%E9%AB%94%E8%BF%BD%E8%B9%A4"><span class="nav-number">3.</span> <span class="nav-text">多物體追蹤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">4.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%90%86%E8%AB%96%E6%8E%A2%E8%A8%8E"><span class="nav-number">5.</span> <span class="nav-text">理論探討</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-1-Introduction-to-Multiple-Object-Tracking-MOT"><span class="nav-number">5.1.</span> <span class="nav-text">Part 1: Introduction to Multiple Object Tracking (MOT)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-2-Single-Object-Tracking-in-clutter"><span class="nav-number">5.2.</span> <span class="nav-text">Part 2: Single Object Tracking in clutter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-3-Tracking-a-known-number-of-objects-in-clutter"><span class="nav-number">5.3.</span> <span class="nav-text">Part 3: Tracking a known number of objects in clutter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-4-Random-Finite-Sets"><span class="nav-number">5.4.</span> <span class="nav-text">Part 4: Random Finite Sets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-5-Multiple-Object-Tracking-using-conjugate-priors"><span class="nav-number">5.5.</span> <span class="nav-text">Part 5: Multiple Object Tracking using conjugate priors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-6-Outlook-what-is-next"><span class="nav-number">5.6.</span> <span class="nav-text">Part 6: Outlook - what is next?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object-Tracking-with-OpenCV"><span class="nav-number">6.</span> <span class="nav-text">Object Tracking with OpenCV</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E7%A8%8B%E5%AF%A6%E4%BD%9C"><span class="nav-number">7.</span> <span class="nav-text">工程實作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Yolov5-StrongSORT-with-OSNet"><span class="nav-number">7.1.</span> <span class="nav-text">Yolov5 + StrongSORT with OSNet</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%A9%E9%AB%94%E8%BF%BD%E8%B9%A4"><span class="nav-number">2.</span> <span class="nav-text">物體追蹤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E7%89%A9%E9%AB%94%E8%BF%BD%E8%B9%A4"><span class="nav-number">3.</span> <span class="nav-text">多物體追蹤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">4.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%90%86%E8%AB%96%E6%8E%A2%E8%A8%8E"><span class="nav-number">5.</span> <span class="nav-text">理論探討</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#part-1-introduction-to-multiple-object-tracking-mot"><span class="nav-number">5.1.</span> <span class="nav-text">Part 1:
+Introduction to Multiple Object Tracking (MOT)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-2-single-object-tracking-in-clutter"><span class="nav-number">5.2.</span> <span class="nav-text">Part 2: Single Object
+Tracking in clutter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-3-tracking-a-known-number-of-objects-in-clutter"><span class="nav-number">5.3.</span> <span class="nav-text">Part 3:
+Tracking a known number of objects in clutter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-4-random-finite-sets"><span class="nav-number">5.4.</span> <span class="nav-text">Part 4: Random Finite Sets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-5-multiple-object-tracking-using-conjugate-priors"><span class="nav-number">5.5.</span> <span class="nav-text">Part 5:
+Multiple Object Tracking using conjugate priors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-6-outlook---what-is-next"><span class="nav-number">5.6.</span> <span class="nav-text">Part 6: Outlook - what is
+next?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#object-tracking-with-opencv"><span class="nav-number">6.</span> <span class="nav-text">Object Tracking with OpenCV</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E7%A8%8B%E5%AF%A6%E4%BD%9C"><span class="nav-number">7.</span> <span class="nav-text">工程實作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#yolov5-strongsort-with-osnet"><span class="nav-number">7.1.</span> <span class="nav-text">Yolov5 + StrongSORT with
+OSNet</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -127,7 +133,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-count">142</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -241,84 +247,95 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>物體追蹤（Object Tracking）是指在連續的圖像序列中追蹤特定物體的過程。物體追蹤的物體是準確地定位並追蹤物體的位置、形狀和運動。<br>多物體追蹤（Multi-object Tracking）是指在連續的圖像或視頻序列中同時追蹤多個不同物體的過程。多物體追蹤的物體是同時準確地定位和跟蹤多個物體的位置、形狀和運動。</p>
-<span id="more"></span>
-
-<h1 id="物體追蹤"><a href="#物體追蹤" class="headerlink" title="物體追蹤"></a>物體追蹤</h1><p>物體追蹤廣泛應用於計算機視覺、機器人技術、智能監控、自動駕駛等領域。它可以用於實時物體追蹤、視頻分析、行為識別、姿態估計等任務。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
+<p>物體追蹤（Object
+Tracking）是指在連續的圖像序列中追蹤特定物體的過程。物體追蹤的物體是準確地定位並追蹤物體的位置、形狀和運動。
+多物體追蹤（Multi-object
+Tracking）是指在連續的圖像或視頻序列中同時追蹤多個不同物體的過程。多物體追蹤的物體是同時準確地定位和跟蹤多個物體的位置、形狀和運動。
+<span id="more"></span></p>
+<h1 id="物體追蹤">物體追蹤</h1>
+<p>物體追蹤廣泛應用於計算機視覺、機器人技術、智能監控、自動駕駛等領域。它可以用於實時物體追蹤、視頻分析、行為識別、姿態估計等任務。</p>
 <p>物體追蹤的方法可以分為基於特徵的追蹤和基於深度學習的追蹤兩類。</p>
-<ol>
-<li><p>基於特徵的追蹤方法：這些方法通過提取物體在圖像中的特徵（如顏色、紋理、邊緣、角點等），然後在連續的幀中匹配這些特徵來實現追蹤。常見的基於特徵的追蹤方法包括卡爾曼濾波器、粒子濾波器、均值漂移等。</p>
-</li>
-<li><p>基於深度學習的追蹤方法：隨著深度學習的發展，基於深度學習的物體追蹤方法也得到了廣泛應用。這些方法通過深度卷積神經網絡（CNN）或循環神經網絡（RNN）來學習物體的特徵表示，從而實現追蹤。</p>
-</li>
+<ol type="1">
+<li><p>基於特徵的追蹤方法：這些方法通過提取物體在圖像中的特徵（如顏色、紋理、邊緣、角點等），然後在連續的幀中匹配這些特徵來實現追蹤。常見的基於特徵的追蹤方法包括卡爾曼濾波器、粒子濾波器、均值漂移等。</p></li>
+<li><p>基於深度學習的追蹤方法：隨著深度學習的發展，基於深度學習的物體追蹤方法也得到了廣泛應用。這些方法通過深度卷積神經網絡（CNN）或循環神經網絡（RNN）來學習物體的特徵表示，從而實現追蹤。</p></li>
 </ol>
 <p>物體追蹤的結果可以用於物體定位、行為分析、運動跟蹤等應用。然而，物體追蹤也面臨著一些挑戰，例如物體外觀變化、遮擋、相似物體的干擾等。因此，為了提高追蹤的準確性和魯棒性，需要綜合應用多種追蹤方法和技術，並結合適當的過濾和優化技術。</p>
-<h1 id="多物體追蹤"><a href="#多物體追蹤" class="headerlink" title="多物體追蹤"></a>多物體追蹤</h1><p>多物體追蹤在計算機視覺、機器人技術、智能監控、交通監測等領域具有廣泛的應用。它可以用於人體追蹤、車輛追蹤、物體計數、行為分析、交通流量分析等任務。</p>
+<h1 id="多物體追蹤">多物體追蹤</h1>
+<p>多物體追蹤在計算機視覺、機器人技術、智能監控、交通監測等領域具有廣泛的應用。它可以用於人體追蹤、車輛追蹤、物體計數、行為分析、交通流量分析等任務。</p>
 <p>多物體追蹤的方法通常包括以下關鍵步驟：</p>
-<ol>
-<li><p>物體檢測（Object Detection）：在每個影像幀中檢測出所有的物體，通常使用物體檢測算法（如基於深度學習的物體檢測器）來識別和定位物體。</p>
-</li>
-<li><p>特徵提取（Feature Extraction）：對於每個檢測到的物體，提取其特徵表示，可以包括顏色、紋理、形狀、運動等特徵。</p>
-</li>
-<li><p>物體關聯（Object Association）：通過匹配和關聯前後幀中的物體，建立物體軌跡。常見的物體關聯方法包括基於外觀相似性、運動預測、卡爾曼濾波器、關聯圖等。</p>
-</li>
-<li><p>軌跡更新（Track Updating）：根據新的觀察信息（如新的檢測結果），更新已有軌跡的狀態和特徵，以適應物體運動的變化。</p>
-</li>
-<li><p>軌跡管理（Track Management）：根據軌跡的信心度、持續性等指標，進行軌跡的初始化、合併、分割和刪除等操作，以適應場景中物體的動態變化。</p>
-</li>
+<ol type="1">
+<li><p>物體檢測（Object
+Detection）：在每個影像幀中檢測出所有的物體，通常使用物體檢測算法（如基於深度學習的物體檢測器）來識別和定位物體。</p></li>
+<li><p>特徵提取（Feature
+Extraction）：對於每個檢測到的物體，提取其特徵表示，可以包括顏色、紋理、形狀、運動等特徵。</p></li>
+<li><p>物體關聯（Object
+Association）：通過匹配和關聯前後幀中的物體，建立物體軌跡。常見的物體關聯方法包括基於外觀相似性、運動預測、卡爾曼濾波器、關聯圖等。</p></li>
+<li><p>軌跡更新（Track
+Updating）：根據新的觀察信息（如新的檢測結果），更新已有軌跡的狀態和特徵，以適應物體運動的變化。</p></li>
+<li><p>軌跡管理（Track
+Management）：根據軌跡的信心度、持續性等指標，進行軌跡的初始化、合併、分割和刪除等操作，以適應場景中物體的動態變化。</p></li>
 </ol>
 <p>多物體追蹤是一個具有挑戰性的問題，面臨著物體遮擋、外觀變化、相似物體的混淆等困難。為了提高追蹤的準確性和穩定性，常常需要結合多種追蹤算法、深度學習模型和機器學習技術，並進行場景建模、運動預測和融合等方法的應用。</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>為了了解物體追蹤實際狀況為如何，便找了開源專案來作探討。</p>
-<h1 id="理論探討"><a href="#理論探討" class="headerlink" title="理論探討"></a>理論探討</h1><h2 id="Part-1-Introduction-to-Multiple-Object-Tracking-MOT"><a href="#Part-1-Introduction-to-Multiple-Object-Tracking-MOT" class="headerlink" title="Part 1: Introduction to Multiple Object Tracking (MOT)"></a>Part 1: Introduction to Multiple Object Tracking (MOT)</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLadnyz93xCLhSlm2tMYJSKaik39EZV_Uk">https://www.youtube.com/playlist?list=PLadnyz93xCLhSlm2tMYJSKaik39EZV_Uk</a></p>
-<h2 id="Part-2-Single-Object-Tracking-in-clutter"><a href="#Part-2-Single-Object-Tracking-in-clutter" class="headerlink" title="Part 2: Single Object Tracking in clutter"></a>Part 2: Single Object Tracking in clutter</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLadnyz93xCLiHWjLcLFdzc-SidNL1kRF7">https://www.youtube.com/playlist?list=PLadnyz93xCLiHWjLcLFdzc-SidNL1kRF7</a></p>
-<h2 id="Part-3-Tracking-a-known-number-of-objects-in-clutter"><a href="#Part-3-Tracking-a-known-number-of-objects-in-clutter" class="headerlink" title="Part 3: Tracking a known number of objects in clutter"></a>Part 3: Tracking a known number of objects in clutter</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLadnyz93xCLiCBQq1105j5Jeqi1Q6wjoJ">https://www.youtube.com/playlist?list=PLadnyz93xCLiCBQq1105j5Jeqi1Q6wjoJ</a></p>
-<h2 id="Part-4-Random-Finite-Sets"><a href="#Part-4-Random-Finite-Sets" class="headerlink" title="Part 4: Random Finite Sets"></a>Part 4: Random Finite Sets</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLadnyz93xCLhFinI8NO30-1e6SwCGRTIM">https://www.youtube.com/playlist?list=PLadnyz93xCLhFinI8NO30-1e6SwCGRTIM</a></p>
-<h2 id="Part-5-Multiple-Object-Tracking-using-conjugate-priors"><a href="#Part-5-Multiple-Object-Tracking-using-conjugate-priors" class="headerlink" title="Part 5: Multiple Object Tracking using conjugate priors"></a>Part 5: Multiple Object Tracking using conjugate priors</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLadnyz93xCLjl51PzSoFhLLSp2hAYDY0H">https://www.youtube.com/playlist?list=PLadnyz93xCLjl51PzSoFhLLSp2hAYDY0H</a></p>
-<h2 id="Part-6-Outlook-what-is-next"><a href="#Part-6-Outlook-what-is-next" class="headerlink" title="Part 6: Outlook - what is next?"></a>Part 6: Outlook - what is next?</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLadnyz93xCLh0Wm8jkQYCdwpyGFl2c-6a">https://www.youtube.com/playlist?list=PLadnyz93xCLh0Wm8jkQYCdwpyGFl2c-6a</a></p>
-<h1 id="Object-Tracking-with-OpenCV"><a href="#Object-Tracking-with-OpenCV" class="headerlink" title="Object Tracking with OpenCV"></a>Object Tracking with OpenCV</h1><p>只能做到單個物體追蹤，而且需要事先標好，追蹤器選項大多無法使用<br><a target="_blank" rel="noopener" href="https://medium.com/geekculture/object-tracking-with-opencv-4927a275bcb2">https://medium.com/geekculture/object-tracking-with-opencv-4927a275bcb2</a></p>
-<h1 id="工程實作"><a href="#工程實作" class="headerlink" title="工程實作"></a>工程實作</h1><h2 id="Yolov5-StrongSORT-with-OSNet"><a href="#Yolov5-StrongSORT-with-OSNet" class="headerlink" title="Yolov5 + StrongSORT with OSNet"></a>Yolov5 + StrongSORT with OSNet</h2><p>可做到多物體追蹤，但是多在近處抓到，遠處的物體不佳<br><a target="_blank" rel="noopener" href="https://github.com/mikel-brostrom/Yolov5_StrongSORT_OSNet">https://github.com/mikel-brostrom/Yolov5_StrongSORT_OSNet</a></p>
-<ol>
-<li><p>下載 Yolov5_StrongSORT_OSNet專案</p>
-</li>
+<h1 id="前言">前言</h1>
+<p>為了了解物體追蹤實際狀況為如何，便找了開源專案來作探討。</p>
+<h1 id="理論探討">理論探討</h1>
+<h2 id="part-1-introduction-to-multiple-object-tracking-mot">Part 1:
+Introduction to Multiple Object Tracking (MOT)</h2>
+<p>https://www.youtube.com/playlist?list=PLadnyz93xCLhSlm2tMYJSKaik39EZV_Uk</p>
+<h2 id="part-2-single-object-tracking-in-clutter">Part 2: Single Object
+Tracking in clutter</h2>
+<p>https://www.youtube.com/playlist?list=PLadnyz93xCLiHWjLcLFdzc-SidNL1kRF7</p>
+<h2 id="part-3-tracking-a-known-number-of-objects-in-clutter">Part 3:
+Tracking a known number of objects in clutter</h2>
+<p>https://www.youtube.com/playlist?list=PLadnyz93xCLiCBQq1105j5Jeqi1Q6wjoJ</p>
+<h2 id="part-4-random-finite-sets">Part 4: Random Finite Sets</h2>
+<p>https://www.youtube.com/playlist?list=PLadnyz93xCLhFinI8NO30-1e6SwCGRTIM</p>
+<h2 id="part-5-multiple-object-tracking-using-conjugate-priors">Part 5:
+Multiple Object Tracking using conjugate priors</h2>
+<p>https://www.youtube.com/playlist?list=PLadnyz93xCLjl51PzSoFhLLSp2hAYDY0H</p>
+<h2 id="part-6-outlook---what-is-next">Part 6: Outlook - what is
+next?</h2>
+<p>https://www.youtube.com/playlist?list=PLadnyz93xCLh0Wm8jkQYCdwpyGFl2c-6a</p>
+<h1 id="object-tracking-with-opencv">Object Tracking with OpenCV</h1>
+<p>只能做到單個物體追蹤，而且需要事先標好，追蹤器選項大多無法使用
+https://medium.com/geekculture/object-tracking-with-opencv-4927a275bcb2</p>
+<h1 id="工程實作">工程實作</h1>
+<h2 id="yolov5-strongsort-with-osnet">Yolov5 + StrongSORT with
+OSNet</h2>
+<p>可做到多物體追蹤，但是多在近處抓到，遠處的物體不佳
+https://github.com/mikel-brostrom/Yolov5_StrongSORT_OSNet</p>
+<ol type="1">
+<li><p>下載 Yolov5_StrongSORT_OSNet專案</p></li>
 <li><p>下載yolov5專案</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/ultralytics/yolov5/tree/91a81d48fa4e34dbdbaf0e45a1f841c11216aab5">https://github.com/ultralytics/yolov5/tree/91a81d48fa4e34dbdbaf0e45a1f841c11216aab5</a></li>
-</ul>
-</li>
+<li>https://github.com/ultralytics/yolov5/tree/91a81d48fa4e34dbdbaf0e45a1f841c11216aab5</li>
+</ul></li>
 <li><p>環境安裝，請按照順序安裝</p>
 <ul>
 <li>Python 版本 3.7.15</li>
-<li>pip install numpy </li>
+<li>pip install numpy</li>
 <li>pip install Cython</li>
-<li>安裝Visual Studio，安裝完請重開機<br><img src="/../images/2022/%E7%89%A9%E9%AB%94%E8%BF%BD%E8%B9%A4%E7%B4%80%E9%8C%84/%E5%AE%89%E8%A3%9D%E7%AF%87.png" alt="安裝篇"></li>
+<li>安裝Visual Studio，安裝完請重開機 <img src="../images/2022/物體追蹤紀錄/安裝篇.png" alt="安裝篇"></li>
 <li>pip install -r requirements.txt</li>
-</ul>
-</li>
+</ul></li>
 </ol>
 <ul>
-<li>錯誤請重裝<br><img src="/../images/2022/%E7%89%A9%E9%AB%94%E8%BF%BD%E8%B9%A4%E7%B4%80%E9%8C%84/cython_bbox.png" alt="cython_bbox"></li>
+<li>錯誤請重裝 <img src="../images/2022/物體追蹤紀錄/cython_bbox.png" alt="cython_bbox"></li>
 </ul>
-<ol>
+<ol type="1">
 <li>下指令</li>
 </ol>
 <ul>
-<li><p>執行指令   </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">python track.py --tracking-method bytetrack </span><br><span class="line">                --source input.mp4 </span><br><span class="line">                --yolo-weights yolov5x.pt </span><br><span class="line">                --img 640 </span><br><span class="line">                --reid-weights osnet_x0_25_market1501.pt </span><br><span class="line">                --save-txt </span><br><span class="line">                --save-vid</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>追蹤方法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python track.py --tracking-method strongsort</span><br><span class="line">                                  ocsort</span><br><span class="line">                                  bytetrack</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>追蹤來源</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">python track.py --source 0  # webcam</span><br><span class="line">                         img.jpg  # image</span><br><span class="line">                         vid.mp4  # video</span><br><span class="line">                         path/  # directory</span><br><span class="line">                         path/*.jpg  # glob</span><br><span class="line">                         &#x27;https://youtu.be/Zgi9g1ksQHc&#x27;  # YouTube</span><br><span class="line">                         &#x27;rtsp://example.com/media.mp4&#x27;  # RTSP, RTMP, HTTP stream</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>選擇yolov5模型</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">python track.py --source 0 --yolo-weights yolov5n.pt --img 640</span><br><span class="line">                                          yolov5s.tflite</span><br><span class="line">                                          yolov5m.pt</span><br><span class="line">                                          yolov5l.onnx </span><br><span class="line">                                          yolov5x.pt --img 1280</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>選擇ReID模型</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python track.py --source 0 --reid-weights osnet_x0_25_market1501.pt</span><br><span class="line">                                          mobilenetv2_x1_4_msmt17.engine</span><br><span class="line">                                          resnet50_msmt17.onnx</span><br><span class="line">                                          osnet_x1_0_msmt17.pt</span><br></pre></td></tr></table></figure></li>
+<li><p>執行指令<br>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">python track.py --tracking-method bytetrack </span><br><span class="line">                --source input.mp4 </span><br><span class="line">                --yolo-weights yolov5x.pt </span><br><span class="line">                --img 640 </span><br><span class="line">                --reid-weights osnet_x0_25_market1501.pt </span><br><span class="line">                --save-txt </span><br><span class="line">                --save-vid</span><br></pre></td></tr></table></figure></p></li>
+<li><p>追蹤方法 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python track.py --tracking-method strongsort</span><br><span class="line">                                  ocsort</span><br><span class="line">                                  bytetrack</span><br></pre></td></tr></table></figure></p></li>
+<li><p>追蹤來源 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">python track.py --source 0  # webcam</span><br><span class="line">                         img.jpg  # image</span><br><span class="line">                         vid.mp4  # video</span><br><span class="line">                         path/  # directory</span><br><span class="line">                         path/*.jpg  # glob</span><br><span class="line">                         &#x27;https://youtu.be/Zgi9g1ksQHc&#x27;  # YouTube</span><br><span class="line">                         &#x27;rtsp://example.com/media.mp4&#x27;  # RTSP, RTMP, HTTP stream</span><br></pre></td></tr></table></figure></p></li>
+<li><p>選擇yolov5模型 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">python track.py --source 0 --yolo-weights yolov5n.pt --img 640</span><br><span class="line">                                          yolov5s.tflite</span><br><span class="line">                                          yolov5m.pt</span><br><span class="line">                                          yolov5l.onnx </span><br><span class="line">                                          yolov5x.pt --img 1280</span><br></pre></td></tr></table></figure></p></li>
+<li><p>選擇ReID模型 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python track.py --source 0 --reid-weights osnet_x0_25_market1501.pt</span><br><span class="line">                                          mobilenetv2_x1_4_msmt17.engine</span><br><span class="line">                                          resnet50_msmt17.onnx</span><br><span class="line">                                          osnet_x1_0_msmt17.pt</span><br></pre></td></tr></table></figure></p></li>
 </ul>
-<ol>
-<li>程式修改<br><img src="/../images/2022/%E7%89%A9%E9%AB%94%E8%BF%BD%E8%B9%A4%E7%B4%80%E9%8C%84/%E7%89%A9%E9%AB%94%E8%BF%BD%E8%B9%A4.png" alt="物體追蹤"></li>
+<ol type="1">
+<li>程式修改 <img src="../images/2022/物體追蹤紀錄/物體追蹤.png" alt="物體追蹤"></li>
 </ol>
 
     </div>
@@ -371,13 +388,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">286k</span>
+    <span title="總字數">288k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:39</span>
+    <span title="所需總閱讀時間">8:44</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

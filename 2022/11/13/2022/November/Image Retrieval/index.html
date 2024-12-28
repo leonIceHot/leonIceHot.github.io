@@ -19,50 +19,50 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介影像檢索（Image Retrieval）是指根據用戶提供的查詢條件，從一個大型影像數據庫中檢索出與查詢條件相似或相關的影像的過程。影像檢索旨在根據影像的內容特徵或相似性，實現快速且準確地找到用戶感興趣的影像。 影像檢索的過程可以分為兩個主要步驟：特徵提取和相似性匹配。特徵提取是從影像中提取出具有代表性的特徵，例如顏色、紋理、形狀、結構等。這些特徵可以通過各種計算機視覺和圖像處理技術進行提取。">
+    <meta name="description" content="簡介 影像檢索（Image Retrieval）是指根據用戶提供的查詢條件，從一個大型影像數據庫中檢索出與查詢條件相似或相關的影像的過程。影像檢索旨在根據影像的內容特徵或相似性，實現快速且準確地找到用戶感興趣的影像。 影像檢索的過程可以分為兩個主要步驟：特徵提取和相似性匹配。特徵提取是從影像中提取出具有代表性的特徵，例如顏色、紋理、形狀、結構等。這些特徵可以通過各種計算機視覺和圖像處理技術進">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Image Retrieval">
 <meta property="og:url" content="https://leonicehot.github.io/2022/11/13/2022/November/Image%20Retrieval/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介影像檢索（Image Retrieval）是指根據用戶提供的查詢條件，從一個大型影像數據庫中檢索出與查詢條件相似或相關的影像的過程。影像檢索旨在根據影像的內容特徵或相似性，實現快速且準確地找到用戶感興趣的影像。 影像檢索的過程可以分為兩個主要步驟：特徵提取和相似性匹配。特徵提取是從影像中提取出具有代表性的特徵，例如顏色、紋理、形狀、結構等。這些特徵可以通過各種計算機視覺和圖像處理技術進行提取。">
+<meta property="og:description" content="簡介 影像檢索（Image Retrieval）是指根據用戶提供的查詢條件，從一個大型影像數據庫中檢索出與查詢條件相似或相關的影像的過程。影像檢索旨在根據影像的內容特徵或相似性，實現快速且準確地找到用戶感興趣的影像。 影像檢索的過程可以分為兩個主要步驟：特徵提取和相似性匹配。特徵提取是從影像中提取出具有代表性的特徵，例如顏色、紋理、形狀、結構等。這些特徵可以通過各種計算機視覺和圖像處理技術進">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F1.VGG_ILSVRC_16_pool5.prototxt.png?alt=media&token=16df6b5e-0a06-46e8-aad7-9a63f35af959">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F2.VGG16_bn.png?alt=media&token=1db369c1-ce0f-428c-a7f3-710a25be88cb">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F6.paris-1.png?alt=media&token=b7a8c8c6-3b66-4ec4-9102-bfbb145b1fcf">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F7.paris-2.png?alt=media&token=bf1785d2-e5cf-4478-808a-9dc5b5d027d6">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F8.paris-3.png?alt=media&token=ca316c14-4630-4812-9b42-6727f7f911cf">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F9.paris-4.png?alt=media&token=09262590-18b5-4a03-b66c-e7dad9dc95d3">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F10.paris-5.png?alt=media&token=7afef63a-bed4-40b7-a1f8-b502f3ac8bb7">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F11.paris-6.png?alt=media&token=1a848600-5b63-4feb-923d-991ebcebac96">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F12.paris-7.png?alt=media&token=7bb63f29-064e-42fa-9fad-45d33b4c7323">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F13.paris-8.png?alt=media&token=c7ca682e-1010-4dad-b307-d674005bbcde">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F14.paris-9.png?alt=media&token=44d7c5da-0ce5-43ed-8287-97ab208a639d">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F15.paris-10.png?alt=media&token=c436f9af-3303-44a5-9e8a-84cb969a16ed">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F16.paris-11.png?alt=media&token=6b3b021b-c8ae-4e3a-ab9f-d928aa22b28d">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F3.%E7%89%B9%E5%BE%B5%E8%90%83%E5%8F%96.png?alt=media&token=e221771c-2578-4b63-b50b-bb717e981d4f">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F4.oxford%20%E8%B3%87%E6%96%99%E9%9B%86.png?alt=media&token=dc2099d3-7d42-463d-83fc-3c6e7aee9495">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F5.paris%E8%B3%87%E6%96%99%E9%9B%86.png?alt=media&token=d54d4ac3-10f8-49ad-b7a6-d0a738c3911a">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FResult.png?alt=media&token=50c6aee3-ca04-4fbe-838f-73698cd4e643">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-1.png?alt=media&token=ecf7b935-6fd2-4ffe-9d94-a9e63d24ccba">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-2-1.png?alt=media&token=32d17076-782f-483a-b83c-015f7fc76bb2">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-2-2.png?alt=media&token=1b0e36bd-d3b5-488c-836a-e3e606da7feb">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-3-1.png?alt=media&token=78e9d21c-ddfe-4b8b-910a-dc8b1b8bb288">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-3-2.png?alt=media&token=8f343696-8123-45a9-a651-eb1fad54f10b">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-4-1.png?alt=media&token=9c1b8f7c-e410-4757-b3ff-6f77cbcff245">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-4-2.png?alt=media&token=3fdd2ec4-27bc-49db-b066-1c7e52655c56">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-1.png?alt=media&token=ecf7b935-6fd2-4ffe-9d94-a9e63d24ccba">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%202-1.png?alt=media&token=a75d5072-b0e1-404d-956a-0c85ec84a395">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%202-2.png?alt=media&token=5884f129-eda7-48f6-a26e-08db2b5dce2e">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%203-1.png?alt=media&token=4efb15ff-19d5-48b3-80a2-a5a43113c63a">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%203-2.png?alt=media&token=c874df87-db32-45c9-84ab-324cd65bbaaf">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%203-3.png?alt=media&token=59bdd8f4-2733-40ec-b7cc-a8420640f82b">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%204-1.png?alt=media&token=3bf62792-7ec7-4d8e-96d4-8b2699cc58fb">
-<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%204-2.png?alt=media&token=3b057398-5f2d-44f3-b94f-da45c5a94cf0">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F1.VGG_ILSVRC_16_pool5.prototxt.png?alt=media&amp;token=16df6b5e-0a06-46e8-aad7-9a63f35af959">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F2.VGG16_bn.png?alt=media&amp;token=1db369c1-ce0f-428c-a7f3-710a25be88cb">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F6.paris-1.png?alt=media&amp;token=b7a8c8c6-3b66-4ec4-9102-bfbb145b1fcf">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F7.paris-2.png?alt=media&amp;token=bf1785d2-e5cf-4478-808a-9dc5b5d027d6">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F8.paris-3.png?alt=media&amp;token=ca316c14-4630-4812-9b42-6727f7f911cf">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F9.paris-4.png?alt=media&amp;token=09262590-18b5-4a03-b66c-e7dad9dc95d3">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F10.paris-5.png?alt=media&amp;token=7afef63a-bed4-40b7-a1f8-b502f3ac8bb7">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F11.paris-6.png?alt=media&amp;token=1a848600-5b63-4feb-923d-991ebcebac96">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F12.paris-7.png?alt=media&amp;token=7bb63f29-064e-42fa-9fad-45d33b4c7323">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F13.paris-8.png?alt=media&amp;token=c7ca682e-1010-4dad-b307-d674005bbcde">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F14.paris-9.png?alt=media&amp;token=44d7c5da-0ce5-43ed-8287-97ab208a639d">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F15.paris-10.png?alt=media&amp;token=c436f9af-3303-44a5-9e8a-84cb969a16ed">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F16.paris-11.png?alt=media&amp;token=6b3b021b-c8ae-4e3a-ab9f-d928aa22b28d">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F3.%E7%89%B9%E5%BE%B5%E8%90%83%E5%8F%96.png?alt=media&amp;token=e221771c-2578-4b63-b50b-bb717e981d4f">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F4.oxford%20%E8%B3%87%E6%96%99%E9%9B%86.png?alt=media&amp;token=dc2099d3-7d42-463d-83fc-3c6e7aee9495">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F5.paris%E8%B3%87%E6%96%99%E9%9B%86.png?alt=media&amp;token=d54d4ac3-10f8-49ad-b7a6-d0a738c3911a">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FResult.png?alt=media&amp;token=50c6aee3-ca04-4fbe-838f-73698cd4e643">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-1.png?alt=media&amp;token=ecf7b935-6fd2-4ffe-9d94-a9e63d24ccba">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-2-1.png?alt=media&amp;token=32d17076-782f-483a-b83c-015f7fc76bb2">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-2-2.png?alt=media&amp;token=1b0e36bd-d3b5-488c-836a-e3e606da7feb">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-3-1.png?alt=media&amp;token=78e9d21c-ddfe-4b8b-910a-dc8b1b8bb288">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-3-2.png?alt=media&amp;token=8f343696-8123-45a9-a651-eb1fad54f10b">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-4-1.png?alt=media&amp;token=9c1b8f7c-e410-4757-b3ff-6f77cbcff245">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-4-2.png?alt=media&amp;token=3fdd2ec4-27bc-49db-b066-1c7e52655c56">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-1.png?alt=media&amp;token=ecf7b935-6fd2-4ffe-9d94-a9e63d24ccba">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%202-1.png?alt=media&amp;token=a75d5072-b0e1-404d-956a-0c85ec84a395">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%202-2.png?alt=media&amp;token=5884f129-eda7-48f6-a26e-08db2b5dce2e">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%203-1.png?alt=media&amp;token=4efb15ff-19d5-48b3-80a2-a5a43113c63a">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%203-2.png?alt=media&amp;token=c874df87-db32-45c9-84ab-324cd65bbaaf">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%203-3.png?alt=media&amp;token=59bdd8f4-2733-40ec-b7cc-a8420640f82b">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%204-1.png?alt=media&amp;token=3bf62792-7ec7-4d8e-96d4-8b2699cc58fb">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%204-2.png?alt=media&amp;token=3b057398-5f2d-44f3-b94f-da45c5a94cf0">
 <meta property="article:published_time" content="2022-11-13T01:07:33.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:34.708Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F1.VGG_ILSVRC_16_pool5.prototxt.png?alt=media&token=16df6b5e-0a06-46e8-aad7-9a63f35af959">
+<meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F1.VGG_ILSVRC_16_pool5.prototxt.png?alt=media&amp;token=16df6b5e-0a06-46e8-aad7-9a63f35af959">
 
 
 <link rel="canonical" href="https://leonicehot.github.io/2022/11/13/2022/November/Image%20Retrieval/">
@@ -143,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Crow-Method"><span class="nav-number">3.</span> <span class="nav-text">Crow Method</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A0%90%E8%A8%93%E7%B7%B4%E6%A8%A1%E5%9E%8B-VGG16-model"><span class="nav-number">4.</span> <span class="nav-text">預訓練模型 VGG16 model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Caffe"><span class="nav-number">4.1.</span> <span class="nav-text">Caffe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PyTorch"><span class="nav-number">4.2.</span> <span class="nav-text">PyTorch</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E9%9B%86"><span class="nav-number">5.</span> <span class="nav-text">資料集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Paris"><span class="nav-number">5.1.</span> <span class="nav-text">Paris</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oxford"><span class="nav-number">5.2.</span> <span class="nav-text">oxford</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%B9%E5%BE%B5%E8%90%83%E5%8F%96-Feature-Extraction"><span class="nav-number">6.</span> <span class="nav-text">特徵萃取 Feature Extraction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%B9%E5%BE%B5%E6%9F%A5%E8%A9%A2-Feature-Queries"><span class="nav-number">7.</span> <span class="nav-text">特徵查詢 Feature Queries</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A9%97%E8%AD%89-Evaluation"><span class="nav-number">8.</span> <span class="nav-text">驗證 Evaluation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bug-%E9%9B%86%E7%B5%90"><span class="nav-number">9.</span> <span class="nav-text">Bug 集結</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E6%96%87%E7%8D%BB"><span class="nav-number">10.</span> <span class="nav-text">參考文獻</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#crow-method"><span class="nav-number">2.</span> <span class="nav-text">Crow Method</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A0%90%E8%A8%93%E7%B7%B4%E6%A8%A1%E5%9E%8B-vgg16-model"><span class="nav-number">3.</span> <span class="nav-text">預訓練模型 VGG16 model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#caffe"><span class="nav-number">3.1.</span> <span class="nav-text">Caffe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytorch"><span class="nav-number">3.2.</span> <span class="nav-text">PyTorch</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E9%9B%86"><span class="nav-number">4.</span> <span class="nav-text">資料集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#paris"><span class="nav-number">4.1.</span> <span class="nav-text">Paris</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oxford"><span class="nav-number">4.2.</span> <span class="nav-text">oxford</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%B9%E5%BE%B5%E6%9F%A5%E8%A9%A2-feature-queries"><span class="nav-number">5.</span> <span class="nav-text">特徵查詢 Feature Queries</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A9%97%E8%AD%89-evaluation"><span class="nav-number">6.</span> <span class="nav-text">驗證 Evaluation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bug-%E9%9B%86%E7%B5%90"><span class="nav-number">7.</span> <span class="nav-text">Bug 集結</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E6%96%87%E7%8D%BB"><span class="nav-number">8.</span> <span class="nav-text">參考文獻</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -156,7 +156,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-count">142</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -253,7 +253,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>2k</span>
+      <span>2.3k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -270,62 +270,181 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>影像檢索（Image Retrieval）是指根據用戶提供的查詢條件，從一個大型影像數據庫中檢索出與查詢條件相似或相關的影像的過程。影像檢索旨在根據影像的內容特徵或相似性，實現快速且準確地找到用戶感興趣的影像。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
+<p>影像檢索（Image
+Retrieval）是指根據用戶提供的查詢條件，從一個大型影像數據庫中檢索出與查詢條件相似或相關的影像的過程。影像檢索旨在根據影像的內容特徵或相似性，實現快速且準確地找到用戶感興趣的影像。</p>
 <p>影像檢索的過程可以分為兩個主要步驟：特徵提取和相似性匹配。特徵提取是從影像中提取出具有代表性的特徵，例如顏色、紋理、形狀、結構等。這些特徵可以通過各種計算機視覺和圖像處理技術進行提取。相似性匹配則是通過比較查詢影像的特徵與數據庫中每個影像的特徵，計算它們之間的相似度或距離，並根據相似度排序返回相關的影像。</p>
-<p>常見的影像檢索方法包括基於內容的檢索（Content-Based Image Retrieval, CBIR）和基於文字標籤的檢索（Text-Based Image Retrieval, TBIR）。CBIR方法主要依賴影像的內容特徵，如顏色直方圖、紋理特徵、形狀描述子等，進行相似性匹配。TBIR方法則通過對影像進行標籤或描述的方式進行檢索，例如通過用戶提供的關鍵詞或描述進行匹配。</p>
+<p>常見的影像檢索方法包括基於內容的檢索（Content-Based Image Retrieval,
+CBIR）和基於文字標籤的檢索（Text-Based Image Retrieval,
+TBIR）。CBIR方法主要依賴影像的內容特徵，如顏色直方圖、紋理特徵、形狀描述子等，進行相似性匹配。TBIR方法則通過對影像進行標籤或描述的方式進行檢索，例如通過用戶提供的關鍵詞或描述進行匹配。</p>
 <p>近年來，隨著深度學習技術的發展，基於深度學習的影像檢索方法也得到了廣泛應用。通過使用深度卷積神經網絡（CNN）等深度學習模型，可以從影像中提取出高層次的特徵表示，進一步提高影像檢索的準確性和效果。</p>
-<p>影像檢索在許多領域都有重要應用，如圖書館圖像管理、醫學影像分析、視覺監控、社交媒體圖像檢索等。它可以幫助用戶快速找到感興趣的影像，並在大量的影像數據中進行有效的搜索和分析。</p>
-<span id="more"></span>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>為了改善閉環檢測的方法，參考FSCW的方法，發現比較Crow的方法，便依此作為範本，<br>實作時發現此專案是早年使用Caffe模型寫的，此模型已經過時，因此改寫為PyTorch版本。</p>
-<h1 id="Crow-Method"><a href="#Crow-Method" class="headerlink" title="Crow Method"></a>Crow Method</h1><p><a target="_blank" rel="noopener" href="https://github.com/YahooArchive/crow">https://github.com/YahooArchive/crow</a></p>
-<h1 id="預訓練模型-VGG16-model"><a href="#預訓練模型-VGG16-model" class="headerlink" title="預訓練模型 VGG16 model"></a>預訓練模型 VGG16 model</h1><h2 id="Caffe"><a href="#Caffe" class="headerlink" title="Caffe"></a>Caffe</h2><p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F1.VGG_ILSVRC_16_pool5.prototxt.png?alt=media&token=16df6b5e-0a06-46e8-aad7-9a63f35af959" alt="1.VGG_ILSVRC_16_pool5.prototxt"></p>
-<h2 id="PyTorch"><a href="#PyTorch" class="headerlink" title="PyTorch"></a>PyTorch</h2><p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F2.VGG16_bn.png?alt=media&token=1db369c1-ce0f-428c-a7f3-710a25be88cb" alt="2.VGG16_bn"></p>
-<p>參考寫法<br>Image Feature Extraction Using PyTorch Case Study: Image Clustering using<br>K-Means Algorithm<br><a target="_blank" rel="noopener" href="https://towardsdatascience.com/image-feature-extraction-using-pytorch-e3b327c3607a">https://towardsdatascience.com/image-feature-extraction-using-pytorch-e3b327c3607a</a></p>
-<h1 id="資料集"><a href="#資料集" class="headerlink" title="資料集"></a>資料集</h1><h2 id="Paris"><a href="#Paris" class="headerlink" title="Paris"></a>Paris</h2><p>Paris<br>官方網站<br><a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/">https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/</a></p>
-<p>Get data<br><a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/paris_1-v1.tgz">https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/paris_1-v1.tgz</a><br><a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/paris_2-v1.tgz">https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/paris_2-v1.tgz</a></p>
-<p>Get labels<br><a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/paris_120310.tgz">https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/paris_120310.tgz</a></p>
-<p>Linux 執行 get_paris.sh<br>Windows 需改為bat檔</p>
-<p>Paris 資料集有圖片無法讀取 需刪除<br><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F6.paris-1.png?alt=media&token=b7a8c8c6-3b66-4ec4-9102-bfbb145b1fcf" alt="6.paris-1"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F7.paris-2.png?alt=media&token=bf1785d2-e5cf-4478-808a-9dc5b5d027d6" alt="7.paris-2"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F8.paris-3.png?alt=media&token=ca316c14-4630-4812-9b42-6727f7f911cf" alt="8.paris-3"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F9.paris-4.png?alt=media&token=09262590-18b5-4a03-b66c-e7dad9dc95d3" alt="9.paris-4"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F10.paris-5.png?alt=media&token=7afef63a-bed4-40b7-a1f8-b502f3ac8bb7" alt="10.paris-5"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F11.paris-6.png?alt=media&token=1a848600-5b63-4feb-923d-991ebcebac96" alt="11.paris-6"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F12.paris-7.png?alt=media&token=7bb63f29-064e-42fa-9fad-45d33b4c7323" alt="12.paris-7"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F13.paris-8.png?alt=media&token=c7ca682e-1010-4dad-b307-d674005bbcde" alt="13.paris-8"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F14.paris-9.png?alt=media&token=44d7c5da-0ce5-43ed-8287-97ab208a639d" alt="14.paris-9"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F15.paris-10.png?alt=media&token=c436f9af-3303-44a5-9e8a-84cb969a16ed" alt="15.paris-10"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F16.paris-11.png?alt=media&token=6b3b021b-c8ae-4e3a-ab9f-d928aa22b28d" alt="16.paris-11"></p>
-<h2 id="oxford"><a href="#oxford" class="headerlink" title="oxford"></a>oxford</h2><p>Oxford<br>官方網站<br><a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/">https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/</a>.</p>
-<p>Get data<br><a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/oxbuild_images-v1.tgz">https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/oxbuild_images-v1.tgz</a></p>
-<p>Get labels<br><a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/gt_files_170407.tgz">https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/gt_files_170407.tgz</a></p>
-<p>Linux 執行 get_oxford.sh<br>Windows 需改為bat檔</p>
-<h1 id="特徵萃取-Feature-Extraction"><a href="#特徵萃取-Feature-Extraction" class="headerlink" title="特徵萃取 Feature Extraction"></a>特徵萃取 Feature Extraction</h1><p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F3.%E7%89%B9%E5%BE%B5%E8%90%83%E5%8F%96.png?alt=media&token=e221771c-2578-4b63-b50b-bb717e981d4f" alt="3.特徵萃取"></p>
-<h1 id="特徵查詢-Feature-Queries"><a href="#特徵查詢-Feature-Queries" class="headerlink" title="特徵查詢 Feature Queries"></a>特徵查詢 Feature Queries</h1><p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F4.oxford%20%E8%B3%87%E6%96%99%E9%9B%86.png?alt=media&token=dc2099d3-7d42-463d-83fc-3c6e7aee9495" alt="4.oxford 資料集"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F5.paris%E8%B3%87%E6%96%99%E9%9B%86.png?alt=media&token=d54d4ac3-10f8-49ad-b7a6-d0a738c3911a" alt="5.paris資料集"></p>
-<h1 id="驗證-Evaluation"><a href="#驗證-Evaluation" class="headerlink" title="驗證 Evaluation"></a>驗證 Evaluation</h1><p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FResult.png?alt=media&token=50c6aee3-ca04-4fbe-838f-73698cd4e643" alt="Result"></p>
-<h1 id="Bug-集結"><a href="#Bug-集結" class="headerlink" title="Bug 集結"></a>Bug 集結</h1><p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-1.png?alt=media&token=ecf7b935-6fd2-4ffe-9d94-a9e63d24ccba" alt="Bug 1-1"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-2-1.png?alt=media&token=32d17076-782f-483a-b83c-015f7fc76bb2" alt="Bug 1-2-1"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-2-2.png?alt=media&token=1b0e36bd-d3b5-488c-836a-e3e606da7feb" alt="Bug 1-2-2"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-3-1.png?alt=media&token=78e9d21c-ddfe-4b8b-910a-dc8b1b8bb288" alt="Bug 1-3-1"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-3-2.png?alt=media&token=8f343696-8123-45a9-a651-eb1fad54f10b" alt="Bug 1-3-2"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-4-1.png?alt=media&token=9c1b8f7c-e410-4757-b3ff-6f77cbcff245" alt="Bug 1-4-1"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-4-2.png?alt=media&token=3fdd2ec4-27bc-49db-b066-1c7e52655c56" alt="Bug 1-4-2"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-1.png?alt=media&token=ecf7b935-6fd2-4ffe-9d94-a9e63d24ccba" alt="Bug 1-1"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%202-1.png?alt=media&token=a75d5072-b0e1-404d-956a-0c85ec84a395" alt="Bug 2-1"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%202-2.png?alt=media&token=5884f129-eda7-48f6-a26e-08db2b5dce2e" alt="Bug 2-2"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%203-1.png?alt=media&token=4efb15ff-19d5-48b3-80a2-a5a43113c63a" alt="Bug 3-1"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%203-2.png?alt=media&token=c874df87-db32-45c9-84ab-324cd65bbaaf" alt="Bug 3-2"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%203-3.png?alt=media&token=59bdd8f4-2733-40ec-b7cc-a8420640f82b" alt="Bug 3-3"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%204-1.png?alt=media&token=3bf62792-7ec7-4d8e-96d4-8b2699cc58fb" alt="Bug 4-1"></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%204-2.png?alt=media&token=3b057398-5f2d-44f3-b94f-da45c5a94cf0" alt="Bug 4-2"></p>
+<p>影像檢索在許多領域都有重要應用，如圖書館圖像管理、醫學影像分析、視覺監控、社交媒體圖像檢索等。它可以幫助用戶快速找到感興趣的影像，並在大量的影像數據中進行有效的搜索和分析。
+<span id="more"></span> # 前言
+為了改善閉環檢測的方法，參考FSCW的方法，發現比較Crow的方法，便依此作為範本，
+實作時發現此專案是早年使用Caffe模型寫的，此模型已經過時，因此改寫為PyTorch版本。</p>
+<h1 id="crow-method">Crow Method</h1>
+<p>https://github.com/YahooArchive/crow</p>
+<h1 id="預訓練模型-vgg16-model">預訓練模型 VGG16 model</h1>
+<h2 id="caffe">Caffe</h2>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F1.VGG_ILSVRC_16_pool5.prototxt.png?alt=media&amp;token=16df6b5e-0a06-46e8-aad7-9a63f35af959" alt="1.VGG_ILSVRC_16_pool5.prototxt">
+<figcaption aria-hidden="true">1.VGG_ILSVRC_16_pool5.prototxt</figcaption>
+</figure>
+<h2 id="pytorch">PyTorch</h2>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F2.VGG16_bn.png?alt=media&amp;token=1db369c1-ce0f-428c-a7f3-710a25be88cb" alt="2.VGG16_bn">
+<figcaption aria-hidden="true">2.VGG16_bn</figcaption>
+</figure>
+<p>參考寫法 Image Feature Extraction Using PyTorch Case Study: Image
+Clustering using K-Means Algorithm
+https://towardsdatascience.com/image-feature-extraction-using-pytorch-e3b327c3607a</p>
+<h1 id="資料集">資料集</h1>
+<h2 id="paris">Paris</h2>
+<p>Paris 官方網站
+https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/</p>
+<p>Get data
+https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/paris_1-v1.tgz
+https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/paris_2-v1.tgz</p>
+<p>Get labels
+https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/paris_120310.tgz</p>
+<p>Linux 執行 get_paris.sh Windows 需改為bat檔</p>
+<p>Paris 資料集有圖片無法讀取 需刪除 <img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F6.paris-1.png?alt=media&amp;token=b7a8c8c6-3b66-4ec4-9102-bfbb145b1fcf" alt="6.paris-1"></p>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F7.paris-2.png?alt=media&amp;token=bf1785d2-e5cf-4478-808a-9dc5b5d027d6" alt="7.paris-2">
+<figcaption aria-hidden="true">7.paris-2</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F8.paris-3.png?alt=media&amp;token=ca316c14-4630-4812-9b42-6727f7f911cf" alt="8.paris-3">
+<figcaption aria-hidden="true">8.paris-3</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F9.paris-4.png?alt=media&amp;token=09262590-18b5-4a03-b66c-e7dad9dc95d3" alt="9.paris-4">
+<figcaption aria-hidden="true">9.paris-4</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F10.paris-5.png?alt=media&amp;token=7afef63a-bed4-40b7-a1f8-b502f3ac8bb7" alt="10.paris-5">
+<figcaption aria-hidden="true">10.paris-5</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F11.paris-6.png?alt=media&amp;token=1a848600-5b63-4feb-923d-991ebcebac96" alt="11.paris-6">
+<figcaption aria-hidden="true">11.paris-6</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F12.paris-7.png?alt=media&amp;token=7bb63f29-064e-42fa-9fad-45d33b4c7323" alt="12.paris-7">
+<figcaption aria-hidden="true">12.paris-7</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F13.paris-8.png?alt=media&amp;token=c7ca682e-1010-4dad-b307-d674005bbcde" alt="13.paris-8">
+<figcaption aria-hidden="true">13.paris-8</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F14.paris-9.png?alt=media&amp;token=44d7c5da-0ce5-43ed-8287-97ab208a639d" alt="14.paris-9">
+<figcaption aria-hidden="true">14.paris-9</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F15.paris-10.png?alt=media&amp;token=c436f9af-3303-44a5-9e8a-84cb969a16ed" alt="15.paris-10">
+<figcaption aria-hidden="true">15.paris-10</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F16.paris-11.png?alt=media&amp;token=6b3b021b-c8ae-4e3a-ab9f-d928aa22b28d" alt="16.paris-11">
+<figcaption aria-hidden="true">16.paris-11</figcaption>
+</figure>
+<h2 id="oxford">oxford</h2>
+<p>Oxford 官方網站
+https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/.</p>
+<p>Get data
+https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/oxbuild_images-v1.tgz</p>
+<p>Get labels
+https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/gt_files_170407.tgz</p>
+<p>Linux 執行 get_oxford.sh Windows 需改為bat檔 # 特徵萃取 Feature
+Extraction <img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F3.%E7%89%B9%E5%BE%B5%E8%90%83%E5%8F%96.png?alt=media&amp;token=e221771c-2578-4b63-b50b-bb717e981d4f" alt="3.特徵萃取"></p>
+<h1 id="特徵查詢-feature-queries">特徵查詢 Feature Queries</h1>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F4.oxford%20%E8%B3%87%E6%96%99%E9%9B%86.png?alt=media&amp;token=dc2099d3-7d42-463d-83fc-3c6e7aee9495" alt="4.oxford 資料集">
+<figcaption aria-hidden="true">4.oxford 資料集</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2F5.paris%E8%B3%87%E6%96%99%E9%9B%86.png?alt=media&amp;token=d54d4ac3-10f8-49ad-b7a6-d0a738c3911a" alt="5.paris資料集">
+<figcaption aria-hidden="true">5.paris資料集</figcaption>
+</figure>
+<h1 id="驗證-evaluation">驗證 Evaluation</h1>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FResult.png?alt=media&amp;token=50c6aee3-ca04-4fbe-838f-73698cd4e643" alt="Result">
+<figcaption aria-hidden="true">Result</figcaption>
+</figure>
+<h1 id="bug-集結">Bug 集結</h1>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-1.png?alt=media&amp;token=ecf7b935-6fd2-4ffe-9d94-a9e63d24ccba" alt="Bug 1-1">
+<figcaption aria-hidden="true">Bug 1-1</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-2-1.png?alt=media&amp;token=32d17076-782f-483a-b83c-015f7fc76bb2" alt="Bug 1-2-1">
+<figcaption aria-hidden="true">Bug 1-2-1</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-2-2.png?alt=media&amp;token=1b0e36bd-d3b5-488c-836a-e3e606da7feb" alt="Bug 1-2-2">
+<figcaption aria-hidden="true">Bug 1-2-2</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-3-1.png?alt=media&amp;token=78e9d21c-ddfe-4b8b-910a-dc8b1b8bb288" alt="Bug 1-3-1">
+<figcaption aria-hidden="true">Bug 1-3-1</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-3-2.png?alt=media&amp;token=8f343696-8123-45a9-a651-eb1fad54f10b" alt="Bug 1-3-2">
+<figcaption aria-hidden="true">Bug 1-3-2</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-4-1.png?alt=media&amp;token=9c1b8f7c-e410-4757-b3ff-6f77cbcff245" alt="Bug 1-4-1">
+<figcaption aria-hidden="true">Bug 1-4-1</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-4-2.png?alt=media&amp;token=3fdd2ec4-27bc-49db-b066-1c7e52655c56" alt="Bug 1-4-2">
+<figcaption aria-hidden="true">Bug 1-4-2</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%201-1.png?alt=media&amp;token=ecf7b935-6fd2-4ffe-9d94-a9e63d24ccba" alt="Bug 1-1">
+<figcaption aria-hidden="true">Bug 1-1</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%202-1.png?alt=media&amp;token=a75d5072-b0e1-404d-956a-0c85ec84a395" alt="Bug 2-1">
+<figcaption aria-hidden="true">Bug 2-1</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%202-2.png?alt=media&amp;token=5884f129-eda7-48f6-a26e-08db2b5dce2e" alt="Bug 2-2">
+<figcaption aria-hidden="true">Bug 2-2</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%203-1.png?alt=media&amp;token=4efb15ff-19d5-48b3-80a2-a5a43113c63a" alt="Bug 3-1">
+<figcaption aria-hidden="true">Bug 3-1</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%203-2.png?alt=media&amp;token=c874df87-db32-45c9-84ab-324cd65bbaaf" alt="Bug 3-2">
+<figcaption aria-hidden="true">Bug 3-2</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%203-3.png?alt=media&amp;token=59bdd8f4-2733-40ec-b7cc-a8420640f82b" alt="Bug 3-3">
+<figcaption aria-hidden="true">Bug 3-3</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%204-1.png?alt=media&amp;token=3bf62792-7ec7-4d8e-96d4-8b2699cc58fb" alt="Bug 4-1">
+<figcaption aria-hidden="true">Bug 4-1</figcaption>
+</figure>
+<figure>
+<img src="https://firebasestorage.googleapis.com/v0/b/blog-d001b.appspot.com/o/Cross-dimensional%20Weighting%20(CroW)%20aggregation%20PyTorch%20%E6%94%B9%E5%AF%AB%2FBug%204-2.png?alt=media&amp;token=3b057398-5f2d-44f3-b94f-da45c5a94cf0" alt="Bug 4-2">
+<figcaption aria-hidden="true">Bug 4-2</figcaption>
+</figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">box = list(map(lambda d: int(round(d)), (x, y, x + w, y + h)))</span><br><span class="line">box = map(lambda d: int(round(d)), (x, y, x + w, y + h))</span><br></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="https://bobbyhadz.com/blog/python-typeerror-map-object-is-not-subscriptable">https://bobbyhadz.com/blog/python-typeerror-map-object-is-not-subscriptable</a></p>
-<h1 id="參考文獻"><a href="#參考文獻" class="headerlink" title="參考文獻"></a>參考文獻</h1><ol>
-<li><p>Kalantidis, Y., Mellina, C., &amp; Osindero, S. (2016, October). Cross-dimensional weighting for aggregated deep convolutional features. In European conference on computer vision (pp. 685-701). Springer, Cham.</p>
-</li>
-<li><p>Zhang, B. J., Liu, G. H., &amp; Hu, J. K. (2022). Filtering Deep Convolutional Features for Image Retrieval. International Journal of Pattern Recognition and Artificial Intelligence, 36(01), 2252003.</p>
-</li>
+<p>https://bobbyhadz.com/blog/python-typeerror-map-object-is-not-subscriptable</p>
+<h1 id="參考文獻">參考文獻</h1>
+<ol type="1">
+<li><p>Kalantidis, Y., Mellina, C., &amp; Osindero, S. (2016, October).
+Cross-dimensional weighting for aggregated deep convolutional features.
+In European conference on computer vision (pp. 685-701). Springer,
+Cham.</p></li>
+<li><p>Zhang, B. J., Liu, G. H., &amp; Hu, J. K. (2022). Filtering Deep
+Convolutional Features for Image Retrieval. International Journal of
+Pattern Recognition and Artificial Intelligence, 36(01),
+2252003.</p></li>
 </ol>
 
     </div>
@@ -378,13 +497,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">286k</span>
+    <span title="總字數">288k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:39</span>
+    <span title="所需總閱讀時間">8:44</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

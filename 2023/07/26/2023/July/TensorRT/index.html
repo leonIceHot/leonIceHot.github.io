@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介TensorRT（TensorRT：Tensor Runtime）是由NVIDIA開發的深度學習推理（Inference）優化庫，旨在提高深度學習模型的推理性能。它針對 NVIDIA GPU 進行了高度優化，可用於加速各種深度學習工作負載，包括圖像分類、目標檢測、自然語言處理等任務。">
+    <meta name="description" content="簡介 TensorRT（TensorRT：Tensor Runtime）是由NVIDIA開發的深度學習推理（Inference）優化庫，旨在提高深度學習模型的推理性能。它針對 NVIDIA GPU 進行了高度優化，可用於加速各種深度學習工作負載，包括圖像分類、目標檢測、自然語言處理等任務。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TensorRT">
 <meta property="og:url" content="https://leonicehot.github.io/2023/07/26/2023/July/TensorRT/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介TensorRT（TensorRT：Tensor Runtime）是由NVIDIA開發的深度學習推理（Inference）優化庫，旨在提高深度學習模型的推理性能。它針對 NVIDIA GPU 進行了高度優化，可用於加速各種深度學習工作負載，包括圖像分類、目標檢測、自然語言處理等任務。">
+<meta property="og:description" content="簡介 TensorRT（TensorRT：Tensor Runtime）是由NVIDIA開發的深度學習推理（Inference）優化庫，旨在提高深度學習模型的推理性能。它針對 NVIDIA GPU 進行了高度優化，可用於加速各種深度學習工作負載，包括圖像分類、目標檢測、自然語言處理等任務。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-07-26T08:30:15.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:36.313Z">
@@ -110,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E9%80%94"><span class="nav-number">2.</span> <span class="nav-text">用途</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorRT"><span class="nav-number">3.</span> <span class="nav-text">TensorRT</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -123,7 +123,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-count">142</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -224,7 +224,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>659</span>
+      <span>663</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -241,24 +241,29 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>TensorRT（TensorRT：Tensor Runtime）是由NVIDIA開發的深度學習推理（Inference）優化庫，旨在提高深度學習模型的推理性能。它針對 NVIDIA GPU 進行了高度優化，可用於加速各種深度學習工作負載，包括圖像分類、目標檢測、自然語言處理等任務。</p>
-<span id="more"></span>
-<h1 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h1><ol>
-<li><p>加速深度學習推理：TensorRT 通過對模型進行優化，包括網路結構剪枝、層融合和量化等技術，以提高推理性能。這使得深度學習模型在生產環境中能夠更快地進行推理，適用于即時應用。</p>
-</li>
-<li><p>支持多種深度學習框架：TensorRT 可與主流深度學習框架（如 TensorFlow、PyTorch 和 ONNX）集成，從而可以在這些框架中訓練模型，然後使用 TensorRT 進行優化和推理。</p>
-</li>
-<li><p>精確度和性能權衡：TensorRT 允許使用者在精確度和性能之間進行權衡。你可以選擇通過降低精確度來獲得更高的推理速度，或者保持精確度以犧牲一些性能。</p>
-</li>
-<li><p>支持 INT8 和 FP16 推理：TensorRT 支持 INT8 和 FP16 推理，這些精度降低了模型的計算需求，從而提高了推理速度。</p>
-</li>
-<li><p>動態尺寸支援：TensorRT 可以處理動態輸入尺寸，這在某些應用中非常有用，因為輸入資料的尺寸可能會變化。</p>
-</li>
-<li><p>部署到嵌入式設備：除了用於伺服器和工作站的部署外，TensorRT 還可以用於嵌入式設備，如 NVIDIA 的 Jetson 系列，以在邊緣設備上運行深度學習模型。</p>
-</li>
-</ol>
-<h1 id="TensorRT"><a href="#TensorRT" class="headerlink" title="TensorRT"></a>TensorRT</h1><ol>
-<li>【猿代码科技】TensorRT保姆级实操手册快速入门<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/653080202">https://zhuanlan.zhihu.com/p/653080202</a></li>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
+<p>TensorRT（TensorRT：Tensor
+Runtime）是由NVIDIA開發的深度學習推理（Inference）優化庫，旨在提高深度學習模型的推理性能。它針對
+NVIDIA GPU
+進行了高度優化，可用於加速各種深度學習工作負載，包括圖像分類、目標檢測、自然語言處理等任務。
+<span id="more"></span> # 用途 1. 加速深度學習推理：TensorRT
+通過對模型進行優化，包括網路結構剪枝、層融合和量化等技術，以提高推理性能。這使得深度學習模型在生產環境中能夠更快地進行推理，適用于即時應用。</p>
+<ol start="2" type="1">
+<li><p>支持多種深度學習框架：TensorRT 可與主流深度學習框架（如
+TensorFlow、PyTorch 和
+ONNX）集成，從而可以在這些框架中訓練模型，然後使用 TensorRT
+進行優化和推理。</p></li>
+<li><p>精確度和性能權衡：TensorRT
+允許使用者在精確度和性能之間進行權衡。你可以選擇通過降低精確度來獲得更高的推理速度，或者保持精確度以犧牲一些性能。</p></li>
+<li><p>支持 INT8 和 FP16 推理：TensorRT 支持 INT8 和 FP16
+推理，這些精度降低了模型的計算需求，從而提高了推理速度。</p></li>
+<li><p>動態尺寸支援：TensorRT
+可以處理動態輸入尺寸，這在某些應用中非常有用，因為輸入資料的尺寸可能會變化。</p></li>
+<li><p>部署到嵌入式設備：除了用於伺服器和工作站的部署外，TensorRT
+還可以用於嵌入式設備，如 NVIDIA 的 Jetson
+系列，以在邊緣設備上運行深度學習模型。 # TensorRT</p></li>
+<li><p>【猿代码科技】TensorRT保姆级实操手册快速入门
+https://zhuanlan.zhihu.com/p/653080202</p></li>
 </ol>
 
     </div>
@@ -311,13 +316,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">286k</span>
+    <span title="總字數">288k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:39</span>
+    <span title="所需總閱讀時間">8:44</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

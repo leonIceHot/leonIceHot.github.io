@@ -26,13 +26,13 @@
 <meta property="og:site_name" content="利醬の休憩房">
 <meta property="og:description" content="鋸齒現象（aliasing）是指在數位影像或視覺顯示中，當邊緣或斜線被顯示為一系列不平滑的階梯狀像素時所產生的視覺效果，這些不平滑的邊緣看起來像鋸齒或台階，尤其在低解析度下更明顯。">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://leonicehot.github.io/images/2024/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/1.webp">
-<meta property="og:image" content="https://leonicehot.github.io/images/2024/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/2.webp">
+<meta property="og:image" content="https://leonicehot.github.io/2024/10/18/2024/images/2024/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/1.webp">
+<meta property="og:image" content="https://leonicehot.github.io/2024/10/18/2024/images/2024/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/2.webp">
 <meta property="article:published_time" content="2024-10-18T03:33:04.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:38.261Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://leonicehot.github.io/images/2024/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/1.webp">
+<meta name="twitter:image" content="https://leonicehot.github.io/2024/10/18/2024/images/2024/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/1.webp">
 
 
 <link rel="canonical" href="https://leonicehot.github.io/2024/10/18/2024/October/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/">
@@ -113,7 +113,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BD%A2%E6%88%90%E5%8E%9F%E5%9B%A0%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">形成原因：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pytorch-Resize-antialias%E7%9A%84%E5%BD%B1%E9%9F%BF"><span class="nav-number">2.</span> <span class="nav-text">Pytorch Resize antialias的影響</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%96%E7%89%87%E8%AA%AA%E6%98%8E-1"><span class="nav-number">3.</span> <span class="nav-text">圖片說明 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%96%E7%89%87%E8%AA%AA%E6%98%8E-2"><span class="nav-number">4.</span> <span class="nav-text">圖片說明 2</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch-resize-antialias%E7%9A%84%E5%BD%B1%E9%9F%BF"><span class="nav-number">1.</span> <span class="nav-text">Pytorch Resize
+antialias的影響</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%96%E7%89%87%E8%AA%AA%E6%98%8E-1"><span class="nav-number">2.</span> <span class="nav-text">圖片說明 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%96%E7%89%87%E8%AA%AA%E6%98%8E-2"><span class="nav-number">3.</span> <span class="nav-text">圖片說明 2</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -126,7 +127,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-count">142</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -230,7 +231,7 @@
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>3 分鐘</span>
+      <span>2 分鐘</span>
     </span>
 </div>
 
@@ -240,42 +241,55 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>鋸齒現象（aliasing）是指在數位影像或視覺顯示中，當邊緣或斜線被顯示為一系列不平滑的階梯狀像素時所產生的視覺效果，這些不平滑的邊緣看起來像鋸齒或台階，尤其在低解析度下更明顯。</p>
-<span id="more"></span>
-<h1 id="形成原因："><a href="#形成原因：" class="headerlink" title="形成原因："></a>形成原因：</h1><p>鋸齒現象通常在影像縮放、線條渲染、或3D圖形處理時發生，特別是在解析度不足或影像縮小時出現。這是因為影像或圖形在數位化時，是以像素為單位來表示連續的線條或邊緣。當斜線或曲線無法與像素網格完全對齊時，就會出現鋸齒效應。</p>
+    <div class="post-body" itemprop="articleBody"><p>鋸齒現象（aliasing）是指在數位影像或視覺顯示中，當邊緣或斜線被顯示為一系列不平滑的階梯狀像素時所產生的視覺效果，這些不平滑的邊緣看起來像鋸齒或台階，尤其在低解析度下更明顯。
+<span id="more"></span> # 形成原因：
+鋸齒現象通常在影像縮放、線條渲染、或3D圖形處理時發生，特別是在解析度不足或影像縮小時出現。這是因為影像或圖形在數位化時，是以像素為單位來表示連續的線條或邊緣。當斜線或曲線無法與像素網格完全對齊時，就會出現鋸齒效應。</p>
 <ul>
-<li><p>例子：<br>文字或圖形邊緣：當你看到數位圖片或文字的邊緣出現一種「不平滑」的階梯狀邊緣。<br>遊戲畫面：在電腦或遊戲中，特別是在低解析度下，物體的邊緣會看起來不平滑，像是一系列小台階。</p>
-</li>
+<li><p>例子：
+文字或圖形邊緣：當你看到數位圖片或文字的邊緣出現一種「不平滑」的階梯狀邊緣。
+遊戲畫面：在電腦或遊戲中，特別是在低解析度下，物體的邊緣會看起來不平滑，像是一系列小台階。</p></li>
 <li><p>解決方法：</p>
 <ul>
-<li><p>抗鋸齒技術（Anti-aliasing）：<br>  抗鋸齒技術是用來減少或消除鋸齒現象的濾波技術。它通過對邊緣進行平滑處理，使斜線或曲線看起來更加自然和平滑，減少階梯狀邊緣的感覺。</p>
-</li>
-<li><p>提高解析度：<br>  更高的解析度可以減少鋸齒現象，因為每個像素表示的區域會更小，影像邊緣能夠更接近於連續的線條。</p>
-</li>
-<li><p>視覺比較：<br>  想像一條在低解析度下顯示的對角線，它可能看起來像一系列方格相連，而不是一條平滑的線。這種「方格感」就是鋸齒現象。</p>
-</li>
-</ul>
-</li>
+<li><p>抗鋸齒技術（Anti-aliasing）：
+抗鋸齒技術是用來減少或消除鋸齒現象的濾波技術。它通過對邊緣進行平滑處理，使斜線或曲線看起來更加自然和平滑，減少階梯狀邊緣的感覺。</p></li>
+<li><p>提高解析度：
+更高的解析度可以減少鋸齒現象，因為每個像素表示的區域會更小，影像邊緣能夠更接近於連續的線條。</p></li>
+<li><p>視覺比較：
+想像一條在低解析度下顯示的對角線，它可能看起來像一系列方格相連，而不是一條平滑的線。這種「方格感」就是鋸齒現象。</p></li>
+</ul></li>
 <li><p>影像中的鋸齒現象：</p>
 <ul>
 <li>無抗鋸齒處理：物體邊緣會顯得不平滑，邊界部分出現台階狀的鋸齒。</li>
-<li>有抗鋸齒處理：邊緣會顯得較為平滑，鋸齒感減少或消失。<br>  抗鋸齒技術在數字影像處理、電腦圖形學和遊戲開發中廣泛應用，以提升視覺效果的品質。</li>
+<li>有抗鋸齒處理：邊緣會顯得較為平滑，鋸齒感減少或消失。
+抗鋸齒技術在數字影像處理、電腦圖形學和遊戲開發中廣泛應用，以提升視覺效果的品質。</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h1 id="Pytorch-Resize-antialias的影響"><a href="#Pytorch-Resize-antialias的影響" class="headerlink" title="Pytorch Resize antialias的影響"></a>Pytorch Resize antialias的影響</h1><p>在 torchvision.transforms.Resize 中，antialias&#x3D;True 是用來在影像縮放時進行抗鋸齒處理的選項。</p>
+<h1 id="pytorch-resize-antialias的影響">Pytorch Resize
+antialias的影響</h1>
+<p>在 torchvision.transforms.Resize 中，antialias=True
+是用來在影像縮放時進行抗鋸齒處理的選項。</p>
 <ul>
-<li><p>解釋：<br>  torchvision.transforms.Resize：<br>  這是 torchvision 中用來調整影像大小的轉換工具。<br>  你可以將圖片的尺寸改變到指定的大小，無論是放大還是縮小。</p>
-</li>
-<li><p>antialias&#x3D;True：<br>  當 antialias&#x3D;True 時，在圖片縮小（downsampling）時會使用抗鋸齒（anti-aliasing）技術來處理影像，減少因縮小而產生的邊緣鋸齒現象。<br>  抗鋸齒是一種濾波技術，能平滑縮小後的影像邊緣，使得影像不會顯得過於粗糙或失真，特別是在圖片包含細節時。</p>
-</li>
-<li><p>什麼時候使用 antialias&#x3D;True？<br>  縮小圖片時：當你從大圖縮小到小圖時，使用抗鋸齒有助於保留影像的細節，避免邊緣產生明顯的鋸齒狀。<br>  放大圖片時：如果你只是放大圖片，抗鋸齒的影響會比較小。</p>
-</li>
-<li><p>總結：<br>  antialias&#x3D;True 主要是為了在影像縮小時進行抗鋸齒處理，確保輸出的影像質量更高，邊緣更平滑。</p>
-</li>
+<li><p>解釋： torchvision.transforms.Resize： 這是 torchvision
+中用來調整影像大小的轉換工具。
+你可以將圖片的尺寸改變到指定的大小，無論是放大還是縮小。</p></li>
+<li><p>antialias=True： 當 antialias=True
+時，在圖片縮小（downsampling）時會使用抗鋸齒（anti-aliasing）技術來處理影像，減少因縮小而產生的邊緣鋸齒現象。
+抗鋸齒是一種濾波技術，能平滑縮小後的影像邊緣，使得影像不會顯得過於粗糙或失真，特別是在圖片包含細節時。</p></li>
+<li><p>什麼時候使用 antialias=True？
+縮小圖片時：當你從大圖縮小到小圖時，使用抗鋸齒有助於保留影像的細節，避免邊緣產生明顯的鋸齒狀。
+放大圖片時：如果你只是放大圖片，抗鋸齒的影響會比較小。</p></li>
+<li><p>總結： antialias=True
+主要是為了在影像縮小時進行抗鋸齒處理，確保輸出的影像質量更高，邊緣更平滑。</p></li>
 </ul>
-<h1 id="圖片說明-1"><a href="#圖片說明-1" class="headerlink" title="圖片說明 1"></a>圖片說明 1</h1><p><img src="/../../images/2024/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/1.webp" alt="1"><br>這張圖片展示了在使用 torchvision.transforms.Resize 進行影像縮放時，antialias&#x3D;True 如何減少鋸齒現象。左側的影像在縮放後出現了明顯的鋸齒效應，邊緣呈現出像素化的階梯狀。右側的影像則經過抗鋸齒處理，邊緣變得平滑，顯示了 antialias&#x3D;True 如何在縮小影像時提升質量並消除鋸齒效果。</p>
-<h1 id="圖片說明-2"><a href="#圖片說明-2" class="headerlink" title="圖片說明 2"></a>圖片說明 2</h1><p><img src="/../../images/2024/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/2.webp" alt="2"><br>這張圖片展示了兩條對角線的對比，說明了鋸齒現象。左側的線條顯示了鋸齒現象，即邊緣呈現階梯狀的鋸齒邊，這是由於影像解析度不足或像素化導致的。而右側的線條經過抗鋸齒處理，邊緣變得平滑且自然，清楚地表現了抗鋸齒技術如何改善視覺效果。</p>
+<h1 id="圖片說明-1">圖片說明 1</h1>
+<p><img src="../../images/2024/鋸齒現象/1.webp" alt="1">
+這張圖片展示了在使用 torchvision.transforms.Resize
+進行影像縮放時，antialias=True
+如何減少鋸齒現象。左側的影像在縮放後出現了明顯的鋸齒效應，邊緣呈現出像素化的階梯狀。右側的影像則經過抗鋸齒處理，邊緣變得平滑，顯示了
+antialias=True 如何在縮小影像時提升質量並消除鋸齒效果。</p>
+<h1 id="圖片說明-2">圖片說明 2</h1>
+<p><img src="../../images/2024/鋸齒現象/2.webp" alt="2">
+這張圖片展示了兩條對角線的對比，說明了鋸齒現象。左側的線條顯示了鋸齒現象，即邊緣呈現階梯狀的鋸齒邊，這是由於影像解析度不足或像素化導致的。而右側的線條經過抗鋸齒處理，邊緣變得平滑且自然，清楚地表現了抗鋸齒技術如何改善視覺效果。</p>
 
     </div>
 
@@ -327,13 +341,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">286k</span>
+    <span title="總字數">288k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:39</span>
+    <span title="所需總閱讀時間">8:44</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介React 基本功能備忘錄">
+    <meta name="description" content="簡介 React 基本功能備忘錄">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Introductio to React">
 <meta property="og:url" content="https://leonicehot.github.io/2023/03/13/2023/March/Introductio%20to%20React/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介React 基本功能備忘錄">
+<meta property="og:description" content="簡介 React 基本功能備忘錄">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-03-13T06:48:38.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:37.083Z">
@@ -123,7 +123,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-count">142</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -228,7 +228,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>632</span>
+      <span>640</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -245,30 +245,40 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>React 基本功能備忘錄</p>
-<span id="more"></span>
-
-<h1 id="簡介-1"><a href="#簡介-1" class="headerlink" title="簡介"></a>簡介</h1><p>React 是一個由 Facebook 開發的 JavaScript 函式庫，用於建立使用者界面。它主要用於開發單頁應用程序（Single Page Application）和行動應用程式。<br>React 通過使用元件（Component）來建立使用者界面，並且可以通過虛擬 DOM（Virtual DOM）技術來實現高效的 UI 更新和渲染。</p>
-<p>React 的主要特點包括：</p>
-<ol>
-<li>元件化：React 將 UI 拆分為多個元件，每個組件都可以獨立設計和開發，使代碼更加模組化和可重用。<br>虛擬 DOM：React 使用虛擬 DOM 技術來實現高效的 UI 更新和渲染。當狀態（State）發生變化時，React 會計算出虛擬 DOM 中需要更新的部分，然後只更新這些部分，從而提高性能。</li>
-<li>單向資料流：React 推崇單向資料流的設計思想，即數據只能從父級元件流向子級組件，而不能反向流動，從而簡化了代碼的設計和調試。</li>
-<li>JSX 語法：React 使用 JSX 語法來描述組件的 UI，這種語法類似於 HTML，但可以在其中嵌入 JavaScript 代碼，從而實現更加靈活和強大的 UI 設計。</li>
-<li>React 已成為當前最受歡迎的前端框架之一，擁有廣泛的開發者社區和生態系統，可以應用於各種 Web 和移動端開發專案</li>
-</ol>
-<h1 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h1><ul>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
+<p>React 基本功能備忘錄 <span id="more"></span></p>
+<h1 id="簡介-1">簡介</h1>
+<p>React 是一個由 Facebook 開發的 JavaScript
+函式庫，用於建立使用者界面。它主要用於開發單頁應用程序（Single Page
+Application）和行動應用程式。 React
+通過使用元件（Component）來建立使用者界面，並且可以通過虛擬 DOM（Virtual
+DOM）技術來實現高效的 UI 更新和渲染。</p>
+<p>React 的主要特點包括： 1. 元件化：React 將 UI
+拆分為多個元件，每個組件都可以獨立設計和開發，使代碼更加模組化和可重用。
+虛擬 DOM：React 使用虛擬 DOM 技術來實現高效的 UI
+更新和渲染。當狀態（State）發生變化時，React 會計算出虛擬 DOM
+中需要更新的部分，然後只更新這些部分，從而提高性能。 2.
+單向資料流：React
+推崇單向資料流的設計思想，即數據只能從父級元件流向子級組件，而不能反向流動，從而簡化了代碼的設計和調試。
+3. JSX 語法：React 使用 JSX 語法來描述組件的 UI，這種語法類似於
+HTML，但可以在其中嵌入 JavaScript 代碼，從而實現更加靈活和強大的 UI
+設計。 4. React
+已成為當前最受歡迎的前端框架之一，擁有廣泛的開發者社區和生態系統，可以應用於各種
+Web 和移動端開發專案</p>
+<h1 id="基本功能">基本功能</h1>
+<ul>
 <li>Create React App</li>
 </ul>
-<ol>
-<li>安裝<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g create-react-app</span><br></pre></td></tr></table></figure></li>
-<li>建立專案<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create-react-app tea</span><br></pre></td></tr></table></figure></li>
-<li>切換資料夾<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd tea</span><br></pre></td></tr></table></figure></li>
-<li>啟動專案<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure></li>
+<ol type="1">
+<li>安裝 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g create-react-app</span><br></pre></td></tr></table></figure></li>
+<li>建立專案 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create-react-app tea</span><br></pre></td></tr></table></figure></li>
+<li>切換資料夾 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd tea</span><br></pre></td></tr></table></figure></li>
+<li>啟動專案 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure></li>
 </ol>
 <ul>
-<li>npm run build<br>Bundles the app into static files for production<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br><span class="line">serve -s build</span><br></pre></td></tr></table></figure></li>
-<li>npm test<br>Starts the test runner<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm test</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g serve</span><br></pre></td></tr></table></figure></li>
+<li>npm run build Bundles the app into static files for production
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br><span class="line">serve -s build</span><br></pre></td></tr></table></figure></li>
+<li>npm test Starts the test runner <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm test</span><br></pre></td></tr></table></figure> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g serve</span><br></pre></td></tr></table></figure></li>
 </ul>
 
     </div>
@@ -321,13 +331,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">286k</span>
+    <span title="總字數">288k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:39</span>
+    <span title="所需總閱讀時間">8:44</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

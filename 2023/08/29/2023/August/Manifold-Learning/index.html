@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介流形學習（Manifold Learning）是一種機器學習和數據分析的技術，旨在探索和理解高維數據在低維流形（manifold）中的結構。在現實世界中，很多數據存在於高維空間，但實際上可能分佈在更低維的嵌入子空間中。流形學習的目標是通過將這些嵌入子空間中的結構轉化為更容易可視化、分析和處理的形式，以便更好地理解數據的特點和關係。">
+    <meta name="description" content="簡介 流形學習（Manifold Learning）是一種機器學習和數據分析的技術，旨在探索和理解高維數據在低維流形（manifold）中的結構。在現實世界中，很多數據存在於高維空間，但實際上可能分佈在更低維的嵌入子空間中。流形學習的目標是通過將這些嵌入子空間中的結構轉化為更容易可視化、分析和處理的形式，以便更好地理解數據的特點和關係。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Manifold Learning">
 <meta property="og:url" content="https://leonicehot.github.io/2023/08/29/2023/August/Manifold-Learning/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介流形學習（Manifold Learning）是一種機器學習和數據分析的技術，旨在探索和理解高維數據在低維流形（manifold）中的結構。在現實世界中，很多數據存在於高維空間，但實際上可能分佈在更低維的嵌入子空間中。流形學習的目標是通過將這些嵌入子空間中的結構轉化為更容易可視化、分析和處理的形式，以便更好地理解數據的特點和關係。">
+<meta property="og:description" content="簡介 流形學習（Manifold Learning）是一種機器學習和數據分析的技術，旨在探索和理解高維數據在低維流形（manifold）中的結構。在現實世界中，很多數據存在於高維空間，但實際上可能分佈在更低維的嵌入子空間中。流形學習的目標是通過將這些嵌入子空間中的結構轉化為更容易可視化、分析和處理的形式，以便更好地理解數據的特點和關係。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-08-29T11:50:03.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:35.667Z">
@@ -123,7 +123,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-count">142</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -241,15 +241,21 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>流形學習（Manifold Learning）是一種機器學習和數據分析的技術，旨在探索和理解高維數據在低維流形（manifold）中的結構。在現實世界中，很多數據存在於高維空間，但實際上可能分佈在更低維的嵌入子空間中。流形學習的目標是通過將這些嵌入子空間中的結構轉化為更容易可視化、分析和處理的形式，以便更好地理解數據的特點和關係。</p>
-<span id="more"></span>
-
-<h1 id="分析方法"><a href="#分析方法" class="headerlink" title="分析方法"></a>分析方法</h1><p>傳統的數據分析方法可能在高維空間中遇到困難，因為高維數據的可視化和處理較為複雜。流形學習的方法旨在克服這些問題，通過尋找一個映射，將高維數據點映射到低維流形上，同時保持數據之間的局部結構和關係。這樣的映射可以幫助我們更好地理解數據的內在結構，從而在分析、可視化和模型構建等任務中取得更好的效果。</p>
-<h1 id="技術"><a href="#技術" class="headerlink" title="技術"></a>技術</h1><p>流形學習方法的一些常見技術包括：</p>
-<ol>
-<li>主成分分析（Principal Component Analysis，PCA）：通過尋找數據中的主要變化方向，將高維數據映射到低維空間。</li>
-<li>局部線性嵌入（Locally Linear Embedding，LLE）：保持數據點之間的局部距離關係，將數據映射到低維流形。</li>
-<li>t分布隨機鄰域嵌入（t-Distributed Stochastic Neighbor Embedding，t-SNE）：在低維空間中保持數據點之間的相似度，用於可視化高維數據。</li>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
+<p>流形學習（Manifold
+Learning）是一種機器學習和數據分析的技術，旨在探索和理解高維數據在低維流形（manifold）中的結構。在現實世界中，很多數據存在於高維空間，但實際上可能分佈在更低維的嵌入子空間中。流形學習的目標是通過將這些嵌入子空間中的結構轉化為更容易可視化、分析和處理的形式，以便更好地理解數據的特點和關係。
+<span id="more"></span></p>
+<h1 id="分析方法">分析方法</h1>
+<p>傳統的數據分析方法可能在高維空間中遇到困難，因為高維數據的可視化和處理較為複雜。流形學習的方法旨在克服這些問題，通過尋找一個映射，將高維數據點映射到低維流形上，同時保持數據之間的局部結構和關係。這樣的映射可以幫助我們更好地理解數據的內在結構，從而在分析、可視化和模型構建等任務中取得更好的效果。</p>
+<h1 id="技術">技術</h1>
+<p>流形學習方法的一些常見技術包括：</p>
+<ol type="1">
+<li>主成分分析（Principal Component
+Analysis，PCA）：通過尋找數據中的主要變化方向，將高維數據映射到低維空間。</li>
+<li>局部線性嵌入（Locally Linear
+Embedding，LLE）：保持數據點之間的局部距離關係，將數據映射到低維流形。</li>
+<li>t分布隨機鄰域嵌入（t-Distributed Stochastic Neighbor
+Embedding，t-SNE）：在低維空間中保持數據點之間的相似度，用於可視化高維數據。</li>
 <li>等度量映射（Isomap）：通過保持數據點之間的地理距離，將數據映射到低維流形。</li>
 </ol>
 <p>總之，流形學習是一個重要的數據分析技術，用於將高維數據轉換為更低維的表示，以便更好地理解和分析數據的結構和特點。這種方法在可視化、分類、聚類和模型構建等多個領域中都有廣泛應用。</p>
@@ -304,13 +310,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">286k</span>
+    <span title="總字數">288k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:39</span>
+    <span title="所需總閱讀時間">8:44</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Ultralytics YOLOv11 標記資料準備指南 本指南將詳細說明在 Ultralytics YOLOv11 模型訓練前，如何準備標記資料集。內容包含資料收集與整理、標註工具選擇、標籤格式規範、資料集目錄結構與配置檔準備，協助您順利完成資料前處理工作。 1. 前置準備 1.1 資料收集  多樣性：收集與實際應用場景相符的影像資料，確保涵蓋不同光線、角度、背景與環境條件。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Yolo標註">
+<meta property="og:url" content="https://leonicehot.github.io/2024/12/28/2024/December/Yolo%E6%A8%99%E8%A8%BB/index.html">
+<meta property="og:site_name" content="利醬の休憩房">
+<meta property="og:description" content="Ultralytics YOLOv11 標記資料準備指南 本指南將詳細說明在 Ultralytics YOLOv11 模型訓練前，如何準備標記資料集。內容包含資料收集與整理、標註工具選擇、標籤格式規範、資料集目錄結構與配置檔準備，協助您順利完成資料前處理工作。 1. 前置準備 1.1 資料收集  多樣性：收集與實際應用場景相符的影像資料，確保涵蓋不同光線、角度、背景與環境條件。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-12-28T15:30:26.000Z">
+<meta property="article:modified_time" content="2024-12-28T15:32:11.586Z">
+<meta property="article:author" content="利醬">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://leonicehot.github.io/2024/12/28/2024/December/Yolo%E6%A8%99%E8%A8%BB/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2024/12/28/2024/December/Yolo%E6%A8%99%E8%A8%BB/","path":"2024/12/28/2024/December/Yolo標註/","title":"Yolo標註"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Yolo標註 | 利醬の休憩房</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">利醬の休憩房</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ultralytics-yolov11-%E6%A8%99%E8%A8%98%E8%B3%87%E6%96%99%E6%BA%96%E5%82%99%E6%8C%87%E5%8D%97"><span class="nav-number">1.</span> <span class="nav-text">Ultralytics YOLOv11
+標記資料準備指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E6%BA%96%E5%82%99"><span class="nav-number">1.1.</span> <span class="nav-text">1. 前置準備</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E6%94%B6%E9%9B%86"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 資料收集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E6%B8%85%E7%90%86"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 資料清理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%99%E8%A8%BB%E5%B7%A5%E5%85%B7%E9%81%B8%E6%93%87"><span class="nav-number">1.2.</span> <span class="nav-text">2. 標註工具選擇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yolo-%E6%A8%99%E7%B1%A4%E6%A0%BC%E5%BC%8F%E8%AA%AA%E6%98%8E"><span class="nav-number">1.3.</span> <span class="nav-text">3. YOLO 標籤格式說明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A8%88%E7%AE%97%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.3.1.</span> <span class="nav-text">計算示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E9%9B%86%E7%9B%AE%E9%8C%84%E7%B5%90%E6%A7%8B"><span class="nav-number">1.4.</span> <span class="nav-text">4. 資料集目錄結構</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%9E%E5%88%A5%E5%90%8D%E7%A8%B1%E6%AA%94-classes.txt"><span class="nav-number">1.5.</span> <span class="nav-text">5. 類別名稱檔 (classes.txt)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A%E8%B3%87%E6%96%99%E9%9B%86%E6%8F%8F%E8%BF%B0%E6%AA%94"><span class="nav-number">1.6.</span> <span class="nav-text">6. 設定資料集描述檔</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%A2%9E%E5%BC%B7%E8%88%87%E5%B9%B3%E8%A1%A1"><span class="nav-number">1.7.</span> <span class="nav-text">7. 資料增強與平衡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90"><span class="nav-number">1.8.</span> <span class="nav-text">8. 總結</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">利醬</p>
+  <div class="site-description" itemprop="description">部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">142</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2024/12/28/2024/December/Yolo%E6%A8%99%E8%A8%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Yolo標註 | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Yolo標註
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2024-12-28 23:30:26 / 修改時間：23:32:11" itemprop="dateCreated datePublished" datetime="2024-12-28T23:30:26+08:00">2024-12-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Computer-Vision/" itemprop="url" rel="index"><span itemprop="name">Computer Vision</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>2.5k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>5 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="ultralytics-yolov11-標記資料準備指南">Ultralytics YOLOv11
+標記資料準備指南</h1>
+<p>本指南將詳細說明在 Ultralytics YOLOv11
+模型訓練前，如何準備標記資料集。內容包含資料收集與整理、標註工具選擇、標籤格式規範、資料集目錄結構與配置檔準備，協助您順利完成資料前處理工作。</p>
+<h2 id="前置準備">1. 前置準備</h2>
+<h3 id="資料收集">1.1 資料收集</h3>
+<ul>
+<li><strong>多樣性</strong>：收集與實際應用場景相符的影像資料，確保涵蓋不同光線、角度、背景與環境條件。<br>
+</li>
+<li><strong>格式與品質</strong>：建議統一使用 <code>.jpg</code> 或
+<code>.png</code>
+等常見格式，確保影像解析度足夠，使欲標註之目標清晰可見。</li>
+</ul>
+<h3 id="資料清理">1.2 資料清理</h3>
+<ul>
+<li><strong>篩選不良影像</strong>：移除模糊、過暗、解析度過低或不相關的影像。<br>
+</li>
+<li><strong>統一尺寸與比例</strong>：雖然 YOLO
+對不同尺寸具備彈性，但保持影像一致性有助於訓練穩定。</li>
+</ul>
+<h2 id="標註工具選擇">2. 標註工具選擇</h2>
+<p>選擇一款易於使用且能輸出 YOLO 格式標籤的標註工具：</p>
+<ul>
+<li><p><strong>LabelImg</strong>：簡易 GUI 工具，支援直接產生 YOLO
+格式標籤檔案。<br>
+GitHub：https://github.com/tzutalin/labelImg</p></li>
+<li><p><strong>Labelme</strong>：可標註多邊形、矩形等形狀，後續可轉換至
+YOLO 格式。<br>
+GitHub：https://github.com/wkentaro/labelme</p></li>
+<li><p><strong>CVAT</strong>：強大且支援團隊協作的線上標註工具。<br>
+GitHub：https://github.com/opencv/cvat</p></li>
+<li><p><strong>Roboflow</strong>：線上標註與增強平臺，可直接匯出 YOLO
+格式標籤。<br>
+網站：https://roboflow.com/</p></li>
+</ul>
+<p>請在選擇工具後確定該工具支援 YOLO
+格式輸出，或能方便地轉換標註格式。</p>
+<h2 id="yolo-標籤格式說明">3. YOLO 標籤格式說明</h2>
+<p>每張影像對應一個 <code>.txt</code>
+標籤檔案。標籤檔中每行代表一個物件的邊界框資訊，格式如下：</p>
+<p>class_id center_x center_y width height - <code>class_id</code>:
+類別索引（從0開始）。<br>
+- <code>center_x</code>, <code>center_y</code>:
+物件框中心座標，相對於整張影像的寬高進行歸一化（範圍0～1）。<br>
+- <code>width</code>, <code>height</code>:
+物件框寬度與高度，同樣以影像尺寸做歸一化（範圍0～1）。</p>
+<h3 id="計算示例">計算示例</h3>
+<p>假設影像大小為 <code>1920x1080 (寬x高)</code>，已知物件框左上角
+<code>(x_min, y_min) = (320, 200)</code>，右下角
+<code>(x_max, y_max) = (480, 400)</code> 且其
+<code>class_id = 0</code>。</p>
+<ol type="1">
+<li>計算寬高與中心點：
+<ul>
+<li><code>bbox_width = x_max - x_min = 480 - 320 = 160</code><br>
+</li>
+<li><code>bbox_height = y_max - y_min = 400 - 200 = 200</code><br>
+</li>
+<li><code>center_x = x_min + bbox_width/2 = 320 + 160/2 = 400</code><br>
+</li>
+<li><code>center_y = y_min + bbox_height/2 = 200 + 100 = 300</code></li>
+</ul></li>
+<li>歸一化（相對於 <code>1920x1080</code>）：
+<ul>
+<li><code>center_x_norm = 400 / 1920 ≈ 0.2083</code><br>
+</li>
+<li><code>center_y_norm = 300 / 1080 ≈ 0.2778</code><br>
+</li>
+<li><code>width_norm = 160 / 1920 ≈ 0.0833</code><br>
+</li>
+<li><code>height_norm = 200 / 1080 ≈ 0.1852</code></li>
+</ul></li>
+</ol>
+<p>標籤行為：<br>
+0 0.2083 0.2778 0.0833 0.1852</p>
+<h2 id="資料集目錄結構">4. 資料集目錄結構</h2>
+<p>Ultralytics YOLO 系列（包括 YOLOv11）通常使用下列資料夾結構： coco8
+├── images │   ├── train │   │   ├── 000000000009.jpg │   │   ├──
+000000000025.jpg │   │   ├── 000000000030.jpg │   │   └──
+000000000034.jpg │   └── val │   ├── 000000000036.jpg │   ├──
+000000000042.jpg │   ├── 000000000049.jpg │   └── 000000000061.jpg ├──
+labels │   ├── train │   │   ├── 000000000009.txt │   │   ├──
+000000000025.txt │   │   ├── 000000000030.txt │   │   └──
+000000000034.txt │   ├── train.cache │   ├── val │   │   ├──
+000000000036.txt │   │   ├── 000000000042.txt │   │   ├──
+000000000049.txt │   │   └── 000000000061.txt │   └── val.cache ├──
+LICENSE └── README.md - <code>images</code>：存放影像，分別放入
+<code>train</code>、<code>val</code>、<code>test</code> 目錄。<br>
+- <code>labels</code>：對應 <code>images</code>
+中的結構存放標籤檔，每張影像對應一個同名 TXT 檔案。</p>
+<h2 id="類別名稱檔-classes.txt">5. 類別名稱檔 (classes.txt)</h2>
+<p>建立 <code>classes.txt</code> 列出所有物件類別名稱（每行一個）：</p>
+<p><code>class_id=0</code> 對應
+<code>person</code>，<code>class_id=1</code> 對應
+<code>car</code>，以此類推。</p>
+<h2 id="設定資料集描述檔">6. 設定資料集描述檔</h2>
+<p>Ultralytics YOLO 使用 <code>.yaml</code>
+檔描述資料集路徑和類別資訊。例如 <code>mydataset.yaml</code>：</p>
+<p>yaml - train: path/to/datasets/mydataset/images/train - val:
+path/to/datasets/mydataset/images/val - test:
+path/to/datasets/mydataset/images/test</p>
+<h2 id="資料增強與平衡">7. 資料增強與平衡</h2>
+<p>在訓練前可考慮使用資料增強（data augmentation）技術，如：</p>
+<p>翻轉、旋轉、縮放 顏色抖動（亮度、對比度、飽和度、色相變化）
+隨機裁切、模糊、噪聲
+透過增強手段可提高模型的泛化能力。同時檢視各類別的資料量，若某些類別樣本過少，考慮額外收集或增強，以避免訓練後類別不平衡。</p>
+<h2 id="總結">8. 總結</h2>
+<p>收集並清理資料，確保影像品質及多樣性。 使用合適的標註工具產生 YOLO
+格式的標籤檔 (TXT)。 確保標籤格式正確，並已經過歸一化處理。 按照 YOLO
+要求的目錄結構放置影像和標籤檔。 建立並填寫 classes.txt 及 .yaml
+配置檔案。 考慮資料增強，以提升模型訓練表現與泛化能力。
+準備就緒後，即可開始使用 Ultralytics YOLOv11 進行訓練、驗證及測試。
+完成以上步驟後，您將具備完善的 YOLOv11
+資料標記和組織基礎，為後續的模型訓練與優化奠定良好基礎。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/12/28/2024/December/%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E8%88%87%E8%B3%87%E8%A8%8A%E7%B3%BB%E7%B5%B1/" rel="prev" title="軟體工程與資訊系統">
+                  <i class="fa fa-angle-left"></i> 軟體工程與資訊系統
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">利醬</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">288k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">8:44</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

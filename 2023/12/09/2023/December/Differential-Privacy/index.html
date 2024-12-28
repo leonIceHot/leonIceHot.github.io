@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="差分隱私（Differential Privacy）是一種隱私保護技術，旨在在資料發佈或資料分析過程中，最大程度地保護個人隱私。它通過添加雜訊或擾動來混淆資料，以防止針對特定個體的隱私洩露。 差分隱私的核心思想是確保資料分析結果對於任何單個個體的貢獻是不顯著的，即使知道其他個體的資訊。這意味著無論是否知道除了某個特定個體之外的其他資料，該特定個體的資料對結果的影響都應該非常有限，從而保護了其隱私。">
+    <meta name="description" content="差分隱私（Differential Privacy）是一種隱私保護技術，旨在在資料發佈或資料分析過程中，最大程度地保護個人隱私。它通過添加雜訊或擾動來混淆資料，以防止針對特定個體的隱私洩露。 差分隱私的核心思想是確保資料分析結果對於任何單個個體的貢獻是不顯著的，即使知道其他個體的資訊。這意味著無論是否知道除了某個特定個體之外的其他資料，該特定個體的資料對結果的影響都應該非常有限，從而保護了其隱">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Differential Privacy">
 <meta property="og:url" content="https://leonicehot.github.io/2023/12/09/2023/December/Differential-Privacy/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="差分隱私（Differential Privacy）是一種隱私保護技術，旨在在資料發佈或資料分析過程中，最大程度地保護個人隱私。它通過添加雜訊或擾動來混淆資料，以防止針對特定個體的隱私洩露。 差分隱私的核心思想是確保資料分析結果對於任何單個個體的貢獻是不顯著的，即使知道其他個體的資訊。這意味著無論是否知道除了某個特定個體之外的其他資料，該特定個體的資料對結果的影響都應該非常有限，從而保護了其隱私。">
+<meta property="og:description" content="差分隱私（Differential Privacy）是一種隱私保護技術，旨在在資料發佈或資料分析過程中，最大程度地保護個人隱私。它通過添加雜訊或擾動來混淆資料，以防止針對特定個體的隱私洩露。 差分隱私的核心思想是確保資料分析結果對於任何單個個體的貢獻是不顯著的，即使知道其他個體的資訊。這意味著無論是否知道除了某個特定個體之外的其他資料，該特定個體的資料對結果的影響都應該非常有限，從而保護了其隱">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-12-09T07:18:34.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:35.825Z">
@@ -110,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DP-Differential-Privacy"><span class="nav-number">1.</span> <span class="nav-text">DP (Differential Privacy)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#opacus"><span class="nav-number">1.1.</span> <span class="nav-text">opacus</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#dp-differential-privacy"><span class="nav-number">1.</span> <span class="nav-text">DP (Differential Privacy)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#opacus"><span class="nav-number">1.1.</span> <span class="nav-text">opacus</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -123,7 +123,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-count">142</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -249,13 +249,16 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>差分隱私（Differential Privacy）是一種隱私保護技術，旨在在資料發佈或資料分析過程中，最大程度地保護個人隱私。它通過添加雜訊或擾動來混淆資料，以防止針對特定個體的隱私洩露。</p>
+    <div class="post-body" itemprop="articleBody"><p>差分隱私（Differential
+Privacy）是一種隱私保護技術，旨在在資料發佈或資料分析過程中，最大程度地保護個人隱私。它通過添加雜訊或擾動來混淆資料，以防止針對特定個體的隱私洩露。</p>
 <p>差分隱私的核心思想是確保資料分析結果對於任何單個個體的貢獻是不顯著的，即使知道其他個體的資訊。這意味著無論是否知道除了某個特定個體之外的其他資料，該特定個體的資料對結果的影響都應該非常有限，從而保護了其隱私。</p>
 <p>應用差分隱私的方法包括向資料中添加隨機雜訊、擾動查詢結果或調整資料集的分佈。這些方法可以在資料發佈、資料分析和機器學習訓練等場景中使用，以防止敏感資訊的洩露。</p>
-<p>差分隱私技術在隱私保護、資料共用和資料發佈方面有著廣泛的應用。它允許在資料分析和共用過程中，提供對個人隱私的高度保護，同時仍然允許對資料進行有意義的分析和利用。</p>
-<span id="more"></span>
-
-<h2 id="DP-Differential-Privacy"><a href="#DP-Differential-Privacy" class="headerlink" title="DP (Differential Privacy)"></a>DP (Differential Privacy)</h2><h3 id="opacus"><a href="#opacus" class="headerlink" title="opacus"></a>opacus</h3><p>Opacus is a library that enables training PyTorch models with differential privacy.<br><a target="_blank" rel="noopener" href="https://github.com/pytorch/opacus">https://github.com/pytorch/opacus</a></p>
+<p>差分隱私技術在隱私保護、資料共用和資料發佈方面有著廣泛的應用。它允許在資料分析和共用過程中，提供對個人隱私的高度保護，同時仍然允許對資料進行有意義的分析和利用。
+<span id="more"></span></p>
+<h2 id="dp-differential-privacy">DP (Differential Privacy)</h2>
+<h3 id="opacus">opacus</h3>
+<p>Opacus is a library that enables training PyTorch models with
+differential privacy. https://github.com/pytorch/opacus</p>
 
     </div>
 
@@ -307,13 +310,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">286k</span>
+    <span title="總字數">288k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:39</span>
+    <span title="所需總閱讀時間">8:44</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

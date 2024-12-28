@@ -49,7 +49,119 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-</head>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -120,7 +232,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-count">142</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -148,6 +260,364 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/05/15/2023/May/Writing%20Mathematic%20Fomulars%20in%20Markdown/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/05/15/2023/May/Writing%20Mathematic%20Fomulars%20in%20Markdown/" class="post-title-link" itemprop="url">Writing Mathematic Fomulars in Markdown</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2023-05-15 16:45:33" itemprop="dateCreated datePublished" datetime="2023-05-15T16:45:33+08:00">2023-05-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-12-11 20:23:45" itemprop="dateModified" datetime="2024-12-11T20:23:45+08:00">2024-12-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Math/" itemprop="url" rel="index"><span itemprop="name">Math</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>2 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="簡介">簡介</h1>
+<p>在編寫Markdown文件時，您可以使用上述方法來編輯LaTeX數學公式，並使用Markdown編輯器（如Typora、Visual
+Studio Code等）來預覽和呈現這些公式。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/05/15/2023/May/Writing%20Mathematic%20Fomulars%20in%20Markdown/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/05/09/2023/June/Knowledge-Distillation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/05/09/2023/June/Knowledge-Distillation/" class="post-title-link" itemprop="url">Knowledge Distillation</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2023-05-09 15:51:43" itemprop="dateCreated datePublished" datetime="2023-05-09T15:51:43+08:00">2023-05-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-12-11 18:57:36" itemprop="dateModified" datetime="2024-12-11T18:57:36+08:00">2024-12-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Artificial-Intelligence/" itemprop="url" rel="index"><span itemprop="name">Artificial Intelligence</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Artificial-Intelligence/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Artificial-Intelligence/Machine-Learning/Transfer-Learning/" itemprop="url" rel="index"><span itemprop="name">Transfer Learning</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.9k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>3 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="簡介">簡介</h1>
+<p>知識蒸餾（Knowledge
+Distillation，簡稱KD）是一種機器學習中的模型壓縮技術，通過將一個複雜模型的知識傳遞給一個簡單模型，以實現模型壓縮的目的。</p>
+<p>具體來說，知識蒸餾通常會先訓練一個複雜的模型（稱為“教師模型”），然後將教師模型的知識“蒸餾”到一個簡單的模型（稱為“學生模型”）中，從而使學生模型能夠達到與教師模型相當的效果。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/05/09/2023/June/Knowledge-Distillation/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/05/09/2023/May/Federated-Learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/05/09/2023/May/Federated-Learning/" class="post-title-link" itemprop="url">Federated Learning</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2023-05-09 14:10:15" itemprop="dateCreated datePublished" datetime="2023-05-09T14:10:15+08:00">2023-05-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-12-11 18:57:37" itemprop="dateModified" datetime="2024-12-11T18:57:37+08:00">2024-12-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Artificial-Intelligence/" itemprop="url" rel="index"><span itemprop="name">Artificial Intelligence</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Artificial-Intelligence/Trustworthy-AI/" itemprop="url" rel="index"><span itemprop="name">Trustworthy AI</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Artificial-Intelligence/Trustworthy-AI/Privacy-Preserving-Computing/" itemprop="url" rel="index"><span itemprop="name">Privacy-Preserving Computing</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Artificial-Intelligence/Trustworthy-AI/Privacy-Preserving-Computing/Federated-Learning/" itemprop="url" rel="index"><span itemprop="name">Federated Learning</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>4.2k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>8 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="簡介">簡介</h1>
+<p>Federated
+Learning（聯邦學習）是一種分散式機器學習技術，它允許多個設備在本地訓練模型，而不需要將數據集集中在一個地方進行訓練。這種方法可以用於解決一些數據隱私和安全性問題，同時能夠在各種設備上訓練個性化模型。</p>
+<p>在聯邦學習中，各個設備本地保存一部分數據集，然後通過在本地訓練模型，將更新後的模型參數傳回給中央伺服器。中央伺服器在接收到所有參與設備的模型更新後，將這些模型更新進行結合，並生成一個新的全局模型。這個新模型的參數被傳回給各個參與設備，以便在下一輪訓練中繼續使用。</p>
+<p>這種方法的優點之一是可以保護數據隱私，因為數據不需要集中在一個地方進行訓練。此外，由於每個設備只需要傳輸少量的模型更新參數，因此通信量比傳統的集中式機器學習方法要小得多。最後，聯邦學習可以用於訓練個性化模型，因為各個設備上的數據可能會反映出各種不同的使用情況和環境。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/05/09/2023/May/Federated-Learning/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -234,8 +704,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>Component-Oriented Programming (COP) 是一種軟體開發方法，著重於將軟體系統分解為可重用且獨立的元件。在 COP 中，軟體系統被視為一個由元件組成的集合，每個元件代表系統中的一個功能單元。</p>
-<p>COP 的主要概念是元件（Component），元件是具有清晰定義的功能單元，可以獨立地設計、實現和測試。每個元件都有明確定義的介面，用於與其他元件進行溝通與互動。元件之間的交互通常是基於訊息傳遞的方式。</p>
+          <h1 id="簡介">簡介</h1>
+<p>Component-Oriented Programming (COP)
+是一種軟體開發方法，著重於將軟體系統分解為可重用且獨立的元件。在 COP
+中，軟體系統被視為一個由元件組成的集合，每個元件代表系統中的一個功能單元。</p>
+<p>COP
+的主要概念是元件（Component），元件是具有清晰定義的功能單元，可以獨立地設計、實現和測試。每個元件都有明確定義的介面，用於與其他元件進行溝通與互動。元件之間的交互通常是基於訊息傳遞的方式。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/05/04/2023/May/Component-Oriented-Programming/#more" rel="contents">
@@ -354,7 +828,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>JAX 是由 Google Brain 團隊開發的一個開源數值計算庫，專為高效能、可組合性和自動微分而設計。它建立在 Python 上，並提供了一個類似於 NumPy 的介面，使得使用者可以使用熟悉的語法進行數值計算和科學計算。</p>
+          <h1 id="簡介">簡介</h1>
+<p>JAX 是由 Google Brain
+團隊開發的一個開源數值計算庫，專為高效能、可組合性和自動微分而設計。它建立在
+Python 上，並提供了一個類似於 NumPy
+的介面，使得使用者可以使用熟悉的語法進行數值計算和科學計算。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/05/04/2023/June/JAX/#more" rel="contents">
@@ -473,8 +951,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>Network Architecture Search (NAS) 是一種自動化的方法，用於搜索最佳神經網路架構以解決特定任務。NAS 旨在自動化神經網路的設計過程，以提高模型的性能和效能。</p>
-<p>傳統上，神經網路的設計是由人工專家進行，他們根據經驗和直覺選擇網路結構和超參數。然而，隨著神經網路變得越來越複雜和多樣化，手動設計的過程變得困難且耗時。NAS 的目標是通過搜索算法自動探索最佳的網路架構，以提高網路的性能和效能。</p>
+          <h1 id="簡介">簡介</h1>
+<p>Network Architecture Search (NAS)
+是一種自動化的方法，用於搜索最佳神經網路架構以解決特定任務。NAS
+旨在自動化神經網路的設計過程，以提高模型的性能和效能。</p>
+<p>傳統上，神經網路的設計是由人工專家進行，他們根據經驗和直覺選擇網路結構和超參數。然而，隨著神經網路變得越來越複雜和多樣化，手動設計的過程變得困難且耗時。NAS
+的目標是通過搜索算法自動探索最佳的網路架構，以提高網路的性能和效能。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/05/04/2023/May/Network-Architecture-Search-NAS/#more" rel="contents">
@@ -593,7 +1075,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>神經網路壓縮是一種技術，旨在減少神經網路的大小和複雜性，同時保持其效能。這對於在資源受限的環境中使用神經網路非常有用，例如行動裝置或嵌入式系統。</p>
+          <h1 id="簡介">簡介</h1>
+<p>神經網路壓縮是一種技術，旨在減少神經網路的大小和複雜性，同時保持其效能。這對於在資源受限的環境中使用神經網路非常有用，例如行動裝置或嵌入式系統。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/05/03/2023/June/Model%20Compression%20and%20Acceleration%20for%20Deep%20Learning/#more" rel="contents">
@@ -712,16 +1195,34 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>Zero-shot learning（零樣本學習）、One-shot learning（單樣本學習）和Few-shot learning（少樣本學習）是三種在限制樣本情境下的機器學習方法，它們之間有以下的差異：</p>
-<ol>
-<li><p>樣本數量：Zero-shot learning 是在完全沒有樣本的情況下進行學習，模型需要從類別的描述或屬性中推理和學習。One-shot learning 是在僅有一個樣本的情況下進行學習，模型需要利用這一個樣本進行推理和識別。Few-shot learning 是在僅有少量樣本的情況下進行學習，通常是數個或數十個樣本。</p>
-</li>
-<li><p>物體任務：Zero-shot learning 的目標是識別或推理之前從未見過的類別，模型需要從類別的描述或屬性中學習如何識別這些類別。One-shot learning 的目標是通過僅有的一個樣本進行類別識別，模型需要學習如何將這個樣本與新的樣本進行比較。Few-shot learning 的目標是通過少量樣本學習如何適應新的任務或類別，模型需要在有限的樣本上進行訓練和泛化。</p>
-</li>
-<li><p>方法和策略：Zero-shot learning 使用屬性推理、轉移學習或語義嵌入等方法來利用類別的描述或屬性進行學習和識別。One-shot learning 通常使用相似度比較、生成模型或概念學習等方法來從僅有的一個樣本進行學習和識別。Few-shot learning 則利用元學習、生成模型或轉移學習等方法來在少量樣本上進行訓練和泛化。</p>
-</li>
+          <h1 id="簡介">簡介</h1>
+<p>Zero-shot learning（零樣本學習）、One-shot
+learning（單樣本學習）和Few-shot
+learning（少樣本學習）是三種在限制樣本情境下的機器學習方法，它們之間有以下的差異：</p>
+<ol type="1">
+<li><p>樣本數量：Zero-shot learning
+是在完全沒有樣本的情況下進行學習，模型需要從類別的描述或屬性中推理和學習。One-shot
+learning
+是在僅有一個樣本的情況下進行學習，模型需要利用這一個樣本進行推理和識別。Few-shot
+learning
+是在僅有少量樣本的情況下進行學習，通常是數個或數十個樣本。</p></li>
+<li><p>物體任務：Zero-shot learning
+的目標是識別或推理之前從未見過的類別，模型需要從類別的描述或屬性中學習如何識別這些類別。One-shot
+learning
+的目標是通過僅有的一個樣本進行類別識別，模型需要學習如何將這個樣本與新的樣本進行比較。Few-shot
+learning
+的目標是通過少量樣本學習如何適應新的任務或類別，模型需要在有限的樣本上進行訓練和泛化。</p></li>
+<li><p>方法和策略：Zero-shot learning
+使用屬性推理、轉移學習或語義嵌入等方法來利用類別的描述或屬性進行學習和識別。One-shot
+learning
+通常使用相似度比較、生成模型或概念學習等方法來從僅有的一個樣本進行學習和識別。Few-shot
+learning
+則利用元學習、生成模型或轉移學習等方法來在少量樣本上進行訓練和泛化。</p></li>
 </ol>
-<p>總體而言，Zero-shot learning 是在沒有任何樣本的情況下學習和識別新的類別，One-shot learning 是在僅有一個樣本的情況下學習和識別，Few-shot learning 是在少量樣本的情況下學習和識別。</p>
+<p>總體而言，Zero-shot learning
+是在沒有任何樣本的情況下學習和識別新的類別，One-shot learning
+是在僅有一個樣本的情況下學習和識別，Few-shot learning
+是在少量樣本的情況下學習和識別。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/05/03/2023/May/Zero-shot-One-shot%E5%92%8CFew-shot%E7%9A%84%E5%B7%AE%E7%95%B0/#more" rel="contents">
@@ -840,7 +1341,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>自監督式學習的目標是學習到具有良好泛化效能的特徵表示，這些特徵可以被轉移到其他任務中。它在缺乏標記資料的情況下，通過利用大量未標記資料來提高機器學習的效能和可應用性。自監督式學習已經在電腦視覺、自然語言處理、語音識別等領域取得了許多重要的成果，並且具有廣泛的應用前景。</p>
+          <h1 id="簡介">簡介</h1>
+<p>自監督式學習的目標是學習到具有良好泛化效能的特徵表示，這些特徵可以被轉移到其他任務中。它在缺乏標記資料的情況下，通過利用大量未標記資料來提高機器學習的效能和可應用性。自監督式學習已經在電腦視覺、自然語言處理、語音識別等領域取得了許多重要的成果，並且具有廣泛的應用前景。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/05/03/2023/May/Self%20Supervised%20Learning/#more" rel="contents">
@@ -941,7 +1443,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>2.5k</span>
+      <span>2.6k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -959,7 +1461,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>元學習是指機器學習領域中一種特殊的學習方式，它關注的是如何讓機器具備學習如何學習的能力。傳統的機器學習演算法需要通過大量的訓練資料來學習，然後應用這些學習到新的任務中。而元學習則旨在使機器能夠從少量的訓練資料中學習新的任務，並具有快速適應和泛化到不同任務的能力。</p>
+          <h1 id="簡介">簡介</h1>
+<p>元學習是指機器學習領域中一種特殊的學習方式，它關注的是如何讓機器具備學習如何學習的能力。傳統的機器學習演算法需要通過大量的訓練資料來學習，然後應用這些學習到新的任務中。而元學習則旨在使機器能夠從少量的訓練資料中學習新的任務，並具有快速適應和泛化到不同任務的能力。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/05/03/2023/May/Meta%20Learning/#more" rel="contents">
@@ -985,348 +1488,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/05/03/2023/May/%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A72.0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="利醬">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="利醬の休憩房">
-      <meta itemprop="description" content="部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 利醬の休憩房">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/05/03/2023/May/%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A72.0/" class="post-title-link" itemprop="url">人工智慧2.0</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2023-05-03 10:24:50" itemprop="dateCreated datePublished" datetime="2023-05-03T10:24:50+08:00">2023-05-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-12-11 18:57:37" itemprop="dateModified" datetime="2024-12-11T18:57:37+08:00">2024-12-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer-Science/Artificial-Intelligence/" itemprop="url" rel="index"><span itemprop="name">Artificial Intelligence</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>507</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>1 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>人工智慧2.0是指在人工智慧領域的下一階段發展。它是對人工智慧技術和應用的進一步創新和改進，旨在更好地模擬人類智慧和實現更複雜的任務。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/05/03/2023/May/%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A72.0/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/04/26/2023/April/%E4%BD%BF%E7%94%A8docsify%E5%BF%AB%E9%80%9F%E6%92%B0%E5%AF%AB%E6%9B%B8%E7%B1%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="利醬">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="利醬の休憩房">
-      <meta itemprop="description" content="部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 利醬の休憩房">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/04/26/2023/April/%E4%BD%BF%E7%94%A8docsify%E5%BF%AB%E9%80%9F%E6%92%B0%E5%AF%AB%E6%9B%B8%E7%B1%8D/" class="post-title-link" itemprop="url">使用docsify快速撰寫書籍</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2023-04-26 12:09:44" itemprop="dateCreated datePublished" datetime="2023-04-26T12:09:44+08:00">2023-04-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-12-11 18:57:35" itemprop="dateModified" datetime="2024-12-11T18:57:35+08:00">2024-12-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Software-Engineering/" itemprop="url" rel="index"><span itemprop="name">Software Engineering</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Software-Engineering/Web-Development/" itemprop="url" rel="index"><span itemprop="name">Web Development</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>557</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>1 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>Docsify 是一個基於 JavaScript 的文件網站生成器，它可以幫助您快速創建美觀、易於瀏覽的文件網站。Docsify 可以將 Markdown 文件轉換為一個動態的單頁應用程式，這意味著您可以通過單頁應用程序的方式來瀏覽您的文件，而不需要每次點擊頁面時都重新加載頁面。</p>
-<p>Docsify 非常易於使用，只需將 Markdown 文件放在您的專案中，然後在您的 HTML 文件中引入 Docsify 腳本。Docsify 會自動將您的 Markdown 文件轉換為一個動態的單頁應用程序。您可以使用 Docsify 的設置選項來自定義您的文件網站的外觀和行為。Docsify 還提供了一些插件，如搜索、目錄等，以增強您的文件網站的功能。</p>
-<p>Docsify 的主要優點是它的輕量級和簡單易用。它不需要任何複雜的配置或安裝過程，您只需將文件拖放到您的專案中並引入 Docsify 腳本即可。Docsify 的文件網站看起來非常專業和現代，因此它是一個非常受歡迎的選擇，特別是對於那些想要快速搭建文件網站的開發人員來說。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/04/26/2023/April/%E4%BD%BF%E7%94%A8docsify%E5%BF%AB%E9%80%9F%E6%92%B0%E5%AF%AB%E6%9B%B8%E7%B1%8D/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2023/04/26/2023/April/OAuth%E4%B9%8B%E6%A9%9F%E5%88%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="利醬">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="利醬の休憩房">
-      <meta itemprop="description" content="部落格記載著電腦科學知識、基礎科學應用探討、工程技術之筆記。">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 利醬の休憩房">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/04/26/2023/April/OAuth%E4%B9%8B%E6%A9%9F%E5%88%B6/" class="post-title-link" itemprop="url">OAuth之機制</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2023-04-26 07:31:39" itemprop="dateCreated datePublished" datetime="2023-04-26T07:31:39+08:00">2023-04-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-12-11 18:57:35" itemprop="dateModified" datetime="2024-12-11T18:57:35+08:00">2024-12-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Software-Engineering/" itemprop="url" rel="index"><span itemprop="name">Software Engineering</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Software-Engineering/Web-Development/" itemprop="url" rel="index"><span itemprop="name">Web Development</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Software-Engineering/Web-Development/Backend/" itemprop="url" rel="index"><span itemprop="name">Backend</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>1.9k</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>4 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>OAuth（Open Authorization）是一個開放標準的授權協議，用於授權第三方應用程序訪問用戶資源，並保護用戶的資源免於被盜用。OAuth 協議可以讓用戶授權第三方應用程式訪問其資源，而不需要將用戶名稱和密碼直接提供給第三方應用程式，從而保護用戶的隱私和安全性。</p>
-<p>OAuth 2.0 是一個用於授權的開放標準，旨在簡化基於網路的應用程式對第三方服務的訪問控制。相比於 OAuth 1.0，OAuth 2.0 更為簡潔，易於實現和使用，並且支持多種授權類型。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/04/26/2023/April/OAuth%E4%B9%8B%E6%A9%9F%E5%88%B6/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一頁" aria-label="上一頁" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" title="下一頁" aria-label="下一頁" href="/page/10/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="上一頁" aria-label="上一頁" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" title="下一頁" aria-label="下一頁" href="/page/10/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
@@ -1348,13 +1511,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">286k</span>
+    <span title="總字數">288k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:39</span>
+    <span title="所需總閱讀時間">8:44</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

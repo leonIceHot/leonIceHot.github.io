@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介I   運用領域模型II  領域模型建構區塊III 透過重構加深理解IV  戰略設計">
+    <meta name="description" content="簡介 I 運用領域模型 II 領域模型建構區塊 III 透過重構加深理解 IV 戰略設計">
 <meta property="og:type" content="article">
 <meta property="og:title" content="領域驅動設計 ch 1 - 消化知識">
 <meta property="og:url" content="https://leonicehot.github.io/2021/12/14/2021/December/%E9%A0%98%E5%9F%9F%E9%A9%85%E5%8B%95%E8%A8%AD%E8%A8%88-ch-1-%E6%B6%88%E5%8C%96%E7%9F%A5%E8%AD%98/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介I   運用領域模型II  領域模型建構區塊III 透過重構加深理解IV  戰略設計">
+<meta property="og:description" content="簡介 I 運用領域模型 II 領域模型建構區塊 III 透過重構加深理解 IV 戰略設計">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2021-12-14T14:22:22.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:34.269Z">
@@ -123,7 +123,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-count">142</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -237,24 +237,38 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>I   運用領域模型<br>II  領域模型建構區塊<br>III 透過重構加深理解<br>IV  戰略設計</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
+<p>I 運用領域模型 II 領域模型建構區塊 III 透過重構加深理解 IV
+戰略設計</p>
 <span id="more"></span>
-
-<h1 id="有效的建模"><a href="#有效的建模" class="headerlink" title="有效的建模"></a>有效的建模</h1><ol>
-<li>知識消化 :<br>屬於永無止境的知識探索<br>好的程式設計會自然而然地抽象並開發出一個可完成更多工作的模型</li>
+<h1 id="有效的建模">有效的建模</h1>
+<ol type="1">
+<li>知識消化 : 屬於永無止境的知識探索
+好的程式設計會自然而然地抽象並開發出一個可完成更多工作的模型</li>
 </ol>
-<p>將團隊的知識轉化為有價值的模型<br>團隊成員知識消化，知識去蕪存菁重塑有用的形式<br>由於分析師和程式設計師將自己的知識輸入模型<br>因此模型更加嚴密、抽象且簡潔，進而實作提供更大的支持<br>領域專家將知識輸入到模型中，反映出業務的深層知識，使業務原則得以抽象</p>
-<ol start="2">
-<li><p>持續學習 :<br>那些知識是真正需要的知識 ?<br>專案知識夾雜在分散文件中，往往因為不知道的東西究竟有多少，而做出錯誤的假設<br>增進特定領域知識</p>
-</li>
-<li><p>知識設計 :<br>並非單純發現名詞，<br>透過軟體專家緊密合作消化知識的過程，才使的規則得以澄清和充實，<br>進一步消除規則之間的矛盾，刪除一些無用的規則</p>
-</li>
+<p>將團隊的知識轉化為有價值的模型
+團隊成員知識消化，知識去蕪存菁重塑有用的形式
+由於分析師和程式設計師將自己的知識輸入模型
+因此模型更加嚴密、抽象且簡潔，進而實作提供更大的支持
+領域專家將知識輸入到模型中，反映出業務的深層知識，使業務原則得以抽象</p>
+<ol start="2" type="1">
+<li><p>持續學習 : 那些知識是真正需要的知識 ?
+專案知識夾雜在分散文件中，往往因為不知道的東西究竟有多少，而做出錯誤的假設
+增進特定領域知識</p></li>
+<li><p>知識設計 : 並非單純發現名詞，
+透過軟體專家緊密合作消化知識的過程，才使的規則得以澄清和充實，
+進一步消除規則之間的矛盾，刪除一些無用的規則</p></li>
 </ol>
-<p>領域專家:<br>1.反覆研究所有的規則<br>2.解決規格之間的矛盾<br>3.常識彌補規則的不足</p>
-<ol start="4">
-<li>深層模型<br>有用的模型很少停留在表面，<br>隨著領域和應用程式需求的理解逐步加深，<br>丟棄最初看起來很重要的表面元素，<br>一開始不可能發現的巧妙抽象漸漸浮出水面，<br>恰恰切中問題的要害</li>
+<p>領域專家: 1.反覆研究所有的規則 2.解決規格之間的矛盾
+3.常識彌補規則的不足</p>
+<ol start="4" type="1">
+<li>深層模型 有用的模型很少停留在表面，
+隨著領域和應用程式需求的理解逐步加深， 丟棄最初看起來很重要的表面元素，
+一開始不可能發現的巧妙抽象漸漸浮出水面， 恰恰切中問題的要害</li>
 </ol>
-<p>知識消化的模型能夠反映出知識的深層理解<br>模型發生改變的同時，開發人員對實作進行重構<br>即時反映出模型的變化，如此以來知識合併到應用程式中</p>
+<p>知識消化的模型能夠反映出知識的深層理解
+模型發生改變的同時，開發人員對實作進行重構
+即時反映出模型的變化，如此以來知識合併到應用程式中</p>
 
     </div>
 
@@ -306,13 +320,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">286k</span>
+    <span title="總字數">288k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:39</span>
+    <span title="所需總閱讀時間">8:44</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

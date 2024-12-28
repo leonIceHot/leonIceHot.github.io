@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介在編寫Markdown文件時，您可以使用上述方法來編輯LaTeX數學公式，並使用Markdown編輯器（如Typora、Visual Studio Code等）來預覽和呈現這些公式。">
+    <meta name="description" content="簡介 在編寫Markdown文件時，您可以使用上述方法來編輯LaTeX數學公式，並使用Markdown編輯器（如Typora、Visual Studio Code等）來預覽和呈現這些公式。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Writing Mathematic Fomulars in Markdown">
 <meta property="og:url" content="https://leonicehot.github.io/2023/05/15/2023/May/Writing%20Mathematic%20Fomulars%20in%20Markdown/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介在編寫Markdown文件時，您可以使用上述方法來編輯LaTeX數學公式，並使用Markdown編輯器（如Typora、Visual Studio Code等）來預覽和呈現這些公式。">
+<meta property="og:description" content="簡介 在編寫Markdown文件時，您可以使用上述方法來編輯LaTeX數學公式，並使用Markdown編輯器（如Typora、Visual Studio Code等）來預覽和呈現這些公式。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-05-15T08:45:33.000Z">
 <meta property="article:modified_time" content="2024-12-11T12:23:45.461Z">
@@ -222,7 +222,10 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%87%E6%8F%9B%E5%88%B0-hexo-renderer-pandoc"><span class="nav-number">1.0.1.</span> <span class="nav-text">切換到 hexo-renderer-pandoc</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-hexo-renderer-pandoc"><span class="nav-number">1.1.</span> <span class="nav-text">安裝 hexo-renderer-pandoc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B8%E8%BC%89%E5%85%B6%E4%BB%96%E6%B8%B2%E6%9F%93%E5%99%A8%EF%BC%88%E5%A6%82-hexo-renderer-marked%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">卸載其他渲染器（如 hexo-renderer-marked）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A2%BA%E4%BF%9D%E5%B7%B2%E5%AE%89%E8%A3%9D-Pandoc"><span class="nav-number">1.3.</span> <span class="nav-text">確保已安裝 Pandoc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-config-yml"><span class="nav-number">1.4.</span> <span class="nav-text">配置 _config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6%E6%95%B8%E5%AD%B8%E5%85%AC%E5%BC%8F"><span class="nav-number">1.5.</span> <span class="nav-text">測試數學公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%85%E7%90%86%E4%B8%A6%E7%94%9F%E6%88%90-Hexo-%E7%B6%B2%E7%AB%99"><span class="nav-number">1.6.</span> <span class="nav-text">清理並生成 Hexo 網站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A2%BA%E8%AA%8D-MathJax-%E5%8A%A0%E8%BC%89"><span class="nav-number">1.7.</span> <span class="nav-text">確認 MathJax 加載</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E5%95%8F%E9%A1%8C%E6%99%82%E7%9A%84%E8%AA%BF%E8%A9%A6"><span class="nav-number">1.8.</span> <span class="nav-text">遇到問題時的調試</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83"><span class="nav-number">2.</span> <span class="nav-text">參考</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-hexo-renderer-pandoc"><span class="nav-number">1.1.</span> <span class="nav-text">安裝
+hexo-renderer-pandoc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B8%E8%BC%89%E5%85%B6%E4%BB%96%E6%B8%B2%E6%9F%93%E5%99%A8%E5%A6%82-hexo-renderer-marked"><span class="nav-number">1.2.</span> <span class="nav-text">卸載其他渲染器（如
+hexo-renderer-marked）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A2%BA%E4%BF%9D%E5%B7%B2%E5%AE%89%E8%A3%9D-pandoc"><span class="nav-number">1.3.</span> <span class="nav-text">確保已安裝 Pandoc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-_config.yml"><span class="nav-number">1.4.</span> <span class="nav-text">配置
+_config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6%E6%95%B8%E5%AD%B8%E5%85%AC%E5%BC%8F"><span class="nav-number">1.5.</span> <span class="nav-text">測試數學公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%85%E7%90%86%E4%B8%A6%E7%94%9F%E6%88%90-hexo-%E7%B6%B2%E7%AB%99"><span class="nav-number">1.6.</span> <span class="nav-text">清理並生成 Hexo 網站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A2%BA%E8%AA%8D-mathjax-%E5%8A%A0%E8%BC%89"><span class="nav-number">1.7.</span> <span class="nav-text">確認 MathJax 加載</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E5%95%8F%E9%A1%8C%E6%99%82%E7%9A%84%E8%AA%BF%E8%A9%A6"><span class="nav-number">1.8.</span> <span class="nav-text">遇到問題時的調試</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83"><span class="nav-number">2.</span> <span class="nav-text">參考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -235,7 +238,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-count">142</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -345,80 +348,89 @@ mjx-container[display="true"] + br {
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>在編寫Markdown文件時，您可以使用上述方法來編輯LaTeX數學公式，並使用Markdown編輯器（如Typora、Visual Studio Code等）來預覽和呈現這些公式。</p>
-<span id="more"></span>
-<h3 id="切換到-hexo-renderer-pandoc"><a href="#切換到-hexo-renderer-pandoc" class="headerlink" title="切換到 hexo-renderer-pandoc"></a>切換到 hexo-renderer-pandoc</h3><p>切換到 <code>hexo-renderer-pandoc</code> 是一個簡單的過程，下面是具體的步驟來完成安裝和配置：</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
+<p>在編寫Markdown文件時，您可以使用上述方法來編輯LaTeX數學公式，並使用Markdown編輯器（如Typora、Visual
+Studio Code等）來預覽和呈現這些公式。 <span id="more"></span> ### 切換到
+hexo-renderer-pandoc</p>
+<p>切換到 <code>hexo-renderer-pandoc</code>
+是一個簡單的過程，下面是具體的步驟來完成安裝和配置：</p>
 <hr>
-<h2 id="安裝-hexo-renderer-pandoc"><a href="#安裝-hexo-renderer-pandoc" class="headerlink" title="安裝 hexo-renderer-pandoc"></a><strong>安裝 <code>hexo-renderer-pandoc</code></strong></h2><ol>
-<li><p>打開終端，進入您的 Hexo 項目目錄：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/your/hexo-project</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安裝 <code>hexo-renderer-pandoc</code>：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure></li>
+<h2 id="安裝-hexo-renderer-pandoc"><strong>安裝
+<code>hexo-renderer-pandoc</code></strong></h2>
+<ol type="1">
+<li><p>打開終端，進入您的 Hexo 項目目錄： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/your/hexo-project</span><br></pre></td></tr></table></figure></p></li>
+<li><p>安裝 <code>hexo-renderer-pandoc</code>： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure></p></li>
 </ol>
 <hr>
-<h2 id="卸載其他渲染器（如-hexo-renderer-marked）"><a href="#卸載其他渲染器（如-hexo-renderer-marked）" class="headerlink" title="卸載其他渲染器（如 hexo-renderer-marked）"></a><strong>卸載其他渲染器（如 <code>hexo-renderer-marked</code>）</strong></h2><p>Hexo 默認使用 <code>hexo-renderer-marked</code>，如果安裝了其他渲染器，它可能會與 <code>hexo-renderer-pandoc</code> 發生衝突。您需要卸載它們：</p>
+<h2 id="卸載其他渲染器如-hexo-renderer-marked"><strong>卸載其他渲染器（如
+<code>hexo-renderer-marked</code>）</strong></h2>
+<p>Hexo 默認使用
+<code>hexo-renderer-marked</code>，如果安裝了其他渲染器，它可能會與
+<code>hexo-renderer-pandoc</code> 發生衝突。您需要卸載它們：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br></pre></td></tr></table></figure>
-
 <hr>
-<h2 id="確保已安裝-Pandoc"><a href="#確保已安裝-Pandoc" class="headerlink" title="確保已安裝 Pandoc"></a><strong>確保已安裝 Pandoc</strong></h2><p><code>hexo-renderer-pandoc</code> 依賴於 <strong>Pandoc</strong>，確保您已安裝它。</p>
-<ol>
-<li><p>檢查 Pandoc 是否已安裝：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pandoc --version</span><br></pre></td></tr></table></figure>
-</li>
+<h2 id="確保已安裝-pandoc"><strong>確保已安裝 Pandoc</strong></h2>
+<p><code>hexo-renderer-pandoc</code> 依賴於
+<strong>Pandoc</strong>，確保您已安裝它。</p>
+<ol type="1">
+<li><p>檢查 Pandoc 是否已安裝： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pandoc --version</span><br></pre></td></tr></table></figure></p></li>
 <li><p>如果未安裝，請根據您的操作系統安裝 Pandoc：</p>
 <ul>
-<li><strong>MacOS</strong>:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install pandoc</span><br></pre></td></tr></table></figure></li>
-<li><strong>Ubuntu/Debian</strong>:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get install pandoc</span><br></pre></td></tr></table></figure></li>
-<li><strong>Windows</strong>:<br><a target="_blank" rel="noopener" href="https://pandoc.org/installing.html">下載 Pandoc</a> 並添加到系統環境變量 PATH。</li>
-</ul>
-</li>
+<li><strong>MacOS</strong>: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install pandoc</span><br></pre></td></tr></table></figure></li>
+<li><strong>Ubuntu/Debian</strong>: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get install pandoc</span><br></pre></td></tr></table></figure></li>
+<li><strong>Windows</strong>: <a target="_blank" rel="noopener" href="https://pandoc.org/installing.html">下載 Pandoc</a>
+並添加到系統環境變量 PATH。</li>
+</ul></li>
 </ol>
 <hr>
-<h2 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置 _config.yml"></a><strong>配置 <code>_config.yml</code></strong></h2><p>在您的 Hexo 項目目錄下的主配置文件 <code>_config.yml</code> 中，添加或修改 <code>pandoc</code> 配置：</p>
+<h2 id="配置-_config.yml"><strong>配置
+<code>_config.yml</code></strong></h2>
+<p>在您的 Hexo 項目目錄下的主配置文件 <code>_config.yml</code>
+中，添加或修改 <code>pandoc</code> 配置：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">pandoc:</span></span><br><span class="line">  <span class="attr">filters:</span> []               <span class="comment"># 可選：Pandoc 過濾器（如不需要，保持空）</span></span><br><span class="line">  <span class="attr">ext:</span> [<span class="string">raw_html</span>]           <span class="comment"># 啟用 HTML 支持</span></span><br><span class="line">  <span class="attr">args:</span>                     <span class="comment"># 自定義 Pandoc 參數</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">--mathjax</span>             <span class="comment"># 啟用 MathJax 支持數學公式</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">--highlight-style=pygments</span>  <span class="comment"># 啟用語法高亮（可選）</span></span><br></pre></td></tr></table></figure>
-
 <hr>
-<h2 id="測試數學公式"><a href="#測試數學公式" class="headerlink" title="測試數學公式"></a><strong>測試數學公式</strong></h2><p>創建一個測試文章（如 <code>source/_posts/test-math.md</code>），並添加以下內容：</p>
+<h2 id="測試數學公式"><strong>測試數學公式</strong></h2>
+<p>創建一個測試文章（如
+<code>source/_posts/test-math.md</code>），並添加以下內容：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Test Math with Pandoc</span><br><span class="line">date: 2024-12-11</span><br><span class="line"><span class="section">math: true</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line">這是行內數學公式：$E = mc^2$</span><br><span class="line"></span><br><span class="line">這是塊級數學公式：</span><br><span class="line">$$</span><br><span class="line">\int<span class="emphasis">_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}</span></span><br><span class="line"><span class="emphasis">$$</span></span><br></pre></td></tr></table></figure>
-
 <hr>
-<h2 id="清理並生成-Hexo-網站"><a href="#清理並生成-Hexo-網站" class="headerlink" title="清理並生成 Hexo 網站"></a><strong>清理並生成 Hexo 網站</strong></h2><p>執行以下命令清理緩存並重新生成網站：</p>
+<h2 id="清理並生成-hexo-網站"><strong>清理並生成 Hexo 網站</strong></h2>
+<p>執行以下命令清理緩存並重新生成網站：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<p>然後在瀏覽器中訪問 <code>http://localhost:4000</code>，檢查數學公式是否正確顯示。</p>
+<p>然後在瀏覽器中訪問
+<code>http://localhost:4000</code>，檢查數學公式是否正確顯示。</p>
 <hr>
-<h2 id="確認-MathJax-加載"><a href="#確認-MathJax-加載" class="headerlink" title="確認 MathJax 加載"></a><strong>確認 MathJax 加載</strong></h2><p>如果公式仍未顯示，確保主題模板正確加載了 MathJax：</p>
-<ol>
-<li><p>打開主題配置文件（如 <code>themes/next/_config.yml</code>）。</p>
-</li>
-<li><p>確保啟用了 MathJax：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">engine:</span> <span class="string">mathjax</span></span><br><span class="line">  <span class="attr">mathjax:</span></span><br><span class="line">    <span class="attr">version:</span> <span class="number">3</span></span><br><span class="line">    <span class="attr">config:</span></span><br><span class="line">      <span class="attr">tex:</span></span><br><span class="line">        <span class="attr">inlineMath:</span></span><br><span class="line">          <span class="bullet">-</span> [<span class="string">"$"</span>, <span class="string">"$"</span>]</span><br><span class="line">          <span class="bullet">-</span> [<span class="string">"\\("</span>, <span class="string">"\\)"</span>]</span><br><span class="line">        <span class="attr">displayMath:</span></span><br><span class="line">          <span class="bullet">-</span> [<span class="string">"$$"</span>, <span class="string">"$$"</span>]</span><br><span class="line">          <span class="bullet">-</span> [<span class="string">"\\["</span>, <span class="string">"\\]"</span>]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>確保 <code>MathJax</code> 的腳本被加載（如 <code>layout/_partials/head.njk</code>）：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<h2 id="確認-mathjax-加載"><strong>確認 MathJax 加載</strong></h2>
+<p>如果公式仍未顯示，確保主題模板正確加載了 MathJax：</p>
+<ol type="1">
+<li><p>打開主題配置文件（如
+<code>themes/next/_config.yml</code>）。</p></li>
+<li><p>確保啟用了 MathJax： <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">engine:</span> <span class="string">mathjax</span></span><br><span class="line">  <span class="attr">mathjax:</span></span><br><span class="line">    <span class="attr">version:</span> <span class="number">3</span></span><br><span class="line">    <span class="attr">config:</span></span><br><span class="line">      <span class="attr">tex:</span></span><br><span class="line">        <span class="attr">inlineMath:</span></span><br><span class="line">          <span class="bullet">-</span> [<span class="string">"$"</span>, <span class="string">"$"</span>]</span><br><span class="line">          <span class="bullet">-</span> [<span class="string">"\\("</span>, <span class="string">"\\)"</span>]</span><br><span class="line">        <span class="attr">displayMath:</span></span><br><span class="line">          <span class="bullet">-</span> [<span class="string">"$$"</span>, <span class="string">"$$"</span>]</span><br><span class="line">          <span class="bullet">-</span> [<span class="string">"\\["</span>, <span class="string">"\\]"</span>]</span><br></pre></td></tr></table></figure></p></li>
+<li><p>確保 <code>MathJax</code> 的腳本被加載（如
+<code>layout/_partials/head.njk</code>）： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p></li>
 </ol>
 <hr>
-<h2 id="遇到問題時的調試"><a href="#遇到問題時的調試" class="headerlink" title="遇到問題時的調試"></a><strong>遇到問題時的調試</strong></h2><ol>
-<li><p><strong>檢查是否正確加載 Pandoc</strong>：<br>查看生成過程中是否有與 Pandoc 相關的錯誤：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate --debug</span><br></pre></td></tr></table></figure>
-</li>
+<h2 id="遇到問題時的調試"><strong>遇到問題時的調試</strong></h2>
+<ol type="1">
+<li><p><strong>檢查是否正確加載 Pandoc</strong>： 查看生成過程中是否有與
+Pandoc 相關的錯誤： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate --debug</span><br></pre></td></tr></table></figure></p></li>
 <li><p><strong>檢查瀏覽器控制台</strong>：</p>
 <ul>
 <li>檢查 MathJax 加載錯誤。</li>
 <li>確認公式是否正確分隔。</li>
-</ul>
-</li>
-<li><p><strong>測試與其他渲染器的衝突</strong>：<br>確保 Hexo 沒有同時安裝多個渲染器（例如 <code>hexo-renderer-marked</code> 和 <code>hexo-renderer-pandoc</code>）。</p>
-</li>
+</ul></li>
+<li><p><strong>測試與其他渲染器的衝突</strong>： 確保 Hexo
+沒有同時安裝多個渲染器（例如 <code>hexo-renderer-marked</code> 和
+<code>hexo-renderer-pandoc</code>）。</p></li>
 </ol>
-<h1 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h1><ol>
-<li><p>LATEX Mathematical Symbols<br><a target="_blank" rel="noopener" href="https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf">https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf</a></p>
-</li>
-<li><p>hexo 設定LaTex數學編輯<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/lx_ros/article/details/124240258">https://blog.csdn.net/lx_ros/article/details/124240258</a></p>
-</li>
-<li><p>Hexo 完美支持数学公式<br><a target="_blank" rel="noopener" href="https://www.xianlongok.site/post/367fa45b/">https://www.xianlongok.site/post/367fa45b/</a></p>
-</li>
+<h1 id="參考">參考</h1>
+<ol type="1">
+<li><p>LATEX Mathematical Symbols
+https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf</p></li>
+<li><p>hexo 設定LaTex數學編輯
+https://blog.csdn.net/lx_ros/article/details/124240258</p></li>
+<li><p>Hexo 完美支持数学公式
+https://www.xianlongok.site/post/367fa45b/</p></li>
 </ol>
 
     </div>
@@ -471,13 +483,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">286k</span>
+    <span title="總字數">288k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:39</span>
+    <span title="所需總閱讀時間">8:44</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
