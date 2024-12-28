@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Label noise learning（標籤雜訊學習）是機器學習中的一個研究領域，專注於應對資料集中錯誤或不準確的標籤問題。標籤雜訊通常會導致模型的效能下降，特別是當訓練資料中的錯誤標籤比例較高時，模型可能會學習到錯誤的模式，從而影響其泛化能力。">
+    <meta name="description" content="Label noise learning（標籤雜訊學習）是機器學習中的一個研究領域，專注於應對資料集中錯誤或不準確的標籤問題。 標籤雜訊通常會導致模型的效能下降，特別是當訓練資料中的錯誤標籤比例較高時，模型可能會學習到錯誤的模式，從而影響其泛化能力。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Label Noise Learning">
 <meta property="og:url" content="https://leonicehot.github.io/2024/10/23/2024/October/Label-Noise-Learning/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="Label noise learning（標籤雜訊學習）是機器學習中的一個研究領域，專注於應對資料集中錯誤或不準確的標籤問題。標籤雜訊通常會導致模型的效能下降，特別是當訓練資料中的錯誤標籤比例較高時，模型可能會學習到錯誤的模式，從而影響其泛化能力。">
+<meta property="og:description" content="Label noise learning（標籤雜訊學習）是機器學習中的一個研究領域，專注於應對資料集中錯誤或不準確的標籤問題。 標籤雜訊通常會導致模型的效能下降，特別是當訓練資料中的錯誤標籤比例較高時，模型可能會學習到錯誤的模式，從而影響其泛化能力。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-10-23T15:16:08.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:37.986Z">
@@ -110,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%99%E7%B1%A4%E9%9B%9C%E8%A8%8A%E7%9A%84%E9%A1%9E%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">標籤雜訊的類型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%82%BA%E4%BD%95%E4%BD%BF%E7%94%A8%E5%90%88%E6%88%90%E6%A8%99%E7%B1%A4%E9%9B%9C%E8%A8%8A%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">為何使用合成標籤雜訊？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%99%E7%B1%A4%E9%9B%9C%E8%A8%8A%E5%B0%8D%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BD%B1%E9%9F%BF"><span class="nav-number">3.</span> <span class="nav-text">標籤雜訊對模型的影響</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B1%BA%E6%A8%99%E7%B1%A4%E9%9B%9C%E8%A8%8A%E7%9A%84%E7%AD%96%E7%95%A5"><span class="nav-number">4.</span> <span class="nav-text">解決標籤雜訊的策略</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%99%E7%B1%A4%E9%9B%9C%E8%A8%8A%E5%AD%B8%E7%BF%92%E7%9A%84%E6%87%89%E7%94%A8"><span class="nav-number">5.</span> <span class="nav-text">標籤雜訊學習的應用</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%82%BA%E4%BD%95%E4%BD%BF%E7%94%A8%E5%90%88%E6%88%90%E6%A8%99%E7%B1%A4%E9%9B%9C%E8%A8%8A"><span class="nav-number">1.</span> <span class="nav-text">為何使用合成標籤雜訊？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%99%E7%B1%A4%E9%9B%9C%E8%A8%8A%E5%B0%8D%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BD%B1%E9%9F%BF"><span class="nav-number">2.</span> <span class="nav-text">標籤雜訊對模型的影響</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B1%BA%E6%A8%99%E7%B1%A4%E9%9B%9C%E8%A8%8A%E7%9A%84%E7%AD%96%E7%95%A5"><span class="nav-number">3.</span> <span class="nav-text">解決標籤雜訊的策略</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%99%E7%B1%A4%E9%9B%9C%E8%A8%8A%E5%AD%B8%E7%BF%92%E7%9A%84%E6%87%89%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">標籤雜訊學習的應用</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -241,109 +241,111 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>Label noise learning（標籤雜訊學習）是機器學習中的一個研究領域，專注於應對資料集中錯誤或不準確的標籤問題。<br>標籤雜訊通常會導致模型的效能下降，特別是當訓練資料中的錯誤標籤比例較高時，模型可能會學習到錯誤的模式，從而影響其泛化能力。</p>
-<span id="more"></span>
-<h1 id="標籤雜訊的類型"><a href="#標籤雜訊的類型" class="headerlink" title="標籤雜訊的類型"></a>標籤雜訊的類型</h1><p>標籤雜訊可以分為幾種常見的類型：<br>類別條件雜訊（Class-Conditional Noise, CCN） 是機器學習中的一種標籤雜訊形式，指的是標籤錯誤依據樣本所屬的真實類別發生，且錯誤標籤的分佈依賴於實際類別的條件概率。<br>這意味著某一類別的樣本在標籤被錯誤標記為其他類別時，這種標記錯誤的概率依賴於它原來所屬的類別。</p>
-<p>類別條件雜訊的特點</p>
-<ol>
-<li><p>依賴於實際類別：</p>
+    <div class="post-body" itemprop="articleBody"><p>Label noise
+learning（標籤雜訊學習）是機器學習中的一個研究領域，專注於應對資料集中錯誤或不準確的標籤問題。
+標籤雜訊通常會導致模型的效能下降，特別是當訓練資料中的錯誤標籤比例較高時，模型可能會學習到錯誤的模式，從而影響其泛化能力。
+<span id="more"></span> # 標籤雜訊的類型 標籤雜訊可以分為幾種常見的類型：
+類別條件雜訊（Class-Conditional Noise, CCN）
+是機器學習中的一種標籤雜訊形式，指的是標籤錯誤依據樣本所屬的真實類別發生，且錯誤標籤的分佈依賴於實際類別的條件概率。
+這意味著某一類別的樣本在標籤被錯誤標記為其他類別時，這種標記錯誤的概率依賴於它原來所屬的類別。</p>
+<p>類別條件雜訊的特點 1. 依賴於實際類別： -
+標籤錯誤並不是隨機的，而是根據樣本的實際類別進行。比如，某一類別的樣本更容易被錯誤標記為特定其他類別，而不是隨機分佈到所有其他類別。</p>
+<ol start="2" type="1">
+<li>常見於具備類別混淆性的場景：
 <ul>
-<li>標籤錯誤並不是隨機的，而是根據樣本的實際類別進行。比如，某一類別的樣本更容易被錯誤標記為特定其他類別，而不是隨機分佈到所有其他類別。</li>
-</ul>
-</li>
-<li><p>常見於具備類別混淆性的場景：</p>
+<li>在一些應用中，某些類別之間本身容易被混淆，這可能導致標籤錯誤更多地發生在這些類別之間。例如，在手寫數字識別中，“3”
+和 “8” 可能更容易互相混淆，而不是與其他數字。</li>
+</ul></li>
+<li>與對稱和非對稱雜訊的關係：
 <ul>
-<li>在一些應用中，某些類別之間本身容易被混淆，這可能導致標籤錯誤更多地發生在這些類別之間。例如，在手寫數字識別中，“3” 和 “8” 可能更容易互相混淆，而不是與其他數字。</li>
-</ul>
-</li>
-<li><p>與對稱和非對稱雜訊的關係：</p>
+<li>對稱雜訊（Symmetric Noise）
+是標籤可能被錯誤地標記為任何其他類別，且這些錯誤的概率相同。
+與此相比，類別條件雜訊中的錯誤發生概率是不均勻的，依賴於類別之間的混淆關係。
 <ul>
-<li><p>對稱雜訊（Symmetric Noise） 是標籤可能被錯誤地標記為任何其他類別，且這些錯誤的概率相同。<br> 與此相比，類別條件雜訊中的錯誤發生概率是不均勻的，依賴於類別之間的混淆關係。</p>
+<li>在對稱雜訊中，資料集中每個類別的樣本都有相等的概率被隨機標記為其他類別。
+這種雜訊通常與資料的特徵無關，是隨機產生的。
 <ul>
-<li>在對稱雜訊中，資料集中每個類別的樣本都有相等的概率被隨機標記為其他類別。<br>  這種雜訊通常與資料的特徵無關，是隨機產生的。    <ul>
-<li><p>例如，對於一個10類的分類問題，對稱雜訊下，每個類別中的某些樣本可能有 10% 的概率被錯誤標記為其他 9 個類別中的任意一個。</p>
-</li>
-<li><p>效果：這種雜訊的引入方式會使模型難以正確學習到真實的資料分佈，特別是當雜訊比例較高時，模型可能會對錯誤標籤進行過擬合，導致效能下降。</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>非對稱雜訊（Asymmetric Noise） 是指某些類別之間的錯誤標記比其他類別更常見，這是一種特殊形式的類別條件雜訊。</p>
+<li><p>例如，對於一個10類的分類問題，對稱雜訊下，每個類別中的某些樣本可能有
+10% 的概率被錯誤標記為其他 9 個類別中的任意一個。</p></li>
+<li><p>效果：這種雜訊的引入方式會使模型難以正確學習到真實的資料分佈，特別是當雜訊比例較高時，模型可能會對錯誤標籤進行過擬合，導致效能下降。</p></li>
+</ul></li>
+</ul></li>
+<li>非對稱雜訊（Asymmetric Noise）
+是指某些類別之間的錯誤標記比其他類別更常見，這是一種特殊形式的類別條件雜訊。
 <ul>
 <li><p>非對稱雜訊是指標籤錯誤發生在某些特定的類別之間，且這些錯誤並非隨機發生。</p>
 <ul>
-<li><p>例如，在手寫數字識別中，數字 “5” 可能更常被錯誤標記為數字 “6”，但不會被標記為數字 “1”。<br>  這種錯誤通常是由於類別之間的相似性導致的。</p>
-</li>
-<li><p>效果：非對稱雜訊更貼近於現實世界的資料雜訊情況，因為真實資料中的標籤錯誤往往存在偏向性。<br>  這類雜訊對模型的影響可能更難處理，因為模型會傾向於學習某些特定的錯誤模式。</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>實例依賴雜訊（Instance-Dependent Noise, IDN） </p>
+<li><p>例如，在手寫數字識別中，數字 “5” 可能更常被錯誤標記為數字
+“6”，但不會被標記為數字 “1”。
+這種錯誤通常是由於類別之間的相似性導致的。</p></li>
+<li><p>效果：非對稱雜訊更貼近於現實世界的資料雜訊情況，因為真實資料中的標籤錯誤往往存在偏向性。
+這類雜訊對模型的影響可能更難處理，因為模型會傾向於學習某些特定的錯誤模式。</p></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>實例依賴雜訊（Instance-Dependent Noise, IDN）
 <ul>
-<li><p>Instance-Dependent Noise 是指在機器學習中，某些樣本的標籤錯誤取決於這些樣本的特徵或屬性。<br> 與其他類型的雜訊（如對稱雜訊或無關雜訊）不同，Instance-Dependent Noise 的特點是錯誤標籤的模式與特定的實例有關，這使得某些類別的樣本比其他樣本更容易出現標籤錯誤。</p>
+<li><p>Instance-Dependent Noise
+是指在機器學習中，某些樣本的標籤錯誤取決於這些樣本的特徵或屬性。
+與其他類型的雜訊（如對稱雜訊或無關雜訊）不同，Instance-Dependent Noise
+的特點是錯誤標籤的模式與特定的實例有關，這使得某些類別的樣本比其他樣本更容易出現標籤錯誤。</p>
 <ul>
-<li><p>Instance-Dependent Noise 的特點</p>
+<li>Instance-Dependent Noise 的特點
 <ul>
-<li><p>樣本特定性：<br>  雜訊的出現與樣本的具體特徵相關聯。例如，對於某一特定類別中的某些樣本，其標籤可能因為外部因素（如環境、背景或其他上下文）而被錯誤標記。</p>
-</li>
-<li><p>不均勻分布：<br>  Instance-Dependent Noise 通常不是均勻分布在數據集中的，這意味著在某些區域或類別中，標籤錯誤的比例可能顯著高於其他區域或類別。</p>
-</li>
-<li><p>上下文依賴：<br>  標籤錯誤可能與樣本所處的上下文或場景有關。例如，在影像分類中，某些圖像在不同的光照條件下可能被誤標為不同的類別。</p>
-</li>
-</ul>
-</li>
-<li><p>Instance-Dependent Noise 的影響</p>
+<li><p>樣本特定性：
+雜訊的出現與樣本的具體特徵相關聯。例如，對於某一特定類別中的某些樣本，其標籤可能因為外部因素（如環境、背景或其他上下文）而被錯誤標記。</p></li>
+<li><p>不均勻分布： Instance-Dependent Noise
+通常不是均勻分布在數據集中的，這意味著在某些區域或類別中，標籤錯誤的比例可能顯著高於其他區域或類別。</p></li>
+<li><p>上下文依賴：
+標籤錯誤可能與樣本所處的上下文或場景有關。例如，在影像分類中，某些圖像在不同的光照條件下可能被誤標為不同的類別。</p></li>
+</ul></li>
+<li>Instance-Dependent Noise 的影響
 <ul>
-<li><p>學習困難：<br>  當存在 Instance-Dependent Noise 時，模型可能會學習到錯誤的模式或決策邊界，因為它在訓練中受到了不同樣本標籤錯誤的影響。</p>
-</li>
-<li><p>準確性降低：<br>  如果模型無法識別 Instance-Dependent Noise 的模式，則可能在測試階段出現較高的錯誤率，特別是在類別不平衡或雜訊較多的情況下。</p>
-</li>
-<li><p>泛化能力受損：<br>  由於模型受到特定樣本的標籤錯誤影響，這可能會降低其在未見過數據上的泛化能力，導致預測效果不佳。</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li><p>學習困難： 當存在 Instance-Dependent Noise
+時，模型可能會學習到錯誤的模式或決策邊界，因為它在訓練中受到了不同樣本標籤錯誤的影響。</p></li>
+<li><p>準確性降低： 如果模型無法識別 Instance-Dependent Noise
+的模式，則可能在測試階段出現較高的錯誤率，特別是在類別不平衡或雜訊較多的情況下。</p></li>
+<li><p>泛化能力受損：
+由於模型受到特定樣本的標籤錯誤影響，這可能會降低其在未見過數據上的泛化能力，導致預測效果不佳。</p></li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ol>
-<h1 id="為何使用合成標籤雜訊？"><a href="#為何使用合成標籤雜訊？" class="headerlink" title="為何使用合成標籤雜訊？"></a>為何使用合成標籤雜訊？</h1><p>研究者通常使用合成標籤雜訊來：</p>
-<ul>
-<li>測試模型在不同雜訊環境中的穩定性與效能。</li>
-<li>評估處理標籤雜訊技術的有效性，如穩健損失函數、異常檢測和重新標記方法。</li>
-<li>模擬真實世界的資料雜訊場景，從而在模型訓練中引入雜訊處理技術。</li>
-</ul>
-<h1 id="標籤雜訊對模型的影響"><a href="#標籤雜訊對模型的影響" class="headerlink" title="標籤雜訊對模型的影響"></a>標籤雜訊對模型的影響</h1><p>標籤雜訊會對機器學習模型造成以下幾個負面影響：</p>
-<ul>
-<li>過擬合錯誤標籤：模型可能過度學習那些被錯誤標記的樣本，導致在訓練集上表現良好，但在未見過的資料上表現不佳。</li>
-<li>降低泛化能力：由於標籤雜訊的存在，模型可能難以學習到資料的真實模式，從而影響其對新資料的預測能力。</li>
-</ul>
-<h1 id="解決標籤雜訊的策略"><a href="#解決標籤雜訊的策略" class="headerlink" title="解決標籤雜訊的策略"></a>解決標籤雜訊的策略</h1><p>為了應對標籤雜訊，研究者和工程師可以採用以下幾種技術：</p>
-<ol>
-<li><p>資料清理與過濾：<br>在訓練資料中檢測並移除或更正有雜訊的樣本。<br>例如，可以使用異常檢測技術來發現那些標籤與資料特徵不一致的樣本，或者通過人類標註者進行二次審核。</p>
-</li>
-<li><p>穩健損失函數（Robust Loss Function）：<br>使用對雜訊更不敏感的損失函數。<br>例如，<strong>均值絕對誤差（MAE）相比於均方誤差（MSE）</strong>對於極端錯誤標記的樣本影響較小。</p>
-</li>
-<li><p>重標籤方法（Re-labeling Methods）：<br>通過訓練初期的模型預測結果來檢查樣本的標籤是否正確，然後對可能有誤的標籤進行更正或重新標註。</p>
-</li>
-<li><p>雜訊建模：<br>假設某些標籤是帶雜訊的，並在訓練過程中顯式地對雜訊進行建模。<br>這種方法試圖學習資料中的雜訊分佈，從而在優化模型時考慮到標籤中的不確定性。</p>
-</li>
-<li><p>半監督學習（Semi-supervised Learning）：<br>結合少量的乾淨資料與大量的有雜訊資料進行訓練，利用乾淨資料來指導模型的學習，從而降低雜訊的影響。</p>
-</li>
-<li><p>自訓練（Self-training）：<br>讓模型在初次訓練後，利用其預測結果來重新標記部分樣本，並根據這些新的標籤進行再次訓練，逐步降低標籤雜訊的影響。</p>
-</li>
+<h1 id="為何使用合成標籤雜訊">為何使用合成標籤雜訊？</h1>
+<p>研究者通常使用合成標籤雜訊來： -
+測試模型在不同雜訊環境中的穩定性與效能。 -
+評估處理標籤雜訊技術的有效性，如穩健損失函數、異常檢測和重新標記方法。 -
+模擬真實世界的資料雜訊場景，從而在模型訓練中引入雜訊處理技術。</p>
+<h1 id="標籤雜訊對模型的影響">標籤雜訊對模型的影響</h1>
+<p>標籤雜訊會對機器學習模型造成以下幾個負面影響： -
+過擬合錯誤標籤：模型可能過度學習那些被錯誤標記的樣本，導致在訓練集上表現良好，但在未見過的資料上表現不佳。
+-
+降低泛化能力：由於標籤雜訊的存在，模型可能難以學習到資料的真實模式，從而影響其對新資料的預測能力。</p>
+<h1 id="解決標籤雜訊的策略">解決標籤雜訊的策略</h1>
+<p>為了應對標籤雜訊，研究者和工程師可以採用以下幾種技術：</p>
+<ol type="1">
+<li><p>資料清理與過濾： 在訓練資料中檢測並移除或更正有雜訊的樣本。
+例如，可以使用異常檢測技術來發現那些標籤與資料特徵不一致的樣本，或者通過人類標註者進行二次審核。</p></li>
+<li><p>穩健損失函數（Robust Loss Function）：
+使用對雜訊更不敏感的損失函數。
+例如，<strong>均值絕對誤差（MAE）相比於均方誤差（MSE）</strong>對於極端錯誤標記的樣本影響較小。</p></li>
+<li><p>重標籤方法（Re-labeling Methods）：
+通過訓練初期的模型預測結果來檢查樣本的標籤是否正確，然後對可能有誤的標籤進行更正或重新標註。</p></li>
+<li><p>雜訊建模：
+假設某些標籤是帶雜訊的，並在訓練過程中顯式地對雜訊進行建模。
+這種方法試圖學習資料中的雜訊分佈，從而在優化模型時考慮到標籤中的不確定性。</p></li>
+<li><p>半監督學習（Semi-supervised Learning）：
+結合少量的乾淨資料與大量的有雜訊資料進行訓練，利用乾淨資料來指導模型的學習，從而降低雜訊的影響。</p></li>
+<li><p>自訓練（Self-training）：
+讓模型在初次訓練後，利用其預測結果來重新標記部分樣本，並根據這些新的標籤進行再次訓練，逐步降低標籤雜訊的影響。</p></li>
 </ol>
-<h1 id="標籤雜訊學習的應用"><a href="#標籤雜訊學習的應用" class="headerlink" title="標籤雜訊學習的應用"></a>標籤雜訊學習的應用</h1><p>標籤雜訊學習廣泛應用於以下領域：</p>
-<ol>
-<li>醫學影像分類：醫療資料標註錯誤可能導致診斷錯誤，因此需要應對標籤雜訊。</li>
-<li>自動駕駛：在標註路況或物體類別時，人為錯誤可能導致標籤雜訊，影響車輛的決策。</li>
-<li>網際網路資料分類：網路上的資料標註通常由眾包方式完成，因此很容易產生雜訊。</li>
-</ol>
+<h1 id="標籤雜訊學習的應用">標籤雜訊學習的應用</h1>
+<p>標籤雜訊學習廣泛應用於以下領域： 1.
+醫學影像分類：醫療資料標註錯誤可能導致診斷錯誤，因此需要應對標籤雜訊。
+2.
+自動駕駛：在標註路況或物體類別時，人為錯誤可能導致標籤雜訊，影響車輛的決策。
+3.
+網際網路資料分類：網路上的資料標註通常由眾包方式完成，因此很容易產生雜訊。</p>
 
     </div>
 
@@ -395,13 +397,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">290k</span>
+    <span title="總字數">288k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:47</span>
+    <span title="所需總閱讀時間">8:44</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介Image translation 是一種深度學習的任務，其目標是將圖像從一種狀態（或”風格”）轉換為另一種狀態，同時保持原始圖像的基本結構和意義。這可以包括各種不同的轉換，例如改變圖像的色調、風格、光線效果，或者從一種類型的圖像（例如夜晚的風景）轉換為另一種類型的圖像（例如同一風景的白天版本）。 一種著名的圖像翻譯模型是 CycleGAN，它能夠在兩個圖像領域之間學習來回的映射，而不需要成對">
+    <meta name="description" content="簡介 Image translation 是一種深度學習的任務，其目標是將圖像從一種狀態（或”風格”）轉換為另一種狀態，同時保持原始圖像的基本結構和意義。這可以包括各種不同的轉換，例如改變圖像的色調、風格、光線效果，或者從一種類型的圖像（例如夜晚的風景）轉換為另一種類型的圖像（例如同一風景的白天版本）。 一種著名的圖像翻譯模型是 CycleGAN，它能夠在兩個圖像領域之間學習來回的映射，而">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Image Translation">
 <meta property="og:url" content="https://leonicehot.github.io/2023/06/26/2023/June/Image-Translation/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介Image translation 是一種深度學習的任務，其目標是將圖像從一種狀態（或”風格”）轉換為另一種狀態，同時保持原始圖像的基本結構和意義。這可以包括各種不同的轉換，例如改變圖像的色調、風格、光線效果，或者從一種類型的圖像（例如夜晚的風景）轉換為另一種類型的圖像（例如同一風景的白天版本）。 一種著名的圖像翻譯模型是 CycleGAN，它能夠在兩個圖像領域之間學習來回的映射，而不需要成對">
+<meta property="og:description" content="簡介 Image translation 是一種深度學習的任務，其目標是將圖像從一種狀態（或”風格”）轉換為另一種狀態，同時保持原始圖像的基本結構和意義。這可以包括各種不同的轉換，例如改變圖像的色調、風格、光線效果，或者從一種類型的圖像（例如夜晚的風景）轉換為另一種類型的圖像（例如同一風景的白天版本）。 一種著名的圖像翻譯模型是 CycleGAN，它能夠在兩個圖像領域之間學習來回的映射，而">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-06-26T03:46:50.000Z">
 <meta property="article:modified_time" content="2024-12-28T15:33:29.674Z">
@@ -220,7 +220,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>813</span>
+      <span>808</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -237,30 +237,29 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>Image translation 是一種深度學習的任務，其目標是將圖像從一種狀態（或”風格”）轉換為另一種狀態，同時保持原始圖像的基本結構和意義。這可以包括各種不同的轉換，例如改變圖像的色調、風格、光線效果，或者從一種類型的圖像（例如夜晚的風景）轉換為另一種類型的圖像（例如同一風景的白天版本）。</p>
-<p>一種著名的圖像翻譯模型是 CycleGAN，它能夠在兩個圖像領域之間學習來回的映射，而不需要成對的訓練樣本。舉例來說，CycleGAN 可以將馬的圖片轉換為斑馬的圖片，反之亦然。</p>
-<p>另一種重要的圖像翻譯技術是 Pix2Pix，這是一種條件對抗網絡 (Conditional Generative Adversarial Network, cGAN) ，能夠實現從一種類型的圖像轉換為另一種類型的圖像。不過與 CycleGAN 不同的是，Pix2Pix 需要配對的輸入&#x2F;輸出圖像來訓練。</p>
-<p>圖像翻譯有多種可能的應用，包括風格轉換、超解析度、影像修復、將草圖或語義分割圖轉換為寫實圖片等。</p>
-<span id="more"></span>
-
-<h1 id="應用"><a href="#應用" class="headerlink" title="應用"></a>應用</h1><p>影像翻譯在許多領域都有實際的應用，以下是一些例子：</p>
-<ol>
-<li><p>風格轉換：這可能是影像翻譯最知名的應用之一。這種技術可以讓你將一種風格的圖像（如梵高的星夜）應用於其他圖像上。</p>
-</li>
-<li><p>超解析度：影像翻譯也可以用來增加圖像的解析度。這種應用會將低解析度的圖像轉換為高解析度的圖像。</p>
-</li>
-<li><p>彩色化：將黑白圖像轉換為彩色圖像也是一種常見的影像翻譯應用。</p>
-</li>
-<li><p>圖像修復：這種應用可以修復受損或舊圖像，並使其看起來像新的一樣。</p>
-</li>
-<li><p>圖像生成：例如，將草圖或語義分割圖轉換為寫實圖片。</p>
-</li>
-<li><p>天氣和時間變換：影像翻譯可以用來模擬圖像在不同的天氣或時間下的外觀。例如，將夏天的風景轉換成冬天的風景，或將日間的照片轉換成夜晚的照片。</p>
-</li>
-<li><p>醫學影像處理：例如，從 CT 掃描圖像生成 MRI 圖像。</p>
-</li>
-<li><p>虛擬試衣：使用影像翻譯技術可以在模型上虛擬試穿不同的衣物風格，以幫助用戶在購物時做出決策。</p>
-</li>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
+<p>Image translation
+是一種深度學習的任務，其目標是將圖像從一種狀態（或”風格”）轉換為另一種狀態，同時保持原始圖像的基本結構和意義。這可以包括各種不同的轉換，例如改變圖像的色調、風格、光線效果，或者從一種類型的圖像（例如夜晚的風景）轉換為另一種類型的圖像（例如同一風景的白天版本）。</p>
+<p>一種著名的圖像翻譯模型是
+CycleGAN，它能夠在兩個圖像領域之間學習來回的映射，而不需要成對的訓練樣本。舉例來說，CycleGAN
+可以將馬的圖片轉換為斑馬的圖片，反之亦然。</p>
+<p>另一種重要的圖像翻譯技術是 Pix2Pix，這是一種條件對抗網絡 (Conditional
+Generative Adversarial Network, cGAN)
+，能夠實現從一種類型的圖像轉換為另一種類型的圖像。不過與 CycleGAN
+不同的是，Pix2Pix 需要配對的輸入/輸出圖像來訓練。</p>
+<p>圖像翻譯有多種可能的應用，包括風格轉換、超解析度、影像修復、將草圖或語義分割圖轉換為寫實圖片等。
+<span id="more"></span></p>
+<h1 id="應用">應用</h1>
+<p>影像翻譯在許多領域都有實際的應用，以下是一些例子：</p>
+<ol type="1">
+<li><p>風格轉換：這可能是影像翻譯最知名的應用之一。這種技術可以讓你將一種風格的圖像（如梵高的星夜）應用於其他圖像上。</p></li>
+<li><p>超解析度：影像翻譯也可以用來增加圖像的解析度。這種應用會將低解析度的圖像轉換為高解析度的圖像。</p></li>
+<li><p>彩色化：將黑白圖像轉換為彩色圖像也是一種常見的影像翻譯應用。</p></li>
+<li><p>圖像修復：這種應用可以修復受損或舊圖像，並使其看起來像新的一樣。</p></li>
+<li><p>圖像生成：例如，將草圖或語義分割圖轉換為寫實圖片。</p></li>
+<li><p>天氣和時間變換：影像翻譯可以用來模擬圖像在不同的天氣或時間下的外觀。例如，將夏天的風景轉換成冬天的風景，或將日間的照片轉換成夜晚的照片。</p></li>
+<li><p>醫學影像處理：例如，從 CT 掃描圖像生成 MRI 圖像。</p></li>
+<li><p>虛擬試衣：使用影像翻譯技術可以在模型上虛擬試穿不同的衣物風格，以幫助用戶在購物時做出決策。</p></li>
 </ol>
 <p>這些只是影像翻譯應用的一部分，實際上還有許多其他的可能性。</p>
 
@@ -314,13 +313,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">290k</span>
+    <span title="總字數">288k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:47</span>
+    <span title="所需總閱讀時間">8:44</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

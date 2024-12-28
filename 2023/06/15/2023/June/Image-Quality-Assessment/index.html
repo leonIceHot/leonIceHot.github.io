@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介影像品質評估（Image Quality Assessment, IQA）是評估影像感知品質的過程。它在各種影像處理應用中扮演著關鍵角色，例如影像壓縮、影像修復和影像增強。影像品質評估技術可以分為三種類型：全參考(Full-Reference, FR)、減參考(Reduced-Reference, RR)和無參考(No-Reference, NR)。">
+    <meta name="description" content="簡介 影像品質評估（Image Quality Assessment, IQA）是評估影像感知品質的過程。它在各種影像處理應用中扮演著關鍵角色，例如影像壓縮、影像修復和影像增強。影像品質評估技術可以分為三種類型：全參考(Full-Reference, FR)、減參考(Reduced-Reference, RR)和無參考(No-Reference, NR)。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Image Quality Assessment">
 <meta property="og:url" content="https://leonicehot.github.io/2023/06/15/2023/June/Image-Quality-Assessment/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介影像品質評估（Image Quality Assessment, IQA）是評估影像感知品質的過程。它在各種影像處理應用中扮演著關鍵角色，例如影像壓縮、影像修復和影像增強。影像品質評估技術可以分為三種類型：全參考(Full-Reference, FR)、減參考(Reduced-Reference, RR)和無參考(No-Reference, NR)。">
+<meta property="og:description" content="簡介 影像品質評估（Image Quality Assessment, IQA）是評估影像感知品質的過程。它在各種影像處理應用中扮演著關鍵角色，例如影像壓縮、影像修復和影像增強。影像品質評估技術可以分為三種類型：全參考(Full-Reference, FR)、減參考(Reduced-Reference, RR)和無參考(No-Reference, NR)。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-06-15T03:15:30.000Z">
 <meta property="article:modified_time" content="2024-12-28T15:33:34.733Z">
@@ -220,7 +220,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>839</span>
+      <span>847</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -237,27 +237,26 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>影像品質評估（Image Quality Assessment, IQA）是評估影像感知品質的過程。它在各種影像處理應用中扮演著關鍵角色，例如影像壓縮、影像修復和影像增強。影像品質評估技術可以分為三種類型：全參考(Full-Reference, FR)、減參考(Reduced-Reference, RR)和無參考(No-Reference, NR)。</p>
-<span id="more"></span>
-
-<h1 id="分類"><a href="#分類" class="headerlink" title="分類"></a>分類</h1><p>Image Quality Assessment</p>
-<ul>
-<li>客觀評估：這種方法使用一系列的客觀指標和演算法評估影像品質，減少主觀因素的影響。</li>
-</ul>
-<ol>
-<li><p>全參考影像質量評估（FR-IQA）(Full Reference – Image Quality Assessment)<br>指擁有理想質量的參考影像（例如無失真影像）的情況下，和測試影像進行比較，分析測試影像的失真程度，從而獲得測試影像的質量評估結果。常用的評估方法主要基於像素統計、信號、結構。例如：比較原始影像和經由JPEG壓縮後影像的失真程度。</p>
-<ul>
-<li>Double-Stimulus Continuous-Quality Scale (DSCQS)</li>
-<li>Difference Mean Opinion Score (DMOS)</li>
-<li>Perceptual Difference Model (PDM)</li>
-<li>Structural Similarity (SSIM)</li>
-<li>Mean Structural Similarity (MSSSIM)</li>
-</ul>
-</li>
-<li><p>部分參考影像質量評估（RR-IQA）<br>是指擁有理想質量參考影像的部分特徵信息，和測試影像比較分析，從而獲得測試影像的質量評估結果。由於部分參考質量評估依賴影像的部分特徵，與影像整體相比，資料量下降許多，故目前主要應用於影像傳輸系統中。</p>
-</li>
-<li><p>無參考影像質量評估（NR-IQA）(No Reference – Image Quality Assessment)<br>是指無參考影像的情況下，直接評估測試影像的質量。由於一般理想質量的參考影像很難獲取，故這種完全不依賴參考影像的質量評估方法應用較廣泛，但也屬於IQA中最具挑戰的問題。常用的評估方法主要基於像素統計特性。</p>
-</li>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
+<p>影像品質評估（Image Quality Assessment,
+IQA）是評估影像感知品質的過程。它在各種影像處理應用中扮演著關鍵角色，例如影像壓縮、影像修復和影像增強。影像品質評估技術可以分為三種類型：全參考(Full-Reference,
+FR)、減參考(Reduced-Reference, RR)和無參考(No-Reference, NR)。
+<span id="more"></span></p>
+<h1 id="分類">分類</h1>
+<p>Image Quality Assessment -
+客觀評估：這種方法使用一系列的客觀指標和演算法評估影像品質，減少主觀因素的影響。
+1. 全參考影像質量評估（FR-IQA）(Full Reference – Image Quality
+Assessment)
+指擁有理想質量的參考影像（例如無失真影像）的情況下，和測試影像進行比較，分析測試影像的失真程度，從而獲得測試影像的質量評估結果。常用的評估方法主要基於像素統計、信號、結構。例如：比較原始影像和經由JPEG壓縮後影像的失真程度。
+- Double-Stimulus Continuous-Quality Scale (DSCQS) - Difference Mean
+Opinion Score (DMOS) - Perceptual Difference Model (PDM) - Structural
+Similarity (SSIM) - Mean Structural Similarity (MSSSIM)</p>
+<ol start="2" type="1">
+<li><p>部分參考影像質量評估（RR-IQA）
+是指擁有理想質量參考影像的部分特徵信息，和測試影像比較分析，從而獲得測試影像的質量評估結果。由於部分參考質量評估依賴影像的部分特徵，與影像整體相比，資料量下降許多，故目前主要應用於影像傳輸系統中。</p></li>
+<li><p>無參考影像質量評估（NR-IQA）(No Reference – Image Quality
+Assessment)
+是指無參考影像的情況下，直接評估測試影像的質量。由於一般理想質量的參考影像很難獲取，故這種完全不依賴參考影像的質量評估方法應用較廣泛，但也屬於IQA中最具挑戰的問題。常用的評估方法主要基於像素統計特性。</p></li>
 </ol>
 
     </div>
@@ -310,13 +309,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">290k</span>
+    <span title="總字數">288k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:47</span>
+    <span title="所需總閱讀時間">8:44</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

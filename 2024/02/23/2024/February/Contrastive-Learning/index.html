@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Contrastive learning is a machine learning technique used for representation learning, where the goal is to learn useful representations of data points by contrasting them with each other. The basic i">
+    <meta name="description" content="Contrastive learning is a machine learning technique used for representation learning, where the goal is to learn useful representations of data points by contrasting them with each other. The basi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Contrastive Learning">
 <meta property="og:url" content="https://leonicehot.github.io/2024/02/23/2024/February/Contrastive-Learning/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="Contrastive learning is a machine learning technique used for representation learning, where the goal is to learn useful representations of data points by contrasting them with each other. The basic i">
+<meta property="og:description" content="Contrastive learning is a machine learning technique used for representation learning, where the goal is to learn useful representations of data points by contrasting them with each other. The basi">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-02-23T09:02:30.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:37.604Z">
@@ -110,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Application"><span class="nav-number">1.</span> <span class="nav-text">Application</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#application"><span class="nav-number">1.</span> <span class="nav-text">Application</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -241,24 +241,49 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>Contrastive learning is a machine learning technique used for representation learning, where the goal is to learn useful representations of data points by contrasting them with each other. The basic idea is to encourage similar data points to be closer to each other in the learned representation space while pushing dissimilar data points further apart.</p>
-<span id="more"></span>
-
-<h1 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h1><p>Contrastive learning can be applied in various domains, including computer vision, natural language processing, and speech recognition. </p>
+    <div class="post-body" itemprop="articleBody"><p>Contrastive learning is a machine learning technique used for
+representation learning, where the goal is to learn useful
+representations of data points by contrasting them with each other. The
+basic idea is to encourage similar data points to be closer to each
+other in the learned representation space while pushing dissimilar data
+points further apart. <span id="more"></span></p>
+<h1 id="application">Application</h1>
+<p>Contrastive learning can be applied in various domains, including
+computer vision, natural language processing, and speech
+recognition.</p>
 <p>Here’s a general overview of how contrastive learning works:</p>
-<ol>
-<li><p>Data Augmentation: To enable contrastive learning, data augmentation techniques are often applied to create pairs of augmented versions of the same input data point.</p>
-</li>
-<li><p>Encoder Network: A neural network, typically called the encoder, is trained to map each augmented data point to a lower-dimensional representation (embedding) space. This encoder network aims to capture meaningful and discriminative features of the input data.</p>
-</li>
-<li><p>Contrastive Objective Function: The key component of contrastive learning is the contrastive loss function. Given a pair of augmented data points, the contrastive loss measures the similarity between them in the embedding space. This is usually achieved by maximizing the similarity (e.g., cosine similarity or dot product) between positive pairs (augmented versions of the same data point) and simultaneously minimizing the similarity between negative pairs (augmented versions of different data points).</p>
-</li>
-<li><p>Training: During training, the encoder network is optimized to minimize the contrastive loss across all pairs of data points. This encourages the learned representations to cluster similar data points together while separating dissimilar ones.</p>
-</li>
-<li><p>Evaluation: Once the encoder network is trained, the learned representations can be evaluated on downstream tasks, such as classification or clustering. In many cases, the learned representations from a contrastive learning framework can achieve state-of-the-art performance when fine-tuned on specific tasks with limited labeled data.</p>
-</li>
+<ol type="1">
+<li><p>Data Augmentation: To enable contrastive learning, data
+augmentation techniques are often applied to create pairs of augmented
+versions of the same input data point.</p></li>
+<li><p>Encoder Network: A neural network, typically called the encoder,
+is trained to map each augmented data point to a lower-dimensional
+representation (embedding) space. This encoder network aims to capture
+meaningful and discriminative features of the input data.</p></li>
+<li><p>Contrastive Objective Function: The key component of contrastive
+learning is the contrastive loss function. Given a pair of augmented
+data points, the contrastive loss measures the similarity between them
+in the embedding space. This is usually achieved by maximizing the
+similarity (e.g., cosine similarity or dot product) between positive
+pairs (augmented versions of the same data point) and simultaneously
+minimizing the similarity between negative pairs (augmented versions of
+different data points).</p></li>
+<li><p>Training: During training, the encoder network is optimized to
+minimize the contrastive loss across all pairs of data points. This
+encourages the learned representations to cluster similar data points
+together while separating dissimilar ones.</p></li>
+<li><p>Evaluation: Once the encoder network is trained, the learned
+representations can be evaluated on downstream tasks, such as
+classification or clustering. In many cases, the learned representations
+from a contrastive learning framework can achieve state-of-the-art
+performance when fine-tuned on specific tasks with limited labeled
+data.</p></li>
 </ol>
-<p>Contrastive learning has gained popularity due to its effectiveness in learning semantically meaningful representations from unlabeled data, which can then be leveraged for various downstream tasks. It has been successfully applied in self-supervised learning settings where labeled data is scarce or expensive to obtain.</p>
+<p>Contrastive learning has gained popularity due to its effectiveness
+in learning semantically meaningful representations from unlabeled data,
+which can then be leveraged for various downstream tasks. It has been
+successfully applied in self-supervised learning settings where labeled
+data is scarce or expensive to obtain.</p>
 
     </div>
 
@@ -310,13 +335,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">290k</span>
+    <span title="總字數">288k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:47</span>
+    <span title="所需總閱讀時間">8:44</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

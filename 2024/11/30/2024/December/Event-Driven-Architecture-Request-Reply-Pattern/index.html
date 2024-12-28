@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="事件驅動架構（Event-Driven Architecture, EDA）：請求&#x2F;回應模式（Request&#x2F;Reply Pattern）請求&#x2F;回應模式是分散式系統中常見的通訊模式，特別適合於事件驅動架構（EDA）。當一個元件（請求者）需要從另一個元件（回應者）獲取資料或觸發某個動作，並期望收到回應時，會使用此模式。">
+    <meta name="description" content="事件驅動架構（Event-Driven Architecture, EDA）：請求&#x2F;回應模式（Request&#x2F;Reply Pattern） 請求&#x2F;回應模式是分散式系統中常見的通訊模式，特別適合於事件驅動架構（EDA）。當一個元件（請求者）需要從另一個元件（回應者）獲取資料或觸發某個動作，並期望收到回應時，會使用此模式。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="事件驅動架構">
 <meta property="og:url" content="https://leonicehot.github.io/2024/11/30/2024/December/Event-Driven-Architecture-Request-Reply-Pattern/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="事件驅動架構（Event-Driven Architecture, EDA）：請求&#x2F;回應模式（Request&#x2F;Reply Pattern）請求&#x2F;回應模式是分散式系統中常見的通訊模式，特別適合於事件驅動架構（EDA）。當一個元件（請求者）需要從另一個元件（回應者）獲取資料或觸發某個動作，並期望收到回應時，會使用此模式。">
+<meta property="og:description" content="事件驅動架構（Event-Driven Architecture, EDA）：請求&#x2F;回應模式（Request&#x2F;Reply Pattern） 請求&#x2F;回應模式是分散式系統中常見的通訊模式，特別適合於事件驅動架構（EDA）。當一個元件（請求者）需要從另一個元件（回應者）獲取資料或觸發某個動作，並期望收到回應時，會使用此模式。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-11-30T09:45:06.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:37.569Z">
@@ -110,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AB%8B%E6%B1%82-%E5%9B%9E%E6%87%89%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">請求&#x2F;回應模式的工作流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AB%8B%E6%B1%82-%E5%9B%9E%E6%87%89%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%9E%B6%E6%A7%8B%E5%9C%96"><span class="nav-number">2.</span> <span class="nav-text">請求&#x2F;回應模式的架構圖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%87%89%E7%94%A8%E5%A0%B4%E6%99%AF"><span class="nav-number">3.</span> <span class="nav-text">應用場景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%84%AA%E9%BB%9E"><span class="nav-number">4.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%BA%E9%BB%9E"><span class="nav-number">5.</span> <span class="nav-text">缺點</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8D%E6%AF%94%E5%85%B6%E4%BB%96%E6%A8%A1%E5%BC%8F"><span class="nav-number">5.1.</span> <span class="nav-text">對比其他模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E8%AB%96"><span class="nav-number">6.</span> <span class="nav-text">結論</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C"><span class="nav-number">7.</span> <span class="nav-text">實作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">8.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AB%8B%E6%B1%82%E5%9B%9E%E6%87%89%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">請求&#x2F;回應模式的工作流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AB%8B%E6%B1%82%E5%9B%9E%E6%87%89%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%9E%B6%E6%A7%8B%E5%9C%96"><span class="nav-number">2.</span> <span class="nav-text">請求&#x2F;回應模式的架構圖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%87%89%E7%94%A8%E5%A0%B4%E6%99%AF"><span class="nav-number">3.</span> <span class="nav-text">應用場景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%84%AA%E9%BB%9E"><span class="nav-number">4.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%BA%E9%BB%9E"><span class="nav-number">5.</span> <span class="nav-text">缺點</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8D%E6%AF%94%E5%85%B6%E4%BB%96%E6%A8%A1%E5%BC%8F"><span class="nav-number">5.1.</span> <span class="nav-text">對比其他模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E8%AB%96"><span class="nav-number">6.</span> <span class="nav-text">結論</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C"><span class="nav-number">7.</span> <span class="nav-text">實作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">8.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -220,14 +220,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>1.4k</span>
+      <span>1.3k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>3 分鐘</span>
+      <span>2 分鐘</span>
     </span>
 </div>
 
@@ -237,45 +237,71 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>事件驅動架構（Event-Driven Architecture, EDA）：請求&#x2F;回應模式（Request&#x2F;Reply Pattern）<br>請求&#x2F;回應模式是分散式系統中常見的通訊模式，特別適合於<strong>事件驅動架構（EDA）</strong>。當一個元件（<strong>請求者</strong>）需要從另一個元件（<strong>回應者</strong>）獲取資料或觸發某個動作，並期望收到回應時，會使用此模式。</p>
-<span id="more"></span>
-
-<h1 id="請求-回應模式的工作流程"><a href="#請求-回應模式的工作流程" class="headerlink" title="請求&#x2F;回應模式的工作流程"></a>請求&#x2F;回應模式的工作流程</h1><ol>
-<li><strong>請求者（Requestor&#x2F;Client）</strong> 發送一個<strong>請求事件（Request Event）</strong>給<strong>回應者（Responder&#x2F;Server）</strong>。</li>
+    <div class="post-body" itemprop="articleBody"><p>事件驅動架構（Event-Driven Architecture,
+EDA）：請求/回應模式（Request/Reply Pattern）
+請求/回應模式是分散式系統中常見的通訊模式，特別適合於<strong>事件驅動架構（EDA）</strong>。當一個元件（<strong>請求者</strong>）需要從另一個元件（<strong>回應者</strong>）獲取資料或觸發某個動作，並期望收到回應時，會使用此模式。
+<span id="more"></span></p>
+<h1 id="請求回應模式的工作流程">請求/回應模式的工作流程</h1>
+<ol type="1">
+<li><strong>請求者（Requestor/Client）</strong>
+發送一個<strong>請求事件（Request
+Event）</strong>給<strong>回應者（Responder/Server）</strong>。</li>
 <li><strong>回應者</strong> 接收到請求後，執行相應的處理邏輯。</li>
-<li><strong>回應者</strong> 將結果封裝為<strong>回應事件（Reply Event）</strong>，並將其發送回<strong>請求者</strong>。</li>
+<li><strong>回應者</strong> 將結果封裝為<strong>回應事件（Reply
+Event）</strong>，並將其發送回<strong>請求者</strong>。</li>
 <li><strong>請求者</strong> 接收到回應後，繼續後續的處理。</li>
 </ol>
-<h1 id="請求-回應模式的架構圖"><a href="#請求-回應模式的架構圖" class="headerlink" title="請求&#x2F;回應模式的架構圖"></a>請求&#x2F;回應模式的架構圖</h1><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">請求者 (Requestor)  --[Request Event]--&gt;  回應者 (Responder)</span><br><span class="line">                     &lt;--[Reply Event]--</span><br></pre></td></tr></table></figure>
-
-<h1 id="應用場景"><a href="#應用場景" class="headerlink" title="應用場景"></a>應用場景</h1><ol>
-<li><p><strong>查詢數據：</strong><br>用戶端發送查詢請求給伺服器，伺服器返回查詢結果。<br>例如：用戶端查詢使用者資訊，伺服器返回對應的資料。</p>
-</li>
-<li><p><strong>遠端程序調用（RPC）：</strong><br>用於調用遠端服務並獲取結果。<br>例如：微服務之間的通訊，客戶端請求一項服務並期望立即獲得結果。</p>
-</li>
-<li><p><strong>事務處理：</strong><br>提交一項事務並期望回應是否成功。<br>例如：用戶提交購物車訂單並等待確認回應。</p>
-</li>
+<h1 id="請求回應模式的架構圖">請求/回應模式的架構圖</h1>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">請求者 (Requestor)  --[Request Event]--&gt;  回應者 (Responder)</span><br><span class="line">                     &lt;--[Reply Event]--</span><br></pre></td></tr></table></figure>
+<h1 id="應用場景">應用場景</h1>
+<ol type="1">
+<li><p><strong>查詢數據：</strong><br>
+用戶端發送查詢請求給伺服器，伺服器返回查詢結果。<br>
+例如：用戶端查詢使用者資訊，伺服器返回對應的資料。</p></li>
+<li><p><strong>遠端程序調用（RPC）：</strong><br>
+用於調用遠端服務並獲取結果。<br>
+例如：微服務之間的通訊，客戶端請求一項服務並期望立即獲得結果。</p></li>
+<li><p><strong>事務處理：</strong><br>
+提交一項事務並期望回應是否成功。<br>
+例如：用戶提交購物車訂單並等待確認回應。</p></li>
 </ol>
-<h1 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h1><ul>
-<li><strong>同步通訊：</strong> 可以在需要即時回應的場景中使用，確保請求者能夠立即收到結果。  </li>
-<li><strong>簡化邏輯：</strong> 請求者不需要持續監聽，等待回應即可。</li>
+<h1 id="優點">優點</h1>
+<ul>
+<li><strong>同步通訊：</strong>
+可以在需要即時回應的場景中使用，確保請求者能夠立即收到結果。<br>
+</li>
+<li><strong>簡化邏輯：</strong>
+請求者不需要持續監聽，等待回應即可。</li>
 </ul>
-<h1 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h1><ul>
-<li><strong>高耦合性：</strong> 請求者和回應者之間存在直接的依賴，可能導致系統靈活性降低。  </li>
-<li><strong>延遲問題：</strong> 如果回應者的處理時間過長，可能導致請求者的性能瓶頸。  </li>
-<li><strong>可擴展性較低：</strong> 對於高並發系統，請求&#x2F;回應模式可能無法滿足需求。</li>
+<h1 id="缺點">缺點</h1>
+<ul>
+<li><strong>高耦合性：</strong>
+請求者和回應者之間存在直接的依賴，可能導致系統靈活性降低。<br>
+</li>
+<li><strong>延遲問題：</strong>
+如果回應者的處理時間過長，可能導致請求者的性能瓶頸。<br>
+</li>
+<li><strong>可擴展性較低：</strong>
+對於高並發系統，請求/回應模式可能無法滿足需求。</li>
 </ul>
-<h2 id="對比其他模式"><a href="#對比其他模式" class="headerlink" title="對比其他模式"></a>對比其他模式</h2><table>
+<h2 id="對比其他模式">對比其他模式</h2>
+<table>
+<colgroup>
+<col style="width: 26%">
+<col style="width: 34%">
+<col style="width: 39%">
+</colgroup>
 <thead>
 <tr>
 <th>特性</th>
-<th>請求&#x2F;回應模式</th>
-<th>發佈&#x2F;訂閱模式</th>
+<th>請求/回應模式</th>
+<th>發佈/訂閱模式</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>通訊方式</td>
-<td>同步&#x2F;非同步</td>
+<td>同步/非同步</td>
 <td>完全非同步</td>
 </tr>
 <tr>
@@ -293,16 +319,23 @@
 <td>需要即時回應的場景</td>
 <td>事件通知、多接收者場景</td>
 </tr>
-</tbody></table>
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>在事件驅動架構中，請求&#x2F;回應模式適合需要雙向通訊或即時回應的場景，例如 API 調用、資料查詢、交易處理等。然而，對於需要高可擴展性或解耦的系統，則可能需要結合其他模式（如<strong>發佈&#x2F;訂閱模式</strong>）來實現更靈活的架構設計。</p>
-<h1 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h1><p>ActiveMQ<br><a target="_blank" rel="noopener" href="https://github.com/wmr513/messaging/tree/master/01_10_Request_Reply_Code">https://github.com/wmr513/messaging/tree/master/01_10_Request_Reply_Code</a></p>
-<p>RabbitMQ<br><a target="_blank" rel="noopener" href="https://github.com/wmr513/streaming/blob/master/kafka/TradeGenerator.java">https://github.com/wmr513/streaming/blob/master/kafka/TradeGenerator.java</a><br><a target="_blank" rel="noopener" href="https://github.com/wmr513/streaming/blob/master/kafka/TradeValidator.java">https://github.com/wmr513/streaming/blob/master/kafka/TradeValidator.java</a></p>
-<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p>Lesson 1 - Event-Driven Architecture: Request&#x2F;Reply Processing (Jan 22, 2018)</p>
+</tbody>
+</table>
+<h1 id="結論">結論</h1>
+<p>在事件驅動架構中，請求/回應模式適合需要雙向通訊或即時回應的場景，例如
+API
+調用、資料查詢、交易處理等。然而，對於需要高可擴展性或解耦的系統，則可能需要結合其他模式（如<strong>發佈/訂閱模式</strong>）來實現更靈活的架構設計。</p>
+<h1 id="實作">實作</h1>
+<p>ActiveMQ
+https://github.com/wmr513/messaging/tree/master/01_10_Request_Reply_Code</p>
+<p>RabbitMQ
+https://github.com/wmr513/streaming/blob/master/kafka/TradeGenerator.java
+https://github.com/wmr513/streaming/blob/master/kafka/TradeValidator.java</p>
+<h1 id="參考資料">參考資料</h1>
+<p>Lesson 1 - Event-Driven Architecture: Request/Reply Processing (Jan
+22, 2018) - https://www.developertoarchitect.com/lessons/</p>
 <ul>
-<li><p><a target="_blank" rel="noopener" href="https://www.developertoarchitect.com/lessons/">https://www.developertoarchitect.com/lessons/</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=3bxAm3XIFmk&list=PLdsOZAx8I5umhnn5LLTNJbFgwA3xbycar&index=200&ab_channel=SoftwareArchitectureMonday">https://www.youtube.com/watch?v=3bxAm3XIFmk&amp;list=PLdsOZAx8I5umhnn5LLTNJbFgwA3xbycar&amp;index=200&amp;ab_channel=SoftwareArchitectureMonday</a></p>
-</li>
+<li>https://www.youtube.com/watch?v=3bxAm3XIFmk&amp;list=PLdsOZAx8I5umhnn5LLTNJbFgwA3xbycar&amp;index=200&amp;ab_channel=SoftwareArchitectureMonday</li>
 </ul>
 
     </div>
@@ -355,13 +388,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">290k</span>
+    <span title="總字數">288k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:47</span>
+    <span title="所需總閱讀時間">8:44</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

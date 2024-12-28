@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介知識蒸餾（Knowledge Distillation，簡稱KD）是一種機器學習中的模型壓縮技術，通過將一個複雜模型的知識傳遞給一個簡單模型，以實現模型壓縮的目的。 具體來說，知識蒸餾通常會先訓練一個複雜的模型（稱為“教師模型”），然後將教師模型的知識“蒸餾”到一個簡單的模型（稱為“學生模型”）中，從而使學生模型能夠達到與教師模型相當的效果。">
+    <meta name="description" content="簡介 知識蒸餾（Knowledge Distillation，簡稱KD）是一種機器學習中的模型壓縮技術，通過將一個複雜模型的知識傳遞給一個簡單模型，以實現模型壓縮的目的。 具體來說，知識蒸餾通常會先訓練一個複雜的模型（稱為“教師模型”），然後將教師模型的知識“蒸餾”到一個簡單的模型（稱為“學生模型”）中，從而使學生模型能夠達到與教師模型相當的效果。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Knowledge Distillation">
 <meta property="og:url" content="https://leonicehot.github.io/2023/05/09/2023/June/Knowledge-Distillation/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介知識蒸餾（Knowledge Distillation，簡稱KD）是一種機器學習中的模型壓縮技術，通過將一個複雜模型的知識傳遞給一個簡單模型，以實現模型壓縮的目的。 具體來說，知識蒸餾通常會先訓練一個複雜的模型（稱為“教師模型”），然後將教師模型的知識“蒸餾”到一個簡單的模型（稱為“學生模型”）中，從而使學生模型能夠達到與教師模型相當的效果。">
+<meta property="og:description" content="簡介 知識蒸餾（Knowledge Distillation，簡稱KD）是一種機器學習中的模型壓縮技術，通過將一個複雜模型的知識傳遞給一個簡單模型，以實現模型壓縮的目的。 具體來說，知識蒸餾通常會先訓練一個複雜的模型（稱為“教師模型”），然後將教師模型的知識“蒸餾”到一個簡單的模型（稱為“學生模型”）中，從而使學生模型能夠達到與教師模型相當的效果。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-05-09T07:51:43.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:36.719Z">
@@ -110,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E7%BE%A9"><span class="nav-number">2.</span> <span class="nav-text">定義</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E9%A1%9E"><span class="nav-number">3.</span> <span class="nav-text">分類</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A5%E9%A9%9F"><span class="nav-number">4.</span> <span class="nav-text">步驟</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%87%89%E7%94%A8"><span class="nav-number">5.</span> <span class="nav-text">應用</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E9%A1%9E"><span class="nav-number">2.</span> <span class="nav-text">分類</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A5%E9%A9%9F"><span class="nav-number">3.</span> <span class="nav-text">步驟</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%87%89%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">應用</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -245,51 +245,50 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>知識蒸餾（Knowledge Distillation，簡稱KD）是一種機器學習中的模型壓縮技術，通過將一個複雜模型的知識傳遞給一個簡單模型，以實現模型壓縮的目的。</p>
-<p>具體來說，知識蒸餾通常會先訓練一個複雜的模型（稱為“教師模型”），然後將教師模型的知識“蒸餾”到一個簡單的模型（稱為“學生模型”）中，從而使學生模型能夠達到與教師模型相當的效果。</p>
-<span id="more"></span>
-<h1 id="定義"><a href="#定義" class="headerlink" title="定義"></a>定義</h1><p>知識蒸餾（Knowledge Distillation）是一種模型壓縮技術，用於將一個大型且複雜的模型的知識傳遞給一個小型且簡單的模型中。這種技術基於一個假設，即大型模型的預測能力可以轉化為一組較小、較簡單的特徵，從而傳遞給小型模型。知識蒸餾技術通常使用一個大型的教師模型來指導一個小型的學生模型，教師模型通過在大型數據集上進行訓練而得到高精度，而學生模型則通過將教師模型的預測轉化為學生模型的訓練目標來學習。由於小型模型比大型模型更容易部署和運行，因此知識蒸餾技術已成為現代機器學習和深度學習中一個非常受歡迎的技術手段。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
+<p>知識蒸餾（Knowledge
+Distillation，簡稱KD）是一種機器學習中的模型壓縮技術，通過將一個複雜模型的知識傳遞給一個簡單模型，以實現模型壓縮的目的。</p>
+<p>具體來說，知識蒸餾通常會先訓練一個複雜的模型（稱為“教師模型”），然後將教師模型的知識“蒸餾”到一個簡單的模型（稱為“學生模型”）中，從而使學生模型能夠達到與教師模型相當的效果。
+<span id="more"></span> # 定義 知識蒸餾（Knowledge
+Distillation）是一種模型壓縮技術，用於將一個大型且複雜的模型的知識傳遞給一個小型且簡單的模型中。這種技術基於一個假設，即大型模型的預測能力可以轉化為一組較小、較簡單的特徵，從而傳遞給小型模型。知識蒸餾技術通常使用一個大型的教師模型來指導一個小型的學生模型，教師模型通過在大型數據集上進行訓練而得到高精度，而學生模型則通過將教師模型的預測轉化為學生模型的訓練目標來學習。由於小型模型比大型模型更容易部署和運行，因此知識蒸餾技術已成為現代機器學習和深度學習中一個非常受歡迎的技術手段。</p>
 <p>知識蒸餾主要包含以下幾個步驟：</p>
 <p>首先，使用一個複雜的教師模型對訓練數據進行訓練。</p>
 <p>接著，將教師模型的輸出（通常是軟目標）作為學生模型的輸入，並以學生模型的預測值和教師模型的預測值之間的差異（即教師模型的輸出和學生模型的輸出之間的距離）作為損失函數進行反向傳播。</p>
 <p>最後，通過調整學生模型的參數，使學生模型進一步逼近教師模型的預測結果。</p>
 <p>知識蒸餾的主要優點是可以在不損失過多準確度的情況下減少模型的大小和計算量，從而實現在資源受限的設備上進行高效推理的目的。此外，知識蒸餾還可以在保持模型準確性的同時，提高模型的泛化能力，從而更好地應對真實場景下的應用。</p>
-<h1 id="分類"><a href="#分類" class="headerlink" title="分類"></a>分類</h1><p>根據知識蒸餾的目標，可以將知識蒸餾分為以下兩種主要類型：</p>
-<ol>
-<li><p>模型壓縮型知識蒸餾<br>這種知識蒸餾的目標是將複雜模型轉換為簡單模型，從而提高模型的計算效率和存儲效率。在這種知識蒸餾中，通常使用一個複雜的深度神經網絡作為教師模型，並將其知識傳遞給一個更小的、計算量更小的神經網絡作為學生模型。學生模型在訓練過程中，通過學習從教師模型中提取的知識，以實現與教師模型相似的性能。</p>
-</li>
-<li><p>模型最佳化型知識蒸餾<br>這種知識蒸餾的目標是最佳化現有的模型，以提高其泛化性能、抗干擾能力和可解釋性等。在這種知識蒸餾中，通常使用一個已經訓練好的模型作為教師模型，並將其知識傳遞給一個同樣大小的、性能相對較差的模型。學生模型在訓練過程中，通過學習從教師模型中提取的知識，以進一步最佳化自身的性能。在這種知識蒸餾中，學生模型的訓練目標通常是最小化其自身的預測誤差，同時最大化其與教師模型的相似性。</p>
-</li>
+<h1 id="分類">分類</h1>
+<p>根據知識蒸餾的目標，可以將知識蒸餾分為以下兩種主要類型：</p>
+<ol type="1">
+<li><p>模型壓縮型知識蒸餾
+這種知識蒸餾的目標是將複雜模型轉換為簡單模型，從而提高模型的計算效率和存儲效率。在這種知識蒸餾中，通常使用一個複雜的深度神經網絡作為教師模型，並將其知識傳遞給一個更小的、計算量更小的神經網絡作為學生模型。學生模型在訓練過程中，通過學習從教師模型中提取的知識，以實現與教師模型相似的性能。</p></li>
+<li><p>模型最佳化型知識蒸餾
+這種知識蒸餾的目標是最佳化現有的模型，以提高其泛化性能、抗干擾能力和可解釋性等。在這種知識蒸餾中，通常使用一個已經訓練好的模型作為教師模型，並將其知識傳遞給一個同樣大小的、性能相對較差的模型。學生模型在訓練過程中，通過學習從教師模型中提取的知識，以進一步最佳化自身的性能。在這種知識蒸餾中，學生模型的訓練目標通常是最小化其自身的預測誤差，同時最大化其與教師模型的相似性。</p></li>
 </ol>
-<h1 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h1><p>知識蒸餾（Knowledge Distillation，簡稱KD）是一種模型壓縮技術，通過將一個複雜模型的知識傳遞給一個簡單模型，以實現模型壓縮的目的。知識蒸餾的基本思想是，利用一個複雜模型的預測結果和特徵，指導一個簡單模型的訓練，使其具有複雜模型相似的預測能力。</p>
+<h1 id="步驟">步驟</h1>
+<p>知識蒸餾（Knowledge
+Distillation，簡稱KD）是一種模型壓縮技術，通過將一個複雜模型的知識傳遞給一個簡單模型，以實現模型壓縮的目的。知識蒸餾的基本思想是，利用一個複雜模型的預測結果和特徵，指導一個簡單模型的訓練，使其具有複雜模型相似的預測能力。</p>
 <p>知識蒸餾的主要步驟包括：</p>
-<ol>
-<li><p>訓練一個複雜模型，如一個深度神經網絡，將其訓練到收斂。</p>
-</li>
-<li><p>用複雜模型對一個大型的標籤數據集進行預測。</p>
-</li>
-<li><p>將標籤數據集與複雜模型的預測輸出組成一個新的數據集，稱為“蒸餾數據集”。</p>
-</li>
-<li><p>設計一個較小的模型，如一個簡單的線性回歸模型或者一個小型神經網絡。</p>
-</li>
-<li><p>用蒸餾數據集訓練簡單模型，使其盡可能地重現複雜模型的預測結果和特徵。</p>
-</li>
-<li><p>通過在複雜模型和簡單模型之間進行交叉驗證或者比較預測準確性，確定簡單模型的最佳超參數設置。</p>
-</li>
-<li><p>在實際應用中，使用簡單模型進行推理，以實現模型壓縮和運算速度的提升。</p>
-</li>
+<ol type="1">
+<li><p>訓練一個複雜模型，如一個深度神經網絡，將其訓練到收斂。</p></li>
+<li><p>用複雜模型對一個大型的標籤數據集進行預測。</p></li>
+<li><p>將標籤數據集與複雜模型的預測輸出組成一個新的數據集，稱為“蒸餾數據集”。</p></li>
+<li><p>設計一個較小的模型，如一個簡單的線性回歸模型或者一個小型神經網絡。</p></li>
+<li><p>用蒸餾數據集訓練簡單模型，使其盡可能地重現複雜模型的預測結果和特徵。</p></li>
+<li><p>通過在複雜模型和簡單模型之間進行交叉驗證或者比較預測準確性，確定簡單模型的最佳超參數設置。</p></li>
+<li><p>在實際應用中，使用簡單模型進行推理，以實現模型壓縮和運算速度的提升。</p></li>
 </ol>
 <p>知識蒸餾技術有助於減少模型的大小和計算量，提高模型的泛化能力，從而更好地應對真實場景下的應用。知識蒸餾還可以在深度學習中解決一些問題，如梯度消失和過擬合等。因此，知識蒸餾在深度學習中得到了廣泛的應用。</p>
-<h1 id="應用"><a href="#應用" class="headerlink" title="應用"></a>應用</h1><p>知識蒸餾技術在許多人工智慧應用中都得到了廣泛的應用，包括：</p>
-<ol>
-<li><p>語音識別<br>在語音識別方面，通常使用大型神經網絡作為教師模型，並將其知識傳遞給小型神經網絡作為學生模型，從而實現更快速和更精確的語音識別。</p>
-</li>
-<li><p>影像識別<br>在影像識別方面，知識蒸餾技術通常用於最佳化現有的影像識別模型，以提高其精度和泛化性能。此外，知識蒸餾技術還可用於在訓練期間增加模型的穩健性，以提高模型對影像噪聲和變形的抵抗能力。</p>
-</li>
-<li><p>自然語言處理<br>在自然語言處理方面，知識蒸餾技術通常用於縮小大型語言模型的大小，以提高其運行效率。同時，知識蒸餾還可用於最佳化語言模型，以提高其對於自然語言生成和理解的能力。</p>
-</li>
-<li><p>推薦系統<br>在推薦系統方面，知識蒸餾技術通常用於最佳化現有的推薦算法，以提高其推薦效果和個性化程度。</p>
-</li>
+<h1 id="應用">應用</h1>
+<p>知識蒸餾技術在許多人工智慧應用中都得到了廣泛的應用，包括：</p>
+<ol type="1">
+<li><p>語音識別
+在語音識別方面，通常使用大型神經網絡作為教師模型，並將其知識傳遞給小型神經網絡作為學生模型，從而實現更快速和更精確的語音識別。</p></li>
+<li><p>影像識別
+在影像識別方面，知識蒸餾技術通常用於最佳化現有的影像識別模型，以提高其精度和泛化性能。此外，知識蒸餾技術還可用於在訓練期間增加模型的穩健性，以提高模型對影像噪聲和變形的抵抗能力。</p></li>
+<li><p>自然語言處理
+在自然語言處理方面，知識蒸餾技術通常用於縮小大型語言模型的大小，以提高其運行效率。同時，知識蒸餾還可用於最佳化語言模型，以提高其對於自然語言生成和理解的能力。</p></li>
+<li><p>推薦系統
+在推薦系統方面，知識蒸餾技術通常用於最佳化現有的推薦算法，以提高其推薦效果和個性化程度。</p></li>
 </ol>
 
     </div>
@@ -342,13 +341,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">290k</span>
+    <span title="總字數">288k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:47</span>
+    <span title="所需總閱讀時間">8:44</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

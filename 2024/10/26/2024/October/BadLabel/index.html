@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="標籤雜訊學習（Label-Noise Learning, LNL） 旨在處理含有雜訊標籤的訓練數據，進而提升模型的泛化能力。為了實現更具實用性的 LNL 演算法，研究者已提出多種標籤雜訊類型，從類別條件雜訊到實例依賴雜訊皆有探討。在本研究中提出了一種全新的標籤雜訊類型，稱為 BadLabel。這種雜訊類型可以顯著降低現有 LNL 演算法的性能。">
+    <meta name="description" content="標籤雜訊學習（Label-Noise Learning, LNL） 旨在處理含有雜訊標籤的訓練數據，進而提升模型的泛化能力。為了實現更具實用性的 LNL 演算法，研究者已提出多種標籤雜訊類型，從類別條件雜訊到實例依賴雜訊皆有探討。在本研究中提出了一種全新的標籤雜訊類型，稱為 BadLabel。這種雜訊類型可以顯著降低現有 LNL 演算法的性能。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BadLabel">
 <meta property="og:url" content="https://leonicehot.github.io/2024/10/26/2024/October/BadLabel/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="標籤雜訊學習（Label-Noise Learning, LNL） 旨在處理含有雜訊標籤的訓練數據，進而提升模型的泛化能力。為了實現更具實用性的 LNL 演算法，研究者已提出多種標籤雜訊類型，從類別條件雜訊到實例依賴雜訊皆有探討。在本研究中提出了一種全新的標籤雜訊類型，稱為 BadLabel。這種雜訊類型可以顯著降低現有 LNL 演算法的性能。">
+<meta property="og:description" content="標籤雜訊學習（Label-Noise Learning, LNL） 旨在處理含有雜訊標籤的訓練數據，進而提升模型的泛化能力。為了實現更具實用性的 LNL 演算法，研究者已提出多種標籤雜訊類型，從類別條件雜訊到實例依賴雜訊皆有探討。在本研究中提出了一種全新的標籤雜訊類型，稱為 BadLabel。這種雜訊類型可以顯著降低現有 LNL 演算法的性能。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-10-26T01:13:46.000Z">
 <meta property="article:modified_time" content="2024-12-28T15:27:26.154Z">
@@ -110,7 +110,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiment"><span class="nav-number">2.</span> <span class="nav-text">Experiment</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiment-I-BadLabel"><span class="nav-number">2.1.</span> <span class="nav-text">Experiment I BadLabel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiment-II"><span class="nav-number">2.2.</span> <span class="nav-text">Experiment II</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LNL%E7%9A%84%E5%B8%B8%E8%A6%8B%E9%A1%9E%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">LNL的常見類型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#conventional-synthetic-label-noises"><span class="nav-number">4.</span> <span class="nav-text">conventional synthetic label noises</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#experiment"><span class="nav-number">1.</span> <span class="nav-text">Experiment</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#experiment-i-badlabel"><span class="nav-number">1.1.</span> <span class="nav-text">Experiment I BadLabel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#experiment-ii"><span class="nav-number">1.2.</span> <span class="nav-text">Experiment II</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lnl%E7%9A%84%E5%B8%B8%E8%A6%8B%E9%A1%9E%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">LNL的常見類型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#conventional-synthetic-label-noises"><span class="nav-number">3.</span> <span class="nav-text">conventional synthetic
+label noises</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -220,7 +221,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>2.1k</span>
+      <span>2.2k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -237,74 +238,68 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>標籤雜訊學習（Label-Noise Learning, LNL） 旨在處理含有雜訊標籤的訓練數據，進而提升模型的泛化能力。為了實現更具實用性的 LNL 演算法，研究者已提出多種標籤雜訊類型，從類別條件雜訊到實例依賴雜訊皆有探討。在本研究中提出了一種全新的標籤雜訊類型，稱為 BadLabel。這種雜訊類型可以顯著降低現有 LNL 演算法的性能。</p>
-<span id="more"></span>
-<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>BadLabel 基於對標準分類模型的標籤翻轉攻擊進行設計。具體而言，該方法選擇特定樣本並將其標籤翻轉為其他類別，使得干淨標籤和雜訊標籤的損失值變得難以區分。為應對 BadLabel 所帶來的挑戰，我們提出了一種穩健的 LNL 方法。此方法在每個訓練回合中以對抗方式擾動標籤，使得干淨標籤與噪聲標籤的損失值再次可區分。一旦選出一小部分（大多數為）干淨的標記數據後，我們即可應用半監督學習技術，以準確地訓練模型。</p>
-<p>實驗結果證明，現有的 LNL 演算法在面對新提出的 BadLabel 雜訊類型時易受攻擊，作者提出的穩健 LNL 方法能夠有效提高模型在各種標籤噪聲環境下的泛化性能。含有雜訊標籤的新數據集以及相關穩健 LNL 演算法的源代碼已公開於 <a target="_blank" rel="noopener" href="https://github.com/zjfheart/BadLabels%E3%80%82">https://github.com/zjfheart/BadLabels。</a></p>
-<h1 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h1><h2 id="Experiment-I-BadLabel"><a href="#Experiment-I-BadLabel" class="headerlink" title="Experiment I BadLabel"></a>Experiment I BadLabel</h2><p>Algorithms I Crafting the BadLabel</p>
+    <div class="post-body" itemprop="articleBody"><p>標籤雜訊學習（Label-Noise Learning, LNL）
+旨在處理含有雜訊標籤的訓練數據，進而提升模型的泛化能力。為了實現更具實用性的
+LNL
+演算法，研究者已提出多種標籤雜訊類型，從類別條件雜訊到實例依賴雜訊皆有探討。在本研究中提出了一種全新的標籤雜訊類型，稱為
+BadLabel。這種雜訊類型可以顯著降低現有 LNL 演算法的性能。 <span id="more"></span> #
+摘要 BadLabel
+基於對標準分類模型的標籤翻轉攻擊進行設計。具體而言，該方法選擇特定樣本並將其標籤翻轉為其他類別，使得干淨標籤和雜訊標籤的損失值變得難以區分。為應對
+BadLabel 所帶來的挑戰，我們提出了一種穩健的 LNL
+方法。此方法在每個訓練回合中以對抗方式擾動標籤，使得干淨標籤與噪聲標籤的損失值再次可區分。一旦選出一小部分（大多數為）干淨的標記數據後，我們即可應用半監督學習技術，以準確地訓練模型。</p>
+<p>實驗結果證明，現有的 LNL 演算法在面對新提出的 BadLabel
+雜訊類型時易受攻擊，作者提出的穩健 LNL
+方法能夠有效提高模型在各種標籤噪聲環境下的泛化性能。含有雜訊標籤的新數據集以及相關穩健
+LNL 演算法的源代碼已公開於 https://github.com/zjfheart/BadLabels。</p>
+<h1 id="experiment">Experiment</h1>
+<h2 id="experiment-i-badlabel">Experiment I BadLabel</h2>
+<p>Algorithms I Crafting the BadLabel - Backbone: - PreAct-ResNet18 -
+Loss Function: - cross-entropy - Optimizer: - SGD - momentun 0.9 -
+weight decay 0.0005 (5e-4) - Iteration T 120 - learning rate 0.1 -
+scheduler from 60 to 90 - Evaluation - DenseNet</p>
+<p>Dataset: - CIFAR10 - CIFAR100 - MNIST</p>
+<p>Noise Type: - Symmetric Noise - Asysmmetric Noise -
+Instance-Dependent Noise - Ours (BadLabel)</p>
+<h2 id="experiment-ii">Experiment II</h2>
+<p>Algorithms II Robust DivideMix</p>
+<h1 id="lnl的常見類型">LNL的常見類型</h1>
 <ul>
-<li>Backbone: <ul>
-<li>PreAct-ResNet18</li>
-</ul>
-</li>
-<li>Loss Function: <ul>
-<li>cross-entropy</li>
-</ul>
-</li>
-<li>Optimizer: <ul>
-<li>SGD <ul>
-<li>momentun 0.9</li>
-<li>weight decay 0.0005 (5e-4)</li>
-<li>Iteration T 120</li>
-<li>learning rate 0.1</li>
-<li>scheduler from 60 to 90</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Evaluation <ul>
-<li>DenseNet</li>
-</ul>
-</li>
-</ul>
-<p>Dataset: </p>
+<li>Negative LS: Understanding generalized label smoothing when learning
+with noisy labels
 <ul>
-<li>CIFAR10</li>
-<li>CIFAR100</li>
-<li>MNIST</li>
-</ul>
-<p>Noise Type: </p>
-<ul>
-<li>Symmetric Noise</li>
-<li>Asysmmetric Noise</li>
-<li>Instance-Dependent Noise</li>
-<li>Ours (BadLabel)</li>
-</ul>
-<h2 id="Experiment-II"><a href="#Experiment-II" class="headerlink" title="Experiment II"></a>Experiment II</h2><p>Algorithms II Robust DivideMix</p>
-<h1 id="LNL的常見類型"><a href="#LNL的常見類型" class="headerlink" title="LNL的常見類型"></a>LNL的常見類型</h1><ul>
-<li>Negative LS: Understanding generalized label smoothing when learning with noisy labels <ul>
 <li>Reject</li>
-</ul>
-</li>
-<li>[ICML2019] RoG: Robust inference via generative classifiers for handling noisy labels</li>
+</ul></li>
+<li>[ICML2019] RoG: Robust inference via generative classifiers for
+handling noisy labels</li>
 <li>[ICML2019] AdaCorr: Error-bounded correction of noisy labels</li>
-<li>[ICML2020] Perr Loss: Peer loss functions: Learning from noisy labels without knowing noise rates</li>
-<li>[ECMLPKDD2023] PGDF: Sample prior guided robust model learning to suppress noisy labels</li>
-<li>[ICML2022] SOP: Robust training under label noise by over-parameterization</li>
-<li>[ICLR2020] DivideMix: Learning with Noisy Labels as Semi-supervised Learning</li>
-<li>[NeurIPS2020] ELR: Earlylearning regularization prevents memorization of noisy labels</li>
-<li>[NeurIPS2018] Co-Teaching: Co-teaching: Robust training of deep neural networks with extremely noisy labels</li>
-<li>[NeurIPS2019] T-Revision: Are anchor points really indispensable in label-noise learning?</li>
+<li>[ICML2020] Perr Loss: Peer loss functions: Learning from noisy
+labels without knowing noise rates</li>
+<li>[ECMLPKDD2023] PGDF: Sample prior guided robust model learning to
+suppress noisy labels</li>
+<li>[ICML2022] SOP: Robust training under label noise by
+over-parameterization</li>
+<li>[ICLR2020] DivideMix: Learning with Noisy Labels as Semi-supervised
+Learning</li>
+<li>[NeurIPS2020] ELR: Earlylearning regularization prevents
+memorization of noisy labels</li>
+<li>[NeurIPS2018] Co-Teaching: Co-teaching: Robust training of deep
+neural networks with extremely noisy labels</li>
+<li>[NeurIPS2019] T-Revision: Are anchor points really indispensable in
+label-noise learning?</li>
 <li>Bootstrapping：在模型訓練中結合預測標籤和真實標籤來更新模型，使其對雜訊更加健壯。</li>
 </ul>
-<h1 id="conventional-synthetic-label-noises"><a href="#conventional-synthetic-label-noises" class="headerlink" title="conventional synthetic label noises"></a>conventional synthetic label noises</h1><p>傳統的合成標籤雜訊是指在資料集中刻意引入的標籤錯誤，主要用於研究目的，特別是評估機器學習模型在雜訊環境中的穩健性（抗噪性）。這些合成雜訊通常是可控且定義明確的，允許研究者系統性地研究雜訊對模型效能的影響，並測試處理雜訊的演算法。</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
-<li><p>[TPAMI2024]-BadLabel: A Robust Perspective on Evaluating and Enhancing Label-Noise Learning<br><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10404058">https://ieeexplore.ieee.org/document/10404058</a></p>
-</li>
-<li><p>Paper Benchmarks<br><a target="_blank" rel="noopener" href="https://paperswithcode.com/task/learning-with-noisy-labels#benchmarks">https://paperswithcode.com/task/learning-with-noisy-labels#benchmarks</a></p>
-</li>
-<li><p>Paper Survey<br><a target="_blank" rel="noopener" href="https://github.com/subeeshvasu/Awesome-Learning-with-Label-Noise">https://github.com/subeeshvasu/Awesome-Learning-with-Label-Noise</a></p>
-</li>
+<h1 id="conventional-synthetic-label-noises">conventional synthetic
+label noises</h1>
+<p>傳統的合成標籤雜訊是指在資料集中刻意引入的標籤錯誤，主要用於研究目的，特別是評估機器學習模型在雜訊環境中的穩健性（抗噪性）。這些合成雜訊通常是可控且定義明確的，允許研究者系統性地研究雜訊對模型效能的影響，並測試處理雜訊的演算法。</p>
+<h1 id="reference">Reference</h1>
+<ol type="1">
+<li><p>[TPAMI2024]-BadLabel: A Robust Perspective on Evaluating and
+Enhancing Label-Noise Learning
+https://ieeexplore.ieee.org/document/10404058</p></li>
+<li><p>Paper Benchmarks
+https://paperswithcode.com/task/learning-with-noisy-labels#benchmarks</p></li>
+<li><p>Paper Survey
+https://github.com/subeeshvasu/Awesome-Learning-with-Label-Noise</p></li>
 </ol>
 
     </div>
@@ -357,13 +352,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">290k</span>
+    <span title="總字數">288k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:47</span>
+    <span title="所需總閱讀時間">8:44</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
