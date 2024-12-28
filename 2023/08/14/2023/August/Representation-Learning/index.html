@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介「表徵學習」（Representation Learning）是機器學習和人工智慧領域的一個概念，其主要關注自動構建有意義和有用的數據表示（特徵或抽象），將原始的高維數據轉換成更緊湊且信息豐富的形式，以捕捉其中重要的潛在模式或特徵。">
+    <meta name="description" content="簡介 「表徵學習」（Representation Learning）是機器學習和人工智慧領域的一個概念，其主要關注自動構建有意義和有用的數據表示（特徵或抽象），將原始的高維數據轉換成更緊湊且信息豐富的形式，以捕捉其中重要的潛在模式或特徵。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Representation learning">
 <meta property="og:url" content="https://leonicehot.github.io/2023/08/14/2023/August/Representation-Learning/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介「表徵學習」（Representation Learning）是機器學習和人工智慧領域的一個概念，其主要關注自動構建有意義和有用的數據表示（特徵或抽象），將原始的高維數據轉換成更緊湊且信息豐富的形式，以捕捉其中重要的潛在模式或特徵。">
+<meta property="og:description" content="簡介 「表徵學習」（Representation Learning）是機器學習和人工智慧領域的一個概念，其主要關注自動構建有意義和有用的數據表示（特徵或抽象），將原始的高維數據轉換成更緊湊且信息豐富的形式，以捕捉其中重要的潛在模式或特徵。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-08-14T08:11:07.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:35.697Z">
@@ -241,24 +241,21 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>「表徵學習」（Representation Learning）是機器學習和人工智慧領域的一個概念，其主要關注自動構建有意義和有用的數據表示（特徵或抽象），將原始的高維數據轉換成更緊湊且信息豐富的形式，以捕捉其中重要的潛在模式或特徵。</p>
-<span id="more"></span>
-
-<h1 id="介紹"><a href="#介紹" class="headerlink" title="介紹"></a>介紹</h1><p>在傳統的機器學習方法中，特徵工程通常涉及從數據中手動選擇和創建相關特徵。然而，表示學習的目標是通過直接從數據本身學習特徵表示，通常使用神經網絡和深度學習技術來實現自動化此過程。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
+<p>「表徵學習」（Representation
+Learning）是機器學習和人工智慧領域的一個概念，其主要關注自動構建有意義和有用的數據表示（特徵或抽象），將原始的高維數據轉換成更緊湊且信息豐富的形式，以捕捉其中重要的潛在模式或特徵。
+<span id="more"></span></p>
+<h1 id="介紹">介紹</h1>
+<p>在傳統的機器學習方法中，特徵工程通常涉及從數據中手動選擇和創建相關特徵。然而，表示學習的目標是通過直接從數據本身學習特徵表示，通常使用神經網絡和深度學習技術來實現自動化此過程。</p>
 <p>表示學習在多個領域中取得了顯著的進展，包括計算機視覺、自然語言處理和語音識別。一些常見的表示學習技術包括：</p>
-<ol>
-<li><p>自編碼器（Autoencoders）：神經網絡學習將輸入數據編碼成壓縮表示，然後再解碼回原始形式的技術。</p>
-</li>
-<li><p>詞嵌入（Word Embeddings）：將詞語或短語映射到連續的向量表示，捕捉詞語之間的語義關係。</p>
-</li>
-<li><p>卷積神經網絡（CNNs）：深度學習架構，常用於學習圖像和空間數據中的層次性表示。</p>
-</li>
-<li><p>循環神經網絡（RNNs）：設計用於捕捉數據中的順序模式和依賴關係，通常應用於自然語言處理任務。</p>
-</li>
-<li><p>生成對抗網絡（GANs）：學習生成與給定數據集相似的新數據樣本的網絡，適用於圖像合成等任務。</p>
-</li>
-<li><p>Transformer：在處理序列數據方面表現優越，已成為許多最先進自然語言處理模型的基礎架構。</p>
-</li>
+<ol type="1">
+<li><p>自編碼器（Autoencoders）：神經網絡學習將輸入數據編碼成壓縮表示，然後再解碼回原始形式的技術。</p></li>
+<li><p>詞嵌入（Word
+Embeddings）：將詞語或短語映射到連續的向量表示，捕捉詞語之間的語義關係。</p></li>
+<li><p>卷積神經網絡（CNNs）：深度學習架構，常用於學習圖像和空間數據中的層次性表示。</p></li>
+<li><p>循環神經網絡（RNNs）：設計用於捕捉數據中的順序模式和依賴關係，通常應用於自然語言處理任務。</p></li>
+<li><p>生成對抗網絡（GANs）：學習生成與給定數據集相似的新數據樣本的網絡，適用於圖像合成等任務。</p></li>
+<li><p>Transformer：在處理序列數據方面表現優越，已成為許多最先進自然語言處理模型的基礎架構。</p></li>
 </ol>
 <p>通過自動學習有用的表示，模型在各種任務上的表現可能會更好，通常無需進行大量的手動特徵工程。表示學習旨在捕捉相關信息，去除噪音，從而實現更高效和有效的數據學習。</p>
 
@@ -312,13 +309,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">291k</span>
+    <span title="總字數">289k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:49</span>
+    <span title="所需總閱讀時間">8:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="PPPoE（Point-to-Point Protocol over Ethernet，乙太網上的點對點協定）是一種網路協定，用於透過乙太網路建立點對點連接，主要用於 DSL寬頻接入網路。PPPoE 結合了 PPP（Point-to-Point Protocol，點對點協定）的安全性和驗證機制，並將其應用在乙太網路等多使用者環境中。">
+    <meta name="description" content="PPPoE（Point-to-Point Protocol over Ethernet，乙太網上的點對點協定）是一種網路協定，用於透過乙太網路建立點對點連接，主要用於 DSL寬頻接入網路。PPPoE 結合了 PPP（Point-to-Point Protocol，點對點協定）的安全性和驗證機制，並將其應用在乙太網路等多使用者環境中。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu PPPoE 連線設定">
 <meta property="og:url" content="https://leonicehot.github.io/2024/10/13/2024/October/Ubuntu-PPPoE%E9%80%A3%E7%B7%9A%E8%A8%AD%E5%AE%9A/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="PPPoE（Point-to-Point Protocol over Ethernet，乙太網上的點對點協定）是一種網路協定，用於透過乙太網路建立點對點連接，主要用於 DSL寬頻接入網路。PPPoE 結合了 PPP（Point-to-Point Protocol，點對點協定）的安全性和驗證機制，並將其應用在乙太網路等多使用者環境中。">
+<meta property="og:description" content="PPPoE（Point-to-Point Protocol over Ethernet，乙太網上的點對點協定）是一種網路協定，用於透過乙太網路建立點對點連接，主要用於 DSL寬頻接入網路。PPPoE 結合了 PPP（Point-to-Point Protocol，點對點協定）的安全性和驗證機制，並將其應用在乙太網路等多使用者環境中。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-10-13T00:02:43.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:38.142Z">
@@ -111,7 +111,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PPPoE-%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">PPPoE 的工作原理：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%A8-Ubuntu-%E4%B8%8A%E9%85%8D%E7%BD%AE-PPPoE%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">在 Ubuntu 上配置 PPPoE：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">3.</span> <span class="nav-text">參考文章</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%A8-ubuntu-%E4%B8%8A%E9%85%8D%E7%BD%AE-pppoe"><span class="nav-number">1.</span> <span class="nav-text">在 Ubuntu 上配置 PPPoE：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">2.</span> <span class="nav-text">參考文章</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -238,84 +238,77 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>PPPoE（Point-to-Point Protocol over Ethernet，乙太網上的點對點協定）是一種網路協定，用於透過乙太網路建立點對點連接，主要用於 DSL寬頻接入網路。PPPoE 結合了 PPP（Point-to-Point Protocol，點對點協定）的安全性和驗證機制，並將其應用在乙太網路等多使用者環境中。</p>
-<span id="more"></span>
-<h1 id="PPPoE-的工作原理："><a href="#PPPoE-的工作原理：" class="headerlink" title="PPPoE 的工作原理："></a>PPPoE 的工作原理：</h1><p>PPPoE 通常用於寬頻網路，特別是家庭端和小型辦公室的 DSL 連接。它允許多個終端設備通過單一的 DSL 連接共享網路服務，同時每個使用者仍可以使用其個人的帳號進行身份驗證和管理。</p>
-<p>PPPoE 工作的基本流程分為兩個階段：</p>
-<ol>
-<li>發現階段：</li>
+    <div class="post-body" itemprop="articleBody"><p>PPPoE（Point-to-Point Protocol over
+Ethernet，乙太網上的點對點協定）是一種網路協定，用於透過乙太網路建立點對點連接，主要用於
+DSL寬頻接入網路。PPPoE 結合了 PPP（Point-to-Point
+Protocol，點對點協定）的安全性和驗證機制，並將其應用在乙太網路等多使用者環境中。
+<span id="more"></span> # PPPoE 的工作原理： PPPoE
+通常用於寬頻網路，特別是家庭端和小型辦公室的 DSL
+連接。它允許多個終端設備通過單一的 DSL
+連接共享網路服務，同時每個使用者仍可以使用其個人的帳號進行身份驗證和管理。</p>
+<p>PPPoE 工作的基本流程分為兩個階段： 1. 發現階段： - PPPoE
+客戶端設備首先通過廣播方式向網路查找 PPPoE 服務提供者（如 ISP
+的接入伺服器）。 - 在這個階段，客戶端會使用 PPPoE
+進行發現，確定可用的服務並與伺服器進行鏈接。 2. 會話階段： -
+發現過程結束後，PPP
+會話正式開始，客戶端和伺服器進行身份驗證（如使用者和密碼）。 -
+認證成功後，客戶端設備將獲得一個 IP 地址，並可以通過 ISP 進行上網。 -
+在連接期間，所有傳輸的數據會被封裝到 PPPoE
+封包中，透過以太網進行傳輸。</p>
+<p>PPPoE 的優點： 1. 身份驗證：PPPoE 支持 PPP 的驗證機制，如
+PAP（Password Authentication Protocol，密碼驗證協定）和 CHAP（Challenge
+Handshake Authentication
+Protocol，挑戰握手驗證協定），能夠確保網路連接的安全性。</p>
+<ol start="2" type="1">
+<li><p>動態 IP 地址分配：PPPoE
+協定允許服務提供商（ISP）為每個使用者分配動態 IP 地址，這有助於有效利用
+IP 資源，特別是在家庭寬頻接入中。</p></li>
+<li><p>帳號管理和計費：許多 ISP 使用 PPPoE
+進行連接管理和流量計費，因為每個用戶都需要使用其個人的帳號進行連接，這使得追蹤和管理用戶的使用情況變得容易。</p></li>
+<li><p>可擴展性：PPPoE
+非常適合多使用者環境，如小型企業或住宅社區，允許多個設備通過同一個 DSL
+連接訪問網路。</p></li>
+</ol>
+<p>PPPoE 的缺點： 1. 開銷大：由於 PPPoE 在每個封包中都增加了協定頭（8
+字節的 PPPoE 頭），因此會佔用一定的帶寬資源，特別是在較低速率的 DSL
+連接上，這可能會導致性能下降。</p>
+<ol start="2" type="1">
+<li><p>配置相對複雜：相比於 DHCP 等自動分配方式，PPPoE
+需要手動配置帳號、密碼等資訊，對於普通用戶來說可能會增加配置難度。</p></li>
+<li><p>會話保持：PPPoE
+使用點對點協定，因此每次連接建立和終止時都會進行會話管理。如果網路連接不穩定，會導致頻繁的會話重建，影響使用體驗。</p></li>
+</ol>
+<p>PPPoE 的常見應用場景： 1. DSL 寬頻：PPPoE 最常見的應用場景是在 DSL
+寬頻接入中，用於將家庭或小型辦公室連接到 ISP 提供的互聯網服務。</p>
+<ol start="2" type="1">
+<li><p>家用網路與路由器：許多家庭路由器支持
+PPPoE，允許通過路由器的用戶使用 ISP 提供的帳號進行互聯網連接。</p></li>
+<li><p>企業網路：一些企業使用 PPPoE
+作為其遠程辦公或分支機構連接到主網路的方式，特別是在多個分支機構需要通過一條線路連接到主網路的情況下。</p></li>
+</ol>
+<h1 id="在-ubuntu-上配置-pppoe">在 Ubuntu 上配置 PPPoE：</h1>
+<ol type="1">
+<li><p>安裝 PPPoE 工具： 通常需要 pppoeconf 工具來配置 PPPoE。
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install pppoeconf</span><br></pre></td></tr></table></figure></p></li>
+<li><p>配置 PPPoE： 使用 pppoeconf 命令來自動檢測和配置 PPPoE 連接。
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pppoeconf</span><br><span class="line">過程中系統會提示輸入 ISP 提供的使用者和密碼，並且允許系統自動修改網路設置以啟用 PPPoE。</span><br></pre></td></tr></table></figure></p></li>
+<li><p>啟動和停止 PPPoE 連接：</p></li>
 </ol>
 <ul>
-<li>PPPoE 客戶端設備首先通過廣播方式向網路查找 PPPoE 服務提供者（如 ISP 的接入伺服器）。</li>
-<li>在這個階段，客戶端會使用 PPPoE 進行發現，確定可用的服務並與伺服器進行鏈接。</li>
+<li><p>啟動 PPPoE 連接： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pon dsl-provider</span><br></pre></td></tr></table></figure></p></li>
+<li><p>停止 PPPoE 連接： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo poff</span><br></pre></td></tr></table></figure></p></li>
+<li><p>查看 PPPoE 連接狀態： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip addr show</span><br></pre></td></tr></table></figure></p></li>
 </ul>
-<ol start="2">
-<li>會話階段：</li>
-</ol>
-<ul>
-<li>發現過程結束後，PPP 會話正式開始，客戶端和伺服器進行身份驗證（如使用者和密碼）。</li>
-<li>認證成功後，客戶端設備將獲得一個 IP 地址，並可以通過 ISP 進行上網。</li>
-<li>在連接期間，所有傳輸的數據會被封裝到 PPPoE 封包中，透過以太網進行傳輸。</li>
-</ul>
-<p>PPPoE 的優點：</p>
-<ol>
-<li><p>身份驗證：PPPoE 支持 PPP 的驗證機制，如 PAP（Password Authentication Protocol，密碼驗證協定）和 CHAP（Challenge Handshake Authentication Protocol，挑戰握手驗證協定），能夠確保網路連接的安全性。</p>
-</li>
-<li><p>動態 IP 地址分配：PPPoE 協定允許服務提供商（ISP）為每個使用者分配動態 IP 地址，這有助於有效利用 IP 資源，特別是在家庭寬頻接入中。</p>
-</li>
-<li><p>帳號管理和計費：許多 ISP 使用 PPPoE 進行連接管理和流量計費，因為每個用戶都需要使用其個人的帳號進行連接，這使得追蹤和管理用戶的使用情況變得容易。</p>
-</li>
-<li><p>可擴展性：PPPoE 非常適合多使用者環境，如小型企業或住宅社區，允許多個設備通過同一個 DSL 連接訪問網路。</p>
-</li>
-</ol>
-<p>PPPoE 的缺點：</p>
-<ol>
-<li><p>開銷大：由於 PPPoE 在每個封包中都增加了協定頭（8 字節的 PPPoE 頭），因此會佔用一定的帶寬資源，特別是在較低速率的 DSL 連接上，這可能會導致性能下降。</p>
-</li>
-<li><p>配置相對複雜：相比於 DHCP 等自動分配方式，PPPoE 需要手動配置帳號、密碼等資訊，對於普通用戶來說可能會增加配置難度。</p>
-</li>
-<li><p>會話保持：PPPoE 使用點對點協定，因此每次連接建立和終止時都會進行會話管理。如果網路連接不穩定，會導致頻繁的會話重建，影響使用體驗。</p>
-</li>
-</ol>
-<p>PPPoE 的常見應用場景：</p>
-<ol>
-<li><p>DSL 寬頻：PPPoE 最常見的應用場景是在 DSL 寬頻接入中，用於將家庭或小型辦公室連接到 ISP 提供的互聯網服務。</p>
-</li>
-<li><p>家用網路與路由器：許多家庭路由器支持 PPPoE，允許通過路由器的用戶使用 ISP 提供的帳號進行互聯網連接。</p>
-</li>
-<li><p>企業網路：一些企業使用 PPPoE 作為其遠程辦公或分支機構連接到主網路的方式，特別是在多個分支機構需要通過一條線路連接到主網路的情況下。</p>
-</li>
-</ol>
-<h1 id="在-Ubuntu-上配置-PPPoE："><a href="#在-Ubuntu-上配置-PPPoE：" class="headerlink" title="在 Ubuntu 上配置 PPPoE："></a>在 Ubuntu 上配置 PPPoE：</h1><ol>
-<li><p>安裝 PPPoE 工具： 通常需要 pppoeconf 工具來配置 PPPoE。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install pppoeconf</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置 PPPoE： 使用 pppoeconf 命令來自動檢測和配置 PPPoE 連接。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pppoeconf</span><br><span class="line">過程中系統會提示輸入 ISP 提供的使用者和密碼，並且允許系統自動修改網路設置以啟用 PPPoE。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>啟動和停止 PPPoE 連接：</p>
-</li>
-</ol>
-<ul>
-<li><p>啟動 PPPoE 連接：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pon dsl-provider</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>停止 PPPoE 連接：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo poff</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看 PPPoE 連接狀態： </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip addr show</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h1><ol>
-<li><p>在Ubuntu上進行PPPoE撥號<br><a target="_blank" rel="noopener" href="https://blog.cre0809.com/archives/259/">https://blog.cre0809.com/archives/259/</a></p>
-</li>
-<li><p>Ubuntu 上的 PPPoE 設定<br><a target="_blank" rel="noopener" href="https://stevenitlife.blogspot.com/2020/05/ubuntu-pppoe.html">https://stevenitlife.blogspot.com/2020/05/ubuntu-pppoe.html</a></p>
-</li>
-<li><p>Ubuntu 20.04 上的 PPPoE 設定<br><a target="_blank" rel="noopener" href="https://www.cjkuo.net/ubuntu-20-04-pppoe/">https://www.cjkuo.net/ubuntu-20-04-pppoe/</a></p>
-</li>
-<li><p>Ubuntu 網路設定 - PPPoE (ADSL) 指令<br><a target="_blank" rel="noopener" href="https://note.drx.tw/2008/08/networkpppoe-adsl.html">https://note.drx.tw/2008/08/networkpppoe-adsl.html</a></p>
-</li>
+<h1 id="參考文章">參考文章</h1>
+<ol type="1">
+<li><p>在Ubuntu上進行PPPoE撥號
+https://blog.cre0809.com/archives/259/</p></li>
+<li><p>Ubuntu 上的 PPPoE 設定
+https://stevenitlife.blogspot.com/2020/05/ubuntu-pppoe.html</p></li>
+<li><p>Ubuntu 20.04 上的 PPPoE 設定
+https://www.cjkuo.net/ubuntu-20-04-pppoe/</p></li>
+<li><p>Ubuntu 網路設定 - PPPoE (ADSL) 指令
+https://note.drx.tw/2008/08/networkpppoe-adsl.html</p></li>
 </ol>
 
     </div>
@@ -371,13 +364,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">291k</span>
+    <span title="總字數">289k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:49</span>
+    <span title="所需總閱讀時間">8:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介影像分割是一種計算機視覺技術，涉及將圖像分成多個區塊或區域。影像分割的目標是為圖像中的每個像素分配一個標籤或類別，將相似的像素分組在一起。 影像分割是各種計算機視覺任務的基礎步驟，包括物體識別、物體追蹤、圖像編輯和場景理解。通過識別和分離不同的對象或感興趣區域，它在從圖像中提取有意義的信息方面起著關鍵作用。">
+    <meta name="description" content="簡介 影像分割是一種計算機視覺技術，涉及將圖像分成多個區塊或區域。影像分割的目標是為圖像中的每個像素分配一個標籤或類別，將相似的像素分組在一起。 影像分割是各種計算機視覺任務的基礎步驟，包括物體識別、物體追蹤、圖像編輯和場景理解。通過識別和分離不同的對象或感興趣區域，它在從圖像中提取有意義的信息方面起著關鍵作用。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Image Segmentation">
 <meta property="og:url" content="https://leonicehot.github.io/2023/06/19/2023/June/Image-Segmentation/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介影像分割是一種計算機視覺技術，涉及將圖像分成多個區塊或區域。影像分割的目標是為圖像中的每個像素分配一個標籤或類別，將相似的像素分組在一起。 影像分割是各種計算機視覺任務的基礎步驟，包括物體識別、物體追蹤、圖像編輯和場景理解。通過識別和分離不同的對象或感興趣區域，它在從圖像中提取有意義的信息方面起著關鍵作用。">
+<meta property="og:description" content="簡介 影像分割是一種計算機視覺技術，涉及將圖像分成多個區塊或區域。影像分割的目標是為圖像中的每個像素分配一個標籤或類別，將相似的像素分組在一起。 影像分割是各種計算機視覺任務的基礎步驟，包括物體識別、物體追蹤、圖像編輯和場景理解。通過識別和分離不同的對象或感興趣區域，它在從圖像中提取有意義的信息方面起著關鍵作用。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-06-19T03:41:16.000Z">
 <meta property="article:modified_time" content="2024-12-28T15:33:17.270Z">
@@ -237,28 +237,24 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>影像分割是一種計算機視覺技術，涉及將圖像分成多個區塊或區域。影像分割的目標是為圖像中的每個像素分配一個標籤或類別，將相似的像素分組在一起。</p>
-<p>影像分割是各種計算機視覺任務的基礎步驟，包括物體識別、物體追蹤、圖像編輯和場景理解。通過識別和分離不同的對象或感興趣區域，它在從圖像中提取有意義的信息方面起著關鍵作用。</p>
-<span id="more"></span>
-
-<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><p>對於影像分割有不同的方法，具體的方法選擇取決於特定應用和圖像的特徵。以下是一些常用的技術：</p>
-<ol>
-<li><p>閾值分割：該方法涉及選擇一個閾值，根據像素的強度值將每個像素分類為前景或背景。這是一種簡單快速的技術，但在處理光線條件變化較大的複雜圖像時可能不太有效。</p>
-</li>
-<li><p>基於區域的分割：這種方法通過將具有相似特徵（如顏色、紋理或強度）的像素分組在一起形成區域。可使用區域生長、區域分裂合併和分水嶺轉換等技術進行這一目的。</p>
-</li>
-<li><p>基於邊緣的分割：該方法著重於檢測圖像中不同對象之間的邊緣或邊界。可以使用Canny邊緣檢測器或Sobel算子等技術來識別這些邊緣。</p>
-</li>
-<li><p>基於聚類的分割：可以使用k-means、均值漂移或高斯混合模型等聚類算法將具有相似特徵的像素分組在一起。</p>
-</li>
-<li><p>語義分割：這種技術旨在為每個像素分配語義標籤，區分不同的對象類別。深度學習方法，特別是卷積神經網絡（CNN），在語義分割任務中取得了很大成功。</p>
-</li>
-<li><p>實例分割：實例分割不僅在語義分割中為不同對象分配標籤，還區分同一對象的個別實例。這種技術在物體計數和追蹤等應用中很有用。</p>
-</li>
-<li><p>全景分割（Panoptic Segmentation）是一種結合語義分割和實例分割的影像分割方法。它旨在對圖像中的每個像素進行分類，同時標識出不同的對象類別和個別的實例。</p>
-</li>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
+<p>影像分割是一種計算機視覺技術，涉及將圖像分成多個區塊或區域。影像分割的目標是為圖像中的每個像素分配一個標籤或類別，將相似的像素分組在一起。</p>
+<p>影像分割是各種計算機視覺任務的基礎步驟，包括物體識別、物體追蹤、圖像編輯和場景理解。通過識別和分離不同的對象或感興趣區域，它在從圖像中提取有意義的信息方面起著關鍵作用。
+<span id="more"></span></p>
+<h1 id="方法">方法</h1>
+<p>對於影像分割有不同的方法，具體的方法選擇取決於特定應用和圖像的特徵。以下是一些常用的技術：</p>
+<ol type="1">
+<li><p>閾值分割：該方法涉及選擇一個閾值，根據像素的強度值將每個像素分類為前景或背景。這是一種簡單快速的技術，但在處理光線條件變化較大的複雜圖像時可能不太有效。</p></li>
+<li><p>基於區域的分割：這種方法通過將具有相似特徵（如顏色、紋理或強度）的像素分組在一起形成區域。可使用區域生長、區域分裂合併和分水嶺轉換等技術進行這一目的。</p></li>
+<li><p>基於邊緣的分割：該方法著重於檢測圖像中不同對象之間的邊緣或邊界。可以使用Canny邊緣檢測器或Sobel算子等技術來識別這些邊緣。</p></li>
+<li><p>基於聚類的分割：可以使用k-means、均值漂移或高斯混合模型等聚類算法將具有相似特徵的像素分組在一起。</p></li>
+<li><p>語義分割：這種技術旨在為每個像素分配語義標籤，區分不同的對象類別。深度學習方法，特別是卷積神經網絡（CNN），在語義分割任務中取得了很大成功。</p></li>
+<li><p>實例分割：實例分割不僅在語義分割中為不同對象分配標籤，還區分同一對象的個別實例。這種技術在物體計數和追蹤等應用中很有用。</p></li>
+<li><p>全景分割（Panoptic
+Segmentation）是一種結合語義分割和實例分割的影像分割方法。它旨在對圖像中的每個像素進行分類，同時標識出不同的對象類別和個別的實例。</p></li>
 </ol>
-<p>影像分割可能是一項具有挑戰性的任務，尤其是在處理複雜場景、遮擋或光線和外觀變化時。近年來，深度學習的最新進展，特別是U-Net、Mask R-CNN和DeepLab等架構的引入，顯著提高了影像分割算法的準確性和性能。</p>
+<p>影像分割可能是一項具有挑戰性的任務，尤其是在處理複雜場景、遮擋或光線和外觀變化時。近年來，深度學習的最新進展，特別是U-Net、Mask
+R-CNN和DeepLab等架構的引入，顯著提高了影像分割算法的準確性和性能。</p>
 <p>這些技術在醫學影像分析、自動駕駛、監視系統、增強現實等眾多實際應用中都具有重要意義，其中準確和詳細的理解圖像內容至關重要。</p>
 
     </div>
@@ -311,13 +307,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">291k</span>
+    <span title="總字數">289k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:49</span>
+    <span title="所需總閱讀時間">8:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

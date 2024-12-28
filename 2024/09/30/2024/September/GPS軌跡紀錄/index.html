@@ -110,7 +110,10 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Add-the-package"><span class="nav-number">1.</span> <span class="nav-text">Add the package</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Read-the-gpx-file"><span class="nav-number">2.</span> <span class="nav-text">1.Read the gpx file</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Displaying-a-map-with-React-Leaflet"><span class="nav-number">3.</span> <span class="nav-text">2.Displaying a map with React Leaflet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Display-JSON-data-on-a-Map-using-React-Leaflet"><span class="nav-number">4.</span> <span class="nav-text">3.Display JSON data on a Map using React Leaflet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Rendering-GPX-tracks-in-React"><span class="nav-number">5.</span> <span class="nav-text">4.Rendering GPX tracks in React</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#add-the-package"><span class="nav-number">1.</span> <span class="nav-text">Add the package</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#read-the-gpx-file"><span class="nav-number">2.</span> <span class="nav-text">1.Read the gpx file</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#displaying-a-map-with-react-leaflet"><span class="nav-number">3.</span> <span class="nav-text">2.Displaying a map with
+React Leaflet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#display-json-data-on-a-map-using-react-leaflet"><span class="nav-number">4.</span> <span class="nav-text">3.Display JSON
+data on a Map using React Leaflet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rendering-gpx-tracks-in-react"><span class="nav-number">5.</span> <span class="nav-text">4.Rendering GPX tracks in
+React</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -247,12 +250,22 @@
     
     <div class="post-body" itemprop="articleBody"><p>Create maps using GPX files</p>
 <span id="more"></span>
-<h1 id="Add-the-package"><a href="#Add-the-package" class="headerlink" title="Add the package"></a>Add the package</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install react react-dom react-leaflet gpxparser</span><br><span class="line">npm install react-leaflet</span><br></pre></td></tr></table></figure>
-<h1 id="1-Read-the-gpx-file"><a href="#1-Read-the-gpx-file" class="headerlink" title="1.Read the gpx file"></a>1.Read the gpx file</h1><p>the online GPX file editor<br><a target="_blank" rel="noopener" href="https://gpx.studio/#15.53/50.689611/11.296781">https://gpx.studio/#15.53/50.689611/11.296781</a></p>
-<h1 id="2-Displaying-a-map-with-React-Leaflet"><a href="#2-Displaying-a-map-with-React-Leaflet" class="headerlink" title="2.Displaying a map with React Leaflet"></a>2.Displaying a map with React Leaflet</h1><p>React Leaflet Basics and Strava API<br><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLO6KswO64zVs3XY63flkObOzMd8MMzXPx">https://www.youtube.com/playlist?list=PLO6KswO64zVs3XY63flkObOzMd8MMzXPx</a></p>
-<h1 id="3-Display-JSON-data-on-a-Map-using-React-Leaflet"><a href="#3-Display-JSON-data-on-a-Map-using-React-Leaflet" class="headerlink" title="3.Display JSON data on a Map using React Leaflet"></a>3.Display JSON data on a Map using React Leaflet</h1><p><a target="_blank" rel="noopener" href="https://supercharge.info/changes">https://supercharge.info/changes</a></p>
-<p>Latitude and Longtitude Finder<br><a target="_blank" rel="noopener" href="https://www.latlong.net/">https://www.latlong.net/</a></p>
-<h1 id="4-Rendering-GPX-tracks-in-React"><a href="#4-Rendering-GPX-tracks-in-React" class="headerlink" title="4.Rendering GPX tracks in React"></a>4.Rendering GPX tracks in React</h1><p><a target="_blank" rel="noopener" href="https://www.manuelkruisz.com/blog/posts/gpx-maps-react">https://www.manuelkruisz.com/blog/posts/gpx-maps-react</a></p>
+<h1 id="add-the-package">Add the package</h1>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install react react-dom react-leaflet gpxparser</span><br><span class="line">npm install react-leaflet</span><br></pre></td></tr></table></figure>
+<h1 id="read-the-gpx-file">1.Read the gpx file</h1>
+<p>the online GPX file editor
+https://gpx.studio/#15.53/50.689611/11.296781</p>
+<h1 id="displaying-a-map-with-react-leaflet">2.Displaying a map with
+React Leaflet</h1>
+<p>React Leaflet Basics and Strava API
+https://www.youtube.com/playlist?list=PLO6KswO64zVs3XY63flkObOzMd8MMzXPx</p>
+<h1 id="display-json-data-on-a-map-using-react-leaflet">3.Display JSON
+data on a Map using React Leaflet</h1>
+<p>https://supercharge.info/changes</p>
+<p>Latitude and Longtitude Finder https://www.latlong.net/</p>
+<h1 id="rendering-gpx-tracks-in-react">4.Rendering GPX tracks in
+React</h1>
+<p>https://www.manuelkruisz.com/blog/posts/gpx-maps-react</p>
 
     </div>
 
@@ -304,13 +317,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">291k</span>
+    <span title="總字數">289k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:49</span>
+    <span title="所需總閱讀時間">8:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

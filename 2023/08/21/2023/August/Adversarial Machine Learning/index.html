@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介對抗性示例（Adversarial Examples）是指在機器學習和人工智慧領域中，經過故意修改的輸入數據，通常是對原始數據進行微小但精心設計的改變，這種修改可以導致訓練有素的機器學習模型產生出錯誤的結果。 對抗性示例的產生是通過在原始輸入數據中添加微小的、人眼難以察覺的扰動，這些扰動在數據空間中的位置通常是調整過的，以便最大限度地欺騙機器學習模型。儘管對抗性示例的改變通常對人類觀察者來說是">
+    <meta name="description" content="簡介 對抗性示例（Adversarial Examples）是指在機器學習和人工智慧領域中，經過故意修改的輸入數據，通常是對原始數據進行微小但精心設計的改變，這種修改可以導致訓練有素的機器學習模型產生出錯誤的結果。 對抗性示例的產生是通過在原始輸入數據中添加微小的、人眼難以察覺的扰動，這些扰動在數據空間中的位置通常是調整過的，以便最大限度地欺騙機器學習模型。儘管對抗性示例的改變通常對人類觀察">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Adversarial Machine Learning">
 <meta property="og:url" content="https://leonicehot.github.io/2023/08/21/2023/August/Adversarial%20Machine%20Learning/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介對抗性示例（Adversarial Examples）是指在機器學習和人工智慧領域中，經過故意修改的輸入數據，通常是對原始數據進行微小但精心設計的改變，這種修改可以導致訓練有素的機器學習模型產生出錯誤的結果。 對抗性示例的產生是通過在原始輸入數據中添加微小的、人眼難以察覺的扰動，這些扰動在數據空間中的位置通常是調整過的，以便最大限度地欺騙機器學習模型。儘管對抗性示例的改變通常對人類觀察者來說是">
+<meta property="og:description" content="簡介 對抗性示例（Adversarial Examples）是指在機器學習和人工智慧領域中，經過故意修改的輸入數據，通常是對原始數據進行微小但精心設計的改變，這種修改可以導致訓練有素的機器學習模型產生出錯誤的結果。 對抗性示例的產生是通過在原始輸入數據中添加微小的、人眼難以察覺的扰動，這些扰動在數據空間中的位置通常是調整過的，以便最大限度地欺騙機器學習模型。儘管對抗性示例的改變通常對人類觀察">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-08-21T04:00:21.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:35.636Z">
@@ -110,7 +110,10 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Adversarial-Learning"><span class="nav-number">2.</span> <span class="nav-text">Adversarial Learning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Adversarial-Robustness"><span class="nav-number">3.</span> <span class="nav-text">Adversarial Robustness</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Robust-Generalization"><span class="nav-number">3.0.1.</span> <span class="nav-text">Robust Generalization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adversarial-Attacks"><span class="nav-number">3.1.</span> <span class="nav-text">Adversarial Attacks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#White-box-Attack"><span class="nav-number">3.1.1.</span> <span class="nav-text">White box Attack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Black-box-Attack"><span class="nav-number">3.1.2.</span> <span class="nav-text">Black box Attack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gray-box-Attack"><span class="nav-number">3.1.3.</span> <span class="nav-text">Gray box Attack</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adversarial-Defence"><span class="nav-number">3.2.</span> <span class="nav-text">Adversarial Defence</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Barrier-Zone-Defense"><span class="nav-number">3.2.1.</span> <span class="nav-text">Barrier Zone Defense</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adversarial-Training"><span class="nav-number">3.3.</span> <span class="nav-text">Adversarial Training</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Conventional-Adversarial-Training"><span class="nav-number">3.3.1.</span> <span class="nav-text">Conventional Adversarial Training</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Manifold-Adversarial-Training"><span class="nav-number">3.3.2.</span> <span class="nav-text">Manifold Adversarial Training</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bounded-Adversaries"><span class="nav-number">3.4.</span> <span class="nav-text">Bounded Adversaries</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Non-uniform-compression"><span class="nav-number">4.</span> <span class="nav-text">Non-uniform compression</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GAN-vs-Adversial-examples"><span class="nav-number">5.</span> <span class="nav-text">GAN vs Adversial examples</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiment"><span class="nav-number">6.</span> <span class="nav-text">Experiment</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">6.1.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model"><span class="nav-number">6.2.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adversarially-robust-pruning-neural-network-Sparsity"><span class="nav-number">6.3.</span> <span class="nav-text">Adversarially robust pruning neural network &#x2F; Sparsity</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#adversarial-learning"><span class="nav-number">2.</span> <span class="nav-text">Adversarial Learning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#adversarial-robustness"><span class="nav-number">3.</span> <span class="nav-text">Adversarial Robustness</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#robust-generalization"><span class="nav-number">3.0.1.</span> <span class="nav-text">Robust Generalization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#adversarial-attacks"><span class="nav-number">3.1.</span> <span class="nav-text">Adversarial Attacks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#white-box-attack"><span class="nav-number">3.1.1.</span> <span class="nav-text">White box Attack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#black-box-attack"><span class="nav-number">3.1.2.</span> <span class="nav-text">Black box Attack</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#adversarial-defence"><span class="nav-number">3.2.</span> <span class="nav-text">Adversarial Defence</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#barrier-zone-defense"><span class="nav-number">3.2.1.</span> <span class="nav-text">Barrier Zone Defense</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#adversarial-training"><span class="nav-number">3.3.</span> <span class="nav-text">Adversarial Training</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#conventional-adversarial-training"><span class="nav-number">3.3.1.</span> <span class="nav-text">Conventional Adversarial
+Training</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#manifold-adversarial-training"><span class="nav-number">3.3.2.</span> <span class="nav-text">Manifold Adversarial
+Training</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bounded-adversaries"><span class="nav-number">3.4.</span> <span class="nav-text">Bounded Adversaries</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#non-uniform-compression"><span class="nav-number">4.</span> <span class="nav-text">Non-uniform compression</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gan-vs-adversial-examples"><span class="nav-number">5.</span> <span class="nav-text">GAN vs Adversial examples</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#experiment"><span class="nav-number">6.</span> <span class="nav-text">Experiment</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dataset"><span class="nav-number">6.1.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#model"><span class="nav-number">6.2.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#adversarially-robust-pruning-neural-network-sparsity"><span class="nav-number">6.3.</span> <span class="nav-text">Adversarially
+robust pruning neural network &#x2F; Sparsity</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -245,36 +248,147 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>對抗性示例（Adversarial Examples）是指在機器學習和人工智慧領域中，經過故意修改的輸入數據，通常是對原始數據進行微小但精心設計的改變，這種修改可以導致訓練有素的機器學習模型產生出錯誤的結果。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
+<p>對抗性示例（Adversarial
+Examples）是指在機器學習和人工智慧領域中，經過故意修改的輸入數據，通常是對原始數據進行微小但精心設計的改變，這種修改可以導致訓練有素的機器學習模型產生出錯誤的結果。</p>
 <p>對抗性示例的產生是通過在原始輸入數據中添加微小的、人眼難以察覺的扰動，這些扰動在數據空間中的位置通常是調整過的，以便最大限度地欺騙機器學習模型。儘管對抗性示例的改變通常對人類觀察者來說是微不足道的，但它們卻能夠導致模型做出顯著不同的預測，甚至產生錯誤的結果。</p>
-<p>對抗性示例的研究具有重要的意義，它揭示了當前機器學習模型的脆弱性，這些模型在面對微小變化時可能會出現不穩定的行為。為了提高模型的穩健性，研究者們努力開發抵抗對抗性示例攻擊的方法，以確保模型在面對這種干擾時能夠保持較高的準確性和可靠性。</p>
-<span id="more"></span>
-
-<h1 id="Adversarial-Learning"><a href="#Adversarial-Learning" class="headerlink" title="Adversarial Learning"></a>Adversarial Learning</h1><p>對抗式學習（Adversarial Learning）是一種機器學習技術，旨在改進模型的穩健性和泛化能力，以應對對抗性環境下的挑戰。在對抗式學習中，通常涉及兩個相互競爭的模型：生成模型和判別模型。</p>
+<p>對抗性示例的研究具有重要的意義，它揭示了當前機器學習模型的脆弱性，這些模型在面對微小變化時可能會出現不穩定的行為。為了提高模型的穩健性，研究者們努力開發抵抗對抗性示例攻擊的方法，以確保模型在面對這種干擾時能夠保持較高的準確性和可靠性。
+<span id="more"></span></p>
+<h1 id="adversarial-learning">Adversarial Learning</h1>
+<p>對抗式學習（Adversarial
+Learning）是一種機器學習技術，旨在改進模型的穩健性和泛化能力，以應對對抗性環境下的挑戰。在對抗式學習中，通常涉及兩個相互競爭的模型：生成模型和判別模型。</p>
 <p>生成模型的目標是生成與原始數據相似的對抗性示例，這些示例具有微小但對模型產生不良影響的扰動。生成模型通常使用生成對抗網絡（GAN）等技術，通過學習如何添加對抗性扰動，使得生成的示例能夠迷惑判別模型。</p>
 <p>判別模型則被訓練為區分原始數據與對抗性示例之間的差異。判別模型的目標是識別哪些數據是原始的，哪些是經過修改的對抗性示例。通過這種對抗的過程，判別模型不斷提高其識別能力，同時生成模型也努力使生成的對抗性示例更具迷惑性。</p>
 <p>對抗式學習的應用非常廣泛，包括圖像辨識、自然語言處理、安全防禦等領域。通過這種方式，對抗式學習有助於使模型更具穩健性，能夠在現實世界中應對各種未知和對抗性情況，從而提升模型的性能和可靠性。</p>
-<h1 id="Adversarial-Robustness"><a href="#Adversarial-Robustness" class="headerlink" title="Adversarial Robustness"></a>Adversarial Robustness</h1><p>對抗性穩健性（Adversarial Robustness）指的是機器學習模型在面對故意設計的對抗性示例時，能夠保持其性能和準確性的能力。對抗性示例是精心製作的輸入數據，與原始數據略有不同，並特意設計成可以使模型表現不正確或生成錯誤預測的情形。在對安全性敏感的應用中，模型的可靠性至關重要，因此對抗性穩健性成為了機器學習模型的重要特性之一。</p>
+<h1 id="adversarial-robustness">Adversarial Robustness</h1>
+<p>對抗性穩健性（Adversarial
+Robustness）指的是機器學習模型在面對故意設計的對抗性示例時，能夠保持其性能和準確性的能力。對抗性示例是精心製作的輸入數據，與原始數據略有不同，並特意設計成可以使模型表現不正確或生成錯誤預測的情形。在對安全性敏感的應用中，模型的可靠性至關重要，因此對抗性穩健性成為了機器學習模型的重要特性之一。</p>
 <p>如果一個模型能夠有效抵抗對抗性示例的影響，並在這種情況下保持其準確性和性能，則被認為具有對抗性穩健性。實現對抗性穩健性是具有挑戰性的，因為即使是輸入數據中微小且不可察覺的變化也可能導致模型輸出的顯著變化。</p>
 <p>對抗性穩健性的研究涉及開發技術和策略，使機器學習模型能夠更好地抵抗對抗性攻擊。其中包括對抗性訓練方法，該方法通過在模型訓練過程中結合正常數據和對抗性示例，提高模型處理受擾動輸入的能力。其他技術涉及調整模型架構、修改損失函數，以及引入計算機安全和優化等領域的技巧。</p>
 <p>對抗性穩健性是一個活躍的研究領域，特別是隨著機器學習模型在自駕車、醫學診斷和金融系統等關鍵應用中變得更加普遍，其中的安全性漏洞可能產生嚴重後果。</p>
 <p>為了提高對抗性韌性，研究人員和從業者採取了多種方法，包括：</p>
-<ol>
-<li><p>對抗性訓練：在訓練過程中，引入對抗性示例，使模型能夠學習如何處理這些扰動，從而增強其對抗性韌性。</p>
-</li>
-<li><p>模型架構修改：調整模型的架構，使其能夠更好地捕捉對抗性示例的特徵，從而提高對抗性韌性。</p>
-</li>
-<li><p>防禦機制：添加特定的防禦層或機制，例如對抗性過濾、特徵轉換等，以增加模型對對抗性攻擊的防禦能力。</p>
-</li>
-<li><p>數據增強：通過對訓練數據進行扰動或變換，幫助模型更好地適應各種對抗性示例。</p>
-</li>
-<li><p>遷移學習：從已經具有一定對抗性韌性的模型中學習，以改善目標模型的對抗性韌性。</p>
-</li>
+<ol type="1">
+<li><p>對抗性訓練：在訓練過程中，引入對抗性示例，使模型能夠學習如何處理這些扰動，從而增強其對抗性韌性。</p></li>
+<li><p>模型架構修改：調整模型的架構，使其能夠更好地捕捉對抗性示例的特徵，從而提高對抗性韌性。</p></li>
+<li><p>防禦機制：添加特定的防禦層或機制，例如對抗性過濾、特徵轉換等，以增加模型對對抗性攻擊的防禦能力。</p></li>
+<li><p>數據增強：通過對訓練數據進行扰動或變換，幫助模型更好地適應各種對抗性示例。</p></li>
+<li><p>遷移學習：從已經具有一定對抗性韌性的模型中學習，以改善目標模型的對抗性韌性。</p></li>
 </ol>
-<h3 id="Robust-Generalization"><a href="#Robust-Generalization" class="headerlink" title="Robust Generalization"></a>Robust Generalization</h3><p>穩健泛化（Robust Generalization）指的是機器學習模型在面對各種挑戰和不確定性情況下，不僅能在訓練數據上保持性能和準確性，同時也能在新的、未見過的數據上保持這些性能。這些挑戰可能包括噪音數據、數據分佈的變化、對抗性攻擊以及其他形式的干擾。</p>
+<h3 id="robust-generalization">Robust Generalization</h3>
+<p>穩健泛化（Robust
+Generalization）指的是機器學習模型在面對各種挑戰和不確定性情況下，不僅能在訓練數據上保持性能和準確性，同時也能在新的、未見過的數據上保持這些性能。這些挑戰可能包括噪音數據、數據分佈的變化、對抗性攻擊以及其他形式的干擾。</p>
 <p>在傳統機器學習中，模型通常在乾淨且無噪音的數據上進行訓練和評估，假設測試數據將遵循類似的分佈。然而，在現實情況下，數據可能會變得混亂、有噪音，或受到各種干擾。穩健泛化的目標是確保模型在這種情況下的性能保持穩定和可靠。</p>
 <p>實現穩健泛化涉及訓練不過於敏感於輸入數據的微小變化或對抗性操作的模型。正則化、數據增強、遷移學習、對抗性訓練以及整合領域知識等技術可以有助於增強模型的穩健泛化能力。</p>
 <p>穩健泛化對於安全關鍵應用特別重要，如自動駕駛、醫學診斷和金融風險評估等，這些應用中模型的預測可能對現實世界產生重大影響。通過設計能夠應對各種挑戰和不確定性情況的模型，研究人員旨在確保機器學習系統在多樣環境中具有可信賴性和可靠性。</p>
+<ul>
+<li><p>R-ADMM</p></li>
+<li><p>HYDRA</p></li>
+<li><p>BCS-P</p></li>
+<li><p>DNR</p></li>
+<li><p>MAD</p></li>
+<li><p>HARP</p></li>
+<li><p>ERK</p></li>
+<li><p>LAMP</p></li>
+<li><p>SAP (Sparsity-informed Adaptive Pruning )</p></li>
+<li><p>channel pruning</p></li>
+<li><p>weight pruning</p></li>
+</ul>
+<h2 id="adversarial-attacks">Adversarial Attacks</h2>
+<h3 id="white-box-attack">White box Attack</h3>
+<h3 id="black-box-attack">Black box Attack</h3>
+<ul>
+<li>PGD</li>
+<li>C &amp; W</li>
+<li>APGD</li>
+<li>AA</li>
+<li>FREE-AT ### Gray box Attack</li>
+</ul>
+<h2 id="adversarial-defence">Adversarial Defence</h2>
+<h3 id="barrier-zone-defense">Barrier Zone Defense</h3>
+<p>“Barrier Zone Defense”
+是一種防禦機制，主要用於提升機器學習模型對抗性攻擊的穩健性。這個概念是指在數據特徵空間中建立一個稱為「Barrier
+Zone」的區域，該區域充當了機器學習模型的保護層，可以幫助模型識別和排除對抗性示例。</p>
+<p>在「Barrier Zone
+Defense」中，模型被設計為能夠區分正常數據和潛在的對抗性示例。在特定的特徵空間內，模型會將正常數據聚集在一個區域內，而對抗性示例則可能處於這個區域之外。如果模型的輸入位於這個區域之外，則該輸入被視為可能是對抗性的，因此模型可以採取相應的防禦措施，比如拒絕預測或進行更進一步的分析。</p>
+<p>「Barrier Zone
+Defense」的目標是通過構建這樣的保護區域，使得模型能夠在特定區域內保持高準確性，同時提高對抗性攻擊的穩健性。這種方法的想法是利用正常數據在特徵空間內的分佈模式，來標識和隔離可能的對抗性示例。</p>
+<p>需要注意的是，雖然「Barrier Zone
+Defense」可以在某些情況下提高模型的穩健性，但它並非適用於所有的應用場景，且需要對數據分佈和特徵空間有深入的理解才能有效實施。同時，對抗性攻擊的技術也在不斷演進，因此維護穩健性仍然需要結合多種方法和策略。</p>
+<p>對抗性攻擊通常通過微小的、精心製作的扰動來操縱模型的輸出，可能導致錯誤的預測或分類。對抗性防禦旨在減少這些攻擊的影響，使模型在面對對抗性示例時能夠保持穩定的性能。</p>
+<p>一些常見的對抗性防禦方法包括：</p>
+<ol type="1">
+<li><p>對抗性訓練：在訓練過程中引入對抗性示例，使模型能夠適應這些扰動，從而增強其對抗性韌性。</p></li>
+<li><p>模型修正：對模型進行修改，以增強其對對抗性攻擊的防禦能力，如添加對抗性過濾器或正則化。</p></li>
+<li><p>檢測方法：開發檢測模型，以識別可能是對抗性示例的輸入，並在必要時拒絕處理這些輸入。</p></li>
+<li><p>數據預處理：對輸入數據進行預處理，使其對對抗性攻擊更加韌性，如通過濾或降噪。</p></li>
+<li><p>特徵轉換：對輸入進行轉換，以削弱對抗性示例的影響，同時保持模型的性能。</p></li>
+<li><p>集成防禦：將多種不同的防禦方法結合在一起，以增強對抗性韌性。</p></li>
+</ol>
+<p>對抗性防禦是一個重要的研究領域，因為它關乎機器學習模型在實際應用中的安全性和可信賴性。然而，對抗性防禦也可能面臨困難，因為攻擊者可能會不斷地提出新的攻擊方法，需要不斷地改進防禦策略。</p>
+<h2 id="adversarial-training">Adversarial Training</h2>
+<h3 id="conventional-adversarial-training">Conventional Adversarial
+Training</h3>
+<p>“Conventional AT” 可能指的是 “Conventional Adversarial
+Training”，這是一種機器學習中提升模型對抗性穩健性的方法。在這種方法中，模型通過在訓練過程中暴露於對抗性示例，從而增強其對這些示例的抵抗力。</p>
+<p>Conventional Adversarial Training
+的基本思想是將訓練數據擴展為包含正常數據和對抗性示例，然後使用這些擴展的數據來訓練模型。在每個訓練批次中，對抗性示例被創建並添加到正常數據中。生成對抗性示例的過程可能使用像
+Fast Gradient Sign Method (FGSM) 或 Projected Gradient Descent (PGD)
+等方法。</p>
+<p>這種訓練方法的目的是使模型在訓練過程中適應對抗性示例，進而提高其在真實世界中的穩健性。然而，由於對抗性攻擊的多樣性和模型的複雜性，傳統的對抗性訓練方法可能需要不斷的調整和改進，以確保模型能夠有效地抵抗不同類型的攻擊。</p>
+<h3 id="manifold-adversarial-training">Manifold Adversarial
+Training</h3>
+<p>“Manifold Adversarial Training” 是一種對抗性訓練（Adversarial
+Training）的變體，專注於在模型的潛在特徵流形上進行穩健性訓練。這種方法的目標是更好地捕捉數據的內在結構，從而提高模型在這些特徵流形上的穩健性。</p>
+<p>傳統的對抗性訓練方法主要關注添加對抗性示例以改進模型的穩健性，但這可能導致模型在特定方向上過度調整，導致泛化能力下降。相反，Manifold
+Adversarial Training
+考慮到數據的流形結構，並將對抗性訓練應用於這些特徵流形上的局部區域。</p>
+<p>這種方法的基本思想是，在數據的每個局部區域上生成對抗性示例，以模擬真實世界中可能的干擾。通常使用對抗生成網絡（GAN）等方法在流形上生成這些示例。這樣，模型被迫在潛在特徵流形的各個部分上保持穩定的預測行為，從而提高了穩健性。</p>
+<p>Manifold Adversarial Training
+強調了數據分佈的幾何結構，並嘗試在這些流形區域上建立穩健性。這種方法通常需要較高的計算成本，因為需要在不同的流形區域上進行訓練和生成。然而，對於某些複雜的數據分佈和模型，Manifold
+Adversarial Training 可能提供更好的穩健性和泛化性能。</p>
+<h2 id="bounded-adversaries">Bounded Adversaries</h2>
+<p>“Bounded Adversaries”
+是一個常見於計算機科學和安全領域的術語，特別是在有關機器學習、人工智慧和系統安全性方面的研究中。</p>
+<p>“Bounded Adversaries”
+指的是一種限制了攻擊者行為能力的概念。在這種情況下，攻擊者的行動受到某些限制或約束，例如有限的計算能力、有限的資源、有限的時間等。這樣的限制可以使得系統更容易應對可能的攻擊。</p>
+<p>例如，在機器學習中，我們可以考慮 “Bounded Adversaries”
+的情況，即假設攻擊者只能在有限的範圍內進行修改或攻擊輸入數據，而不能進行無限制的操作。這種假設可以幫助我們設計更健壯(Robustness)的機器學習模型，能夠在受到有限攻擊時保持良好的性能。</p>
+<p>總之，“Bounded Adversaries”
+強調了限制攻擊者行動能力的概念，有助於增強系統和算法對各種可能攻擊的抵抗能力。</p>
+<h1 id="non-uniform-compression">Non-uniform compression</h1>
+<p>非均勻壓縮是一種數據壓縮技術，其目的是在不同部分的數據中針對特定的模式或重複性進行更有效的壓縮，以實現更小的數據儲存或傳輸空間。與均勻壓縮方法不同，非均勻壓縮可以根據數據的特性和結構進行定制，以提高壓縮比率。</p>
+<p>在非均勻壓縮中，不同部分的數據可能使用不同的壓縮算法或技術，以最大程度地利用數據內部的模式。這種方法可以對不同類型的數據進行更有效的處理，並在某些情況下實現比傳統壓縮方法更高的壓縮比。</p>
+<p>總之，非均勻壓縮是一種根據數據特性和結構定制壓縮方法的技術，以實現更有效的數據壓縮，從而節省儲存空間或傳輸帶寬。</p>
+<h1 id="gan-vs-adversial-examples">GAN vs Adversial examples</h1>
+<p>生成對抗網絡（Generative Adversarial Network，簡稱
+GAN）和對抗性示例（Adversarial
+Examples）雖然都涉及到「對抗」的概念，但它們在機器學習領域中的應用和概念是不同的。</p>
+<ol type="1">
+<li><p>生成對抗網絡（GAN）： GAN
+是一種用於生成模型的架構，由兩個主要的競爭性模型組成：生成器（Generator）和判別器（Discriminator）。生成器旨在生成與真實數據相似的新數據樣本，而判別器則試圖區分真實數據和生成器產生的數據。兩個模型進行競爭和協作的訓練，最終的目標是生成的數據樣本越來越接近真實數據，以至於判別器無法區分它們。GAN
+常被用於生成逼真的圖像、音頻、文本等數據。</p></li>
+<li><p>對抗性示例（Adversarial Examples）：
+對抗性示例是指在機器學習模型中，故意對輸入數據進行微小的、精心設計的修改，以導致模型產生錯誤的預測結果。這些修改可能對人眼來說很難察覺，但卻足以欺騙模型。對抗性示例的目的是揭示模型在面對微小變化時的脆弱性，並推動開發更具穩健性的模型，能夠在對抗性環境下保持準確性。</p></li>
+</ol>
+<p>總之，GAN
+是一種生成模型，旨在通過兩個對抗性模型的競爭訓練來生成逼真的數據樣本。對抗性示例則是一種修改後的輸入數據，旨在引導模型做出錯誤的預測，以揭示其脆弱性並改進其穩健性。</p>
+<h1 id="experiment">Experiment</h1>
+<p>How many parameters (compression rate) and which parameters (scoring
+connections) to prune specific to each layer individually</p>
+<h2 id="dataset">Dataset</h2>
+<ul>
+<li>CIFAR-10</li>
+<li>SVHN</li>
+<li>ImageNet</li>
+</ul>
+<h2 id="model">Model</h2>
+<ul>
+<li>VGG16</li>
+<li>ResNet18</li>
+<li>WRN-28-4</li>
+</ul>
+<h2 id="adversarially-robust-pruning-neural-network-sparsity">Adversarially
+robust pruning neural network / Sparsity</h2>
 <ul>
 <li>R-ADMM</li>
 <li>HYDRA</li>
@@ -282,85 +396,9 @@
 <li>DNR</li>
 <li>MAD</li>
 <li>HARP</li>
-<li>ERK </li>
+<li>ERK</li>
 <li>LAMP</li>
-<li>SAP (Sparsity-informed Adaptive Pruning )</li>
-</ul>
-<ul>
-<li>channel pruning</li>
-<li>weight pruning</li>
-</ul>
-<h2 id="Adversarial-Attacks"><a href="#Adversarial-Attacks" class="headerlink" title="Adversarial Attacks"></a>Adversarial Attacks</h2><h3 id="White-box-Attack"><a href="#White-box-Attack" class="headerlink" title="White box Attack"></a>White box Attack</h3><h3 id="Black-box-Attack"><a href="#Black-box-Attack" class="headerlink" title="Black box Attack"></a>Black box Attack</h3><ul>
-<li>PGD</li>
-<li>C &amp; W</li>
-<li>APGD</li>
-<li>AA</li>
-<li>FREE-AT</li>
-</ul>
-<h3 id="Gray-box-Attack"><a href="#Gray-box-Attack" class="headerlink" title="Gray box Attack"></a>Gray box Attack</h3><h2 id="Adversarial-Defence"><a href="#Adversarial-Defence" class="headerlink" title="Adversarial Defence"></a>Adversarial Defence</h2><h3 id="Barrier-Zone-Defense"><a href="#Barrier-Zone-Defense" class="headerlink" title="Barrier Zone Defense"></a>Barrier Zone Defense</h3><p>“Barrier Zone Defense” 是一種防禦機制，主要用於提升機器學習模型對抗性攻擊的穩健性。這個概念是指在數據特徵空間中建立一個稱為「Barrier Zone」的區域，該區域充當了機器學習模型的保護層，可以幫助模型識別和排除對抗性示例。</p>
-<p>在「Barrier Zone Defense」中，模型被設計為能夠區分正常數據和潛在的對抗性示例。在特定的特徵空間內，模型會將正常數據聚集在一個區域內，而對抗性示例則可能處於這個區域之外。如果模型的輸入位於這個區域之外，則該輸入被視為可能是對抗性的，因此模型可以採取相應的防禦措施，比如拒絕預測或進行更進一步的分析。</p>
-<p>「Barrier Zone Defense」的目標是通過構建這樣的保護區域，使得模型能夠在特定區域內保持高準確性，同時提高對抗性攻擊的穩健性。這種方法的想法是利用正常數據在特徵空間內的分佈模式，來標識和隔離可能的對抗性示例。</p>
-<p>需要注意的是，雖然「Barrier Zone Defense」可以在某些情況下提高模型的穩健性，但它並非適用於所有的應用場景，且需要對數據分佈和特徵空間有深入的理解才能有效實施。同時，對抗性攻擊的技術也在不斷演進，因此維護穩健性仍然需要結合多種方法和策略。</p>
-<p>對抗性攻擊通常通過微小的、精心製作的扰動來操縱模型的輸出，可能導致錯誤的預測或分類。對抗性防禦旨在減少這些攻擊的影響，使模型在面對對抗性示例時能夠保持穩定的性能。</p>
-<p>一些常見的對抗性防禦方法包括：</p>
-<ol>
-<li><p>對抗性訓練：在訓練過程中引入對抗性示例，使模型能夠適應這些扰動，從而增強其對抗性韌性。</p>
-</li>
-<li><p>模型修正：對模型進行修改，以增強其對對抗性攻擊的防禦能力，如添加對抗性過濾器或正則化。</p>
-</li>
-<li><p>檢測方法：開發檢測模型，以識別可能是對抗性示例的輸入，並在必要時拒絕處理這些輸入。</p>
-</li>
-<li><p>數據預處理：對輸入數據進行預處理，使其對對抗性攻擊更加韌性，如通過濾或降噪。</p>
-</li>
-<li><p>特徵轉換：對輸入進行轉換，以削弱對抗性示例的影響，同時保持模型的性能。</p>
-</li>
-<li><p>集成防禦：將多種不同的防禦方法結合在一起，以增強對抗性韌性。</p>
-</li>
-</ol>
-<p>對抗性防禦是一個重要的研究領域，因為它關乎機器學習模型在實際應用中的安全性和可信賴性。然而，對抗性防禦也可能面臨困難，因為攻擊者可能會不斷地提出新的攻擊方法，需要不斷地改進防禦策略。</p>
-<h2 id="Adversarial-Training"><a href="#Adversarial-Training" class="headerlink" title="Adversarial Training"></a>Adversarial Training</h2><h3 id="Conventional-Adversarial-Training"><a href="#Conventional-Adversarial-Training" class="headerlink" title="Conventional Adversarial Training"></a>Conventional Adversarial Training</h3><p>“Conventional AT” 可能指的是 “Conventional Adversarial Training”，這是一種機器學習中提升模型對抗性穩健性的方法。在這種方法中，模型通過在訓練過程中暴露於對抗性示例，從而增強其對這些示例的抵抗力。</p>
-<p>Conventional Adversarial Training 的基本思想是將訓練數據擴展為包含正常數據和對抗性示例，然後使用這些擴展的數據來訓練模型。在每個訓練批次中，對抗性示例被創建並添加到正常數據中。生成對抗性示例的過程可能使用像 Fast Gradient Sign Method (FGSM) 或 Projected Gradient Descent (PGD) 等方法。</p>
-<p>這種訓練方法的目的是使模型在訓練過程中適應對抗性示例，進而提高其在真實世界中的穩健性。然而，由於對抗性攻擊的多樣性和模型的複雜性，傳統的對抗性訓練方法可能需要不斷的調整和改進，以確保模型能夠有效地抵抗不同類型的攻擊。</p>
-<h3 id="Manifold-Adversarial-Training"><a href="#Manifold-Adversarial-Training" class="headerlink" title="Manifold Adversarial Training"></a>Manifold Adversarial Training</h3><p>“Manifold Adversarial Training” 是一種對抗性訓練（Adversarial Training）的變體，專注於在模型的潛在特徵流形上進行穩健性訓練。這種方法的目標是更好地捕捉數據的內在結構，從而提高模型在這些特徵流形上的穩健性。</p>
-<p>傳統的對抗性訓練方法主要關注添加對抗性示例以改進模型的穩健性，但這可能導致模型在特定方向上過度調整，導致泛化能力下降。相反，Manifold Adversarial Training 考慮到數據的流形結構，並將對抗性訓練應用於這些特徵流形上的局部區域。</p>
-<p>這種方法的基本思想是，在數據的每個局部區域上生成對抗性示例，以模擬真實世界中可能的干擾。通常使用對抗生成網絡（GAN）等方法在流形上生成這些示例。這樣，模型被迫在潛在特徵流形的各個部分上保持穩定的預測行為，從而提高了穩健性。</p>
-<p>Manifold Adversarial Training 強調了數據分佈的幾何結構，並嘗試在這些流形區域上建立穩健性。這種方法通常需要較高的計算成本，因為需要在不同的流形區域上進行訓練和生成。然而，對於某些複雜的數據分佈和模型，Manifold Adversarial Training 可能提供更好的穩健性和泛化性能。</p>
-<h2 id="Bounded-Adversaries"><a href="#Bounded-Adversaries" class="headerlink" title="Bounded Adversaries"></a>Bounded Adversaries</h2><p>“Bounded Adversaries” 是一個常見於計算機科學和安全領域的術語，特別是在有關機器學習、人工智慧和系統安全性方面的研究中。</p>
-<p>“Bounded Adversaries” 指的是一種限制了攻擊者行為能力的概念。在這種情況下，攻擊者的行動受到某些限制或約束，例如有限的計算能力、有限的資源、有限的時間等。這樣的限制可以使得系統更容易應對可能的攻擊。</p>
-<p>例如，在機器學習中，我們可以考慮 “Bounded Adversaries” 的情況，即假設攻擊者只能在有限的範圍內進行修改或攻擊輸入數據，而不能進行無限制的操作。這種假設可以幫助我們設計更健壯(Robustness)的機器學習模型，能夠在受到有限攻擊時保持良好的性能。</p>
-<p>總之，”Bounded Adversaries” 強調了限制攻擊者行動能力的概念，有助於增強系統和算法對各種可能攻擊的抵抗能力。</p>
-<h1 id="Non-uniform-compression"><a href="#Non-uniform-compression" class="headerlink" title="Non-uniform compression"></a>Non-uniform compression</h1><p>非均勻壓縮是一種數據壓縮技術，其目的是在不同部分的數據中針對特定的模式或重複性進行更有效的壓縮，以實現更小的數據儲存或傳輸空間。與均勻壓縮方法不同，非均勻壓縮可以根據數據的特性和結構進行定制，以提高壓縮比率。</p>
-<p>在非均勻壓縮中，不同部分的數據可能使用不同的壓縮算法或技術，以最大程度地利用數據內部的模式。這種方法可以對不同類型的數據進行更有效的處理，並在某些情況下實現比傳統壓縮方法更高的壓縮比。</p>
-<p>總之，非均勻壓縮是一種根據數據特性和結構定制壓縮方法的技術，以實現更有效的數據壓縮，從而節省儲存空間或傳輸帶寬。</p>
-<h1 id="GAN-vs-Adversial-examples"><a href="#GAN-vs-Adversial-examples" class="headerlink" title="GAN vs Adversial examples"></a>GAN vs Adversial examples</h1><p>生成對抗網絡（Generative Adversarial Network，簡稱 GAN）和對抗性示例（Adversarial Examples）雖然都涉及到「對抗」的概念，但它們在機器學習領域中的應用和概念是不同的。</p>
-<ol>
-<li><p>生成對抗網絡（GAN）：<br>GAN 是一種用於生成模型的架構，由兩個主要的競爭性模型組成：生成器（Generator）和判別器（Discriminator）。生成器旨在生成與真實數據相似的新數據樣本，而判別器則試圖區分真實數據和生成器產生的數據。兩個模型進行競爭和協作的訓練，最終的目標是生成的數據樣本越來越接近真實數據，以至於判別器無法區分它們。GAN 常被用於生成逼真的圖像、音頻、文本等數據。</p>
-</li>
-<li><p>對抗性示例（Adversarial Examples）：<br>對抗性示例是指在機器學習模型中，故意對輸入數據進行微小的、精心設計的修改，以導致模型產生錯誤的預測結果。這些修改可能對人眼來說很難察覺，但卻足以欺騙模型。對抗性示例的目的是揭示模型在面對微小變化時的脆弱性，並推動開發更具穩健性的模型，能夠在對抗性環境下保持準確性。</p>
-</li>
-</ol>
-<p>總之，GAN 是一種生成模型，旨在通過兩個對抗性模型的競爭訓練來生成逼真的數據樣本。對抗性示例則是一種修改後的輸入數據，旨在引導模型做出錯誤的預測，以揭示其脆弱性並改進其穩健性。</p>
-<h1 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h1><p>How many parameters (compression rate) and which parameters (scoring connections) to prune specific to each layer individually</p>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
-<li>   CIFAR-10</li>
-<li>   SVHN</li>
-<li>   ImageNet</li>
-</ul>
-<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><ul>
-<li>   VGG16</li>
-<li>   ResNet18</li>
-<li>   WRN-28-4</li>
-</ul>
-<h2 id="Adversarially-robust-pruning-neural-network-Sparsity"><a href="#Adversarially-robust-pruning-neural-network-Sparsity" class="headerlink" title="Adversarially robust pruning neural network &#x2F; Sparsity"></a>Adversarially robust pruning neural network &#x2F; Sparsity</h2><ul>
-<li>   R-ADMM</li>
-<li>   HYDRA</li>
-<li>   BCS-P</li>
-<li>   DNR</li>
-<li>   MAD</li>
-<li>   HARP</li>
-<li>ERK </li>
-<li>   LAMP</li>
-<li>   Sparsity-informed Adaptive Pruning</li>
+<li>Sparsity-informed Adaptive Pruning</li>
 </ul>
 
     </div>
@@ -413,13 +451,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">291k</span>
+    <span title="總字數">289k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:49</span>
+    <span title="所需總閱讀時間">8:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

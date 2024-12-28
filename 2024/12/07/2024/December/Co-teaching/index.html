@@ -26,13 +26,13 @@
 <meta property="og:site_name" content="利醬の休憩房">
 <meta property="og:description" content="論文整理">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://leonicehot.github.io/images/2024/coteaching/architecture.png">
-<meta property="og:image" content="https://leonicehot.github.io/images/2024/coteaching/Co-teaching-Algorithm.png">
+<meta property="og:image" content="https://leonicehot.github.io/2024/12/07/images/2024/coteaching/architecture.png">
+<meta property="og:image" content="https://leonicehot.github.io/2024/12/07/images/2024/coteaching/Co-teaching-Algorithm.png">
 <meta property="article:published_time" content="2024-12-07T04:27:27.000Z">
 <meta property="article:modified_time" content="2024-12-28T15:25:36.676Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://leonicehot.github.io/images/2024/coteaching/architecture.png">
+<meta name="twitter:image" content="https://leonicehot.github.io/2024/12/07/images/2024/coteaching/architecture.png">
 
 
 <link rel="canonical" href="https://leonicehot.github.io/2024/12/07/2024/December/Co-teaching/">
@@ -113,7 +113,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Theory-Fundamental"><span class="nav-number">2.</span> <span class="nav-text">Theory Fundamental</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Related-literature"><span class="nav-number">3.</span> <span class="nav-text">Related literature</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Statical-learning-method"><span class="nav-number">3.1.</span> <span class="nav-text">Statical learning method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Learning-to-teach-methods"><span class="nav-number">3.2.</span> <span class="nav-text">Learning to teach methods:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other-deep-learning-approach"><span class="nav-number">3.3.</span> <span class="nav-text">Other deep learning approach:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Difference"><span class="nav-number">4.</span> <span class="nav-text">Difference</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithms-design"><span class="nav-number">5.</span> <span class="nav-text">Algorithms design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Design-thinking"><span class="nav-number">5.1.</span> <span class="nav-text">Design thinking</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Design-keypoints"><span class="nav-number">5.2.</span> <span class="nav-text">Design keypoints</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">6.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Datasets"><span class="nav-number">6.1.</span> <span class="nav-text">Datasets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Noise"><span class="nav-number">6.2.</span> <span class="nav-text">Noise</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-architecture"><span class="nav-number">6.3.</span> <span class="nav-text">Network architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Baseline-method"><span class="nav-number">6.4.</span> <span class="nav-text">Baseline method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Evaluation-matrix"><span class="nav-number">6.5.</span> <span class="nav-text">Evaluation matrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Future-direction"><span class="nav-number">6.6.</span> <span class="nav-text">Future direction</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Engineering-Implementation"><span class="nav-number">7.</span> <span class="nav-text">Engineering Implementation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review"><span class="nav-number">8.</span> <span class="nav-text">Review</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">9.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#theory-fundamental"><span class="nav-number">2.</span> <span class="nav-text">Theory Fundamental</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#related-literature"><span class="nav-number">3.</span> <span class="nav-text">Related literature</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#statical-learning-method"><span class="nav-number">3.1.</span> <span class="nav-text">Statical learning method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#learning-to-teach-methods"><span class="nav-number">3.2.</span> <span class="nav-text">Learning to teach methods:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#other-deep-learning-approach"><span class="nav-number">3.3.</span> <span class="nav-text">Other deep learning approach:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#difference"><span class="nav-number">4.</span> <span class="nav-text">Difference</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#algorithms-design"><span class="nav-number">5.</span> <span class="nav-text">Algorithms design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#design-thinking"><span class="nav-number">5.1.</span> <span class="nav-text">Design thinking</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#design-keypoints"><span class="nav-number">5.2.</span> <span class="nav-text">Design keypoints</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#experiments"><span class="nav-number">6.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#datasets"><span class="nav-number">6.1.</span> <span class="nav-text">Datasets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#noise"><span class="nav-number">6.2.</span> <span class="nav-text">Noise</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#network-architecture"><span class="nav-number">6.3.</span> <span class="nav-text">Network architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#baseline-method"><span class="nav-number">6.4.</span> <span class="nav-text">Baseline method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#evaluation-matrix"><span class="nav-number">6.5.</span> <span class="nav-text">Evaluation matrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#future-direction"><span class="nav-number">6.6.</span> <span class="nav-text">Future direction</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#engineering-implementation"><span class="nav-number">7.</span> <span class="nav-text">Engineering Implementation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#review"><span class="nav-number">8.</span> <span class="nav-text">Review</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">9.</span> <span class="nav-text">Reference</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -223,7 +223,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>3.9k</span>
+      <span>3.8k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -240,166 +240,196 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>論文整理</p>
-<span id="more"></span>
-
-<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><ol>
-<li><p>This paper proposed paradigm called Co-teaching, which trains deep neural networks robustly under noisy supervision</p>
-</li>
-<li><p>The Key is to maintain two networks simultaneously, and cross-trains on instances screened by the “small loss” criteria.</p>
+    <div class="post-body" itemprop="articleBody"><p>論文整理 <span id="more"></span></p>
+<h1 id="abstract">Abstract</h1>
+<ol type="1">
+<li><p>This paper proposed paradigm called Co-teaching, which trains
+deep neural networks robustly under noisy supervision</p></li>
+<li><p>The Key is to maintain two networks simultaneously, and
+cross-trains on instances screened by the “small loss” criteria.</p>
 <ul>
-<li><p>Author trains two deep neural networks simultaneously, and let them teach each other given every mini-batch: </p>
+<li>Author trains two deep neural networks simultaneously, and let them
+teach each other given every mini-batch:
 <ul>
-<li>Each network feeds forward all data and selects some data of possibly clean labels.</li>
-<li>Two networks communicate with each other what data in this mini-batch should be used for training.</li>
-<li>Each network back propagates the data selected by its peer network and updates itself.</li>
-</ul>
-</li>
-<li><p>Investigate the theoretical guarantees for Co-teaching</p>
-</li>
-</ul>
-</li>
-<li><p>Experiment<br>The papaer conducts MNIST, CIFAR-10 and CIFAR-100 on noisy labels.<br>The results is that co-teaching is much superior to the state-of-the-art methods in the robustness of trained deep models.</p>
-</li>
+<li>Each network feeds forward all data and selects some data of
+possibly clean labels.</li>
+<li>Two networks communicate with each other what data in this
+mini-batch should be used for training.</li>
+<li>Each network back propagates the data selected by its peer network
+and updates itself.</li>
+</ul></li>
+<li>Investigate the theoretical guarantees for Co-teaching</li>
+</ul></li>
+<li><p>Experiment The papaer conducts MNIST, CIFAR-10 and CIFAR-100 on
+noisy labels. The results is that co-teaching is much superior to the
+state-of-the-art methods in the robustness of trained deep
+models.</p></li>
 </ol>
 <!--more-->
-<h1 id="Theory-Fundamental"><a href="#Theory-Fundamental" class="headerlink" title="Theory Fundamental"></a>Theory Fundamental</h1><p><img src="/../../../images/2024/coteaching/architecture.png" alt="architecture"></p>
-<h1 id="Related-literature"><a href="#Related-literature" class="headerlink" title="Related literature"></a>Related literature</h1><h2 id="Statical-learning-method"><a href="#Statical-learning-method" class="headerlink" title="Statical learning method"></a>Statical learning method</h2><p>Loss Function Method:</p>
-<ol>
-<li><p>surrogate loss category:</p>
+<h1 id="theory-fundamental">Theory Fundamental</h1>
+<figure>
+<img src="../../../images/2024/coteaching/architecture.png" alt="architecture">
+<figcaption aria-hidden="true">architecture</figcaption>
+</figure>
+<h1 id="related-literature">Related literature</h1>
+<h2 id="statical-learning-method">Statical learning method</h2>
+<p>Loss Function Method: 1. surrogate loss category: - unbiased
+estimator<br>
+- [NIPS2013]-Learning with noisy labels - robust non-convex loss<br>
+- [NIPS2009]-On the design of loss functions for classification: theory,
+robustness to outliers, and savageboost.</p>
+<ol start="2" type="1">
+<li>noise rate estimation:
 <ul>
-<li>unbiased estimator      <ul>
-<li>[NIPS2013]-Learning with noisy labels</li>
-</ul>
-</li>
-<li>robust non-convex loss  <ul>
-<li>[NIPS2009]-On the design of loss functions for classification: theory, robustness to outliers, and savageboost.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>noise rate estimation:</p>
+<li>class-probabilty estimator
 <ul>
-<li>class-probabilty estimator <ul>
-<li>order statistics <ul>
-<li>[PAMI2016]-Classification with noisy labels by importance reweighting</li>
-<li>[ICML2015]-Learning from corrupted binary labels via class-probability estimation</li>
-</ul>
-</li>
-<li>the slope of the ROC curve <ul>
-<li>[AISTATS2014]-Class proportion estimation with application to multiclass anomaly rejection</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>probabilitic modeling:</p>
+<li>order statistics
 <ul>
-<li>two-coin modeling    <ul>
-<li>handle noisy labels <ul>
+<li>[PAMI2016]-Classification with noisy labels by importance
+reweighting</li>
+<li>[ICML2015]-Learning from corrupted binary labels via
+class-probability estimation</li>
+</ul></li>
+<li>the slope of the ROC curve
+<ul>
+<li>[AISTATS2014]-Class proportion estimation with application to
+multiclass anomaly rejection</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>probabilitic modeling:
+<ul>
+<li>two-coin modeling
+<ul>
+<li>handle noisy labels
+<ul>
 <li>[JMLR2010]-Learning from crowds</li>
-</ul>
-</li>
-<li>setting the dynamic flipping probabilty <ul>
-<li>[ML2014]-Learning from multiple annotators with varying expertise</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
+<li>setting the dynamic flipping probabilty
+<ul>
+<li>[ML2014]-Learning from multiple annotators with varying
+expertise</li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ol>
-<h2 id="Learning-to-teach-methods"><a href="#Learning-to-teach-methods" class="headerlink" title="Learning to teach methods:"></a>Learning to teach methods:</h2><ul>
+<h2 id="learning-to-teach-methods">Learning to teach methods:</h2>
+<ul>
 <li>Knowledge distilling</li>
 </ul>
-<h2 id="Other-deep-learning-approach"><a href="#Other-deep-learning-approach" class="headerlink" title="Other deep learning approach:"></a>Other deep learning approach:</h2><ul>
-<li>deal with noisy labels <ul>
+<h2 id="other-deep-learning-approach">Other deep learning approach:</h2>
+<ul>
+<li>deal with noisy labels
+<ul>
 <li>[ICML2018]-Dimensionality-driven learning with noisy labels</li>
 <li>[CVPR2018]-learning with open-set noisy labels.</li>
-</ul>
-</li>
-<li>[ICCV2017]-Learning from noisy labels with distillation<ul>
-<li>unified framework to distill the knowledge from clean labels and knowledge graph</li>
-</ul>
-</li>
-<li>[CVPR2017]-Learning from noisy large-scale datasets with minimal supervision<ul>
-<li>trained a label cleaning network by a small set of clean labels</li>
-</ul>
-</li>
-<li>[CVPR2018]-Joint optimization framework for learning with noisy labels<ul>
-<li>joint optimization framework to learn parameters and estimate true labels simultaneously</li>
-</ul>
-</li>
-<li>[ICML2018]-Learning to reweight examples for robust deep learning<ul>
-<li>leveraged an additional validation set to adaptively assign weights to training examples in<br>  every iteration</li>
-</ul>
-</li>
-<li>[AAAI2018]-Deep learning from crowds <ul>
-<li>added a crowd layer after the output layer for noisy labels from<br>  multiple annotators</li>
-</ul>
-</li>
-</ul>
-<h1 id="Difference"><a href="#Difference" class="headerlink" title="Difference"></a>Difference</h1><ul>
-<li><p>Co-training is for semi-supervised learning (SSL)</p>
+</ul></li>
+<li>[ICCV2017]-Learning from noisy labels with distillation
 <ul>
-<li>[COLT1998]-Combining labeled and unlabeled data with co-training.</li>
+<li>unified framework to distill the knowledge from clean labels and
+knowledge graph</li>
+</ul></li>
+<li>[CVPR2017]-Learning from noisy large-scale datasets with minimal
+supervision
+<ul>
+<li>trained a label cleaning network by a small set of clean labels</li>
+</ul></li>
+<li>[CVPR2018]-Joint optimization framework for learning with noisy
+labels
+<ul>
+<li>joint optimization framework to learn parameters and estimate true
+labels simultaneously</li>
+</ul></li>
+<li>[ICML2018]-Learning to reweight examples for robust deep learning
+<ul>
+<li>leveraged an additional validation set to adaptively assign weights
+to training examples in every iteration</li>
+</ul></li>
+<li>[AAAI2018]-Deep learning from crowds
+<ul>
+<li>added a crowd layer after the output layer for noisy labels from
+multiple annotators</li>
+</ul></li>
 </ul>
-</li>
-<li><p>Co-teaching is for learning with noisy labels (LNL)</p>
+<h1 id="difference">Difference</h1>
+<ul>
+<li>Co-training is for semi-supervised learning (SSL)
+<ul>
+<li>[COLT1998]-Combining labeled and unlabeled data with
+co-training.</li>
+</ul></li>
+<li>Co-teaching is for learning with noisy labels (LNL)
 <ul>
 <li>author proposed method</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h1 id="Algorithms-design"><a href="#Algorithms-design" class="headerlink" title="Algorithms design"></a>Algorithms design</h1><h2 id="Design-thinking"><a href="#Design-thinking" class="headerlink" title="Design thinking"></a>Design thinking</h2><p><img src="/../../../images/2024/coteaching/Co-teaching-Algorithm.png" alt="switch"></p>
-<h2 id="Design-keypoints"><a href="#Design-keypoints" class="headerlink" title="Design keypoints"></a>Design keypoints</h2><p>Q1. Why can sampling small-loss instances based on dynamic R(T) help us find clean instances?<br>Q2. Why do we need two networks and cross-update the parameters?</p>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><h2 id="Datasets"><a href="#Datasets" class="headerlink" title="Datasets"></a>Datasets</h2><ul>
+<h1 id="algorithms-design">Algorithms design</h1>
+<h2 id="design-thinking">Design thinking</h2>
+<figure>
+<img src="../../../images/2024/coteaching/Co-teaching-Algorithm.png" alt="switch">
+<figcaption aria-hidden="true">switch</figcaption>
+</figure>
+<h2 id="design-keypoints">Design keypoints</h2>
+<p>Q1. Why can sampling small-loss instances based on dynamic R(T) help
+us find clean instances? Q2. Why do we need two networks and
+cross-update the parameters?</p>
+<h1 id="experiments">Experiments</h1>
+<h2 id="datasets">Datasets</h2>
+<ul>
 <li>MNIST</li>
 <li>CIFAR-10</li>
 <li>CIFAR-100</li>
 </ul>
-<h2 id="Noise"><a href="#Noise" class="headerlink" title="Noise"></a>Noise</h2><ul>
+<h2 id="noise">Noise</h2>
+<ul>
 <li>Symmetry flipping</li>
 <li>Pair flipping</li>
 </ul>
-<h2 id="Network-architecture"><a href="#Network-architecture" class="headerlink" title="Network architecture"></a>Network architecture</h2><ul>
-<li>Activation Function<ul>
+<h2 id="network-architecture">Network architecture</h2>
+<ul>
+<li>Activation Function
+<ul>
 <li>Leaky-ReLU</li>
-</ul>
-</li>
-<li>Temporal Ensembling<ul>
+</ul></li>
+<li>Temporal Ensembling
+<ul>
 <li>[ICLR2017]-Temporal ensembling for semi-supervised learning</li>
+</ul></li>
+<li>Virtual Adversarial Training
+<ul>
+<li>[ICLR2016]-Virtual adversarial training for semi-supervised text
+classification</li>
+</ul></li>
 </ul>
-</li>
-<li>Virtual Adversarial Training<ul>
-<li>[ICLR2016]-Virtual adversarial training for semi-supervised text<br>classification</li>
-</ul>
-</li>
-</ul>
-<h2 id="Baseline-method"><a href="#Baseline-method" class="headerlink" title="Baseline method"></a>Baseline method</h2><ol>
-<li><p>Bootstrap<br>[ICLR2015]-Training deep neural networks on noisy labels with bootstrapping</p>
-</li>
-<li><p>S-model<br>[ICLR2017]-Training deep neural-networks using a noise adaptation layer</p>
-</li>
-<li><p>F-correction<br>[CVPR217]-Making deep neural networks robust to label noise: A loss correction approach.</p>
-</li>
-<li><p>Decoupling<br>[NIPS2017]-Decoupling” when to update” from” how to update</p>
-</li>
-<li><p>MentorNet<br>[ICML2018]-Mentornet: Learning data-driven curriculum for very deep neural networks on corrupted labels</p>
-</li>
+<h2 id="baseline-method">Baseline method</h2>
+<ol type="1">
+<li><p>Bootstrap [ICLR2015]-Training deep neural networks on noisy
+labels with bootstrapping</p></li>
+<li><p>S-model [ICLR2017]-Training deep neural-networks using a noise
+adaptation layer</p></li>
+<li><p>F-correction [CVPR217]-Making deep neural networks robust to
+label noise: A loss correction approach.</p></li>
+<li><p>Decoupling [NIPS2017]-Decoupling” when to update” from” how to
+update</p></li>
+<li><p>MentorNet [ICML2018]-Mentornet: Learning data-driven curriculum
+for very deep neural networks on corrupted labels</p></li>
 </ol>
-<h2 id="Evaluation-matrix"><a href="#Evaluation-matrix" class="headerlink" title="Evaluation matrix"></a>Evaluation matrix</h2><ul>
+<h2 id="evaluation-matrix">Evaluation matrix</h2>
+<ul>
 <li>Noise Transition Matrices</li>
 </ul>
-<h2 id="Future-direction"><a href="#Future-direction" class="headerlink" title="Future direction"></a>Future direction</h2><ul>
+<h2 id="future-direction">Future direction</h2>
+<ul>
 <li>Generalization performance analysis</li>
 </ul>
-<h1 id="Engineering-Implementation"><a href="#Engineering-Implementation" class="headerlink" title="Engineering Implementation"></a>Engineering Implementation</h1><ul>
-<li>Pytorch Version<br><a target="_blank" rel="noopener" href="https://github.com/bhanML/Co-teaching">https://github.com/bhanML/Co-teaching</a></li>
+<h1 id="engineering-implementation">Engineering Implementation</h1>
+<ul>
+<li>Pytorch Version https://github.com/bhanML/Co-teaching</li>
 </ul>
-<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p><a target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper/2018/file/a19744e268754fb0148b017647355b7b-Reviews.html">https://proceedings.neurips.cc/paper/2018/file/a19744e268754fb0148b017647355b7b-Reviews.html</a></p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>[NeurIPS18]: Co-teaching: Robust Training of Deep Neural Networks with Extremely Noisy Labels<br><a target="_blank" rel="noopener" href="http://papers.neurips.cc/paper/8072-co-teaching-robust-training-of-deep-neural-networks-with-extremely-noisy-labels.pdf">http://papers.neurips.cc/paper/8072-co-teaching-robust-training-of-deep-neural-networks-with-extremely-noisy-labels.pdf</a> </p>
+<h1 id="review">Review</h1>
+<p>https://proceedings.neurips.cc/paper/2018/file/a19744e268754fb0148b017647355b7b-Reviews.html</p>
+<h1 id="reference">Reference</h1>
+<p>http://papers.neurips.cc/paper/8072-co-teaching-robust-training-of-deep-neural-networks-with-extremely-noisy-labels.pdf</p>
 
     </div>
 
@@ -451,13 +481,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">291k</span>
+    <span title="總字數">289k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:49</span>
+    <span title="所需總閱讀時間">8:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

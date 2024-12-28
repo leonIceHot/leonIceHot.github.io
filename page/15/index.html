@@ -220,7 +220,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>997</span>
+      <span>917</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -238,7 +238,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <ol>
+          <ol type="1">
 <li>指令無法安裝</li>
 <li>Ubuntu updates vs code.</li>
 <li>Extension mode</li>
@@ -361,7 +361,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h3 id="凍結參數"><a href="#凍結參數" class="headerlink" title="凍結參數"></a>凍結參數</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">model = SuperPointNet_gauss2()</span><br><span class="line">    </span><br><span class="line">for param in model.parameters():</span><br><span class="line">    param.requires_grad = False</span><br><span class="line">for param in model.linear.parameters(): # 指定訓練</span><br><span class="line">    param.requires_grad = True</span><br></pre></td></tr></table></figure>
+          <h3 id="凍結參數">凍結參數</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">model = SuperPointNet_gauss2()</span><br><span class="line">    </span><br><span class="line">for param in model.parameters():</span><br><span class="line">    param.requires_grad = False</span><br><span class="line">for param in model.linear.parameters(): # 指定訓練</span><br><span class="line">    param.requires_grad = True</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/12/11/2021/December/%E5%87%8D%E7%B5%90%E5%8F%83%E6%95%B8/#more" rel="contents">
@@ -480,7 +481,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h3 id="torchsummary"><a href="#torchsummary" class="headerlink" title="torchsummary"></a>torchsummary</h3>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">device = torch.device(&#x27;cuda&#x27; if torch.cuda.is_available() else &#x27;cpu&#x27;)</span><br><span class="line">model = SuperPointNet_gauss2()</span><br><span class="line">model = model.to(device)</span><br><span class="line"></span><br><span class="line"># check keras-like model summary using torchsummary</span><br><span class="line">from torchsummary import summary</span><br><span class="line">summary(model, input_size=(1, 240, 320))    </span><br></pre></td></tr></table></figure>
+          <h3 id="torchsummary">torchsummary</h3>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">device = torch.device(&#x27;cuda&#x27; if torch.cuda.is_available() else &#x27;cpu&#x27;)</span><br><span class="line">model = SuperPointNet_gauss2()</span><br><span class="line">model = model.to(device)</span><br><span class="line"></span><br><span class="line"># check keras-like model summary using torchsummary</span><br><span class="line">from torchsummary import summary</span><br><span class="line">summary(model, input_size=(1, 240, 320))    </span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/12/11/2021/December/%E6%AA%A2%E8%A6%96%E5%85%A7%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E6%9E%B6%E6%A7%8B/#more" rel="contents">
@@ -529,13 +531,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">291k</span>
+    <span title="總字數">289k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:49</span>
+    <span title="所需總閱讀時間">8:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

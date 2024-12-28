@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本研究提出了一項綜合實證研究，深入探討了深度神經網絡（DNN）中各種隨機化技術之間的相互作用及其對學習性能的影響。已有研究表明，將隨機性引入 DNN 的訓練過程，通過各種方法在不同階段進行隨機化，對減少過擬合和提高泛化能力有顯著益處。然而，像權重噪聲、丟棄法（Dropout）等隨機化技術之間的交互作用尚未得到充分理解。因此，如何有效地結合這些方法以優化 DNN 性能仍然是一個挑戰。">
+    <meta name="description" content="本研究提出了一項綜合實證研究，深入探討了深度神經網絡（DNN）中各種隨機化技術之間的相互作用及其對學習性能的影響。已有研究表明，將隨機性引入 DNN 的訓練過程，通過各種方法在不同階段進行隨機化，對減少過擬合和提高泛化能力有顯著益處。然而，像權重噪聲、丟棄法（Dropout）等隨機化技術之間的交互作用尚未得到充分理解。因此，如何有效地結合這些方法以優化 DNN 性能仍然是一個挑戰。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Randomness techniques in deep neural networks">
 <meta property="og:url" content="https://leonicehot.github.io/2024/10/31/2024/October/randomness-techniques-in-deep-neural-networks/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="本研究提出了一項綜合實證研究，深入探討了深度神經網絡（DNN）中各種隨機化技術之間的相互作用及其對學習性能的影響。已有研究表明，將隨機性引入 DNN 的訓練過程，通過各種方法在不同階段進行隨機化，對減少過擬合和提高泛化能力有顯著益處。然而，像權重噪聲、丟棄法（Dropout）等隨機化技術之間的交互作用尚未得到充分理解。因此，如何有效地結合這些方法以優化 DNN 性能仍然是一個挑戰。">
+<meta property="og:description" content="本研究提出了一項綜合實證研究，深入探討了深度神經網絡（DNN）中各種隨機化技術之間的相互作用及其對學習性能的影響。已有研究表明，將隨機性引入 DNN 的訓練過程，通過各種方法在不同階段進行隨機化，對減少過擬合和提高泛化能力有顯著益處。然而，像權重噪聲、丟棄法（Dropout）等隨機化技術之間的交互作用尚未得到充分理解。因此，如何有效地結合這些方法以優化 DNN 性能仍然是一個挑戰。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-10-31T07:15:27.000Z">
 <meta property="article:modified_time" content="2024-12-28T15:27:05.628Z">
@@ -110,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">1.</span> <span class="nav-text">Reference</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -220,7 +220,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>779</span>
+      <span>780</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -237,13 +237,25 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>本研究提出了一項綜合實證研究，深入探討了深度神經網絡（DNN）中各種隨機化技術之間的相互作用及其對學習性能的影響。已有研究表明，將隨機性引入 DNN 的訓練過程，通過各種方法在不同階段進行隨機化，對減少過擬合和提高泛化能力有顯著益處。然而，像權重噪聲、<strong>丟棄法（Dropout）</strong>等隨機化技術之間的交互作用尚未得到充分理解。因此，如何有效地結合這些方法以優化 DNN 性能仍然是一個挑戰。</p>
-<span id="more"></span>
-<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>為了解決這一問題，我們將現有的隨機化技術分為四個主要類別：分別在數據層面、模型結構層面、優化或學習過程層面引入隨機性。這一分類有助於識別當前隨機化機制的研究空白，並提出了兩種新的隨機化技術：將噪聲引入損失函數以及隨機遮掩梯度更新。</p>
-<p>在實證研究中，我們使用粒子群優化器（PSO）進行超參數優化（HPO），探索不同配置的空間，確定在何處以及注入多少隨機性能最大化 DNN 性能。我們在標準計算機視覺基準數據集（MNIST、FASHION-MNIST、CIFAR10 和 CIFAR100）上評估了各種隨機化技術對 DNN 架構的影響。經過超過 30,000 個配置的評估，我們對隨機化技術之間的相互作用及其對 DNN 性能的綜合影響進行了詳細分析。</p>
-<p>研究結果顯示，數據增強和權重初始化的隨機化是提高性能的主要因素。此外，相關性分析表明，不同的優化器（如 Adam 和帶動量的梯度下降法）在訓練過程中偏好不同類型的隨機化。完整的實現和生成的數據集已公開於 GitHub 上。</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
-<li>Rolling the dice for better deep learning performance: A study of randomness techniques in deep neural networks<br><a target="_blank" rel="noopener" href="https://www.sciencedirect.com/science/article/pii/S0020025524004134">https://www.sciencedirect.com/science/article/pii/S0020025524004134</a></li>
+    <div class="post-body" itemprop="articleBody"><p>本研究提出了一項綜合實證研究，深入探討了深度神經網絡（DNN）中各種隨機化技術之間的相互作用及其對學習性能的影響。已有研究表明，將隨機性引入
+DNN
+的訓練過程，通過各種方法在不同階段進行隨機化，對減少過擬合和提高泛化能力有顯著益處。然而，像權重噪聲、<strong>丟棄法（Dropout）</strong>等隨機化技術之間的交互作用尚未得到充分理解。因此，如何有效地結合這些方法以優化
+DNN 性能仍然是一個挑戰。 <span id="more"></span> # 摘要
+為了解決這一問題，我們將現有的隨機化技術分為四個主要類別：分別在數據層面、模型結構層面、優化或學習過程層面引入隨機性。這一分類有助於識別當前隨機化機制的研究空白，並提出了兩種新的隨機化技術：將噪聲引入損失函數以及隨機遮掩梯度更新。</p>
+<p>在實證研究中，我們使用粒子群優化器（PSO）進行超參數優化（HPO），探索不同配置的空間，確定在何處以及注入多少隨機性能最大化
+DNN 性能。我們在標準計算機視覺基準數據集（MNIST、FASHION-MNIST、CIFAR10
+和 CIFAR100）上評估了各種隨機化技術對 DNN 架構的影響。經過超過 30,000
+個配置的評估，我們對隨機化技術之間的相互作用及其對 DNN
+性能的綜合影響進行了詳細分析。</p>
+<p>研究結果顯示，數據增強和權重初始化的隨機化是提高性能的主要因素。此外，相關性分析表明，不同的優化器（如
+Adam
+和帶動量的梯度下降法）在訓練過程中偏好不同類型的隨機化。完整的實現和生成的數據集已公開於
+GitHub 上。</p>
+<h1 id="reference">Reference</h1>
+<ol type="1">
+<li>Rolling the dice for better deep learning performance: A study of
+randomness techniques in deep neural networks
+https://www.sciencedirect.com/science/article/pii/S0020025524004134</li>
 </ol>
 
     </div>
@@ -296,13 +308,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">291k</span>
+    <span title="總字數">289k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:49</span>
+    <span title="所需總閱讀時間">8:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

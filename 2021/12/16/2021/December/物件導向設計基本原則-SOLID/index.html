@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Single Responsibility Principle (SRP) Open &#x2F; Close Principle (OCP)    Liskov Substitution Principle (LSP) Interface Segregation Principle (ISP) Dependency Inversion Principle (DIP)">
+    <meta name="description" content="Single Responsibility Principle (SRP) Open &#x2F; Close Principle (OCP)  Liskov Substitution Principle (LSP) Interface Segregation Principle (ISP) Dependency Inversion Principle (DIP)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="物件導向設計基本原則 SOLID">
 <meta property="og:url" content="https://leonicehot.github.io/2021/12/16/2021/December/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E8%A8%AD%E8%A8%88%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%89%87-SOLID/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="Single Responsibility Principle (SRP) Open &#x2F; Close Principle (OCP)    Liskov Substitution Principle (LSP) Interface Segregation Principle (ISP) Dependency Inversion Principle (DIP)">
+<meta property="og:description" content="Single Responsibility Principle (SRP) Open &#x2F; Close Principle (OCP)  Liskov Substitution Principle (LSP) Interface Segregation Principle (ISP) Dependency Inversion Principle (DIP)">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2021-12-15T23:03:40.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:34.229Z">
@@ -110,7 +110,11 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Single-Responsibility-Principle-SRP"><span class="nav-number">1.</span> <span class="nav-text">Single Responsibility Principle (SRP)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Open-Close-Principle-OCP"><span class="nav-number">2.</span> <span class="nav-text">Open &#x2F; Close Principle (OCP)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Liskov-Substitution-Principle-LSP"><span class="nav-number">3.</span> <span class="nav-text">Liskov Substitution Principle (LSP)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Interface-Segregation-Principle-ISP"><span class="nav-number">4.</span> <span class="nav-text">Interface Segregation Principle (ISP)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dependency-Inversion-Principle-DIP"><span class="nav-number">5.</span> <span class="nav-text">Dependency Inversion Principle (DIP)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">6.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#single-responsibility-principle-srp"><span class="nav-number">1.</span> <span class="nav-text">Single Responsibility
+Principle (SRP)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#open-close-principle-ocp"><span class="nav-number">2.</span> <span class="nav-text">Open &#x2F; Close Principle (OCP)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#liskov-substitution-principle-lsp"><span class="nav-number">3.</span> <span class="nav-text">Liskov Substitution Principle
+(LSP)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#interface-segregation-principle-isp"><span class="nav-number">4.</span> <span class="nav-text">Interface Segregation
+Principle (ISP)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dependency-inversion-principle-dip"><span class="nav-number">5.</span> <span class="nav-text">Dependency Inversion
+Principle (DIP)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">6.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -220,7 +224,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>2.7k</span>
+      <span>2.6k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -237,35 +241,77 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><ol>
+    <div class="post-body" itemprop="articleBody"><ol type="1">
 <li>Single Responsibility Principle (SRP)</li>
-<li>Open &#x2F; Close Principle (OCP)   </li>
+<li>Open / Close Principle (OCP)<br>
+</li>
 <li>Liskov Substitution Principle (LSP)</li>
 <li>Interface Segregation Principle (ISP)</li>
-<li>Dependency Inversion Principle (DIP)<span id="more"></span></li>
+<li>Dependency Inversion Principle (DIP) <span id="more"></span></li>
 </ol>
-<h1 id="Single-Responsibility-Principle-SRP"><a href="#Single-Responsibility-Principle-SRP" class="headerlink" title="Single Responsibility Principle (SRP)"></a>Single Responsibility Principle (SRP)</h1><p>“a class should have one, and only one, reason to change.”<br>Following this principle means that each class only does one thing and every class or module only has responsibility for one part of the software’s functionality.<br>More simply, each class should solve only one problem.</p>
-<p>單一職責原則（Single Responsibility Principle，簡稱 SRP）是一種軟體開發原則，主張一個類別或模組只負責單一的職責，也就是說，一個類別或模組應該只有一個變化的原因。如果一個類別或模組負責多個職責，那麼當其中一個職責變化時，可能會影響到其他職責，進而增加代碼的複雜度，使代碼難以維護和測試。</p>
-<p>SRP 的實現方式是將相關的職責放在同一個類別或模組中，並且讓該類別或模組只專注於這些職責。這樣做的好處是可以降低代碼的複雜度，提高代碼的可讀性和可維護性，同時也可以使代碼更容易進行單元測試和集成測試。</p>
-<p>SRP 是物件導向設計中的一個基本原則，也適用於其他軟體開發領域，如函數式編程、系統架構等。在實際開發中，遵循 SRP 可以幫助我們設計出更加清晰、可讀、可維護的代碼，並且提高開發效率和品質。</p>
-<h1 id="Open-Close-Principle-OCP"><a href="#Open-Close-Principle-OCP" class="headerlink" title="Open &#x2F; Close Principle (OCP)"></a>Open &#x2F; Close Principle (OCP)</h1><p>開放封閉原則（Open&#x2F;Closed Principle，簡稱 OCP）是一種軟體開發原則，它主張軟體設計應該對擴展開放，對修改封閉。也就是說，軟體的設計應該能夠容易地擴展功能，而不需要修改已經存在的程式碼。這樣做可以使程式碼更加穩定，減少引入錯誤的可能性，同時也可以提高代碼的可維護性和可讀性。</p>
-<p>OCP 的實現方式是通過將程式碼中的可變因素抽象出來，形成獨立的模組或類別，讓這些模組或類別能夠擴展功能，同時保持原有程式碼的穩定性。這樣做的好處是可以讓程式碼更加容易進行擴展，同時也可以提高代碼的可讀性和可維護性，降低代碼的複雜度。</p>
-<p>OCP 是物件導向設計中的一個基本原則，也適用於其他軟體開發領域，如函數式編程、系統架構等。在實際開發中，遵循 OCP 可以幫助我們設計出更加穩定、可擴展、可維護的程式碼，同時也可以提高開發效率和品質。</p>
-<h1 id="Liskov-Substitution-Principle-LSP"><a href="#Liskov-Substitution-Principle-LSP" class="headerlink" title="Liskov Substitution Principle (LSP)"></a>Liskov Substitution Principle (LSP)</h1><p>Liskov 替換原則（Liskov Substitution Principle，簡稱 LSP）是物件導向設計的一個基本原則，它是由麻省理工學院計算機科學教授 Barbara Liskov 提出的。LSP 的基本思想是：子類別應該能夠替換它們的父類別，而程序還是能夠正常運行。</p>
-<p>簡單來說，LSP 要求在任何使用父類別的地方都應該能夠使用它的子類別，而不會破壞程式的正常運行。換句話說，子類別必須能夠完全替代父類別，而不會引入任何新的錯誤或副作用。</p>
-<p>LSP 的實現方式是通過使用多態性來保證子類別的替換性。多態性是指，一個對象可以被看作是它所屬的任何一個類別的實例，並且可以根據上下文自動選擇使用哪個方法實現。</p>
-<p>在實際開發中，遵循 LSP 可以幫助我們設計出更加靈活、可擴展、易維護的程式碼，同時也可以降低代碼的耦合度，提高代碼的重用性。</p>
-<h1 id="Interface-Segregation-Principle-ISP"><a href="#Interface-Segregation-Principle-ISP" class="headerlink" title="Interface Segregation Principle (ISP)"></a>Interface Segregation Principle (ISP)</h1><p>介面隔離原則（Interface Segregation Principle，簡稱 ISP）是物件導向設計的一個基本原則，它要求使用多個小型、高度聚焦的介面，而不是使用一個大型的、不相關的介面。這樣做的好處是可以讓類別只依賴於它們需要的介面，而不依賴於沒有用到的介面，從而降低類別之間的耦合度，提高代碼的可讀性和可維護性。</p>
-<p>ISP 的基本思想是：一個類別不應該被迫依賴於它不需要使用的介面。如果一個介面太大而且不相關，那麼它就會變得脆弱且容易出錯。相反，如果我們將這個介面拆分成多個小型、相關的介面，那麼就可以讓每個類別只依賴於它需要的介面，從而提高程式碼的靈活性和可擴展性。</p>
-<p>ISP 的實現方式是通過設計合理的介面，將不同的功能拆分成不同的介面，從而讓每個類別只依賴於它需要的介面。這樣做的好處是可以讓類別更加簡潔、易於理解和維護，同時也可以提高程式碼的可讀性和可維護性。</p>
-<p>在實際開發中，遵循 ISP 可以幫助我們設計出更加靈活、易擴展、易維護的程式碼，同時也可以提高程式碼的可讀性和可維護性。</p>
-<h1 id="Dependency-Inversion-Principle-DIP"><a href="#Dependency-Inversion-Principle-DIP" class="headerlink" title="Dependency Inversion Principle (DIP)"></a>Dependency Inversion Principle (DIP)</h1><p>Abstractions should not depend on details.<br>Details should depend on abstractions.</p>
+<h1 id="single-responsibility-principle-srp">Single Responsibility
+Principle (SRP)</h1>
+<p>“a class should have one, and only one, reason to change.” Following
+this principle means that each class only does one thing and every class
+or module only has responsibility for one part of the software’s
+functionality. More simply, each class should solve only one
+problem.</p>
+<p>單一職責原則（Single Responsibility Principle，簡稱
+SRP）是一種軟體開發原則，主張一個類別或模組只負責單一的職責，也就是說，一個類別或模組應該只有一個變化的原因。如果一個類別或模組負責多個職責，那麼當其中一個職責變化時，可能會影響到其他職責，進而增加代碼的複雜度，使代碼難以維護和測試。</p>
+<p>SRP
+的實現方式是將相關的職責放在同一個類別或模組中，並且讓該類別或模組只專注於這些職責。這樣做的好處是可以降低代碼的複雜度，提高代碼的可讀性和可維護性，同時也可以使代碼更容易進行單元測試和集成測試。</p>
+<p>SRP
+是物件導向設計中的一個基本原則，也適用於其他軟體開發領域，如函數式編程、系統架構等。在實際開發中，遵循
+SRP
+可以幫助我們設計出更加清晰、可讀、可維護的代碼，並且提高開發效率和品質。</p>
+<h1 id="open-close-principle-ocp">Open / Close Principle (OCP)</h1>
+<p>開放封閉原則（Open/Closed Principle，簡稱
+OCP）是一種軟體開發原則，它主張軟體設計應該對擴展開放，對修改封閉。也就是說，軟體的設計應該能夠容易地擴展功能，而不需要修改已經存在的程式碼。這樣做可以使程式碼更加穩定，減少引入錯誤的可能性，同時也可以提高代碼的可維護性和可讀性。</p>
+<p>OCP
+的實現方式是通過將程式碼中的可變因素抽象出來，形成獨立的模組或類別，讓這些模組或類別能夠擴展功能，同時保持原有程式碼的穩定性。這樣做的好處是可以讓程式碼更加容易進行擴展，同時也可以提高代碼的可讀性和可維護性，降低代碼的複雜度。</p>
+<p>OCP
+是物件導向設計中的一個基本原則，也適用於其他軟體開發領域，如函數式編程、系統架構等。在實際開發中，遵循
+OCP
+可以幫助我們設計出更加穩定、可擴展、可維護的程式碼，同時也可以提高開發效率和品質。</p>
+<h1 id="liskov-substitution-principle-lsp">Liskov Substitution Principle
+(LSP)</h1>
+<p>Liskov 替換原則（Liskov Substitution Principle，簡稱
+LSP）是物件導向設計的一個基本原則，它是由麻省理工學院計算機科學教授
+Barbara Liskov 提出的。LSP
+的基本思想是：子類別應該能夠替換它們的父類別，而程序還是能夠正常運行。</p>
+<p>簡單來說，LSP
+要求在任何使用父類別的地方都應該能夠使用它的子類別，而不會破壞程式的正常運行。換句話說，子類別必須能夠完全替代父類別，而不會引入任何新的錯誤或副作用。</p>
+<p>LSP
+的實現方式是通過使用多態性來保證子類別的替換性。多態性是指，一個對象可以被看作是它所屬的任何一個類別的實例，並且可以根據上下文自動選擇使用哪個方法實現。</p>
+<p>在實際開發中，遵循 LSP
+可以幫助我們設計出更加靈活、可擴展、易維護的程式碼，同時也可以降低代碼的耦合度，提高代碼的重用性。</p>
+<h1 id="interface-segregation-principle-isp">Interface Segregation
+Principle (ISP)</h1>
+<p>介面隔離原則（Interface Segregation Principle，簡稱
+ISP）是物件導向設計的一個基本原則，它要求使用多個小型、高度聚焦的介面，而不是使用一個大型的、不相關的介面。這樣做的好處是可以讓類別只依賴於它們需要的介面，而不依賴於沒有用到的介面，從而降低類別之間的耦合度，提高代碼的可讀性和可維護性。</p>
+<p>ISP
+的基本思想是：一個類別不應該被迫依賴於它不需要使用的介面。如果一個介面太大而且不相關，那麼它就會變得脆弱且容易出錯。相反，如果我們將這個介面拆分成多個小型、相關的介面，那麼就可以讓每個類別只依賴於它需要的介面，從而提高程式碼的靈活性和可擴展性。</p>
+<p>ISP
+的實現方式是通過設計合理的介面，將不同的功能拆分成不同的介面，從而讓每個類別只依賴於它需要的介面。這樣做的好處是可以讓類別更加簡潔、易於理解和維護，同時也可以提高程式碼的可讀性和可維護性。</p>
+<p>在實際開發中，遵循 ISP
+可以幫助我們設計出更加靈活、易擴展、易維護的程式碼，同時也可以提高程式碼的可讀性和可維護性。</p>
+<h1 id="dependency-inversion-principle-dip">Dependency Inversion
+Principle (DIP)</h1>
+<p>Abstractions should not depend on details. Details should depend on
+abstractions.</p>
 <p>軟體開發應依賴抽象化的概念，而非依賴實作細節，透過抽象化來理解核心概念，快速掌握日新月異的技術。</p>
-<p>依賴反轉原則（Dependency Inversion Principle，簡稱 DIP）是面向對象設計的一個基本原則，它要求高層模組不應該依賴低層模組，而是應該依賴抽象介面。同時，具體類別也不應該依賴於抽象介面，而是應該依賴於低層模組提供的具體實現。</p>
-<p>DIP 的基本思想是：高層模組不應該依賴於低層模組，因為這樣會使得高層模組的設計依賴於低層模組的具體實現，從而降低代碼的靈活性和可擴展性。相反，高層模組應該依賴於抽象介面，從而使得高層模組的設計不依賴於低層模組的具體實現。</p>
-<p>DIP 的實現方式是通過使用介面、抽象類別或者委託等技術，將高層模組和低層模組解耦，從而提高代碼的靈活性和可擴展性。同時，DIP 也要求遵循開放-封閉原則（OCP），進一步提高代碼的可維護性和可擴展性。</p>
-<p>在實際開發中，遵循 DIP 可以幫助我們設計出更加靈活、易擴展、易維護的程式碼，同時也可以提高程式碼的可讀性和可維護性。</p>
-<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p>The Importance of SOLID Design Principles<br><a target="_blank" rel="noopener" href="https://www.bmc.com/blogs/solid-design-principles/#">https://www.bmc.com/blogs/solid-design-principles/#</a></p>
+<p>依賴反轉原則（Dependency Inversion Principle，簡稱
+DIP）是面向對象設計的一個基本原則，它要求高層模組不應該依賴低層模組，而是應該依賴抽象介面。同時，具體類別也不應該依賴於抽象介面，而是應該依賴於低層模組提供的具體實現。</p>
+<p>DIP
+的基本思想是：高層模組不應該依賴於低層模組，因為這樣會使得高層模組的設計依賴於低層模組的具體實現，從而降低代碼的靈活性和可擴展性。相反，高層模組應該依賴於抽象介面，從而使得高層模組的設計不依賴於低層模組的具體實現。</p>
+<p>DIP
+的實現方式是通過使用介面、抽象類別或者委託等技術，將高層模組和低層模組解耦，從而提高代碼的靈活性和可擴展性。同時，DIP
+也要求遵循開放-封閉原則（OCP），進一步提高代碼的可維護性和可擴展性。</p>
+<p>在實際開發中，遵循 DIP
+可以幫助我們設計出更加靈活、易擴展、易維護的程式碼，同時也可以提高程式碼的可讀性和可維護性。</p>
+<h1 id="參考資料">參考資料</h1>
+<p>The Importance of SOLID Design Principles
+https://www.bmc.com/blogs/solid-design-principles/#</p>
 
     </div>
 
@@ -317,13 +363,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">291k</span>
+    <span title="總字數">289k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:49</span>
+    <span title="所需總閱讀時間">8:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動

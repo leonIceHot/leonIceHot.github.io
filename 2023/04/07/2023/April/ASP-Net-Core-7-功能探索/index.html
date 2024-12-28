@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介最近專案實作Web API的功能，看著.Net Framework 升至 .Net Core ，現在已經到.Net Core 7，c#版本已經到11，這段期間的技術演進迅速，開始注意一些新的功能">
+    <meta name="description" content="簡介 最近專案實作Web API的功能， 看著.Net Framework 升至 .Net Core ， 現在已經到.Net Core 7，c#版本已經到11， 這段期間的技術演進迅速，開始注意一些新的功能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ASP.Net Core 7 功能探索">
 <meta property="og:url" content="https://leonicehot.github.io/2023/04/07/2023/April/ASP-Net-Core-7-%E5%8A%9F%E8%83%BD%E6%8E%A2%E7%B4%A2/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介最近專案實作Web API的功能，看著.Net Framework 升至 .Net Core ，現在已經到.Net Core 7，c#版本已經到11，這段期間的技術演進迅速，開始注意一些新的功能">
+<meta property="og:description" content="簡介 最近專案實作Web API的功能， 看著.Net Framework 升至 .Net Core ， 現在已經到.Net Core 7，c#版本已經到11， 這段期間的技術演進迅速，開始注意一些新的功能">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-04-06T23:47:55.000Z">
 <meta property="article:modified_time" content="2024-12-11T10:57:35.162Z">
@@ -110,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%B4%B9"><span class="nav-number">2.</span> <span class="nav-text">背景介紹</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%99%E5%AD%B8"><span class="nav-number">3.</span> <span class="nav-text">教學</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%86%91%E8%AD%89%E6%9B%B4%E6%96%B0"><span class="nav-number">4.</span> <span class="nav-text">憑證更新</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%B4%B9"><span class="nav-number">2.</span> <span class="nav-text">背景介紹</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%99%E5%AD%B8"><span class="nav-number">3.</span> <span class="nav-text">教學</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%86%91%E8%AD%89%E6%9B%B4%E6%96%B0"><span class="nav-number">4.</span> <span class="nav-text">憑證更新</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#openapi"><span class="nav-number">5.</span> <span class="nav-text">OpenAPI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#asp.net-core-c-11"><span class="nav-number">6.</span> <span class="nav-text">ASP.Net Core c# 11</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#references"><span class="nav-number">7.</span> <span class="nav-text">References</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -228,14 +228,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>3.5k</span>
+      <span>2.7k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>6 分鐘</span>
+      <span>5 分鐘</span>
     </span>
 </div>
 
@@ -245,56 +245,84 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>最近專案實作Web API的功能，<br>看著.Net Framework 升至 .Net Core ，<br>現在已經到.Net Core 7，c#版本已經到11，<br>這段期間的技術演進迅速，開始注意一些新的功能</p>
-<span id="more"></span>
-
-<h1 id="背景介紹"><a href="#背景介紹" class="headerlink" title="背景介紹"></a>背景介紹</h1><p>ASP.NET Core 是一種開源的 Web 應用程序框架，是微軟開發的下一代 ASP.NET 框架，用於構建跨平臺的 Web 應用程序和服務。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
+<p>最近專案實作Web API的功能， 看著.Net Framework 升至 .Net Core ，
+現在已經到.Net Core 7，c#版本已經到11，
+這段期間的技術演進迅速，開始注意一些新的功能 <span id="more"></span></p>
+<h1 id="背景介紹">背景介紹</h1>
+<p>ASP.NET Core 是一種開源的 Web 應用程序框架，是微軟開發的下一代
+ASP.NET 框架，用於構建跨平臺的 Web 應用程序和服務。</p>
 <p>以下是 ASP.NET Core 的一些主要特點：</p>
-<p>跨平臺支持：ASP.NET Core 可以在 Windows、macOS、Linux 上運行，支持 .NET Core 和 .NET Framework 。</p>
+<p>跨平臺支持：ASP.NET Core 可以在 Windows、macOS、Linux 上運行，支持
+.NET Core 和 .NET Framework 。</p>
 <p>開放原始碼：ASP.NET Core 是開放源碼的，並且擁有活躍的社區和支持。</p>
-<p>高性能：ASP.NET Core 可以通過最小化 HTTP 請求和响應流量來提高性能，並且內置了內存緩存和分佈式緩存支持。</p>
-<p>模組化設計：ASP.NET Core 可以通過 NuGet 包管理器添加或刪除模塊，使開發人員更容易地構建和擴展應用程序。</p>
-<p>支持多種開發模型：ASP.NET Core 支持 MVC、Web API、Razor Pages 等多種開發模型，開發人員可以根據項目需要選擇合適的模型。</p>
-<p>內置依賴注入：ASP.NET Core 內置依賴注入，使得開發人員可以更加方便地編寫可測試、可維護的代碼。</p>
-<p>安全性：ASP.NET Core 內置安全性功能，包括身份驗證、授權、防止跨站請求等，可以保護應用程序免受各種安全威脅。</p>
-<p>總體來說，ASP.NET Core 提供了一個強大而靈活的框架，使得開發人員可以快速地構建高性能、安全性、可測試的 Web 應用程序和服務。</p>
-<h1 id="教學"><a href="#教學" class="headerlink" title="教學"></a>教學</h1><ol>
-<li><p>ASP.Net Core Web API 入門教學<br><a target="_blank" rel="noopener" href="https://blog.talllkai.com/ASPNETCore/Catalog">https://blog.talllkai.com/ASPNETCore/Catalog</a></p>
-</li>
-<li><p>我與 ASP.NET Core 的 30天 系列<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20129389/ironman/3185">https://ithelp.ithome.com.tw/users/20129389/ironman/3185</a></p>
-</li>
-<li><p>.NET Core MVC網頁應用開發 系列<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20107452/ironman/4561">https://ithelp.ithome.com.tw/users/20107452/ironman/4561</a></p>
-</li>
+<p>高性能：ASP.NET Core 可以通過最小化 HTTP
+請求和响應流量來提高性能，並且內置了內存緩存和分佈式緩存支持。</p>
+<p>模組化設計：ASP.NET Core 可以通過 NuGet
+包管理器添加或刪除模塊，使開發人員更容易地構建和擴展應用程序。</p>
+<p>支持多種開發模型：ASP.NET Core 支持 MVC、Web API、Razor Pages
+等多種開發模型，開發人員可以根據項目需要選擇合適的模型。</p>
+<p>內置依賴注入：ASP.NET Core
+內置依賴注入，使得開發人員可以更加方便地編寫可測試、可維護的代碼。</p>
+<p>安全性：ASP.NET Core
+內置安全性功能，包括身份驗證、授權、防止跨站請求等，可以保護應用程序免受各種安全威脅。</p>
+<p>總體來說，ASP.NET Core
+提供了一個強大而靈活的框架，使得開發人員可以快速地構建高性能、安全性、可測試的
+Web 應用程序和服務。</p>
+<h1 id="教學">教學</h1>
+<ol type="1">
+<li><p>ASP.Net Core Web API 入門教學
+https://blog.talllkai.com/ASPNETCore/Catalog</p></li>
+<li><p>我與 ASP.NET Core 的 30天 系列
+https://ithelp.ithome.com.tw/users/20129389/ironman/3185</p></li>
+<li><p>.NET Core MVC網頁應用開發 系列
+https://ithelp.ithome.com.tw/users/20107452/ironman/4561</p></li>
 </ol>
-<h1 id="憑證更新"><a href="#憑證更新" class="headerlink" title="憑證更新"></a>憑證更新</h1><ul>
-<li>清除舊憑證<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dotnet dev-certs https --clean</span><br></pre></td></tr></table></figure></li>
-<li>安裝新憑證<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">    dotnet dev-certs https --trust</span><br><span class="line">```  </span><br><span class="line">* 檢查到期日與檢察憑證是否受信任</span><br></pre></td></tr></table></figure>
-  dotnet dev-certs https –check –trust<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 黑名單的埠號</span><br><span class="line">HTTP Ports 會介於 5000-5300 之間，</span><br><span class="line">HTTPS Ports 會介於 7000-7300 之間</span><br><span class="line">儲存於Properties/launchSetting.json 檔案中</span><br></pre></td></tr></table></figure>
-  const int kRestrictedPorts[] &#x3D; {<br>  1,      &#x2F;&#x2F; tcpmux<br>  7,      &#x2F;&#x2F; echo<br>  9,      &#x2F;&#x2F; discard<br>  11,     &#x2F;&#x2F; systat<br>  13,     &#x2F;&#x2F; daytime<br>  15,     &#x2F;&#x2F; netstat<br>  17,     &#x2F;&#x2F; qotd<br>  19,     &#x2F;&#x2F; chargen<br>  20,     &#x2F;&#x2F; ftp data<br>  21,     &#x2F;&#x2F; ftp access<br>  22,     &#x2F;&#x2F; ssh<br>  23,     &#x2F;&#x2F; telnet<br>  25,     &#x2F;&#x2F; smtp<br>  37,     &#x2F;&#x2F; time<br>  42,     &#x2F;&#x2F; name<br>  43,     &#x2F;&#x2F; nicname<br>  53,     &#x2F;&#x2F; domain<br>  69,     &#x2F;&#x2F; tftp<br>  77,     &#x2F;&#x2F; priv-rjs<br>  79,     &#x2F;&#x2F; finger<br>  87,     &#x2F;&#x2F; ttylink<br>  95,     &#x2F;&#x2F; supdup<br>  101,    &#x2F;&#x2F; hostriame<br>  102,    &#x2F;&#x2F; iso-tsap<br>  103,    &#x2F;&#x2F; gppitnp<br>  104,    &#x2F;&#x2F; acr-nema<br>  109,    &#x2F;&#x2F; pop2<br>  110,    &#x2F;&#x2F; pop3<br>  111,    &#x2F;&#x2F; sunrpc<br>  113,    &#x2F;&#x2F; auth<br>  115,    &#x2F;&#x2F; sftp<br>  117,    &#x2F;&#x2F; uucp-path<br>  119,    &#x2F;&#x2F; nntp<br>  123,    &#x2F;&#x2F; NTP<br>  135,    &#x2F;&#x2F; loc-srv &#x2F;epmap<br>  137,    &#x2F;&#x2F; netbios<br>  139,    &#x2F;&#x2F; netbios<br>  143,    &#x2F;&#x2F; imap2<br>  161,    &#x2F;&#x2F; snmp<br>  179,    &#x2F;&#x2F; BGP<br>  389,    &#x2F;&#x2F; ldap<br>  427,    &#x2F;&#x2F; SLP (Also used by Apple Filing Protocol)<br>  465,    &#x2F;&#x2F; smtp+ssl<br>  512,    &#x2F;&#x2F; print &#x2F; exec<br>  513,    &#x2F;&#x2F; login<br>  514,    &#x2F;&#x2F; shell<br>  515,    &#x2F;&#x2F; printer<br>  526,    &#x2F;&#x2F; tempo<br>  530,    &#x2F;&#x2F; courier<br>  531,    &#x2F;&#x2F; chat<br>  532,    &#x2F;&#x2F; netnews<br>  540,    &#x2F;&#x2F; uucp<br>  548,    &#x2F;&#x2F; AFP (Apple Filing Protocol)<br>  554,    &#x2F;&#x2F; rtsp<br>  556,    &#x2F;&#x2F; remotefs<br>  563,    &#x2F;&#x2F; nntp+ssl<br>  587,    &#x2F;&#x2F; smtp (rfc6409)<br>  601,    &#x2F;&#x2F; syslog-conn (rfc3195)<br>  636,    &#x2F;&#x2F; ldap+ssl<br>  989,    &#x2F;&#x2F; ftps-data<br>  990,    &#x2F;&#x2F; ftps<br>  993,    &#x2F;&#x2F; ldap+ssl<br>  995,    &#x2F;&#x2F; pop3+ssl<br>  1719,   &#x2F;&#x2F; h323gatestat<br>  1720,   &#x2F;&#x2F; h323hostcall<br>  1723,   &#x2F;&#x2F; pptp<br>  2049,   &#x2F;&#x2F; nfs<br>  3659,   &#x2F;&#x2F; apple-sasl &#x2F; PasswordServer<br>  4045,   &#x2F;&#x2F; lockd<br>  5060,   &#x2F;&#x2F; sip<br>  5061,   &#x2F;&#x2F; sips<br>  6000,   &#x2F;&#x2F; X11<br>  6566,   &#x2F;&#x2F; sane-port<br>  6665,   &#x2F;&#x2F; Alternate IRC [Apple addition]<br>  6666,   &#x2F;&#x2F; Alternate IRC [Apple addition]<br>  6667,   &#x2F;&#x2F; Standard IRC [Apple addition]<br>  6668,   &#x2F;&#x2F; Alternate IRC [Apple addition]<br>  6669,   &#x2F;&#x2F; Alternate IRC [Apple addition]<br>  6697,   &#x2F;&#x2F; IRC + TLS<br>  10080,  &#x2F;&#x2F; Amanda<br>  };<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># Hop Reloaded  熱重載</span><br></pre></td></tr></table></figure>
-  dotnet watch<br>  dotnet watch –no-hot-reload</li>
+<h1 id="憑證更新">憑證更新</h1>
+<ul>
+<li>清除舊憑證 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dotnet dev-certs https --clean</span><br></pre></td></tr></table></figure></li>
+<li>安裝新憑證 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">    dotnet dev-certs https --trust</span><br><span class="line">```  </span><br><span class="line">* 檢查到期日與檢察憑證是否受信任</span><br></pre></td></tr></table></figure> dotnet dev-certs https –check –trust
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 黑名單的埠號</span><br><span class="line">HTTP Ports 會介於 5000-5300 之間，</span><br><span class="line">HTTPS Ports 會介於 7000-7300 之間</span><br><span class="line">儲存於Properties/launchSetting.json 檔案中</span><br></pre></td></tr></table></figure> const int kRestrictedPorts[] = { 1, // tcpmux 7, // echo
+9, // discard 11, // systat 13, // daytime 15, // netstat 17, // qotd
+19, // chargen 20, // ftp data 21, // ftp access 22, // ssh 23, //
+telnet 25, // smtp 37, // time 42, // name 43, // nicname 53, // domain
+69, // tftp 77, // priv-rjs 79, // finger 87, // ttylink 95, // supdup
+101, // hostriame 102, // iso-tsap 103, // gppitnp 104, // acr-nema 109,
+// pop2 110, // pop3 111, // sunrpc 113, // auth 115, // sftp 117, //
+uucp-path 119, // nntp 123, // NTP 135, // loc-srv /epmap 137, //
+netbios 139, // netbios 143, // imap2 161, // snmp 179, // BGP 389, //
+ldap 427, // SLP (Also used by Apple Filing Protocol) 465, // smtp+ssl
+512, // print / exec 513, // login 514, // shell 515, // printer 526, //
+tempo 530, // courier 531, // chat 532, // netnews 540, // uucp 548, //
+AFP (Apple Filing Protocol) 554, // rtsp 556, // remotefs 563, //
+nntp+ssl 587, // smtp (rfc6409) 601, // syslog-conn (rfc3195) 636, //
+ldap+ssl 989, // ftps-data 990, // ftps 993, // ldap+ssl 995, //
+pop3+ssl 1719, // h323gatestat 1720, // h323hostcall 1723, // pptp 2049,
+// nfs 3659, // apple-sasl / PasswordServer 4045, // lockd 5060, // sip
+5061, // sips 6000, // X11 6566, // sane-port 6665, // Alternate IRC
+[Apple addition] 6666, // Alternate IRC [Apple addition] 6667, //
+Standard IRC [Apple addition] 6668, // Alternate IRC [Apple addition]
+6669, // Alternate IRC [Apple addition] 6697, // IRC + TLS 10080, //
+Amanda }; <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># Hop Reloaded  熱重載</span><br></pre></td></tr></table></figure> dotnet watch dotnet watch –no-hot-reload ``` #
+Minimal APIs</li>
+<li>Minimal APIs quick reference
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-7.0</li>
 </ul>
-<pre><code># Minimal APIs
-* Minimal APIs quick reference
-https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-7.0
-
-# OpenAPI
-* Swagger
-https://swagger.io/
-https://www.openapis.org/
-
-# ASP.Net Core c# 11
-https://learn.microsoft.com/zh-tw/dotnet/csharp/whats-new/csharp-11
-
-# References
-1. ASP.NET Core 7 全新功能探索 - 保哥
-https://www.youtube.com/watch?v=N0W8BoVr0jk&amp;ab_channel=STUDY4
-
-2. 開發與部署網站時需注意不要使用到 ERR_UNSAFE_PORT 不安全的埠號
-https://blog.miniasp.com/post/2022/05/02/Dont-use-ERR_UNSAFE_PORT-for-your-website
-
-3. port_util.cc
-https://chromium.googlesource.com/chromium/src.git/+/refs/heads/master/net/base/port_util.cc#52
-</code></pre>
+<h1 id="openapi">OpenAPI</h1>
+<ul>
+<li>Swagger https://swagger.io/ https://www.openapis.org/</li>
+</ul>
+<h1 id="asp.net-core-c-11">ASP.Net Core c# 11</h1>
+<p>https://learn.microsoft.com/zh-tw/dotnet/csharp/whats-new/csharp-11</p>
+<h1 id="references">References</h1>
+<ol type="1">
+<li><p>ASP.NET Core 7 全新功能探索 - 保哥
+https://www.youtube.com/watch?v=N0W8BoVr0jk&amp;ab_channel=STUDY4</p></li>
+<li><p>開發與部署網站時需注意不要使用到 ERR_UNSAFE_PORT 不安全的埠號
+https://blog.miniasp.com/post/2022/05/02/Dont-use-ERR_UNSAFE_PORT-for-your-website</p></li>
+<li><p>port_util.cc
+https://chromium.googlesource.com/chromium/src.git/+/refs/heads/master/net/base/port_util.cc#52</p></li>
+</ol>
 
     </div>
 
@@ -346,13 +374,13 @@ https://chromium.googlesource.com/chromium/src.git/+/refs/heads/master/net/base/
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">291k</span>
+    <span title="總字數">289k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">8:49</span>
+    <span title="所需總閱讀時間">8:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
