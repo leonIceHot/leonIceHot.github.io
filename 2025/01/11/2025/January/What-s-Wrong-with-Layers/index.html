@@ -27,7 +27,7 @@
 <meta property="og:description" content="概念整理">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2025-01-11T01:36:13.000Z">
-<meta property="article:modified_time" content="2025-01-11T03:33:23.070Z">
+<meta property="article:modified_time" content="2025-01-11T03:57:35.955Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
@@ -191,7 +191,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2025-01-11 09:36:13 / 修改時間：11:33:23" itemprop="dateCreated datePublished" datetime="2025-01-11T09:36:13+08:00">2025-01-11</time>
+      <time title="創建時間：2025-01-11 09:36:13 / 修改時間：11:57:35" itemprop="dateCreated datePublished" datetime="2025-01-11T09:36:13+08:00">2025-01-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -275,9 +275,9 @@
 </ol>
 <h2 id="3-ORM-的優點"><a href="#3-ORM-的優點" class="headerlink" title="3. ORM 的優點"></a>3. ORM 的優點</h2><ul>
 <li><strong>開發效率高</strong>：開發者可以使用物件導向的方式操作資料，而不需要直接撰寫大量的 SQL 語句。</li>
-<li><strong>降低代碼重複性</strong>：重複的 CRUD（Create, Read, Update, Delete）操作由 ORM 自動處理，減少了重複代碼。</li>
+<li><strong>降低程式碼重複性</strong>：重複的 CRUD（Create, Read, Update, Delete）操作由 ORM 自動處理，減少了重複程式碼。</li>
 <li><strong>跨資料庫</strong>：ORM 提供了資料庫無關性，允許開發者輕鬆切換不同的資料庫，只需更改設定而不需修改程式碼。</li>
-<li><strong>易於維護</strong>：物件化的程式結構更符合物件導向設計的思想，代碼可讀性和可維護性更高。</li>
+<li><strong>易於維護</strong>：物件化的程式結構更符合物件導向設計的思想，程式碼可讀性和可維護性更高。</li>
 </ul>
 <h2 id="4-ORM-的缺點"><a href="#4-ORM-的缺點" class="headerlink" title="4. ORM 的缺點"></a>4. ORM 的缺點</h2><ul>
 <li><p><strong>效能問題</strong>：由於 ORM 會自動生成 SQL 語句，對於複雜查詢可能會導致效能下降。<br>解決方案：在效能要求高的情況下，可以直接撰寫原生 SQL。</p>
@@ -306,7 +306,7 @@
 <h1 id="階層式架構的偷吃步（Layered-Architecture-Shortcuts）"><a href="#階層式架構的偷吃步（Layered-Architecture-Shortcuts）" class="headerlink" title="階層式架構的偷吃步（Layered Architecture Shortcuts）"></a>階層式架構的偷吃步（Layered Architecture Shortcuts）</h1><p>在實際開發中，為了節省時間或降低複雜性，開發者常會採用一些「偷吃步」來快速實現階層式架構的功能。然而，這些偷吃步雖然能夠加快開發進程，但可能會帶來技術債或影響系統的可維護性和擴展性。</p>
 <h2 id="常見偷吃步及其風險"><a href="#常見偷吃步及其風險" class="headerlink" title="常見偷吃步及其風險"></a>常見偷吃步及其風險</h2><h3 id="1-跳過層級間的邏輯分離"><a href="#1-跳過層級間的邏輯分離" class="headerlink" title="1. 跳過層級間的邏輯分離"></a>1. 跳過層級間的邏輯分離</h3><ul>
 <li><strong>偷吃步</strong>：直接在表示層（UI 層）中操作資料庫或業務邏輯，省略應用層或服務層的封裝。  </li>
-<li><strong>風險</strong>：導致代碼高度耦合，難以維護或重構；若需更換資料庫，必須修改大量 UI 層代碼。</li>
+<li><strong>風險</strong>：導致程式碼高度耦合，難以維護或重構；若需更換資料庫，必須修改大量 UI 層程式碼。</li>
 </ul>
 <h3 id="2-直接使用-SQL-語句代替-ORM"><a href="#2-直接使用-SQL-語句代替-ORM" class="headerlink" title="2. 直接使用 SQL 語句代替 ORM"></a>2. 直接使用 SQL 語句代替 ORM</h3><ul>
 <li><strong>偷吃步</strong>：在應用層中直接撰寫 SQL 語句，跳過 ORM 層的處理。  </li>
@@ -328,12 +328,12 @@
 <h1 id="偷吃步造成的影響"><a href="#偷吃步造成的影響" class="headerlink" title="偷吃步造成的影響"></a>偷吃步造成的影響</h1><p>在採用階層式架構時，雖然適當的偷吃步能加快開發速度，但它可能會對系統的長期發展造成多方面的影響。以下是常見的影響：</p>
 <h2 id="1-技術債累積"><a href="#1-技術債累積" class="headerlink" title="1. 技術債累積"></a>1. 技術債累積</h2><p><strong>說明</strong>：偷吃步往往是為了快速實現功能，但長期未進行重構或改善時，這些快速實現的部分會成為技術債。技術債會降低系統的可維護性，使得後續功能開發和修復變得更加困難。<br><strong>影響</strong>：  </p>
 <ul>
-<li>重構成本高，可能需要大規模重寫代碼。  </li>
+<li>重構成本高，可能需要大規模重寫程式碼。  </li>
 <li>增加開發和維護的時間成本。</li>
 </ul>
 <h2 id="2-系統耦合度增加"><a href="#2-系統耦合度增加" class="headerlink" title="2. 系統耦合度增加"></a>2. 系統耦合度增加</h2><p><strong>說明</strong>：跳過層級分離，或直接在表示層中操作資料庫等偷吃步行為，會導致不同層之間的高度耦合，使得系統難以拆分和修改。<br><strong>影響</strong>：  </p>
 <ul>
-<li>當某一層發生變更時，必須修改多處代碼。  </li>
+<li>當某一層發生變更時，必須修改多處程式碼。  </li>
 <li>降低了模組的可重用性和靈活性。</li>
 </ul>
 <h2 id="3-測試難度增加"><a href="#3-測試難度增加" class="headerlink" title="3. 測試難度增加"></a>3. 測試難度增加</h2><p><strong>說明</strong>：偷吃步會導致業務邏輯和資料存取等操作分散在多個層中，難以單獨測試每個層次。<br><strong>影響</strong>：  </p>
@@ -346,19 +346,19 @@
 <li>系統效能下降，出現響應延遲或資源耗盡問題。  </li>
 <li>隨著系統規模擴大，效能問題可能變得更加嚴重。</li>
 </ul>
-<h2 id="5-團隊協作困難"><a href="#5-團隊協作困難" class="headerlink" title="5. 團隊協作困難"></a>5. 團隊協作困難</h2><p><strong>說明</strong>：不同開發人員可能會使用不同的偷吃步方式，導致代碼風格和架構不一致。<br><strong>影響</strong>：  </p>
+<h2 id="5-團隊協作困難"><a href="#5-團隊協作困難" class="headerlink" title="5. 團隊協作困難"></a>5. 團隊協作困難</h2><p><strong>說明</strong>：不同開發人員可能會使用不同的偷吃步方式，導致程式碼風格和架構不一致。<br><strong>影響</strong>：  </p>
 <ul>
 <li>團隊成員之間的理解和協作困難，增加了溝通成本。  </li>
 <li>新成員上手困難，降低了團隊效率。</li>
 </ul>
-<h2 id="6-系統擴展困難"><a href="#6-系統擴展困難" class="headerlink" title="6. 系統擴展困難"></a>6. 系統擴展困難</h2><p><strong>說明</strong>：偷吃步可能導致代碼結構不合理，當系統需要擴展或引入新功能時，難以在現有基礎上進行擴展。<br><strong>影響</strong>：  </p>
+<h2 id="6-系統擴展困難"><a href="#6-系統擴展困難" class="headerlink" title="6. 系統擴展困難"></a>6. 系統擴展困難</h2><p><strong>說明</strong>：偷吃步可能導致程式碼結構不合理，當系統需要擴展或引入新功能時，難以在現有基礎上進行擴展。<br><strong>影響</strong>：  </p>
 <ul>
 <li>系統無法輕易適應新需求，導致擴展成本高昂。  </li>
 <li>系統可能需要重構或重寫，影響整體開發進度。</li>
 </ul>
 <h2 id="如何減少影響？"><a href="#如何減少影響？" class="headerlink" title="如何減少影響？"></a>如何減少影響？</h2><ol>
 <li><strong>定期重構</strong>：在快速開發後，應定期對偷吃步的部分進行重構，減少技術債。  </li>
-<li><strong>引入代碼審查</strong>：通過代碼審查來發現和糾正偷吃步行為，確保代碼質量。  </li>
+<li><strong>引入程式碼審查</strong>：通過程式碼審查來發現和糾正偷吃步行為，確保程式碼質量。  </li>
 <li><strong>使用設計模式</strong>：適當引入設計模式，減少系統的耦合性，提高可維護性。  </li>
 <li><strong>強化測試</strong>：對於偷吃步部分，應強化測試覆蓋率，確保系統穩定性。</li>
 </ol>
