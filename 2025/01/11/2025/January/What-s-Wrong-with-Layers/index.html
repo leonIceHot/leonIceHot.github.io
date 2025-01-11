@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="概念整理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What&#39;s Wrong with Layers?">
+<meta property="og:url" content="https://leonicehot.github.io/2025/01/11/2025/January/What-s-Wrong-with-Layers/index.html">
+<meta property="og:site_name" content="利醬の休憩房">
+<meta property="og:description" content="概念整理">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2025-01-11T01:36:13.000Z">
+<meta property="article:modified_time" content="2025-01-11T03:29:17.915Z">
+<meta property="article:author" content="利醬">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://leonicehot.github.io/2025/01/11/2025/January/What-s-Wrong-with-Layers/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2025/01/11/2025/January/What-s-Wrong-with-Layers/","path":"2025/01/11/2025/January/What-s-Wrong-with-Layers/","title":"What's Wrong with Layers?"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>What's Wrong with Layers? | 利醬の休憩房</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">利醬の休憩房</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9A%8E%E5%B1%A4%E5%BC%8F%E6%9E%B6%E6%A7%8B%EF%BC%88Layered-Architecture"><span class="nav-number">1.</span> <span class="nav-text">階層式架構（Layered Architecture)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%BB%9F%E9%AB%94%E5%B1%A4%E7%B4%9A%E6%9E%B6%E6%A7%8B"><span class="nav-number">1.1.</span> <span class="nav-text">1. 軟體層級架構</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A6%8B%E5%B1%A4%E6%AC%A1"><span class="nav-number">1.1.1.</span> <span class="nav-text">常見層次</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%B6%B2%E8%B7%AF%E5%B1%A4%E7%B4%9A%E6%9E%B6%E6%A7%8B"><span class="nav-number">1.2.</span> <span class="nav-text">2. 網路層級架構</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OSI-%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B1%A4%E6%AC%A1"><span class="nav-number">1.2.1.</span> <span class="nav-text">OSI 模型的層次</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A0%98%E5%9F%9F%E9%82%8F%E8%BC%AF"><span class="nav-number">2.</span> <span class="nav-text">領域邏輯</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A0%98%E5%9F%9F%E9%82%8F%E8%BC%AF%EF%BC%88Domain-Logic%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">領域邏輯（Domain Logic）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A0%98%E5%9F%9F%E9%82%8F%E8%BC%AF%E7%9A%84%E8%A7%92%E8%89%B2"><span class="nav-number">2.2.</span> <span class="nav-text">領域邏輯的角色</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%A9%E4%BB%B6%E9%97%9C%E4%BF%82%E5%B0%8D%E6%87%89%EF%BC%88Object-Relational-Mapping-ORM%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">物件關係對應（Object-Relational Mapping, ORM）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81-ORM%EF%BC%9F"><span class="nav-number">3.1.</span> <span class="nav-text">1. 為什麼需要 ORM？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-ORM-%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD"><span class="nav-number">3.2.</span> <span class="nav-text">2. ORM 的主要功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-ORM-%E7%9A%84%E5%84%AA%E9%BB%9E"><span class="nav-number">3.3.</span> <span class="nav-text">3. ORM 的優點</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-ORM-%E7%9A%84%E7%BC%BA%E9%BB%9E"><span class="nav-number">3.4.</span> <span class="nav-text">4. ORM 的缺點</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%B8%B8%E8%A6%8B%E7%9A%84-ORM-%E6%A1%86%E6%9E%B6"><span class="nav-number">3.5.</span> <span class="nav-text">5. 常見的 ORM 框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python"><span class="nav-number">3.5.1.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java"><span class="nav-number">3.5.2.</span> <span class="nav-text">Java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C"><span class="nav-number">3.5.3.</span> <span class="nav-text">C#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP"><span class="nav-number">3.5.4.</span> <span class="nav-text">PHP</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9A%8E%E5%B1%A4%E5%BC%8F%E6%9E%B6%E6%A7%8B%E7%9A%84%E5%81%B7%E5%90%83%E6%AD%A5%EF%BC%88Layered-Architecture-Shortcuts%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">階層式架構的偷吃步（Layered Architecture Shortcuts）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A6%8B%E5%81%B7%E5%90%83%E6%AD%A5%E5%8F%8A%E5%85%B6%E9%A2%A8%E9%9A%AA"><span class="nav-number">4.1.</span> <span class="nav-text">常見偷吃步及其風險</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%B7%B3%E9%81%8E%E5%B1%A4%E7%B4%9A%E9%96%93%E7%9A%84%E9%82%8F%E8%BC%AF%E5%88%86%E9%9B%A2"><span class="nav-number">4.1.1.</span> <span class="nav-text">1. 跳過層級間的邏輯分離</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8-SQL-%E8%AA%9E%E5%8F%A5%E4%BB%A3%E6%9B%BF-ORM"><span class="nav-number">4.1.2.</span> <span class="nav-text">2. 直接使用 SQL 語句代替 ORM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%9C%81%E7%95%A5%E6%9C%8D%E5%8B%99%E5%B1%A4%E6%88%96%E6%A5%AD%E5%8B%99%E9%82%8F%E8%BC%AF%E5%B1%A4"><span class="nav-number">4.1.3.</span> <span class="nav-text">3. 省略服務層或業務邏輯層</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E9%81%8E%E5%BA%A6%E4%BE%9D%E8%B3%B4%E5%85%A8%E5%9F%9F%E8%AE%8A%E6%95%B8%E6%88%96%E9%9D%9C%E6%85%8B%E6%96%B9%E6%B3%95"><span class="nav-number">4.1.4.</span> <span class="nav-text">4. 過度依賴全域變數或靜態方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E8%B7%B3%E9%81%8E%E4%BE%8B%E5%A4%96%E8%99%95%E7%90%86"><span class="nav-number">4.1.5.</span> <span class="nav-text">5. 跳過例外處理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%81%B7%E5%90%83%E6%AD%A5%E9%80%A0%E6%88%90%E7%9A%84%E5%BD%B1%E9%9F%BF"><span class="nav-number">5.</span> <span class="nav-text">偷吃步造成的影響</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%8A%80%E8%A1%93%E5%82%B5%E7%B4%AF%E7%A9%8D"><span class="nav-number">5.1.</span> <span class="nav-text">1. 技術債累積</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%B3%BB%E7%B5%B1%E8%80%A6%E5%90%88%E5%BA%A6%E5%A2%9E%E5%8A%A0"><span class="nav-number">5.2.</span> <span class="nav-text">2. 系統耦合度增加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%B8%AC%E8%A9%A6%E9%9B%A3%E5%BA%A6%E5%A2%9E%E5%8A%A0"><span class="nav-number">5.3.</span> <span class="nav-text">3. 測試難度增加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%95%88%E8%83%BD%E5%95%8F%E9%A1%8C"><span class="nav-number">5.4.</span> <span class="nav-text">4. 效能問題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%9C%98%E9%9A%8A%E5%8D%94%E4%BD%9C%E5%9B%B0%E9%9B%A3"><span class="nav-number">5.5.</span> <span class="nav-text">5. 團隊協作困難</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E7%B3%BB%E7%B5%B1%E6%93%B4%E5%B1%95%E5%9B%B0%E9%9B%A3"><span class="nav-number">5.6.</span> <span class="nav-text">6. 系統擴展困難</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%B8%9B%E5%B0%91%E5%BD%B1%E9%9F%BF%EF%BC%9F"><span class="nav-number">5.7.</span> <span class="nav-text">如何減少影響？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">6.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">利醬</p>
+  <div class="site-description" itemprop="description">部落格記載著電腦科學基礎知識、科學應用探討、工程技術之白話筆記。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">152</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">58</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2025/01/11/2025/January/What-s-Wrong-with-Layers/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="部落格記載著電腦科學基礎知識、科學應用探討、工程技術之白話筆記。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="What's Wrong with Layers? | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          What's Wrong with Layers?
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2025-01-11 09:36:13 / 修改時間：11:29:17" itemprop="dateCreated datePublished" datetime="2025-01-11T09:36:13+08:00">2025-01-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Software-Engineering/" itemprop="url" rel="index"><span itemprop="name">Software Engineering</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Software-Engineering/Software-Architecture/" itemprop="url" rel="index"><span itemprop="name">Software Architecture</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>3.5k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>6 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>概念整理</p>
+<span id="more"></span>
+<h1 id="階層式架構（Layered-Architecture"><a href="#階層式架構（Layered-Architecture" class="headerlink" title="階層式架構（Layered Architecture)"></a>階層式架構（Layered Architecture)</h1><p>層級架構是一種將系統按功能劃分為多個層次的設計模式，每一層專注於特定的職責或任務。這種架構廣泛應用於軟體工程、網路設計等領域，目的是提高系統的<strong>可維護性</strong>、<strong>擴展性</strong>與<strong>靈活性</strong>。</p>
+<h2 id="1-軟體層級架構"><a href="#1-軟體層級架構" class="headerlink" title="1. 軟體層級架構"></a>1. 軟體層級架構</h2><p>在軟體開發中，層級架構將系統分為多個獨立的層次，每層處理不同的責任，這樣可以減少耦合性，方便開發與維護。</p>
+<h3 id="常見層次"><a href="#常見層次" class="headerlink" title="常見層次"></a>常見層次</h3><ol>
+<li><p><strong>Presentation Layer</strong><br>負責處理使用者界面和使用者互動，顯示輸出結果並接收輸入。<br><em>例如：</em> 網頁界面、手機應用程式的畫面。</p>
+</li>
+<li><p><strong>Business Layer</strong><br>負責處理核心業務邏輯，執行應用的具體功能。<br><em>例如：</em> 計算網路商店中的訂單總價。</p>
+</li>
+<li><p><strong>Persistence Layer</strong><br>負責與資料庫進行互動，進行資料的讀寫操作。<br><em>例如：</em> 使用 SQL 語句從資料庫中檢索資料。</p>
+</li>
+<li><p><strong>Database Layer</strong><br>負責資料的持久化儲存。<br><em>例如：</em> MySQL、MongoDB 等資料庫系統。</p>
+</li>
+</ol>
+<hr>
+<h2 id="2-網路層級架構"><a href="#2-網路層級架構" class="headerlink" title="2. 網路層級架構"></a>2. 網路層級架構</h2><p>在網路設計中，層級架構用來描述網路協議的分層結構，每一層專注於一個特定的網路功能，這樣可以減少各層之間的依賴，提高協議的靈活性。</p>
+<h3 id="OSI-模型的層次"><a href="#OSI-模型的層次" class="headerlink" title="OSI 模型的層次"></a>OSI 模型的層次</h3><ol>
+<li>實體層（Physical Layer）  </li>
+<li>資料鏈路層（Data Link Layer）  </li>
+<li>網路層（Network Layer）  </li>
+<li>傳輸層（Transport Layer）  </li>
+<li>會話層（Session Layer）  </li>
+<li>表示層（Presentation Layer）  </li>
+<li>應用層（Application Layer）</li>
+</ol>
+<p>每一層只與相鄰的上下層進行通訊，確保模組化設計，便於擴展與維護。</p>
+<hr>
+<h1 id="領域邏輯"><a href="#領域邏輯" class="headerlink" title="領域邏輯"></a>領域邏輯</h1><h2 id="領域邏輯（Domain-Logic）"><a href="#領域邏輯（Domain-Logic）" class="headerlink" title="領域邏輯（Domain Logic）"></a>領域邏輯（Domain Logic）</h2><p>領域邏輯是指在軟體應用中處理核心業務規則的部分，這些業務規則與應用的特定領域或問題空間密切相關。領域邏輯的主要目的是描述和實現應用程序的核心功能，使系統能夠正確地反映真實世界的業務流程。</p>
+<h2 id="領域邏輯的角色"><a href="#領域邏輯的角色" class="headerlink" title="領域邏輯的角色"></a>領域邏輯的角色</h2><p>領域邏輯負責將業務需求轉化為具體的軟體邏輯，它通常位於軟體架構的業務邏輯層或應用層中。這一層不處理用戶界面或數據存儲，而是專注於處理業務邏輯。</p>
+<h1 id="物件關係對應（Object-Relational-Mapping-ORM）"><a href="#物件關係對應（Object-Relational-Mapping-ORM）" class="headerlink" title="物件關係對應（Object-Relational Mapping, ORM）"></a>物件關係對應（Object-Relational Mapping, ORM）</h1><p><strong>物件關係對應（ORM）</strong> 是一種用來解決物件導向程式語言與關係型資料庫之間不匹配問題的技術。它允許開發者使用面向物件的方式來操作資料庫，而不需要直接撰寫 SQL 語句。</p>
+<h2 id="1-為什麼需要-ORM？"><a href="#1-為什麼需要-ORM？" class="headerlink" title="1. 為什麼需要 ORM？"></a>1. 為什麼需要 ORM？</h2><p>關係型資料庫中的資料以表格形式儲存，資料是以行和列的方式結構化表示的。而在物件導向程式設計中，資料是以類別和物件的形式來組織的，這兩種結構之間存在不匹配問題。  </p>
+<p>ORM 透過將資料庫中的表格對應為程式中的類別，將表中的行對應為類別的實例（物件），從而實現物件與資料庫之間的自動轉換。</p>
+<h2 id="2-ORM-的主要功能"><a href="#2-ORM-的主要功能" class="headerlink" title="2. ORM 的主要功能"></a>2. ORM 的主要功能</h2><ol>
+<li><p><strong>資料庫表與類別的對應</strong><br>ORM 將資料庫中的每個表對應為一個類別，表中的每一行對應一個物件，表中的每一列對應類別的屬性。</p>
+</li>
+<li><p><strong>自動生成 SQL 語句</strong><br>開發者只需操作物件，ORM 會自動生成對應的 SQL 語句並執行，例如查詢、插入、更新和刪除操作。</p>
+</li>
+<li><p><strong>關聯管理</strong><br>ORM 支援資料庫中的關聯（如一對一、一對多、多對多）的操作，並將其轉換為物件之間的關係。</p>
+</li>
+<li><p><strong>交易管理</strong><br>ORM 提供交易管理機制，確保資料一致性。</p>
+</li>
+</ol>
+<h2 id="3-ORM-的優點"><a href="#3-ORM-的優點" class="headerlink" title="3. ORM 的優點"></a>3. ORM 的優點</h2><ul>
+<li><strong>開發效率高</strong>：開發者可以使用物件導向的方式操作資料，而不需要直接撰寫大量的 SQL 語句。</li>
+<li><strong>降低代碼重複性</strong>：重複的 CRUD（Create, Read, Update, Delete）操作由 ORM 自動處理，減少了重複代碼。</li>
+<li><strong>跨資料庫</strong>：ORM 提供了資料庫無關性，允許開發者輕鬆切換不同的資料庫，只需更改設定而不需修改程式碼。</li>
+<li><strong>易於維護</strong>：物件化的程式結構更符合物件導向設計的思想，代碼可讀性和可維護性更高。</li>
+</ul>
+<h2 id="4-ORM-的缺點"><a href="#4-ORM-的缺點" class="headerlink" title="4. ORM 的缺點"></a>4. ORM 的缺點</h2><ul>
+<li><p><strong>效能問題</strong>：由於 ORM 會自動生成 SQL 語句，對於複雜查詢可能會導致效能下降。<br>解決方案：在效能要求高的情況下，可以直接撰寫原生 SQL。</p>
+</li>
+<li><p><strong>學習曲線</strong>：學習如何使用 ORM 以及理解其背後的對應原理需要一定的時間。</p>
+</li>
+<li><p><strong>過度抽象</strong>：某些情況下，ORM 的高層次抽象會讓開發者對底層 SQL 操作缺乏掌控力。</p>
+</li>
+</ul>
+<h2 id="5-常見的-ORM-框架"><a href="#5-常見的-ORM-框架" class="headerlink" title="5. 常見的 ORM 框架"></a>5. 常見的 ORM 框架</h2><h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><ul>
+<li><strong>SQLAlchemy</strong>：功能強大的 Python ORM，支援原生 SQL 和高級 ORM 操作。</li>
+<li><strong>Django ORM</strong>：Django 框架內建的 ORM，簡單易用，適合快速開發。</li>
+</ul>
+<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><ul>
+<li><strong>Hibernate</strong>：最流行的 Java ORM 框架，支援高度自動化的資料庫操作和關聯管理。</li>
+<li><strong>JPA（Java Persistence API）</strong>：Java EE 的標準 ORM 規範，Hibernate 是其最常見的實現。</li>
+</ul>
+<h3 id="C"><a href="#C" class="headerlink" title="C#"></a>C#</h3><ul>
+<li><strong>Entity Framework</strong>：微軟提供的 C# ORM，與 .NET 平台緊密集成，適合企業級應用開發。</li>
+</ul>
+<h3 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h3><ul>
+<li><strong>Doctrine</strong>：功能強大的 PHP ORM，支援多種資料庫和複雜的關聯操作。</li>
+<li><strong>Eloquent</strong>：Laravel 框架內建的 ORM，語法簡單，易於使用。</li>
+</ul>
+<hr>
+<h1 id="階層式架構的偷吃步（Layered-Architecture-Shortcuts）"><a href="#階層式架構的偷吃步（Layered-Architecture-Shortcuts）" class="headerlink" title="階層式架構的偷吃步（Layered Architecture Shortcuts）"></a>階層式架構的偷吃步（Layered Architecture Shortcuts）</h1><p>在實際開發中，為了節省時間或降低複雜性，開發者常會採用一些「偷吃步」來快速實現階層式架構的功能。然而，這些偷吃步雖然能夠加快開發進程，但可能會帶來技術債或影響系統的可維護性和擴展性。</p>
+<h2 id="常見偷吃步及其風險"><a href="#常見偷吃步及其風險" class="headerlink" title="常見偷吃步及其風險"></a>常見偷吃步及其風險</h2><h3 id="1-跳過層級間的邏輯分離"><a href="#1-跳過層級間的邏輯分離" class="headerlink" title="1. 跳過層級間的邏輯分離"></a>1. 跳過層級間的邏輯分離</h3><ul>
+<li><strong>偷吃步</strong>：直接在表示層（UI 層）中操作資料庫或業務邏輯，省略應用層或服務層的封裝。  </li>
+<li><strong>風險</strong>：導致代碼高度耦合，難以維護或重構；若需更換資料庫，必須修改大量 UI 層代碼。</li>
+</ul>
+<h3 id="2-直接使用-SQL-語句代替-ORM"><a href="#2-直接使用-SQL-語句代替-ORM" class="headerlink" title="2. 直接使用 SQL 語句代替 ORM"></a>2. 直接使用 SQL 語句代替 ORM</h3><ul>
+<li><strong>偷吃步</strong>：在應用層中直接撰寫 SQL 語句，跳過 ORM 層的處理。  </li>
+<li><strong>風險</strong>：失去 ORM 的跨資料庫能力，增加 SQL 語句的重複性和錯誤風險。</li>
+</ul>
+<h3 id="3-省略服務層或業務邏輯層"><a href="#3-省略服務層或業務邏輯層" class="headerlink" title="3. 省略服務層或業務邏輯層"></a>3. 省略服務層或業務邏輯層</h3><ul>
+<li><strong>偷吃步</strong>：將業務邏輯直接放在表示層或資料訪問層中，省略專門的業務邏輯層。  </li>
+<li><strong>風險</strong>：業務邏輯分散，難以測試和重用，當業務邏輯變更時，修改範圍會擴大。</li>
+</ul>
+<h3 id="4-過度依賴全域變數或靜態方法"><a href="#4-過度依賴全域變數或靜態方法" class="headerlink" title="4. 過度依賴全域變數或靜態方法"></a>4. 過度依賴全域變數或靜態方法</h3><ul>
+<li><strong>偷吃步</strong>：為了快速實現跨層通訊，使用全域變數或靜態方法來傳遞資料。  </li>
+<li><strong>風險</strong>：引入隱性依賴，增加調試和追蹤錯誤的難度。</li>
+</ul>
+<h3 id="5-跳過例外處理"><a href="#5-跳過例外處理" class="headerlink" title="5. 跳過例外處理"></a>5. 跳過例外處理</h3><ul>
+<li><strong>偷吃步</strong>：在資料訪問層或業務邏輯層中省略例外處理機制。  </li>
+<li><strong>風險</strong>：當資料庫或業務邏輯出現異常時，無法提供友好的錯誤回報，影響用戶體驗。</li>
+</ul>
+<hr>
+<h1 id="偷吃步造成的影響"><a href="#偷吃步造成的影響" class="headerlink" title="偷吃步造成的影響"></a>偷吃步造成的影響</h1><p>在採用階層式架構時，雖然適當的偷吃步能加快開發速度，但它可能會對系統的長期發展造成多方面的影響。以下是常見的影響：</p>
+<h2 id="1-技術債累積"><a href="#1-技術債累積" class="headerlink" title="1. 技術債累積"></a>1. 技術債累積</h2><p><strong>說明</strong>：偷吃步往往是為了快速實現功能，但長期未進行重構或改善時，這些快速實現的部分會成為技術債。技術債會降低系統的可維護性，使得後續功能開發和修復變得更加困難。<br><strong>影響</strong>：  </p>
+<ul>
+<li>重構成本高，可能需要大規模重寫代碼。  </li>
+<li>增加開發和維護的時間成本。</li>
+</ul>
+<h2 id="2-系統耦合度增加"><a href="#2-系統耦合度增加" class="headerlink" title="2. 系統耦合度增加"></a>2. 系統耦合度增加</h2><p><strong>說明</strong>：跳過層級分離，或直接在表示層中操作資料庫等偷吃步行為，會導致不同層之間的高度耦合，使得系統難以拆分和修改。<br><strong>影響</strong>：  </p>
+<ul>
+<li>當某一層發生變更時，必須修改多處代碼。  </li>
+<li>降低了模組的可重用性和靈活性。</li>
+</ul>
+<h2 id="3-測試難度增加"><a href="#3-測試難度增加" class="headerlink" title="3. 測試難度增加"></a>3. 測試難度增加</h2><p><strong>說明</strong>：偷吃步會導致業務邏輯和資料存取等操作分散在多個層中，難以單獨測試每個層次。<br><strong>影響</strong>：  </p>
+<ul>
+<li>測試覆蓋率不足，增加了錯誤發生的風險。  </li>
+<li>單元測試和自動化測試的難度加大，降低了測試效率。</li>
+</ul>
+<h2 id="4-效能問題"><a href="#4-效能問題" class="headerlink" title="4. 效能問題"></a>4. 效能問題</h2><p><strong>說明</strong>：直接操作資料庫或省略層級會導致未經優化的查詢和不合理的資源使用。例如，直接使用未經封裝的 SQL 語句，可能導致重複查詢或大範圍的資料檢索。<br><strong>影響</strong>：  </p>
+<ul>
+<li>系統效能下降，出現響應延遲或資源耗盡問題。  </li>
+<li>隨著系統規模擴大，效能問題可能變得更加嚴重。</li>
+</ul>
+<h2 id="5-團隊協作困難"><a href="#5-團隊協作困難" class="headerlink" title="5. 團隊協作困難"></a>5. 團隊協作困難</h2><p><strong>說明</strong>：不同開發人員可能會使用不同的偷吃步方式，導致代碼風格和架構不一致。<br><strong>影響</strong>：  </p>
+<ul>
+<li>團隊成員之間的理解和協作困難，增加了溝通成本。  </li>
+<li>新成員上手困難，降低了團隊效率。</li>
+</ul>
+<h2 id="6-系統擴展困難"><a href="#6-系統擴展困難" class="headerlink" title="6. 系統擴展困難"></a>6. 系統擴展困難</h2><p><strong>說明</strong>：偷吃步可能導致代碼結構不合理，當系統需要擴展或引入新功能時，難以在現有基礎上進行擴展。<br><strong>影響</strong>：  </p>
+<ul>
+<li>系統無法輕易適應新需求，導致擴展成本高昂。  </li>
+<li>系統可能需要重構或重寫，影響整體開發進度。</li>
+</ul>
+<h2 id="如何減少影響？"><a href="#如何減少影響？" class="headerlink" title="如何減少影響？"></a>如何減少影響？</h2><ol>
+<li><strong>定期重構</strong>：在快速開發後，應定期對偷吃步的部分進行重構，減少技術債。  </li>
+<li><strong>引入代碼審查</strong>：通過代碼審查來發現和糾正偷吃步行為，確保代碼質量。  </li>
+<li><strong>使用設計模式</strong>：適當引入設計模式，減少系統的耦合性，提高可維護性。  </li>
+<li><strong>強化測試</strong>：對於偷吃步部分，應強化測試覆蓋率，確保系統穩定性。</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<li>Get Your Hands Dirty on Clean Architecture: Build ‘clean’ applications with code examples in Java, 2nd Edition<br>Chapter 2 What’s Wrong with Layers?</li>
+<li>Software Architecture Pattern 2nd Edition<br>Chapter 3. Layered Architecture</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/01/05/2025/January/adacorr/" rel="prev" title="adacorr">
+                  <i class="fa fa-angle-left"></i> adacorr
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">利醬</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">410k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">12:26</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+
+
+
+</body>
+</html>
