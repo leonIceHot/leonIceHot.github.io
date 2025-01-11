@@ -27,7 +27,7 @@
 <meta property="og:description" content="概念整理">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2025-01-11T01:36:13.000Z">
-<meta property="article:modified_time" content="2025-01-11T03:57:35.955Z">
+<meta property="article:modified_time" content="2025-01-11T13:55:16.909Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
@@ -191,7 +191,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2025-01-11 09:36:13 / 修改時間：11:57:35" itemprop="dateCreated datePublished" datetime="2025-01-11T09:36:13+08:00">2025-01-11</time>
+      <time title="創建時間：2025-01-11 09:36:13 / 修改時間：21:55:16" itemprop="dateCreated datePublished" datetime="2025-01-11T09:36:13+08:00">2025-01-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -233,8 +233,8 @@
     
     <div class="post-body" itemprop="articleBody"><p>概念整理</p>
 <span id="more"></span>
-<h1 id="階層式架構（Layered-Architecture"><a href="#階層式架構（Layered-Architecture" class="headerlink" title="階層式架構（Layered Architecture)"></a>階層式架構（Layered Architecture)</h1><p>層級架構是一種將系統按功能劃分為多個層次的設計模式，每一層專注於特定的職責或任務。這種架構廣泛應用於軟體工程、網路設計等領域，目的是提高系統的<strong>可維護性</strong>、<strong>擴展性</strong>與<strong>靈活性</strong>。</p>
-<h2 id="1-軟體層級架構"><a href="#1-軟體層級架構" class="headerlink" title="1. 軟體層級架構"></a>1. 軟體層級架構</h2><p>在軟體開發中，層級架構將系統分為多個獨立的層次，每層處理不同的責任，這樣可以減少耦合性，方便開發與維護。</p>
+<h1 id="階層式架構（Layered-Architecture"><a href="#階層式架構（Layered-Architecture" class="headerlink" title="階層式架構（Layered Architecture)"></a>階層式架構（Layered Architecture)</h1><p>層級架構是一種將系統按功能劃分為多個階層的設計模式，每一層專注於特定的職責或任務。這種架構廣泛應用於軟體工程、網路設計等領域，目的是提高系統的<strong>可維護性</strong>、<strong>擴展性</strong>與<strong>靈活性</strong>。</p>
+<h2 id="1-軟體層級架構"><a href="#1-軟體層級架構" class="headerlink" title="1. 軟體層級架構"></a>1. 軟體層級架構</h2><p>在軟體開發中，層級架構將系統分為多個獨立的階層，每層處理不同的責任，這樣可以減少耦合性，方便開發與維護。</p>
 <h3 id="常見層次"><a href="#常見層次" class="headerlink" title="常見層次"></a>常見層次</h3><ol>
 <li><p><strong>Presentation Layer</strong><br>負責處理使用者界面和使用者互動，顯示輸出結果並接收輸入。<br><em>例如：</em> 網頁界面、手機應用程式的畫面。</p>
 </li>
@@ -258,8 +258,8 @@
 </ol>
 <p>每一層只與相鄰的上下層進行通訊，確保模組化設計，便於擴展與維護。</p>
 <hr>
-<h1 id="領域邏輯"><a href="#領域邏輯" class="headerlink" title="領域邏輯"></a>領域邏輯</h1><h2 id="領域邏輯（Domain-Logic）"><a href="#領域邏輯（Domain-Logic）" class="headerlink" title="領域邏輯（Domain Logic）"></a>領域邏輯（Domain Logic）</h2><p>領域邏輯是指在軟體應用中處理核心業務規則的部分，這些業務規則與應用的特定領域或問題空間密切相關。領域邏輯的主要目的是描述和實現應用程序的核心功能，使系統能夠正確地反映真實世界的業務流程。</p>
-<h2 id="領域邏輯的角色"><a href="#領域邏輯的角色" class="headerlink" title="領域邏輯的角色"></a>領域邏輯的角色</h2><p>領域邏輯負責將業務需求轉化為具體的軟體邏輯，它通常位於軟體架構的業務邏輯層或應用層中。這一層不處理用戶界面或數據存儲，而是專注於處理業務邏輯。</p>
+<h1 id="領域邏輯"><a href="#領域邏輯" class="headerlink" title="領域邏輯"></a>領域邏輯</h1><h2 id="領域邏輯（Domain-Logic）"><a href="#領域邏輯（Domain-Logic）" class="headerlink" title="領域邏輯（Domain Logic）"></a>領域邏輯（Domain Logic）</h2><p>領域邏輯是指在軟體應用中處理核心業務規則的部分，這些業務規則與應用的特定領域或問題空間密切相關。<br>領域邏輯的主要目的是描述和實現應用程式的核心功能，使系統能夠正確地反映真實世界的業務流程。</p>
+<h2 id="領域邏輯的角色"><a href="#領域邏輯的角色" class="headerlink" title="領域邏輯的角色"></a>領域邏輯的角色</h2><p>領域邏輯負責將業務需求轉化為具體的軟體邏輯，它通常位於軟體架構的業務邏輯層或應用層中。這一層不處理使用者界面或資料儲存，而是專注於處理業務邏輯。</p>
 <h1 id="物件關係對應（Object-Relational-Mapping-ORM）"><a href="#物件關係對應（Object-Relational-Mapping-ORM）" class="headerlink" title="物件關係對應（Object-Relational Mapping, ORM）"></a>物件關係對應（Object-Relational Mapping, ORM）</h1><p><strong>物件關係對應（ORM）</strong> 是一種用來解決物件導向程式語言與關係型資料庫之間不匹配問題的技術。它允許開發者使用面向物件的方式來操作資料庫，而不需要直接撰寫 SQL 語句。</p>
 <h2 id="1-為什麼需要-ORM？"><a href="#1-為什麼需要-ORM？" class="headerlink" title="1. 為什麼需要 ORM？"></a>1. 為什麼需要 ORM？</h2><p>關係型資料庫中的資料以表格形式儲存，資料是以行和列的方式結構化表示的。而在物件導向程式設計中，資料是以類別和物件的形式來組織的，這兩種結構之間存在不匹配問題。  </p>
 <p>ORM 透過將資料庫中的表格對應為程式中的類別，將表中的行對應為類別的實例（物件），從而實現物件與資料庫之間的自動轉換。</p>
@@ -322,7 +322,7 @@
 </ul>
 <h3 id="5-跳過例外處理"><a href="#5-跳過例外處理" class="headerlink" title="5. 跳過例外處理"></a>5. 跳過例外處理</h3><ul>
 <li><strong>偷吃步</strong>：在資料訪問層或業務邏輯層中省略例外處理機制。  </li>
-<li><strong>風險</strong>：當資料庫或業務邏輯出現異常時，無法提供友好的錯誤回報，影響用戶體驗。</li>
+<li><strong>風險</strong>：當資料庫或業務邏輯出現異常時，無法提供友好的錯誤回報，影響使用者體驗。</li>
 </ul>
 <hr>
 <h1 id="偷吃步造成的影響"><a href="#偷吃步造成的影響" class="headerlink" title="偷吃步造成的影響"></a>偷吃步造成的影響</h1><p>在採用階層式架構時，雖然適當的偷吃步能加快開發速度，但它可能會對系統的長期發展造成多方面的影響。以下是常見的影響：</p>
