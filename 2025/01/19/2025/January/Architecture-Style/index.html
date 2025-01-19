@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="軟體架構風格（Software Architecture Style）是指在設計軟體系統時，為解決特定類型的問題而採用的一組設計模式和規範的集合。它描述了系統內各部分的組織方式以及它們之間的互動關係。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Architecture Style">
+<meta property="og:url" content="https://leonicehot.github.io/2025/01/19/2025/January/Architecture-Style/index.html">
+<meta property="og:site_name" content="利醬の休憩房">
+<meta property="og:description" content="軟體架構風格（Software Architecture Style）是指在設計軟體系統時，為解決特定類型的問題而採用的一組設計模式和規範的集合。它描述了系統內各部分的組織方式以及它們之間的互動關係。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2025-01-19T08:16:17.000Z">
+<meta property="article:modified_time" content="2025-01-19T08:34:51.588Z">
+<meta property="article:author" content="利醬">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://leonicehot.github.io/2025/01/19/2025/January/Architecture-Style/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2025/01/19/2025/January/Architecture-Style/","path":"2025/01/19/2025/January/Architecture-Style/","title":"Architecture Style"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Architecture Style | 利醬の休憩房</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">利醬の休憩房</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BB%9F%E9%AB%94%E6%9E%B6%E6%A7%8B%E9%A2%A8%E6%A0%BC%E4%BB%8B%E7%B4%B9"><span class="nav-number">1.</span> <span class="nav-text">軟體架構風格介紹</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%9A%8E%E5%B1%A4%E5%BC%8F%E6%9E%B6%E6%A7%8B%EF%BC%88Layered-Architecture%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">1. 階層式架構（Layered Architecture）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%BA%8B%E4%BB%B6%E9%A9%85%E5%8B%95%E6%9E%B6%E6%A7%8B%EF%BC%88Event-Driven-Architecture-EDA%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">2. 事件驅動架構（Event-Driven Architecture, EDA）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%BE%AE%E6%9C%8D%E5%8B%99%E6%9E%B6%E6%A7%8B%EF%BC%88Microservices-Architecture%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">3. 微服務架構（Microservices Architecture）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%9C%8D%E5%8B%99%E5%B0%8E%E5%90%91%E6%9E%B6%E6%A7%8B%EF%BC%88Service-Oriented-Architecture-SOA%EF%BC%89"><span class="nav-number">1.4.</span> <span class="nav-text">4. 服務導向架構（Service-Oriented Architecture, SOA）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E7%AE%A1%E9%81%93-%E9%81%8E%E6%BF%BE%E5%99%A8%E6%9E%B6%E6%A7%8B%EF%BC%88Pipe-and-Filter-Architecture%EF%BC%89"><span class="nav-number">1.5.</span> <span class="nav-text">5. 管道-過濾器架構（Pipe-and-Filter Architecture）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E4%BA%8B%E4%BB%B6%E6%BA%9D%E9%80%9A%E6%9E%B6%E6%A7%8B%EF%BC%88Publish-Subscribe-Architecture%EF%BC%89"><span class="nav-number">1.6.</span> <span class="nav-text">6. 事件溝通架構（Publish-Subscribe Architecture）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%AE%A2%E6%88%B6%E7%AB%AF-%E4%BC%BA%E6%9C%8D%E5%99%A8%E6%9E%B6%E6%A7%8B%EF%BC%88Client-Server-Architecture%EF%BC%89"><span class="nav-number">1.7.</span> <span class="nav-text">7. 客戶端-伺服器架構（Client-Server Architecture）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-REST-%E6%9E%B6%E6%A7%8B%E9%A2%A8%E6%A0%BC%EF%BC%88Representational-State-Transfer%EF%BC%89"><span class="nav-number">1.8.</span> <span class="nav-text">8. REST 架構風格（Representational State Transfer）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%81%B8%E6%93%87%E9%81%A9%E5%90%88%E7%9A%84%E8%BB%9F%E9%AB%94%E6%9E%B6%E6%A7%8B%E9%A2%A8%E6%A0%BC"><span class="nav-number">2.</span> <span class="nav-text">如何選擇適合的軟體架構風格</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%9E%AD%E8%A7%A3%E7%B3%BB%E7%B5%B1%E9%9C%80%E6%B1%82"><span class="nav-number">2.1.</span> <span class="nav-text">1. 瞭解系統需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%A9%95%E4%BC%B0%E9%97%9C%E9%8D%B5%E5%9B%A0%E7%B4%A0"><span class="nav-number">2.2.</span> <span class="nav-text">2. 評估關鍵因素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%B0%87%E9%A2%A8%E6%A0%BC%E5%8C%B9%E9%85%8D%E5%88%B0%E5%95%8F%E9%A1%8C"><span class="nav-number">2.3.</span> <span class="nav-text">3. 將風格匹配到問題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E8%80%83%E6%85%AE%E5%8F%96%E6%8D%A8"><span class="nav-number">2.4.</span> <span class="nav-text">4. 考慮取捨</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E8%80%83%E6%85%AE%E6%9C%AA%E4%BE%86%E9%9C%80%E6%B1%82"><span class="nav-number">2.5.</span> <span class="nav-text">5. 考慮未來需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E8%BF%AD%E4%BB%A3%E8%88%87%E6%9C%80%E4%BD%B3%E5%8C%96"><span class="nav-number">2.6.</span> <span class="nav-text">6. 迭代與最佳化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%A6%E4%BE%8B%E6%B1%BA%E7%AD%96%E5%A0%B4%E6%99%AF"><span class="nav-number">2.7.</span> <span class="nav-text">實例決策場景</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">利醬</p>
+  <div class="site-description" itemprop="description">部落格記載著電腦科學基礎知識、科學應用探討、工程技術之白話筆記，從已知的知識持續探索未知的領域。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">153</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">58</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/leonIceHot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leonIceHot" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2025/01/19/2025/January/Architecture-Style/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="部落格記載著電腦科學基礎知識、科學應用探討、工程技術之白話筆記，從已知的知識持續探索未知的領域。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Architecture Style | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Architecture Style
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2025-01-19 16:16:17 / 修改時間：16:34:51" itemprop="dateCreated datePublished" datetime="2025-01-19T16:16:17+08:00">2025-01-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Software-Engineering/" itemprop="url" rel="index"><span itemprop="name">Software Engineering</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Software-Engineering/Software-Architecture/" itemprop="url" rel="index"><span itemprop="name">Software Architecture</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>2.6k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>5 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>軟體架構風格（Software Architecture Style）是指在設計軟體系統時，為解決特定類型的問題而採用的一組設計模式和規範的集合。它描述了系統內各部分的組織方式以及它們之間的互動關係。</p>
+<span id="more"></span>
+<h1 id="軟體架構風格介紹"><a href="#軟體架構風格介紹" class="headerlink" title="軟體架構風格介紹"></a>軟體架構風格介紹</h1><h2 id="1-階層式架構（Layered-Architecture）"><a href="#1-階層式架構（Layered-Architecture）" class="headerlink" title="1. 階層式架構（Layered Architecture）"></a>1. 階層式架構（Layered Architecture）</h2><ul>
+<li><strong>概念</strong>：將系統分為多個層級，每一層專注於特定功能，並且只與相鄰層進行互動。</li>
+<li><strong>特徵</strong>：<ul>
+<li>常見於 Web 開發中，如表示層（UI）、業務層（Business Logic）、資料層（Data Access）。</li>
+<li>易於維護，單一層的變更通常不影響其他層。</li>
+</ul>
+</li>
+<li><strong>應用</strong>：企業應用、網站。</li>
+</ul>
+<hr>
+<h2 id="2-事件驅動架構（Event-Driven-Architecture-EDA）"><a href="#2-事件驅動架構（Event-Driven-Architecture-EDA）" class="headerlink" title="2. 事件驅動架構（Event-Driven Architecture, EDA）"></a>2. 事件驅動架構（Event-Driven Architecture, EDA）</h2><ul>
+<li><strong>概念</strong>：基於事件流的系統架構，模組間通過事件進行通訊。</li>
+<li><strong>特徵</strong>：<ul>
+<li>高度解耦，事件生產者與消費者無需直接相互依賴。</li>
+<li>支援非同步處理。</li>
+</ul>
+</li>
+<li><strong>應用</strong>：即時資訊系統、物聯網系統。</li>
+</ul>
+<hr>
+<h2 id="3-微服務架構（Microservices-Architecture）"><a href="#3-微服務架構（Microservices-Architecture）" class="headerlink" title="3. 微服務架構（Microservices Architecture）"></a>3. 微服務架構（Microservices Architecture）</h2><ul>
+<li><strong>概念</strong>：將系統拆分為一組小型、獨立的服務，每個服務只負責單一功能。</li>
+<li><strong>特徵</strong>：<ul>
+<li>每個服務獨立部署，使用輕量級通訊協定（如 HTTP 或資訊隊列）。</li>
+<li>易於擴展和容錯。</li>
+</ul>
+</li>
+<li><strong>應用</strong>：大型分散式系統、電子商務平台。</li>
+</ul>
+<hr>
+<h2 id="4-服務導向架構（Service-Oriented-Architecture-SOA）"><a href="#4-服務導向架構（Service-Oriented-Architecture-SOA）" class="headerlink" title="4. 服務導向架構（Service-Oriented Architecture, SOA）"></a>4. 服務導向架構（Service-Oriented Architecture, SOA）</h2><ul>
+<li><strong>概念</strong>：基於服務的設計風格，通過標準化的介面讓不同模組互動。</li>
+<li><strong>特徵</strong>：<ul>
+<li>使用 SOAP 或 REST 作為通訊協定。</li>
+<li>重視服務重用和集成。</li>
+</ul>
+</li>
+<li><strong>應用</strong>：企業集成解決方案、跨平台應用。</li>
+</ul>
+<hr>
+<h2 id="5-管道-過濾器架構（Pipe-and-Filter-Architecture）"><a href="#5-管道-過濾器架構（Pipe-and-Filter-Architecture）" class="headerlink" title="5. 管道-過濾器架構（Pipe-and-Filter Architecture）"></a>5. 管道-過濾器架構（Pipe-and-Filter Architecture）</h2><ul>
+<li><strong>概念</strong>：資料以流的形式經過一系列過濾器進行處理，過濾器之間通過管道連接。</li>
+<li><strong>特徵</strong>：<ul>
+<li>每個過濾器專注於單一任務，結果通過管道傳遞給下一個過濾器。</li>
+<li>易於模組化和重用。</li>
+</ul>
+</li>
+<li><strong>應用</strong>：音訊或影像處理系統、資料流處理。</li>
+</ul>
+<hr>
+<h2 id="6-事件溝通架構（Publish-Subscribe-Architecture）"><a href="#6-事件溝通架構（Publish-Subscribe-Architecture）" class="headerlink" title="6. 事件溝通架構（Publish-Subscribe Architecture）"></a>6. 事件溝通架構（Publish-Subscribe Architecture）</h2><ul>
+<li><strong>概念</strong>：發布者（Publisher）向主題（Topic）發送資訊，訂閱者（Subscriber）根據主題接收相關資訊。</li>
+<li><strong>特徵</strong>：<ul>
+<li>支援多對多通訊。</li>
+<li>訂閱者和發布者彼此解耦。</li>
+</ul>
+</li>
+<li><strong>應用</strong>：新聞訂閱系統、分散式事件驅動架構。</li>
+</ul>
+<hr>
+<h2 id="7-客戶端-伺服器架構（Client-Server-Architecture）"><a href="#7-客戶端-伺服器架構（Client-Server-Architecture）" class="headerlink" title="7. 客戶端-伺服器架構（Client-Server Architecture）"></a>7. 客戶端-伺服器架構（Client-Server Architecture）</h2><ul>
+<li><strong>概念</strong>：將系統分為客戶端（Client）和伺服器（Server），客戶端負責向伺服器發送請求，伺服器負責處理並返回結果。</li>
+<li><strong>特徵</strong>：<ul>
+<li>客戶端與伺服器的功能分離。</li>
+<li>支援多個客戶端同時訪問。</li>
+</ul>
+</li>
+<li><strong>應用</strong>：Web 應用、移動應用。</li>
+</ul>
+<hr>
+<h2 id="8-REST-架構風格（Representational-State-Transfer）"><a href="#8-REST-架構風格（Representational-State-Transfer）" class="headerlink" title="8. REST 架構風格（Representational State Transfer）"></a>8. REST 架構風格（Representational State Transfer）</h2><ul>
+<li><strong>概念</strong>：基於 HTTP 協議的架構風格，遵循無狀態、資源導向的設計原則。</li>
+<li><strong>特徵</strong>：<ul>
+<li>使用標準 HTTP 方法（GET、POST、PUT、DELETE）。</li>
+<li>資源通過 URL 表示，資料以 JSON 或 XML 傳遞。</li>
+</ul>
+</li>
+<li><strong>應用</strong>：API 設計、微服務通訊。</li>
+</ul>
+<hr>
+<h1 id="如何選擇適合的軟體架構風格"><a href="#如何選擇適合的軟體架構風格" class="headerlink" title="如何選擇適合的軟體架構風格"></a>如何選擇適合的軟體架構風格</h1><h2 id="1-瞭解系統需求"><a href="#1-瞭解系統需求" class="headerlink" title="1. 瞭解系統需求"></a>1. 瞭解系統需求</h2><ul>
+<li><strong>功能需求</strong>：系統需要實現什麼功能？（如：使用者界面、資料處理、通訊）</li>
+<li><strong>非功能需求</strong>：考慮可擴展性、性能、安全性、可維護性和可靠性等。</li>
+</ul>
+<hr>
+<h2 id="2-評估關鍵因素"><a href="#2-評估關鍵因素" class="headerlink" title="2. 評估關鍵因素"></a>2. 評估關鍵因素</h2><ul>
+<li><strong>團隊專業知識</strong>：<ul>
+<li>團隊是否對某些特定架構風格或工具有經驗？</li>
+</ul>
+</li>
+<li><strong>專案規模與複雜性</strong>：<ul>
+<li>小型、簡單專案適合 <strong>單體架構（Monolithic）</strong> 或 <strong>階層式架構（Layered Architecture）</strong>。</li>
+<li>大型、分散式系統可能需要 <strong>微服務架構（Microservices Architecture）</strong> 或 <strong>事件驅動架構（Event-Driven Architecture）</strong>。</li>
+</ul>
+</li>
+<li><strong>可擴展性需求</strong>：<ul>
+<li><strong>水平擴展</strong>：選擇 <strong>微服務架構</strong> 或 <strong>無伺服器架構（Serverless Architecture）</strong>。</li>
+<li><strong>垂直擴展</strong>：選擇 <strong>單體架構</strong> 或 <strong>客戶端-伺服器架構（Client-Server Architecture）</strong>。</li>
+</ul>
+</li>
+<li><strong>變更頻率</strong>：<ul>
+<li>如果系統需求變更頻繁，選擇 <strong>微服務架構</strong>。</li>
+<li>如果系統相對穩定，選擇 <strong>階層式架構</strong> 或 <strong>單體架構</strong>。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="3-將風格匹配到問題"><a href="#3-將風格匹配到問題" class="headerlink" title="3. 將風格匹配到問題"></a>3. 將風格匹配到問題</h2><p>以下是常見架構風格與典型應用場景的對應關係：</p>
+<table>
+<thead>
+<tr>
+<th><strong>架構風格</strong></th>
+<th><strong>適用場景</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>階層式架構（Layered Architecture）</strong></td>
+<td>小型應用，功能清晰且需求穩定，例如簡單的企業應用或內部工具。</td>
+</tr>
+<tr>
+<td><strong>事件驅動架構（Event-Driven Architecture）</strong></td>
+<td>即時處理或非同步通訊的系統，例如即時資訊、物聯網應用。</td>
+</tr>
+<tr>
+<td><strong>微服務架構（Microservices Architecture）</strong></td>
+<td>大型模組化應用，每個模組獨立運行，例如電子商務平台或 SaaS 產品。</td>
+</tr>
+<tr>
+<td><strong>面向服務架構（SOA）</strong></td>
+<td>需要與遺留系統集成，或需要標準化服務介面的系統，例如企業應用集成方案。</td>
+</tr>
+<tr>
+<td><strong>客戶端-伺服器架構（Client-Server Architecture）</strong></td>
+<td>傳統兩層結構的系統，例如 Web 應用、移動應用後端。</td>
+</tr>
+<tr>
+<td><strong>REST 架構風格（REST Architecture Style）</strong></td>
+<td>需要輕量級、無狀態通訊的系統，例如開放 API 或微服務通訊。</td>
+</tr>
+<tr>
+<td><strong>管道-過濾器架構（Pipe-and-Filter Architecture）</strong></td>
+<td>資料流處理系統，例如音頻、視頻處理或大資料處理應用。</td>
+</tr>
+<tr>
+<td><strong>發布-訂閱架構（Publish-Subscribe Architecture）</strong></td>
+<td>訂閱者與發布者解耦的系統，例如新聞訂閱系統、分散式事件驅動系統。</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="4-考慮取捨"><a href="#4-考慮取捨" class="headerlink" title="4. 考慮取捨"></a>4. 考慮取捨</h2><ul>
+<li><strong>複雜性</strong>：<ul>
+<li>簡單架構（如單體架構或階層式架構）易於開發和管理。</li>
+<li>分散式架構（如微服務架構）更適合高擴展性，但實現和維護更具挑戰性。</li>
+</ul>
+</li>
+<li><strong>性能</strong>：<ul>
+<li><strong>單體架構</strong> 在緊密耦合環境中通常性能更高。</li>
+<li><strong>分散式系統</strong> 在處理多樣化工作負載或流量高峰時表現更優。</li>
+</ul>
+</li>
+<li><strong>成本</strong>：<ul>
+<li><strong>微服務架構</strong> 的建設和運維成本通常高於簡單架構。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="5-考慮未來需求"><a href="#5-考慮未來需求" class="headerlink" title="5. 考慮未來需求"></a>5. 考慮未來需求</h2><ul>
+<li>系統是否會顯著增長或需要處理大量使用者？</li>
+<li>是否需要頻繁添加新功能或整合新技術？</li>
+<li>系統是否需要支持多租戶或全球使用者？</li>
+</ul>
+<hr>
+<h2 id="6-迭代與最佳化"><a href="#6-迭代與最佳化" class="headerlink" title="6. 迭代與最佳化"></a>6. 迭代與最佳化</h2><ul>
+<li>可以從基線架構開始，根據反饋進行最佳化。</li>
+<li>在大型專案中，可以對子系統進行小規模原型設計，以評估可行性。</li>
+</ul>
+<hr>
+<h2 id="實例決策場景"><a href="#實例決策場景" class="headerlink" title="實例決策場景"></a>實例決策場景</h2><ol>
+<li><strong>小型電子商務網站</strong>：<ul>
+<li>使用 <strong>階層式架構</strong> 管理使用者界面、業務邏輯和資料庫。</li>
+</ul>
+</li>
+<li><strong>即時聊天應用</strong>：<ul>
+<li>使用 <strong>事件驅動架構</strong> 支持非同步資訊處理。</li>
+</ul>
+</li>
+<li><strong>大型 SaaS 平台</strong>：<ul>
+<li>使用 <strong>微服務架構</strong> 以支持模組化和獨立部署。</li>
+</ul>
+</li>
+<li><strong>資料處理系統</strong>：<ul>
+<li>使用 <strong>管道-過濾器架構</strong> 進行大資料流處理。</li>
+</ul>
+</li>
+</ol>
+<p>通過系統化地分析需求，並結合架構風格的特點與應用場景，可以選擇最適合的架構風格來實現系統目標。</p>
+<hr>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<li>Fundamentals of Software Architecture An Engineering Approach<br>Part II Architecture Styles</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/01/11/2025/January/What-s-Wrong-with-Layers/" rel="prev" title="What's Wrong with Layers?">
+                  <i class="fa fa-angle-left"></i> What's Wrong with Layers?
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">利醬</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">413k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">12:31</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+
+
+
+</body>
+</html>
