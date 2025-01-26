@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="企業模式（Enterprise Pattern）企業模式 是在設計與開發企業級軟體系統時，針對常見問題提供的可重複使用的解決方案。這些模式確保軟體具備可擴展性、可維護性及高效性，能有效應對大型企業中的複雜需求。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Enterprise Pattern">
+<meta property="og:url" content="https://leonicehot.github.io/2025/01/26/2025/January/Enterprise-Pattern/index.html">
+<meta property="og:site_name" content="利醬の休憩房">
+<meta property="og:description" content="企業模式（Enterprise Pattern）企業模式 是在設計與開發企業級軟體系統時，針對常見問題提供的可重複使用的解決方案。這些模式確保軟體具備可擴展性、可維護性及高效性，能有效應對大型企業中的複雜需求。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2025-01-26T10:59:40.000Z">
+<meta property="article:modified_time" content="2025-01-26T11:03:22.041Z">
+<meta property="article:author" content="利醬">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://leonicehot.github.io/2025/01/26/2025/January/Enterprise-Pattern/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2025/01/26/2025/January/Enterprise-Pattern/","path":"2025/01/26/2025/January/Enterprise-Pattern/","title":"Enterprise Pattern"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Enterprise Pattern | 利醬の休憩房</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">利醬の休憩房</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%81%E6%A5%AD%E6%A8%A1%E5%BC%8F%EF%BC%88Enterprise-Pattern%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">企業模式（Enterprise Pattern）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%A1%A8%E7%8F%BE%E5%B1%A4%E6%A8%A1%E5%BC%8F%EF%BC%88Presentation-Layer-Patterns%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">1. 表現層模式（Presentation Layer Patterns）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%A5%AD%E5%8B%99%E9%82%8F%E8%BC%AF%E5%B1%A4%E6%A8%A1%E5%BC%8F%EF%BC%88Business-Logic-Layer-Patterns%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">2. 業務邏輯層模式（Business Logic Layer Patterns）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%B3%87%E6%96%99%E5%B1%A4%E6%A8%A1%E5%BC%8F%EF%BC%88Data-Access-Layer-Patterns%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">3. 資料層模式（Data Access Layer Patterns）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E9%9B%86%E6%88%90%E6%A8%A1%E5%BC%8F%EF%BC%88Integration-Patterns%EF%BC%89"><span class="nav-number">1.4.</span> <span class="nav-text">4. 集成模式（Integration Patterns）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%88%86%E6%95%A3%E5%BC%8F%E6%A8%A1%E5%BC%8F%EF%BC%88Distributed-Patterns%EF%BC%89"><span class="nav-number">1.5.</span> <span class="nav-text">5. 分散式模式（Distributed Patterns）</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">利醬</p>
+  <div class="site-description" itemprop="description">部落格記載著電腦科學基礎知識、科學應用探討、工程技術之白話筆記，從已知的知識持續探索未知的領域。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">154</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">58</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/leonIceHot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leonIceHot" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2025/01/26/2025/January/Enterprise-Pattern/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="部落格記載著電腦科學基礎知識、科學應用探討、工程技術之白話筆記，從已知的知識持續探索未知的領域。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Enterprise Pattern | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Enterprise Pattern
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2025-01-26 18:59:40 / 修改時間：19:03:22" itemprop="dateCreated datePublished" datetime="2025-01-26T18:59:40+08:00">2025-01-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Software-Engineering/" itemprop="url" rel="index"><span itemprop="name">Software Engineering</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Software-Engineering/Software-Architecture/" itemprop="url" rel="index"><span itemprop="name">Software Architecture</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>3 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="企業模式（Enterprise-Pattern）"><a href="#企業模式（Enterprise-Pattern）" class="headerlink" title="企業模式（Enterprise Pattern）"></a>企業模式（Enterprise Pattern）</h1><p><strong>企業模式</strong> 是在設計與開發企業級軟體系統時，針對常見問題提供的可重複使用的解決方案。這些模式確保軟體具備可擴展性、可維護性及高效性，能有效應對大型企業中的複雜需求。</p>
+<span id="more"></span>
+
+<h2 id="1-表現層模式（Presentation-Layer-Patterns）"><a href="#1-表現層模式（Presentation-Layer-Patterns）" class="headerlink" title="1. 表現層模式（Presentation Layer Patterns）"></a><strong>1. 表現層模式（Presentation Layer Patterns）</strong></h2><p>這些模式處理用戶界面和交互邏輯：</p>
+<ul>
+<li><strong>MVC（模型-視圖-控制器）：</strong> 將應用程式的業務邏輯（Model）、用戶界面（View）和輸入控制（Controller）分離。</li>
+<li><strong>MVP（模型-視圖-主持人）：</strong> 與 MVC 類似，但更專注於將展示邏輯拆分到主持人（Presenter）中。</li>
+<li><strong>前端控制器（Front Controller）：</strong> 使用一個集中式控制器處理所有請求，簡化導航並提高請求處理的統一性。</li>
+<li><strong>模板視圖（Template View）：</strong> 提供一個標準的模板來定義視圖，並與業務邏輯分離。</li>
+</ul>
+<hr>
+<h2 id="2-業務邏輯層模式（Business-Logic-Layer-Patterns）"><a href="#2-業務邏輯層模式（Business-Logic-Layer-Patterns）" class="headerlink" title="2. 業務邏輯層模式（Business Logic Layer Patterns）"></a><strong>2. 業務邏輯層模式（Business Logic Layer Patterns）</strong></h2><p>這些模式處理核心業務邏輯和規則：</p>
+<ul>
+<li><strong>服務定位器（Service Locator）：</strong> 為客戶端提供動態查找和獲取服務的機制，避免硬編碼依賴。</li>
+<li><strong>應用服務（Application Service）：</strong> 將業務邏輯封裝到獨立的服務中，減少控制器中的邏輯。</li>
+<li><strong>領域模型（Domain Model）：</strong> 通過物件建模來表示業務邏輯和行為，適用於複雜的業務系統。</li>
+<li><strong>事務腳本（Transaction Script）：</strong> 將業務邏輯集中在腳本中，以簡化處理，但適合較簡單的應用程式。</li>
+</ul>
+<hr>
+<h2 id="3-資料層模式（Data-Access-Layer-Patterns）"><a href="#3-資料層模式（Data-Access-Layer-Patterns）" class="headerlink" title="3. 資料層模式（Data Access Layer Patterns）"></a><strong>3. 資料層模式（Data Access Layer Patterns）</strong></h2><p>這些模式處理資料庫訪問和操作：</p>
+<ul>
+<li><strong>資料訪問物件（DAO，Data Access Object）：</strong> 將資料庫操作封裝到獨立的物件中，便於重用和測試。</li>
+<li><strong>活動記錄（Active Record）：</strong> 每個資料庫表對應一個物件，並且物件方法直接處理資料庫操作。</li>
+<li><strong>單元工作（Unit of Work）：</strong> 負責追蹤對資料的改變，並確保一次性提交所有變更到資料庫。</li>
+<li><strong>儲存庫模式（Repository Pattern）：</strong> 提供一個抽象層，用於管理資料對象的存取和聚合。</li>
+</ul>
+<hr>
+<h2 id="4-集成模式（Integration-Patterns）"><a href="#4-集成模式（Integration-Patterns）" class="headerlink" title="4. 集成模式（Integration Patterns）"></a><strong>4. 集成模式（Integration Patterns）</strong></h2><p>這些模式用於解決系統之間的整合問題：</p>
+<ul>
+<li><strong>消息總線（Message Bus）：</strong> 使用消息機制在不同系統之間傳遞資料，減少系統耦合。</li>
+<li><strong>企業服務總線（ESB，Enterprise Service Bus）：</strong> 通過中心化的總線來整合多個系統和服務。</li>
+<li><strong>防腐層（Anti-Corruption Layer）：</strong> 在現有系統和新系統之間添加一層，減少兩者之間的耦合。</li>
+<li><strong>發布-訂閱（Publish-Subscribe）：</strong> 系統發布事件，由訂閱者接收，支持解耦和高擴展性。</li>
+</ul>
+<hr>
+<h2 id="5-分散式模式（Distributed-Patterns）"><a href="#5-分散式模式（Distributed-Patterns）" class="headerlink" title="5. 分散式模式（Distributed Patterns）"></a><strong>5. 分散式模式（Distributed Patterns）</strong></h2><p>這些模式用於處理分散式系統的架構和問題：</p>
+<ul>
+<li><strong>負載均衡（Load Balancer）：</strong> 將請求分配到多個服務實例，提高性能和可用性。</li>
+<li><strong>熔斷器（Circuit Breaker）：</strong> 當服務過載或失敗時，阻止連續的錯誤傳播，保護系統。</li>
+<li><strong>事件溯源（Event Sourcing）：</strong> 通過事件儲存來追蹤狀態變更，並保持資料一致性。</li>
+<li><strong>分散式鎖（Distributed Lock）：</strong> 確保在分散式系統中的共享資源不被多個實例同時訪問。</li>
+</ul>
+<hr>
+<p>這些 <strong>企業模式</strong> 是設計大規模軟體系統的關鍵工具，有助於解決複雜性、提高效率，並促進跨團隊的協作與代碼的重用性。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/01/19/2025/January/Architecture-Style/" rel="prev" title="Architecture Style">
+                  <i class="fa fa-angle-left"></i> Architecture Style
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">利醬</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">414k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">12:34</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+
+
+
+</body>
+</html>
