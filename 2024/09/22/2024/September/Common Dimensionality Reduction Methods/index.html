@@ -21,24 +21,24 @@
 
     <meta name="description" content="降維是指將高維資料轉換為低維資料的過程，同時保留資料的主要資訊和結構。高維資料在很多情況下會帶來計算負擔和雜訊，通過降維技術，可以減少維度，降低資料的複雜性，從而提升演算法效率，並且讓資料在低維空間中更易於理解和可視化。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常見降維方法 - PCA、tSNE、UMAP">
-<meta property="og:url" content="https://leonicehot.github.io/2024/09/22/2024/September/%E5%B8%B8%E8%A6%8B%E9%99%8D%E7%B6%AD%E6%96%B9%E6%B3%95-PCA%E3%80%81tSNE%E3%80%81UMAP/index.html">
+<meta property="og:title" content="Common Dimensionality Reduction Methods - PCA, t-SNE, UMAP">
+<meta property="og:url" content="https://leonicehot.github.io/2024/09/22/2024/September/Common%20Dimensionality%20Reduction%20Methods/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
 <meta property="og:description" content="降維是指將高維資料轉換為低維資料的過程，同時保留資料的主要資訊和結構。高維資料在很多情況下會帶來計算負擔和雜訊，通過降維技術，可以減少維度，降低資料的複雜性，從而提升演算法效率，並且讓資料在低維空間中更易於理解和可視化。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-09-22T02:08:08.000Z">
-<meta property="article:modified_time" content="2025-01-11T16:55:43.497Z">
+<meta property="article:modified_time" content="2025-01-26T14:54:30.603Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://leonicehot.github.io/2024/09/22/2024/September/%E5%B8%B8%E8%A6%8B%E9%99%8D%E7%B6%AD%E6%96%B9%E6%B3%95-PCA%E3%80%81tSNE%E3%80%81UMAP/">
+<link rel="canonical" href="https://leonicehot.github.io/2024/09/22/2024/September/Common%20Dimensionality%20Reduction%20Methods/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2024/09/22/2024/September/%E5%B8%B8%E8%A6%8B%E9%99%8D%E7%B6%AD%E6%96%B9%E6%B3%95-PCA%E3%80%81tSNE%E3%80%81UMAP/","path":"2024/09/22/2024/September/常見降維方法-PCA、tSNE、UMAP/","title":"常見降維方法 - PCA、tSNE、UMAP"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2024/09/22/2024/September/Common%20Dimensionality%20Reduction%20Methods/","path":"2024/09/22/2024/September/Common Dimensionality Reduction Methods/","title":"Common Dimensionality Reduction Methods - PCA, t-SNE, UMAP"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>常見降維方法 - PCA、tSNE、UMAP | 利醬の休憩房</title>
+<title>Common Dimensionality Reduction Methods - PCA, t-SNE, UMAP | 利醬の休憩房</title>
   
 
 
@@ -166,7 +166,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2024/09/22/2024/September/%E5%B8%B8%E8%A6%8B%E9%99%8D%E7%B6%AD%E6%96%B9%E6%B3%95-PCA%E3%80%81tSNE%E3%80%81UMAP/">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2024/09/22/2024/September/Common%20Dimensionality%20Reduction%20Methods/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -179,12 +179,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="常見降維方法 - PCA、tSNE、UMAP | 利醬の休憩房">
+      <meta itemprop="name" content="Common Dimensionality Reduction Methods - PCA, t-SNE, UMAP | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          常見降維方法 - PCA、tSNE、UMAP
+          Common Dimensionality Reduction Methods - PCA, t-SNE, UMAP
         </h1>
 
         <div class="post-meta-container">
@@ -202,7 +202,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-01-12 00:55:43" itemprop="dateModified" datetime="2025-01-12T00:55:43+08:00">2025-01-12</time>
+      <time title="修改時間：2025-01-26 22:54:30" itemprop="dateModified" datetime="2025-01-26T22:54:30+08:00">2025-01-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -303,8 +303,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/09/30/2024/September/GPS%E8%BB%8C%E8%B7%A1%E7%B4%80%E9%8C%84/" rel="next" title="GPS軌跡紀錄">
-                  GPS軌跡紀錄 <i class="fa fa-angle-right"></i>
+                <a href="/2024/09/30/2024/September/GPS%20Track%20Recording/" rel="next" title="GPS Track Recording">
+                  GPS Track Recording <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

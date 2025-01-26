@@ -19,29 +19,26 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="鋸齒現象（aliasing）是指在數位影像或視覺顯示中，當邊緣或斜線被顯示為一系列不平滑的階梯狀像素時所產生的視覺效果，這些不平滑的邊緣看起來像鋸齒或台階，尤其在低解析度下更明顯。">
+    <meta name="description" content="軟體工程與資訊系統的差異">
 <meta property="og:type" content="article">
-<meta property="og:title" content="鋸齒現象">
-<meta property="og:url" content="https://leonicehot.github.io/2024/10/18/2024/October/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/index.html">
+<meta property="og:title" content="Software Engineering and Information Systems">
+<meta property="og:url" content="https://leonicehot.github.io/2024/12/28/2024/December/Software%20Engineering%20and%20Information%20Systems/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="鋸齒現象（aliasing）是指在數位影像或視覺顯示中，當邊緣或斜線被顯示為一系列不平滑的階梯狀像素時所產生的視覺效果，這些不平滑的邊緣看起來像鋸齒或台階，尤其在低解析度下更明顯。">
+<meta property="og:description" content="軟體工程與資訊系統的差異">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://leonicehot.github.io/images/2024/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/1.webp">
-<meta property="og:image" content="https://leonicehot.github.io/images/2024/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/2.webp">
-<meta property="article:published_time" content="2024-10-18T03:33:04.000Z">
-<meta property="article:modified_time" content="2024-12-11T10:57:38.261Z">
+<meta property="article:published_time" content="2024-12-28T15:20:15.000Z">
+<meta property="article:modified_time" content="2025-01-26T14:50:26.713Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://leonicehot.github.io/images/2024/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/1.webp">
 
 
-<link rel="canonical" href="https://leonicehot.github.io/2024/10/18/2024/October/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/">
+<link rel="canonical" href="https://leonicehot.github.io/2024/12/28/2024/December/Software%20Engineering%20and%20Information%20Systems/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2024/10/18/2024/October/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/","path":"2024/10/18/2024/October/鋸齒現象/","title":"鋸齒現象"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2024/12/28/2024/December/Software%20Engineering%20and%20Information%20Systems/","path":"2024/12/28/2024/December/Software Engineering and Information Systems/","title":"Software Engineering and Information Systems"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>鋸齒現象 | 利醬の休憩房</title>
+<title>Software Engineering and Information Systems | 利醬の休憩房</title>
   
 
 
@@ -113,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BD%A2%E6%88%90%E5%8E%9F%E5%9B%A0%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">形成原因：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pytorch-Resize-antialias%E7%9A%84%E5%BD%B1%E9%9F%BF"><span class="nav-number">2.</span> <span class="nav-text">Pytorch Resize antialias的影響</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%96%E7%89%87%E8%AA%AA%E6%98%8E-1"><span class="nav-number">3.</span> <span class="nav-text">圖片說明 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%96%E7%89%87%E8%AA%AA%E6%98%8E-2"><span class="nav-number">4.</span> <span class="nav-text">圖片說明 2</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E8%88%87%E8%B3%87%E8%A8%8A%E7%B3%BB%E7%B5%B1"><span class="nav-number">1.</span> <span class="nav-text">軟體工程與資訊系統</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B-Software-Engineering"><span class="nav-number">1.1.</span> <span class="nav-text">軟體工程 (Software Engineering)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E7%BE%A9"><span class="nav-number">1.1.1.</span> <span class="nav-text">定義</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%9C%E9%8D%B5%E7%89%B9%E9%BB%9E"><span class="nav-number">1.1.2.</span> <span class="nav-text">關鍵特點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%87%89%E7%94%A8%E7%AF%84%E5%9C%8D"><span class="nav-number">1.1.3.</span> <span class="nav-text">應用範圍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B3%87%E8%A8%8A%E7%B3%BB%E7%B5%B1-Information-Systems"><span class="nav-number">1.2.</span> <span class="nav-text">資訊系統 (Information Systems)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E7%BE%A9-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">定義</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%9C%E9%8D%B5%E7%89%B9%E9%BB%9E-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">關鍵特點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%87%89%E7%94%A8%E7%AF%84%E5%9C%8D-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">應用範圍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E5%B7%AE%E7%95%B0%E6%AF%94%E8%BC%83"><span class="nav-number">1.3.</span> <span class="nav-text">主要差異比較</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -169,7 +166,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2024/10/18/2024/October/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2024/12/28/2024/December/Software%20Engineering%20and%20Information%20Systems/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -182,12 +179,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="鋸齒現象 | 利醬の休憩房">
+      <meta itemprop="name" content="Software Engineering and Information Systems | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          鋸齒現象
+          Software Engineering and Information Systems
         </h1>
 
         <div class="post-meta-container">
@@ -198,14 +195,14 @@
       </span>
       <span class="post-meta-item-text">發表於</span>
 
-      <time title="創建時間：2024-10-18 11:33:04" itemprop="dateCreated datePublished" datetime="2024-10-18T11:33:04+08:00">2024-10-18</time>
+      <time title="創建時間：2024-12-28 23:20:15" itemprop="dateCreated datePublished" datetime="2024-12-28T23:20:15+08:00">2024-12-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-12-11 18:57:38" itemprop="dateModified" datetime="2024-12-11T18:57:38+08:00">2024-12-11</time>
+      <time title="修改時間：2025-01-26 22:50:26" itemprop="dateModified" datetime="2025-01-26T22:50:26+08:00">2025-01-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -214,10 +211,6 @@
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer-Science/Image-Processing/" itemprop="url" rel="index"><span itemprop="name">Image Processing</span></a>
         </span>
     </span>
 
@@ -228,14 +221,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>1.4k</span>
+      <span>742</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>3 分鐘</span>
+      <span>1 分鐘</span>
     </span>
 </div>
 
@@ -245,42 +238,89 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>鋸齒現象（aliasing）是指在數位影像或視覺顯示中，當邊緣或斜線被顯示為一系列不平滑的階梯狀像素時所產生的視覺效果，這些不平滑的邊緣看起來像鋸齒或台階，尤其在低解析度下更明顯。</p>
+    <div class="post-body" itemprop="articleBody"><p>軟體工程與資訊系統的差異</p>
 <span id="more"></span>
-<h1 id="形成原因："><a href="#形成原因：" class="headerlink" title="形成原因："></a>形成原因：</h1><p>鋸齒現象通常在影像縮放、線條渲染、或3D圖形處理時發生，特別是在解析度不足或影像縮小時出現。這是因為影像或圖形在數位化時，是以像素為單位來表示連續的線條或邊緣。當斜線或曲線無法與像素網格完全對齊時，就會出現鋸齒效應。</p>
-<ul>
-<li><p>例子：<br>文字或圖形邊緣：當你看到數位圖片或文字的邊緣出現一種「不平滑」的階梯狀邊緣。<br>遊戲畫面：在電腦或遊戲中，特別是在低解析度下，物體的邊緣會看起來不平滑，像是一系列小台階。</p>
-</li>
-<li><p>解決方法：</p>
-<ul>
-<li><p>抗鋸齒技術（Anti-aliasing）：<br>  抗鋸齒技術是用來減少或消除鋸齒現象的濾波技術。它通過對邊緣進行平滑處理，使斜線或曲線看起來更加自然和平滑，減少階梯狀邊緣的感覺。</p>
-</li>
-<li><p>提高解析度：<br>  更高的解析度可以減少鋸齒現象，因為每個像素表示的區域會更小，影像邊緣能夠更接近於連續的線條。</p>
-</li>
-<li><p>視覺比較：<br>  想像一條在低解析度下顯示的對角線，它可能看起來像一系列方格相連，而不是一條平滑的線。這種「方格感」就是鋸齒現象。</p>
-</li>
+
+<h1 id="軟體工程與資訊系統"><a href="#軟體工程與資訊系統" class="headerlink" title="軟體工程與資訊系統"></a>軟體工程與資訊系統</h1><h2 id="軟體工程-Software-Engineering"><a href="#軟體工程-Software-Engineering" class="headerlink" title="軟體工程 (Software Engineering)"></a>軟體工程 (Software Engineering)</h2><h3 id="定義"><a href="#定義" class="headerlink" title="定義"></a>定義</h3><p>軟體工程是一門關於設計、開發、測試、維護和管理軟體的學科，注重系統化和結構化的方法來構建高品質的軟體。</p>
+<h3 id="關鍵特點"><a href="#關鍵特點" class="headerlink" title="關鍵特點"></a>關鍵特點</h3><ol>
+<li><strong>核心目標</strong>: 開發功能完整、性能高效、易於維護且可靠的軟體。</li>
+<li><strong>主要內容</strong>:<ul>
+<li>軟體設計與架構</li>
+<li>程式開發與測試</li>
+<li>軟體生命周期（SDLC）</li>
+<li>敏捷（Agile）開發和版本管理</li>
+<li>需求分析與系統建模（如 UML）</li>
 </ul>
 </li>
-<li><p>影像中的鋸齒現象：</p>
-<ul>
-<li>無抗鋸齒處理：物體邊緣會顯得不平滑，邊界部分出現台階狀的鋸齒。</li>
-<li>有抗鋸齒處理：邊緣會顯得較為平滑，鋸齒感減少或消失。<br>  抗鋸齒技術在數字影像處理、電腦圖形學和遊戲開發中廣泛應用，以提升視覺效果的品質。</li>
+<li><strong>相關技術</strong>:<ul>
+<li>程式語言（如 Python、Java、C++）</li>
+<li>版本控制（如 Git）</li>
+<li>測試框架（如 JUnit、Selenium）</li>
 </ul>
 </li>
+<li><strong>職業角色</strong>:<ul>
+<li>軟體工程師</li>
+<li>全端開發工程師</li>
+<li>DevOps 工程師</li>
 </ul>
-<h1 id="Pytorch-Resize-antialias的影響"><a href="#Pytorch-Resize-antialias的影響" class="headerlink" title="Pytorch Resize antialias的影響"></a>Pytorch Resize antialias的影響</h1><p>在 torchvision.transforms.Resize 中，antialias&#x3D;True 是用來在影像縮放時進行抗鋸齒處理的選項。</p>
-<ul>
-<li><p>解釋：<br>  torchvision.transforms.Resize：<br>  這是 torchvision 中用來調整影像大小的轉換工具。<br>  你可以將圖片的尺寸改變到指定的大小，無論是放大還是縮小。</p>
 </li>
-<li><p>antialias&#x3D;True：<br>  當 antialias&#x3D;True 時，在圖片縮小（downsampling）時會使用抗鋸齒（anti-aliasing）技術來處理影像，減少因縮小而產生的邊緣鋸齒現象。<br>  抗鋸齒是一種濾波技術，能平滑縮小後的影像邊緣，使得影像不會顯得過於粗糙或失真，特別是在圖片包含細節時。</p>
-</li>
-<li><p>什麼時候使用 antialias&#x3D;True？<br>  縮小圖片時：當你從大圖縮小到小圖時，使用抗鋸齒有助於保留影像的細節，避免邊緣產生明顯的鋸齒狀。<br>  放大圖片時：如果你只是放大圖片，抗鋸齒的影響會比較小。</p>
-</li>
-<li><p>總結：<br>  antialias&#x3D;True 主要是為了在影像縮小時進行抗鋸齒處理，確保輸出的影像質量更高，邊緣更平滑。</p>
-</li>
+</ol>
+<h3 id="應用範圍"><a href="#應用範圍" class="headerlink" title="應用範圍"></a>應用範圍</h3><p>適用於開發獨立的應用程式（如行動應用、桌面軟體）以及需要高精度控制的系統（如航空、醫療設備）。</p>
+<hr>
+<h2 id="資訊系統-Information-Systems"><a href="#資訊系統-Information-Systems" class="headerlink" title="資訊系統 (Information Systems)"></a>資訊系統 (Information Systems)</h2><h3 id="定義-1"><a href="#定義-1" class="headerlink" title="定義"></a>定義</h3><p>資訊系統是研究如何利用科技來支援組織的資料管理與業務流程的學科，涵蓋技術、商業流程和使用者需求。</p>
+<h3 id="關鍵特點-1"><a href="#關鍵特點-1" class="headerlink" title="關鍵特點"></a>關鍵特點</h3><ol>
+<li><strong>核心目標</strong>: 開發和部署支援組織決策和運作的資訊系統。</li>
+<li><strong>主要內容</strong>:<ul>
+<li>資訊管理與決策支持系統</li>
+<li>資料庫設計與管理</li>
+<li>系統整合與企業資源規劃（ERP）</li>
+<li>人機互動與需求分析</li>
 </ul>
-<h1 id="圖片說明-1"><a href="#圖片說明-1" class="headerlink" title="圖片說明 1"></a>圖片說明 1</h1><p><img src="/../../images/2024/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/1.webp" alt="1"><br>這張圖片展示了在使用 torchvision.transforms.Resize 進行影像縮放時，antialias&#x3D;True 如何減少鋸齒現象。左側的影像在縮放後出現了明顯的鋸齒效應，邊緣呈現出像素化的階梯狀。右側的影像則經過抗鋸齒處理，邊緣變得平滑，顯示了 antialias&#x3D;True 如何在縮小影像時提升質量並消除鋸齒效果。</p>
-<h1 id="圖片說明-2"><a href="#圖片說明-2" class="headerlink" title="圖片說明 2"></a>圖片說明 2</h1><p><img src="/../../images/2024/%E9%8B%B8%E9%BD%92%E7%8F%BE%E8%B1%A1/2.webp" alt="2"><br>這張圖片展示了兩條對角線的對比，說明了鋸齒現象。左側的線條顯示了鋸齒現象，即邊緣呈現階梯狀的鋸齒邊，這是由於影像解析度不足或像素化導致的。而右側的線條經過抗鋸齒處理，邊緣變得平滑且自然，清楚地表現了抗鋸齒技術如何改善視覺效果。</p>
+</li>
+<li><strong>相關技術</strong>:<ul>
+<li>資料庫（如 SQL、NoSQL）</li>
+<li>商業智慧（BI）工具（如 Tableau、Power BI）</li>
+<li>雲端運算和企業系統整合</li>
+</ul>
+</li>
+<li><strong>職業角色</strong>:<ul>
+<li>系統分析師</li>
+<li>資料庫管理員</li>
+<li>IT 專案經理</li>
+</ul>
+</li>
+</ol>
+<h3 id="應用範圍-1"><a href="#應用範圍-1" class="headerlink" title="應用範圍"></a>應用範圍</h3><p>適用於解決企業中的業務流程自動化、數據處理和管理需求，例如客戶關係管理（CRM）、供應鏈管理（SCM）等。</p>
+<hr>
+<h2 id="主要差異比較"><a href="#主要差異比較" class="headerlink" title="主要差異比較"></a>主要差異比較</h2><table>
+<thead>
+<tr>
+<th><strong>特徵</strong></th>
+<th><strong>軟體工程</strong></th>
+<th><strong>資訊系統</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>焦點</strong></td>
+<td>開發軟體和應用程式</td>
+<td>建立和管理組織的資訊基礎架構</td>
+</tr>
+<tr>
+<td><strong>學科背景</strong></td>
+<td>更偏向計算機科學和程式設計</td>
+<td>涵蓋商業、管理和資訊科技</td>
+</tr>
+<tr>
+<td><strong>方法</strong></td>
+<td>注重技術實現和軟體生命周期</td>
+<td>注重需求分析和整合多元系統</td>
+</tr>
+<tr>
+<td><strong>目標用戶</strong></td>
+<td>開發者、程式設計師</td>
+<td>組織的業務部門和高層決策者</td>
+</tr>
+</tbody></table>
 
     </div>
 
@@ -294,13 +334,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/10/13/2024/October/STEM/" rel="prev" title="STEM">
-                  <i class="fa fa-angle-left"></i> STEM
+                <a href="/2024/12/28/2024/December/Why%20is%20programming%20used%20to%20validate%20concepts%20in%20computer%20science/" rel="prev" title="Why is programming used to validate concepts in computer science?">
+                  <i class="fa fa-angle-left"></i> Why is programming used to validate concepts in computer science?
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/10/18/2024/October/%E9%9B%BB%E8%85%A6%E7%A7%91%E5%AD%B8%E8%88%87%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E7%9A%84%E5%B7%AE%E7%95%B0/" rel="next" title="電腦科學與軟體工程的差異">
-                  電腦科學與軟體工程的差異 <i class="fa fa-angle-right"></i>
+                <a href="/2024/12/28/2024/December/Yolo%20Label/" rel="next" title="Yolo Label">
+                  Yolo Label <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
