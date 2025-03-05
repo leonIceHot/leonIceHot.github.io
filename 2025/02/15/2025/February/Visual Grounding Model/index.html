@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="視覺定位（Visual Grounding），有時也稱作「短語定位（Phrase Grounding）」或「參照定位（Referential Grounding）」。此任務結合電腦視覺與自然語言處理，目標是：給定一張影像與一段文字描述（例如短語、句子或更複雜的敘述）時，自動在影像中找出對應文字描述所指涉的區域，並以邊界框（Bounding Box）或遮罩（Mask）等方式進行標註。以下為視覺定位的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Visual Grounding Model">
+<meta property="og:url" content="https://leonicehot.github.io/2025/02/15/2025/February/Visual%20Grounding%20Model/index.html">
+<meta property="og:site_name" content="利醬の休憩房">
+<meta property="og:description" content="視覺定位（Visual Grounding），有時也稱作「短語定位（Phrase Grounding）」或「參照定位（Referential Grounding）」。此任務結合電腦視覺與自然語言處理，目標是：給定一張影像與一段文字描述（例如短語、句子或更複雜的敘述）時，自動在影像中找出對應文字描述所指涉的區域，並以邊界框（Bounding Box）或遮罩（Mask）等方式進行標註。以下為視覺定位的">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2025-02-15T13:12:15.000Z">
+<meta property="article:modified_time" content="2025-02-15T16:38:29.793Z">
+<meta property="article:author" content="利醬">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://leonicehot.github.io/2025/02/15/2025/February/Visual%20Grounding%20Model/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2025/02/15/2025/February/Visual%20Grounding%20Model/","path":"2025/02/15/2025/February/Visual Grounding Model/","title":"Visual Grounding Model"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Visual Grounding Model | 利醬の休憩房</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">利醬の休憩房</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Visual-Grounding"><span class="nav-number">1.</span> <span class="nav-text">Visual Grounding</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%95%E8%AC%82%E8%A6%96%E8%A6%BA%E5%AE%9A%E4%BD%8D%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">何謂視覺定位？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E8%87%A8%E7%9A%84%E6%8C%91%E6%88%B0"><span class="nav-number">1.2.</span> <span class="nav-text">面臨的挑戰</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%8A%80%E8%A1%93%E8%88%87%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">核心技術與方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%B3%87%E6%96%99%E9%9B%86"><span class="nav-number">1.4.</span> <span class="nav-text">常用資料集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E6%87%89%E7%94%A8%E5%A0%B4%E6%99%AF"><span class="nav-number">1.5.</span> <span class="nav-text">典型應用場景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E4%BE%86%E7%99%BC%E5%B1%95%E8%B6%A8%E5%8B%A2"><span class="nav-number">1.6.</span> <span class="nav-text">未來發展趨勢</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Referring-Expression-Comprehension"><span class="nav-number">2.</span> <span class="nav-text">Referring Expression Comprehension</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%95%E8%AC%82-Referring-Expression-Comprehension%EF%BC%9F"><span class="nav-number">2.1.</span> <span class="nav-text">何謂 Referring Expression Comprehension？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%BA%E4%BD%95%E9%87%8D%E8%A6%81%EF%BC%9F"><span class="nav-number">2.2.</span> <span class="nav-text">為何重要？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E6%8C%91%E6%88%B0"><span class="nav-number">2.3.</span> <span class="nav-text">典型挑戰</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E6%96%B9%E6%B3%95%E6%A6%82%E8%A6%BD"><span class="nav-number">2.4.</span> <span class="nav-text">模型方法概覽</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E4%BE%86%E8%B6%A8%E5%8B%A2"><span class="nav-number">2.5.</span> <span class="nav-text">未來趨勢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E9%97%9C%E6%96%87%E7%8D%BB"><span class="nav-number">2.6.</span> <span class="nav-text">相關文獻</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Phrase-Grounding"><span class="nav-number">3.</span> <span class="nav-text">Phrase Grounding</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF-Phrase-Grounding%EF%BC%9F"><span class="nav-number">3.1.</span> <span class="nav-text">什麼是 Phrase Grounding？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%BA%E4%BD%95%E9%87%8D%E8%A6%81%EF%BC%9F-1"><span class="nav-number">3.2.</span> <span class="nav-text">為何重要？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%91%E6%88%B0%E8%88%87%E7%89%B9%E9%BB%9E"><span class="nav-number">3.3.</span> <span class="nav-text">挑戰與特點</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">利醬</p>
+  <div class="site-description" itemprop="description">部落格記載著電腦科學基礎知識、科學應用探討、工程技術之白話筆記，從已知的知識持續探索未知的領域。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">155</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">58</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/leonIceHot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leonIceHot" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2025/02/15/2025/February/Visual%20Grounding%20Model/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="部落格記載著電腦科學基礎知識、科學應用探討、工程技術之白話筆記，從已知的知識持續探索未知的領域。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Visual Grounding Model | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Visual Grounding Model
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2025-02-15 21:12:15" itemprop="dateCreated datePublished" datetime="2025-02-15T21:12:15+08:00">2025-02-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2025-02-16 00:38:29" itemprop="dateModified" datetime="2025-02-16T00:38:29+08:00">2025-02-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Artificial-Intelligence/" itemprop="url" rel="index"><span itemprop="name">Artificial Intelligence</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>4.6k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>8 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>視覺定位（Visual Grounding），有時也稱作「短語定位（Phrase Grounding）」或「參照定位（Referential Grounding）」。此任務結合電腦視覺與自然語言處理，目標是：<strong>給定一張影像與一段文字描述（例如短語、句子或更複雜的敘述）時，自動在影像中找出對應文字描述所指涉的區域，並以邊界框（Bounding Box）或遮罩（Mask）等方式進行標註</strong>。以下為視覺定位的主要介紹與相關重點。</p>
+<span id="more"></span>
+
+<h1 id="Visual-Grounding"><a href="#Visual-Grounding" class="headerlink" title="Visual Grounding"></a>Visual Grounding</h1><h2 id="何謂視覺定位？"><a href="#何謂視覺定位？" class="headerlink" title="何謂視覺定位？"></a>何謂視覺定位？</h2><ol>
+<li><p><strong>核心概念</strong>  </p>
+<ul>
+<li>視覺定位旨在讓機器理解「哪些文字描述對應到影像中的哪些具體物件、場景或屬性」。  </li>
+<li>例如，若文本為「坐在草地上的小狗」，模型需要在影像中找出該小狗的位置。</li>
+</ul>
+</li>
+<li><p><strong>重要性</strong>  </p>
+<ul>
+<li><strong>多模態理解的關鍵</strong>：視覺定位是連結語言與視覺的重要基礎，模型若能準確對齊影像與文字，後續才能在更高層次任務中進行推理與理解。  </li>
+<li><strong>後續任務的基石</strong>：包括視覺問答（Visual Question Answering，VQA）、影像字幕生成（Image Captioning）與人機互動場景（如機器人語音指令的物體定位）等，都需要視覺定位做為核心能力。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="面臨的挑戰"><a href="#面臨的挑戰" class="headerlink" title="面臨的挑戰"></a>面臨的挑戰</h2><ol>
+<li><p><strong>多義性與複雜語義</strong>  </p>
+<ul>
+<li>文字描述可能包含模糊或抽象的資訊，如顏色、形狀、相對位置或動作。  </li>
+<li>更複雜的描述可能包含多層修飾，如「最右邊戴著紅帽子的人手上的杯子」等，對模型的語言與視覺對齊精細度提出高要求。</li>
+</ul>
+</li>
+<li><p><strong>場景複雜度與干擾</strong>  </p>
+<ul>
+<li>真實世界影像通常包含眾多物件、背景與遮擋。  </li>
+<li>模型需具備強健的視覺辨識能力，能在雜亂背景或部分遮擋情況下仍能正確定位目標。</li>
+</ul>
+</li>
+<li><p><strong>跨模態對齊的難度</strong>  </p>
+<ul>
+<li>語言與影像是不同的模態，如何建構能同時理解文字語義與視覺資訊的特徵表徵（Feature Representation）至關重要。  </li>
+<li>需要考慮詞彙（或子詞）與影像區域間的對齊機制，並能有效捕捉彼此間的關係。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="核心技術與方法"><a href="#核心技術與方法" class="headerlink" title="核心技術與方法"></a>核心技術與方法</h2><ol>
+<li><p><strong>雙流式（Two-Stream）模型</strong>  </p>
+<ul>
+<li>早期常見做法：分別使用卷積神經網路（CNN）來提取影像特徵，並使用循環神經網路（RNN）或其他語言模型提取文字特徵，然後在高維向量空間中進行相似度匹配或跨模態融合。  </li>
+<li>典型流程：  <ol>
+<li>從影像中生成候選區域（Region Proposals）。  </li>
+<li>為每個候選區域提取視覺特徵。  </li>
+<li>將文字描述編碼為向量表徵。  </li>
+<li>將兩者進行相似度計算，取最相近的區域作為最終定位結果。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><strong>自注意力（Self-Attention）與跨模態注意力（Cross-Attention）</strong>  </p>
+<ul>
+<li>隨著 Transformer 在 NLP 與 CV 領域的成功，越來越多方法開始使用 Transformer 結構來同時建模影像與文字。  </li>
+<li>在跨模態 Transformer 中，模型會學習到文字與特定影像區域之間的注意力權重，從而幫助視覺定位。</li>
+</ul>
+</li>
+<li><p><strong>端到端學習</strong>  </p>
+<ul>
+<li>部分近期研究嘗試在無需顯式候選區域生成的狀況下，直接端到端地同時訓練定位與語言對齊（例如使用 Vision Transformer 或卷積網路與 Transformer 結合的結構）。  </li>
+<li>好處是可以更直接地透過反向傳播來更新整個模型，減少多步驟預處理帶來的誤差累積。</li>
+</ul>
+</li>
+<li><p><strong>多目標&#x2F;多語義定位</strong>  </p>
+<ul>
+<li>面對一句話中包含多個目標或動作描述（例如「那位穿藍色外套並和朋友談笑的人正拿著一杯咖啡」），模型需要能同時定位多個不同對象或屬性。  </li>
+<li>這常需更複雜的多模態編碼與解碼機制。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="常用資料集"><a href="#常用資料集" class="headerlink" title="常用資料集"></a>常用資料集</h2><ol>
+<li><p><strong>Flickr30k Entities</strong>  </p>
+<ul>
+<li>透過為 Flickr30k 影像資料集中對文字描述中的名詞短語進行標註，提供更細粒度的對齊訊息。</li>
+</ul>
+</li>
+<li><p><strong>ReferIt Game &#x2F; RefCOCO &#x2F; RefCOCO+</strong>  </p>
+<ul>
+<li>專門針對「參照表達式」（Referring Expressions）收集的資料集，讓模型能嘗試在較互動的場合下找到物件。</li>
+</ul>
+</li>
+<li><p><strong>Visual Genome</strong>  </p>
+<ul>
+<li>包含龐大的影像場景註解與關係標註，可用於學習物件之間的多種關係，對於視覺定位與視覺推理都十分有幫助。</li>
+</ul>
+</li>
+<li><p><strong>COCO Entities</strong>  </p>
+<ul>
+<li>從 MS COCO 延伸而來，提供更細緻的文字-物件對應關係。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="典型應用場景"><a href="#典型應用場景" class="headerlink" title="典型應用場景"></a>典型應用場景</h2><ol>
+<li><p><strong>視覺問答（Visual Question Answering，VQA）</strong><br>用戶提出與影像相關的問題，視覺定位能幫助模型快速對應問題中的關鍵詞與影像中的目標，進而回答更精準。</p>
+</li>
+<li><p><strong>影像字幕生成與視覺對話（Visual Dialog）</strong><br>在生成影像字幕或與使用者針對影像互動時，準確定位有助於文字描述更貼近影像內容。</p>
+</li>
+<li><p><strong>人機互動與機器人應用</strong><br>例如語音指令給機器人「請幫我拿桌上那本紅色的書」，機器人需能定位到正確的書才能做出對應動作。</p>
+</li>
+<li><p><strong>影像搜尋與推薦</strong><br>使用者以文字描述搜尋影像（如電商搜尋「穿藍色牛仔褲的模特兒」），視覺定位能提升檢索精準度。</p>
+</li>
+</ol>
+<hr>
+<h2 id="未來發展趨勢"><a href="#未來發展趨勢" class="headerlink" title="未來發展趨勢"></a>未來發展趨勢</h2><ol>
+<li><p><strong>大規模預訓練模型（Vision-Language Pre-trained Models）</strong>  </p>
+<ul>
+<li>結合 BERT、GPT 等大型語言模型與大型視覺網路（如 Vision Transformer）形成多模態預訓練結構，可大幅強化視覺定位的效果。</li>
+</ul>
+</li>
+<li><p><strong>自監督與弱監督方法</strong>  </p>
+<ul>
+<li>資料標註成本高昂，未來會有更多研究探索使用弱監督或無監督方式學習跨模態對齊，使得模型能從大量未標註的影像-文字配對中自動學習定位能力。</li>
+</ul>
+</li>
+<li><p><strong>更複雜的場景與語言結構</strong>  </p>
+<ul>
+<li>從簡單的「對象-屬性」定位到更複雜的「事件-動作-關係」理解，勢必需要更深層的跨模態語意推理。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="Referring-Expression-Comprehension"><a href="#Referring-Expression-Comprehension" class="headerlink" title="Referring Expression Comprehension"></a>Referring Expression Comprehension</h1><h2 id="何謂-Referring-Expression-Comprehension？"><a href="#何謂-Referring-Expression-Comprehension？" class="headerlink" title="何謂 Referring Expression Comprehension？"></a>何謂 Referring Expression Comprehension？</h2><ul>
+<li><p><strong>概念</strong><br>Referring Expression Comprehension（有時也簡稱「REC」）的核心在於：給定一張影像與一段「參照描述」（例如「那位穿紅色帽 T、站在左邊的小男孩」），模型需要在影像中找出該描述所指涉的正確目標（通常以邊界框或遮罩標記）。</p>
+</li>
+<li><p><strong>與視覺定位的關係</strong><br>視覺定位（Visual Grounding）是廣義上的「文字對應影像中目標」的統稱，而 Referring Expression Comprehension 更聚焦於「自然語言參照描述」──這些描述經常出現在對話、問答或互動式場景之中。模型若能準確地理解並定位影像中符合描述的目標，便實現了 REC 的核心功能。</p>
+</li>
+</ul>
+<hr>
+<h2 id="為何重要？"><a href="#為何重要？" class="headerlink" title="為何重要？"></a>為何重要？</h2><ol>
+<li><p><strong>互動式應用場景</strong><br>在人機互動或機器人應用中，我們常使用自然語言對象做指令，例如：「請把最右邊綠色瓶子遞給我」。機器人需要能正確解析此參照描述，才能執行後續動作。  </p>
+</li>
+<li><p><strong>進階多模態理解</strong><br>Referring Expression 往往含有豐富的屬性、關係與上下文資訊（如顏色、姿勢、位置、動作），需要模型具備高階的語言理解和視覺辨識能力，亦牽涉到多物件間的關係推理。</p>
+</li>
+<li><p><strong>多下游任務基礎</strong><br>視覺問答（VQA）或可視對話（Visual Dialog）等任務中，也可能需要先識別文字描述對應的具體影像區域，才能進一步作答或生成敘述。</p>
+</li>
+</ol>
+<hr>
+<h2 id="典型挑戰"><a href="#典型挑戰" class="headerlink" title="典型挑戰"></a>典型挑戰</h2><ol>
+<li><p><strong>複合描述解析</strong><br>「那個戴著紅色棒球帽、坐在沙發上的人」這類描述包含多個屬性、位置或關係修飾，需要模型能有效地將句子拆解並對應到影像中的多個線索。</p>
+</li>
+<li><p><strong>背景複雜度</strong><br>在真實場景中，可能出現多個相似物體（例如多人都穿紅衣服），模型需辨別更加細緻的區別性特徵。</p>
+</li>
+<li><p><strong>動態場景或姿勢</strong><br>若描述涉及動作或姿勢（如「正在跑步的那隻狗」），模型需捕捉瞬態資訊或更高層的語意；部分資料集甚至涵蓋影片場景（Video Referring Expressions）。</p>
+</li>
+</ol>
+<hr>
+<h2 id="模型方法概覽"><a href="#模型方法概覽" class="headerlink" title="模型方法概覽"></a>模型方法概覽</h2><ol>
+<li><p><strong>候選區域 + 排序&#x2F;分類</strong><br>早期常見的二階段流程：先用 Region Proposal Network 或選取候選框（Region Proposals），再把文字特徵與候選框特徵進行相似度比較或分類；選取得分最高者作為最終預測。</p>
+</li>
+<li><p><strong>基於注意力的跨模態對齊</strong><br>利用跨模態 Transformer 或注意力機制，將文字嵌入（Text Embeddings）與影像特徵同時編碼，透過注意力權重找出更準確的映射關係。</p>
+</li>
+<li><p><strong>端到端方法</strong><br>部分新方法可直接藉由 CNN 或 Vision Transformer 配合語言 Transformer 端到端學習，省去手動提取候選框的步驟。</p>
+</li>
+<li><p><strong>多階層理解（從句法到語意）</strong><br>因參照描述可能包含多個修飾，部分方法會在語言層面做更精細的解析（如解析句法樹），並與視覺特徵對應，從而提高定位精度。</p>
+</li>
+</ol>
+<hr>
+<h2 id="未來趨勢"><a href="#未來趨勢" class="headerlink" title="未來趨勢"></a>未來趨勢</h2><ol>
+<li><p><strong>使用大型多模態預訓練模型</strong><br>隨著 CLIP、BLIP、ViLT 等大型多模態模型的發展，未來有望在 Referring Expression Comprehension 上獲得更強泛化能力與表示能力。</p>
+</li>
+<li><p><strong>弱監督或自監督學習</strong><br>由於標註參照描述需要人工精細標記，成本高，未來可能更多研究將探索從「影像-文字」配對資料中自動學習，減少對人工標註的依賴。</p>
+</li>
+<li><p><strong>整合場景關係與常識推理</strong><br>僅靠物件與屬性仍不足，模型還需理解物體之間的關係、場景上下文，以及更高層次的常識知識（例如「人通常坐在椅子上」），來更準確地判斷描述對象。</p>
+</li>
+<li><p><strong>跨模態對話與多步推理</strong><br>在未來的人機對話或複雜指令場景中，參照描述可能跨越多輪對話，需要模型兼顧前後文記憶與多步推理能力。</p>
+</li>
+</ol>
+<h2 id="相關文獻"><a href="#相關文獻" class="headerlink" title="相關文獻"></a>相關文獻</h2><ol>
+<li><p>Referring Expression Comprehension: A Survey of Methods and Datasets<br><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/9285213">https://ieeexplore.ieee.org/document/9285213</a></p>
+</li>
+<li><p>[ECCV2016]-Modeling Context in Referring Expressions<br><a target="_blank" rel="noopener" href="https://github.com/lichengunc/refer">https://github.com/lichengunc/refer</a></p>
+</li>
+</ol>
+<hr>
+<h1 id="Phrase-Grounding"><a href="#Phrase-Grounding" class="headerlink" title="Phrase Grounding"></a>Phrase Grounding</h1><h2 id="什麼是-Phrase-Grounding？"><a href="#什麼是-Phrase-Grounding？" class="headerlink" title="什麼是 Phrase Grounding？"></a>什麼是 Phrase Grounding？</h2><ul>
+<li><p><strong>核心概念</strong><br>「Phrase Grounding」著重於將文字中的特定「短語（phrase）」與影像中對應的區域或物件進行對應。例如，若文本包含「一隻在草地上奔跑的金毛犬」，模型需要在影像中找出對應「金毛犬」的正確區域（通常以邊界框或遮罩標示）。</p>
+</li>
+<li><p><strong>與視覺定位的關係</strong><br>由於 Phrase Grounding 也是將文字與影像作跨模態對應，因此可視為「視覺定位（Visual Grounding）」的子領域或近似任務，亦與「Referring Expression Comprehension」同屬多模態研究的重要課題。</p>
+</li>
+</ul>
+<hr>
+<h2 id="為何重要？-1"><a href="#為何重要？-1" class="headerlink" title="為何重要？"></a>為何重要？</h2><ol>
+<li><p><strong>更細緻的文字-影像對齊</strong><br>在一般影像描述中，單一句子可能包含多個名詞短語（如「坐在椅子上的人」「桌上的筆電」等），Phrase Grounding 能幫助模型精準識別並對應每個短語所描述的對象與屬性。</p>
+</li>
+<li><p><strong>複雜場景理解</strong><br>現實世界影像往往同時包含多種不同物件、背景或情境。能夠對複雜敘述中的多個短語進行定位，對於更高層次的影像理解具有關鍵意義。</p>
+</li>
+<li><p><strong>多項下游應用基礎</strong><br>Phrase Grounding 結果可用於影像字幕生成、視覺問答、視覺對話、機器人互動等。當中每一個短語的準確對齊都可能影響整體表現。</p>
+</li>
+</ol>
+<hr>
+<h2 id="挑戰與特點"><a href="#挑戰與特點" class="headerlink" title="挑戰與特點"></a>挑戰與特點</h2><ol>
+<li><p><strong>多義性</strong><br>一個短語可能擁有多種解釋方式（如「apple」既可能指蘋果公司也可能指水果），必須結合上下文與背景知識來判定正確含義。</p>
+</li>
+<li><p><strong>同類對象區分</strong><br>如果場景中出現多個相同類型的物體（如多隻狗），模型需要善用顏色、位置、大小等細節以準確區分。</p>
+</li>
+<li><p><strong>短語結構多樣性</strong><br>短語可以是簡單的名詞短語（「a red car」），也可能包含複雜修飾（「the small dog under the table」），需要能解析出整個修飾結構並與影像對齊。</p>
+</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<li>Towards Visual Grounding: A Survey<br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2412.20206">https://arxiv.org/abs/2412.20206</a><br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/I0SNcv9RypSV5Fp9sh4bLQ">https://mp.weixin.qq.com/s/I0SNcv9RypSV5Fp9sh4bLQ</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/01/26/2025/January/Enterprise-Pattern/" rel="prev" title="Enterprise Pattern">
+                  <i class="fa fa-angle-left"></i> Enterprise Pattern
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">利醬</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">422k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">12:48</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+
+
+
+</body>
+</html>
