@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="🧠 Mixture-of-Experts（MoE）架構詳細介紹概述Mixture-of-Experts (MoE) 是一種將神經網路模型「模組化與條件激活」的架構。其核心思想是：將模型拆成多個子網路（稱為「專家」），每次推論或訓練時，僅激活其中部分專家，以此實現模型能力擴展與計算效率提升。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mixture-of-Experts">
+<meta property="og:url" content="https://leonicehot.github.io/2025/05/24/2025/May/Mixture-of-Experts/index.html">
+<meta property="og:site_name" content="利醬の休憩房">
+<meta property="og:description" content="🧠 Mixture-of-Experts（MoE）架構詳細介紹概述Mixture-of-Experts (MoE) 是一種將神經網路模型「模組化與條件激活」的架構。其核心思想是：將模型拆成多個子網路（稱為「專家」），每次推論或訓練時，僅激活其中部分專家，以此實現模型能力擴展與計算效率提升。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2025-05-24T03:19:20.000Z">
+<meta property="article:modified_time" content="2025-05-24T03:22:18.935Z">
+<meta property="article:author" content="利醬">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://leonicehot.github.io/2025/05/24/2025/May/Mixture-of-Experts/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2025/05/24/2025/May/Mixture-of-Experts/","path":"2025/05/24/2025/May/Mixture-of-Experts/","title":"Mixture-of-Experts"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Mixture-of-Experts | 利醬の休憩房</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">利醬の休憩房</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%A7%A0-Mixture-of-Experts%EF%BC%88MoE%EF%BC%89%E6%9E%B6%E6%A7%8B%E8%A9%B3%E7%B4%B0%E4%BB%8B%E7%B4%B9"><span class="nav-number">1.</span> <span class="nav-text">🧠 Mixture-of-Experts（MoE）架構詳細介紹</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%A7-MoE-%E6%9E%B6%E6%A7%8B%E8%A8%AD%E8%A8%88"><span class="nav-number">1.2.</span> <span class="nav-text">🔧 MoE 架構設計</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%8C-%E5%9F%BA%E6%9C%AC%E6%A7%8B%E6%88%90%E5%85%83%E4%BB%B6%EF%BC%9A"><span class="nav-number">1.2.1.</span> <span class="nav-text">📌 基本構成元件：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%A7%AE-%E6%95%B8%E5%AD%B8%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.3.</span> <span class="nav-text">🧮 數學表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%A7-MoE-%E5%9C%A8%E8%AA%9E%E8%A8%80%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E6%87%89%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">1.4.</span> <span class="nav-text">🔧 MoE 在語言模型中的應用方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%A8-%E6%9B%BF%E4%BB%A3-Transformer-%E4%B8%AD%E7%9A%84-FFN-%E7%B5%90%E6%A7%8B"><span class="nav-number">1.4.1.</span> <span class="nav-text">✨ 替代 Transformer 中的 FFN 結構</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%8A-%E4%BB%A3%E8%A1%A8%E6%80%A7-MoE-%E8%AA%9E%E8%A8%80%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.5.</span> <span class="nav-text">📊 代表性 MoE 語言模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9C%85-MoE-%E7%9A%84%E5%84%AA%E5%8B%A2"><span class="nav-number">1.6.</span> <span class="nav-text">✅ MoE 的優勢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%A7%AE-%E6%95%B8%E5%AD%B8%E8%A1%A8%E7%A4%BA%EF%BC%88Top-k%EF%BC%89"><span class="nav-number">1.7.</span> <span class="nav-text">🧮 數學表示（Top-k）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%8E%AF-Routing-%E7%AD%96%E7%95%A5"><span class="nav-number">1.8.</span> <span class="nav-text">🎯 Routing 策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9C%85-MoE-%E5%84%AA%E5%8B%A2"><span class="nav-number">1.9.</span> <span class="nav-text">✅ MoE 優勢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9A%A0%EF%B8%8F-MoE-%E9%9D%A2%E8%87%A8%E7%9A%84%E6%8C%91%E6%88%B0"><span class="nav-number">1.10.</span> <span class="nav-text">⚠️ MoE 面臨的挑戰</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%8A-%E5%AF%A6%E9%9A%9B%E6%87%89%E7%94%A8%E8%88%87%E4%BB%A3%E8%A1%A8%E6%80%A7%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.11.</span> <span class="nav-text">📊 實際應用與代表性模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%AE-%E6%9C%AA%E4%BE%86%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91"><span class="nav-number">1.12.</span> <span class="nav-text">🔮 未來研究方向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%9A-%E5%8F%83%E8%80%83%E6%96%87%E7%8D%BB"><span class="nav-number">1.13.</span> <span class="nav-text">📚 參考文獻</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">利醬</p>
+  <div class="site-description" itemprop="description">部落格記載著電腦科學基礎知識、科學應用探討、工程技術之白話筆記，從已知的知識持續探索未知的領域。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">157</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">58</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/leonIceHot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leonIceHot" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2025/05/24/2025/May/Mixture-of-Experts/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="部落格記載著電腦科學基礎知識、科學應用探討、工程技術之白話筆記，從已知的知識持續探索未知的領域。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Mixture-of-Experts | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mixture-of-Experts
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2025-05-24 11:19:20 / 修改時間：11:22:18" itemprop="dateCreated datePublished" datetime="2025-05-24T11:19:20+08:00">2025-05-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Artificial-Intelligence/" itemprop="url" rel="index"><span itemprop="name">Artificial Intelligence</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>2.5k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>4 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="🧠-Mixture-of-Experts（MoE）架構詳細介紹"><a href="#🧠-Mixture-of-Experts（MoE）架構詳細介紹" class="headerlink" title="🧠 Mixture-of-Experts（MoE）架構詳細介紹"></a>🧠 Mixture-of-Experts（MoE）架構詳細介紹</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><strong>Mixture-of-Experts (MoE)</strong> 是一種將神經網路模型「模組化與條件激活」的架構。<br>其核心思想是：將模型拆成多個子網路（稱為「專家」），每次推論或訓練時，僅激活其中部分專家，以此實現模型能力擴展與計算效率提升。</p>
+<span id="more"></span>
+
+<h2 id="🔧-MoE-架構設計"><a href="#🔧-MoE-架構設計" class="headerlink" title="🔧 MoE 架構設計"></a>🔧 MoE 架構設計</h2><h3 id="📌-基本構成元件："><a href="#📌-基本構成元件：" class="headerlink" title="📌 基本構成元件："></a>📌 基本構成元件：</h3><ol>
+<li><p><strong>多個專家（Experts）</strong></p>
+<ul>
+<li>每位專家 ( E_i ) 是一個神經網路子模組（如 MLP、Transformer Block）。</li>
+<li>不同專家可學習不同的資料特徵或任務子空間。</li>
+</ul>
+</li>
+<li><p><strong>門控函數（Gating Network）</strong></p>
+<ul>
+<li>接收輸入 ( x )，計算出一組 gating weights ( G(x) )，表示每位專家的選擇概率。</li>
+<li>可使用 softmax 或 top-k 選擇策略。</li>
+</ul>
+</li>
+<li><p><strong>選擇與合併機制（Routing &amp; Aggregation）</strong></p>
+<ul>
+<li>選擇前 k 位最適合的專家。</li>
+<li>將這些專家的輸出加權合併為最終輸出。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="🧮-數學表示"><a href="#🧮-數學表示" class="headerlink" title="🧮 數學表示"></a>🧮 數學表示</h2><p>給定輸入 ( x )，模型輸出為：</p>
+<p>[<br>y &#x3D; \sum_{i&#x3D;1}^{n} G_i(x) \cdot E_i(x)<br>]</p>
+<p>其中：</p>
+<ul>
+<li>( G_i(x) )：gating network 對專家 ( i ) 的權重</li>
+<li>( E_i(x) )：第 ( i ) 個專家的輸出</li>
+<li>通常僅保留 top-k，實現稀疏激活</li>
+</ul>
+<hr>
+<h2 id="🔧-MoE-在語言模型中的應用方式"><a href="#🔧-MoE-在語言模型中的應用方式" class="headerlink" title="🔧 MoE 在語言模型中的應用方式"></a>🔧 MoE 在語言模型中的應用方式</h2><h3 id="✨-替代-Transformer-中的-FFN-結構"><a href="#✨-替代-Transformer-中的-FFN-結構" class="headerlink" title="✨ 替代 Transformer 中的 FFN 結構"></a>✨ 替代 Transformer 中的 FFN 結構</h3><p>原本的 Transformer 層結構：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Self-Attention] → [Feedforward Layer]</span><br></pre></td></tr></table></figure>
+
+<p>MoE 架構中：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Self-Attention] → [Mixture of Experts Layer]</span><br></pre></td></tr></table></figure>
+
+<p>每個 MoE 層包含多個 FFN 子模組（專家），透過 gating network 選擇 top-k 專家參與運算。</p>
+<hr>
+<h2 id="📊-代表性-MoE-語言模型"><a href="#📊-代表性-MoE-語言模型" class="headerlink" title="📊 代表性 MoE 語言模型"></a>📊 代表性 MoE 語言模型</h2><table>
+<thead>
+<tr>
+<th>模型名稱</th>
+<th>開發者</th>
+<th>參數規模</th>
+<th>特點與貢獻</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>GShard (2020)</strong></td>
+<td>Google</td>
+<td>600B+</td>
+<td>第一個成功的大規模翻譯 MoE 模型，採用 Noisy Top-k routing</td>
+</tr>
+<tr>
+<td><strong>Switch Transformer (2021)</strong></td>
+<td>Google</td>
+<td>1.6T（僅激活260M）</td>
+<td>採用 Top-1 路由，架構簡單高效</td>
+</tr>
+<tr>
+<td><strong>GLaM (2021)</strong></td>
+<td>Google</td>
+<td>1.2T（推論時僅用97B）</td>
+<td>多語言語言模型，效能超越 GPT-3，訓練能耗低</td>
+</tr>
+<tr>
+<td><strong>DeepSpeed-MoE</strong></td>
+<td>Microsoft</td>
+<td>可調整擴展</td>
+<td>高效支援 GPT 類 MoE 模型分布式訓練</td>
+</tr>
+<tr>
+<td><strong>Mixtral (2024)</strong></td>
+<td>Mistral AI</td>
+<td>12.9B × 2</td>
+<td>開源稀疏 MoE 模型，支援商用，使用 2-of-8 routing</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="✅-MoE-的優勢"><a href="#✅-MoE-的優勢" class="headerlink" title="✅ MoE 的優勢"></a>✅ MoE 的優勢</h2><table>
+<thead>
+<tr>
+<th>優勢</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>計算效率高</strong></td>
+<td>僅激活部分專家，大幅減少 FLOPs 與記憶體使用</td>
+</tr>
+<tr>
+<td><strong>參數可擴展性強</strong></td>
+<td>支援訓練百億到數兆參數模型</td>
+</tr>
+<tr>
+<td><strong>泛化能力強</strong></td>
+<td>不同專家學習不同任務空間，具分工合作能力</td>
+</tr>
+<tr>
+<td><strong>支援多語言&#x2F;多任務</strong></td>
+<td>同一模型內專家可針對不同語言或任務進行訓練</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="🧮-數學表示（Top-k）"><a href="#🧮-數學表示（Top-k）" class="headerlink" title="🧮 數學表示（Top-k）"></a>🧮 數學表示（Top-k）</h2><p>[<br>\text{MoE}(x) &#x3D; \sum_{i \in \text{TopK}(G(x))} G_i(x) \cdot E_i(x)<br>]</p>
+<ul>
+<li>( x )：輸入 token 向量</li>
+<li>( G_i(x) )：門控函數輸出，表示第 ( i ) 個專家的激活機率</li>
+<li>( E_i(x) )：第 ( i ) 個專家的輸出</li>
+<li>通常選擇 Top-1 或 Top-2 的專家以實現稀疏性</li>
+</ul>
+<hr>
+<h2 id="🎯-Routing-策略"><a href="#🎯-Routing-策略" class="headerlink" title="🎯 Routing 策略"></a>🎯 Routing 策略</h2><table>
+<thead>
+<tr>
+<th>策略類型</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Top-k Routing</strong></td>
+<td>選擇分數最高的 k 位專家</td>
+</tr>
+<tr>
+<td><strong>Noisy Top-k (GShard)</strong></td>
+<td>在分數中加入隨機噪聲以提升探索性並減少模式崩壞</td>
+</tr>
+<tr>
+<td><strong>Softmax Routing</strong></td>
+<td>使用 softmax 分布計算所有專家貢獻，稀疏性低但穩定性高</td>
+</tr>
+<tr>
+<td><strong>Load-balanced Routing</strong></td>
+<td>加入 loss 項平衡每位專家的使用率，避免部分專家過度繁忙</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="✅-MoE-優勢"><a href="#✅-MoE-優勢" class="headerlink" title="✅ MoE 優勢"></a>✅ MoE 優勢</h2><table>
+<thead>
+<tr>
+<th>優點</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>計算效率高</strong></td>
+<td>每次僅部分專家參與運算，大幅降低 FLOPs、記憶體需求</td>
+</tr>
+<tr>
+<td><strong>參數可擴展性強</strong></td>
+<td>支援數十億到數兆參數模型，而不會影響單次推論成本</td>
+</tr>
+<tr>
+<td><strong>任務分工學習能力</strong></td>
+<td>每個專家可學習處理不同語意、主題、語言、圖像特徵</td>
+</tr>
+<tr>
+<td><strong>多任務&#x2F;多語言泛化性強</strong></td>
+<td>輕鬆支援多任務或多語言場景，例如 GLaM 同時處理 27 種語言的 NLP 任務</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="⚠️-MoE-面臨的挑戰"><a href="#⚠️-MoE-面臨的挑戰" class="headerlink" title="⚠️ MoE 面臨的挑戰"></a>⚠️ MoE 面臨的挑戰</h2><table>
+<thead>
+<tr>
+<th>挑戰</th>
+<th>原因與說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>專家負載不均衡</strong></td>
+<td>熱門專家被過度選中，導致過擬合、梯度爆炸、資源浪費</td>
+</tr>
+<tr>
+<td><strong>路由困難與錯誤路由</strong></td>
+<td>門控學習不佳會讓輸入路由到錯誤專家，影響準確率</td>
+</tr>
+<tr>
+<td><strong>通信成本（分散式訓練）</strong></td>
+<td>專家分佈於多張卡或節點，需大量同步和張量移動，造成瓶頸</td>
+</tr>
+<tr>
+<td><strong>梯度傳播不穩定</strong></td>
+<td>稀疏激活導致部分梯度無法有效傳遞給未被選中的專家</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="📊-實際應用與代表性模型"><a href="#📊-實際應用與代表性模型" class="headerlink" title="📊 實際應用與代表性模型"></a>📊 實際應用與代表性模型</h2><table>
+<thead>
+<tr>
+<th>模型名稱</th>
+<th>特點與貢獻</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Shazeer et al. (2017)</strong></td>
+<td>最早提出稀疏門控 + 多專家 MoE，展示巨量網路訓練可行性</td>
+</tr>
+<tr>
+<td><strong>GShard (2020)</strong></td>
+<td>Google 首次於大規模機器翻譯使用 MoE，提出 Noisy Top-k routing</td>
+</tr>
+<tr>
+<td><strong>Switch Transformer (2021)</strong></td>
+<td>極致簡化版 MoE，每次只啟用 1 位專家，訓練速度快，適合大模型擴展</td>
+</tr>
+<tr>
+<td><strong>GLaM (2021)</strong></td>
+<td>Google 大型語言模型，參數達 1.2 兆，但推論僅使用 97 億參數，效率極高</td>
+</tr>
+<tr>
+<td><strong>V-MoE (2021)</strong></td>
+<td>Vision MoE，用於影像分類（如 ImageNet），減少推理成本提升準確度</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="🔮-未來研究方向"><a href="#🔮-未來研究方向" class="headerlink" title="🔮 未來研究方向"></a>🔮 未來研究方向</h2><ul>
+<li><strong>多模態 MoE</strong>：整合語音、影像、文字等多模態輸入</li>
+<li><strong>階層式 MoE</strong>：建立多層專家路由，應對複雜任務分解</li>
+<li><strong>無同步&#x2F;緩存梯度訓練策略</strong>：降低通信成本</li>
+<li><strong>知識蒸餾</strong>：將 MoE 壓縮成輕量版本，便於部署</li>
+</ul>
+<hr>
+<h2 id="📚-參考文獻"><a href="#📚-參考文獻" class="headerlink" title="📚 參考文獻"></a>📚 參考文獻</h2><ol>
+<li><p>Shazeer et al. (2017). <em>Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer</em><br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1701.06538">arXiv:1701.06538</a></p>
+</li>
+<li><p>Lepikhin et al. (2020). <em>GShard: Scaling Giant Models with Conditional Computation</em><br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2006.16668">arXiv:2006.16668</a></p>
+</li>
+<li><p>Fedus et al. (2021). <em>Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity</em><br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2101.03961">arXiv:2101.03961</a></p>
+</li>
+<li><p>Du et al. (2021). <em>GLaM: Efficient Scaling of Language Models with Mixture-of-Experts</em><br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2112.06905">arXiv:2112.06905</a></p>
+</li>
+</ol>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/05/24/2025/May/Discriminative-AI-vs-Generative-AI/" rel="prev" title="Discriminative AI vs. Generative AI">
+                  <i class="fa fa-angle-left"></i> Discriminative AI vs. Generative AI
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">利醬</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">427k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">12:56</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+
+
+
+</body>
+</html>

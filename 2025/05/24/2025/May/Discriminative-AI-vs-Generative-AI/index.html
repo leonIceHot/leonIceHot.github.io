@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="🔹 Discriminative AI（判別式 AI）用來「判斷輸入屬於哪一類」的模型。它關注的是輸入與標籤之間的關係，例如看到一張圖片就判斷是「狗」還是「貓」。 🔹 Generative AI（生成式 AI）用來「產生新資料」的模型。它學習資料的生成方式，例如根據文字生成圖片、創作文章、模擬語音等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Discriminative AI vs. Generative AI">
+<meta property="og:url" content="https://leonicehot.github.io/2025/05/24/2025/May/Discriminative-AI-vs-Generative-AI/index.html">
+<meta property="og:site_name" content="利醬の休憩房">
+<meta property="og:description" content="🔹 Discriminative AI（判別式 AI）用來「判斷輸入屬於哪一類」的模型。它關注的是輸入與標籤之間的關係，例如看到一張圖片就判斷是「狗」還是「貓」。 🔹 Generative AI（生成式 AI）用來「產生新資料」的模型。它學習資料的生成方式，例如根據文字生成圖片、創作文章、模擬語音等。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2025-05-24T03:18:20.000Z">
+<meta property="article:modified_time" content="2025-05-24T03:26:38.901Z">
+<meta property="article:author" content="利醬">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://leonicehot.github.io/2025/05/24/2025/May/Discriminative-AI-vs-Generative-AI/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2025/05/24/2025/May/Discriminative-AI-vs-Generative-AI/","path":"2025/05/24/2025/May/Discriminative-AI-vs-Generative-AI/","title":"Discriminative AI vs. Generative AI"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Discriminative AI vs. Generative AI | 利醬の休憩房</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">利醬の休憩房</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%B9-Discriminative-AI%EF%BC%88%E5%88%A4%E5%88%A5%E5%BC%8F-AI%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">🔹 Discriminative AI（判別式 AI）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%B9-Generative-AI%EF%BC%88%E7%94%9F%E6%88%90%E5%BC%8F-AI%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">🔹 Generative AI（生成式 AI）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9C%85-%E7%B0%A1%E5%96%AE%E6%AF%94%E8%BC%83"><span class="nav-number">3.</span> <span class="nav-text">✅ 簡單比較</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%B9-1-Discriminative-AI"><span class="nav-number">4.</span> <span class="nav-text">🔹 1. Discriminative AI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-%E7%89%B9%E9%BB%9E%EF%BC%9A"><span class="nav-number">4.1.</span> <span class="nav-text">✅ 特點：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-%E5%B8%B8%E8%A6%8B%E6%A8%A1%E5%9E%8B%EF%BC%9A"><span class="nav-number">4.2.</span> <span class="nav-text">✅ 常見模型：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-%E4%BD%BF%E7%94%A8%E6%83%85%E5%A2%83%EF%BC%9A"><span class="nav-number">4.3.</span> <span class="nav-text">✅ 使用情境：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%B9-2-Generative-AI"><span class="nav-number">5.</span> <span class="nav-text">🔹 2. Generative AI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-%E7%89%B9%E9%BB%9E%EF%BC%9A-1"><span class="nav-number">5.1.</span> <span class="nav-text">✅ 特點：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-%E5%B8%B8%E8%A6%8B%E6%A8%A1%E5%9E%8B%EF%BC%9A-1"><span class="nav-number">5.2.</span> <span class="nav-text">✅ 常見模型：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-%E4%BD%BF%E7%94%A8%E6%83%85%E5%A2%83%EF%BC%9A-1"><span class="nav-number">5.3.</span> <span class="nav-text">✅ 使用情境：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%84-%E6%AF%94%E8%BC%83%E7%B8%BD%E8%A1%A8"><span class="nav-number">6.</span> <span class="nav-text">🔄 比較總表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%A7%A0-%E7%B0%A1%E5%96%AE%E7%9B%B4%E8%A7%80%E7%90%86%E8%A7%A3"><span class="nav-number">7.</span> <span class="nav-text">🧠 簡單直觀理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%9A-%E8%B3%87%E6%96%99%E4%BE%86%E6%BA%90%E5%8F%83%E8%80%83"><span class="nav-number">8.</span> <span class="nav-text">📚 資料來源參考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Discriminative"><span class="nav-number"></span> <span class="nav-text">Discriminative</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Generative"><span class="nav-number"></span> <span class="nav-text">Generative</span></a></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">利醬</p>
+  <div class="site-description" itemprop="description">部落格記載著電腦科學基礎知識、科學應用探討、工程技術之白話筆記，從已知的知識持續探索未知的領域。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">157</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">58</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/leonIceHot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leonIceHot" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2025/05/24/2025/May/Discriminative-AI-vs-Generative-AI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="部落格記載著電腦科學基礎知識、科學應用探討、工程技術之白話筆記，從已知的知識持續探索未知的領域。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Discriminative AI vs. Generative AI | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Discriminative AI vs. Generative AI
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2025-05-24 11:18:20 / 修改時間：11:26:38" itemprop="dateCreated datePublished" datetime="2025-05-24T11:18:20+08:00">2025-05-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Artificial-Intelligence/" itemprop="url" rel="index"><span itemprop="name">Artificial Intelligence</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>3 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="🔹-Discriminative-AI（判別式-AI）"><a href="#🔹-Discriminative-AI（判別式-AI）" class="headerlink" title="🔹 Discriminative AI（判別式 AI）"></a>🔹 Discriminative AI（判別式 AI）</h2><p>用來「判斷輸入屬於哪一類」的模型。<br>它關注的是輸入與標籤之間的關係，例如看到一張圖片就判斷是「狗」還是「貓」。</p>
+<h2 id="🔹-Generative-AI（生成式-AI）"><a href="#🔹-Generative-AI（生成式-AI）" class="headerlink" title="🔹 Generative AI（生成式 AI）"></a>🔹 Generative AI（生成式 AI）</h2><p>用來「產生新資料」的模型。<br>它學習資料的生成方式，例如根據文字生成圖片、創作文章、模擬語音等。</p>
+<span id="more"></span>
+
+<h2 id="✅-簡單比較"><a href="#✅-簡單比較" class="headerlink" title="✅ 簡單比較"></a>✅ 簡單比較</h2><table>
+<thead>
+<tr>
+<th>類型</th>
+<th>功能</th>
+<th>問題句</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>判別式</td>
+<td>分辨、分類</td>
+<td>「這是什麼？」</td>
+</tr>
+<tr>
+<td>生成式</td>
+<td>創造、模擬</td>
+<td>「能變成什麼？」</td>
+</tr>
+</tbody></table>
+<!-- more -->
+
+<h2 id="🔹-1-Discriminative-AI"><a href="#🔹-1-Discriminative-AI" class="headerlink" title="🔹 1. Discriminative AI"></a>🔹 1. Discriminative AI</h2><p><strong>目標：</strong> 學習類別之間的區分邊界<br><strong>建模：</strong> ( P(y|x) ) — 給定輸入 ( x ) 的標籤機率</p>
+<h3 id="✅-特點："><a href="#✅-特點：" class="headerlink" title="✅ 特點："></a>✅ 特點：</h3><ul>
+<li>專注於不同類別之間的差異</li>
+<li>效率高，適合分類任務</li>
+<li>所需訓練資料量較少</li>
+</ul>
+<h3 id="✅-常見模型："><a href="#✅-常見模型：" class="headerlink" title="✅ 常見模型："></a>✅ 常見模型：</h3><ul>
+<li>Logistic Regression</li>
+<li>Support Vector Machines (SVM)</li>
+<li>Conditional Random Fields (CRFs)</li>
+<li>Neural Networks (for classification)</li>
+</ul>
+<h3 id="✅-使用情境："><a href="#✅-使用情境：" class="headerlink" title="✅ 使用情境："></a>✅ 使用情境：</h3><p>辨識輸入影像是「貓」還是「狗」，不需理解貓或狗如何生成，只需知道如何分辨。</p>
+<hr>
+<h2 id="🔹-2-Generative-AI"><a href="#🔹-2-Generative-AI" class="headerlink" title="🔹 2. Generative AI"></a>🔹 2. Generative AI</h2><p><strong>目標：</strong> 建模數據如何產生<br><strong>建模：</strong> ( P(x, y) )、( P(x|y) ) 與 ( P(y) )</p>
+<h3 id="✅-特點：-1"><a href="#✅-特點：-1" class="headerlink" title="✅ 特點："></a>✅ 特點：</h3><ul>
+<li>模擬資料生成過程</li>
+<li>可用於分類與資料生成</li>
+<li>模型較複雜，訓練資料需求大</li>
+</ul>
+<h3 id="✅-常見模型：-1"><a href="#✅-常見模型：-1" class="headerlink" title="✅ 常見模型："></a>✅ 常見模型：</h3><ul>
+<li>Naive Bayes</li>
+<li>Gaussian Mixture Models (GMMs)</li>
+<li>Hidden Markov Models (HMMs)</li>
+<li>Generative Adversarial Networks (GANs)</li>
+<li>Variational Autoencoders (VAEs)</li>
+</ul>
+<h3 id="✅-使用情境：-1"><a href="#✅-使用情境：-1" class="headerlink" title="✅ 使用情境："></a>✅ 使用情境：</h3><p>輸入類別為「貓」，則生成一張貓的圖像；或用來分類輸入屬於哪個類別的生成機率較高。</p>
+<hr>
+<h2 id="🔄-比較總表"><a href="#🔄-比較總表" class="headerlink" title="🔄 比較總表"></a>🔄 比較總表</h2><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Discriminative</th>
+<th>Generative</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>學習目標</td>
+<td>( P(y</td>
+<td>x) )</td>
+</tr>
+<tr>
+<td>適用任務</td>
+<td>分類</td>
+<td>分類 + 資料生成</td>
+</tr>
+<tr>
+<td>訓練複雜度</td>
+<td>較低</td>
+<td>較高</td>
+</tr>
+<tr>
+<td>實務表現</td>
+<td>分類精度較高</td>
+<td>靈活性與延伸性強</td>
+</tr>
+<tr>
+<td>訓練資料需求</td>
+<td>較少</td>
+<td>較多</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="🧠-簡單直觀理解"><a href="#🧠-簡單直觀理解" class="headerlink" title="🧠 簡單直觀理解"></a>🧠 簡單直觀理解</h2><ul>
+<li><strong>Discriminative：</strong>「我只需知道蘋果和橘子的差別」</li>
+<li><strong>Generative：</strong>「我要知道蘋果和橘子長什麼樣，如何生成」</li>
+</ul>
+<hr>
+<h2 id="📚-資料來源參考"><a href="#📚-資料來源參考" class="headerlink" title="📚 資料來源參考"></a>📚 資料來源參考</h2><ol>
+<li>Bishop, C. M. (2006). <em>Pattern Recognition and Machine Learning</em>. Springer.</li>
+<li>Ng, A. Y., &amp; Jordan, M. I. (2002). <em>On Discriminative vs. Generative classifiers</em>. NeurIPS.</li>
+<li>Murphy, K. P. (2012). <em>Machine Learning: A Probabilistic Perspective</em>. MIT Press.</li>
+<li>Goodfellow, I., Bengio, Y., &amp; Courville, A. (2016). <em>Deep Learning</em>. MIT Press.</li>
+</ol>
+<p>補充教材：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://cs229.stanford.edu/">Stanford CS229</a></li>
+<li><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-036-introduction-to-machine-learning-fall-2020/">MIT OCW 6.036 ML</a></li>
+</ul>
+<h1 id="Discriminative"><a href="#Discriminative" class="headerlink" title="Discriminative"></a>Discriminative</h1><p>[ACL2024]-What Matters in Training a GPT4-Style Language Model with Multimodal Inputs<br>[NeurIPS2021]-Align before fuse Vision and language representation learning with momentum distillation<br>[ECCV2020]-Uniter Universal image-text representation learning</p>
+<h1 id="Generative"><a href="#Generative" class="headerlink" title="Generative"></a>Generative</h1><p>[ICML2022]-Ofa: Unifying architectures, tasks, and modalities through a simple sequence-to-sequence learning framework<br>[ICML2021]-Unifying vision-andlanguage tasks via text generation<br>[NIPS2001]- On discriminative vs. generative classifiers: A comparison of logistic regression and naive bayes</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/02/15/2025/February/Visual%20Grounding%20Model/" rel="prev" title="Visual Grounding Model">
+                  <i class="fa fa-angle-left"></i> Visual Grounding Model
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/05/24/2025/May/Mixture-of-Experts/" rel="next" title="Mixture-of-Experts">
+                  Mixture-of-Experts <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">利醬</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">427k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">12:56</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+
+
+
+</body>
+</html>
