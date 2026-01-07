@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Neural Processing Unit（NPU，神經網路處理器）是為深度學習推論（與部分訓練）量身設計的專用加速器，透過大量乘加單元（MAC&#x2F;PE 陣列）、片上 SRAM、有效的 NoC&#x2F;互連與 DMA、以及低精度算術（如 INT8、FP16、BF16 等）來大幅提升每瓦效能；其設計核心在於以 dataflow（例如 weight‑stationary、output‑st">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Neural Processing Unit">
+<meta property="og:url" content="https://leonicehot.github.io/2025/12/22/2025/December/Neural-Processing-Unit/index.html">
+<meta property="og:site_name" content="利醬の休憩房">
+<meta property="og:description" content="Neural Processing Unit（NPU，神經網路處理器）是為深度學習推論（與部分訓練）量身設計的專用加速器，透過大量乘加單元（MAC&#x2F;PE 陣列）、片上 SRAM、有效的 NoC&#x2F;互連與 DMA、以及低精度算術（如 INT8、FP16、BF16 等）來大幅提升每瓦效能；其設計核心在於以 dataflow（例如 weight‑stationary、output‑st">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2025-12-22T03:01:45.000Z">
+<meta property="article:modified_time" content="2026-01-07T06:03:14.453Z">
+<meta property="article:author" content="利醬">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://leonicehot.github.io/2025/12/22/2025/December/Neural-Processing-Unit/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2025/12/22/2025/December/Neural-Processing-Unit/","path":"2025/12/22/2025/December/Neural-Processing-Unit/","title":"Neural Processing Unit"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Neural Processing Unit | 利醬の休憩房</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">利醬の休憩房</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Common-System"><span class="nav-number">1.</span> <span class="nav-text">Common System</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Desktop"><span class="nav-number">1.1.</span> <span class="nav-text">Desktop:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CPU"><span class="nav-number">1.1.1.</span> <span class="nav-text">CPU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OS"><span class="nav-number">1.1.2.</span> <span class="nav-text">OS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Software-Framework"><span class="nav-number">1.1.3.</span> <span class="nav-text">Software Framework</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#General-Process-%E9%80%9A%E7%94%A8%E6%B5%81%E7%A8%8B%EF%BC%88%E4%B8%8D%E7%AE%A1%E5%93%AA%E5%AE%B6-NPU-%E9%83%BD%E5%B7%AE%E4%B8%8D%E5%A4%9A%EF%BC%89%EF%BC%9A"><span class="nav-number">1.1.4.</span> <span class="nav-text">General Process 通用流程（不管哪家 NPU 都差不多）：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mobile"><span class="nav-number">1.2.</span> <span class="nav-text">Mobile</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android"><span class="nav-number">1.2.1.</span> <span class="nav-text">Android</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IOS"><span class="nav-number">1.2.2.</span> <span class="nav-text">IOS</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#On-device"><span class="nav-number">2.</span> <span class="nav-text">On-device</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Inference-Framework"><span class="nav-number">3.</span> <span class="nav-text">Inference Framework</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">利醬</p>
+  <div class="site-description" itemprop="description">部落格記載著電腦科學基礎知識、科學應用探討、工程技術之白話筆記，從已知的知識持續探索未知的領域。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">164</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">60</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/leonIceHot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leonIceHot" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2025/12/22/2025/December/Neural-Processing-Unit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="部落格記載著電腦科學基礎知識、科學應用探討、工程技術之白話筆記，從已知的知識持續探索未知的領域。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Neural Processing Unit | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Neural Processing Unit
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2025-12-22 11:01:45" itemprop="dateCreated datePublished" datetime="2025-12-22T11:01:45+08:00">2025-12-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2026-01-07 14:03:14" itemprop="dateModified" datetime="2026-01-07T14:03:14+08:00">2026-01-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Artificial-Intelligence/" itemprop="url" rel="index"><span itemprop="name">Artificial Intelligence</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>3.5k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>6 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>Neural Processing Unit（NPU，神經網路處理器）是為深度學習推論（與部分訓練）量身設計的專用加速器，透過大量乘加單元（MAC&#x2F;PE 陣列）、片上 SRAM、有效的 NoC&#x2F;互連與 DMA、以及低精度算術（如 INT8、FP16、BF16 等）來大幅提升每瓦效能；其設計核心在於以 dataflow（例如 weight‑stationary、output‑stationary、row‑stationary）與空間&#x2F;時間切片最大化資料重用、減少與 DRAM 的資料搬移，並透過 compiler&#x2F;graph optimizer（operator fusion、layout transform、量化）與 runtime（execution provider &#x2F; delegate）把模型分割成 NPU 可支援的子圖以下放算子；實務上常見工作流程包含模型匯出（PyTorch&#x2F;TF → ONNX&#x2F;TFLite）、量化（PTQ 或 QAT）、用 vendor SDK&#x2F;工具將模型編譯成 NPU 格式並在 target device 上以 runtime 執行與剖析（確認 offload 與效能），衡量指標有 latency、throughput（GOPS）、energy per inference（J&#x2F;inference 或 TOPS&#x2F;W）、memory bandwidth utilization 與量化後的 accuracy drop；主要挑戰為記憶體牆、模型多樣性與稀疏性支援、可程式化與專用化間的取捨，以及系統整合（CPU&#x2F;GPU 協作、QoS、安全性）；近期趨勢包括針對 Transformer&#x2F;LLM 的優化、FP8 與更低精度支援、near‑memory &#x2F; in‑memory compute、以及更強的 compiler 自動化與稀疏友好硬體支援，代表性架構有 DianNao&#x2F;DaDianNao、Eyeriss、Google TPU、EIE、SCNN 與 MAERI 等，可依目標應用（edge 或 cloud）與硬體平台選擇相應的 SDK 與最佳化流程以達到最佳推論效能。</p>
+<span id="more"></span>
+<h1 id="Common-System"><a href="#Common-System" class="headerlink" title="Common System"></a>Common System</h1><h2 id="Desktop"><a href="#Desktop" class="headerlink" title="Desktop:"></a>Desktop:</h2><h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>Intel NPU Core Ultra 7 265KF（Meteor&#x2F;Lunar Lake）</p>
+<h3 id="OS"><a href="#OS" class="headerlink" title="OS"></a>OS</h3><p>Windows<br>Linux (Ubuntu 24.03.3 LTS)</p>
+<h3 id="Software-Framework"><a href="#Software-Framework" class="headerlink" title="Software Framework"></a>Software Framework</h3><p>OpenVINO™, WindowsML, DirectML, ONNX RT, WebNN</p>
+<h3 id="General-Process-通用流程（不管哪家-NPU-都差不多）："><a href="#General-Process-通用流程（不管哪家-NPU-都差不多）：" class="headerlink" title="General Process 通用流程（不管哪家 NPU 都差不多）："></a>General Process 通用流程（不管哪家 NPU 都差不多）：</h3><ol>
+<li>先選模型與框架（如 PyTorch 或 TensorFlow），將模型匯出成部署格式（常見為 ONNX 或 TFLite），</li>
+<li>接著進行 NPU 友善化處理——優先做 INT8 量化（多數 NPU 推論以低精度為主），並避免或替換 NPU 不支援的算子以免被 fallback 到 CPU&#x2F;GPU；</li>
+<li>然後使用對應的 runtime 啟用 NPU 後端（ONNX Runtime 使用 Execution Provider、TFLite 使用 Delegate，或依廠商提供的 SDK 如 RKNN、Hailo、EdgeTPU 等進行編譯與部署），</li>
+<li>最後驗證是否真的在 NPU 上運行（檢查 runtime log 看哪些節點&#x2F;算子被 offload，並比對 CPU 與 NPU 的 latency）。</li>
+</ol>
+<h2 id="Mobile"><a href="#Mobile" class="headerlink" title="Mobile"></a>Mobile</h2><h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><ol>
+<li>Galaxy S25 Ultra</li>
+<li>Open Development Mode<br><a target="_blank" rel="noopener" href="https://www.samsung.com/uk/support/mobile-devices/how-do-i-turn-on-the-developer-options-menu-on-my-samsung-galaxy-device/">https://www.samsung.com/uk/support/mobile-devices/how-do-i-turn-on-the-developer-options-menu-on-my-samsung-galaxy-device/</a></li>
+<li>Process<br>在 Galaxy S25 Ultra 上做 NPU 開發的通用實務流程是：先用設定頁或 adb（例如 <code>adb shell getprop ro.board.platform</code> 等）確認手機 SoC 與系統版本，接著準備 Android Studio（含 SDK&#x2F;NDK）與 adb、開啟手機的開發者選項與 USB 偵錯，然後選擇推論堆疊—最容易跨平台的是走 Android NNAPI（通常透過 TensorFlow Lite 的 NNAPI Delegate 讓系統自動把可支援算子下放到 NPU），若需要更極致效能或特殊算子支援再改用 SoC&#x2F;廠商專屬 SDK（例如對應平台的工具鏈與 runtime）；模型端先在 PyTorch&#x2F;TF 訓練或取得模型後匯出成部署格式（常見 ONNX 或直接轉 TFLite），再做 NPU 友善化與最佳化（優先 INT8 量化並用代表性資料校正、盡量使用 NPU 支援的算子與資料格式、避免不支援算子以免 fallback 到 CPU&#x2F;GPU、必要時做 op fusion&#x2F;graph 優化與輸入尺寸調整），在 App 端用對應 runtime 啟用硬體後端（TFLite 加 NNAPI Delegate，或 ONNX Runtime 使用 Execution Provider，或改走廠商 runtime），最後用 runtime log&#x2F;除錯訊息確認哪些節點真的被 offload 到 NPU，並以 A&#x2F;B 測試比較 CPU vs NPU 的 latency、throughput 與功耗（可搭配 Android Studio Profiler&#x2F;Perfetto）來定位瓶頸與迭代優化。</li>
+</ol>
+<h3 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h3><ol>
+<li>iPhone 15</li>
+<li>Process<br>在 iPhone 15（使用 Apple Neural Engine, ANE）上做 NPU 推論的通用流程是：先在開發機把模型從原始框架（PyTorch&#x2F;TF&#x2F;ONNX）用 coremltools 轉成 Core ML 格式（.mlmodel），並在轉換時做必要的優化與量化（常見為 float16 或 8‑bit 靜態量化並用代表性資料做 calibration），注意避免或以 Core ML 支援的方式改寫不支援的自訂算子，之後由 Xcode 編譯成 .mlmodelc 以減少執行時開銷，將編譯後模型放入 app 資源並在程式中以 MLModelConfiguration 設定 computeUnits &#x3D; .all（或 .cpuAndGPU &#x2F; .cpuOnly 作比較）以啟用 ANE，使用自動生成的 model class 或 MLModel API 進行同步／非同步推論與批次處理；驗證與剖析時用 Instruments（Time Profiler &#x2F; Core ML instrument）、Xcode Console 與 A&#x2F;B 測試（切換 computeUnits）來比對 CPU&#x2F;GPU&#x2F;ANE latency 與耗能，並檢查轉換或執行過程的相容性警告以確保沒有算子回落到 CPU，若需更高效能可進一步在轉換階段做 operator fusion、調整資料 layout（如 NHWC）、預熱模型（warm‑up）、以及重用記憶體與 batch 策略；若你提供模型格式與類型（影像分類&#x2F;物件檢測&#x2F;語音&#x2F;文本）我可以產出具體 coremltools 轉換命令、量化範例與可直接貼入 Xcode 的 Swift 範例程式碼。</li>
+</ol>
+<h1 id="On-device"><a href="#On-device" class="headerlink" title="On-device"></a>On-device</h1><ol>
+<li><p>Apple Intelligence<br><a target="_blank" rel="noopener" href="https://www.apple.com/apple-intelligence/">https://www.apple.com/apple-intelligence/</a></p>
+</li>
+<li><p>AI Benchmark<br><a target="_blank" rel="noopener" href="https://ai-benchmark.com/ranking_detailed.html">https://ai-benchmark.com/ranking_detailed.html</a></p>
+</li>
+</ol>
+<h1 id="Inference-Framework"><a href="#Inference-Framework" class="headerlink" title="Inference Framework"></a>Inference Framework</h1><ol>
+<li><p>TensorFlow Lite</p>
+</li>
+<li><p>ONNX Runtime</p>
+</li>
+<li><p>NCNN</p>
+</li>
+<li><p>intel-npu-llm<br><a target="_blank" rel="noopener" href="https://github.com/justADeni/intel-npu-llm">https://github.com/justADeni/intel-npu-llm</a></p>
+</li>
+<li><p>FastFlowLM (FLM) — Unlock Ryzen™ AI NPUs<br><a target="_blank" rel="noopener" href="https://github.com/FastFlowLM/FastFlowLM">https://github.com/FastFlowLM/FastFlowLM</a></p>
+</li>
+<li><p>Fast and lightweight multimodal LLM inference engine for mobile and edge devices<br><a target="_blank" rel="noopener" href="https://github.com/UbiquitousLearning/mllm">https://github.com/UbiquitousLearning/mllm</a></p>
+</li>
+<li><p>BreezeApp<br><a target="_blank" rel="noopener" href="https://github.com/mtkresearch/BreezeApp">https://github.com/mtkresearch/BreezeApp</a></p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/08/08/2025/August/Image-Pixel-to-Physical-Size-Conversion/" rel="prev" title="Image Pixel to Physical Size Conversion">
+                  <i class="fa fa-angle-left"></i> Image Pixel to Physical Size Conversion
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/12/29/2025/December/Latex-installation/" rel="next" title="Latex installation">
+                  Latex installation <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">利醬</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">441k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">13:23</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+
+
+
+</body>
+</html>
