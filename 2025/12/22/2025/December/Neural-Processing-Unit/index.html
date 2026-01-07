@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Neural Processing Unit（NPU，神經網路處理器）是為深度學習推論（與部分訓練）量身設計的專用加速器，透過大量乘加單元（MAC&#x2F;PE 陣列）、片上 SRAM、有效的 NoC&#x2F;互連與 DMA、以及低精度算術（如 INT8、FP16、BF16 等）來大幅提升每瓦效能；其設計核心在於以 dataflow（例如 weight‑stationary、output‑st">
+    <meta name="description" content="NPU (Neural Processing Unit)，中文稱為「神經網路處理單元」，是一種專門為了加速人工智慧 (AI) 和機器學習 (Machine Learning) 運算而設計的微處理器。 如果說 CPU 是通才，GPU 是繪圖專家，那麼 NPU 就是專門為 AI 數學運算打造的數學天才。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Neural Processing Unit">
 <meta property="og:url" content="https://leonicehot.github.io/2025/12/22/2025/December/Neural-Processing-Unit/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="Neural Processing Unit（NPU，神經網路處理器）是為深度學習推論（與部分訓練）量身設計的專用加速器，透過大量乘加單元（MAC&#x2F;PE 陣列）、片上 SRAM、有效的 NoC&#x2F;互連與 DMA、以及低精度算術（如 INT8、FP16、BF16 等）來大幅提升每瓦效能；其設計核心在於以 dataflow（例如 weight‑stationary、output‑st">
+<meta property="og:description" content="NPU (Neural Processing Unit)，中文稱為「神經網路處理單元」，是一種專門為了加速人工智慧 (AI) 和機器學習 (Machine Learning) 運算而設計的微處理器。 如果說 CPU 是通才，GPU 是繪圖專家，那麼 NPU 就是專門為 AI 數學運算打造的數學天才。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2025-12-22T03:01:45.000Z">
-<meta property="article:modified_time" content="2026-01-07T06:03:14.453Z">
+<meta property="article:modified_time" content="2026-01-07T06:39:16.439Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
@@ -51,7 +51,119 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-</head>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -110,7 +222,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Common-System"><span class="nav-number">1.</span> <span class="nav-text">Common System</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Desktop"><span class="nav-number">1.1.</span> <span class="nav-text">Desktop:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CPU"><span class="nav-number">1.1.1.</span> <span class="nav-text">CPU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OS"><span class="nav-number">1.1.2.</span> <span class="nav-text">OS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Software-Framework"><span class="nav-number">1.1.3.</span> <span class="nav-text">Software Framework</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#General-Process-%E9%80%9A%E7%94%A8%E6%B5%81%E7%A8%8B%EF%BC%88%E4%B8%8D%E7%AE%A1%E5%93%AA%E5%AE%B6-NPU-%E9%83%BD%E5%B7%AE%E4%B8%8D%E5%A4%9A%EF%BC%89%EF%BC%9A"><span class="nav-number">1.1.4.</span> <span class="nav-text">General Process 通用流程（不管哪家 NPU 都差不多）：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mobile"><span class="nav-number">1.2.</span> <span class="nav-text">Mobile</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android"><span class="nav-number">1.2.1.</span> <span class="nav-text">Android</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IOS"><span class="nav-number">1.2.2.</span> <span class="nav-text">IOS</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#On-device"><span class="nav-number">2.</span> <span class="nav-text">On-device</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Inference-Framework"><span class="nav-number">3.</span> <span class="nav-text">Inference Framework</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%82%BA%E4%BB%80%E9%BA%BC%E6%88%91%E5%80%91%E9%9C%80%E8%A6%81-NPU%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">1. 為什麼我們需要 NPU？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-NPU-%E7%9A%84%E9%81%8B%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%9A%E7%9F%A9%E9%99%A3%E9%81%8B%E7%AE%97%E7%9A%84%E5%8A%A0%E9%80%9F%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">2. NPU 的運作原理：矩陣運算的加速器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-NPU-%E5%9C%A8-AI-PC-%E5%92%8C-Physical-AI-%E4%B8%AD%E7%9A%84%E8%A7%92%E8%89%B2"><span class="nav-number">3.</span> <span class="nav-text">3. NPU 在 AI PC 和 Physical AI 中的角色</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-AI-PC-AI-%E9%9B%BB%E8%85%A6"><span class="nav-number">3.1.</span> <span class="nav-text">A. AI PC (AI 電腦)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Physical-AI-%E5%AF%A6%E9%AB%94-AI"><span class="nav-number">3.2.</span> <span class="nav-text">B. Physical AI (實體 AI)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-%E6%99%BA%E6%85%A7%E5%9E%8B%E6%89%8B%E6%A9%9F"><span class="nav-number">3.3.</span> <span class="nav-text">C. 智慧型手機</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%B8%B8%E8%A6%8B%E7%9A%84-NPU-%E8%A1%93%E8%AA%9E%E8%88%87%E6%8C%87%E6%A8%99"><span class="nav-number">4.</span> <span class="nav-text">4. 常見的 NPU 術語與指標</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E7%B8%BD%E7%B5%90%EF%BC%9A%E8%99%95%E7%90%86%E5%99%A8%E4%B8%89%E8%B6%B3%E9%BC%8E%E7%AB%8B%E7%9A%84%E6%99%82%E4%BB%A3"><span class="nav-number">5.</span> <span class="nav-text">5. 總結：處理器三足鼎立的時代</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Common-System"><span class="nav-number">6.</span> <span class="nav-text">Common System</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Desktop"><span class="nav-number">6.1.</span> <span class="nav-text">Desktop:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CPU"><span class="nav-number">6.1.1.</span> <span class="nav-text">CPU</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OS"><span class="nav-number">6.2.</span> <span class="nav-text">OS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Software-Framework"><span class="nav-number">6.3.</span> <span class="nav-text">Software Framework</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#General-Process-%E9%80%9A%E7%94%A8%E6%B5%81%E7%A8%8B%EF%BC%88%E4%B8%8D%E7%AE%A1%E5%93%AA%E5%AE%B6-NPU-%E9%83%BD%E5%B7%AE%E4%B8%8D%E5%A4%9A%EF%BC%89%EF%BC%9A"><span class="nav-number">6.4.</span> <span class="nav-text">General Process 通用流程（不管哪家 NPU 都差不多）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mobile"><span class="nav-number">6.5.</span> <span class="nav-text">Mobile</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Android"><span class="nav-number">6.5.1.</span> <span class="nav-text">Android</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IOS"><span class="nav-number">6.5.2.</span> <span class="nav-text">IOS</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -202,7 +314,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2026-01-07 14:03:14" itemprop="dateModified" datetime="2026-01-07T14:03:14+08:00">2026-01-07</time>
+      <time title="修改時間：2026-01-07 14:39:16" itemprop="dateModified" datetime="2026-01-07T14:39:16+08:00">2026-01-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -225,14 +337,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>3.5k</span>
+      <span>3.8k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>6 分鐘</span>
+      <span>7 分鐘</span>
     </span>
 </div>
 
@@ -242,48 +354,97 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>Neural Processing Unit（NPU，神經網路處理器）是為深度學習推論（與部分訓練）量身設計的專用加速器，透過大量乘加單元（MAC&#x2F;PE 陣列）、片上 SRAM、有效的 NoC&#x2F;互連與 DMA、以及低精度算術（如 INT8、FP16、BF16 等）來大幅提升每瓦效能；其設計核心在於以 dataflow（例如 weight‑stationary、output‑stationary、row‑stationary）與空間&#x2F;時間切片最大化資料重用、減少與 DRAM 的資料搬移，並透過 compiler&#x2F;graph optimizer（operator fusion、layout transform、量化）與 runtime（execution provider &#x2F; delegate）把模型分割成 NPU 可支援的子圖以下放算子；實務上常見工作流程包含模型匯出（PyTorch&#x2F;TF → ONNX&#x2F;TFLite）、量化（PTQ 或 QAT）、用 vendor SDK&#x2F;工具將模型編譯成 NPU 格式並在 target device 上以 runtime 執行與剖析（確認 offload 與效能），衡量指標有 latency、throughput（GOPS）、energy per inference（J&#x2F;inference 或 TOPS&#x2F;W）、memory bandwidth utilization 與量化後的 accuracy drop；主要挑戰為記憶體牆、模型多樣性與稀疏性支援、可程式化與專用化間的取捨，以及系統整合（CPU&#x2F;GPU 協作、QoS、安全性）；近期趨勢包括針對 Transformer&#x2F;LLM 的優化、FP8 與更低精度支援、near‑memory &#x2F; in‑memory compute、以及更強的 compiler 自動化與稀疏友好硬體支援，代表性架構有 DianNao&#x2F;DaDianNao、Eyeriss、Google TPU、EIE、SCNN 與 MAERI 等，可依目標應用（edge 或 cloud）與硬體平台選擇相應的 SDK 與最佳化流程以達到最佳推論效能。</p>
+    <div class="post-body" itemprop="articleBody"><p>NPU (Neural Processing Unit)，中文稱為「神經網路處理單元」，是一種專門為了加速人工智慧 (AI) 和機器學習 (Machine Learning) 運算而設計的微處理器。</p>
+<p>如果說 CPU 是通才，GPU 是繪圖專家，那麼 NPU 就是專門為 AI 數學運算打造的數學天才。</p>
 <span id="more"></span>
-<h1 id="Common-System"><a href="#Common-System" class="headerlink" title="Common System"></a>Common System</h1><h2 id="Desktop"><a href="#Desktop" class="headerlink" title="Desktop:"></a>Desktop:</h2><h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>Intel NPU Core Ultra 7 265KF（Meteor&#x2F;Lunar Lake）</p>
+
+<h2 id="1-為什麼我們需要-NPU？"><a href="#1-為什麼我們需要-NPU？" class="headerlink" title="1. 為什麼我們需要 NPU？"></a>1. 為什麼我們需要 NPU？</h2><p>在 NPU 出現之前，AI 運算主要依賴 CPU 和 GPU，但它們面臨瓶頸：</p>
+<p><strong>CPU (中央處理器)：</strong> 擅長序列處理和邏輯控制，但核心數少，處理大量並行運算（矩陣乘法）效率低下。<br><strong>GPU (圖形處理器)：</strong> 雖然擅長並行運算，但功耗較高，且架構主要為圖形渲染設計，對於某些 AI 推論 (Inference) 任務來說，能效比（Performance per Watt）不是最佳。</p>
+<p><strong>NPU 的優勢在於：</strong></p>
+<ol>
+<li><strong>高效率：</strong> 專門針對神經網路的「乘積累加運算 (MAC)」進行硬體優化。</li>
+<li><strong>低功耗：</strong> 在處理相同 AI 任務時，NPU 的耗電量遠低於 GPU，這對手機、筆電等電池供電設備至關重要。</li>
+<li><strong>專用架構：</strong> 內建專用的快取 (Cache) 和資料流架構，減少資料搬運的延遲。</li>
+</ol>
+<h2 id="2-NPU-的運作原理：矩陣運算的加速器"><a href="#2-NPU-的運作原理：矩陣運算的加速器" class="headerlink" title="2. NPU 的運作原理：矩陣運算的加速器"></a>2. NPU 的運作原理：矩陣運算的加速器</h2><p>深度學習的核心基本上就是無數個矩陣乘法 (Matrix Multiplication)。</p>
+<p>假設我們要計算神經網路的一層：<br><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="15.159ex" height="1.731ex" role="img" focusable="false" viewbox="0 -683 6700.4 765"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44C" d="M66 637Q54 637 49 637T39 638T32 641T30 647T33 664T42 682Q44 683 56 683Q104 680 165 680Q288 680 306 683H316Q322 677 322 674T320 656Q316 643 310 637H298Q242 637 242 624Q242 619 292 477T343 333L346 336Q350 340 358 349T379 373T411 410T454 461Q546 568 561 587T577 618Q577 634 545 637Q528 637 528 647Q528 649 530 661Q533 676 535 679T549 683Q551 683 578 682T657 680Q684 680 713 681T746 682Q763 682 763 673Q763 669 760 657T755 643Q753 637 734 637Q662 632 617 587Q608 578 477 424L348 273L322 169Q295 62 295 57Q295 46 363 46Q379 46 384 45T390 35Q390 33 388 23Q384 6 382 4T366 1Q361 1 324 1T232 2Q170 2 138 2T102 1Q84 1 84 9Q84 14 87 24Q88 27 89 30T90 35T91 39T93 42T96 44T101 45T107 45T116 46T129 46Q168 47 180 50T198 63Q201 68 227 171L252 274L129 623Q128 624 127 625T125 627T122 629T118 631T113 633T105 634T96 635T83 636T66 637Z"/></g><g data-mml-node="mo" transform="translate(1040.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/></g><g data-mml-node="mi" transform="translate(2096.6,0)"><path data-c="1D44A" d="M436 683Q450 683 486 682T553 680Q604 680 638 681T677 682Q695 682 695 674Q695 670 692 659Q687 641 683 639T661 637Q636 636 621 632T600 624T597 615Q597 603 613 377T629 138L631 141Q633 144 637 151T649 170T666 200T690 241T720 295T759 362Q863 546 877 572T892 604Q892 619 873 628T831 637Q817 637 817 647Q817 650 819 660Q823 676 825 679T839 682Q842 682 856 682T895 682T949 681Q1015 681 1034 683Q1048 683 1048 672Q1048 666 1045 655T1038 640T1028 637Q1006 637 988 631T958 617T939 600T927 584L923 578L754 282Q586 -14 585 -15Q579 -22 561 -22Q546 -22 542 -17Q539 -14 523 229T506 480L494 462Q472 425 366 239Q222 -13 220 -15T215 -19Q210 -22 197 -22Q178 -22 176 -15Q176 -12 154 304T131 622Q129 631 121 633T82 637H58Q51 644 51 648Q52 671 64 683H76Q118 680 176 680Q301 680 313 683H323Q329 677 329 674T327 656Q322 641 318 637H297Q236 634 232 620Q262 160 266 136L501 550L499 587Q496 629 489 632Q483 636 447 637Q428 637 422 639T416 648Q416 650 418 660Q419 664 420 669T421 676T424 680T428 682T436 683Z"/></g><g data-mml-node="mo" transform="translate(3366.8,0)"><path data-c="22C5" d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250Z"/></g><g data-mml-node="mi" transform="translate(3867,0)"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"/></g><g data-mml-node="mo" transform="translate(4941.2,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/></g><g data-mml-node="mi" transform="translate(5941.4,0)"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"/></g></g></g></svg></mjx-container></p>
+<p>其中：<br><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.928ex" height="1.545ex" role="img" focusable="false" viewbox="0 -683 852 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"/></g></g></g></svg></mjx-container> 是輸入數據向量。<br><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="2.371ex" height="1.595ex" role="img" focusable="false" viewbox="0 -683 1048 705"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44A" d="M436 683Q450 683 486 682T553 680Q604 680 638 681T677 682Q695 682 695 674Q695 670 692 659Q687 641 683 639T661 637Q636 636 621 632T600 624T597 615Q597 603 613 377T629 138L631 141Q633 144 637 151T649 170T666 200T690 241T720 295T759 362Q863 546 877 572T892 604Q892 619 873 628T831 637Q817 637 817 647Q817 650 819 660Q823 676 825 679T839 682Q842 682 856 682T895 682T949 681Q1015 681 1034 683Q1048 683 1048 672Q1048 666 1045 655T1038 640T1028 637Q1006 637 988 631T958 617T939 600T927 584L923 578L754 282Q586 -14 585 -15Q579 -22 561 -22Q546 -22 542 -17Q539 -14 523 229T506 480L494 462Q472 425 366 239Q222 -13 220 -15T215 -19Q210 -22 197 -22Q178 -22 176 -15Q176 -12 154 304T131 622Q129 631 121 633T82 637H58Q51 644 51 648Q52 671 64 683H76Q118 680 176 680Q301 680 313 683H323Q329 677 329 674T327 656Q322 641 318 637H297Q236 634 232 620Q262 160 266 136L501 550L499 587Q496 629 489 632Q483 636 447 637Q428 637 422 639T416 648Q416 650 418 660Q419 664 420 669T421 676T424 680T428 682T436 683Z"/></g></g></g></svg></mjx-container> 是權重矩陣 (Weights)。<br><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.717ex" height="1.545ex" role="img" focusable="false" viewbox="0 -683 759 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"/></g></g></g></svg></mjx-container> 是偏差 (Bias)。<br><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.726ex" height="1.545ex" role="img" focusable="false" viewbox="0 -683 763 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44C" d="M66 637Q54 637 49 637T39 638T32 641T30 647T33 664T42 682Q44 683 56 683Q104 680 165 680Q288 680 306 683H316Q322 677 322 674T320 656Q316 643 310 637H298Q242 637 242 624Q242 619 292 477T343 333L346 336Q350 340 358 349T379 373T411 410T454 461Q546 568 561 587T577 618Q577 634 545 637Q528 637 528 647Q528 649 530 661Q533 676 535 679T549 683Q551 683 578 682T657 680Q684 680 713 681T746 682Q763 682 763 673Q763 669 760 657T755 643Q753 637 734 637Q662 632 617 587Q608 578 477 424L348 273L322 169Q295 62 295 57Q295 46 363 46Q379 46 384 45T390 35Q390 33 388 23Q384 6 382 4T366 1Q361 1 324 1T232 2Q170 2 138 2T102 1Q84 1 84 9Q84 14 87 24Q88 27 89 30T90 35T91 39T93 42T96 44T101 45T107 45T116 46T129 46Q168 47 180 50T198 63Q201 68 227 171L252 274L129 623Q128 624 127 625T125 627T122 629T118 631T113 633T105 634T96 635T83 636T66 637Z"/></g></g></g></svg></mjx-container> 是輸出結果。</p>
+<p>傳統 CPU 在計算 <mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="5.933ex" height="1.595ex" role="img" focusable="false" viewbox="0 -683 2622.4 705"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44A" d="M436 683Q450 683 486 682T553 680Q604 680 638 681T677 682Q695 682 695 674Q695 670 692 659Q687 641 683 639T661 637Q636 636 621 632T600 624T597 615Q597 603 613 377T629 138L631 141Q633 144 637 151T649 170T666 200T690 241T720 295T759 362Q863 546 877 572T892 604Q892 619 873 628T831 637Q817 637 817 647Q817 650 819 660Q823 676 825 679T839 682Q842 682 856 682T895 682T949 681Q1015 681 1034 683Q1048 683 1048 672Q1048 666 1045 655T1038 640T1028 637Q1006 637 988 631T958 617T939 600T927 584L923 578L754 282Q586 -14 585 -15Q579 -22 561 -22Q546 -22 542 -17Q539 -14 523 229T506 480L494 462Q472 425 366 239Q222 -13 220 -15T215 -19Q210 -22 197 -22Q178 -22 176 -15Q176 -12 154 304T131 622Q129 631 121 633T82 637H58Q51 644 51 648Q52 671 64 683H76Q118 680 176 680Q301 680 313 683H323Q329 677 329 674T327 656Q322 641 318 637H297Q236 634 232 620Q262 160 266 136L501 550L499 587Q496 629 489 632Q483 636 447 637Q428 637 422 639T416 648Q416 650 418 660Q419 664 420 669T421 676T424 680T428 682T436 683Z"/></g><g data-mml-node="mo" transform="translate(1270.2,0)"><path data-c="22C5" d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250Z"/></g><g data-mml-node="mi" transform="translate(1770.4,0)"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"/></g></g></g></svg></mjx-container> 時，可能需要多次讀取記憶體並執行多次指令。**NPU 則擁有巨大的並行乘法器陣列 (Multiply-Accumulate Units)**，能夠在一個時鐘週期內同時完成成千上萬次這種 <mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="8.678ex" height="1.756ex" role="img" focusable="false" viewbox="0 -694 3835.9 776"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"/></g><g data-mml-node="mo" transform="translate(751.2,0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"/></g><g data-mml-node="mi" transform="translate(1751.4,0)"><path data-c="1D44F" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"/></g><g data-mml-node="mo" transform="translate(2402.7,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/></g><g data-mml-node="mi" transform="translate(3402.9,0)"><path data-c="1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"/></g></g></g></svg></mjx-container> 的運算。</p>
+<h2 id="3-NPU-在-AI-PC-和-Physical-AI-中的角色"><a href="#3-NPU-在-AI-PC-和-Physical-AI-中的角色" class="headerlink" title="3. NPU 在 AI PC 和 Physical AI 中的角色"></a>3. NPU 在 AI PC 和 Physical AI 中的角色</h2><p>隨著 AI 應用的普及，NPU 的地位急劇上升，特別是在以下領域：</p>
+<h3 id="A-AI-PC-AI-電腦"><a href="#A-AI-PC-AI-電腦" class="headerlink" title="A. AI PC (AI 電腦)"></a>A. AI PC (AI 電腦)</h3><p>微軟定義的 AI PC 要求必須配備算力達到 <strong>40 TOPS (Trillion Operations Per Second)</strong> 以上的 NPU。</p>
+<ul>
+<li><strong>用途：</strong> 在不連網的情況下，本機執行 Microsoft Copilot、自動去背、即時視訊模糊、語音降噪。</li>
+<li><strong>代表產品：</strong> Intel Core Ultra (Meteor Lake/Lunar Lake), AMD Ryzen AI, Qualcomm Snapdragon X Elite, Apple M 系列晶片 (Neural Engine)。</li>
+</ul>
+<h3 id="B-Physical-AI-實體-AI"><a href="#B-Physical-AI-實體-AI" class="headerlink" title="B. Physical AI (實體 AI)"></a>B. Physical AI (實體 AI)</h3><p>在機器人與邊緣裝置中，NPU 是大腦的關鍵部分。</p>
+<ul>
+<li><strong>即時性：</strong> 機器人看到障礙物必須在毫秒級內反應，NPU 的低延遲特性至關重要。</li>
+<li><strong>離線運行：</strong> 自駕車或工廠機器人不能依賴不穩定的雲端網路，必須靠本地端的 NPU 進行推論。</li>
+</ul>
+<h3 id="C-智慧型手機"><a href="#C-智慧型手機" class="headerlink" title="C. 智慧型手機"></a>C. 智慧型手機</h3><ul>
+<li><strong>用途：</strong> 臉部解鎖 (FaceID)、夜景模式攝影運算、即時翻譯、語音助理喚醒。</li>
+</ul>
+<h2 id="4-常見的-NPU-術語與指標"><a href="#4-常見的-NPU-術語與指標" class="headerlink" title="4. 常見的 NPU 術語與指標"></a>4. 常見的 NPU 術語與指標</h2><ul>
+<li><strong>TOPS (Trillion Operations Per Second)：</strong> 這是衡量 NPU 效能的最常見單位。代表每秒能進行多少兆次運算。<ul>
+<li><em>例如：Snapdragon X Elite 的 NPU 算力約為 45 TOPS。</em></li>
+</ul>
+</li>
+<li><strong>INT8 / FP16：</strong> NPU 支援的資料精度。<ul>
+<li><strong>INT8 (8-bit 整數)：</strong> 精度較低但速度極快，省電，適合手機端的 AI 推論。</li>
+<li><strong>FP16 (16-bit 浮點數)：</strong> 精度較高，適合需要準確度的運算。</li>
+</ul>
+</li>
+<li><strong>異質運算 (Heterogeneous Computing)：</strong> 現代系統會協調 CPU、GPU 和 NPU。<ul>
+<li><em>CPU 負責啟動程式 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewbox="0 -511 1000 522"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"/></g></g></g></svg></mjx-container> GPU 負責大型訓練或高負載渲染 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewbox="0 -511 1000 522"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"/></g></g></g></svg></mjx-container> NPU 負責持續性的背景 AI 任務（如視訊會議眼神接觸修正）。</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="5-總結：處理器三足鼎立的時代"><a href="#5-總結：處理器三足鼎立的時代" class="headerlink" title="5. 總結：處理器三足鼎立的時代"></a>5. 總結：處理器三足鼎立的時代</h2><p>計算機架構已經從過去的 CPU 獨大，演變為 <strong>CPU + GPU + NPU</strong> 的黃金三角：</p>
+<table>
+<thead>
+<tr>
+<th align="left">處理器</th>
+<th align="left">專長</th>
+<th align="left">AI 角色</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>CPU</strong></td>
+<td align="left">邏輯、控制、序列任務</td>
+<td align="left">總指揮，處理小量或複雜邏輯的 AI</td>
+</tr>
+<tr>
+<td align="left"><strong>GPU</strong></td>
+<td align="left">大規模並行、浮點運算</td>
+<td align="left">AI 模型「訓練 (Training)」的主力</td>
+</tr>
+<tr>
+<td align="left"><strong>NPU</strong></td>
+<td align="left">矩陣運算、低功耗</td>
+<td align="left">AI 模型「推論 (Inference)」的最佳選擇</td>
+</tr>
+</tbody></table>
+<p>隨著 Physical AI 和生成式 AI 進入終端裝置，NPU 將像當年的 GPU 一樣，成為所有電子產品的標準配備。</p>
+<h2 id="Common-System"><a href="#Common-System" class="headerlink" title="Common System"></a>Common System</h2><h3 id="Desktop"><a href="#Desktop" class="headerlink" title="Desktop:"></a>Desktop:</h3><h4 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h4><p>Intel NPU Core Ultra 7 265KF（Meteor/Lunar Lake）</p>
 <h3 id="OS"><a href="#OS" class="headerlink" title="OS"></a>OS</h3><p>Windows<br>Linux (Ubuntu 24.03.3 LTS)</p>
 <h3 id="Software-Framework"><a href="#Software-Framework" class="headerlink" title="Software Framework"></a>Software Framework</h3><p>OpenVINO™, WindowsML, DirectML, ONNX RT, WebNN</p>
 <h3 id="General-Process-通用流程（不管哪家-NPU-都差不多）："><a href="#General-Process-通用流程（不管哪家-NPU-都差不多）：" class="headerlink" title="General Process 通用流程（不管哪家 NPU 都差不多）："></a>General Process 通用流程（不管哪家 NPU 都差不多）：</h3><ol>
 <li>先選模型與框架（如 PyTorch 或 TensorFlow），將模型匯出成部署格式（常見為 ONNX 或 TFLite），</li>
-<li>接著進行 NPU 友善化處理——優先做 INT8 量化（多數 NPU 推論以低精度為主），並避免或替換 NPU 不支援的算子以免被 fallback 到 CPU&#x2F;GPU；</li>
+<li>接著進行 NPU 友善化處理——優先做 INT8 量化（多數 NPU 推論以低精度為主），並避免或替換 NPU 不支援的算子以免被 fallback 到 CPU/GPU；</li>
 <li>然後使用對應的 runtime 啟用 NPU 後端（ONNX Runtime 使用 Execution Provider、TFLite 使用 Delegate，或依廠商提供的 SDK 如 RKNN、Hailo、EdgeTPU 等進行編譯與部署），</li>
-<li>最後驗證是否真的在 NPU 上運行（檢查 runtime log 看哪些節點&#x2F;算子被 offload，並比對 CPU 與 NPU 的 latency）。</li>
+<li>最後驗證是否真的在 NPU 上運行（檢查 runtime log 看哪些節點/算子被 offload，並比對 CPU 與 NPU 的 latency）。</li>
 </ol>
-<h2 id="Mobile"><a href="#Mobile" class="headerlink" title="Mobile"></a>Mobile</h2><h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><ol>
+<h3 id="Mobile"><a href="#Mobile" class="headerlink" title="Mobile"></a>Mobile</h3><h4 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h4><ol>
 <li>Galaxy S25 Ultra</li>
 <li>Open Development Mode<br><a target="_blank" rel="noopener" href="https://www.samsung.com/uk/support/mobile-devices/how-do-i-turn-on-the-developer-options-menu-on-my-samsung-galaxy-device/">https://www.samsung.com/uk/support/mobile-devices/how-do-i-turn-on-the-developer-options-menu-on-my-samsung-galaxy-device/</a></li>
-<li>Process<br>在 Galaxy S25 Ultra 上做 NPU 開發的通用實務流程是：先用設定頁或 adb（例如 <code>adb shell getprop ro.board.platform</code> 等）確認手機 SoC 與系統版本，接著準備 Android Studio（含 SDK&#x2F;NDK）與 adb、開啟手機的開發者選項與 USB 偵錯，然後選擇推論堆疊—最容易跨平台的是走 Android NNAPI（通常透過 TensorFlow Lite 的 NNAPI Delegate 讓系統自動把可支援算子下放到 NPU），若需要更極致效能或特殊算子支援再改用 SoC&#x2F;廠商專屬 SDK（例如對應平台的工具鏈與 runtime）；模型端先在 PyTorch&#x2F;TF 訓練或取得模型後匯出成部署格式（常見 ONNX 或直接轉 TFLite），再做 NPU 友善化與最佳化（優先 INT8 量化並用代表性資料校正、盡量使用 NPU 支援的算子與資料格式、避免不支援算子以免 fallback 到 CPU&#x2F;GPU、必要時做 op fusion&#x2F;graph 優化與輸入尺寸調整），在 App 端用對應 runtime 啟用硬體後端（TFLite 加 NNAPI Delegate，或 ONNX Runtime 使用 Execution Provider，或改走廠商 runtime），最後用 runtime log&#x2F;除錯訊息確認哪些節點真的被 offload 到 NPU，並以 A&#x2F;B 測試比較 CPU vs NPU 的 latency、throughput 與功耗（可搭配 Android Studio Profiler&#x2F;Perfetto）來定位瓶頸與迭代優化。</li>
+<li>Process<br>在 Galaxy S25 Ultra 上做 NPU 開發的通用實務流程是：先用設定頁或 adb（例如 <code>adb shell getprop ro.board.platform</code> 等）確認手機 SoC 與系統版本，接著準備 Android Studio（含 SDK/NDK）與 adb、開啟手機的開發者選項與 USB 偵錯，然後選擇推論堆疊—最容易跨平台的是走 Android NNAPI（通常透過 TensorFlow Lite 的 NNAPI Delegate 讓系統自動把可支援算子下放到 NPU），若需要更極致效能或特殊算子支援再改用 SoC/廠商專屬 SDK（例如對應平台的工具鏈與 runtime）；模型端先在 PyTorch/TF 訓練或取得模型後匯出成部署格式（常見 ONNX 或直接轉 TFLite），再做 NPU 友善化與最佳化（優先 INT8 量化並用代表性資料校正、盡量使用 NPU 支援的算子與資料格式、避免不支援算子以免 fallback 到 CPU/GPU、必要時做 op fusion/graph 優化與輸入尺寸調整），在 App 端用對應 runtime 啟用硬體後端（TFLite 加 NNAPI Delegate，或 ONNX Runtime 使用 Execution Provider，或改走廠商 runtime），最後用 runtime log/除錯訊息確認哪些節點真的被 offload 到 NPU，並以 A/B 測試比較 CPU vs NPU 的 latency、throughput 與功耗（可搭配 Android Studio Profiler/Perfetto）來定位瓶頸與迭代優化。</li>
 </ol>
-<h3 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h3><ol>
+<h4 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h4><ol>
 <li>iPhone 15</li>
-<li>Process<br>在 iPhone 15（使用 Apple Neural Engine, ANE）上做 NPU 推論的通用流程是：先在開發機把模型從原始框架（PyTorch&#x2F;TF&#x2F;ONNX）用 coremltools 轉成 Core ML 格式（.mlmodel），並在轉換時做必要的優化與量化（常見為 float16 或 8‑bit 靜態量化並用代表性資料做 calibration），注意避免或以 Core ML 支援的方式改寫不支援的自訂算子，之後由 Xcode 編譯成 .mlmodelc 以減少執行時開銷，將編譯後模型放入 app 資源並在程式中以 MLModelConfiguration 設定 computeUnits &#x3D; .all（或 .cpuAndGPU &#x2F; .cpuOnly 作比較）以啟用 ANE，使用自動生成的 model class 或 MLModel API 進行同步／非同步推論與批次處理；驗證與剖析時用 Instruments（Time Profiler &#x2F; Core ML instrument）、Xcode Console 與 A&#x2F;B 測試（切換 computeUnits）來比對 CPU&#x2F;GPU&#x2F;ANE latency 與耗能，並檢查轉換或執行過程的相容性警告以確保沒有算子回落到 CPU，若需更高效能可進一步在轉換階段做 operator fusion、調整資料 layout（如 NHWC）、預熱模型（warm‑up）、以及重用記憶體與 batch 策略；若你提供模型格式與類型（影像分類&#x2F;物件檢測&#x2F;語音&#x2F;文本）我可以產出具體 coremltools 轉換命令、量化範例與可直接貼入 Xcode 的 Swift 範例程式碼。</li>
+<li>Process<br>在 iPhone 15（使用 Apple Neural Engine, ANE）上做 NPU 推論的通用流程是：先在開發機把模型從原始框架（PyTorch/TF/ONNX）用 coremltools 轉成 Core ML 格式（.mlmodel），並在轉換時做必要的優化與量化（常見為 float16 或 8‑bit 靜態量化並用代表性資料做 calibration），注意避免或以 Core ML 支援的方式改寫不支援的自訂算子，之後由 Xcode 編譯成 .mlmodelc 以減少執行時開銷，將編譯後模型放入 app 資源並在程式中以 MLModelConfiguration 設定 computeUnits = .all（或 .cpuAndGPU / .cpuOnly 作比較）以啟用 ANE，使用自動生成的 model class 或 MLModel API 進行同步／非同步推論與批次處理；驗證與剖析時用 Instruments（Time Profiler / Core ML instrument）、Xcode Console 與 A/B 測試（切換 computeUnits）來比對 CPU/GPU/ANE latency 與耗能，並檢查轉換或執行過程的相容性警告以確保沒有算子回落到 CPU，若需更高效能可進一步在轉換階段做 operator fusion、調整資料 layout（如 NHWC）、預熱模型（warm‑up）、以及重用記憶體與 batch 策略；若你提供模型格式與類型（影像分類/物件檢測/語音/文本）我可以產出具體 coremltools 轉換命令、量化範例與可直接貼入 Xcode 的 Swift 範例程式碼。</li>
 </ol>
-<h1 id="On-device"><a href="#On-device" class="headerlink" title="On-device"></a>On-device</h1><ol>
-<li><p>Apple Intelligence<br><a target="_blank" rel="noopener" href="https://www.apple.com/apple-intelligence/">https://www.apple.com/apple-intelligence/</a></p>
-</li>
-<li><p>AI Benchmark<br><a target="_blank" rel="noopener" href="https://ai-benchmark.com/ranking_detailed.html">https://ai-benchmark.com/ranking_detailed.html</a></p>
-</li>
-</ol>
-<h1 id="Inference-Framework"><a href="#Inference-Framework" class="headerlink" title="Inference Framework"></a>Inference Framework</h1><ol>
-<li><p>TensorFlow Lite</p>
-</li>
-<li><p>ONNX Runtime</p>
-</li>
-<li><p>NCNN</p>
-</li>
-<li><p>intel-npu-llm<br><a target="_blank" rel="noopener" href="https://github.com/justADeni/intel-npu-llm">https://github.com/justADeni/intel-npu-llm</a></p>
-</li>
-<li><p>FastFlowLM (FLM) — Unlock Ryzen™ AI NPUs<br><a target="_blank" rel="noopener" href="https://github.com/FastFlowLM/FastFlowLM">https://github.com/FastFlowLM/FastFlowLM</a></p>
-</li>
-<li><p>Fast and lightweight multimodal LLM inference engine for mobile and edge devices<br><a target="_blank" rel="noopener" href="https://github.com/UbiquitousLearning/mllm">https://github.com/UbiquitousLearning/mllm</a></p>
-</li>
-<li><p>BreezeApp<br><a target="_blank" rel="noopener" href="https://github.com/mtkresearch/BreezeApp">https://github.com/mtkresearch/BreezeApp</a></p>
-</li>
-</ol>
+<hr>
+<p><em>文件生成日期: 2026-01-07</em><br><em>生成模型: google/gemini-3-pro</em></p>
 
     </div>
 
@@ -335,13 +496,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">441k</span>
+    <span title="總字數">442k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">13:22</span>
+    <span title="所需總閱讀時間">13:24</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
