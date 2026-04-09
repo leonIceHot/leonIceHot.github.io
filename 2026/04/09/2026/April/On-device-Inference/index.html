@@ -27,7 +27,7 @@
 <meta property="og:description" content="裝置端推理 (On-device Inference) 常被使用於兩大主流機器學習框架中：TensorFlow Lite (TFLite) 與 ONNX Runtime。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2026-04-09T06:03:29.000Z">
-<meta property="article:modified_time" content="2026-04-09T06:32:46.321Z">
+<meta property="article:modified_time" content="2026-04-09T06:36:11.985Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
@@ -196,7 +196,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2026-04-09 14:03:29 / 修改時間：14:32:46" itemprop="dateCreated datePublished" datetime="2026-04-09T14:03:29+08:00">2026-04-09</time>
+      <time title="創建時間：2026-04-09 14:03:29 / 修改時間：14:36:11" itemprop="dateCreated datePublished" datetime="2026-04-09T14:03:29+08:00">2026-04-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -252,13 +252,15 @@
 </ul>
 </li>
 <li><p>ONNX Runtime (Execution Providers &#x2F; 執行提供者)<br>ONNX Runtime 使用「Execution Provider (EP，執行提供者)」這個詞彙來代替「委派」，但兩者的核心概念是完全相同的。它會將運算操作指派（路由）給當下最有效率的硬體來執行。</p>
+</li>
+</ol>
 <ul>
-<li>NVIDIA GPU： 使用 CUDA 或 TensorRT 執行提供者。</li>
+<li>NVIDIA GPU： 使用 CUDA 或 TensorRT 執行提供者。<ul>
 <li>Windows： 使用 DirectML 執行提供者（可支援並跨越 AMD、Intel 與 NVIDIA 的 GPU 運作）。</li>
 <li>Apple： 使用 CoreML 執行提供者。</li>
 </ul>
 </li>
-</ol>
+</ul>
 <h1 id="TensorFlow-Lite"><a href="#TensorFlow-Lite" class="headerlink" title="TensorFlow Lite"></a>TensorFlow Lite</h1><p>TensorFlow Lite (TFLite) 的 Delegate（委派）機制是一種硬體加速架構。<br>它的核心概念是：將神經網路模型中的某些計算工作，從通用的中央處理器（CPU）「委派」給專門的硬體加速器（例如 GPU、NPU、DSP 等）來執行，以達到更快的推理（Inference）速度和更低的耗電量。</p>
 <p>預設情況下，TFLite 模型是完全在 CPU 上執行的。雖然 CPU 很通用，但對於神經網路中大量的矩陣乘法而言，效率不如專門的硬體。Delegate 機制就是為了解決這個問題而誕生的。</p>
 <p>以下是 TFLite Delegate 機制的詳細運作原理與特點：</p>
