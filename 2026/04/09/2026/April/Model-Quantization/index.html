@@ -27,7 +27,7 @@
 <meta property="og:description" content="模型量化（Model Quantization）是邊緣計算（Edge AI）和行動裝置機器學習中極為核心的優化技術。 簡單來說，量化就是「將神經網路中的高精度數字（通常是 32 位元浮點數）轉換為低精度數字（例如 8 位元整數）」的過程。 這就像是把一張高解析度、全彩的圖片，壓縮成低解析度、只有 256 色的圖片。雖然畫質（精確度）會有一點點損失，但檔案大小會大幅縮小，載入速度也會變快很多。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2026-04-09T14:09:18.000Z">
-<meta property="article:modified_time" content="2026-04-09T14:20:30.830Z">
+<meta property="article:modified_time" content="2026-04-09T15:31:40.158Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
@@ -308,7 +308,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2026-04-09 22:09:18 / 修改時間：22:20:30" itemprop="dateCreated datePublished" datetime="2026-04-09T22:09:18+08:00">2026-04-09</time>
+      <time title="創建時間：2026-04-09 22:09:18 / 修改時間：23:31:40" itemprop="dateCreated datePublished" datetime="2026-04-09T22:09:18+08:00">2026-04-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -361,7 +361,7 @@ mjx-container[display="true"] + br {
 <ol>
 <li><strong>大幅縮小模型體積（省空間）（Memory）：</strong><br>標準的模型權重使用 32 位元浮點數（FP32，佔用 4 bytes）。如果量化為 8 位元整數（INT8，佔用 1 byte），模型大小會直接<strong>縮小到原來的四分之一（約 75% 的縮減）</strong>。這對手機的儲存空間或 App 安裝包大小非常關鍵。</li>
 <li><strong>提升推理速度與降低延遲（省時間）（Latency）：</strong><br>整數運算（Integer Arithmetic）在大多數 CPU、DSP（如 Hexagon）或 NPU 上的執行速度遠快於浮點運算。同時，因為資料變小了，記憶體頻寬的負載也減輕了，資料傳輸速度更快。</li>
-<li><strong>大幅降低功耗（省電）（Accuracy）：</strong><br>在硬體中，搬移資料（從 RAM 搬到 Cache 再搬到 CPU）是耗電量最大的操作。減少資料量加上使用更省電的整數運算單元（ALU），可以顯著延長手機電池壽命，並減少裝置發熱。<strong>這正是為什麼 DSP/NPU 特別依賴量化模型的原因。</strong></li>
+<li><strong>大幅降低功耗（省電）：</strong><br>在硬體中，搬移資料（從 RAM 搬到 Cache 再搬到 CPU）是耗電量最大的操作。減少資料量加上使用更省電的整數運算單元（ALU），可以顯著延長手機電池壽命，並減少裝置發熱。<strong>這正是為什麼 DSP/NPU 特別依賴量化模型的原因。</strong></li>
 </ol>
 <hr>
 <h1 id="量化的基本數學原理"><a href="#量化的基本數學原理" class="headerlink" title="量化的基本數學原理"></a>量化的基本數學原理</h1><p>量化的核心思想是將浮點數的範圍映射到整數的範圍。標準的線性量化公式如下：</p>
