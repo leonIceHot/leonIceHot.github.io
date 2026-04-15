@@ -27,7 +27,7 @@
 <meta property="og:description" content="On-Device 指的是將計算（尤其是 AI &#x2F; 機器學習模型的推理）直接在終端裝置本身上執行，而不是將資料傳輸到遠端伺服器或雲端進行處理。 這些終端裝置可以是：  智慧型手機、平板電腦 智慧音箱、穿戴式裝置 物聯網 (IoT) 裝置 邊緣運算 (Edge Computing) 設備 汽車、無人機、機器人等嵌入式系統">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2026-01-07T05:59:47.000Z">
-<meta property="article:modified_time" content="2026-04-09T16:07:28.755Z">
+<meta property="article:modified_time" content="2026-04-14T14:59:50.700Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
@@ -222,7 +222,7 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#On-Device-%E7%9A%84%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">On-Device 的核心概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#On-Device-%E7%9A%84%E5%84%AA%E5%8B%A2"><span class="nav-number">2.</span> <span class="nav-text">On-Device 的優勢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#On-Device-%E7%9A%84%E6%8C%91%E6%88%B0"><span class="nav-number">3.</span> <span class="nav-text">On-Device 的挑戰</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%A6%E7%8F%BE-On-Device-%E7%9A%84%E9%97%9C%E9%8D%B5%E6%8A%80%E8%A1%93"><span class="nav-number">4.</span> <span class="nav-text">實現 On-Device 的關鍵技術</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#On-Device-%E7%9A%84%E6%87%89%E7%94%A8%E7%AF%84%E4%BE%8B"><span class="nav-number">5.</span> <span class="nav-text">On-Device 的應用範例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#On-device"><span class="nav-number">6.</span> <span class="nav-text">On-device</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inference-Framework"><span class="nav-number">7.</span> <span class="nav-text">Inference Framework</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">8.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#On-Device-%E7%9A%84%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">On-Device 的核心概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#On-Device-%E7%9A%84%E5%84%AA%E5%8B%A2"><span class="nav-number">2.</span> <span class="nav-text">On-Device 的優勢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#On-Device-%E7%9A%84%E6%8C%91%E6%88%B0"><span class="nav-number">3.</span> <span class="nav-text">On-Device 的挑戰</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%A6%E7%8F%BE-On-Device-%E7%9A%84%E9%97%9C%E9%8D%B5%E6%8A%80%E8%A1%93"><span class="nav-number">4.</span> <span class="nav-text">實現 On-Device 的關鍵技術</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#On-Device-%E7%9A%84%E6%87%89%E7%94%A8%E7%AF%84%E4%BE%8B"><span class="nav-number">5.</span> <span class="nav-text">On-Device 的應用範例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#On-device"><span class="nav-number">6.</span> <span class="nav-text">On-device</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#On-device-Framework"><span class="nav-number">7.</span> <span class="nav-text">On-device Framework</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">8.</span> <span class="nav-text">Reference</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -235,7 +235,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">174</span>
+          <span class="site-state-item-count">175</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -314,7 +314,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2026-04-10 00:07:28" itemprop="dateModified" datetime="2026-04-10T00:07:28+08:00">2026-04-10</time>
+      <time title="修改時間：2026-04-14 22:59:50" itemprop="dateModified" datetime="2026-04-14T22:59:50+08:00">2026-04-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -341,14 +341,14 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>2.6k</span>
+      <span>3.1k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>5 分鐘</span>
+      <span>6 分鐘</span>
     </span>
 </div>
 
@@ -424,6 +424,13 @@ mjx-container[display="true"] + br {
 </li>
 <li>輕量級框架與運行時 (Lightweight Frameworks &amp; Runtimes)：<ul>
 <li>專為裝置端設計的推論引擎，如 TensorFlow Lite、PyTorch Mobile、Core ML (Apple)、NNAPI (Android)。</li>
+<li>這是最常使用的方法，您需要在電腦端先訓練好模型，並將模型轉換成這些框架專屬的輕量化格式，再放入手機 App 中執行。<ul>
+<li>TensorFlow Lite (TFLite): Google 推出的解決方案，支援 Android 與 iOS。您可以將 TensorFlow 或 Keras 訓練出來的模型轉換成 .tflite 格式。它支援硬體加速（透過 GPU 或 NPU 的 Delegate 機制）。</li>
+<li>PyTorch Mobile / ExecuTorch: Meta（Facebook）針對 PyTorch 推出的手機端方案。特別是最近主推的 ExecuTorch，它提供了更好的效能與硬體支援，能將 PyTorch 模型編譯成極小的體積在邊緣裝置運行。</li>
+<li>Core ML: Apple 專屬的機器學習框架。如果您只針對 iOS 開發，將模型轉為 Core ML 格式可以最大化利用 iPhone 的 Neural Engine (NPU)，效能表現極佳。</li>
+<li>ONNX Runtime Mobile: 微軟推行的跨平台解決方案。您可以將各種框架（TF, PyTorch 等）轉成 ONNX 格式，再透過 ONNX Runtime 在手機上執行，好處是通用性極高。</li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
@@ -442,12 +449,12 @@ mjx-container[display="true"] + br {
 <li><p>AI Benchmark<br><a target="_blank" rel="noopener" href="https://ai-benchmark.com/ranking_detailed.html">https://ai-benchmark.com/ranking_detailed.html</a></p>
 </li>
 </ol>
-<h2 id="Inference-Framework"><a href="#Inference-Framework" class="headerlink" title="Inference Framework"></a>Inference Framework</h2><ol>
-<li><p>TensorFlow Lite</p>
+<h2 id="On-device-Framework"><a href="#On-device-Framework" class="headerlink" title="On-device Framework"></a>On-device Framework</h2><ol>
+<li><p>LiteRT<br>LiteRT, successor to TensorFlow Lite. is Google’s On-device framework for high-performance ML &amp; GenAI deployment on edge platforms, via efficient conversion, runtime, and optimization<br><a target="_blank" rel="noopener" href="https://github.com/google-ai-edge/LiteRT">https://github.com/google-ai-edge/LiteRT</a></p>
 </li>
-<li><p>ONNX Runtime</p>
+<li><p>ExecuTorch<br><a target="_blank" rel="noopener" href="https://docs.pytorch.com.tw/executorch/stable/intro-how-it-works.html">https://docs.pytorch.com.tw/executorch/stable/intro-how-it-works.html</a></p>
 </li>
-<li><p>NCNN</p>
+<li><p>ONNX Runtime mobile<br><a target="_blank" rel="noopener" href="https://onnxruntime.ai/docs/tutorials/mobile/">https://onnxruntime.ai/docs/tutorials/mobile/</a></p>
 </li>
 <li><p>intel-npu-llm<br><a target="_blank" rel="noopener" href="https://github.com/justADeni/intel-npu-llm">https://github.com/justADeni/intel-npu-llm</a></p>
 </li>
@@ -456,8 +463,6 @@ mjx-container[display="true"] + br {
 <li><p>Fast and lightweight multimodal LLM inference engine for mobile and edge devices<br><a target="_blank" rel="noopener" href="https://github.com/UbiquitousLearning/mllm">https://github.com/UbiquitousLearning/mllm</a></p>
 </li>
 <li><p>BreezeApp<br><a target="_blank" rel="noopener" href="https://github.com/mtkresearch/BreezeApp">https://github.com/mtkresearch/BreezeApp</a></p>
-</li>
-<li><p>LiteRT<br>LiteRT, successor to TensorFlow Lite. is Google’s On-device framework for high-performance ML &amp; GenAI deployment on edge platforms, via efficient conversion, runtime, and optimization<br><a target="_blank" rel="noopener" href="https://github.com/google-ai-edge/LiteRT">https://github.com/google-ai-edge/LiteRT</a></p>
 </li>
 </ol>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
@@ -514,13 +519,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">497k</span>
+    <span title="總字數">500k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">15:04</span>
+    <span title="所需總閱讀時間">15:10</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
