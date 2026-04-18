@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Shared Memory（共享記憶體）是一種行程間通訊（Inter-Process Communication，IPC）的機制，用來讓不同的行程（程式）能夠在同一計算機上共享一個記憶體區域，以進行高效的資料交換。共享記憶體是現代作業系統中最常用的 IPC 方法之一，因為它能夠比其他 IPC 機制（如管道Pipeline、訊息佇列 Message queue等）提供更高的資料傳輸效率。">
+    <meta name="description" content="Shared Memory（共享記憶體）是一種行程間通訊（Inter-Process Communication，IPC）的機制，用來讓不同的行程（程式）能夠在同一計算機上共享一個記憶體區域，以進行高效的資料交換。共享記憶體是現代作業系統中最常用的 IPC 方法之一，因為它能夠比其他 IPC 機制（如管道Pipeline、訊息佇列 Message queue等）提供更高的資料傳輸效率。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shared Memory">
 <meta property="og:url" content="https://leonicehot.github.io/2024/10/13/2024/October/Shared-Memory/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="Shared Memory（共享記憶體）是一種行程間通訊（Inter-Process Communication，IPC）的機制，用來讓不同的行程（程式）能夠在同一計算機上共享一個記憶體區域，以進行高效的資料交換。共享記憶體是現代作業系統中最常用的 IPC 方法之一，因為它能夠比其他 IPC 機制（如管道Pipeline、訊息佇列 Message queue等）提供更高的資料傳輸效率。">
+<meta property="og:description" content="Shared Memory（共享記憶體）是一種行程間通訊（Inter-Process Communication，IPC）的機制，用來讓不同的行程（程式）能夠在同一計算機上共享一個記憶體區域，以進行高效的資料交換。共享記憶體是現代作業系統中最常用的 IPC 方法之一，因為它能夠比其他 IPC 機制（如管道Pipeline、訊息佇列 Message queue等）提供更高的資料傳輸效率。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-10-13T01:17:03.000Z">
 <meta property="article:modified_time" content="2026-01-22T06:25:22.579Z">
@@ -110,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">工作原理：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BB%9F%E9%AB%94%E5%B1%A4%E9%9D%A2%E7%9A%84%E5%85%B1%E4%BA%AB%E8%A8%98%E6%86%B6%E9%AB%94-%E8%A1%8C%E7%A8%8B%E9%96%93%E9%80%9A%E8%A8%8A-IPC"><span class="nav-number">1.1.</span> <span class="nav-text">軟體層面的共享記憶體 (行程間通訊 IPC)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%81%8B%E4%BD%9C%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">運作方式：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E5%95%8F%E9%A1%8C%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">同步問題：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E4%BD%BF%E7%94%A8%E8%BB%9F%E9%AB%94%E5%85%B1%E4%BA%AB%E8%A8%98%E6%86%B6%E9%AB%94%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">為什麼要使用軟體共享記憶體？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-library"><span class="nav-number">5.</span> <span class="nav-text">Python library</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%81%8B%E4%BD%9C%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">運作方式：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E5%95%8F%E9%A1%8C"><span class="nav-number">2.</span> <span class="nav-text">同步問題：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E4%BD%BF%E7%94%A8%E8%BB%9F%E9%AB%94%E5%85%B1%E4%BA%AB%E8%A8%98%E6%86%B6%E9%AB%94"><span class="nav-number">3.</span> <span class="nav-text">為什麼要使用軟體共享記憶體？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python-library"><span class="nav-number">4.</span> <span class="nav-text">Python library</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -123,7 +123,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">176</span>
+          <span class="site-state-item-count">175</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -225,7 +225,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>1.2k</span>
+      <span>1.3k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -242,37 +242,51 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>Shared Memory（共享記憶體）是一種行程間通訊（Inter-Process Communication，IPC）的機制，用來讓不同的行程（程式）能夠在同一計算機上共享一個記憶體區域，以進行高效的資料交換。共享記憶體是現代作業系統中最常用的 IPC 方法之一，因為它能夠比其他 IPC 機制（如管道Pipeline、訊息佇列 Message queue等）提供更高的資料傳輸效率。</p>
-<span id="more"></span>
-<h1 id="工作原理："><a href="#工作原理：" class="headerlink" title="工作原理："></a>工作原理：</h1><h2 id="軟體層面的共享記憶體-行程間通訊-IPC"><a href="#軟體層面的共享記憶體-行程間通訊-IPC" class="headerlink" title="軟體層面的共享記憶體 (行程間通訊 IPC)"></a>軟體層面的共享記憶體 (行程間通訊 IPC)</h2><p>在作業系統（如 Linux 或 Windows）中，共享記憶體是一種 行程間通訊 (Inter-Process Communication, IPC) 的方法。預設情況下，為了安全，程式 A 不能讀取程式 B 的記憶體。共享記憶體則是為了效率而故意打破這個規則。</p>
-<h1 id="運作方式："><a href="#運作方式：" class="headerlink" title="運作方式："></a>運作方式：</h1><p>程式 A 請求作業系統建立一個共享記憶體區段 (Segment)。<br>作業系統在實體 RAM 中保留一塊空間。<br>作業系統將這塊實體空間「映射 (Map)」到程式 A 的虛擬位址空間。<br>程式 B 請求連接到同一個區段。<br>作業系統將同一塊實體空間映射到程式 B 的虛擬位址空間。<br>結果： 兩個程式都可以像讀寫自己的變數一樣讀寫這塊記憶體，且任何修改都會立即被對方看見。</p>
-<h1 id="同步問題："><a href="#同步問題：" class="headerlink" title="同步問題："></a>同步問題：</h1><ul>
-<li>由於多個行程可以同時讀寫共享記憶體，因此需要一些同步機制來防止資料競爭（Race Condition）和一致性問題。通常會使用 信號量（Semaphore） 或 互斥鎖（Mutex） 來保證共享記憶體中的資料不會被同時修改。</li>
+    <div class="post-body" itemprop="articleBody"><p>Shared Memory（共享記憶體）是一種行程間通訊（Inter-Process
+Communication，IPC）的機制，用來讓不同的行程（程式）能夠在同一計算機上共享一個記憶體區域，以進行高效的資料交換。共享記憶體是現代作業系統中最常用的
+IPC 方法之一，因為它能夠比其他 IPC 機制（如管道Pipeline、訊息佇列
+Message queue等）提供更高的資料傳輸效率。 <span id="more"></span> # 工作原理： ##
+軟體層面的共享記憶體 (行程間通訊 IPC) 在作業系統（如 Linux 或
+Windows）中，共享記憶體是一種 行程間通訊 (Inter-Process Communication,
+IPC) 的方法。預設情況下，為了安全，程式 A 不能讀取程式 B
+的記憶體。共享記憶體則是為了效率而故意打破這個規則。</p>
+<h1 id="運作方式">運作方式：</h1>
+<p>程式 A 請求作業系統建立一個共享記憶體區段 (Segment)。 作業系統在實體
+RAM 中保留一塊空間。 作業系統將這塊實體空間「映射 (Map)」到程式 A
+的虛擬位址空間。 程式 B 請求連接到同一個區段。
+作業系統將同一塊實體空間映射到程式 B 的虛擬位址空間。 結果：
+兩個程式都可以像讀寫自己的變數一樣讀寫這塊記憶體，且任何修改都會立即被對方看見。</p>
+<h1 id="同步問題">同步問題：</h1>
+<ul>
+<li>由於多個行程可以同時讀寫共享記憶體，因此需要一些同步機制來防止資料競爭（Race
+Condition）和一致性問題。通常會使用 信號量（Semaphore） 或
+互斥鎖（Mutex） 來保證共享記憶體中的資料不會被同時修改。</li>
 </ul>
-<h1 id="為什麼要使用軟體共享記憶體？"><a href="#為什麼要使用軟體共享記憶體？" class="headerlink" title="為什麼要使用軟體共享記憶體？"></a>為什麼要使用軟體共享記憶體？</h1><ul>
-<li>速度最快： 這是所有 IPC 方法中（比 Pipe、Socket 或 Message Queue）最快的。一旦設定完成，資料傳輸就不再需要核心 (Kernel) 介入。資料不需要在不同的緩衝區之間複製 (Zero-copy)，它就直接在那裡。</li>
-<li>高效率： 非常適合在程式之間傳遞大量資料（例如高解析度影片幀、大型資料庫），因為省去了複製資料的開銷。</li>
+<h1 id="為什麼要使用軟體共享記憶體">為什麼要使用軟體共享記憶體？</h1>
+<ul>
+<li>速度最快： 這是所有 IPC 方法中（比 Pipe、Socket 或 Message
+Queue）最快的。一旦設定完成，資料傳輸就不再需要核心 (Kernel)
+介入。資料不需要在不同的緩衝區之間複製
+(Zero-copy)，它就直接在那裡。</li>
+<li>高效率：
+非常適合在程式之間傳遞大量資料（例如高解析度影片幀、大型資料庫），因為省去了複製資料的開銷。</li>
 </ul>
-<p>優點：</p>
-<ol>
-<li><p>高速資料傳輸：共享記憶體是所有 IPC 機制中最有效率的方式之一，因為它省去了行程之間複製資料的過程。行程可以直接在共享記憶體中讀取和寫入資料，這比通過管道或消息隊列更快。</p>
-</li>
-<li><p>適合大資料量交換：對於需要頻繁交換大量資料的應用程式，共享記憶體是最佳選擇，因為它不需要頻繁地進行資料移動。</p>
-</li>
-<li><p>記憶體效率高：因為資料是在相同的記憶體空間內被共享和使用，不會有額外的資料複製，這使得記憶體使用率較高。</p>
-</li>
+<p>優點： 1. 高速資料傳輸：共享記憶體是所有 IPC
+機制中最有效率的方式之一，因為它省去了行程之間複製資料的過程。行程可以直接在共享記憶體中讀取和寫入資料，這比通過管道或消息隊列更快。</p>
+<ol start="2" type="1">
+<li><p>適合大資料量交換：對於需要頻繁交換大量資料的應用程式，共享記憶體是最佳選擇，因為它不需要頻繁地進行資料移動。</p></li>
+<li><p>記憶體效率高：因為資料是在相同的記憶體空間內被共享和使用，不會有額外的資料複製，這使得記憶體使用率較高。</p></li>
 </ol>
-<p>缺點：</p>
-<ol>
-<li><p>同步機制複雜：多個行程訪問同一塊共享記憶體時，容易產生同步問題，這要求開發人員引入額外的同步機制來確保資料一致性，如信號量或互斥鎖，這些同步機制可能導致效能開銷。</p>
-</li>
-<li><p>安全性問題：共享記憶體在行程間是公開的，因此需要謹慎處理訪問權限，否則可能導致未授權的行程讀寫共享記憶體中的資料，甚至會破壞資料的完整性。</p>
-</li>
-<li><p>需要更多控制：與其他 IPC 方法相比，程序員需要更多地控制內存的分配、釋放和同步，這增加了開發難度。</p>
-</li>
+<p>缺點： 1.
+同步機制複雜：多個行程訪問同一塊共享記憶體時，容易產生同步問題，這要求開發人員引入額外的同步機制來確保資料一致性，如信號量或互斥鎖，這些同步機制可能導致效能開銷。</p>
+<ol start="2" type="1">
+<li><p>安全性問題：共享記憶體在行程間是公開的，因此需要謹慎處理訪問權限，否則可能導致未授權的行程讀寫共享記憶體中的資料，甚至會破壞資料的完整性。</p></li>
+<li><p>需要更多控制：與其他 IPC
+方法相比，程序員需要更多地控制內存的分配、釋放和同步，這增加了開發難度。</p></li>
 </ol>
-<h1 id="Python-library"><a href="#Python-library" class="headerlink" title="Python library"></a>Python library</h1><ol>
-<li>python mmap<br><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/mmap.html">https://docs.python.org/3/library/mmap.html</a></li>
+<h1 id="python-library">Python library</h1>
+<ol type="1">
+<li>python mmap https://docs.python.org/3/library/mmap.html</li>
 </ol>
 
     </div>
@@ -325,13 +339,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">501k</span>
+    <span title="總字數">471k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">15:11</span>
+    <span title="所需總閱讀時間">14:16</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
@@ -371,11 +385,6 @@
   
 
 
-
-
-  
-
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
 
 
 

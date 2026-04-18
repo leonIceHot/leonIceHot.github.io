@@ -19,24 +19,24 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="在 Ubuntu 環境中，監控 GPU 的狀態（使用率、記憶體 VRAM、溫度）非常關鍵，因為這能幫你判斷程式是否真的有吃到 GPU 加速，或者是否即將記憶體溢出（Out Of Memory）。">
+    <meta name="description" content="在 Ubuntu 環境中，監控 GPU 的狀態（使用率、記憶體 VRAM、溫度）非常關鍵，因為這能幫你判斷程式是否真的有吃到 GPU 加速，或者是否即將記憶體溢出（Out Of Memory）。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GPU Monitor">
 <meta property="og:url" content="https://leonicehot.github.io/2026/01/22/2026/January/GPU-Monitor/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="在 Ubuntu 環境中，監控 GPU 的狀態（使用率、記憶體 VRAM、溫度）非常關鍵，因為這能幫你判斷程式是否真的有吃到 GPU 加速，或者是否即將記憶體溢出（Out Of Memory）。">
+<meta property="og:description" content="在 Ubuntu 環境中，監控 GPU 的狀態（使用率、記憶體 VRAM、溫度）非常關鍵，因為這能幫你判斷程式是否真的有吃到 GPU 加速，或者是否即將記憶體溢出（Out Of Memory）。">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://leonicehot.github.io/images/2026/January/gpu/nvidia-smi.png">
-<meta property="og:image" content="https://leonicehot.github.io/images/2026/January/gpu/nvitop.png">
-<meta property="og:image" content="https://leonicehot.github.io/images/2026/January/gpu/nvtop.png">
-<meta property="og:image" content="https://leonicehot.github.io/images/2026/January/gpu/top.png">
-<meta property="og:image" content="https://leonicehot.github.io/images/2026/January/gpu/htop.png">
-<meta property="og:image" content="https://leonicehot.github.io/images/2026/January/gpu/gpustat.png">
+<meta property="og:image" content="https://leonicehot.github.io/2026/01/22/2026/images/2026/January/gpu/nvidia-smi.png">
+<meta property="og:image" content="https://leonicehot.github.io/2026/01/22/2026/images/2026/January/gpu/nvitop.png">
+<meta property="og:image" content="https://leonicehot.github.io/2026/01/22/2026/images/2026/January/gpu/nvtop.png">
+<meta property="og:image" content="https://leonicehot.github.io/2026/01/22/2026/images/2026/January/gpu/top.png">
+<meta property="og:image" content="https://leonicehot.github.io/2026/01/22/2026/images/2026/January/gpu/htop.png">
+<meta property="og:image" content="https://leonicehot.github.io/2026/01/22/2026/images/2026/January/gpu/gpustat.png">
 <meta property="article:published_time" content="2026-01-22T06:00:16.000Z">
 <meta property="article:modified_time" content="2026-01-25T01:02:16.980Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://leonicehot.github.io/images/2026/January/gpu/nvidia-smi.png">
+<meta name="twitter:image" content="https://leonicehot.github.io/2026/01/22/2026/images/2026/January/gpu/nvidia-smi.png">
 
 
 <link rel="canonical" href="https://leonicehot.github.io/2026/01/22/2026/January/GPU-Monitor/">
@@ -130,7 +130,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">176</span>
+          <span class="site-state-item-count">175</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -253,15 +253,28 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>在 Ubuntu 環境中，監控 GPU 的狀態（使用率、記憶體 VRAM、溫度）非常關鍵，因為這能幫你判斷程式是否真的有吃到 GPU 加速，或者是否即將記憶體溢出（Out Of Memory）。</p>
-<span id="more"></span>
-
-<h1 id="nvidia-smi"><a href="#nvidia-smi" class="headerlink" title="nvidia-smi"></a>nvidia-smi</h1><p>nvidia-smi (NVIDIA System Management Interface) 是一個基於 NVIDIA Management Library (NVML) 的命令列工具，專門用來管理和監控 NVIDIA GPU 裝置。<br><img src="/../../images/2026/January/gpu/nvidia-smi.png" alt="nvidia-smi"></p>
-<h1 id="nvitop"><a href="#nvitop" class="headerlink" title="nvitop"></a>nvitop</h1><p>nvitop 是一個專為終端機（Terminal）設計的互動式 NVIDIA GPU 行程檢視器。<br><img src="/../../images/2026/January/gpu/nvitop.png" alt="nvitop"></p>
-<h1 id="nvtop"><a href="#nvtop" class="headerlink" title="nvtop"></a>nvtop</h1><p>是基於 C 語言 開發的，速度極快，風格非常像 Linux 的 htop 指令，且支援 AMD 和 Intel GPU。<br><img src="/../../images/2026/January/gpu/nvtop.png" alt="nvtop"></p>
-<h1 id="top"><a href="#top" class="headerlink" title="top"></a>top</h1><p>top 是 Linux 系統中最經典、最古老，也是幾乎所有發行版（Distro）都預設安裝的系統效能監控工具，監控 CPU (處理器) 和 RAM (記憶體)。<br><img src="/../../images/2026/January/gpu/top.png" alt="top"></p>
-<h1 id="htop"><a href="#htop" class="headerlink" title="htop"></a>htop</h1><p>htop 可以說是 top 的「現代化升級版」。它也是監控 Linux 系統 CPU 和記憶體最推薦的工具。<br><img src="/../../images/2026/January/gpu/htop.png" alt="htop"></p>
-<h1 id="gpustat"><a href="#gpustat" class="headerlink" title="gpustat"></a>gpustat</h1><p>gpustat 是另一個非常經典且極度簡潔的 NVIDIA GPU 狀態監控工具。<br><img src="/../../images/2026/January/gpu/gpustat.png" alt="gpustat"></p>
+    <div class="post-body" itemprop="articleBody"><p>在 Ubuntu 環境中，監控 GPU 的狀態（使用率、記憶體
+VRAM、溫度）非常關鍵，因為這能幫你判斷程式是否真的有吃到 GPU
+加速，或者是否即將記憶體溢出（Out Of Memory）。 <span id="more"></span></p>
+<h1 id="nvidia-smi">nvidia-smi</h1>
+<p>nvidia-smi (NVIDIA System Management Interface) 是一個基於 NVIDIA
+Management Library (NVML) 的命令列工具，專門用來管理和監控 NVIDIA GPU
+裝置。 <img src="../../images/2026/January/gpu/nvidia-smi.png" alt="nvidia-smi"></p>
+<h1 id="nvitop">nvitop</h1>
+<p>nvitop 是一個專為終端機（Terminal）設計的互動式 NVIDIA GPU
+行程檢視器。 <img src="../../images/2026/January/gpu/nvitop.png" alt="nvitop"></p>
+<h1 id="nvtop">nvtop</h1>
+<p>是基於 C 語言 開發的，速度極快，風格非常像 Linux 的 htop 指令，且支援
+AMD 和 Intel GPU。 <img src="../../images/2026/January/gpu/nvtop.png" alt="nvtop"></p>
+<h1 id="top">top</h1>
+<p>top 是 Linux
+系統中最經典、最古老，也是幾乎所有發行版（Distro）都預設安裝的系統效能監控工具，監控
+CPU (處理器) 和 RAM (記憶體)。 <img src="../../images/2026/January/gpu/top.png" alt="top"></p>
+<h1 id="htop">htop</h1>
+<p>htop 可以說是 top 的「現代化升級版」。它也是監控 Linux 系統 CPU
+和記憶體最推薦的工具。 <img src="../../images/2026/January/gpu/htop.png" alt="htop"></p>
+<h1 id="gpustat">gpustat</h1>
+<p>gpustat 是另一個非常經典且極度簡潔的 NVIDIA GPU 狀態監控工具。 <img src="../../images/2026/January/gpu/gpustat.png" alt="gpustat"></p>
 
     </div>
 
@@ -313,13 +326,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">501k</span>
+    <span title="總字數">471k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">15:11</span>
+    <span title="所需總閱讀時間">14:16</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
@@ -359,11 +372,6 @@
   
 
 
-
-
-  
-
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
 
 
 

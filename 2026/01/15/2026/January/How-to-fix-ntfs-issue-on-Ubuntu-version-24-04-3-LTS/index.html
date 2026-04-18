@@ -19,21 +19,21 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="NTFS-3G 是一個開源的 NTFS 檔案系統驅動程式，讓 Linux、macOS、FreeBSD 等非 Windows 系統能夠安全地讀寫（建立、修改、刪除檔案與資料夾）微軟的 NTFS 格式磁碟，它利用 FUSE (Filesystem in Userspace) 框架實現跨平台，是許多 Linux 發行版預設的 NTFS 驅動，提供了完整的讀寫功能和檔案權限管理。">
+    <meta name="description" content="NTFS-3G 是一個開源的 NTFS 檔案系統驅動程式，讓 Linux、macOS、FreeBSD 等非 Windows 系統能夠安全地讀寫（建立、修改、刪除檔案與資料夾）微軟的 NTFS 格式磁碟，它利用 FUSE (Filesystem in Userspace) 框架實現跨平台，是許多 Linux 發行版預設的 NTFS 驅動，提供了完整的讀寫功能和檔案權限管理。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to fix ntfs issue on Ubuntu version 24.04.3 LTS">
 <meta property="og:url" content="https://leonicehot.github.io/2026/01/15/2026/January/How-to-fix-ntfs-issue-on-Ubuntu-version-24-04-3-LTS/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="NTFS-3G 是一個開源的 NTFS 檔案系統驅動程式，讓 Linux、macOS、FreeBSD 等非 Windows 系統能夠安全地讀寫（建立、修改、刪除檔案與資料夾）微軟的 NTFS 格式磁碟，它利用 FUSE (Filesystem in Userspace) 框架實現跨平台，是許多 Linux 發行版預設的 NTFS 驅動，提供了完整的讀寫功能和檔案權限管理。">
+<meta property="og:description" content="NTFS-3G 是一個開源的 NTFS 檔案系統驅動程式，讓 Linux、macOS、FreeBSD 等非 Windows 系統能夠安全地讀寫（建立、修改、刪除檔案與資料夾）微軟的 NTFS 格式磁碟，它利用 FUSE (Filesystem in Userspace) 框架實現跨平台，是許多 Linux 發行版預設的 NTFS 驅動，提供了完整的讀寫功能和檔案權限管理。">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://leonicehot.github.io/images/2026/January/Fix-NTFS/device.png">
-<meta property="og:image" content="https://leonicehot.github.io/images/2026/January/Fix-NTFS/unable.png">
-<meta property="og:image" content="https://leonicehot.github.io/images/2026/January/Fix-NTFS/ntfsfix.png">
+<meta property="og:image" content="https://leonicehot.github.io/2026/01/15/2026/images/2026/January/Fix-NTFS/device.png">
+<meta property="og:image" content="https://leonicehot.github.io/2026/01/15/2026/images/2026/January/Fix-NTFS/unable.png">
+<meta property="og:image" content="https://leonicehot.github.io/2026/01/15/2026/images/2026/January/Fix-NTFS/ntfsfix.png">
 <meta property="article:published_time" content="2026-01-15T04:38:02.000Z">
 <meta property="article:modified_time" content="2026-01-25T01:02:25.581Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://leonicehot.github.io/images/2026/January/Fix-NTFS/device.png">
+<meta name="twitter:image" content="https://leonicehot.github.io/2026/01/15/2026/images/2026/January/Fix-NTFS/device.png">
 
 
 <link rel="canonical" href="https://leonicehot.github.io/2026/01/15/2026/January/How-to-fix-ntfs-issue-on-Ubuntu-version-24-04-3-LTS/">
@@ -114,7 +114,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-ntfs-3g"><span class="nav-number">2.</span> <span class="nav-text">Install ntfs-3g</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Run-the-command"><span class="nav-number">3.</span> <span class="nav-text">Run the command</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#install-ntfs-3g"><span class="nav-number">2.</span> <span class="nav-text">Install ntfs-3g</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#run-the-command"><span class="nav-number">3.</span> <span class="nav-text">Run the command</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -127,7 +127,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">176</span>
+          <span class="site-state-item-count">175</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -233,7 +233,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>203</span>
+      <span>210</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -250,12 +250,21 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>NTFS-3G 是一個開源的 NTFS 檔案系統驅動程式，讓 Linux、macOS、FreeBSD 等非 Windows 系統能夠安全地讀寫（建立、修改、刪除檔案與資料夾）微軟的 NTFS 格式磁碟，它利用 FUSE (Filesystem in Userspace) 框架實現跨平台，是許多 Linux 發行版預設的 NTFS 驅動，提供了完整的讀寫功能和檔案權限管理。 </p>
+    <div class="post-body" itemprop="articleBody"><p>NTFS-3G 是一個開源的 NTFS 檔案系統驅動程式，讓 Linux、macOS、FreeBSD
+等非 Windows 系統能夠安全地讀寫（建立、修改、刪除檔案與資料夾）微軟的
+NTFS 格式磁碟，它利用 FUSE (Filesystem in Userspace)
+框架實現跨平台，是許多 Linux 發行版預設的 NTFS
+驅動，提供了完整的讀寫功能和檔案權限管理。</p>
 <span id="more"></span>
-<h1 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h1><p><img src="/../../images/2026/January/Fix-NTFS/device.png" alt="device"><br><img src="/../../images/2026/January/Fix-NTFS/unable.png" alt="unable"></p>
-<h1 id="Install-ntfs-3g"><a href="#Install-ntfs-3g" class="headerlink" title="Install ntfs-3g"></a>Install ntfs-3g</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install ntfs-3g</span><br></pre></td></tr></table></figure>
-
-<h1 id="Run-the-command"><a href="#Run-the-command" class="headerlink" title="Run the command"></a>Run the command</h1><p><img src="/../../images/2026/January/Fix-NTFS/ntfsfix.png" alt="ntfsfix"></p>
+<h1 id="problem">Problem</h1>
+<p><img src="../../images/2026/January/Fix-NTFS/device.png" alt="device"> <img src="../../images/2026/January/Fix-NTFS/unable.png" alt="unable"></p>
+<h1 id="install-ntfs-3g">Install ntfs-3g</h1>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install ntfs-3g</span><br></pre></td></tr></table></figure>
+<h1 id="run-the-command">Run the command</h1>
+<figure>
+<img src="../../images/2026/January/Fix-NTFS/ntfsfix.png" alt="ntfsfix">
+<figcaption aria-hidden="true">ntfsfix</figcaption>
+</figure>
 
     </div>
 
@@ -307,13 +316,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">501k</span>
+    <span title="總字數">471k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">15:11</span>
+    <span title="所需總閱讀時間">14:16</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
@@ -353,11 +362,6 @@
   
 
 
-
-
-  
-
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
 
 
 

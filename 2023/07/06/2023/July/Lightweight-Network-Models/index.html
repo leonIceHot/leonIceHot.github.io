@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介輕量化網路模型（Lightweight Deep Network Models）是指具有較小尺寸和低計算資源需求的深度學習模型。這些模型的設計旨在在保持良好性能的同時，減少模型的複雜性和計算成本，以適應資源受限的環境，例如移動設備、嵌入式系統或低功耗設備。">
+    <meta name="description" content="簡介 輕量化網路模型（Lightweight Deep Network Models）是指具有較小尺寸和低計算資源需求的深度學習模型。這些模型的設計旨在在保持良好性能的同時，減少模型的複雜性和計算成本，以適應資源受限的環境，例如移動設備、嵌入式系統或低功耗設備。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lightweight Deep Network Model">
 <meta property="og:url" content="https://leonicehot.github.io/2023/07/06/2023/July/Lightweight-Network-Models/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介輕量化網路模型（Lightweight Deep Network Models）是指具有較小尺寸和低計算資源需求的深度學習模型。這些模型的設計旨在在保持良好性能的同時，減少模型的複雜性和計算成本，以適應資源受限的環境，例如移動設備、嵌入式系統或低功耗設備。">
+<meta property="og:description" content="簡介 輕量化網路模型（Lightweight Deep Network Models）是指具有較小尺寸和低計算資源需求的深度學習模型。這些模型的設計旨在在保持良好性能的同時，減少模型的複雜性和計算成本，以適應資源受限的環境，例如移動設備、嵌入式系統或低功耗設備。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-07-06T04:51:06.000Z">
 <meta property="article:modified_time" content="2026-04-10T04:56:20.890Z">
@@ -110,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AD%96%E7%95%A5"><span class="nav-number">2.</span> <span class="nav-text">策略</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -123,7 +123,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">176</span>
+          <span class="site-state-item-count">175</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -246,28 +246,48 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>輕量化網路模型（Lightweight Deep Network Models）是指具有較小尺寸和低計算資源需求的深度學習模型。這些模型的設計旨在在保持良好性能的同時，減少模型的複雜性和計算成本，以適應資源受限的環境，例如移動設備、嵌入式系統或低功耗設備。</p>
-<span id="more"></span>
-<h1 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h1><p>輕量化網路模型的設計通常包括以下策略：</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
+<p>輕量化網路模型（Lightweight Deep Network
+Models）是指具有較小尺寸和低計算資源需求的深度學習模型。這些模型的設計旨在在保持良好性能的同時，減少模型的複雜性和計算成本，以適應資源受限的環境，例如移動設備、嵌入式系統或低功耗設備。
+<span id="more"></span> # 策略 輕量化網路模型的設計通常包括以下策略：</p>
 <p>模型結構簡化：將深度學習模型的結構簡化，例如減少層數、減少卷積核的數量或大小，以減少模型的參數量和計算量。</p>
-<ol>
-<li><p>知識蒸餾（Knowledge Distillation）：使用一個大型的、複雜的模型（稱為教師模型）訓練一個輕量化的模型（稱為學生模型），將教師模型的知識轉移給學生模型，以提高學生模型的性能。</p>
-</li>
-<li><p>稀疏化（Sparsity）：通過稀疏矩陣或稀疏權重來減少模型的參數數量，從而減少模型的存儲和計算開銷。</p>
-</li>
-<li><p>網路量化（Network Quantization）：將模型的權重和激活函數的精度由浮點數轉換為低位數值，以減少模型的存儲需求和計算成本。</p>
-</li>
+<ol type="1">
+<li><p>知識蒸餾（Knowledge
+Distillation）：使用一個大型的、複雜的模型（稱為教師模型）訓練一個輕量化的模型（稱為學生模型），將教師模型的知識轉移給學生模型，以提高學生模型的性能。</p></li>
+<li><p>稀疏化（Sparsity）：通過稀疏矩陣或稀疏權重來減少模型的參數數量，從而減少模型的存儲和計算開銷。</p></li>
+<li><p>網路量化（Network
+Quantization）：將模型的權重和激活函數的精度由浮點數轉換為低位數值，以減少模型的存儲需求和計算成本。</p></li>
 </ol>
 <p>輕量化網路模型在許多場景中具有重要的應用價值，特別是在資源受限的設備和環境下，如移動設備上的圖像識別、物體檢測、語音辨識等。這些模型可以在保持合理的準確性的同時，降低模型的存儲需求和計算資源，從而實現更高效的部署和執行。</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
-<li>Cheng, Y., Wang, D., Zhou, P., &amp; Zhang, T. (2017). A survey of model compression and acceleration for deep neural networks. arXiv preprint arXiv:1710.09282.</li>
-<li>Cheng, Y., Wang, D., Zhou, P., &amp; Zhang, T. (2018). Model compression and acceleration for deep neural networks: The principles, progress, and challenges. IEEE Signal Processing Magazine, 35(1), 126-136.</li>
-<li>Cheng, J., Wang, P. S., Li, G., Hu, Q. H., &amp; Lu, H. Q. (2018). Recent advances in efficient computation of deep convolutional neural networks. Frontiers of Information Technology &amp; Electronic Engineering, 19(1), 64-77.</li>
-<li>Choudhary, T., Mishra, V., Goswami, A., &amp; Sarangapani, J. (2020). A comprehensive survey on model compression and acceleration. Artificial Intelligence Review, 53(7), 5113-5155.</li>
-<li>Deng, L., Li, G., Han, S., Shi, L., &amp; Xie, Y. (2020). Model compression and hardware acceleration for neural networks: A comprehensive survey. Proceedings of the IEEE, 108(4), 485-532.</li>
-<li>Liang, T., Glossner, J., Wang, L., Shi, S., &amp; Zhang, X. (2021). Pruning and quantization for deep neural network acceleration: A survey. Neurocomputing, 461, 370-403.</li>
-<li>Gholami, A., Kim, S., Dong, Z., Yao, Z., Mahoney, M. W., &amp; Keutzer, K. (2022). A survey of quantization methods for efficient neural network inference. In Low-power computer vision (pp. 291-326). Chapman and Hall&#x2F;CRC.</li>
-<li>Menghani, G. (2023). Efficient deep learning: A survey on making deep learning models smaller, faster, and better. ACM Computing Surveys, 55(12), 1-37.</li>
+<h1 id="reference">Reference</h1>
+<ol type="1">
+<li>Cheng, Y., Wang, D., Zhou, P., &amp; Zhang, T. (2017). A survey of
+model compression and acceleration for deep neural networks. arXiv
+preprint arXiv:1710.09282.</li>
+<li>Cheng, Y., Wang, D., Zhou, P., &amp; Zhang, T. (2018). Model
+compression and acceleration for deep neural networks: The principles,
+progress, and challenges. IEEE Signal Processing Magazine, 35(1),
+126-136.</li>
+<li>Cheng, J., Wang, P. S., Li, G., Hu, Q. H., &amp; Lu, H. Q. (2018).
+Recent advances in efficient computation of deep convolutional neural
+networks. Frontiers of Information Technology &amp; Electronic
+Engineering, 19(1), 64-77.</li>
+<li>Choudhary, T., Mishra, V., Goswami, A., &amp; Sarangapani, J.
+(2020). A comprehensive survey on model compression and acceleration.
+Artificial Intelligence Review, 53(7), 5113-5155.</li>
+<li>Deng, L., Li, G., Han, S., Shi, L., &amp; Xie, Y. (2020). Model
+compression and hardware acceleration for neural networks: A
+comprehensive survey. Proceedings of the IEEE, 108(4), 485-532.</li>
+<li>Liang, T., Glossner, J., Wang, L., Shi, S., &amp; Zhang, X. (2021).
+Pruning and quantization for deep neural network acceleration: A survey.
+Neurocomputing, 461, 370-403.</li>
+<li>Gholami, A., Kim, S., Dong, Z., Yao, Z., Mahoney, M. W., &amp;
+Keutzer, K. (2022). A survey of quantization methods for efficient
+neural network inference. In Low-power computer vision (pp. 291-326).
+Chapman and Hall/CRC.</li>
+<li>Menghani, G. (2023). Efficient deep learning: A survey on making
+deep learning models smaller, faster, and better. ACM Computing Surveys,
+55(12), 1-37.</li>
 </ol>
 
     </div>
@@ -320,13 +340,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">501k</span>
+    <span title="總字數">471k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">15:11</span>
+    <span title="所需總閱讀時間">14:16</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
@@ -366,11 +386,6 @@
   
 
 
-
-
-  
-
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
 
 
 

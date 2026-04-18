@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="簡介自動混合精度（Automated Mixed Precision）是一種優化技術，用於加速深度學習模型的訓練過程。該技術通常應用於具有浮點計算的神經網絡模型，旨在在保持訓練模型準確性的同時，提高訓練速度和計算效率。">
+    <meta name="description" content="簡介 自動混合精度（Automated Mixed Precision）是一種優化技術，用於加速深度學習模型的訓練過程。該技術通常應用於具有浮點計算的神經網絡模型，旨在在保持訓練模型準確性的同時，提高訓練速度和計算效率。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Automated Mixed Precision">
 <meta property="og:url" content="https://leonicehot.github.io/2023/07/06/2023/July/Automated-Mixed-Precision/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="簡介自動混合精度（Automated Mixed Precision）是一種優化技術，用於加速深度學習模型的訓練過程。該技術通常應用於具有浮點計算的神經網絡模型，旨在在保持訓練模型準確性的同時，提高訓練速度和計算效率。">
+<meta property="og:description" content="簡介 自動混合精度（Automated Mixed Precision）是一種優化技術，用於加速深度學習模型的訓練過程。該技術通常應用於具有浮點計算的神經網絡模型，旨在在保持訓練模型準確性的同時，提高訓練速度和計算效率。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-07-06T02:07:04.000Z">
 <meta property="article:modified_time" content="2026-04-09T15:07:07.702Z">
@@ -110,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -123,7 +123,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">176</span>
+          <span class="site-state-item-count">175</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -246,30 +246,34 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>自動混合精度（Automated Mixed Precision）是一種優化技術，用於加速深度學習模型的訓練過程。該技術通常應用於具有浮點計算的神經網絡模型，旨在在保持訓練模型準確性的同時，提高訓練速度和計算效率。</p>
-<span id="more"></span>
-
-<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>傳統上，深度學習模型使用單精度（32位）浮點數來表示權重和計算中間結果。然而，單精度浮點數在儲存和計算方面需要更多的記憶體和計算資源。為了提高效率，自動混合精度技術將模型的某些計算部分轉換為半精度（16位）浮點數，同時保留關鍵的計算部分使用單精度浮點數。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="簡介">簡介</h1>
+<p>自動混合精度（Automated Mixed
+Precision）是一種優化技術，用於加速深度學習模型的訓練過程。該技術通常應用於具有浮點計算的神經網絡模型，旨在在保持訓練模型準確性的同時，提高訓練速度和計算效率。
+<span id="more"></span></p>
+<h1 id="背景">背景</h1>
+<p>傳統上，深度學習模型使用單精度（32位）浮點數來表示權重和計算中間結果。然而，單精度浮點數在儲存和計算方面需要更多的記憶體和計算資源。為了提高效率，自動混合精度技術將模型的某些計算部分轉換為半精度（16位）浮點數，同時保留關鍵的計算部分使用單精度浮點數。</p>
 <p>自動混合精度的核心思想是在訓練過程中動態地選擇最佳精度來執行計算。它利用數據和計算的敏感性，將能夠容忍較低精度的計算部分轉換為半精度，從而節省記憶體和計算資源。同時，關鍵的計算部分保留在單精度中，以確保模型的準確性和收斂性。</p>
 <p>自動混合精度的優點包括：</p>
-<ol>
-<li><p>加速訓練速度：使用半精度浮點數可以減少記憶體和計算需求，從而加速模型的訓練速度。</p>
-</li>
-<li><p>節省資源：半精度浮點數需要較少的存儲空間和計算資源，可以節省硬件成本。</p>
-</li>
-<li><p>保持準確性：自動混合精度技術通過保留關鍵計算部分的單精度精度，確保模型在準確性上不受影響。</p>
-</li>
+<ol type="1">
+<li><p>加速訓練速度：使用半精度浮點數可以減少記憶體和計算需求，從而加速模型的訓練速度。</p></li>
+<li><p>節省資源：半精度浮點數需要較少的存儲空間和計算資源，可以節省硬件成本。</p></li>
+<li><p>保持準確性：自動混合精度技術通過保留關鍵計算部分的單精度精度，確保模型在準確性上不受影響。</p></li>
 </ol>
-<p>自動混合精度技術已經被廣泛應用於深度學習框架中，如NVIDIA的Apex、TensorFlow的Automatic Mixed Precision等。通過使用自動混合精度，研究人員和開發人員可以在訓練過程中提高效率，同時確保模型的準確性和收斂性。</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
-<li><p>Micikevicius, P., Narang, S., Alben, J., Diamos, G., Elsen, E., Garcia, D., … &amp; Wu, H. (2017). Mixed precision training. arXiv preprint arXiv:1710.03740.</p>
-</li>
-<li><p>ECCV 2020 Tutorial on Accelerating Computer Vision with Mixed Precision<br><a target="_blank" rel="noopener" href="https://nvlabs.github.io/eccv2020-mixed-precision-tutorial/">https://nvlabs.github.io/eccv2020-mixed-precision-tutorial/</a></p>
-</li>
-<li><p>AUTOMATIC MIXED PRECISION<br><a target="_blank" rel="noopener" href="https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html">https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html</a></p>
-</li>
-<li><p>CUDA AUTOMATIC MIXED PRECISION EXAMPLES<br><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/notes/amp_examples.html#dataparallel-in-a-single-process">https://pytorch.org/docs/stable/notes/amp_examples.html#dataparallel-in-a-single-process</a></p>
-</li>
+<p>自動混合精度技術已經被廣泛應用於深度學習框架中，如NVIDIA的Apex、TensorFlow的Automatic
+Mixed
+Precision等。通過使用自動混合精度，研究人員和開發人員可以在訓練過程中提高效率，同時確保模型的準確性和收斂性。</p>
+<h1 id="reference">Reference</h1>
+<ol type="1">
+<li><p>Micikevicius, P., Narang, S., Alben, J., Diamos, G., Elsen, E.,
+Garcia, D., … &amp; Wu, H. (2017). Mixed precision training. arXiv
+preprint arXiv:1710.03740.</p></li>
+<li><p>ECCV 2020 Tutorial on Accelerating Computer Vision with Mixed
+Precision
+https://nvlabs.github.io/eccv2020-mixed-precision-tutorial/</p></li>
+<li><p>AUTOMATIC MIXED PRECISION
+https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html</p></li>
+<li><p>CUDA AUTOMATIC MIXED PRECISION EXAMPLES
+https://pytorch.org/docs/stable/notes/amp_examples.html#dataparallel-in-a-single-process</p></li>
 </ol>
 
     </div>
@@ -322,13 +326,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">501k</span>
+    <span title="總字數">471k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">15:11</span>
+    <span title="所需總閱讀時間">14:16</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
@@ -368,11 +372,6 @@
   
 
 
-
-
-  
-
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
 
 
 

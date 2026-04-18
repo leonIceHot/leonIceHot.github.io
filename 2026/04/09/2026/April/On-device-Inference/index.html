@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="裝置端推理 (On-device Inference) 常被使用於兩大主流機器學習框架中：TensorFlow Lite (TFLite) 與 ONNX Runtime。">
+    <meta name="description" content="裝置端推理 (On-device Inference) 常被使用於兩大主流機器學習框架中：TensorFlow Lite (TFLite) 與 ONNX Runtime。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="On-Device Inference">
 <meta property="og:url" content="https://leonicehot.github.io/2026/04/09/2026/April/On-device-Inference/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="裝置端推理 (On-device Inference) 常被使用於兩大主流機器學習框架中：TensorFlow Lite (TFLite) 與 ONNX Runtime。">
+<meta property="og:description" content="裝置端推理 (On-device Inference) 常被使用於兩大主流機器學習框架中：TensorFlow Lite (TFLite) 與 ONNX Runtime。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2026-04-09T06:03:29.000Z">
 <meta property="article:modified_time" content="2026-04-14T15:00:09.678Z">
@@ -110,7 +110,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#On-device-Inference"><span class="nav-number">1.</span> <span class="nav-text">On-device Inference</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorFlow-Lite"><span class="nav-number">2.</span> <span class="nav-text">TensorFlow Lite</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexagon-Delegate"><span class="nav-number">3.</span> <span class="nav-text">Hexagon Delegate</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A2%BA%E4%BF%9D%E6%A8%A1%E5%9E%8B%E7%AC%A6%E5%90%88%E8%A6%81%E6%B1%82-%E9%9D%9E%E5%B8%B8%E9%87%8D%E8%A6%81"><span class="nav-number">3.1.</span> <span class="nav-text">確保模型符合要求 (非常重要)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E5%85%A5-Gradle-%E4%BE%9D%E8%B3%B4"><span class="nav-number">3.2.</span> <span class="nav-text">加入 Gradle 依賴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E7%A8%8B%E5%BC%8F%E7%A2%BC%E4%B8%AD%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%A6%E5%A5%97%E7%94%A8-Hexagon-Delegate"><span class="nav-number">3.3.</span> <span class="nav-text">在程式碼中初始化並套用 Hexagon Delegate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85%E8%88%87%E9%99%90%E5%88%B6"><span class="nav-number">3.4.</span> <span class="nav-text">注意事項與限制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Direction"><span class="nav-number">4.</span> <span class="nav-text">Direction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#on-device-inference"><span class="nav-number">1.</span> <span class="nav-text">On-device Inference</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tensorflow-lite"><span class="nav-number">2.</span> <span class="nav-text">TensorFlow Lite</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexagon-delegate"><span class="nav-number">3.</span> <span class="nav-text">Hexagon Delegate</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A2%BA%E4%BF%9D%E6%A8%A1%E5%9E%8B%E7%AC%A6%E5%90%88%E8%A6%81%E6%B1%82-%E9%9D%9E%E5%B8%B8%E9%87%8D%E8%A6%81"><span class="nav-number">3.1.</span> <span class="nav-text">確保模型符合要求 (非常重要)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E5%85%A5-gradle-%E4%BE%9D%E8%B3%B4"><span class="nav-number">3.2.</span> <span class="nav-text">加入 Gradle 依賴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E7%A8%8B%E5%BC%8F%E7%A2%BC%E4%B8%AD%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%A6%E5%A5%97%E7%94%A8-hexagon-delegate"><span class="nav-number">3.3.</span> <span class="nav-text">在程式碼中初始化並套用
+Hexagon Delegate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85%E8%88%87%E9%99%90%E5%88%B6"><span class="nav-number">3.4.</span> <span class="nav-text">注意事項與限制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#direction"><span class="nav-number">4.</span> <span class="nav-text">Direction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -123,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">176</span>
+          <span class="site-state-item-count">175</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -229,7 +230,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>3.3k</span>
+      <span>3.2k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -246,74 +247,130 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>裝置端推理 (On-device Inference) 常被使用於兩大主流機器學習框架中：TensorFlow Lite (TFLite) 與 ONNX Runtime。</p>
-<span id="more"></span>
-
-<h1 id="On-device-Inference"><a href="#On-device-Inference" class="headerlink" title="On-device Inference"></a>On-device Inference</h1><p>以下是它在這兩個框架中如何運作的解析：</p>
-<ol>
-<li><p>TensorFlow Lite (GPU Delegate &#x2F; GPU 委派)<br>在 TFLite 中，「委派 (delegates)」機制是用來將模型（或模型的一部分）的執行任務轉交給硬體加速器來處理。</p>
+    <div class="post-body" itemprop="articleBody"><p>裝置端推理 (On-device Inference)
+常被使用於兩大主流機器學習框架中：TensorFlow Lite (TFLite) 與 ONNX
+Runtime。 <span id="more"></span></p>
+<h1 id="on-device-inference">On-device Inference</h1>
+<p>以下是它在這兩個框架中如何運作的解析：</p>
+<ol type="1">
+<li>TensorFlow Lite (GPU Delegate / GPU 委派) 在 TFLite 中，「委派
+(delegates)」機制是用來將模型（或模型的一部分）的執行任務轉交給硬體加速器來處理。
 <ul>
-<li>Android： GPU 委派依賴 OpenCL 或 OpenGL ES 來加速神經網路的執行。</li>
+<li>Android： GPU 委派依賴 OpenCL 或 OpenGL ES
+來加速神經網路的執行。</li>
 <li>iOS： GPU 委派依賴 Apple 的 Metal API。</li>
-</ul>
-</li>
-<li><p>ONNX Runtime (Execution Providers &#x2F; 執行提供者)<br>ONNX Runtime 使用「Execution Provider (EP，執行提供者)」這個詞彙來代替「委派」，但兩者的核心概念是完全相同的。它會將運算操作指派（路由）給當下最有效率的硬體來執行。</p>
-</li>
+</ul></li>
+<li>ONNX Runtime (Execution Providers / 執行提供者) ONNX Runtime
+使用「Execution Provider
+(EP，執行提供者)」這個詞彙來代替「委派」，但兩者的核心概念是完全相同的。它會將運算操作指派（路由）給當下最有效率的硬體來執行。</li>
 </ol>
 <ul>
-<li>NVIDIA GPU： 使用 CUDA 或 TensorRT 執行提供者。<ul>
-<li>Windows： 使用 DirectML 執行提供者（可支援並跨越 AMD、Intel 與 NVIDIA 的 GPU 運作）。</li>
-<li>Apple： 使用 CoreML 執行提供者。</li>
-</ul>
-</li>
-</ul>
-<h1 id="TensorFlow-Lite"><a href="#TensorFlow-Lite" class="headerlink" title="TensorFlow Lite"></a>TensorFlow Lite</h1><p>TensorFlow Lite (TFLite) 的 Delegate（委派）機制是一種硬體加速架構。<br>它的核心概念是：將神經網路模型中的某些計算工作，從通用的中央處理器（CPU）「委派」給專門的硬體加速器（例如 GPU、NPU、DSP 等）來執行，以達到更快的推理（Inference）速度和更低的耗電量。</p>
-<p>預設情況下，TFLite 模型是完全在 CPU 上執行的。雖然 CPU 很通用，但對於神經網路中大量的矩陣乘法而言，效率不如專門的硬體。Delegate 機制就是為了解決這個問題而誕生的。</p>
-<p>以下是 TFLite Delegate 機制的詳細運作原理與特點：</p>
-<ol>
-<li><p>運作原理：圖分割（Graph Partitioning）<br>當你載入一個 TFLite 模型並啟用 Delegate 時，TFLite 的直譯器（Interpreter）會進行以下步驟：</p>
+<li>NVIDIA GPU： 使用 CUDA 或 TensorRT 執行提供者。
 <ul>
-<li>檢查支援度： 直譯器會掃描模型中的所有操作節點（Operations &#x2F; Ops），並詢問 Delegate：「你能處理這些操作嗎？」</li>
-<li>圖分割（Graph Partitioning）： 直譯器會將整個神經網路模型（Graph）切分成多個子圖（Subgraphs）。</li>
+<li>Windows： 使用 DirectML 執行提供者（可支援並跨越 AMD、Intel 與
+NVIDIA 的 GPU 運作）。</li>
+<li>Apple： 使用 CoreML 執行提供者。</li>
+</ul></li>
+</ul>
+<h1 id="tensorflow-lite">TensorFlow Lite</h1>
+<p>TensorFlow Lite (TFLite) 的 Delegate（委派）機制是一種硬體加速架構。
+它的核心概念是：將神經網路模型中的某些計算工作，從通用的中央處理器（CPU）「委派」給專門的硬體加速器（例如
+GPU、NPU、DSP
+等）來執行，以達到更快的推理（Inference）速度和更低的耗電量。</p>
+<p>預設情況下，TFLite 模型是完全在 CPU 上執行的。雖然 CPU
+很通用，但對於神經網路中大量的矩陣乘法而言，效率不如專門的硬體。Delegate
+機制就是為了解決這個問題而誕生的。</p>
+<p>以下是 TFLite Delegate 機制的詳細運作原理與特點：</p>
+<ol type="1">
+<li>運作原理：圖分割（Graph Partitioning） 當你載入一個 TFLite
+模型並啟用 Delegate 時，TFLite 的直譯器（Interpreter）會進行以下步驟：
+<ul>
+<li>檢查支援度： 直譯器會掃描模型中的所有操作節點（Operations /
+Ops），並詢問 Delegate：「你能處理這些操作嗎？」</li>
+<li>圖分割（Graph Partitioning）：
+直譯器會將整個神經網路模型（Graph）切分成多個子圖（Subgraphs）。</li>
 <li>Delegate 支援的操作會被歸類到 Delegate 子圖。</li>
 <li>Delegate 不支援的操作會留在 CPU 子圖。</li>
-<li>執行時切換： 執行模型時，資料會先在 CPU 上處理，遇到 Delegate 子圖時，會將資料（Tensors）傳遞給加速器計算，計算完後如果後面還有 CPU 子圖，再將結果傳回 CPU 繼續運算。</li>
-</ul>
-</li>
-<li><p>常見的 TFLite Delegates<br>TFLite 官方針對不同的平台提供了多種內建的 Delegate：</p>
+<li>執行時切換： 執行模型時，資料會先在 CPU 上處理，遇到 Delegate
+子圖時，會將資料（Tensors）傳遞給加速器計算，計算完後如果後面還有 CPU
+子圖，再將結果傳回 CPU 繼續運算。</li>
+</ul></li>
+<li>常見的 TFLite Delegates TFLite 官方針對不同的平台提供了多種內建的
+Delegate：
 <ul>
 <li>GPU Delegate： 將運算交給手機或電腦的顯示晶片。</li>
-<li>Android 上底層使用 OpenCL 或 OpenGL ES，iOS 上底層使用 Metal API。</li>
-<li>NNAPI Delegate (Android)： Android 平台的「神經網路 API」。它會自動尋找手機上最強的 AI 專屬晶片（如 NPU - 神經處理單元，或 TPU），如果沒有則退回 GPU 或 CPU。</li>
-<li>Core ML Delegate (iOS)： 將運算交給 Apple 的 Core ML 框架，充分利用 iPhone&#x2F;iPad 內的 Apple Neural Engine (ANE)。</li>
-<li>Hexagon Delegate： 專門針對搭載高通（Qualcomm）Snapdragon 處理器的設備，將運算委派給 Hexagon DSP（數位訊號處理器），非常省電。</li>
-</ul>
-</li>
+<li>Android 上底層使用 OpenCL 或 OpenGL ES，iOS 上底層使用 Metal
+API。</li>
+<li>NNAPI Delegate (Android)： Android 平台的「神經網路
+API」。它會自動尋找手機上最強的 AI 專屬晶片（如 NPU - 神經處理單元，或
+TPU），如果沒有則退回 GPU 或 CPU。</li>
+<li>Core ML Delegate (iOS)： 將運算交給 Apple 的 Core ML 框架，充分利用
+iPhone/iPad 內的 Apple Neural Engine (ANE)。</li>
+<li>Hexagon Delegate： 專門針對搭載高通（Qualcomm）Snapdragon
+處理器的設備，將運算委派給 Hexagon
+DSP（數位訊號處理器），非常省電。</li>
+</ul></li>
 </ol>
-<h1 id="Hexagon-Delegate"><a href="#Hexagon-Delegate" class="headerlink" title="Hexagon Delegate"></a>Hexagon Delegate</h1><p>使用 <strong>Hexagon Delegate</strong> 是為了在搭載 Qualcomm（高通）Snapdragon 處理器的 Android 裝置上，利用內建的 <strong>Hexagon DSP（數位訊號處理器）</strong> 來加速 TensorFlow Lite 模型。</p>
-<p>DSP 的最大優勢在於<strong>極低的功耗</strong>和針對整數運算的高效能，非常適合用於語音喚醒、持續的影像分類等需要長時間在背景運行的 AI 任務。</p>
-<p>以下是在 Android (Java&#x2F;Kotlin) 中實作 Hexagon Delegate 的基本步驟：</p>
-<h2 id="確保模型符合要求-非常重要"><a href="#確保模型符合要求-非常重要" class="headerlink" title="確保模型符合要求 (非常重要)"></a>確保模型符合要求 (非常重要)</h2><p>Hexagon DSP 的硬體架構是針對整數 (Integer) 運算最佳化的。因此，你的 TFLite 模型<strong>通常必須是經過量化 (Quantized) 的</strong>（例如 8-bit 整數 INT8 或 UINT8）。<br>如果你的模型是浮點數 (Float32) 模型，Hexagon Delegate 的加速效果會很差，甚至會直接退回 (Fallback) 給 CPU 執行。</p>
-<h2 id="加入-Gradle-依賴"><a href="#加入-Gradle-依賴" class="headerlink" title="加入 Gradle 依賴"></a>加入 Gradle 依賴</h2><p>在 Android 專案的 <code>app/build.gradle</code> 中，除了原本的 TFLite 核心庫，還需要加入 Hexagon Delegate 的專屬函式庫：</p>
+<h1 id="hexagon-delegate">Hexagon Delegate</h1>
+<p>使用 <strong>Hexagon Delegate</strong> 是為了在搭載
+Qualcomm（高通）Snapdragon 處理器的 Android 裝置上，利用內建的
+<strong>Hexagon DSP（數位訊號處理器）</strong> 來加速 TensorFlow Lite
+模型。</p>
+<p>DSP
+的最大優勢在於<strong>極低的功耗</strong>和針對整數運算的高效能，非常適合用於語音喚醒、持續的影像分類等需要長時間在背景運行的
+AI 任務。</p>
+<p>以下是在 Android (Java/Kotlin) 中實作 Hexagon Delegate
+的基本步驟：</p>
+<h2 id="確保模型符合要求-非常重要">確保模型符合要求 (非常重要)</h2>
+<p>Hexagon DSP 的硬體架構是針對整數 (Integer) 運算最佳化的。因此，你的
+TFLite 模型<strong>通常必須是經過量化 (Quantized) 的</strong>（例如
+8-bit 整數 INT8 或 UINT8）。 如果你的模型是浮點數 (Float32)
+模型，Hexagon Delegate 的加速效果會很差，甚至會直接退回 (Fallback) 給
+CPU 執行。</p>
+<h2 id="加入-gradle-依賴">加入 Gradle 依賴</h2>
+<p>在 Android 專案的 <code>app/build.gradle</code> 中，除了原本的 TFLite
+核心庫，還需要加入 Hexagon Delegate 的專屬函式庫：</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">    <span class="comment">// TFLite 核心庫</span></span><br><span class="line">    implementation <span class="string">&#x27;org.tensorflow:tensorflow-lite:2.14.0&#x27;</span> <span class="comment">// 請使用最新版本</span></span><br><span class="line">    <span class="comment">// Hexagon Delegate 庫</span></span><br><span class="line">    implementation <span class="string">&#x27;org.tensorflow:tensorflow-lite-hexagon:2.14.0&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="在程式碼中初始化並套用-Hexagon-Delegate"><a href="#在程式碼中初始化並套用-Hexagon-Delegate" class="headerlink" title="在程式碼中初始化並套用 Hexagon Delegate"></a>在程式碼中初始化並套用 Hexagon Delegate</h2><p>與 GPU Delegate 不同，Hexagon Delegate 需要在環境中進行一些額外的初始化動作（因為它需要載入特定的底層 <code>.so</code> 驅動檔案）。</p>
+<h2 id="在程式碼中初始化並套用-hexagon-delegate">在程式碼中初始化並套用
+Hexagon Delegate</h2>
+<p>與 GPU Delegate 不同，Hexagon Delegate
+需要在環境中進行一些額外的初始化動作（因為它需要載入特定的底層
+<code>.so</code> 驅動檔案）。</p>
 <p>以下是 Android (Java) 的實作範例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> android.content.Context;</span><br><span class="line"><span class="keyword">import</span> org.tensorflow.lite.Interpreter;</span><br><span class="line"><span class="keyword">import</span> org.tensorflow.lite.HexagonDelegate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyTFLiteModel</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Interpreter tfliteInterpreter;</span><br><span class="line">    <span class="keyword">private</span> HexagonDelegate hexagonDelegate;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">initModel</span><span class="params">(Context context, String modelPath)</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 1. 初始化 Hexagon 環境 (必須傳入 Context，以便系統找到底層庫)</span></span><br><span class="line">            HexagonDelegate.InitEnvironment(context);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 2. 建立 Hexagon Delegate 實例</span></span><br><span class="line">            hexagonDelegate = <span class="keyword">new</span> <span class="title class_">HexagonDelegate</span>();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 3. 設定 Interpreter 的選項，加入 Delegate</span></span><br><span class="line">            Interpreter.<span class="type">Options</span> <span class="variable">options</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Interpreter</span>.Options();</span><br><span class="line">            options.addDelegate(hexagonDelegate);</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// (可選) 設定 CPU 執行緒數量作為備用</span></span><br><span class="line">            <span class="comment">// options.setNumThreads(4);</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 4. 載入模型並建立 Interpreter</span></span><br><span class="line">            <span class="comment">// loadModelFile 是一個自定義方法，用來從 assets 讀取 .tflite 檔案</span></span><br><span class="line">            tfliteInterpreter = <span class="keyword">new</span> <span class="title class_">Interpreter</span>(loadModelFile(context, modelPath), options);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            <span class="comment">// 如果裝置不支援 Hexagon (例如非高通晶片)，這裡可能會報錯</span></span><br><span class="line">            <span class="comment">// 實務上應該要有 Try-Catch，若失敗則改用 CPU 或 GPU Delegate</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 當模型不再使用時，務必釋放資源</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">close</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (tfliteInterpreter != <span class="literal">null</span>) &#123;</span><br><span class="line">            tfliteInterpreter.close();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (hexagonDelegate != <span class="literal">null</span>) &#123;</span><br><span class="line">            hexagonDelegate.close();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 釋放 Hexagon 環境</span></span><br><span class="line">        HexagonDelegate.tearDown();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="注意事項與限制"><a href="#注意事項與限制" class="headerlink" title="注意事項與限制"></a>注意事項與限制</h2><ol>
-<li><strong>硬體限制：</strong> 這<strong>只適用於高通 Snapdragon 處理器</strong>的裝置。如果在聯發科 (MediaTek)、三星 (Exynos) 或 Google Tensor 的晶片上執行，Hexagon Delegate 將無法運作，會發生錯誤或直接退回 CPU。</li>
-<li><strong>自動退回 (Fallback)：</strong> 如果模型中包含 Hexagon 不支援的算子 (Ops)，TFLite 會自動將該算子交回給 CPU 處理（即 Graph Partitioning）。</li>
-<li><strong>動態檢查：</strong> 實務開發上，建議先透過程式碼檢查裝置 SoC 的品牌，或者使用 <code>Try-Catch</code> 包裝。如果 Hexagon Delegate 初始化失敗，就優雅地退回使用 NNAPI Delegate 或 GPU Delegate。</li>
+<h2 id="注意事項與限制">注意事項與限制</h2>
+<ol type="1">
+<li><strong>硬體限制：</strong> 這<strong>只適用於高通 Snapdragon
+處理器</strong>的裝置。如果在聯發科 (MediaTek)、三星 (Exynos) 或 Google
+Tensor 的晶片上執行，Hexagon Delegate 將無法運作，會發生錯誤或直接退回
+CPU。</li>
+<li><strong>自動退回 (Fallback)：</strong> 如果模型中包含 Hexagon
+不支援的算子 (Ops)，TFLite 會自動將該算子交回給 CPU 處理（即 Graph
+Partitioning）。</li>
+<li><strong>動態檢查：</strong> 實務開發上，建議先透過程式碼檢查裝置 SoC
+的品牌，或者使用 <code>Try-Catch</code> 包裝。如果 Hexagon Delegate
+初始化失敗，就優雅地退回使用 NNAPI Delegate 或 GPU Delegate。</li>
 </ol>
-<h1 id="Direction"><a href="#Direction" class="headerlink" title="Direction"></a>Direction</h1><p>Single-DNN Inference on Single Mobile Processors<br>Single-DNN Inference on Heterogeneous Mobile Processors</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
-<li>Qualcomm Linux Lite Runtime Reference<br><a target="_blank" rel="noopener" href="https://docs.qualcomm.com/doc/80-70020-54/topic/litert-landing-page.html">https://docs.qualcomm.com/doc/80-70020-54/topic/litert-landing-page.html</a></li>
-<li>LiteRT 的 GPU 委派<br><a target="_blank" rel="noopener" href="https://ai.google.dev/edge/litert/performance/gpu?hl=zh-tw">https://ai.google.dev/edge/litert/performance/gpu?hl=zh-tw</a></li>
-<li>Awesome-On-Device-AI-Inference<br><a target="_blank" rel="noopener" href="https://github.com/iamseonghoon/Awesome-On-Device-AI-Inference?atab=readme-ov-file">https://github.com/iamseonghoon/Awesome-On-Device-AI-Inference?atab=readme-ov-file</a></li>
-<li>Awesome On-Device AI Systems<br><a target="_blank" rel="noopener" href="https://github.com/jeho-lee/Awesome-On-Device-AI-Systems">https://github.com/jeho-lee/Awesome-On-Device-AI-Systems</a></li>
-<li>Wang, W., Li, K., Ji, B., Liu, X., Yu, J., &amp; Wu, Q. (2025). A survey of AI inference technologies for on-device systems. IEEE Internet of Things Journal.</li>
-<li>Behera, A. P., Daubaris, P., Bravo Aramburu, I., Gallego Delgado, J., Morabito, R., Widmer, J., &amp; Champati, J. P. (2025). Exploring the Boundaries of On-Device Inference: When Tiny Falls Short, Go Hierarchical. IEEE Internet of Things Journal.</li>
+<h1 id="direction">Direction</h1>
+<p>Single-DNN Inference on Single Mobile Processors Single-DNN Inference
+on Heterogeneous Mobile Processors</p>
+<h1 id="reference">Reference</h1>
+<ol type="1">
+<li>Qualcomm Linux Lite Runtime Reference
+https://docs.qualcomm.com/doc/80-70020-54/topic/litert-landing-page.html</li>
+<li>LiteRT 的 GPU 委派
+https://ai.google.dev/edge/litert/performance/gpu?hl=zh-tw</li>
+<li>Awesome-On-Device-AI-Inference
+https://github.com/iamseonghoon/Awesome-On-Device-AI-Inference?atab=readme-ov-file</li>
+<li>Awesome On-Device AI Systems
+https://github.com/jeho-lee/Awesome-On-Device-AI-Systems</li>
+<li>Wang, W., Li, K., Ji, B., Liu, X., Yu, J., &amp; Wu, Q. (2025). A
+survey of AI inference technologies for on-device systems. IEEE Internet
+of Things Journal.</li>
+<li>Behera, A. P., Daubaris, P., Bravo Aramburu, I., Gallego Delgado,
+J., Morabito, R., Widmer, J., &amp; Champati, J. P. (2025). Exploring
+the Boundaries of On-Device Inference: When Tiny Falls Short, Go
+Hierarchical. IEEE Internet of Things Journal.</li>
 </ol>
 
     </div>
@@ -366,13 +423,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">501k</span>
+    <span title="總字數">471k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">15:11</span>
+    <span title="所需總閱讀時間">14:16</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
@@ -412,11 +469,6 @@
   
 
 
-
-
-  
-
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
 
 
 

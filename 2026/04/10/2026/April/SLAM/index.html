@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="SLAM (Simultaneous Localization and Mapping，同步定位與地圖構建) 是機器人學與計算機視覺領域中的核心技術。 簡單來說，SLAM 要解決的是一個「先有雞還是先有蛋」的問題：  定位 (Localization)： 如果我有一張地圖，我能知道我在哪裡。 建圖 (Mapping)： 如果我知道我在哪裡，我能畫出周圍的地圖。 SLAM： 當我身處一個完全陌生的環">
+    <meta name="description" content="SLAM (Simultaneous Localization and Mapping，同步定位與地圖構建) 是機器人學與計算機視覺領域中的核心技術。 簡單來說，SLAM 要解決的是一個「先有雞還是先有蛋」的問題： * 定位 (Localization)： 如果我有一張地圖，我能知道我在哪裡。 * 建圖 (Mapping)： 如果我知道我在哪裡，我能畫出周圍的地圖。 * SLAM：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SLAM">
 <meta property="og:url" content="https://leonicehot.github.io/2026/04/10/2026/April/SLAM/index.html">
 <meta property="og:site_name" content="利醬の休憩房">
-<meta property="og:description" content="SLAM (Simultaneous Localization and Mapping，同步定位與地圖構建) 是機器人學與計算機視覺領域中的核心技術。 簡單來說，SLAM 要解決的是一個「先有雞還是先有蛋」的問題：  定位 (Localization)： 如果我有一張地圖，我能知道我在哪裡。 建圖 (Mapping)： 如果我知道我在哪裡，我能畫出周圍的地圖。 SLAM： 當我身處一個完全陌生的環">
+<meta property="og:description" content="SLAM (Simultaneous Localization and Mapping，同步定位與地圖構建) 是機器人學與計算機視覺領域中的核心技術。 簡單來說，SLAM 要解決的是一個「先有雞還是先有蛋」的問題： * 定位 (Localization)： 如果我有一張地圖，我能知道我在哪裡。 * 建圖 (Mapping)： 如果我知道我在哪裡，我能畫出周圍的地圖。 * SLAM：">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2026-04-10T05:05:57.000Z">
 <meta property="article:modified_time" content="2026-04-10T05:22:57.558Z">
@@ -110,7 +110,9 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-SLAM-%E7%9A%84%E6%A0%B8%E5%BF%83%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">1. SLAM 的核心流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-SLAM-%E7%9A%84%E4%B8%BB%E8%A6%81%E5%88%86%E9%A1%9E"><span class="nav-number">2.</span> <span class="nav-text">2. SLAM 的主要分類</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-%E9%9B%B7%E5%B0%84-SLAM-LiDAR-SLAM"><span class="nav-number">2.1.</span> <span class="nav-text">A. 雷射 SLAM (LiDAR\ SLAM)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-%E8%A6%96%E8%A6%BA-SLAM-Visual-SLAM-vSLAM"><span class="nav-number">2.2.</span> <span class="nav-text">B. 視覺 SLAM (Visual\ SLAM,\ vSLAM)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%95%B6-SLAM-%E9%81%87%E4%B8%8A-AI%EF%BC%9A%E8%AA%9E%E7%BE%A9-SLAM-%E8%88%87%E7%A5%9E%E7%B6%93-SLAM"><span class="nav-number">2.3.</span> <span class="nav-text">3. 當 SLAM 遇上 AI：語義 SLAM 與神經 SLAM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%8A%80%E8%A1%93%E9%97%9C%E8%81%AF"><span class="nav-number">2.4.</span> <span class="nav-text">4. 技術關聯</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-%E8%A3%9D%E7%BD%AE%E7%AB%AF%E6%8C%91%E6%88%B0-On-device-Challenges"><span class="nav-number">2.4.1.</span> <span class="nav-text">A. 裝置端挑戰 (On-device Challenges)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%9F%BA%E7%A4%8E"><span class="nav-number">2.4.2.</span> <span class="nav-text">B. 世界模型的基礎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-%E8%A6%96%E8%A6%BA%E6%85%A3%E6%80%A7%E9%87%8C%E7%A8%8B%E8%A8%88-VIO"><span class="nav-number">2.4.3.</span> <span class="nav-text">C. 視覺慣性里程計 (VIO)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%AF%A6%E9%9A%9B%E6%87%89%E7%94%A8%E6%A1%88%E4%BE%8B"><span class="nav-number">2.4.4.</span> <span class="nav-text">5. 實際應用案例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#slam-%E7%9A%84%E6%A0%B8%E5%BF%83%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">1. SLAM 的核心流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#slam-%E7%9A%84%E4%B8%BB%E8%A6%81%E5%88%86%E9%A1%9E"><span class="nav-number">2.</span> <span class="nav-text">2. SLAM 的主要分類</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#a.-%E9%9B%B7%E5%B0%84-slam-lidar-slam"><span class="nav-number">2.1.</span> <span class="nav-text">A. 雷射 SLAM (LiDAR SLAM)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%95%B6-slam-%E9%81%87%E4%B8%8A-ai%E8%AA%9E%E7%BE%A9-slam-%E8%88%87%E7%A5%9E%E7%B6%93-slam"><span class="nav-number">2.2.</span> <span class="nav-text">3. 當 SLAM 遇上 AI：語義
+SLAM 與神經 SLAM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E8%A1%93%E9%97%9C%E8%81%AF"><span class="nav-number">2.3.</span> <span class="nav-text">4. 技術關聯</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a.-%E8%A3%9D%E7%BD%AE%E7%AB%AF%E6%8C%91%E6%88%B0-on-device-challenges"><span class="nav-number">2.3.1.</span> <span class="nav-text">A. 裝置端挑戰 (On-device
+Challenges)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b.-%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%9F%BA%E7%A4%8E"><span class="nav-number">2.3.2.</span> <span class="nav-text">B. 世界模型的基礎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c.-%E8%A6%96%E8%A6%BA%E6%85%A3%E6%80%A7%E9%87%8C%E7%A8%8B%E8%A8%88-vio"><span class="nav-number">2.3.3.</span> <span class="nav-text">C. 視覺慣性里程計 (VIO)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%A6%E9%9A%9B%E6%87%89%E7%94%A8%E6%A1%88%E4%BE%8B"><span class="nav-number">2.3.4.</span> <span class="nav-text">5. 實際應用案例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -123,7 +125,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">176</span>
+          <span class="site-state-item-count">175</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -240,86 +242,134 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p><strong>SLAM (Simultaneous Localization and Mapping，同步定位與地圖構建)</strong> 是機器人學與計算機視覺領域中的核心技術。</p>
-<p>簡單來說，SLAM 要解決的是一個「先有雞還是先有蛋」的問題：</p>
-<ul>
-<li><strong>定位 (Localization)：</strong> 如果我有一張地圖，我能知道我在哪裡。</li>
-<li><strong>建圖 (Mapping)：</strong> 如果我知道我在哪裡，我能畫出周圍的地圖。</li>
-<li><strong>SLAM：</strong> 當我身處一個<strong>完全陌生</strong>的環境時，我要<strong>同時</strong>完成「畫地圖」和「確定自己的位置」。</li>
-</ul>
+    <div class="post-body" itemprop="articleBody"><p><strong>SLAM (Simultaneous Localization and
+Mapping，同步定位與地圖構建)</strong>
+是機器人學與計算機視覺領域中的核心技術。</p>
+<p>簡單來說，SLAM 要解決的是一個「先有雞還是先有蛋」的問題： *
+<strong>定位 (Localization)：</strong>
+如果我有一張地圖，我能知道我在哪裡。 * <strong>建圖 (Mapping)：</strong>
+如果我知道我在哪裡，我能畫出周圍的地圖。 * <strong>SLAM：</strong>
+當我身處一個<strong>完全陌生</strong>的環境時，我要<strong>同時</strong>完成「畫地圖」和「確定自己的位置」。</p>
 <span id="more"></span>
-
 <hr>
-<h1 id="1-SLAM-的核心流程"><a href="#1-SLAM-的核心流程" class="headerlink" title="1. SLAM 的核心流程"></a>1. SLAM 的核心流程</h1><p>一個典型的 SLAM 系統通常包含以下五個步驟：</p>
-<ol>
-<li><strong>感測器數據讀取 (Sensor Data)：</strong><ul>
-<li>透過攝像頭（視覺 SLAM）、LiDAR（雷射 SLAM）或 IMU（慣性測量單元）獲取環境資訊。</li>
-</ul>
-</li>
-<li><strong>前端視覺里程計 (Visual Odometry, VO)：</strong><ul>
+<h1 id="slam-的核心流程">1. SLAM 的核心流程</h1>
+<p>一個典型的 SLAM 系統通常包含以下五個步驟：</p>
+<ol type="1">
+<li><strong>感測器數據讀取 (Sensor Data)：</strong>
+<ul>
+<li>透過攝像頭（視覺 SLAM）、LiDAR（雷射 SLAM）或
+IMU（慣性測量單元）獲取環境資訊。</li>
+</ul></li>
+<li><strong>前端視覺里程計 (Visual Odometry, VO)：</strong>
+<ul>
 <li>估計相鄰兩幀數據間的運動，初步推算自己的位姿（Pose）。</li>
-</ul>
-</li>
-<li><strong>後端優化 (Back-end Optimization)：</strong><ul>
-<li>修正前端累積的誤差。常用的數學方法包括 <strong>擴展卡爾曼濾波 (EKF)</strong> 或 **圖優化 (Graph-based SLAM)**。</li>
-</ul>
-</li>
-<li><strong>迴圈檢測 (Loop Closure Detection)：</strong><ul>
+</ul></li>
+<li><strong>後端優化 (Back-end Optimization)：</strong>
+<ul>
+<li>修正前端累積的誤差。常用的數學方法包括 <strong>擴展卡爾曼濾波
+(EKF)</strong> 或 <strong>圖優化 (Graph-based SLAM)</strong>。</li>
+</ul></li>
+<li><strong>迴圈檢測 (Loop Closure Detection)：</strong>
+<ul>
 <li>判斷機器人是否回到了曾經去過的地方。如果「閉環」成功，系統可以大幅消除長時間累積的漂移誤差。</li>
-</ul>
-</li>
-<li><strong>建圖 (Mapping)：</strong><ul>
+</ul></li>
+<li><strong>建圖 (Mapping)：</strong>
+<ul>
 <li>根據估計的軌跡，建立稀疏點雲圖、稠密地圖或語義地圖。</li>
-</ul>
-</li>
+</ul></li>
 </ol>
 <hr>
-<h1 id="2-SLAM-的主要分類"><a href="#2-SLAM-的主要分類" class="headerlink" title="2. SLAM 的主要分類"></a>2. SLAM 的主要分類</h1><p>根據感測器的不同，主要分為兩大派系：</p>
-<h2 id="A-雷射-SLAM-LiDAR-SLAM"><a href="#A-雷射-SLAM-LiDAR-SLAM" class="headerlink" title="A. 雷射 SLAM (LiDAR\ SLAM)"></a>A. 雷射 SLAM (LiDAR\ SLAM)</h2><ul>
-<li><strong>原理：</strong> 利用雷射雷達測量距離，建立二維或三維的點雲地圖。</li>
+<h1 id="slam-的主要分類">2. SLAM 的主要分類</h1>
+<p>根據感測器的不同，主要分為兩大派系：</p>
+<h2 id="a.-雷射-slam-lidar-slam">A. 雷射 SLAM (LiDAR SLAM)</h2>
+<ul>
+<li><strong>原理：</strong>
+利用雷射雷達測量距離，建立二維或三維的點雲地圖。</li>
 <li><strong>優點：</strong> 測距精確、受光照影響小。</li>
-<li><strong>應用：</strong> 掃地機器人、自動駕駛汽車。</li>
-</ul>
-<h2 id="B-視覺-SLAM-Visual-SLAM-vSLAM"><a href="#B-視覺-SLAM-Visual-SLAM-vSLAM" class="headerlink" title="B. 視覺 SLAM (Visual\ SLAM,\ vSLAM)"></a>B. 視覺 SLAM (Visual\ SLAM,\ vSLAM)</h2><ul>
-<li><strong>原理：</strong> 利用攝像頭捕捉畫面，提取特徵點（如 OR、SIFT）來追蹤運動。</li>
-<li><strong>優點：</strong> 成本低（普通鏡頭即可）、能獲取豐富的語義資訊（知道前面是椅子還是人）。</li>
-<li><strong>常見子類：</strong> 單目 (Monocular)、雙目 (Stereo)、RGB-D（深度相機）。</li>
+<li><strong>應用：</strong> 掃地機器人、自動駕駛汽車。 ## B. 視覺 SLAM
+(Visual SLAM, vSLAM)</li>
+<li><strong>原理：</strong> 利用攝像頭捕捉畫面，提取特徵點（如
+OR、SIFT）來追蹤運動。</li>
+<li><strong>優點：</strong>
+成本低（普通鏡頭即可）、能獲取豐富的語義資訊（知道前面是椅子還是人）。</li>
+<li><strong>常見子類：</strong> 單目 (Monocular)、雙目
+(Stereo)、RGB-D（深度相機）。</li>
 </ul>
 <hr>
-<h2 id="3-當-SLAM-遇上-AI：語義-SLAM-與神經-SLAM"><a href="#3-當-SLAM-遇上-AI：語義-SLAM-與神經-SLAM" class="headerlink" title="3. 當 SLAM 遇上 AI：語義 SLAM 與神經 SLAM"></a>3. 當 SLAM 遇上 AI：語義 SLAM 與神經 SLAM</h2><p>傳統 SLAM 依賴手寫的幾何算法，但現在 AI 正在改變這個領域：</p>
+<h2 id="當-slam-遇上-ai語義-slam-與神經-slam">3. 當 SLAM 遇上 AI：語義
+SLAM 與神經 SLAM</h2>
+<p>傳統 SLAM 依賴手寫的幾何算法，但現在 AI 正在改變這個領域：</p>
 <ul>
-<li><strong>語義 SLAM (Semantic SLAM)：</strong><ul>
-<li>AI 會在建圖的同時識別物體。例如：SLAM 告訴機器人「這裡有個幾何平面」，AI 告訴機器人「這是一個桌子」。這讓機器人具備了<strong>場景理解能力</strong>。</li>
-</ul>
-</li>
-<li><strong>神經 SLAM (Neural SLAM)：</strong><ul>
-<li>利用深度學習取代傳統的特徵提取。例如使用 <strong>SuperPoint</strong> 進行特徵檢索，或者利用 <strong>NeRF (神經輻射場)</strong> 進行場景重建，讓地圖變得極其逼真。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="4-技術關聯"><a href="#4-技術關聯" class="headerlink" title="4. 技術關聯"></a>4. 技術關聯</h2><h3 id="A-裝置端挑戰-On-device-Challenges"><a href="#A-裝置端挑戰-On-device-Challenges" class="headerlink" title="A. 裝置端挑戰 (On-device Challenges)"></a>A. 裝置端挑戰 (On-device Challenges)</h3><p>SLAM 是一個極度消耗運算資源的任務。它需要：</p>
+<li><strong>語義 SLAM (Semantic SLAM)：</strong>
 <ul>
-<li><strong>低延遲：</strong> 定位慢了，機器人就會撞牆。</li>
-<li><strong>高頻率：</strong> 每秒至少要處理 30 幀以上的數據。<br>這就是為什麼在手機上實現 ARCore 或 ARKit 時，需要透過 <strong>DSP 或 NPU</strong> 進行硬體加速，並對視覺演算法進行大量的 <strong>INT8 量化</strong> 處理。</li>
+<li>AI 會在建圖的同時識別物體。例如：SLAM
+告訴機器人「這裡有個幾何平面」，AI
+告訴機器人「這是一個桌子」。這讓機器人具備了<strong>場景理解能力</strong>。</li>
+</ul></li>
+<li><strong>神經 SLAM (Neural SLAM)：</strong>
+<ul>
+<li>利用深度學習取代傳統的特徵提取。例如使用 <strong>SuperPoint</strong>
+進行特徵檢索，或者利用 <strong>NeRF (神經輻射場)</strong>
+進行場景重建，讓地圖變得極其逼真。</li>
+</ul></li>
 </ul>
-<h3 id="B-世界模型的基礎"><a href="#B-世界模型的基礎" class="headerlink" title="B. 世界模型的基礎"></a>B. 世界模型的基礎</h3><p>正如我們之前討論的「世界模型」，SLAM 實際上是構建世界模型的第一步。AI 必須先透過 SLAM 獲取空間結構，才能進一步在腦中「模擬」在這個空間內的物理互動。</p>
-<h3 id="C-視覺慣性里程計-VIO"><a href="#C-視覺慣性里程計-VIO" class="headerlink" title="C. 視覺慣性里程計 (VIO)"></a>C. 視覺慣性里程計 (VIO)</h3><p>在手機（如 iPhone）上，最常用的是 **VIO (Visual-Inertial Odometry)**。它結合了鏡頭畫面與手機內建的 IMU（加速度計、陀螺儀）。當你快速揮動手機導致畫面模糊時，IMU 會接手維持定位，這也是 SLAM 在行動裝置上最成功的應用之一。</p>
 <hr>
-<h3 id="5-實際應用案例"><a href="#5-實際應用案例" class="headerlink" title="5. 實際應用案例"></a>5. 實際應用案例</h3><ul>
-<li><strong>增強現實 (AR)：</strong> 例如《Pokémon GO》，皮卡丘能準確地站在地板上而不飄移，全靠手機後台在跑輕量級的 vSLAM。</li>
-<li><strong>掃地機器人：</strong> 第一次運行時轉一圈就能畫出家裡的平面圖（LDS\ SLAM）。</li>
-<li><strong>無人機：</strong> 在森林中穿梭並自動避障，依賴實時的空間建圖。</li>
-<li><strong>VR 裝置：</strong> 如 Quest\ 3 或 Apple\ Vision\ Pro，透過多個攝像頭實現「由內而外 (Inside-out)」的追蹤定位。</li>
+<h2 id="技術關聯">4. 技術關聯</h2>
+<h3 id="a.-裝置端挑戰-on-device-challenges">A. 裝置端挑戰 (On-device
+Challenges)</h3>
+<p>SLAM 是一個極度消耗運算資源的任務。它需要： *
+<strong>低延遲：</strong> 定位慢了，機器人就會撞牆。 *
+<strong>高頻率：</strong> 每秒至少要處理 30 幀以上的數據。
+這就是為什麼在手機上實現 ARCore 或 ARKit 時，需要透過 <strong>DSP 或
+NPU</strong> 進行硬體加速，並對視覺演算法進行大量的 <strong>INT8
+量化</strong> 處理。</p>
+<h3 id="b.-世界模型的基礎">B. 世界模型的基礎</h3>
+<p>正如我們之前討論的「世界模型」，SLAM 實際上是構建世界模型的第一步。AI
+必須先透過 SLAM
+獲取空間結構，才能進一步在腦中「模擬」在這個空間內的物理互動。</p>
+<h3 id="c.-視覺慣性里程計-vio">C. 視覺慣性里程計 (VIO)</h3>
+<p>在手機（如 iPhone）上，最常用的是 <strong>VIO (Visual-Inertial
+Odometry)</strong>。它結合了鏡頭畫面與手機內建的
+IMU（加速度計、陀螺儀）。當你快速揮動手機導致畫面模糊時，IMU
+會接手維持定位，這也是 SLAM 在行動裝置上最成功的應用之一。</p>
+<hr>
+<h3 id="實際應用案例">5. 實際應用案例</h3>
+<ul>
+<li><strong>增強現實 (AR)：</strong> 例如《Pokémon
+GO》，皮卡丘能準確地站在地板上而不飄移，全靠手機後台在跑輕量級的
+vSLAM。</li>
+<li><strong>掃地機器人：</strong>
+第一次運行時轉一圈就能畫出家裡的平面圖（LDS SLAM）。</li>
+<li><strong>無人機：</strong>
+在森林中穿梭並自動避障，依賴實時的空間建圖。</li>
+<li><strong>VR 裝置：</strong> 如 Quest 3 或
+Apple Vision Pro，透過多個攝像頭實現「由內而外
+(Inside-out)」的追蹤定位。</li>
 </ul>
-<p><strong>總結：SLAM 是讓機器人擁有「眼睛」與「空間感」的關鍵技術，是實現自主移動與虛實結合的地基。</strong></p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
-<li>Xiang Gao, Tao Zhang（2021）.Introduction to Visual SLAM： From Theory to Practice. Publisher： Springer, Germany.</li>
-<li>Campos, C., Elvira, R., Rodríguez, J. J. G., Montiel, J. M., &amp; Tardós, J. D. (2021). Orb-slam3: An accurate open-source library for visual, visual–inertial, and multimap slam. IEEE transactions on robotics, 37(6), 1874-1890.</li>
-<li>Kanatani, Kenichi （2022）. 3D Rotations Parameter Computation and Lie Algebra based Optimization. Publisher： CRC Press, US</li>
-<li>Chen, C., Wang, B., Lu, C. X., Trigoni, N., &amp; Markham, A. (2023). Deep learning for visual localization and mapping: A survey. IEEE Transactions on Neural Networks and Learning Systems, 35(12), 17000-17020.</li>
-<li>Semenova, S., Ko, S., Liu, Y. D., Ziarek, L., &amp; Dantu, K. (2024). A comprehensive study of systems challenges in visual simultaneous localization and mapping systems. ACM Transactions on Embedded Computing Systems, 24(1), 1-31.</li>
-<li>Xie, C., Hao, N., Han, H., &amp; He, F. (2026). Towards robust visual odometry in dynamic environments: A hybrid approach with confidence-guided masking. Engineering Applications of Artificial Intelligence, 175, 114611.</li>
+<p><strong>總結：SLAM
+是讓機器人擁有「眼睛」與「空間感」的關鍵技術，是實現自主移動與虛實結合的地基。</strong></p>
+<h1 id="reference">Reference</h1>
+<ol type="1">
+<li>Xiang Gao, Tao Zhang（2021）.Introduction to Visual SLAM： From
+Theory to Practice. Publisher： Springer, Germany.</li>
+<li>Campos, C., Elvira, R., Rodríguez, J. J. G., Montiel, J. M., &amp;
+Tardós, J. D. (2021). Orb-slam3: An accurate open-source library for
+visual, visual–inertial, and multimap slam. IEEE transactions on
+robotics, 37(6), 1874-1890.</li>
+<li>Kanatani, Kenichi （2022）. 3D Rotations Parameter Computation and
+Lie Algebra based Optimization. Publisher： CRC Press, US</li>
+<li>Chen, C., Wang, B., Lu, C. X., Trigoni, N., &amp; Markham, A.
+(2023). Deep learning for visual localization and mapping: A survey.
+IEEE Transactions on Neural Networks and Learning Systems, 35(12),
+17000-17020.</li>
+<li>Semenova, S., Ko, S., Liu, Y. D., Ziarek, L., &amp; Dantu, K.
+(2024). A comprehensive study of systems challenges in visual
+simultaneous localization and mapping systems. ACM Transactions on
+Embedded Computing Systems, 24(1), 1-31.</li>
+<li>Xie, C., Hao, N., Han, H., &amp; He, F. (2026). Towards robust
+visual odometry in dynamic environments: A hybrid approach with
+confidence-guided masking. Engineering Applications of Artificial
+Intelligence, 175, 114611.</li>
 </ol>
 
     </div>
@@ -372,13 +422,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">501k</span>
+    <span title="總字數">471k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">15:11</span>
+    <span title="所需總閱讀時間">14:16</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
@@ -418,11 +468,6 @@
   
 
 
-
-
-  
-
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
 
 
 
