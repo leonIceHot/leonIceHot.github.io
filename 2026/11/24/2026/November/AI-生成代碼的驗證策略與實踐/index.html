@@ -28,7 +28,7 @@
 <meta property="og:description" content="驗證（Verification）指確認所產出的代碼是否如預期運作，是確保 AI 寫出的程式碼正確無誤的關鍵過程。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2026-11-24T13:36:27.000Z">
-<meta property="article:modified_time" content="2026-11-24T13:38:08.383Z">
+<meta property="article:modified_time" content="2026-11-24T13:46:02.868Z">
 <meta property="article:author" content="利醬">
 <meta name="twitter:card" content="summary">
 
@@ -118,7 +118,7 @@
         <div class="post-toc-wrap sidebar-panel">
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A9%97%E8%AD%89%E7%9A%84%E4%B8%89%E5%A4%A7%E6%A0%B8%E5%BF%83%E6%8A%80%E5%B7%A7"><span class="nav-number">1.</span> <span class="nav-text">驗證的三大核心技巧</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A9%97%E8%AD%89%E6%B5%81%E7%A8%8B%E8%88%87%E8%A6%8F%E6%A8%A1%E6%93%B4%E5%B1%95"><span class="nav-number">2.</span> <span class="nav-text">⚙️ 驗證流程與規模擴展</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%81%BF%E5%85%8D%E7%9A%84%E4%B8%89%E7%A8%AE%E6%B8%AC%E8%A9%A6%E9%A1%9E%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">🚫 避免的三種測試類型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E7%A8%AE%E4%B8%BB%E8%A6%81%E6%B8%AC%E8%A9%A6%E9%A1%9E%E5%9E%8B%E8%88%87%E6%AF%94%E8%BC%83"><span class="nav-number">4.</span> <span class="nav-text">🧪 三種主要測試類型與比較</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B1%AC%E6%80%A7%E6%B8%AC%E8%A9%A6%E5%9B%9B%E5%A4%A7%E4%B8%8D%E8%AE%8A%E8%A6%8F%E5%89%87%E7%A4%BA%E4%BE%8B"><span class="nav-number">5.</span> <span class="nav-text">屬性測試四大不變規則示例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%AE%E7%95%B0%E6%B8%AC%E8%A9%A6differential-testing"><span class="nav-number">6.</span> <span class="nav-text">🔍 差異測試（Differential
 Testing）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#claude-code-%E5%9C%98%E9%9A%8A%E7%9A%84%E4%B9%9D%E5%A4%A7%E9%A9%97%E8%AD%89%E5%AF%A6%E8%B8%90"><span class="nav-number">7.</span> <span class="nav-text">🛠️ Claude Code
-團隊的九大驗證實踐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%A6-ai-%E7%9A%84%E6%89%8B%E7%9C%BC%E8%88%87%E5%8A%9F%E8%83%BD%E5%9C%B0%E5%9C%96"><span class="nav-number">8.</span> <span class="nav-text">🖥️ 給 AI 的「手眼」與功能地圖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90%E7%B5%A6%E9%9D%9E%E7%A8%8B%E5%BC%8F%E4%BA%BA%E5%93%A1%E7%9A%84%E5%9B%9B%E5%A4%A7%E8%A6%81%E9%BB%9E"><span class="nav-number">9.</span> <span class="nav-text">👨‍🏫 總結給非程式人員的四大要點</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A2%BC%E9%A9%97%E8%AD%89%E9%AB%94%E7%B3%BB%E7%9A%84%E9%82%8F%E8%BC%AF%E9%97%9C%E4%BF%82%E8%88%87%E5%AF%A6%E8%B8%90%E6%84%8F%E7%BE%A9"><span class="nav-number">10.</span> <span class="nav-text">代碼驗證體系的邏輯關係與實踐意義</span></a></li></ol></div>
+團隊的九大驗證實踐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%A6-ai-%E7%9A%84%E6%89%8B%E7%9C%BC%E8%88%87%E5%8A%9F%E8%83%BD%E5%9C%B0%E5%9C%96"><span class="nav-number">8.</span> <span class="nav-text">🖥️ 給 AI 的「手眼」與功能地圖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90%E7%B5%A6%E9%9D%9E%E7%A8%8B%E5%BC%8F%E4%BA%BA%E5%93%A1%E7%9A%84%E5%9B%9B%E5%A4%A7%E8%A6%81%E9%BB%9E"><span class="nav-number">9.</span> <span class="nav-text">👨‍🏫 總結給非程式人員的四大要點</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A2%BC%E9%A9%97%E8%AD%89%E9%AB%94%E7%B3%BB%E7%9A%84%E9%82%8F%E8%BC%AF%E9%97%9C%E4%BF%82%E8%88%87%E5%AF%A6%E8%B8%90%E6%84%8F%E7%BE%A9"><span class="nav-number">10.</span> <span class="nav-text">代碼驗證體系的邏輯關係與實踐意義</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E4%BE%86%E6%BA%90"><span class="nav-number">11.</span> <span class="nav-text">參考來源</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -219,7 +219,7 @@ Testing）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" h
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2026-11-24 21:36:27 / 修改時間：21:38:08" itemprop="dateCreated datePublished" datetime="2026-11-24T21:36:27+08:00">2026-11-24</time>
+      <time title="創建時間：2026-11-24 21:36:27 / 修改時間：21:46:02" itemprop="dateCreated datePublished" datetime="2026-11-24T21:36:27+08:00">2026-11-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -246,14 +246,14 @@ Testing）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" h
         <i class="far fa-file-lines"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>1.9k</span>
+      <span>2.2k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>3 分鐘</span>
+      <span>4 分鐘</span>
     </span>
 </div>
 
@@ -498,6 +498,31 @@ Map）列出每個功能的操作流程與用戶視角的期望結果，作為�
 的代碼產出、測試與規則嚴密結合，形成一個閉環控制系統，避免錯誤流入生產環境。三類測試互補提升準確性，讓錯誤更早被發現和定位。嚴格規定檢查標準與人工介入界線，確保品質與效率的平衡。工具化的「手眼」與功能地圖賦予
 AI
 實際操作與判斷能力，避免純理論推演的盲點。整體設計使得大規模自動化代碼產出不犧牲品質，且促進快速迭代與持續優化。</p>
+<h1 id="參考來源">參考來源</h1>
+<ol type="1">
+<li>How the Claude Code team thinks about verification</li>
+</ol>
+<ul>
+<li>https://claude.dev/……/how-the-claude-code-team……/</li>
+</ul>
+<ol start="2" type="1">
+<li>AI 產出程式怎麼驗證？Claude Code 團隊的 3 種測試與 9 個驗證做法</li>
+</ol>
+<ul>
+<li>https://www.youtube.com/watch?v=TLTKIIQvMeg</li>
+</ul>
+<ol start="3" type="1">
+<li>EP474 - Claude Code 你可能用錯了：Anthropic 自己改掉的最佳實踐</li>
+</ol>
+<ul>
+<li>https://www.youtube.com/watch?v=-m3yj9YLmxs</li>
+</ul>
+<ol start="4" type="1">
+<li>Rethinking Claude Code Best Practices — Lydia Hallie, Anthropic</li>
+</ol>
+<ul>
+<li>https://www.youtube.com/watch?v=vlfCjWuv4es&amp;t=1s</li>
+</ul>
 
     </div>
 
@@ -546,13 +571,13 @@ AI
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">475k</span>
+    <span title="總字數">476k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">14:24</span>
+    <span title="所需總閱讀時間">14:25</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
