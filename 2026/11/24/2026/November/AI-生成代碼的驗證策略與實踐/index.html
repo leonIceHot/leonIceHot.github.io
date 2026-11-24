@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha256-4Lad8m4ZWW1Lgb9+sMVLYEfnIh7BjV1NQMEe79Pviks=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.29.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="驗證（Verification）指確認所產出的代碼是否如預期運作，是確保 AI 寫出的程式碼正確無誤的關鍵過程。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI 生成代碼的驗證策略與實踐">
+<meta property="og:url" content="https://leonicehot.github.io/2026/11/24/2026/November/AI-%E7%94%9F%E6%88%90%E4%BB%A3%E7%A2%BC%E7%9A%84%E9%A9%97%E8%AD%89%E7%AD%96%E7%95%A5%E8%88%87%E5%AF%A6%E8%B8%90/index.html">
+<meta property="og:site_name" content="利醬の休憩房">
+<meta property="og:description" content="驗證（Verification）指確認所產出的代碼是否如預期運作，是確保 AI 寫出的程式碼正確無誤的關鍵過程。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2026-11-24T13:36:27.000Z">
+<meta property="article:modified_time" content="2026-11-24T13:38:08.383Z">
+<meta property="article:author" content="利醬">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://leonicehot.github.io/2026/11/24/2026/November/AI-%E7%94%9F%E6%88%90%E4%BB%A3%E7%A2%BC%E7%9A%84%E9%A9%97%E8%AD%89%E7%AD%96%E7%95%A5%E8%88%87%E5%AF%A6%E8%B8%90/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://leonicehot.github.io/2026/11/24/2026/November/AI-%E7%94%9F%E6%88%90%E4%BB%A3%E7%A2%BC%E7%9A%84%E9%A9%97%E8%AD%89%E7%AD%96%E7%95%A5%E8%88%87%E5%AF%A6%E8%B8%90/","path":"2026/11/24/2026/November/AI-生成代碼的驗證策略與實踐/","title":"AI 生成代碼的驗證策略與實踐"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>AI 生成代碼的驗證策略與實踐 | 利醬の休憩房</title>
+  
+
+
+
+
+
+
+
+
+  
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-search popup-trigger" aria-label="搜尋" role="button">
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">利醬の休憩房</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-toggle" aria-label="切換導航欄" role="button">
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A9%97%E8%AD%89%E7%9A%84%E4%B8%89%E5%A4%A7%E6%A0%B8%E5%BF%83%E6%8A%80%E5%B7%A7"><span class="nav-number">1.</span> <span class="nav-text">驗證的三大核心技巧</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A9%97%E8%AD%89%E6%B5%81%E7%A8%8B%E8%88%87%E8%A6%8F%E6%A8%A1%E6%93%B4%E5%B1%95"><span class="nav-number">2.</span> <span class="nav-text">⚙️ 驗證流程與規模擴展</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%81%BF%E5%85%8D%E7%9A%84%E4%B8%89%E7%A8%AE%E6%B8%AC%E8%A9%A6%E9%A1%9E%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">🚫 避免的三種測試類型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E7%A8%AE%E4%B8%BB%E8%A6%81%E6%B8%AC%E8%A9%A6%E9%A1%9E%E5%9E%8B%E8%88%87%E6%AF%94%E8%BC%83"><span class="nav-number">4.</span> <span class="nav-text">🧪 三種主要測試類型與比較</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B1%AC%E6%80%A7%E6%B8%AC%E8%A9%A6%E5%9B%9B%E5%A4%A7%E4%B8%8D%E8%AE%8A%E8%A6%8F%E5%89%87%E7%A4%BA%E4%BE%8B"><span class="nav-number">5.</span> <span class="nav-text">屬性測試四大不變規則示例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%AE%E7%95%B0%E6%B8%AC%E8%A9%A6differential-testing"><span class="nav-number">6.</span> <span class="nav-text">🔍 差異測試（Differential
+Testing）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#claude-code-%E5%9C%98%E9%9A%8A%E7%9A%84%E4%B9%9D%E5%A4%A7%E9%A9%97%E8%AD%89%E5%AF%A6%E8%B8%90"><span class="nav-number">7.</span> <span class="nav-text">🛠️ Claude Code
+團隊的九大驗證實踐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%A6-ai-%E7%9A%84%E6%89%8B%E7%9C%BC%E8%88%87%E5%8A%9F%E8%83%BD%E5%9C%B0%E5%9C%96"><span class="nav-number">8.</span> <span class="nav-text">🖥️ 給 AI 的「手眼」與功能地圖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90%E7%B5%A6%E9%9D%9E%E7%A8%8B%E5%BC%8F%E4%BA%BA%E5%93%A1%E7%9A%84%E5%9B%9B%E5%A4%A7%E8%A6%81%E9%BB%9E"><span class="nav-number">9.</span> <span class="nav-text">👨‍🏫 總結給非程式人員的四大要點</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A2%BC%E9%A9%97%E8%AD%89%E9%AB%94%E7%B3%BB%E7%9A%84%E9%82%8F%E8%BC%AF%E9%97%9C%E4%BF%82%E8%88%87%E5%AF%A6%E8%B8%90%E6%84%8F%E7%BE%A9"><span class="nav-number">10.</span> <span class="nav-text">代碼驗證體系的邏輯關係與實踐意義</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">利醬</p>
+  <div class="site-description" itemprop="description">部落格記載著電腦科學基礎知識、科學應用探討、工程技術之白話筆記，從已知的知識持續探索未知的領域。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">178</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">64</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/leonIceHot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leonIceHot" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:chwang128@outlook.com" title="E-Mail → mailto:chwang128@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cake.me/hj098128" title="Cake → https:&#x2F;&#x2F;www.cake.me&#x2F;hj098128" rel="noopener me" target="_blank"><i class="fa fa-coffee fa-fw"></i>Cake</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://orcid.org/0009-0007-3151-7714" title="ORCID → https:&#x2F;&#x2F;orcid.org&#x2F;0009-0007-3151-7714" rel="noopener me" target="_blank"><i class="fab fa-orcid fa-fw"></i>ORCID</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://scholar.google.com/citations?user=Wpa0FKAAAAAJ&hl=zh-TW" title="Google Scholar → https:&#x2F;&#x2F;scholar.google.com&#x2F;citations?user&#x3D;Wpa0FKAAAAAJ&amp;hl&#x3D;zh-TW" rel="noopener me" target="_blank"><i class="fab fa-google fa-fw"></i>Google Scholar</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://ieeexplore.ieee.org/author/792408471929812" title="IEEE → https:&#x2F;&#x2F;ieeexplore.ieee.org&#x2F;author&#x2F;792408471929812" rel="noopener me" target="_blank"><i class="fab fa-ieee fa-fw"></i>IEEE</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://leonicehot.github.io/2026/11/24/2026/November/AI-%E7%94%9F%E6%88%90%E4%BB%A3%E7%A2%BC%E7%9A%84%E9%A9%97%E8%AD%89%E7%AD%96%E7%95%A5%E8%88%87%E5%AF%A6%E8%B8%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="利醬">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="利醬の休憩房">
+      <meta itemprop="description" content="部落格記載著電腦科學基礎知識、科學應用探討、工程技術之白話筆記，從已知的知識持續探索未知的領域。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="AI 生成代碼的驗證策略與實踐 | 利醬の休憩房">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AI 生成代碼的驗證策略與實踐
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2026-11-24 21:36:27 / 修改時間：21:38:08" itemprop="dateCreated datePublished" datetime="2026-11-24T21:36:27+08:00">2026-11-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Artificial-Intelligence/" itemprop="url" rel="index"><span itemprop="name">Artificial Intelligence</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/Artificial-Intelligence/Generative-AI/" itemprop="url" rel="index"><span itemprop="name">Generative AI</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-lines"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.9k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>3 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><blockquote>
+<p>驗證（Verification）指確認所產出的代碼是否如預期運作，是確保 AI
+寫出的程式碼正確無誤的關鍵過程。 <span id="more"></span></p>
+</blockquote>
+<hr>
+<h1 id="驗證的三大核心技巧">驗證的三大核心技巧</h1>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr>
+<th>技巧</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 讓 AI 自行執行程式碼</td>
+<td>直接運行代碼以檢查功能是否正常，類似工廠生產線的逐站檢查。</td>
+</tr>
+<tr>
+<td>2. 投資三類不可被欺騙的測試</td>
+<td>包括端對端測試（End-to-End Testing）、屬性測試（Property
+Testing）、差異測試（Differential Testing）。</td>
+</tr>
+<tr>
+<td>3. 檢查規則不可由被檢查者制定</td>
+<td>避免讓代碼作者自行設定檢查標準，防止「改答案」造成檢查失效。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="驗證流程與規模擴展">⚙️ 驗證流程與規模擴展</h1>
+<ul>
+<li>Claude Code 團隊約 90% 的代碼由 AI（Claude）產出與驗證。</li>
+<li>無自動化驗證時，人力只能檢查少量代碼，反之可同時管理數十甚至數百個
+AI 實例。</li>
+<li>驗證提升代碼品質：增加一名評估者依內部規範檢查，任務成功率可提升約
+10%，更難任務提升更大。</li>
+<li>AI 可將測試規範轉化為可重複執行的程式碼，降低額外 AI 使用成本。</li>
+<li>若同樣錯誤反覆出現，則寫入專案內的手冊（.md 文件），作為 Claude
+運作依據。</li>
+</ul>
+<hr>
+<h1 id="避免的三種測試類型">🚫 避免的三種測試類型</h1>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr>
+<th>類型</th>
+<th>問題說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>不穩定測試（Flaky Tests）</td>
+<td>同一程式碼有時通過、有時失敗，導致 AI
+養成「重跑取巧」的壞習慣。</td>
+</tr>
+<tr>
+<td>過慢測試</td>
+<td>執行時間過長，迭代次數少且難以定位錯誤發生環節。</td>
+</tr>
+<tr>
+<td>資源消耗大測試</td>
+<td>需耗費大量計算資源，通常只在提交前才執行，降低測試頻率與效率。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="三種主要測試類型與比較">🧪 三種主要測試類型與比較</h1>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr>
+<th>測試類型</th>
+<th>特色與優點</th>
+<th>缺點及說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>端對端測試</strong>（End-to-End Testing）</td>
+<td>模擬真實用戶操作流程，如購物車加購、結帳到訂單完成，準確捕捉功能是否整體正常。</td>
+<td>難以被欺騙，且失敗時可精確定位錯誤點。適合唯一優先選擇。</td>
+</tr>
+<tr>
+<td><strong>單元測試</strong>（Unit Testing）</td>
+<td>針對單一元件快速且穩定檢查，但無法保證組合後功能正常。</td>
+<td>典型失敗回報如「30秒超時」，模糊且無法指示錯誤細節，被比喻為「盲射」。</td>
+</tr>
+<tr>
+<td><strong>屬性測試</strong>（Property Testing）</td>
+<td>自動生成大量輸入，測試不變規則（鐵律），覆蓋邊界條件，防止 AI
+忽略的異常。</td>
+<td>針對規則的設計需精準，適合檢查如「回合一致性」、「不變性」、「冪等性」、「新舊一致性」等。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="屬性測試四大不變規則示例">屬性測試四大不變規則示例</h1>
+<table>
+<thead>
+<tr>
+<th>規則名稱</th>
+<th>定義說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>回合一致性</td>
+<td>資料經兩次轉換後與原始資料保持一致。</td>
+</tr>
+<tr>
+<td>不變性</td>
+<td>特定條件必須永遠成立，如帳戶餘額不得為負。</td>
+</tr>
+<tr>
+<td>冪等性</td>
+<td>重複執行操作結果與執行一次相同，例如失敗後不允許重複動作。</td>
+</tr>
+<tr>
+<td>新舊一致性</td>
+<td>新程式輸出必須與舊版本相符，確保功能未被破壞。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="差異測試differential-testing">🔍 差異測試（Differential
+Testing）</h1>
+<ul>
+<li><p>同時將相同輸入送入舊系統與新系統，比較輸出結果。</p></li>
+<li><p>差異即為錯誤或功能變動。</p></li>
+<li><p>關鍵要點：</p>
+<ul>
+<li>使用隨機或真實用戶日誌輸入。</li>
+<li>忽略無意義差異（如空白字元）。</li>
+<li>允許列出合理差異（允許清單）。</li>
+</ul></li>
+</ul>
+<hr>
+<h1 id="claude-code-團隊的九大驗證實踐">🛠️ Claude Code
+團隊的九大驗證實踐</h1>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr>
+<th>序號</th>
+<th>實踐內容</th>
+<th>重點說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>直接運行修改後的程式碼</strong></td>
+<td>執行完整流程比純粹測試更重要，模擬人類測試者操作。</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>測試失敗才需人工介入</strong></td>
+<td>AI 自動修復錯誤，三次失敗則交由人類處理。</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>由程式負責人撰寫檢查項目</strong></td>
+<td>檢查標準必須能明確指出錯誤原因，避免人類猜測。</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>基於過往事件的 39 項可靠性檢查清單</strong></td>
+<td>只針對修改內容相關項目執行，減少人工負擔。</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>單一審查者多次迭代審查</strong></td>
+<td>用 <code>review.md</code> 文件記錄重點，避免多審查者重複勞動。</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>檢查規則不可被修改</strong></td>
+<td>規則只從主分支讀取，檢查結果綁定特定版本，防止「改答案」。</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>優先執行低成本測試</strong></td>
+<td>提交前自動觸發建構與測試，節省審查時間。</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>每次提交必須有驗證證據</strong></td>
+<td>三階段門檻（觀察、半封鎖、強制封鎖），未通過驗證者標記並阻止合併。</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>遺漏錯誤納入新規則</strong></td>
+<td>透過 AI
+三重檢測與人工審核將重複錯誤轉化為規範，定期修剪過時規則。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="給-ai-的手眼與功能地圖">🖥️ 給 AI 的「手眼」與功能地圖</h1>
+<ul>
+<li>AI
+需要工具讓它「操作」系統（手）與「觀察」結果（眼），如瀏覽器控制、手機模擬器、後端服務呼叫。</li>
+<li>功能地圖（Functional
+Map）列出每個功能的操作流程與用戶視角的期望結果，作為評分標準。</li>
+</ul>
+<hr>
+<h1 id="總結給非程式人員的四大要點">👨‍🏫 總結給非程式人員的四大要點</h1>
+<ol type="1">
+<li><strong>讓 AI 執行任務並呈現截圖及結果證明。</strong></li>
+<li><strong>明確定義「完成」標準，並在開始前說明。</strong></li>
+<li><strong>錯誤重複出現即加入手冊規則中。</strong></li>
+<li><strong>禁止 AI 修改測試以通過，確保測試公正有效。</strong></li>
+</ol>
+<hr>
+<h1 id="代碼驗證體系的邏輯關係與實踐意義">代碼驗證體系的邏輯關係與實踐意義</h1>
+<p>驗證過程將 AI
+的代碼產出、測試與規則嚴密結合，形成一個閉環控制系統，避免錯誤流入生產環境。三類測試互補提升準確性，讓錯誤更早被發現和定位。嚴格規定檢查標準與人工介入界線，確保品質與效率的平衡。工具化的「手眼」與功能地圖賦予
+AI
+實際操作與判斷能力，避免純理論推演的盲點。整體設計使得大規模自動化代碼產出不犧牲品質，且促進快速迭代與持續優化。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/11/24/2026/November/Ubuntu-26-%E5%AE%89%E8%A3%9D-Claude-Code-%E6%8C%87%E5%8D%97/" rel="prev" title="Ubuntu 26 安裝 Claude Code 指南">
+                  <i class="fa fa-angle-left"></i> Ubuntu 26 安裝 Claude Code 指南
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">利醬</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">475k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">14:24</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
