@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
@@ -14,10 +15,10 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha256-4Lad8m4ZWW1Lgb9+sMVLYEfnIh7BjV1NQMEe79Pviks=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"leonicehot.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.29.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="部落格記載著電腦科學基礎知識、科學應用探討、工程技術之白話筆記，從已知的知識持續探索未知的領域。">
 <meta property="og:type" content="website">
@@ -41,6 +42,22 @@
 
 
 
+
+
+
+
+
+  
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
 
 
 
@@ -169,12 +186,7 @@ mjx-container[display="true"] + br {
   <main class="main">
     <div class="column">
       <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
+  <div class="site-nav-search popup-trigger" aria-label="搜尋" role="button">
   </div>
 
   <div class="site-meta">
@@ -186,18 +198,12 @@ mjx-container[display="true"] + br {
     </a>
   </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
-    </div>
+  <div class="site-nav-toggle" aria-label="切換導航欄" role="button">
   </div>
 </div>
 
 
 
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
-  </ul>
-</nav>
 
 
 
@@ -248,11 +254,6 @@ mjx-container[display="true"] + br {
       </div>
   </nav>
 </div>
-  <div class="links-of-author animated">
-      <span class="links-of-author-item">
-        <a href="https://github.com/leonIceHot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leonIceHot" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-  </div>
 
         </div>
       </div>
@@ -287,7 +288,7 @@ mjx-container[display="true"] + br {
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 利醬の休憩房">
+      <meta itemprop="name" content=" | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
@@ -330,7 +331,7 @@ mjx-container[display="true"] + br {
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="文章字數">
       <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
+        <i class="far fa-file-lines"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
       <span>739</span>
@@ -399,7 +400,7 @@ Fine」（由粗到細）是一種常見的計算與處理策略，廣泛用於�
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 利醬の休憩房">
+      <meta itemprop="name" content=" | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
@@ -442,7 +443,7 @@ Fine」（由粗到細）是一種常見的計算與處理策略，廣泛用於�
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="文章字數">
       <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
+        <i class="far fa-file-lines"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
       <span>2.4k</span>
@@ -513,7 +514,7 @@ Fine」（由粗到細）是一種常見的計算與處理策略，廣泛用於�
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 利醬の休憩房">
+      <meta itemprop="name" content=" | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
@@ -550,7 +551,7 @@ Fine」（由粗到細）是一種常見的計算與處理策略，廣泛用於�
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="文章字數">
       <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
+        <i class="far fa-file-lines"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
       <span>1.7k</span>
@@ -624,7 +625,7 @@ AI）</h2>
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 利醬の休憩房">
+      <meta itemprop="name" content=" | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
@@ -667,7 +668,7 @@ AI）</h2>
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="文章字數">
       <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
+        <i class="far fa-file-lines"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
       <span>4.6k</span>
@@ -738,7 +739,7 @@ Box）或遮罩（Mask）等方式進行標註</strong>。以下為視覺定位�
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 利醬の休憩房">
+      <meta itemprop="name" content=" | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
@@ -775,7 +776,7 @@ Box）或遮罩（Mask）等方式進行標註</strong>。以下為視覺定位�
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="文章字數">
       <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
+        <i class="far fa-file-lines"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
       <span>1.4k</span>
@@ -844,7 +845,7 @@ Box）或遮罩（Mask）等方式進行標註</strong>。以下為視覺定位�
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 利醬の休憩房">
+      <meta itemprop="name" content=" | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
@@ -887,7 +888,7 @@ Box）或遮罩（Mask）等方式進行標註</strong>。以下為視覺定位�
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="文章字數">
       <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
+        <i class="far fa-file-lines"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
       <span>2.6k</span>
@@ -956,7 +957,7 @@ Style）是指在設計軟體系統時，為解決特定類型的問題而採用
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 利醬の休憩房">
+      <meta itemprop="name" content=" | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
@@ -999,7 +1000,7 @@ Style）是指在設計軟體系統時，為解決特定類型的問題而採用
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="文章字數">
       <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
+        <i class="far fa-file-lines"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
       <span>29k</span>
@@ -1067,7 +1068,7 @@ Style）是指在設計軟體系統時，為解決特定類型的問題而採用
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 利醬の休憩房">
+      <meta itemprop="name" content=" | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
@@ -1106,7 +1107,7 @@ Style）是指在設計軟體系統時，為解決特定類型的問題而採用
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="文章字數">
       <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
+        <i class="far fa-file-lines"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
       <span>8k</span>
@@ -1176,7 +1177,7 @@ SDLC）的所有階段，目的是在資源、時間和需求的約束下，設�
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 利醬の休憩房">
+      <meta itemprop="name" content=" | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
@@ -1219,7 +1220,7 @@ SDLC）的所有階段，目的是在資源、時間和需求的約束下，設�
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="文章字數">
       <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
+        <i class="far fa-file-lines"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
       <span>14k</span>
@@ -1287,7 +1288,7 @@ SDLC）的所有階段，目的是在資源、時間和需求的約束下，設�
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 利醬の休憩房">
+      <meta itemprop="name" content=" | 利醬の休憩房">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
@@ -1330,7 +1331,7 @@ SDLC）的所有階段，目的是在資源、時間和需求的約束下，設�
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="文章字數">
       <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
+        <i class="far fa-file-lines"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
       <span>30k</span>
@@ -1409,7 +1410,7 @@ SDLC）的所有階段，目的是在資源、時間和需求的約束下，設�
     <span title="所需總閱讀時間">14:19</span>
   </span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
   </div>
 
     </div>
@@ -1421,7 +1422,6 @@ SDLC）的所有階段，目的是在資源、時間和需求的約束下，設�
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
   </div>
-  <div class="sidebar-dimmer"></div>
   <div class="back-to-top" role="button" aria-label="回到頂端">
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
@@ -1430,24 +1430,6 @@ SDLC）的所有階段，目的是在資源、時間和需求的約束下，設�
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
-
-  
-
-
-
-
-
-
-  
-
-
-
-
 
 </body>
 </html>
